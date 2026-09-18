@@ -1,0 +1,315 @@
+{
+  "status": "pass",
+  "pairs": [
+    {
+      "theme": "white",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(15, 98, 254)",
+      "b": "rgb(224, 224, 224)",
+      "ratio": 3.7889597869420157
+    },
+    {
+      "theme": "white",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(15, 98, 254)",
+      "b": "rgb(224, 224, 224)",
+      "ratio": 3.7889597869420157
+    },
+    {
+      "theme": "white",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(15, 98, 254)",
+      "b": "rgb(224, 224, 224)",
+      "ratio": 3.7889597869420157
+    },
+    {
+      "theme": "white",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(15, 98, 254)",
+      "ratio": 3.617980859362601
+    },
+    {
+      "theme": "white",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(15, 98, 254)",
+      "ratio": 3.617980859362601
+    },
+    {
+      "theme": "white",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(15, 98, 254)",
+      "ratio": 3.617980859362601
+    },
+    {
+      "theme": "white",
+      "variant": "before",
+      "type": "settings",
+      "name": "toggle-handle/track",
+      "a": "rgb(255, 255, 255)",
+      "b": "rgb(25, 128, 56)",
+      "ratio": 5.01659301034966
+    },
+    {
+      "theme": "white",
+      "variant": "before",
+      "type": "settings",
+      "name": "toggle-handle/track",
+      "a": "rgb(255, 255, 255)",
+      "b": "rgb(141, 141, 141)",
+      "ratio": 3.3190497783477215
+    },
+    {
+      "theme": "white",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(15, 98, 254)",
+      "b": "rgb(224, 224, 224)",
+      "ratio": 3.7889597869420157
+    },
+    {
+      "theme": "white",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(15, 98, 254)",
+      "b": "rgb(224, 224, 224)",
+      "ratio": 3.7889597869420157
+    },
+    {
+      "theme": "white",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(15, 98, 254)",
+      "b": "rgb(224, 224, 224)",
+      "ratio": 3.7889597869420157
+    },
+    {
+      "theme": "white",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(15, 98, 254)",
+      "ratio": 3.617980859362601
+    },
+    {
+      "theme": "white",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(15, 98, 254)",
+      "ratio": 3.617980859362601
+    },
+    {
+      "theme": "white",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(15, 98, 254)",
+      "ratio": 3.617980859362601
+    },
+    {
+      "theme": "white",
+      "variant": "after",
+      "type": "settings",
+      "name": "toggle-handle/track",
+      "a": "rgb(255, 255, 255)",
+      "b": "rgb(25, 128, 56)",
+      "ratio": 5.01659301034966
+    },
+    {
+      "theme": "white",
+      "variant": "after",
+      "type": "settings",
+      "name": "toggle-handle/track",
+      "a": "rgb(255, 255, 255)",
+      "b": "rgb(141, 141, 141)",
+      "ratio": 3.3190497783477215
+    },
+    {
+      "theme": "g100",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(69, 137, 255)",
+      "b": "rgb(57, 57, 57)",
+      "ratio": 3.4511864368921676
+    },
+    {
+      "theme": "g100",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(69, 137, 255)",
+      "b": "rgb(57, 57, 57)",
+      "ratio": 3.4511864368921676
+    },
+    {
+      "theme": "g100",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(69, 137, 255)",
+      "b": "rgb(57, 57, 57)",
+      "ratio": 3.4511864368921676
+    },
+    {
+      "theme": "g100",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(244, 244, 244)",
+      "b": "rgb(69, 137, 255)",
+      "ratio": 3.0425964605062195
+    },
+    {
+      "theme": "g100",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(244, 244, 244)",
+      "b": "rgb(69, 137, 255)",
+      "ratio": 3.0425964605062195
+    },
+    {
+      "theme": "g100",
+      "variant": "before",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(244, 244, 244)",
+      "b": "rgb(69, 137, 255)",
+      "ratio": 3.0425964605062195
+    },
+    {
+      "theme": "g100",
+      "variant": "before",
+      "type": "settings",
+      "name": "toggle-handle/track",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(66, 190, 101)",
+      "ratio": 7.570205155318394
+    },
+    {
+      "theme": "g100",
+      "variant": "before",
+      "type": "settings",
+      "name": "toggle-handle/track",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(168, 168, 168)",
+      "ratio": 7.610275392134098
+    },
+    {
+      "theme": "g100",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(69, 137, 255)",
+      "b": "rgb(57, 57, 57)",
+      "ratio": 3.4511864368921676
+    },
+    {
+      "theme": "g100",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(69, 137, 255)",
+      "b": "rgb(57, 57, 57)",
+      "ratio": 3.4511864368921676
+    },
+    {
+      "theme": "g100",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "bar/track",
+      "a": "rgb(69, 137, 255)",
+      "b": "rgb(57, 57, 57)",
+      "ratio": 3.4511864368921676
+    },
+    {
+      "theme": "g100",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(244, 244, 244)",
+      "b": "rgb(69, 137, 255)",
+      "ratio": 3.0425964605062195
+    },
+    {
+      "theme": "g100",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(244, 244, 244)",
+      "b": "rgb(69, 137, 255)",
+      "ratio": 3.0425964605062195
+    },
+    {
+      "theme": "g100",
+      "variant": "after",
+      "type": "dashboard",
+      "name": "target/bar",
+      "a": "rgb(244, 244, 244)",
+      "b": "rgb(69, 137, 255)",
+      "ratio": 3.0425964605062195
+    },
+    {
+      "theme": "g100",
+      "variant": "after",
+      "type": "settings",
+      "name": "toggle-handle/track",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(66, 190, 101)",
+      "ratio": 7.570205155318394
+    },
+    {
+      "theme": "g100",
+      "variant": "after",
+      "type": "settings",
+      "name": "toggle-handle/track",
+      "a": "rgb(22, 22, 22)",
+      "b": "rgb(168, 168, 168)",
+      "ratio": 7.610275392134098
+    }
+  ],
+  "behavior": [
+    {
+      "theme": "white",
+      "localKeyboardScroll": {
+        "viewport": 390,
+        "document": 390,
+        "scroll": 40,
+        "width": 358,
+        "content": 710
+      }
+    },
+    {
+      "theme": "g100",
+      "localKeyboardScroll": {
+        "viewport": 390,
+        "document": 390,
+        "scroll": 40,
+        "width": 358,
+        "content": 710
+      }
+    }
+  ]
+}

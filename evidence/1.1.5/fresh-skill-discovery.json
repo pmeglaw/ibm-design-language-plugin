@@ -1,0 +1,25 @@
+{
+  "method": "skills/list",
+  "forceReload": true,
+  "skills": [
+    {
+      "name": "ibm-design-language",
+      "description": "Design, build, and critique IBM Design Language and Carbon interfaces at senior-designer level. Covers tokens, brand-aware color integration, the 2x Grid, icons and pictograms, motion, spacing, themes, typography, UI shell, universal patterns, Carbon for IBM Products, status, accessibility, composition, taste, and implementation polish. Use for IBM, Carbon, @carbon/react, @carbon/ibm-products, IBM Plex, enterprise/admin product UI, screen and flow design, UI critique, component or container choices, color governance, status and contrast decisions, and interaction refinement.",
+      "path": "C:\\Users\\JP\\.agents\\skills\\ibm-design-language\\SKILL.md",
+      "scope": "user",
+      "enabled": false,
+      "pluginId": null
+    },
+    {
+      "name": "ibm-design-language:ibm-design-language",
+      "description": "Design, implement, and critique IBM Design Language and Carbon interfaces. Use for IBM/Carbon product UI, IBM Plex, layout and typography, component or flow selection, semantic color and approved brand integration, accessibility, and interaction refinement.",
+      "path": "C:\\Users\\JP\\.codex\\plugins\\cache\\jp-personal\\ibm-design-language\\1.1.5\\skills\\ibm-design-language\\SKILL.md",
+      "scope": "user",
+      "enabled": true,
+      "pluginId": "ibm-design-language@jp-personal"
+    }
+  ],
+  "discovery_error_count": 0,
+  "verification_process_exited": true,
+  "model_calls": 0
+}

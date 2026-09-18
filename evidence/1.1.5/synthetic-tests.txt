@@ -1,0 +1,7 @@
+Command: C:/Python314/python.exe -B -X utf8 work/revision-1.1.5/rc.2/package/skills/ibm-design-language/scripts/test_evaluate.py
+IBM_EVAL_TEST_TMP: work/revision-1.1.5/rc.2/synthetic-temp
+Exit: 0
+.........................................
+Ran 41 tests in 1.809s
+OK
+Source: successful preparation tool execution; preserved without a redundant rerun.

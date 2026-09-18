@@ -1,0 +1,112 @@
+{
+  "provenance": "Frozen 1.1.4 case contracts. Prompt clarification must preserve these acceptance criteria.",
+  "cases": [
+    {
+      "id": 1,
+      "assertions": [
+        {
+          "id": "case-01-a01",
+          "criterion": "Output is a single self-contained HTML file with embedded CSS and (optionally) inline JS \u2014 no external CSS/JS frameworks; a Google Fonts import is acceptable"
+        },
+        {
+          "id": "case-01-a02",
+          "criterion": "Productive UI surfaces follow square component anatomy while documented component-specific exceptions are preserved"
+        },
+        {
+          "id": "case-01-a03",
+          "criterion": "Exactly one primary button on the page (the header's 'New key'); a create dialog's own Create button is the only other primary allowed, and only inside that dialog"
+        },
+        {
+          "id": "case-01-a04",
+          "criterion": "Data table rows are multi-selectable and selection drives a batch action bar that includes Revoke and shows the selected count"
+        },
+        {
+          "id": "case-01-a05",
+          "criterion": "Status column uses two signals \u2014 an icon/shape plus a text label, never color alone"
+        },
+        {
+          "id": "case-01-a06",
+          "criterion": "No-data replaces the table including headers/footer; no-results preserves search/filter context; loading and error have appropriate feedback or recovery"
+        },
+        {
+          "id": "case-01-a07",
+          "criterion": "Pagination is present for the few-hundred-row table"
+        },
+        {
+          "id": "case-01-a08",
+          "criterion": "A Carbon token layer (CSS custom properties) and IBM Plex font stack are used, and product CSS references tokens rather than raw hex"
+        },
+        {
+          "id": "case-01-a09",
+          "criterion": "Uses the optional standalone styling foundation coherently or explains an appropriate alternative; does not claim the CSS supplies interactive behavior"
+        },
+        {
+          "id": "case-01-a10",
+          "criterion": "A decision log exists explaining the create-flow container choice and the density choice"
+        }
+      ],
+      "expected_output": "A self-contained productive Carbon HTML prototype with coherent token-based styling, one page-level New key action, working selection and batch revoke, pagination, and distinguishable status. No-data replaces the table including headers/footer while useful surrounding actions remain; no-results preserves search context. Include applicable loading/error states and a short container/density rationale. Verify implemented behavior and actual contrast pairs.",
+      "visual_dimensions": [
+        "hierarchy",
+        "layout",
+        "typography",
+        "color_imagery",
+        "interaction_clarity"
+      ]
+    },
+    {
+      "id": 5,
+      "assertions": [
+        {
+          "id": "case-05-a01",
+          "criterion": "Preserves readable Invoice email and Tax ID values using supported read-only controls or static labeled content"
+        },
+        {
+          "id": "case-05-a02",
+          "criterion": "Explains disabled is not hidden, does not universally claim it is unannounced, distinguishes native disabled from ARIA disabled, and keeps read-only values legible"
+        },
+        {
+          "id": "case-05-a03",
+          "criterion": "Rejects hiding the fields, because the user is permitted to know they exist"
+        },
+        {
+          "id": "case-05-a04",
+          "criterion": "Specifies that the reason/upgrade path is explained outside the control (inline text, helper text, or a callout), not inside it"
+        },
+        {
+          "id": "case-05-a05",
+          "criterion": "Describes a temporary prerequisite as a suitable disabled-state use and explains that ARIA disabled alone does not suppress activation"
+        }
+      ],
+      "expected_output": "Prefer readable read-only controls or static labeled values with an external plan explanation and upgrade route. Distinguish native disabled, ARIA disabled, and hidden content accurately; do not claim all disabled controls disappear from screen-reader navigation or necessarily fail contrast. Focusability follows the actual element and widget contract.",
+      "visual_dimensions": []
+    },
+    {
+      "id": 10,
+      "assertions": [
+        {
+          "id": "case-10-a01",
+          "criterion": "Chooses productive rather than expressive motion for the task flow"
+        },
+        {
+          "id": "case-10-a02",
+          "criterion": "Rejects diagonal paths and follows organized grid-aligned choreography"
+        },
+        {
+          "id": "case-10-a03",
+          "criterion": "Keeps the complete staggered sequence within 500ms"
+        },
+        {
+          "id": "case-10-a04",
+          "criterion": "Uses standard easing when the off-canvas side panel closes but remains ready to return"
+        },
+        {
+          "id": "case-10-a05",
+          "criterion": "Includes prefers-reduced-motion and a static way to perceive state"
+        }
+      ],
+      "expected_output": "Uses productive motion; rejects diagonal paths; staggers axes into rounded grid paths; keeps the complete row sequence within 500ms (about 20ms per row is the Carbon example); uses entrance for appearing and standard easing for a panel that remains nearby; provides reduced/static behavior.",
+      "visual_dimensions": []
+    }
+  ]
+}

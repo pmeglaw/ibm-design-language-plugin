@@ -1,0 +1,766 @@
+{
+  "protocol": "composition-transfer-v1.2",
+  "overall": "Incomplete comparison; improvement is unproven. Host configuration changed during run 2.",
+  "runs": [
+    {
+      "index": 0,
+      "variant": "baseline",
+      "case_id": 25,
+      "packet": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\baseline-25-packet-1",
+      "status": "awaiting_review",
+      "error": null,
+      "started_at": "2026-09-18T19:24:30.284192+00:00",
+      "finished_at": "2026-09-18T19:36:05.373763+00:00",
+      "changed_config_sections": [],
+      "duration_seconds": 695.089571,
+      "formal_score": {
+        "case_id": 25,
+        "run_key": "5301be260f7852a1f6787c99c2b6afde918eecde371fccdfa940443323c70dcf",
+        "verdict": "pass",
+        "assertions": {
+          "pass": 12,
+          "fail": 0,
+          "not_tested": 0,
+          "unreviewed": 0
+        },
+        "assertion_total": 12,
+        "assertion_pass_percent": 100.0,
+        "visual": {
+          "hierarchy": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Ownership heading, two factual counts, selected context and one primary action establish the task in both themes. Assignment replaces the action with named confirmation."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          },
+          "layout": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Aligned desktop queue and detail; mobile groups each full record and keeps detail/note/action together. Long initial mobile scroll is mitigated by the current-record jump."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          },
+          "typography": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Consistent productive heading, body and metadata styles; full long titles wrap, and due times remain aligned and readable in both widths."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          },
+          "color_imagery": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Neutral surfaces, restrained borders, selected-row treatment and text blocker labels stay distinct. Both themes preserve roles without ornamental imagery."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          },
+          "interaction_clarity": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Draft helper, explicit out-of-filter identity, validation alert, saved-note label, confirmation and activity make transitions understandable."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          }
+        },
+        "critical_findings": [],
+        "reviewer": {
+          "name": "Primary Codex reviewer",
+          "kind": "agent",
+          "method": "Direct source review, Playwright keyboard interactions and contrast samples, and direct inspection of all 12 canonical captures; known version labels, not blind. Generator claims checked separately. No artifact edits."
+        },
+        "review_path": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\baseline-25-packet-1\\case-25\\review.json",
+        "review_sha256": "3ce6df6581b224346f4e24c83df657e0ae3e39b4c72bbbdcdacc002a9b7d4526",
+        "evidence_sha256": {
+          "evidence/reviewer-checks.json": "54525ccb4a2ae414e6bb9dacd7d179e98095b5136f951c534864de9c724d40ee",
+          "workspace/index.html": "05668769b6a46cbd66ec6ba27ed3ae22f225d51c355d2afac515cc57b95be26c",
+          "evidence/nontext-contrast.json": "a90cd8108f0017c1768093b4710991ad355caebe6b8fcafd5d33f8b6299f1b9d",
+          "evidence/desktop-white-initial-h205.png": "cdeec5aa85f48977ef3894c857e419571a301430b1c89cc3d65b20e3ea6d7281",
+          "evidence/mobile-g100-assigned-h205.png": "588ffdbdc2373a84a656dcc523de93de2094124499e5872fda4fb4f7e8d91404"
+        },
+        "output_sha256": "2e82dac71abf8a0518dfc311934ff0b8daae2d2be0ca8daf1958316b74f3caca",
+        "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+      },
+      "diagnostic_only": false,
+      "assertion_denominator": 12,
+      "formal_not_tested": 0,
+      "canonical_capture_count": 12,
+      "workspace_hashes": {
+        "index.html": "05668769b6a46cbd66ec6ba27ed3ae22f225d51c355d2afac515cc57b95be26c",
+        "evidence/assignment.png": "983a922f66636d04c1c0c761900c7832f14b3343659dcc04a5bb57495db53a57",
+        "evidence/checks.json": "f15589c600dcfac79056c6740240576933d3d18cdcc4d172b2a0a9fc1fae185d",
+        "evidence/contrast-checks.json": "bfc77abcc07b1e6d806e5d5fba48841dd8fa2cc302d965bac195145f600f3857",
+        "evidence/g100-desktop.png": "8b7d7ed53c5fecb1a6e92a88c9606f6f94acbcb8eb14a1d7c178ba91301067ec",
+        "evidence/g100-mobile.png": "a6130ab945191c7fd8fc3d8f5670267e938642ebcf7c8db1a3f8237ff5bfc880",
+        "evidence/interaction-checks.json": "94040ae09250d8501f2b7f01171adb641d58057f9b7485ff31f22d6a29297c76",
+        "evidence/layout-checks.json": "ca2526e9958f45484acb59152bc43f39e49cb7a9fc88cf3b02739fd72a75f1b7",
+        "evidence/no-results.png": "bfc43bdb0371dc99d4903b519daefa11ef5495df24cf1c3fec52d7595d4d83b0",
+        "evidence/paint-samples.json": "fac0b23e71784de6f6bcef4c08279a22b020437f51c5037c3353639c9c1ff542",
+        "evidence/verify.py": "951b23862a1ec2ef298fc25cc2497146b9332d203047989e5a39c271c820c5c7",
+        "evidence/white-desktop.png": "0d7b66b3585c2373b0a50123e54a9b3ddda9ac941027e1466323a2c898912678",
+        "evidence/white-mobile-error.png": "eb0d9c677cfd338856e00e202cc216ba009701d33455b0a9dfbc1e6ff4ded956",
+        "evidence/white-mobile.png": "f7bc91bd4108886cf406e8d9a75925184680c39394517d6f7ef3ee7ec0caf4ec"
+      },
+      "response_sha256": "176398059a4eacba421c7af7a41798bd4cac9d6cb730e75191f16f46afa6ddff",
+      "reviewer_checks_sha256": "54525ccb4a2ae414e6bb9dacd7d179e98095b5136f951c534864de9c724d40ee"
+    },
+    {
+      "index": 1,
+      "variant": "candidate",
+      "case_id": 25,
+      "packet": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\candidate-25-packet-1",
+      "status": "awaiting_review",
+      "error": null,
+      "started_at": "2026-09-18T19:37:26.343462+00:00",
+      "finished_at": "2026-09-18T19:47:37.815037+00:00",
+      "changed_config_sections": [
+        "model_reasoning_summary"
+      ],
+      "duration_seconds": 611.471575,
+      "formal_score": {
+        "case_id": 25,
+        "run_key": "31bdd911879bf0b2a2d1e193b4d5235433a2c1c9a5a867af5a4023792acb19b6",
+        "verdict": "pass",
+        "assertions": {
+          "pass": 12,
+          "fail": 0,
+          "not_tested": 0,
+          "unreviewed": 0
+        },
+        "assertion_total": 12,
+        "assertion_pass_percent": 100.0,
+        "visual": {
+          "hierarchy": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Ownership heading, two factual counts, selected context and one primary action establish the task in both themes. Assignment replaces the action with named confirmation."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          },
+          "layout": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Desktop uses aligned owner/due columns and a separate selected task; mobile makes each full title precede labeled owner and due fields. It requires more vertical scrolling than the baseline; the selected-record link assists navigation."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          },
+          "typography": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Productive hierarchy and restrained 20px detail heading keep dense facts readable. Full titles wrap and tabular due times support comparison."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          },
+          "color_imagery": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Neutral surfaces, restrained borders, selected-row treatment and text blocker labels stay distinct. Both themes preserve roles without ornamental imagery."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          },
+          "interaction_clarity": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-initial-h205.png",
+                "observation": "Draft helper, explicit out-of-filter identity, validation alert, saved-note label, confirmation and activity make transitions understandable."
+              },
+              {
+                "path": "evidence/mobile-g100-assigned-h205.png",
+                "observation": "Mobile completion keeps identity, saved note and outcome associated; all 12 canonical captures inspected. Closed mobile ownership select clips the final character of Unassigned; the full native option is available, a minor refinement."
+              }
+            ]
+          }
+        },
+        "critical_findings": [],
+        "reviewer": {
+          "name": "Primary Codex reviewer",
+          "kind": "agent",
+          "method": "Direct source review, Playwright keyboard interactions and contrast samples, and direct inspection of all 12 canonical captures; known version labels, not blind. Generator claims checked separately. No artifact edits."
+        },
+        "review_path": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\candidate-25-packet-1\\case-25\\review.json",
+        "review_sha256": "82a5a7a9476471e8657ea6fbbd60003c623b6949456b1825572acdf191cc8502",
+        "evidence_sha256": {
+          "evidence/reviewer-checks.json": "54525ccb4a2ae414e6bb9dacd7d179e98095b5136f951c534864de9c724d40ee",
+          "workspace/index.html": "3486b26943b70a0d779d196d1d43cb4b8db4587a00e579fe8e17e6042b21be6d",
+          "evidence/nontext-contrast.json": "09c14e21ab023aaa5ee98a34cc8e630e8ea50cc8f1069fd009c34b702991592b",
+          "evidence/desktop-white-initial-h205.png": "12b3ad6491c40eb8adb000c208b1caf537721f5c40456fab7000e749e1f2e3f8",
+          "evidence/mobile-g100-assigned-h205.png": "e1053c11942c14077002c2f0b11d78c4b63776fad088d1efe34c6a5d22a4a7ba"
+        },
+        "output_sha256": "10c4056bc1410eea35a6695b081f6709d0b5e18024da5a119c0c23bdcfeffd23",
+        "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+      },
+      "diagnostic_only": false,
+      "assertion_denominator": 12,
+      "formal_not_tested": 0,
+      "canonical_capture_count": 12,
+      "workspace_hashes": {
+        "index.html": "3486b26943b70a0d779d196d1d43cb4b8db4587a00e579fe8e17e6042b21be6d",
+        "evidence/checks.json": "fb6fc918b84d0ba97c7b590b594ccba0299c3b362806d2d9723850acf02630a2",
+        "evidence/contrast-checks.json": "97d8b46176665e6b9719fdf611bc150bc02dbcfc18c35e52f41e121d7306d6c7",
+        "evidence/contrast.py": "e9c18656fc6d16639626b7bcdd5d551df22ef312572a150f5a1da6a06193997e",
+        "evidence/snapshot-check.json": "1b00efbd7d412930d8d903d2b8bfef8f8b79035b0ec9f145323fa5ab8feda792",
+        "evidence/state-checks.json": "b978f60dcac10864651257f660394ddf48776197812193da21e0ed3934d034cc",
+        "evidence/verify.cjs": "eb5d192e9b5183d0c010cd7b89d50c698a4e7a40b86ce13156e28349c58f849c"
+      },
+      "response_sha256": "37b0a582ff5a163879775f104fe1490b4ed9c3e109a49f9d33e6fa48b2793583",
+      "reviewer_checks_sha256": "54525ccb4a2ae414e6bb9dacd7d179e98095b5136f951c534864de9c724d40ee"
+    },
+    {
+      "index": 2,
+      "variant": "candidate",
+      "case_id": 26,
+      "packet": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\candidate-26-packet-1",
+      "status": "awaiting_review",
+      "error": null,
+      "started_at": "2026-09-18T19:51:12.607180+00:00",
+      "finished_at": "2026-09-18T20:03:25.761831+00:00",
+      "changed_config_sections": [],
+      "duration_seconds": 733.154651,
+      "formal_score": {
+        "case_id": 26,
+        "run_key": "609bf8f88a4ba4aa6e8121e4d83d74f2689f688adb87b1e09653ac666e22850f",
+        "verdict": "pass",
+        "assertions": {
+          "pass": 12,
+          "fail": 0,
+          "not_tested": 0,
+          "unreviewed": 0
+        },
+        "assertion_total": 12,
+        "assertion_pass_percent": 100.0,
+        "visual": {
+          "hierarchy": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-g100-review-default.png",
+                "observation": "Task heading, progress, counts and a separate destination decision establish the flow; partial outcome and retry lead the results."
+              },
+              {
+                "path": "evidence/mobile-white-partial-result.png",
+                "observation": "Full mobile outcome and recovery directly inspected; all other required captures also inspected."
+              }
+            ]
+          },
+          "layout": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-g100-review-default.png",
+                "observation": "Desktop three-to-one split uses clear aligned columns; mobile preserves full before/to/exclusion facts in ordered rows. Length is substantial but structured."
+              },
+              {
+                "path": "evidence/mobile-white-partial-result.png",
+                "observation": "Full mobile outcome and recovery directly inspected; all other required captures also inspected."
+              }
+            ]
+          },
+          "typography": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-g100-review-default.png",
+                "observation": "Consistent productive heading, body and metadata roles. Long multilingual title wraps cleanly without collision in both widths."
+              },
+              {
+                "path": "evidence/mobile-white-partial-result.png",
+                "observation": "Full mobile outcome and recovery directly inspected; all other required captures also inspected."
+              }
+            ]
+          },
+          "color_imagery": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-g100-review-default.png",
+                "observation": "Neutral layers and restrained blue actions support review. Outcome words reinforce green/red/neutral roles in both themes; no unnecessary imagery."
+              },
+              {
+                "path": "evidence/mobile-white-partial-result.png",
+                "observation": "Full mobile outcome and recovery directly inspected; all other required captures also inspected."
+              }
+            ]
+          },
+          "interaction_clarity": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-g100-review-default.png",
+                "observation": "Explicit eligible/excluded counts, before/to review, persistent partial summary and targeted retry communicate consequences. Focused heading outline is visually strong but functional."
+              },
+              {
+                "path": "evidence/mobile-white-partial-result.png",
+                "observation": "Full mobile outcome and recovery directly inspected; all other required captures also inspected."
+              }
+            ]
+          }
+        },
+        "critical_findings": [],
+        "reviewer": {
+          "name": "Primary Codex reviewer",
+          "kind": "agent",
+          "method": "Direct source and all 12 canonical screenshot review, independent keyboard behavior and actual paint sampling. Known versions, not blind. No artifact edits."
+        },
+        "review_path": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\candidate-26-packet-1\\case-26\\review.json",
+        "review_sha256": "14c8ee43ad094c722782285bc41223311b406f3b671c601082f5846fc9cc43b8",
+        "evidence_sha256": {
+          "evidence/reviewer-checks.json": "2b822449b1872d9208491660e25c97d1d3843693908734c43677d69bd2f63f31",
+          "workspace/index.html": "b715c3600f6c9ba8f7f1aab113414757d05df926b71716f1425c32ed63b0fc9b",
+          "evidence/nontext-and-state-contrast.json": "b442385d790273507bceb58bdb6b33393ad6d8b45a4ce037592b4ee539ebc836",
+          "evidence/desktop-g100-review-default.png": "431cfbeded5209551cd857749417e383492ab4f979eb731354a2e4eed1a91a72",
+          "evidence/mobile-white-partial-result.png": "6af1f4a66580482114f19d8dd645b7f0f30e33da74c7f641dcea1d9ba7b8b92e"
+        },
+        "output_sha256": "07446427f018804f2aa0a4a54e82cd69e739bdf5d19f7c2cd510bc686e995232",
+        "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+      },
+      "diagnostic_only": false,
+      "assertion_denominator": 12,
+      "formal_not_tested": 0,
+      "canonical_capture_count": 12,
+      "workspace_hashes": {
+        "index.html": "b715c3600f6c9ba8f7f1aab113414757d05df926b71716f1425c32ed63b0fc9b",
+        "evidence/browser-checks.json": "39078e8dd50e1481e3fe4a7e6cc74ab32dfe742b3a6e89e4880d1ad21496394f",
+        "evidence/contrast-checks.json": "8a44491e6dcd4f82c6e6b0883dda79c7e75ce55dfce1f183284fc6f8c2fd1dba",
+        "evidence/contrast.cjs": "19e5d696c17914f7f2850bad48ea5adfbf62591a3e6b8d25ab35ea6760146405",
+        "evidence/state-checks.json": "2111d02c93e8691acb6224e595cc7fb0bf8c43d7a8b621c2eb64f2acdb314852",
+        "evidence/verify.cjs": "6f50483b8757d1de82bd91e02ea193b29e270e645c70ca195491254313bde922"
+      },
+      "response_sha256": "f25355dfe33e7f60089f67e98daed2a5910aa46184a6616d7dc63d0194dd1c62",
+      "reviewer_checks_sha256": "2b822449b1872d9208491660e25c97d1d3843693908734c43677d69bd2f63f31"
+    },
+    {
+      "index": 3,
+      "variant": "baseline",
+      "case_id": 26,
+      "packet": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\baseline-26-packet-1",
+      "status": "execution_failed",
+      "error": "Codex exited 1",
+      "started_at": "2026-09-18T20:04:24.754167+00:00",
+      "finished_at": "2026-09-18T20:18:39.042393+00:00",
+      "changed_config_sections": [],
+      "duration_seconds": 854.288226,
+      "formal_score": null,
+      "diagnostic_only": true,
+      "assertion_denominator": 12,
+      "formal_not_tested": 12,
+      "canonical_capture_count": 12,
+      "workspace_hashes": {
+        "index.html": "d188d9d34672486e04cc8b46b9160508a9c6c6f44ea343c46d7ef9810323d143",
+        "evidence/g100-desktop-partial.png": "928bd3bda8bfacc27d174eb758b0671ccfaf739d1488b9c7dee3e5695abc2dea",
+        "evidence/g100-mobile-partial.png": "0f537e38ad974da17ea174641c3d10d38e1df60b99cd7a3396e549338381a7fb",
+        "evidence/g100-mobile-review.png": "7fb0381a99a282743a8d3bd5e073ea7f784565e48c7f85a0a7d424f5c281b694",
+        "evidence/g100-mobile-selection.png": "c6346a14ec6f459f752eea05eaa822f1a3a23f0fe38a61be9b16a04f0bd43355",
+        "evidence/keyboard-and-latest-review.json": "6e6aadc6c09018e47c7ae94ed6556b359ec818bcfdf51d5020b93a09c2ed3dab",
+        "evidence/model-checks.json": "cbcb437f0823f2f0de0bfaf5ea9bb6982ff10452a43a4e0465339290e1a432c5",
+        "evidence/partial-result.json": "98389d0e7fa622a92caa36f6fa01886099a25680f6830fd92b2b2677f23bd132",
+        "evidence/rendered-contrast.json": "5bfdee3576be1c9f174184e21c0f0185ecfbcb38f8d734fc4a1e4d4354812c89",
+        "evidence/retry-result.json": "dc06d84805fa49f7060139ff49bca12ca5a87812fedddc06da226e2413c6e770",
+        "evidence/snapshot-check.json": "c9269106b4fb728ae788cba7e5792ac5094609801bb8f871f643169800377462",
+        "evidence/verify.cjs": "85978ee94824b5482c2b168327396cce31be9f340dbf8233abf9a04d06cdaf93",
+        "evidence/white-desktop-selection.png": "6bdeec83a29f714dff7a9d5083721a1bf18dcc932c19ce1684388af514f24948",
+        "evidence/white-mobile-long-title.png": "aecac52f482f35c6bdf21debadf02d2fa21c97183e010ef31d0ef0a4c74d3b3f",
+        "evidence/white-mobile-partial.png": "23b9197d4c8683baf71abe9b5952cce22a6f236b663db6b58fa5bb647da9bbd7"
+      },
+      "response_sha256": null,
+      "reviewer_checks_sha256": "6ef9cd7fafff23d8df3da22a54e4a3cca69cb0b55bcdc84d1e0e8d6d2fc0de17"
+    },
+    {
+      "index": 4,
+      "variant": "baseline",
+      "case_id": 27,
+      "packet": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\baseline-27-packet-1",
+      "status": "awaiting_review",
+      "error": null,
+      "started_at": "2026-09-18T20:29:31.841880+00:00",
+      "finished_at": "2026-09-18T20:44:37.203604+00:00",
+      "changed_config_sections": [],
+      "duration_seconds": 905.361724,
+      "formal_score": {
+        "case_id": 27,
+        "run_key": "4647cdb7fe2637b34baec78b8076094a633ae122f4449130451ba88243f82486",
+        "verdict": "pass",
+        "assertions": {
+          "pass": 12,
+          "fail": 0,
+          "not_tested": 0,
+          "unreviewed": 0
+        },
+        "assertion_total": 12,
+        "assertion_pass_percent": 100.0,
+        "visual": {
+          "hierarchy": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Large expressive arrival establishes the learning outcome and start path; productive session puts selected part, exercise, note and action in a clear sequence."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          },
+          "layout": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Two-column editorial arrival and part-rail session reflow into readable mobile regions. Mobile agenda stacks outcome below part/duration; the compact sequence select and full narrative preserve meaning."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          },
+          "typography": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Expressive title scale gives way to fixed task typography within the same fallback family. Long title and notes wrap without crowding controls. Full mobile part-state labels remain legible."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          },
+          "color_imagery": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Original object-to-story composition explains the learning sequence. Restrained blue selection and explicit completion text, plus a blue completion region, remain coherent in both themes."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          },
+          "interaction_clarity": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Start, direct/sequential navigation, completion, resume and note review clearly retain state. Evidence feedback and full sequence explain the local choices; final-part recovery identifies unfinished work."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          }
+        },
+        "critical_findings": [],
+        "reviewer": {
+          "name": "Primary Codex reviewer",
+          "kind": "agent",
+          "method": "Source and all 12 canonical screenshot review, independent keyboard/state tests and computed paint. Known versions; not blind. No artifact edits or extra model judge."
+        },
+        "review_path": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\baseline-27-packet-1\\case-27\\review.json",
+        "review_sha256": "5d0c095f77d9678bf2666e1edc41110d5c8ec1e79eb11dad45bd415d7aa27bf1",
+        "evidence_sha256": {
+          "evidence/reviewer-checks.json": "5de330f77924423f8733dec0be79ae8023ee911a865c719785216a73c06e264c",
+          "workspace/index.html": "9d81d97650b14577a2f6bc2a7b7326fc09869e8d61ba07d69cab70a77b300952",
+          "evidence/reviewer-extras.json": "d76a2fd65511d923d582392eee444157f3dc93c2dae75391fa2cd08432a8d4a9",
+          "evidence/nontext-and-state-contrast.json": "fcfc0c3aff571bbdf8062207e3c8194e66720ee17cf8d1959914c046fa8e41ee",
+          "evidence/extra-contrast.json": "1507364db8e89e0b9f3f52f3605af0df1d3a04d8266f4d05b585b8dc189ec0c8",
+          "evidence/desktop-white-arrival.png": "859dfc6ec6b9eeaf4452170870cda584dddc1f8dc937da181b8e59ba6a51c4c5",
+          "evidence/mobile-g100-working-build-a-narrative.png": "b58dd6b565cd4823fbfeacc399f9aef21c4d4fa9561f0cbca87deeb53d1b9e91",
+          "evidence/mobile-white-complete-notes-review.png": "8e4f65c195f94eb74b58dbe3e085b36ee3c3eb296e7c8552c063724e401835c7"
+        },
+        "output_sha256": "408afd98011685e80b4c37f0f3031874e00e667d83c2309338bfaf6b7f3e6f00",
+        "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+      },
+      "diagnostic_only": false,
+      "assertion_denominator": 12,
+      "formal_not_tested": 0,
+      "canonical_capture_count": 12,
+      "workspace_hashes": {
+        "index.html": "9d81d97650b14577a2f6bc2a7b7326fc09869e8d61ba07d69cab70a77b300952",
+        "evidence/checks.json": "0f41e750ffb1e4ad678d6a360d1853dd2d18ad3cb6b8a3bb81e3e066d611e56c",
+        "evidence/desktop-g100-session.png": "fa8f457157843f3f11c9e2777092995c506eb3181a75af48ffd95e48efa81f1b",
+        "evidence/desktop-white-overview.png": "7386bc2deec622ff6b1b5380f4cba817618b8dbef5949077beda1ff0c978ff9a",
+        "evidence/desktop-white-session.png": "61ddf535be875382c30a3d6c497ec81b361876668b8084e0f2bbf858fba7eeb8",
+        "evidence/mobile-g100-agenda.png": "8920d642a9dcacce5e578afcda93efeb490958ae3c21ea49242aa9eefec7ef90",
+        "evidence/mobile-g100-completion.png": "1161c30c83fc6f8871d90ce03db1cdb6c0bebb20ace65cc8cc3676b031cdf377",
+        "evidence/mobile-g100-overview.png": "c103fda87256748ec5413714aedc9254b80f93a7ab51d3a871095fd219cdfcef",
+        "evidence/mobile-g100-session.png": "28aa7839a8ebf07fad3414205ff064baea7e8916fbfe0b7845cd60c5e8a0f157",
+        "evidence/rendered-checks.json": "473f615ba6029007e93548cef20aea833d22a8698ca663fc06a4b679338ee182",
+        "evidence/static-checks.json": "da6017966b7c0fda983930b23de96a92dab01540e0a9a0671c33c5f139931f92",
+        "evidence/verify.py": "212eba28ebe683921af6ad39d1572c316ff2fd241468d77dccc39f7947c18f9e"
+      },
+      "response_sha256": "48e3110c78cbb2ec07bb8c0d40a3d84882eebc2cd414989179ed9e2dddea7381",
+      "reviewer_checks_sha256": "5de330f77924423f8733dec0be79ae8023ee911a865c719785216a73c06e264c"
+    },
+    {
+      "index": 5,
+      "variant": "candidate",
+      "case_id": 27,
+      "packet": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\candidate-27-packet-1",
+      "status": "awaiting_review",
+      "error": null,
+      "started_at": "2026-09-18T20:45:25.155926+00:00",
+      "finished_at": "2026-09-18T21:02:42.155204+00:00",
+      "changed_config_sections": [],
+      "duration_seconds": 1036.999278,
+      "formal_score": {
+        "case_id": 27,
+        "run_key": "377e9c10aa7ad012d6bbdd8fa596d0ec95b6959ff1c20205af0de130faa2b64b",
+        "verdict": "pass",
+        "assertions": {
+          "pass": 12,
+          "fail": 0,
+          "not_tested": 0,
+          "unreviewed": 0
+        },
+        "assertion_total": 12,
+        "assertion_pass_percent": 100.0,
+        "visual": {
+          "hierarchy": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Expressive main title and smaller full subtitle establish the outcome and start path; the working region gives the current part, exercise, note and action a coherent order."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          },
+          "layout": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Sixteen-column editorial arrival and part-rail session reflow into readable mobile regions. Mobile agenda retains three readable columns; the long closed select clips but native options and the full narrative preserve the selected meaning."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          },
+          "typography": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Expressive title scale gives way to fixed task typography within the same fallback family. Long title and notes wrap without crowding controls. Full mobile part-state labels remain legible."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          },
+          "color_imagery": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Original object-to-story composition explains the learning sequence. Restrained blue selection and explicit completion text, plus a green completion region, remain coherent in both themes."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          },
+          "interaction_clarity": {
+            "score": 4,
+            "evidence": [
+              {
+                "path": "evidence/desktop-white-arrival.png",
+                "observation": "Start, direct/sequential navigation, completion, resume and note review clearly retain state. Evidence feedback and full sequence explain the local choices; final-part recovery identifies unfinished work."
+              },
+              {
+                "path": "evidence/mobile-g100-working-build-a-narrative.png",
+                "observation": "Mobile working state inspected with all other canonical screenshots."
+              },
+              {
+                "path": "evidence/mobile-white-complete-notes-review.png",
+                "observation": "Completed note review remains readable and navigable."
+              }
+            ]
+          }
+        },
+        "critical_findings": [],
+        "reviewer": {
+          "name": "Primary Codex reviewer",
+          "kind": "agent",
+          "method": "Source and all 12 canonical screenshot review, independent keyboard/state tests and computed paint. Known versions; not blind. No artifact edits or extra model judge."
+        },
+        "review_path": "C:\\Users\\JP\\Documents\\Codex\\2026-09-15\\ibm-design-language-plugin-ibm-design\\work\\revision-1.1.5\\composition-comparison-v1.2\\candidate-27-packet-1\\case-27\\review.json",
+        "review_sha256": "49a9eaf2afde2fdee116b923b6e2fc78aea4773f8425285d97808c06f504c23c",
+        "evidence_sha256": {
+          "evidence/reviewer-checks.json": "5fe98cc00d43903009754ea7154cb3d7f5e2a81112ba61b097a09b723d631d8a",
+          "workspace/index.html": "65be8a35a409cc62f9eb398780dcdae08824214ac8e083d55b5527341057f535",
+          "evidence/reviewer-extras.json": "5fb98c62873c9060f9ebb6033cf5d28b7547e083922ecc8175a74e37704906b4",
+          "evidence/nontext-and-state-contrast.json": "43290eedf8edc7b451ef1f28fadfd804b4563795832e0dd4972ea19c751b00fa",
+          "evidence/extra-contrast.json": "4223d116c19a75c47d9ad14e19edda571e4fbee5894f7b2b6a000a88c4db3b1f",
+          "evidence/desktop-white-arrival.png": "f65e672aae7f7835196bb01235fc91a45bcf7859432643e312f71af93de84974",
+          "evidence/mobile-g100-working-build-a-narrative.png": "106fbfba1f44d398889df39c2523ae72e9081449ffeb57a450cab2d655d7b6dd",
+          "evidence/mobile-white-complete-notes-review.png": "f51d165562a014d56f091c307628ac0f7214f9963f9f89a348ed54c5227dccb1"
+        },
+        "output_sha256": "26e7049b46d1ed7150c8858c5aaf4218021629d9b1b4d51ccb4db6e1319399bf",
+        "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+      },
+      "diagnostic_only": false,
+      "assertion_denominator": 12,
+      "formal_not_tested": 0,
+      "canonical_capture_count": 12,
+      "workspace_hashes": {
+        "index.html": "65be8a35a409cc62f9eb398780dcdae08824214ac8e083d55b5527341057f535",
+        "evidence/check_source.py": "68b39f9f1d0e74aeb4cf6ccbb8840f571aa5d1659bd14da4afb23c917083962b",
+        "evidence/checks.json": "bb6f4abcfd6b7a8fde07065876b007877ecce4dadd9cc6fc95f7b972cef8741e",
+        "evidence/g100-desktop.png": "b6a487760feb1ec7ccd47efcde62e1b41d746a0fd7d73dfec913bccbb003a945",
+        "evidence/g100-mobile-agenda.png": "c4c95f0af530fae8a105eff120bbaffb8427d765d973f3135a9a2385874232d9",
+        "evidence/g100-mobile.png": "1758bf78d75227867fc2a88804bf6004a0c2db1ee69ad03be3e58fa9e24344d9",
+        "evidence/g100-session-desktop.png": "7481d0619c950412c2ba586ce97a1d5a58b9615ada44bc7633f854f0786a4536",
+        "evidence/keyboard.json": "f3ffd44cb9da08a95d2ac93683de8b19a5f98bfcc63ecec02cc5ccaacb293190",
+        "evidence/rendered-checks.json": "75ec165d9e752c3655e3d4e949ff2ed46c1a0622f40c0eeb92ae170c5b128535",
+        "evidence/source-checks.json": "99c17149f44cb1de6cdeabc7bb9c86e1165ef6f5810efe924787f7e8753acfe5",
+        "evidence/white-completion.png": "307b4d58f2ce0028bd2b5d48b9053c0bad2c21d9621c31c00f776202fdd84334",
+        "evidence/white-desktop.png": "ad989d2b89a60819a285fc77e12808e9450aaf13b56ec131998097e52183647c",
+        "evidence/white-mobile.png": "e423cd7881fa6e3730e1fdac5ad4769413f163d5c820df94fca7ffc88420f353",
+        "evidence/white-session-desktop.png": "d41b9b0f87946cd33a3fd27b9c4964101a419a8899709fdac50eeb6c8eba67bc",
+        "evidence/white-session-mobile.png": "35800018e29af3f7c79dc3c84806b922ac3d11c33a57c5f92178cd0068961476"
+      },
+      "response_sha256": "2180d673cce318b6873911524ecd3cc15902b29fba0b0fb75a16ba35c82e672d",
+      "reviewer_checks_sha256": "5fe98cc00d43903009754ea7154cb3d7f5e2a81112ba61b097a09b723d631d8a"
+    }
+  ],
+  "pairs": [
+    {
+      "case_id": 25,
+      "outcome": "tie",
+      "visual_delta": {
+        "hierarchy": 0,
+        "layout": 0,
+        "typography": 0,
+        "color_imagery": 0,
+        "interaction_clarity": 0
+      }
+    },
+    {
+      "case_id": 26,
+      "outcome": "incomplete",
+      "visual_delta": null
+    },
+    {
+      "case_id": 27,
+      "outcome": "tie",
+      "visual_delta": {
+        "hierarchy": 0,
+        "layout": 0,
+        "typography": 0,
+        "color_imagery": 0,
+        "interaction_clarity": 0
+      }
+    }
+  ],
+  "model_runs_this_approval": 6,
+  "historical_attempt_total": 14,
+  "additional_model_judges": 0,
+  "automatic_retries": 0,
+  "canonical_captures": 72,
+  "scope": "No installation, commit, push or publication. Known-version primary-agent review, not blind.",
+  "config_change": "model_reasoning_summary=concise added during candidate25; user authorized the remaining four. No further observed changes.",
+  "failure": "baseline26 exited after usage-limit error during automatic approval review; no final response. Diagnostic checks do not confer a formal pass."
+}

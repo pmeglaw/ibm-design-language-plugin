@@ -1,0 +1,717 @@
+{
+  "skill_name": "ibm-design-language",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build me an index page for managing API keys in our admin console. There are a few hundred keys, each with a name, owner, scopes, created date, last used, and status (active/expired/revoked). Users need to find keys, revoke several at once, and create new ones. Single HTML file, Carbon look; inline JS is fine for demonstrating selection and states. Include a concise decision log in an HTML comment explaining the create-flow container and table density choices. Save the working HTML and decision log before optional broad checks. Prioritize completing the requested deliverable and required final JSON within the disclosed time budget; report any unperformed checks accurately.",
+      "expected_output": "A self-contained productive Carbon HTML prototype with coherent token-based styling, one page-level New key action, working selection and batch revoke, pagination, and distinguishable status. No-data replaces the table including headers/footer while useful surrounding actions remain; no-results preserves search context. Include applicable loading/error states and a short container/density rationale. Verify implemented behavior and actual contrast pairs.",
+      "assertions": [
+        {
+          "id": "case-01-a01",
+          "criterion": "Output is a single self-contained HTML file with embedded CSS and (optionally) inline JS — no external CSS/JS frameworks; a Google Fonts import is acceptable"
+        },
+        {
+          "id": "case-01-a02",
+          "criterion": "Productive UI surfaces follow square component anatomy while documented component-specific exceptions are preserved"
+        },
+        {
+          "id": "case-01-a03",
+          "criterion": "Exactly one primary button on the page (the header's 'New key'); a create dialog's own Create button is the only other primary allowed, and only inside that dialog"
+        },
+        {
+          "id": "case-01-a04",
+          "criterion": "Data table rows are multi-selectable and selection drives a batch action bar that includes Revoke and shows the selected count"
+        },
+        {
+          "id": "case-01-a05",
+          "criterion": "Status column uses two signals — an icon/shape plus a text label, never color alone"
+        },
+        {
+          "id": "case-01-a06",
+          "criterion": "No-data replaces the table including headers/footer; no-results preserves search/filter context; loading and error have appropriate feedback or recovery"
+        },
+        {
+          "id": "case-01-a07",
+          "criterion": "Pagination is present for the few-hundred-row table"
+        },
+        {
+          "id": "case-01-a08",
+          "criterion": "A Carbon token layer (CSS custom properties) and IBM Plex font stack are used, and product CSS references tokens rather than raw hex"
+        },
+        {
+          "id": "case-01-a09",
+          "criterion": "Uses the optional standalone styling foundation coherently or explains an appropriate alternative; does not claim the CSS supplies interactive behavior"
+        },
+        {
+          "id": "case-01-a10",
+          "criterion": "A decision log exists explaining the create-flow container choice and the density choice"
+        }
+      ],
+      "notes": "",
+      "kind": "artifact",
+      "visual_dimensions": [
+        "hierarchy",
+        "layout",
+        "typography",
+        "color_imagery",
+        "interaction_clarity"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here's a screen from our tool. Tell me what's off about it and what you'd change: a dashboard with six KPI tiles all the same size and color, each with a drop shadow and rounded corners, three blue buttons in the header ('Export', 'Refresh', 'Create report'), a pie chart with a legend of nine categories, centered paragraph text under each tile explaining the metric, and everything animates on hover.",
+      "expected_output": "A description-grounded critique prioritizing action hierarchy and scanability, suitable typography and charts, appropriate component surfaces, and motion that contributes useful feedback. Gives concrete corrections and preserves what works; distinguishes observations from hypotheses and local preferences.",
+      "assertions": [
+        {
+          "id": "case-02-a01",
+          "criterion": "Identifies three same-styled header buttons as competing primaries and prescribes keeping exactly one primary"
+        },
+        {
+          "id": "case-02-a02",
+          "criterion": "Flags rounded corners and drop shadows as off-system for Carbon (flat, square surfaces)"
+        },
+        {
+          "id": "case-02-a03",
+          "criterion": "Flags centered paragraph text — Carbon type is flush left"
+        },
+        {
+          "id": "case-02-a04",
+          "criterion": "Recommends replacing or reworking the nine-category pie chart (bar chart, direct labels, or fewer categories)"
+        },
+        {
+          "id": "case-02-a05",
+          "criterion": "Flags excessive animate-everything treatment without claiming frequent or keyboard interactions can never use productive motion"
+        },
+        {
+          "id": "case-02-a06",
+          "criterion": "Findings are ordered hierarchy-first (hierarchy/actions before color, depth, and polish notes)"
+        },
+        {
+          "id": "case-02-a07",
+          "criterion": "Each finding names the principle behind it and gives a concrete fix (no preference-only notes)"
+        },
+        {
+          "id": "case-02-a08",
+          "criterion": "Ends with what's working and/or names the single most valuable change"
+        }
+      ],
+      "notes": "Mostly floor checks: a baseline without the skill passes most of these on general design sense. Keep for regression; don't read as skill value.",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 3,
+      "prompt": "We need a flow for creating a new deployment environment. It has four sections: basics (name, region), networking (VPC, subnets — the user picks from a live list), access (roles and users), and review. Some fields depend on earlier choices. What container should this use in Carbon and how should validation and exit work?",
+      "expected_output": "Reasons through inline/modal/side panel/narrow tearsheet/wide tearsheet/full page and lands on a wide tearsheet with a progress rail (or defends an alternative with evidence); single-column steps; validate on blur with Next gated per step and errors marked on the rail; no close X, Cancel to exit, warning on discarding input; Next becomes Create on the last step; submitting state then navigate or success banner; error notification preserving the form. Notes that Create flows is a community pattern.",
+      "assertions": [
+        {
+          "id": "case-03-a01",
+          "criterion": "Reasons across the container options (modal, side panel, tearsheet narrow/wide, full page) rather than asserting one"
+        },
+        {
+          "id": "case-03-a02",
+          "criterion": "Lands on a wide tearsheet with a progress/step rail, or explicitly defends an alternative against it"
+        },
+        {
+          "id": "case-03-a03",
+          "criterion": "Specifies single-column layout within each step"
+        },
+        {
+          "id": "case-03-a04",
+          "criterion": "Validation on blur with Next gated per step, and step errors marked on the progress rail"
+        },
+        {
+          "id": "case-03-a05",
+          "criterion": "Exit behavior: no close X, Cancel to exit, warning before discarding entered input"
+        },
+        {
+          "id": "case-03-a06",
+          "criterion": "Last step's Next becomes Create; a submitting state is described; on error the form is preserved (error notification), on success navigate or success banner"
+        },
+        {
+          "id": "case-03-a07",
+          "criterion": "Notes that Create flows is a community pattern (not core Carbon)"
+        },
+        {
+          "id": "case-03-a08",
+          "criterion": "Dependent fields: downstream controls are disabled (not hidden) with the reason stated outside the control, and an upstream change that invalidates a downstream selection clears it and says so"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 4,
+      "prompt": "Give me the CSS for a status legend in our light-theme ops console: five states — healthy, warning, critical, in progress, not started. Each state is a 16px dot with a text label, and the legend also appears as a column in a data table with row hover on. Use Carbon's own support tokens.",
+      "expected_output": "Rejects color-alone dots: adds a distinct shape or symbol per state (and notes that a constant shape needs a symbol/texture to compensate). Uses Carbon's semantic tokens for fills but explicitly does NOT use $support-warning (yellow 30) or green 50 for the drawn marks, because they fail 3:1 on the hovered row surface (layer-hover-01 #e8e8e8); substitutes yellow 60 / green 60 (or explains the fill-vs-mark split). In progress = blue 70, not started = gray 60, critical = red 60. Shape indicators get outlines. Marks are checked with the contrast script against white, layer-01 and the hover surface, and the output says so.",
+      "assertions": [
+        {
+          "id": "case-04-a01",
+          "criterion": "Refuses to distinguish states by color alone — each state gets a shape or symbol in addition to color"
+        },
+        {
+          "id": "case-04-a02",
+          "criterion": "Explicitly avoids yellow 30 (#f1c21b, $support-warning) as a drawn mark and substitutes a darker yellow grade (60, or 50 with a stated no-hover caveat)"
+        },
+        {
+          "id": "case-04-a03",
+          "criterion": "Explicitly avoids green 50 (#24a148, $support-success) as a drawn mark on hoverable rows and substitutes green 60, citing the hover surface"
+        },
+        {
+          "id": "case-04-a04",
+          "criterion": "Names layer-hover-01 (#e8e8e8) as the surface the marks must be checked against, not white"
+        },
+        {
+          "id": "case-04-a05",
+          "criterion": "Uses gray 60 for 'not started' and blue 70 (info/in-progress) for 'in progress'"
+        },
+        {
+          "id": "case-04-a06",
+          "criterion": "States that the palette was checked with scripts/check_contrast.py (or shows its output) rather than asserting the pairs pass"
+        },
+        {
+          "id": "case-04-a07",
+          "criterion": "Shape indicators are legible without relying on a light fill: either every mark is filled with the accessible grade (yellow 60 / green 60 / orange 60, ≥3:1 on layer-hover-01) and has a distinct shape per state, or light fills (yellow 30, orange 40, green 50) carry an outline of at least 1px at 16px — a hairline edge on a light fill fails; icon indicators need neither"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 5,
+      "prompt": "In our billing settings page, users on the free plan can see the 'Invoice email' and 'Tax ID' fields but can't edit them until they upgrade. The engineer just set both fields to disabled. Is that right? Recommend how to preserve these visible, readable values and explain the upgrade route. Compare native disabled, aria-disabled, readonly, and static labeled content: cover visibility, accessibility semantics, focus and activation behavior, and appropriate use for a temporary prerequisite.",
+      "expected_output": "Prefer readable read-only controls or static labeled values with an external plan explanation and upgrade route. Distinguish native disabled, ARIA disabled, and hidden content accurately; do not claim all disabled controls disappear from screen-reader navigation or necessarily fail contrast. Focusability follows the actual element and widget contract.",
+      "assertions": [
+        {
+          "id": "case-05-a01",
+          "criterion": "Preserves readable Invoice email and Tax ID values using supported read-only controls or static labeled content"
+        },
+        {
+          "id": "case-05-a02",
+          "criterion": "Explains disabled is not hidden, does not universally claim it is unannounced, distinguishes native disabled from ARIA disabled, and keeps read-only values legible"
+        },
+        {
+          "id": "case-05-a03",
+          "criterion": "Rejects hiding the fields, because the user is permitted to know they exist"
+        },
+        {
+          "id": "case-05-a04",
+          "criterion": "Specifies that the reason/upgrade path is explained outside the control (inline text, helper text, or a callout), not inside it"
+        },
+        {
+          "id": "case-05-a05",
+          "criterion": "Describes a temporary prerequisite as a suitable disabled-state use and explains that ARIA disabled alone does not suppress activation"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 6,
+      "prompt": "Design the hero section for our product's public landing page — headline, one-paragraph subhead, a primary CTA, and a product screenshot. Carbon/IBM look. Single HTML file with CSS.",
+      "expected_output": "A self-contained expressive IBM/Carbon hero with deliberate responsive type, clear primary CTA, purposeful screenshot treatment, coherent grid/spacing and legibility. Uses approved expressive composition rather than automatically adding product shell chrome. Productive controls retain appropriate anatomy. Reports implemented and unverified behavior accurately.",
+      "assertions": [
+        {
+          "id": "case-06-a01",
+          "criterion": "Identifies the surface as expressive (marketing/landing) rather than productive, explicitly or by choices"
+        },
+        {
+          "id": "case-06-a02",
+          "criterion": "Headline uses the fluid/expressive type scale with sizes that change at breakpoints (media queries or clamp) and a Light (300) weight at the largest sizes"
+        },
+        {
+          "id": "case-06-a03",
+          "criterion": "Headline and body are flush left, sentence case; nothing longer than two lines is centered"
+        },
+        {
+          "id": "case-06-a04",
+          "criterion": "Exactly one primary CTA in Blue 60; any secondary link is tertiary or ghost"
+        },
+        {
+          "id": "case-06-a05",
+          "criterion": "Controls follow appropriate component anatomy; expressive imagery and surfaces use justified IBM or product guidance rather than a universal zero-radius or no-imagery rule"
+        },
+        {
+          "id": "case-06-a06",
+          "criterion": "Grid geometry uses the mini unit; component spacing may use finer Carbon tokens; full-width composition is deliberate and responsive"
+        },
+        {
+          "id": "case-06-a07",
+          "criterion": "Does not import productive-density patterns (data tables, 32px compact controls) into the hero"
+        },
+        {
+          "id": "case-06-a08",
+          "criterion": "Uses a masthead appropriate to a public page and a clear semantic primary; expressive imagery/color follows applicable guidance without automatically importing a product shell"
+        }
+      ],
+      "notes": "Requires rendered evidence for visual scores. This remains a small hero task rather than proof of broad expressive-design expertise.",
+      "kind": "artifact",
+      "visual_dimensions": [
+        "hierarchy",
+        "layout",
+        "typography",
+        "color_imagery",
+        "interaction_clarity"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Product wants a 'Quick add user' modal on the Users page with: first name, last name, email, role dropdown, team dropdown, send-invite toggle, and a free-text notes field. Please give me the modal spec with all seven fields.",
+      "expected_output": "Pushes back on the brief before speccing: seven inputs exceeds Carbon's modal limit (fewer than five inputs, never more than four fields or any scrolling). Reframes: either cut to the minimum for 'quick add' (email + role, maybe name) and keep the modal, or move the full seven-field form to a side panel (more than five inputs; the Users list behind it is useful context). Recommends one of the two with reasoning, notes what's optional and marks the minority, buttons at the bottom named for the result ('Add user' / 'Send invite', not 'Submit'), and notes the modal must not nest a confirmation. Records the deviation from the brief in a one-paragraph decision log.",
+      "assertions": [
+        {
+          "id": "case-07-a01",
+          "criterion": "Does not simply deliver a seven-field modal; explicitly states the modal field limit (fewer than five / never more than four with scrolling) and that the brief violates it"
+        },
+        {
+          "id": "case-07-a02",
+          "criterion": "Offers a reframe: reduce the fields to keep the modal, or move the form to a side panel (or tearsheet) — and recommends one with reasons"
+        },
+        {
+          "id": "case-07-a03",
+          "criterion": "If a side panel is recommended, notes that the page behind it stays useful and the panel has no close X (Cancel exits)"
+        },
+        {
+          "id": "case-07-a04",
+          "criterion": "States Carbon's modal input limit as a number (fewer than five inputs / no more than four fields, no scrolling) and counts the brief's seven against it"
+        },
+        {
+          "id": "case-07-a05",
+          "criterion": "Marks the minority of fields (required or optional) rather than both"
+        },
+        {
+          "id": "case-07-a06",
+          "criterion": "Notes that a modal must not open a nested confirmation modal"
+        },
+        {
+          "id": "case-07-a07",
+          "criterion": "Includes a short decision log recording the deviation from the brief and what evidence would reopen it"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 8,
+      "prompt": "Spec a compact toolbar with icon-only Add, Delete, Filter, and Settings actions. The draft uses 32px icons in 32px colored circles and puts aria-labels on both each button and its SVG.",
+      "expected_output": "Choose current Carbon UI icons at consistent 16px or 20px glyph sizes and appropriate component targets. Remove arbitrary colored circles, retain monochrome readable foregrounds, and name buttons without duplicate nested SVG announcements. Apply the documented component target and touch context rather than a blanket override of every compact component.",
+      "assertions": [
+        {
+          "id": "case-08-a01",
+          "criterion": "Requires exact current Carbon library icons rather than invented or approximate glyphs"
+        },
+        {
+          "id": "case-08-a02",
+          "criterion": "Keeps equivalent icons consistently 16px or 20px rather than enlarging them to 32px"
+        },
+        {
+          "id": "case-08-a03",
+          "criterion": "Uses the documented component target and an appropriate touch treatment; explains how glyph size and target size differ"
+        },
+        {
+          "id": "case-08-a04",
+          "criterion": "Requires monochrome icon foregrounds to meet 4.5:1 on every state surface"
+        },
+        {
+          "id": "case-08-a05",
+          "criterion": "Names the button and leaves its nested SVG decorative, avoiding duplicate focus or accessible names"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 9,
+      "prompt": "Use one set of IBM productive pictograms as our app navigation icons and turn one into the product logo. They can be 32px so the nav stays compact.",
+      "expected_output": "Rejects pictograms as controls and logos; selects Carbon UI icons for navigation; keeps pictograms as supporting illustration at 48px minimum with one-quarter-grid clearance, approved scaling, optical centering, and valid container/background treatment.",
+      "assertions": [
+        {
+          "id": "case-09-a01",
+          "criterion": "Explicitly rejects pictograms as navigation controls"
+        },
+        {
+          "id": "case-09-a02",
+          "criterion": "Explicitly rejects productive or expressive pictograms as product logos or lockups"
+        },
+        {
+          "id": "case-09-a03",
+          "criterion": "Substitutes current Carbon UI icons for the navigation actions"
+        },
+        {
+          "id": "case-09-a04",
+          "criterion": "States the 48px minimum when pictograms are used as illustration"
+        },
+        {
+          "id": "case-09-a05",
+          "criterion": "Requires one-quarter-grid clearance and optical centering without cropping"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 10,
+      "prompt": "Recommend Carbon-compliant motion for a data table loading 20 rows and a side panel opening and closing. A stakeholder proposes diagonal paths and 80ms row staggering to make it lively. Assess that proposal and specify the treatment you recommend, including the complete row-sequence timing, panel easing, and reduced-motion/static behavior. Carbon compliance and efficient task completion take priority over the proposed treatment.",
+      "expected_output": "Uses productive motion; rejects diagonal paths; staggers axes into rounded grid paths; keeps the complete row sequence within 500ms (about 20ms per row is the Carbon example); uses entrance for appearing and standard easing for a panel that remains nearby; provides reduced/static behavior.",
+      "assertions": [
+        {
+          "id": "case-10-a01",
+          "criterion": "Chooses productive rather than expressive motion for the task flow"
+        },
+        {
+          "id": "case-10-a02",
+          "criterion": "Rejects diagonal paths and follows organized grid-aligned choreography"
+        },
+        {
+          "id": "case-10-a03",
+          "criterion": "Keeps the complete staggered sequence within 500ms"
+        },
+        {
+          "id": "case-10-a04",
+          "criterion": "Uses standard easing when the off-canvas side panel closes but remains ready to return"
+        },
+        {
+          "id": "case-10-a05",
+          "criterion": "Includes prefers-reduced-motion and a static way to perceive state"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 11,
+      "prompt": "Make Carbon spacing tokens automatically shrink on mobile, and give each card its own margins so a responsive card list spaces itself.",
+      "expected_output": "Explains that spacing tokens are fixed; switches token steps deliberately at layout breakpoints; uses Grid or percentage widths for fluid division; moves list spacing to a parent Stack/gap; preserves whitespace between dense zones and records any off-scale exception.",
+      "assertions": [
+        {
+          "id": "case-11-a01",
+          "criterion": "States that Carbon spacing token values are not inherently responsive"
+        },
+        {
+          "id": "case-11-a02",
+          "criterion": "Uses a deliberate token-step change at a breakpoint when needed"
+        },
+        {
+          "id": "case-11-a03",
+          "criterion": "Assigns repeated spacing to a parent Stack or gap rather than child margins"
+        },
+        {
+          "id": "case-11-a04",
+          "criterion": "Allows grid or percentage sizing for fluid horizontal division"
+        },
+        {
+          "id": "case-11-a05",
+          "criterion": "Avoids off-scale values unless a demonstrated exception is recorded"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 12,
+      "prompt": "Create a custom dark Carbon theme by changing each component's colors directly. Also swap the meanings of text-primary and text-secondary in dark mode so the palette looks balanced.",
+      "expected_output": "Rejects component-by-component overrides and role swapping; starts from g90 or g100; preserves token roles while changing approved values in one theme layer; defines explicit user/system/fallback precedence; verifies nested layers, focus, hover, borders, and overlays in both themes.",
+      "assertions": [
+        {
+          "id": "case-12-a01",
+          "criterion": "Rejects direct per-component theme overrides"
+        },
+        {
+          "id": "case-12-a02",
+          "criterion": "Starts from a supplied Carbon dark theme such as g90 or g100"
+        },
+        {
+          "id": "case-12-a03",
+          "criterion": "Preserves text-primary and text-secondary roles across themes"
+        },
+        {
+          "id": "case-12-a04",
+          "criterion": "Keeps custom raw values inside one theme or semantic token layer"
+        },
+        {
+          "id": "case-12-a05",
+          "criterion": "Defines preference precedence and verifies interactive states in both themes"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 13,
+      "prompt": "Our product home has a full-width welcome banner followed by a dense configuration form. Use expressive type everywhere so the page feels premium.",
+      "expected_output": "Blends by region: an optional fluid expressive heading in the full-width outside-container banner, then productive -01 body/utility styles and fixed headings throughout the contained form. Keeps each region internally consistent and uses Carbon type-style helpers rather than raw font properties.",
+      "assertions": [
+        {
+          "id": "case-13-a01",
+          "criterion": "Allows expressive fluid type only in the full-width outside-container banner"
+        },
+        {
+          "id": "case-13-a02",
+          "criterion": "Uses productive fixed type for the dense contained form"
+        },
+        {
+          "id": "case-13-a03",
+          "criterion": "Keeps one type set internally consistent within each region or task"
+        },
+        {
+          "id": "case-13-a04",
+          "criterion": "Uses -01 body and utility styles for productive form content"
+        },
+        {
+          "id": "case-13-a05",
+          "criterion": "Uses Carbon type-style helpers instead of arbitrary font-size and weight declarations"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 14,
+      "prompt": "We are starting a generic Carbon admin product with no existing brand system. What color should the primary action use, and how should color be structured in the CSS?",
+      "expected_output": "Uses Carbon Blue 60 for the generic primary action, keeps productive surfaces gray-dominant, maps values through Carbon or product semantic roles instead of painting raw values in components, defines hover/active/focus states, and requires contrast verification on actual state surfaces.",
+      "assertions": [
+        {
+          "id": "case-14-a01",
+          "criterion": "Uses Blue 60 as the generic Carbon primary action color because no governed brand is in scope"
+        },
+        {
+          "id": "case-14-a02",
+          "criterion": "Keeps productive surfaces gray-dominant and rejects decorative accent proliferation"
+        },
+        {
+          "id": "case-14-a03",
+          "criterion": "Requires semantic role tokens rather than raw color values in component CSS"
+        },
+        {
+          "id": "case-14-a04",
+          "criterion": "Covers primary rest, hover, active, focus, disabled, and on-color text rather than only the resting fill"
+        },
+        {
+          "id": "case-14-a05",
+          "criterion": "Requires contrast checks on actual interaction-state surfaces"
+        }
+      ],
+      "notes": "",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 15,
+      "prompt": "This is Seat Planner. Please make the main buttons and selected navigation use standard IBM Blue 60 so it feels more like Carbon. The project already has approved Megeredchian Law brand tokens.",
+      "expected_output": "Rejects painted IBM blue because the explicitly in-scope governed brand overrides the generic accent. Uses the approved terracotta primary/hover/active mapping through semantic --sp-* aliases, preserves Carbon role behavior, and distinguishes an unused blue declaration in vendored CSS from a painted consumer.",
+      "assertions": [
+        {
+          "id": "case-15-a01",
+          "criterion": "Rejects IBM Blue 60 for Seat Planner painted interaction roles"
+        },
+        {
+          "id": "case-15-a02",
+          "criterion": "Uses terracotta #B85C2E with #8F4521 hover and #7A3A1C active"
+        },
+        {
+          "id": "case-15-a03",
+          "criterion": "Routes component consumption through semantic --sp-* aliases rather than raw brand values"
+        },
+        {
+          "id": "case-15-a04",
+          "criterion": "Explains that brand values override Carbon defaults without changing the semantic role or component behavior"
+        },
+        {
+          "id": "case-15-a05",
+          "criterion": "Distinguishes an unchanged or unused blue declaration in vendored Carbon CSS from an actual painted-color violation"
+        }
+      ],
+      "notes": "",
+      "context": "Evaluation-only approved Seat Planner brand fixture (not permission to inspect or edit that repository): primary terracotta #B85C2E, hover #8F4521, active #7A3A1C; semantic --sp-* aliases. Dark focus white, theme-aware interactive borders/bars apricot #E8A07A, dark tertiary neutral with white text; constant-dark header current-section bar terracotta. Draft Purple 60 light/Purple 40 dark; information uses approved terracotta/apricot; warning/error/success stay distinct. Logo orange #EB7C35 is mark-only. Changes require owner authorization. Verification includes generated contrast pairs, resolved-token/consumer checks, explicit/system light/dark states, and runtime/documentation parity.",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 16,
+      "prompt": "Audit the Seat Planner brand treatment in dark mode. The engineer kept terracotta focus rings, terracotta tertiary buttons, and terracotta navigation bars everywhere because those values work in light mode.",
+      "expected_output": "Revises the dark mapping: focus is white, interactive borders and theme-aware bars are apricot, dark tertiary hosts remain neutral with white text, while the constant-dark header current-section bar remains terracotta. Requires explicit and system dark to resolve identically and verifies focus/hover/active/selected hosts.",
+      "assertions": [
+        {
+          "id": "case-16-a01",
+          "criterion": "Requires white focus in Seat Planner dark themes while preserving the 2px inset geometry"
+        },
+        {
+          "id": "case-16-a02",
+          "criterion": "Uses apricot #E8A07A for theme-aware dark interactive borders and bars"
+        },
+        {
+          "id": "case-16-a03",
+          "criterion": "Keeps dark tertiary hosts neutral with white text rather than painting them terracotta"
+        },
+        {
+          "id": "case-16-a04",
+          "criterion": "Distinguishes the constant-dark header current-section terracotta bar from theme-aware bars"
+        },
+        {
+          "id": "case-16-a05",
+          "criterion": "Requires forced dark and system dark to resolve identically and checks rest, hover, active, selected, and focus states"
+        }
+      ],
+      "notes": "",
+      "context": "Evaluation-only approved Seat Planner brand fixture (not permission to inspect or edit that repository): primary terracotta #B85C2E, hover #8F4521, active #7A3A1C; semantic --sp-* aliases. Dark focus white, theme-aware interactive borders/bars apricot #E8A07A, dark tertiary neutral with white text; constant-dark header current-section bar terracotta. Draft Purple 60 light/Purple 40 dark; information uses approved terracotta/apricot; warning/error/success stay distinct. Logo orange #EB7C35 is mark-only. Changes require owner authorization. Verification includes generated contrast pairs, resolved-token/consumer checks, explicit/system light/dark states, and runtime/documentation parity.",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 17,
+      "prompt": "For Seat Planner, simplify the palette by making Draft, warnings, errors, success, and information all terracotta. That would keep the brand consistent. Is that the right move?",
+      "expected_output": "Rejects collapsing distinct semantics into one brand accent. Preserves warning, error, and success meanings; keeps Draft purple 60 in light and purple 40 in dark; permits the approved terracotta/apricot information mapping; and requires a second non-color signal for statuses plus contrast checks.",
+      "assertions": [
+        {
+          "id": "case-17-a01",
+          "criterion": "Rejects using one terracotta color for every semantic and product status"
+        },
+        {
+          "id": "case-17-a02",
+          "criterion": "Preserves warning, error, and success as distinct semantic roles"
+        },
+        {
+          "id": "case-17-a03",
+          "criterion": "Keeps Draft Purple 60 in light and Purple 40 in dark"
+        },
+        {
+          "id": "case-17-a04",
+          "criterion": "Uses the governed terracotta or apricot information mapping without treating it as permission to recolor every status"
+        },
+        {
+          "id": "case-17-a05",
+          "criterion": "Requires statuses to use a second signal beyond color and verifies their drawn marks on applicable surfaces"
+        }
+      ],
+      "notes": "",
+      "context": "Evaluation-only approved Seat Planner brand fixture (not permission to inspect or edit that repository): primary terracotta #B85C2E, hover #8F4521, active #7A3A1C; semantic --sp-* aliases. Dark focus white, theme-aware interactive borders/bars apricot #E8A07A, dark tertiary neutral with white text; constant-dark header current-section bar terracotta. Draft Purple 60 light/Purple 40 dark; information uses approved terracotta/apricot; warning/error/success stay distinct. Logo orange #EB7C35 is mark-only. Changes require owner authorization. Verification includes generated contrast pairs, resolved-token/consumer checks, explicit/system light/dark states, and runtime/documentation parity.",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 18,
+      "prompt": "Our logo orange is #EB7C35 and it looks brighter than the current Seat Planner buttons. Replace every primary button, focus ring, and link with that logo orange.",
+      "expected_output": "Rejects the change because logo orange is mark-only and is not an approved interaction value. Keeps approved role-specific terracotta, link, and focus mappings, states that new brand colors need owner approval, and confines raw values to the governed brand/theme layer.",
+      "assertions": [
+        {
+          "id": "case-18-a01",
+          "criterion": "States that #EB7C35 is mark-only and must not become a UI interaction color"
+        },
+        {
+          "id": "case-18-a02",
+          "criterion": "Preserves the approved role-specific primary, link, and focus mappings"
+        },
+        {
+          "id": "case-18-a03",
+          "criterion": "States that a logo or illustrative asset is not authority for a new component color"
+        },
+        {
+          "id": "case-18-a04",
+          "criterion": "Requires owner approval before introducing a new brand interaction value"
+        },
+        {
+          "id": "case-18-a05",
+          "criterion": "Keeps raw brand values in the governed token layer rather than component CSS"
+        }
+      ],
+      "notes": "",
+      "context": "Evaluation-only approved Seat Planner brand fixture (not permission to inspect or edit that repository): primary terracotta #B85C2E, hover #8F4521, active #7A3A1C; semantic --sp-* aliases. Dark focus white, theme-aware interactive borders/bars apricot #E8A07A, dark tertiary neutral with white text; constant-dark header current-section bar terracotta. Draft Purple 60 light/Purple 40 dark; information uses approved terracotta/apricot; warning/error/success stay distinct. Logo orange #EB7C35 is mark-only. Changes require owner authorization. Verification includes generated contrast pairs, resolved-token/consumer checks, explicit/system light/dark states, and runtime/documentation parity.",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 19,
+      "prompt": "We changed several Seat Planner brand tokens. I searched the repository for 0f62fe and found it only in the vendored Carbon palette, so can I call the color work verified?",
+      "expected_output": "Says no: text search is triage, not proof. Requires the product contrast-pair generator and checker, resolved-token tests, inspection of painted selectors/consumers, forced light/dark and system light/dark browser states, and preservation of runtime/documentation component-sheet parity. Separates automated from rendered evidence.",
+      "assertions": [
+        {
+          "id": "case-19-a01",
+          "criterion": "Rejects repository text search as sufficient verification"
+        },
+        {
+          "id": "case-19-a02",
+          "criterion": "Requires generated product contrast pairs and scripts/check_contrast.py rather than only the generic preset"
+        },
+        {
+          "id": "case-19-a03",
+          "criterion": "Requires resolved-token tests and inspection of selectors that actually consume the aliases"
+        },
+        {
+          "id": "case-19-a04",
+          "criterion": "Requires forced light, forced dark, system light, and system dark plus interaction-state verification"
+        },
+        {
+          "id": "case-19-a05",
+          "criterion": "Requires runtime and documentation component-sheet parity and reports automated evidence separately from browser evidence"
+        }
+      ],
+      "notes": "",
+      "context": "Evaluation-only approved Seat Planner brand fixture (not permission to inspect or edit that repository): primary terracotta #B85C2E, hover #8F4521, active #7A3A1C; semantic --sp-* aliases. Dark focus white, theme-aware interactive borders/bars apricot #E8A07A, dark tertiary neutral with white text; constant-dark header current-section bar terracotta. Draft Purple 60 light/Purple 40 dark; information uses approved terracotta/apricot; warning/error/success stay distinct. Logo orange #EB7C35 is mark-only. Changes require owner authorization. Verification includes generated contrast pairs, resolved-token/consumer checks, explicit/system light/dark states, and runtime/documentation parity.",
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 20,
+      "kind": "guidance",
+      "prompt": "Our React app already uses supported @carbon/react components and theme APIs. Should I also copy the skill CSS into it for every new feature? Explain the implementation choice, the fallback scope, and what still needs verification.",
+      "expected_output": "Prefer the existing installed component/theme system. Limit the optional CSS to appropriate standalone prototypes; explain its two-theme and no-JavaScript boundaries. Verify actual behavior and installed-version APIs.",
+      "visual_dimensions": [],
+      "assertions": [
+        {
+          "id": "case-20-a1",
+          "criterion": "Prefers the existing installed Carbon components and theme APIs"
+        },
+        {
+          "id": "case-20-a2",
+          "criterion": "Does not inject the standalone CSS alongside native Carbon styles"
+        },
+        {
+          "id": "case-20-a3",
+          "criterion": "Identifies White/Gray 100 and missing interaction implementation as fallback limits"
+        },
+        {
+          "id": "case-20-a4",
+          "criterion": "Distinguishes source/API inspection from rendered behavior verification"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "kind": "guidance",
+      "prompt": "The search input has a magnifier and placeholder but no accessible name. A reviewer says search must never have a label. Another wants every menu to open on mousedown and every keyboard interaction to lose its animation. How should we correct this?",
+      "expected_output": "Distinguish accessible naming from a visible label; use supported component APIs and native activation; retain efficient productive microinteractions with reduced-motion support.",
+      "visual_dimensions": [],
+      "assertions": [
+        {
+          "id": "case-21-a1",
+          "criterion": "Requires an accessible name for search even if its visible label is omitted"
+        },
+        {
+          "id": "case-21-a2",
+          "criterion": "Does not treat the placeholder or magnifier as a sufficient accessible name"
+        },
+        {
+          "id": "case-21-a3",
+          "criterion": "Rejects blanket pointer-only mousedown activation and preserves the widget keyboard contract"
+        },
+        {
+          "id": "case-21-a4",
+          "criterion": "Permits useful productive motion for keyboard/frequent actions while honoring reduced motion"
+        }
+      ]
+    }
+  ],
+  "summary": "19 evals, 113 assertions. The original thirteen cover build, critique, accessibility, composition, icons, pictograms, motion, spacing, themes, and typography; evals 14-19 add generic-versus-governed color authority, Seat Planner interaction roles, dark-theme mappings, status semantics, logo-color boundaries, and resolved-color verification.",
+  "schema_version": 2,
+  "description": "Evidence-graded regression cases; model execution and review are separate. No current skill performance score is implied."
+}

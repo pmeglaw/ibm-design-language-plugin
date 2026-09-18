@@ -1,0 +1,634 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-15",
+  "purpose": "Source routing and honest coverage; category indexing is not implementation verification.",
+  "authority_order": [
+    "User task and approved project scope",
+    "Applicable accessibility and component contracts",
+    "Installed package API/version",
+    "Approved semantic brand mappings",
+    "Version-qualified official guidance",
+    "Explicitly labeled local heuristics"
+  ],
+  "sources": [
+    {
+      "id": "ibm-philosophy",
+      "url": "https://www.ibm.com/design/language/philosophy/principles/",
+      "sections": [
+        "Point of view",
+        "Principles"
+      ],
+      "local_refs": [
+        "references/senior-workflow.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Four official principles identified in audit; detailed local decision examples remain to be added."
+    },
+    {
+      "id": "ibm-gallery",
+      "url": "https://www.ibm.com/design/language/",
+      "sections": [
+        "Gallery"
+      ],
+      "local_refs": [],
+      "coverage": "missing",
+      "review_status": "navigation-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Official IBM gallery exemplars are not bundled or audited. A separate author-created composition casebook is available; it does not increase official gallery source coverage."
+    },
+    {
+      "id": "typography",
+      "url": "https://www.ibm.com/design/language/typography/typeface/",
+      "sections": [
+        "Typeface",
+        "Basics",
+        "Scale"
+      ],
+      "local_refs": [
+        "references/typeface.md",
+        "references/typeface-coverage.md",
+        "references/typography.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "API behavior must be checked against the target installed version."
+    },
+    {
+      "id": "ibm-logos",
+      "url": "https://www.ibm.com/design/language/",
+      "sections": [
+        "8-bar",
+        "Rebus"
+      ],
+      "local_refs": [],
+      "coverage": "missing",
+      "review_status": "navigation-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Follow official navigation; no dedicated local logo playbook."
+    },
+    {
+      "id": "ibm-illustration",
+      "url": "https://www.ibm.com/design/language/illustration/overview/",
+      "sections": [
+        "Overview",
+        "Techniques",
+        "Line",
+        "Flat",
+        "Isometric",
+        "Hybrid UI",
+        "People"
+      ],
+      "local_refs": [],
+      "coverage": "missing",
+      "review_status": "overview-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Detailed branch guidance and examples not locally covered."
+    },
+    {
+      "id": "ibm-photography",
+      "url": "https://www.ibm.com/design/language/",
+      "sections": [
+        "Overview",
+        "Techniques"
+      ],
+      "local_refs": [],
+      "coverage": "missing",
+      "review_status": "navigation-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Dedicated photography guidance remains open."
+    },
+    {
+      "id": "ibm-app-icons",
+      "url": "https://www.ibm.com/design/language/",
+      "sections": [
+        "Iconography",
+        "App icons"
+      ],
+      "local_refs": [
+        "references/icons-and-pictograms.md"
+      ],
+      "coverage": "partial",
+      "review_status": "navigation-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "UI icons/pictograms covered; app-icon design needs a dedicated guide."
+    },
+    {
+      "id": "ibm-layout",
+      "url": "https://www.ibm.com/design/language/layout/overview/",
+      "sections": [
+        "Overview",
+        "Techniques"
+      ],
+      "local_refs": [
+        "references/composition.md",
+        "references/taste.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Product composition is stronger than expressive layout coverage."
+    },
+    {
+      "id": "ibm-animation",
+      "url": "https://www.ibm.com/design/language/",
+      "sections": [
+        "Overview",
+        "Classic principles",
+        "Techniques"
+      ],
+      "local_refs": [
+        "references/motion.md"
+      ],
+      "coverage": "partial",
+      "review_status": "navigation-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Interface motion guidance does not cover the complete creative-animation practice."
+    },
+    {
+      "id": "ibm-infographics",
+      "url": "https://www.ibm.com/design/language/",
+      "sections": [
+        "Technical diagrams",
+        "Infograms"
+      ],
+      "local_refs": [
+        "references/status-and-dataviz.md"
+      ],
+      "coverage": "partial",
+      "review_status": "navigation-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Technical diagrams condensed; infograms not locally covered."
+    },
+    {
+      "id": "ibm-dataviz",
+      "url": "https://www.ibm.com/design/language/",
+      "sections": [
+        "Overview",
+        "Charts",
+        "Design"
+      ],
+      "local_refs": [
+        "references/status-and-dataviz.md"
+      ],
+      "coverage": "partial",
+      "review_status": "navigation-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "No complete chart selection/API catalog."
+    },
+    {
+      "id": "2x-grid",
+      "url": "https://preview.carbondesignsystem.com/building-blocks/foundations/2x-grid/overview",
+      "sections": [
+        "Overview",
+        "Guidelines",
+        "Code"
+      ],
+      "local_refs": [
+        "references/2x-grid.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Local Guidelines renamed from Usage; some source headings condensed; no visual assets bundled."
+    },
+    {
+      "id": "carbon-color",
+      "url": "https://carbondesignsystem.com/elements/color/overview/",
+      "sections": [
+        "Overview",
+        "Guidance",
+        "Code"
+      ],
+      "local_refs": [
+        "references/tokens.md",
+        "references/color-and-brand.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "local-reference-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Routes require live confirmation when used; detailed historical reference content was not fully revalidated by this correction pass."
+    },
+    {
+      "id": "carbon-icons",
+      "url": "https://carbondesignsystem.com/elements/icons/overview/",
+      "sections": [
+        "Overview",
+        "Guidance",
+        "Code"
+      ],
+      "local_refs": [
+        "references/icons-and-pictograms.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "local-reference-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Routes require live confirmation when used; detailed historical reference content was not fully revalidated by this correction pass."
+    },
+    {
+      "id": "carbon-pictograms",
+      "url": "https://carbondesignsystem.com/elements/pictograms/overview/",
+      "sections": [
+        "Overview",
+        "Guidance",
+        "Code"
+      ],
+      "local_refs": [
+        "references/icons-and-pictograms.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "local-reference-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Routes require live confirmation when used; detailed historical reference content was not fully revalidated by this correction pass."
+    },
+    {
+      "id": "carbon-motion",
+      "url": "https://carbondesignsystem.com/elements/motion/overview/",
+      "sections": [
+        "Overview",
+        "Guidance",
+        "Code"
+      ],
+      "local_refs": [
+        "references/motion.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "local-reference-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Routes require live confirmation when used; detailed historical reference content was not fully revalidated by this correction pass."
+    },
+    {
+      "id": "carbon-spacing",
+      "url": "https://carbondesignsystem.com/elements/spacing/overview/",
+      "sections": [
+        "Overview",
+        "Guidance",
+        "Code"
+      ],
+      "local_refs": [
+        "references/spacing.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "local-reference-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Routes require live confirmation when used; detailed historical reference content was not fully revalidated by this correction pass."
+    },
+    {
+      "id": "carbon-themes",
+      "url": "https://carbondesignsystem.com/elements/themes/overview/",
+      "sections": [
+        "Overview",
+        "Guidance",
+        "Code"
+      ],
+      "local_refs": [
+        "references/themes.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "local-reference-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Routes require live confirmation when used; detailed historical reference content was not fully revalidated by this correction pass."
+    },
+    {
+      "id": "carbon-typography",
+      "url": "https://carbondesignsystem.com/elements/typography/overview/",
+      "sections": [
+        "Overview",
+        "Guidance",
+        "Code"
+      ],
+      "local_refs": [
+        "references/typography.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "local-reference-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Routes require live confirmation when used; detailed historical reference content was not fully revalidated by this correction pass."
+    },
+    {
+      "id": "accessibility",
+      "url": "https://preview.carbondesignsystem.com/building-blocks/core/components/search/accessibility",
+      "sections": [
+        "Accessible names",
+        "Control states",
+        "Keyboard",
+        "Evidence"
+      ],
+      "local_refs": [
+        "references/accessibility.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Search and state semantics corrected; no application browser/assistive-technology benchmark run."
+    },
+    {
+      "id": "aria-disabled",
+      "url": "https://www.w3.org/TR/wai-aria-1.2/#aria-disabled",
+      "sections": [
+        "Disabled state"
+      ],
+      "local_refs": [
+        "references/accessibility.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Browser/AT behavior remains implementation-specific."
+    },
+    {
+      "id": "content",
+      "url": "https://preview.carbondesignsystem.com/building-blocks/foundations/content",
+      "sections": [
+        "Content guidance"
+      ],
+      "local_refs": [
+        "references/patterns.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Action/error copy snippets only; broader writing playbook remains open."
+    },
+    {
+      "id": "carbon-for-ai",
+      "url": "https://preview.carbondesignsystem.com/building-blocks/foundations/carbon-for-ai",
+      "sections": [
+        "AI styling",
+        "Label",
+        "Explainability",
+        "Chat",
+        "Components",
+        "Accessibility"
+      ],
+      "local_refs": [
+        "references/carbon-next.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "No working AI interaction benchmark."
+    },
+    {
+      "id": "core-components",
+      "url": "https://preview.carbondesignsystem.com/building-blocks/core/components/overview/components",
+      "sections": [
+        "41 overview categories",
+        "Two additional UI-shell panel entries",
+        "Guideline subsection index"
+      ],
+      "local_refs": [
+        "references/components-preview.md",
+        "references/components-preview-index.md",
+        "references/components-preview-coverage.md",
+        "references/ui-shell.md"
+      ],
+      "coverage": "indexed",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "43 entries and nested headings; not every tab or Storybook interaction validated."
+    },
+    {
+      "id": "universal-patterns",
+      "url": "https://carbondesignsystem.com/patterns/overview/",
+      "sections": [
+        "14 pattern categories"
+      ],
+      "local_refs": [
+        "references/patterns.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "indexed",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Coverage depth varies; read-only pattern source unavailable during audit."
+    },
+    {
+      "id": "empty-states",
+      "url": "https://carbondesignsystem.com/patterns/empty-states-pattern/",
+      "sections": [
+        "No data",
+        "No results"
+      ],
+      "local_refs": [
+        "references/patterns.md",
+        "references/composition.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "API behavior must be checked against the target installed version."
+    },
+    {
+      "id": "button",
+      "url": "https://preview.carbondesignsystem.com/building-blocks/core/components/button/guidelines",
+      "sections": [
+        "Primary emphasis",
+        "Focused-flow exceptions"
+      ],
+      "local_refs": [
+        "references/components-preview.md",
+        "references/composition.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "API behavior must be checked against the target installed version."
+    },
+    {
+      "id": "ibm-products",
+      "url": "https://github.com/carbon-design-system/ibm-products/tree/main/packages/ibm-products",
+      "sections": [
+        "Component source",
+        "Storybook"
+      ],
+      "local_refs": [
+        "references/composition.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Selection guide; no target-version API or exhaustive component audit."
+    },
+    {
+      "id": "universal-experiences",
+      "url": "https://preview.carbondesignsystem.com/building-experiences/overview",
+      "sections": [
+        "Discover",
+        "Learn",
+        "Try",
+        "Buy",
+        "Onboard",
+        "Use",
+        "Get help",
+        "Expand",
+        "End use"
+      ],
+      "local_refs": [
+        "references/senior-workflow.md"
+      ],
+      "coverage": "partial",
+      "review_status": "overview-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Navigation mapped; dedicated lifecycle routing remains open."
+    },
+    {
+      "id": "carbon-next",
+      "url": "https://preview.carbondesignsystem.com/carbon-next",
+      "sections": [
+        "Direction",
+        "Release boundaries",
+        "Flags",
+        "AI"
+      ],
+      "local_refs": [
+        "references/carbon-next.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; target package not supplied",
+      "limits": "Roadmap is not API availability; check the installed release and flag defaults."
+    },
+    {
+      "id": "carbon-button-color",
+      "url": "https://carbondesignsystem.com/components/button/style/",
+      "sections": [
+        "Primary button color",
+        "Primary button interactive state color"
+      ],
+      "local_refs": [
+        "references/semantic-token-example.md",
+        "references/design-engineering.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; worked fragment validated against bundled White/Gray 100 fallback only",
+      "limits": "Focused token-consumption example and review guidance; installed APIs and other themes require target-version verification."
+    },
+    {
+      "id": "carbon-color-layering",
+      "url": "https://carbondesignsystem.com/elements/color/usage/",
+      "sections": [
+        "Layering tokens",
+        "Contextual tokens"
+      ],
+      "local_refs": [
+        "references/semantic-token-example.md",
+        "references/design-engineering.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; worked fragment validated against bundled White/Gray 100 fallback only",
+      "limits": "Focused token-consumption example and review guidance; installed APIs and other themes require target-version verification."
+    },
+    {
+      "id": "carbon-token-configuration",
+      "url": "https://github.com/carbon-design-system/carbon/blob/main/packages/styles/docs/sass.md",
+      "sections": [
+        "Theme configuration",
+        "Component token configuration"
+      ],
+      "local_refs": [
+        "references/semantic-token-example.md",
+        "references/design-engineering.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-15",
+      "authority": "official-documentation",
+      "version_scope": "page snapshot; worked fragment validated against bundled White/Gray 100 fallback only",
+      "limits": "Focused token-consumption example and review guidance; installed APIs and other themes require target-version verification."
+    }
+  ],
+  "unresolved": [
+    "Read-only pattern source was unavailable during the earlier audit; use WAI and current component documentation for semantics.",
+    "Detailed IBM creative playbooks remain incomplete; see the specific source routes and limits.",
+    "Selected standalone rendered/source/interaction comparisons are complete; see references/evaluation-history.md. Full-suite validation, target-version Carbon React integration, independent repeated holdouts and assistive-technology checks remain open."
+  ],
+  "coverage_updated_at": "2026-09-15",
+  "evaluation_record": "references/evaluation-history.md",
+  "local_resources": [
+    {
+      "id": "composition-casebook",
+      "authority": "local-craft-heuristics",
+      "local_refs": [
+        "references/visual-casebook.md",
+        "references/casebook/table.md",
+        "references/casebook/form.md",
+        "references/casebook/dashboard.md",
+        "references/casebook/settings.md",
+        "references/casebook/expressive.md",
+        "assets/casebook/index.html",
+        "assets/casebook/cases.json"
+      ],
+      "coverage": "five annotated before/after static compositions; White and Gray 100; 1440px and 390px captures",
+      "limits": "Original teaching material, not official IBM exemplars or model-evaluation results. Static product controls; target-version Carbon integration and product interaction verification remain open."
+    }
+  ]
+}
