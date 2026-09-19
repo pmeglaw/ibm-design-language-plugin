@@ -1,0 +1,82 @@
+{
+  "version": "1.1.6-rc.3",
+  "passed": 9,
+  "total": 9,
+  "overall": "pass: all nine fixed assertions",
+  "model_runs": 1,
+  "reviewer": "primary author; not blinded",
+  "rubric_unchanged": true,
+  "event_item_types": [
+    "agent_message",
+    "error"
+  ],
+  "warnings": [
+    "Skill descriptions were shortened to fit the skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest."
+  ],
+  "execution": {
+    "status": "completed",
+    "exit_code": 0,
+    "seconds": 55.68,
+    "config_before": "cdba300a8ad2852907e82598f8dfe90faf7423507504cc87085989dd57c77a8b",
+    "config_after": "cdba300a8ad2852907e82598f8dfe90faf7423507504cc87085989dd57c77a8b",
+    "model": "gpt-6-astra",
+    "reasoning": "high",
+    "ignore_user_config": true
+  },
+  "assertions": [
+    {
+      "id": "coverage",
+      "result": "pass",
+      "evidence": "Accounts for all four captures, partial long lists and untested runtime, themes, responsive and accessibility behavior.",
+      "source": "candidate/response.md"
+    },
+    {
+      "id": "surfaces",
+      "result": "pass",
+      "evidence": "Compares gray versus white table bodies and header density; proposes shared conventions.",
+      "source": "candidate/response.md"
+    },
+    {
+      "id": "width-actions",
+      "result": "pass",
+      "evidence": "Compares full-width and narrow tables with distant Add buttons; proposes nearby toolbar or clearer grouping without expanding tables solely for buttons.",
+      "source": "candidate/response.md"
+    },
+    {
+      "id": "alignment",
+      "result": "pass",
+      "evidence": "Flags People/Seats above overflow rather than values; proposes shared right edge and separate action space.",
+      "source": "candidate/response.md"
+    },
+    {
+      "id": "actions",
+      "result": "pass",
+      "evidence": "Explicitly compares pencil icon against colored Rename plus overflow; distinguishes task scope while requesting consistent positioning and emphasis.",
+      "source": "candidate/response.md"
+    },
+    {
+      "id": "intro",
+      "result": "pass",
+      "evidence": "Compares gray inset search/summary strip with smaller helper text on white, including alignment, spacing and purposeful typography.",
+      "source": "candidate/response.md"
+    },
+    {
+      "id": "movement",
+      "result": "pass",
+      "evidence": "Identifies approximately five-pixel shift; qualifies scrollbar causality as possible only.",
+      "source": "candidate/response.md"
+    },
+    {
+      "id": "exceptions",
+      "result": "pass",
+      "evidence": "Preserves narrow tables, small lists without search, history without creation and differing action vocabulary; no forced equal button widths.",
+      "source": "candidate/response.md"
+    },
+    {
+      "id": "actionable",
+      "result": "pass",
+      "evidence": "Prioritized P1/P2 findings identify views, impact, concrete corrections and evidence limits; no unsupported contrast or prior-review cause claim.",
+      "source": "candidate/response.md"
+    }
+  ]
+}

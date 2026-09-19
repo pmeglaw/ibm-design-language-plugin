@@ -1,0 +1,50 @@
+{
+  "id": "cross-view-visual-01",
+  "kind": "guidance",
+  "status": "known visual regression; no model runs",
+  "prompt": "Review all four supplied screenshots of sibling management tabs as one interface. Report material inconsistencies, justified differences, priorities, concrete corrections and review coverage. Do not change the application. State what screenshots cannot establish.",
+  "input": [
+    "members.png",
+    "teams.png",
+    "areas.png",
+    "activity.png"
+  ],
+  "assertions": [
+    {
+      "id": "coverage",
+      "criterion": "Accounts for all four screenshots and marks runtime, alternate themes, responsive states and accessibility behavior untested."
+    },
+    {
+      "id": "surfaces",
+      "criterion": "Flags gray table bodies in Members/Activity versus white bodies in Teams/Areas as an unexplained shared-component surface difference."
+    },
+    {
+      "id": "width-actions",
+      "criterion": "Compares full-width and half-width tables and the distant Add actions; proposes a coherent layout rationale without declaring every narrow table inherently wrong."
+    },
+    {
+      "id": "alignment",
+      "criterion": "Flags People/Seats headings positioned over the action region rather than aligned with numeric values, with a concrete column-alignment correction."
+    },
+    {
+      "id": "actions",
+      "criterion": "Compares pencil-only editing with Rename plus overflow; asks for a consistent convention for equivalent actions without assuming distinct actions must be identical."
+    },
+    {
+      "id": "intro",
+      "criterion": "Compares search/count, summary strip and helper-text placement/surfaces, rather than merely auditing each view separately."
+    },
+    {
+      "id": "movement",
+      "criterion": "Notices the small horizontal shift between the narrow and wide views; does not claim scrollbar or CSS causality from screenshots alone."
+    },
+    {
+      "id": "exceptions",
+      "criterion": "Does not demand search for every small list, a create action on read-only Activity, equal button widths regardless of labels, or identical table widths."
+    },
+    {
+      "id": "actionable",
+      "criterion": "Prioritizes material findings with evidence tied to named views and specific corrections, and does not claim measured contrast, keyboard behavior or a proven previous-review root cause."
+    }
+  ]
+}

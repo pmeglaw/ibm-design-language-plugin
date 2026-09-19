@@ -10,7 +10,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = '1.1.5'
+CURRENT = '1.1.6'
 
 
 def require(condition, message):
@@ -26,7 +26,7 @@ def main():
     report = ROOT / '.verification'
     report.mkdir(exist_ok=True)
     manifests = {}
-    for version in ('1.1.4', CURRENT):
+    for version in ('1.1.4', '1.1.5', CURRENT):
         release = ROOT / 'releases' / version
         expected = json.loads((release / 'files.json').read_text(encoding='utf-8'))
         archive = release / 'plugin.zip'

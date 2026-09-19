@@ -48,6 +48,28 @@ Prioritize findings by task impact, but inspect every material dimension. A hier
 
 Use one relevant [visual casebook](visual-casebook.md) study when a task benefits from a visible example. Explain why the choice fits the actual task and when an alternative would be better. The paired studies deliberately combine changes; they do not establish measured usability or model improvement.
 
+## Cross-view consistency
+
+When the requested scope includes sibling pages, tabs or repeated sections, review them as a set as well as individually. Enumerate the requested views; record each as inspected, partially inspected or uninspected, with the screenshot/runtime/source evidence used. Do not imply full coverage when a view or required state was inaccessible.
+
+Compare matching views at the same viewport, theme, zoom and relevant state where possible. With supplied screenshots, identify mismatched capture conditions and qualify measurements. Use this compact checklist to complete the comparative pass; record material differences or justified variations in the matrix below, and mark unavailable evidence as unverified:
+
+- **Geometry:** page gutters, content width, title/tab/panel alignment and shell movement. Report observed movement separately from suspected scrollbar or CSS causes.
+- **Context area:** compare search, counts, summaries and helper text by both purpose and presentation: background surface, typography, spacing and alignment with the content below. Different purposes can justify different controls without explaining every visual difference.
+- **Tables:** compare header/body surfaces, row density, typography and numeric header-to-value alignment.
+- **Row actions:** explicitly compare visible forms such as icon-only editing, labeled Rename and overflow menus, including placement and emphasis. State whether the underlying tasks are equivalent or different before proposing a shared convention; different tasks need not use identical controls. Do not infer menu contents or accessible names from screenshots.
+- **Primary actions:** assess scope, alignment and separation from the controlled content as described below.
+
+Before giving the overall verdict, check that no applicable comparison was skipped merely because each screen looked reasonable in isolation. This is a coverage check, not a requirement to invent a defect in every category.
+
+Assess each primary action in relation to the content it controls, not just its position across screenshots. Identify whether its scope is the page, active tab, section or row; compare its alignment and separation from that content. For example, a far-right Add button above a narrow left-aligned table may look detached even when every tab uses the same header position. Record whether that relationship is clear and why. When separation weakens the association, propose aligning the action with its content or placing it in the relevant toolbar. Preserve a page-level action when its scope and the established header hierarchy justify that placement; do not require every action to move beside a table or every table to expand. Treat this as a contextual design judgment, not a universal Carbon requirement or a fixed pixel-distance rule.
+
+Record material differences in a compact matrix: views and evidence, shared element, observed difference, task impact, proposed correction or justification, and anything still unverified. This comparative pass is required for a multi-view consistency review even when each screen looks plausible on its own. A single-screen critique does not require unrelated navigation.
+
+Consistency does not mean identical screens. Fewer columns may justify a narrower table; small lists may not need search; a read-only history may have no create action; different tasks may require different row actions. Explain the reason for a variation instead of inventing controls or forcing every table to full width. Shared visual conventions still need a coherent rationale. A count column heading should align with its values rather than the neighboring actions.
+
+Separate screenshot observations, verified implementation causes and hypotheses. Screenshots alone cannot prove keyboard behavior, accessible names, contrast compliance or the prior review's execution path. Prioritize findings and state the limits of the overall verdict. If a previous review missed a finding, inspect its evidence before attributing the failure to a particular model, skill version or skipped step.
+
 ## Critique output
 
 Use screenshots, runtime observation, and code as distinct evidence. State observation, task impact, and concrete correction. Separate official requirements from preferences. Preserve what works and name the highest-value correction.
