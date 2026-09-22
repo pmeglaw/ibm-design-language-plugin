@@ -22,6 +22,10 @@ Reports are written under ignored `.verification/`. Git preserves exact bytes th
 
 [Recovery and installation](docs/RECOVERY.md) | [Maintaining releases](docs/RELEASING.md)
 
+## Reusable prompts
+
+Use the [prompt pack](docs/prompt-pack/README.md) for new implementation and review sessions. It includes five general workflows and Seat Planner-specific prompts. These companion documents do not change the frozen plugin package or release version.
+
 This package preserves verified work so restoration does not require repeating model evaluations. The 1.1.6 guidance passed 9/9 on one known screenshot regression. This author-graded case does not establish general improvement or repeatability; host skill-description truncation warnings are disclosed in the evidence. Earlier composition comparisons had two tied pairs, one incomplete pair and host configuration drift. Synthetic tests check evaluator mechanics, not design taste.
 
 This is an independently maintained plugin, not an official IBM product. Bundled IBM Plex fonts retain their license and provenance files. No new blanket license is assigned to third-party material.
