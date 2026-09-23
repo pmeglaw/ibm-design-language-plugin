@@ -2,6 +2,7 @@
 from pathlib import Path
 import ast
 import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -10,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = '1.1.6'
+CURRENT = '1.1.9'
 
 
 def require(condition, message):
@@ -26,7 +27,7 @@ def main():
     report = ROOT / '.verification'
     report.mkdir(exist_ok=True)
     manifests = {}
-    for version in ('1.1.4', '1.1.5', CURRENT):
+    for version in ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', CURRENT):
         release = ROOT / 'releases' / version
         expected = json.loads((release / 'files.json').read_text(encoding='utf-8'))
         archive = release / 'plugin.zip'
@@ -70,6 +71,16 @@ def main():
     suite = json.loads((plugin / 'skills/ibm-design-language/evals.json').read_text())
     require(len(suite['evals']) == 21 and sum(len(c['assertions']) for c in suite['evals']) == 121,
             'Bundled regression suite changed')
+    skill = plugin / 'skills/ibm-design-language'
+    spec = importlib.util.spec_from_file_location('ibm_evaluator', skill / 'scripts/evaluate.py')
+    evaluator = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(evaluator)
+    evaluator.validate_suite(suite)
+    intake = json.loads((skill / 'evals-intake.json').read_text(encoding='utf-8'))
+    evaluator.validate_suite(intake)
+    require([c['id'] for c in intake['evals']] == [22, 23, 24]
+            and sum(len(c['assertions']) for c in intake['evals']) == 15,
+            'Intake guidance suite changed unexpectedly')
     env = dict(os.environ, IBM_EVAL_TEST_TMP=str(report / 'synthetic-temp'))
     tests = subprocess.run([sys.executable, '-B', '-X', 'utf8',
                             str(plugin / 'skills/ibm-design-language/scripts/test_evaluate.py')],

@@ -46,3 +46,5 @@ Use this review when implementing or changing color rules. It complements the re
 5. Verify affected states in the supported themes. Compare computed paint to the intended role and inspect contrast on the actual surface. A temporary token change in an isolated fixture can demonstrate that the consumer follows its role; restore it afterward. Raw CSS pixels used for geometry are a separate concern from literal colors.
 
 Record a concise evidence row for material findings: `file:line | selector/property | state/theme | token chain or bypass | observed result`. Separate source findings, computed-style checks, and visual/contrast results. A plausible screenshot or a successful token lookup alone does not establish all three.
+
+For narrow-width and long-copy checks, verify the complete heading style as described in [wrapped heading verification](typography.md#wrapped-heading-verification).

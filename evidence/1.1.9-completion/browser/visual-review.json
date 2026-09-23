@@ -1,0 +1,17 @@
+{
+  "reviewer": "parent agent, direct image-view tool",
+  "screenshots": {
+    "status-320-forced-colors.png": "dd0a5424f0ef8b7a5df288256801eb04aeb345660c7f3b3b604abe1f80a04406",
+    "status-1280.png": "f9ec00271754b99de8e30729eddc9c37eb21ae2adfb4f2ee31a5cdfcc602af2b",
+    "status-320.png": "af4aa7ad51f47e6eb87d79b4f244cc369df3bd6b9559c9fad66d7c127936d59c"
+  },
+  "observations": [
+    "At 1280px all five distinct symbols and adjacent labels are visible in legend and both table surfaces; Gray 10 healthy row shows hover.",
+    "At 320px legend wraps without clipping; symbols and labels remain separate; no horizontal scroll; long 28px/36px heading wraps without overlapping lines or following paragraph.",
+    "Forced-colors screenshot preserves five distinct internal symbols and visible text; no color-only status encoding. Warning mark is visually denser than the other glyphs at 16px but remains distinguishable with its label."
+  ],
+  "limits": [
+    "Fixture is not the actual product or Carbon DataTable; no assistive-technology session was performed.",
+    "These reviewer image views do not establish which images the generating model inspected in prior cases."
+  ]
+}

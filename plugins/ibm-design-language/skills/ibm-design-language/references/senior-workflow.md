@@ -23,7 +23,7 @@ A mid-level designer executes the ticket. A senior owns the outcome — reframes
 
 1. **Job to be done.** What is the *one* thing the user came here to do? Everything else is secondary.
 2. **Data first.** What objects exist, how they relate, and how many there are. Cardinality picks the layout: one record is a detail page; hundreds is a table; a handful of unlike things might be cards.
-3. **Clear page-level primary emphasis.** Keep one page-level primary action; a focused modal, panel, or task can have its own primary while active. See the component selection guidance.
+3. **Clear page-level primary emphasis.** Use at most one page-level primary action when the task warrants it; read-only or monitoring views may need none; a focused modal, panel, or task can have its own primary while active. See the component selection guidance.
 4. **Layout archetype.** Choose from the table below.
 5. **All states before styling.** Empty (first-run, no-results, error, deleted), loading, error, partial, overflow, success. Carbon has patterns for empty and loading because that's where enterprise apps fail.
 6. **Unhappy paths.** Validation, permission denied, long-running work, network failure, destructive-action recovery.
@@ -126,7 +126,7 @@ Enterprise Design Thinking scales down cleanly:
 
 *Components:* sortable headers; multi-select checkboxes driving batch actions in the toolbar; expandable rows for secondary detail instead of more columns; advanced pagination because positions matter (switch to virtualization only if they don't). Filtering as a batch panel with chips and clear-all, since selections span categories. Row hover on.
 
-*Create:* one or two fields → modal; medium with page context → side panel; multi-step → wide tearsheet with the progress rail. No close X; Next becomes Create on the last step.
+*Create:* one or two fields → modal; medium with page context → side panel; multi-step → wide tearsheet with the progress rail. Follow the selected variant’s dismissal contract; Next becomes Create on the last step. Field count alone does not determine the container.
 
 *States:* first-run educational empty state replacing the empty table and its headers/footer, with a useful surrounding CTA and no competing primary; a distinct no-results state that keeps the filters; skeleton rows; inline error with retry; truncation with tooltip and tag overflow.
 
@@ -148,13 +148,13 @@ Enterprise Design Thinking scales down cleanly:
 
 ### Complex create flow — four sections, one interactive step
 
-*Container:* not inline (too complex); not a modal (more than four fields, scrolling); not a side panel (page context isn't needed); a narrow tearsheet has no progress indicator and this flow benefits from one; full page is wrong because the product works without this object. So: **wide tearsheet** with the vertical progress rail, "show all options" for power users.
+*Container:* not inline (too complex); not a modal (this sustained multi-section task needs more room and orientation); not a side panel (page context isn't needed); a narrow tearsheet has no progress indicator and this flow benefits from one; a full page is also valid if the task needs a dedicated location or more room. So: **wide tearsheet** with the vertical progress rail, "show all options" for power users.
 
 *Form:* single column per step, section headers, smart defaults, room for the interactive step.
 
 *Validation:* on blur; Next disabled until the step is valid; errors at the field and marked on the step in the rail.
 
-*Exit:* no close X; Cancel discards; warn before turning off advanced options if it discards input. On Create: submitting state, then open the new object or show a success banner; error as a notification with the form preserved.
+*Exit:* define the chosen variant’s close, Escape and Cancel behavior consistently; protect meaningful unsaved work; warn before turning off advanced options if it discards input. On Create: submitting state, then open the new object or show a success banner; error as a notification with the form preserved.
 
 ## Pre-release passes
 

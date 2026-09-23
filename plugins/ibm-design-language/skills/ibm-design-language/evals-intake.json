@@ -1,0 +1,94 @@
+{
+  "schema_version": 2,
+  "skill_name": "ibm-design-language",
+  "description": "Intake guidance cases. Version 1.1.9 clarifies case-24-a02 as a verification plan, matching the existing guidance prompt; older snapshots retain their original wording. Scores require release-specific evidence.",
+  "evals": [
+    {
+      "id": 22,
+      "prompt": "Design a map inspector for a custom-branded office planner. A supplied mockup recommends a 480px panel, but nearby seats have only 43px between centers with the panel open and the design requires distinct 44px hit targets. At low zoom the names collide. Explain the layout, status/selection treatment and keyboard behavior. Do not change the app code.",
+      "expected_output": "Measures remaining canvas and hit geometry, considers a narrower approved panel or another layout, preserves coordinates and domain status, progressively reduces labels, and specifies spatial keyboard navigation and honest inspection. Treats prototype geometry and IBM blue as defaults to evaluate rather than product authority.",
+      "assertions": [
+        {
+          "id": "case-22-a01",
+          "criterion": "Does not blindly impose 480px or replace it with a universal 400px; asks for or proposes measuring actual canvas and hit-region geometry."
+        },
+        {
+          "id": "case-22-a02",
+          "criterion": "Preserves physical coordinates and avoids enlarging overlapping invisible targets as the only fix; considers zoom, pan, panel layout or a usable alternative."
+        },
+        {
+          "id": "case-22-a03",
+          "criterion": "Reduces label detail while retaining status identity, accessible full identity and a detail path."
+        },
+        {
+          "id": "case-22-a04",
+          "criterion": "Distinguishes domain status from selection, focus and search; preserves custom branding and specifies contrast verification on actual hosts in both themes without claiming unperformed measurements."
+        },
+        {
+          "id": "case-22-a05",
+          "criterion": "Specifies one roving Tab stop or an equivalently justified spatial focus strategy, directional movement, focus reconciliation and return; inspection does not implicitly assign."
+        },
+        {
+          "id": "case-22-a06",
+          "criterion": "Distinguishes a non-modal inspector from a modal task and describes a narrow/coarse-pointer fallback."
+        }
+      ],
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 23,
+      "prompt": "We want to adopt a polished standalone prototype into our Carbon skill. Its research says disabled fields are never announced and v12 has no radius specifications. The CSS marks a hidden side panel aria-hidden but leaves its inputs focusable. The Undo button only closes a toast, and picking an empty seat while editing assigns a person. What should we retain and how should we validate it?",
+      "expected_output": "Separates reusable composition from unverified code and outdated research; checks current primary sources, reports incomplete focus and data behavior, keeps inspection honest, and records adoption boundaries with concrete verification.",
+      "assertions": [
+        {
+          "id": "case-23-a01",
+          "criterion": "Retains useful composition or rationale selectively without adopting the prototype as approved product design or copying private fixtures."
+        },
+        {
+          "id": "case-23-a02",
+          "criterion": "Corrects the disabled-control blanket claim and checks version-specific primary documentation rather than repeating the no-radius assertion."
+        },
+        {
+          "id": "case-23-a03",
+          "criterion": "Identifies aria-hidden as insufficient to remove Tab stops; modal behavior needs implemented focus containment and background inertness, while non-modal inspection should remain non-modal."
+        },
+        {
+          "id": "case-23-a04",
+          "criterion": "Identifies toast dismissal as not undo and requires actual state restoration or an explicit simulation label."
+        },
+        {
+          "id": "case-23-a05",
+          "criterion": "Identifies implicit assignment during inspection as a risk; requires an explicit action mode or separate mutation control."
+        },
+        {
+          "id": "case-23-a06",
+          "criterion": "Distinguishes source inspection, rendered visuals, interaction tests, contrast checks and model evaluation results; records unresolved limitations instead of claiming full validation."
+        }
+      ],
+      "kind": "guidance",
+      "visual_dimensions": []
+    },
+    {
+      "id": 24,
+      "kind": "guidance",
+      "visual_dimensions": [],
+      "prompt": "A narrow dashboard has a 28px secondary heading inheriting a 20px line-height. It wraps to three lines at 320px, but the page has no horizontal overflow. Is it ready? Explain the correction and verification without claiming to have rendered it.",
+      "expected_output": "Identifies likely overlapping lines, applies a complete type style and requests or performs actual narrow-width and long-copy inspection with honest evidence limits.",
+      "assertions": [
+        {
+          "id": "case-24-a01",
+          "criterion": "Identifies inherited line-height as a likely defect despite no horizontal overflow."
+        },
+        {
+          "id": "case-24-a02",
+          "criterion": "Uses a complete appropriate type style and specifies computed-style and rendered inspection of secondary headings with long copy at 320px; does not claim execution when no interface was supplied."
+        },
+        {
+          "id": "case-24-a03",
+          "criterion": "Distinguishes proposed checks from actual rendered evidence."
+        }
+      ]
+    }
+  ]
+}

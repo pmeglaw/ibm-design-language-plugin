@@ -64,11 +64,11 @@
       "assertions": [
         {
           "id": "case-02-a01",
-          "criterion": "Identifies three same-styled header buttons as competing primaries and prescribes keeping exactly one primary"
+          "criterion": "Identifies competing header emphasis and assigns primary emphasis by task; does not force a primary where none is justified."
         },
         {
           "id": "case-02-a02",
-          "criterion": "Flags rounded corners and drop shadows as off-system for Carbon (flat, square surfaces)"
+          "criterion": "Assesses corner and elevation treatments against the installed component anatomy rather than treating all radius or shadow as forbidden."
         },
         {
           "id": "case-02-a03",
@@ -144,7 +144,7 @@
     {
       "id": 4,
       "prompt": "Give me the CSS for a status legend in our light-theme ops console: five states — healthy, warning, critical, in progress, not started. Each state is a 16px dot with a text label, and the legend also appears as a column in a data table with row hover on. Use Carbon's own support tokens.",
-      "expected_output": "Rejects color-alone dots: adds a distinct shape or symbol per state (and notes that a constant shape needs a symbol/texture to compensate). Uses Carbon's semantic tokens for fills but explicitly does NOT use $support-warning (yellow 30) or green 50 for the drawn marks, because they fail 3:1 on the hovered row surface (layer-hover-01 #e8e8e8); substitutes yellow 60 / green 60 (or explains the fill-vs-mark split). In progress = blue 70, not started = gray 60, critical = red 60. Shape indicators get outlines. Marks are checked with the contrast script against white, layer-01 and the hover surface, and the output says so.",
+      "expected_output": "Provides distinct status symbols and labels with semantic token mappings. Measures required foreground/background pairs on actual default and hover hosts. A light fill may use a contrasting essential outline or symbol; darker fills are another option. Reports actual check evidence and untested pairs honestly.",
       "assertions": [
         {
           "id": "case-04-a01",
@@ -152,15 +152,15 @@
         },
         {
           "id": "case-04-a02",
-          "criterion": "Explicitly avoids yellow 30 (#f1c21b, $support-warning) as a drawn mark and substitutes a darker yellow grade (60, or 50 with a stated no-hover caveat)"
+          "criterion": "Recognizes yellow 30 needs a sufficiently contrasting essential outline/symbol on these hosts, or chooses a measured darker mark; does not ban light fills universally."
         },
         {
           "id": "case-04-a03",
-          "criterion": "Explicitly avoids green 50 (#24a148, $support-success) as a drawn mark on hoverable rows and substitutes green 60, citing the hover surface"
+          "criterion": "Checks the healthy mark on hover and uses a measured darker fill or essential contrasting outline/symbol where needed."
         },
         {
           "id": "case-04-a04",
-          "criterion": "Names layer-hover-01 (#e8e8e8) as the surface the marks must be checked against, not white"
+          "criterion": "Checks the resolved table hover surface as well as white and default layer surfaces; names the theme or assumptions."
         },
         {
           "id": "case-04-a05",
@@ -168,11 +168,11 @@
         },
         {
           "id": "case-04-a06",
-          "criterion": "States that the palette was checked with scripts/check_contrast.py (or shows its output) rather than asserting the pairs pass"
+          "criterion": "Provides reproducible contrast results for required rendered pairs; unsupported claims of running a script do not count as evidence."
         },
         {
           "id": "case-04-a07",
-          "criterion": "Shape indicators are legible without relying on a light fill: either every mark is filled with the accessible grade (yellow 60 / green 60 / orange 60, ≥3:1 on layer-hover-01) and has a distinct shape per state, or light fills (yellow 30, orange 40, green 50) carry an outline of at least 1px at 16px — a hairline edge on a light fill fails; icon indicators need neither"
+          "criterion": "Measures the essential visible symbol or boundary against adjacent hosts, including hover; does not demand contrast between incidental decorative parts."
         }
       ],
       "notes": "",
@@ -260,23 +260,23 @@
     {
       "id": 7,
       "prompt": "Product wants a 'Quick add user' modal on the Users page with: first name, last name, email, role dropdown, team dropdown, send-invite toggle, and a free-text notes field. Please give me the modal spec with all seven fields.",
-      "expected_output": "Pushes back on the brief before speccing: seven inputs exceeds Carbon's modal limit (fewer than five inputs, never more than four fields or any scrolling). Reframes: either cut to the minimum for 'quick add' (email + role, maybe name) and keep the modal, or move the full seven-field form to a side panel (more than five inputs; the Users list behind it is useful context). Recommends one of the two with reasoning, notes what's optional and marks the minority, buttons at the bottom named for the result ('Add user' / 'Send invite', not 'Submit'), and notes the modal must not nest a confirmation. Records the deviation from the brief in a one-paragraph decision log.",
+      "expected_output": "Specifies a reasoned container for all seven fields, considering task complexity, viewport, list context and optional information. A modal is acceptable if it fits the task; vertical body scrolling is supported. Defines accessible focus and exits, validation and submission recovery, meaningful action labels and a concise decision rationale without a universal numeric field limit.",
       "assertions": [
         {
           "id": "case-07-a01",
-          "criterion": "Does not simply deliver a seven-field modal; explicitly states the modal field limit (fewer than five / never more than four with scrolling) and that the brief violates it"
+          "criterion": "Chooses the container by task complexity, available space and context rather than claiming a universal four-field maximum."
         },
         {
           "id": "case-07-a02",
-          "criterion": "Offers a reframe: reduce the fields to keep the modal, or move the form to a side panel (or tearsheet) — and recommends one with reasons"
+          "criterion": "Explains whether to retain the requested modal, reduce optional scope, or choose a panel/tearsheet/full page, with task-specific reasons."
         },
         {
           "id": "case-07-a03",
-          "criterion": "If a side panel is recommended, notes that the page behind it stays useful and the panel has no close X (Cancel exits)"
+          "criterion": "Defines modality, focus containment or page access, supported dismissal and focus return for the chosen container; does not impose a universal no-close rule."
         },
         {
           "id": "case-07-a04",
-          "criterion": "States Carbon's modal input limit as a number (fewer than five inputs / no more than four fields, no scrolling) and counts the brief's seven against it"
+          "criterion": "Allows vertical modal-body scrolling with reachable actions when appropriate and specifies narrow-viewport behavior; avoids horizontal scrolling."
         },
         {
           "id": "case-07-a05",
@@ -284,11 +284,11 @@
         },
         {
           "id": "case-07-a06",
-          "criterion": "Notes that a modal must not open a nested confirmation modal"
+          "criterion": "Avoids nested modal confirmations and defines a coherent unsaved-work policy across supported exits."
         },
         {
           "id": "case-07-a07",
-          "criterion": "Includes a short decision log recording the deviation from the brief and what evidence would reopen it"
+          "criterion": "Includes a short decision rationale and evidence that would reopen the container choice."
         }
       ],
       "notes": "",
@@ -711,7 +711,7 @@
       ]
     }
   ],
-  "summary": "19 evals, 113 assertions. The original thirteen cover build, critique, accessibility, composition, icons, pictograms, motion, spacing, themes, and typography; evals 14-19 add generic-versus-governed color authority, Seat Planner interaction roles, dark-theme mappings, status semantics, logo-color boundaries, and resolved-color verification.",
+  "summary": "21 evals, 121 assertions. Version 1.1.7 revises cases 2, 4 and 7 for component-specific styling, evidence-based contrast and scoped modal guidance. Scores against older criteria are not directly comparable.",
   "schema_version": 2,
   "description": "Evidence-graded regression cases; model execution and review are separate. No current skill performance score is implied."
 }

@@ -23,7 +23,7 @@ Prioritize findings by task impact, but inspect every material dimension. A hier
 
 | Observation | Direction |
 |---|---|
-| Several page actions compete | Keep one page-level primary; focused flows may have their own primary while active |
+| Several page actions compete | Choose at most one page-level primary by task, or none when no action merits that emphasis; focused flows may have their own primary while active |
 | Everything looks equally important | Reduce secondary emphasis and assign space according to task importance |
 | Paragraphs are hard to scan | Use start-aligned reading text and appropriate line length; account for writing direction |
 | Every region has a border or shadow | Try space or layers; retain boundaries that carry meaning |
