@@ -1,0 +1,238 @@
+{
+  "browser": "154.0.8037.58",
+  "versions": {
+    "react": "19.3.0",
+    "icons": "11.88.0",
+    "playwright": "1.62.1"
+  },
+  "scope": "SSR of unchanged generated JSX/CSS using current icon exports, bundled token/font fixtures and an explicit hover-host fixture. Not a production app or Carbon DataTable integration.",
+  "checks": [
+    {
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "fontLoaded": true,
+      "dots": [
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        }
+      ],
+      "heading": {
+        "size": "28px",
+        "lineHeight": "36px",
+        "height": 108
+      },
+      "hover": "rgb(232, 232, 232)"
+    },
+    {
+      "viewport": 320,
+      "scrollWidth": 320,
+      "fontLoaded": true,
+      "dots": [
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        },
+        {
+          "width": 16,
+          "height": 16,
+          "svg": true
+        }
+      ],
+      "heading": {
+        "size": "28px",
+        "lineHeight": "36px",
+        "height": 144
+      },
+      "hover": "rgb(232, 232, 232)"
+    }
+  ],
+  "forcedColors": "Screenshot retained; symbolic structure preserved."
+}

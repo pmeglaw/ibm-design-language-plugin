@@ -1,0 +1,13 @@
+{
+  "version": "1.1.9",
+  "installed_files": 106,
+  "hash_match": true,
+  "skills": [
+    {
+      "name": "ibm-design-language:ibm-design-language",
+      "enabled": true,
+      "pluginId": "ibm-design-language@jp-personal"
+    }
+  ],
+  "method": "Supported local marketplace install followed by fresh app-server skills/list(forceReload=true); full local receipt retained in .verification."
+}

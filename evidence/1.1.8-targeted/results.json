@@ -1,0 +1,1218 @@
+{
+  "method": "Single run per case and candidate; independent version-aware agent grading; unchanged follow-up criteria; no statistical improvement claim.",
+  "runs": [
+    {
+      "run": "ibm-canonical-117-behavior-01",
+      "identity": {
+        "harness_version": "2-evaluation-repair",
+        "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+        "skill_sha256": "5bb899837e7faf3d0410d77339593b5d29a975f1c5fe659d3d1d002563bdb7b3",
+        "entrypoint_file_sha256": "b2bb5ded8bab4f0d4c9e833ef3798ffe888c08c5738906ddc29525867f9c4fc3",
+        "fingerprint_algorithm": "SHA256(canonical sorted JSON relative-path-to-file-SHA256 map)",
+        "timeout_seconds": 600,
+        "preview_port": null,
+        "suite_sha256": "7b7b4c38594073bd3c71088baf8dd6c26f839e7886b5cc70fc9361bc53e0d6ef",
+        "model": "gpt-6-astra",
+        "reasoning": "medium",
+        "sandbox": "workspace-write",
+        "selected_ids": [
+          2,
+          4,
+          7,
+          22,
+          23,
+          24
+        ],
+        "system": "macOS-26.6.2-x86_64-i386-64bit",
+        "python": "3.9.6"
+      },
+      "report": {
+        "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+        "selected_cases": 6,
+        "counts": {
+          "fail": 2,
+          "pass": 4
+        },
+        "all_selected_pass": false,
+        "cases": [
+          {
+            "case_id": 2,
+            "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 8,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 8,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent manual review of case, response, complete critique, checks artifact and execution event log; guidance judged as specification without requiring a product implementation. Executed-check claims compared to recorded commands and outputs. Severity notes and unsupported claims are retained in evidence/reviewer-limitations.json; critical_findings is reserved for serious functional, accessibility or scope failures. Prior review preserved as review-initial.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-117-behavior-01/case-02/review.json",
+            "review_sha256": "49f2013c8fcf2c455b26be44e5723bed0dcfcff9e953306ab97d215a3f8390b8",
+            "evidence_sha256": {
+              "workspace/critique.md": "99a3126ea10379c6c0c87b741c25b5f89618303fa6f2153c3c451e11e5b72d1b"
+            },
+            "output_sha256": "5f127271a5f514e2c0cf8e43f5856072670a2492efd2186f10577c78071f369e",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 4,
+            "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+            "verdict": "fail",
+            "assertions": {
+              "pass": 6,
+              "fail": 1,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 7,
+            "assertion_pass_percent": 85.71,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent manual review of case, response, CSS, HTML, README, claimed evidence and complete relevant execution commands; independently recalculated delivered CSS boundary and text contrast via evidence/independent_contrast.py using supplied light theme token definitions. Guidance evaluated without requiring browser implementation. Severity notes and unsupported claims are retained in evidence/reviewer-limitations.json; critical_findings is reserved for serious functional, accessibility or scope failures. Prior review preserved as review-initial.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-117-behavior-01/case-04/review.json",
+            "review_sha256": "2b0a18cf1522f1032352af6742875cb2882428687ff4a9c6271bffaaddea0fa4",
+            "evidence_sha256": {
+              "workspace/status-legend.css": "e565311ba233115fdef1225f3efdd8161f8212bc8d6d0da094747f79dc5d28a3",
+              "workspace/README.md": "52fadd785593a946eb9842a11ddf07dc8657996db8f23669a501147f856b187b",
+              "evidence/independent_contrast.json": "7e7eb363a6bd4b3b7a06b31bc499e908acaa204f2a21e5d495b41124b528758d",
+              "workspace/evidence/pairs.json": "db4d30e682a4996e90711b288f3ca2370350ec7dfd08ee9e338c7b13acb537fd",
+              "events.jsonl": "919e8d2614e86e8f88725906be001d2a260c918e070d88d3f0a321cfc37dbeff"
+            },
+            "output_sha256": "74a6e5767e09b301bd50188a46a6301e2f57ac3993a8db3e99e30f37c9fd178b",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 7,
+            "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+            "verdict": "fail",
+            "assertions": {
+              "pass": 6,
+              "fail": 1,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 7,
+            "assertion_pass_percent": 85.71,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent review of case, response, modal specification, checks artifact and execution events. Guidance assessed as specification; claimed checks verified against recorded commands and web results. No product runtime required. Severity notes and unsupported claims are retained in evidence/reviewer-limitations.json; critical_findings is reserved for serious functional, accessibility or scope failures. Prior review preserved as review-initial.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-117-behavior-01/case-07/review.json",
+            "review_sha256": "e112c8f480014c5ebcdb715130ee07f0b23bddab2a4b9325f8b2c5b0d2080bce",
+            "evidence_sha256": {
+              "workspace/modal-spec.md": "92af602ee7eaea2856b388994149ee71a86f1584cc5382958dda9d0ded7017f9"
+            },
+            "output_sha256": "83764a06baa3f9cc4c45f47529e9010a9d4102b2b26ac90c39b159a6c0c3bfdd",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 22,
+            "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 6,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 6,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent manual review of case, response, design specification, evidence and recorded execution. Assessed guidance contract rather than demanding implementation; checked numerical reasoning and recorded evidence for claimed inspection. Severity notes and unsupported claims are retained in evidence/reviewer-limitations.json; critical_findings is reserved for serious functional, accessibility or scope failures. Prior review preserved as review-initial.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-117-behavior-01/case-22/review.json",
+            "review_sha256": "3429de1a806c18b11b35207daf88ba5b7e7b3c9468097b209f614730c51976c7",
+            "evidence_sha256": {
+              "workspace/map-inspector-design.md": "84ba2d6dc9fdad87aa52316c5f3391386afe75693ca9a7b0625acd9cbdd1142e"
+            },
+            "output_sha256": "8a20174146f717cd73f3573ea875a1a26fa596551197681579cfd2e3cda1410e",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 23,
+            "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 6,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 6,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent manual review of case, response, full deliverable and execution log. Guidance judged as specification without requiring implementation; claims checked against recorded commands and web results. Evidence limitations retained in evidence/reviewer-limitations.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-117-behavior-01/case-23/review.json",
+            "review_sha256": "6bb9614c8e1426c820feac36bdc94234b34a735704e76acb403436497f9f88cf",
+            "evidence_sha256": {
+              "workspace/adoption-review.md": "07de36bb15ba2eb84b003d632ebdeb4d03e323766619563323fb557f4a3ae76a"
+            },
+            "output_sha256": "504831750d6d4dc6c313126cc9ac308f82b1c041fb9f8a1765883006acd0e46a",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 24,
+            "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 3,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 3,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent review of frozen prompt, expected output, response and execution events. Guidance assessed as proposed correction/verification, not UI implementation. Criterion a02 wording ambiguity explicitly recorded in evidence/reviewer-limitations.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-117-behavior-01/case-24/review.json",
+            "review_sha256": "34d3029afd07e6d9e756bd4706dfca6745dae0c7838d698a7d697e5be042e507",
+            "evidence_sha256": {
+              "response.json": "eecaba0a0d626fcb061f34e0035bfee5bee7ebeafe2cf2c7252fc93a4dcf2493"
+            },
+            "output_sha256": "008746cbd4dd89c6070cc1833faf3e099d53e8c11795f05085a5a1b9abc8710b",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          }
+        ],
+        "scope": "Selected cases only; unrun/ungraded cases never count as passes."
+      },
+      "reviews": {
+        "2": {
+          "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+          "case_id": 2,
+          "output_sha256": "5f127271a5f514e2c0cf8e43f5856072670a2492efd2186f10577c78071f369e",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent manual review of case, response, complete critique, checks artifact and execution event log; guidance judged as specification without requiring a product implementation. Executed-check claims compared to recorded commands and outputs. Severity notes and unsupported claims are retained in evidence/reviewer-limitations.json; critical_findings is reserved for serious functional, accessibility or scope failures. Prior review preserved as review-initial.json."
+          },
+          "criteria": [
+            {
+              "id": "case-02-a01",
+              "criterion": "Identifies competing header emphasis and assigns primary emphasis by task; does not force a primary where none is justified.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "The header row conditions Create report primary / Export tertiary / Refresh ghost on report creation being the main workflow, and says monitoring should determine emphasis instead. It identifies competing filled treatments as an assumption. The summary is less qualified, but the substantive recommendation is task-dependent."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a02",
+              "criterion": "Assesses corner and elevation treatments against the installed component anatomy rather than treating all radius or shadow as forbidden.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "The surfaces row says to use the supported component corner and elevation treatment and explicitly rejects a blanket ban on radius/shadow. Installed Carbon version is unavailable and disclosed in workspace/evidence/checks.json; no invented anatomy measurements are imposed."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a03",
+              "criterion": "Flags centered paragraph text \u2014 Carbon type is flush left",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "The text row identifies inconsistent reading edges from centered paragraphs and specifies start-aligned labels, values and supporting text, plus a readable productive hierarchy."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a04",
+              "criterion": "Recommends replacing or reworking the nine-category pie chart (bar chart, direct labels, or fewer categories)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "The chart row replaces nine-category pie comparison with directly labeled horizontal bars and a shared zero baseline; meaningful category order and part-to-whole needs are addressed."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a05",
+              "criterion": "Flags excessive animate-everything treatment without claiming frequent or keyboard interactions can never use productive motion",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "The motion row removes decorative lift/scale/movement from static content while preserving supported Carbon control feedback and purposeful disclosure/data transitions. Keyboard equivalence and reduced motion are included; frequent or keyboard feedback is not prohibited."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a06",
+              "criterion": "Findings are ordered hierarchy-first (hierarchy/actions before color, depth, and polish notes)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "The critique opens with competing emphasis, orders KPI and header hierarchy first, chart/text second, then surfaces and motion third."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a07",
+              "criterion": "Each finding names the principle behind it and gives a concrete fix (no preference-only notes)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Every table row pairs a concrete task/perception principle (importance, competing action emphasis, comparison/matching cost, reading edges, meaningful grouping, static affordances) with an actionable correction. Later layout proposals are explicitly labeled heuristics."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a08",
+              "criterion": "Ends with what's working and/or names the single most valuable change",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "The closing substantive paragraph preserves compact overview, named actions and explanatory context, and names establishing the decision/action hierarchy as the highest-value change. A scope/verification note follows."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "4": {
+          "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+          "case_id": 4,
+          "output_sha256": "74a6e5767e09b301bd50188a46a6301e2f57ac3993a8db3e99e30f37c9fd178b",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent manual review of case, response, CSS, HTML, README, claimed evidence and complete relevant execution commands; independently recalculated delivered CSS boundary and text contrast via evidence/independent_contrast.py using supplied light theme token definitions. Guidance evaluated without requiring browser implementation. Severity notes and unsupported claims are retained in evidence/reviewer-limitations.json; critical_findings is reserved for serious functional, accessibility or scope failures. Prior review preserved as review-initial.json."
+          },
+          "criteria": [
+            {
+              "id": "case-04-a01",
+              "criterion": "Refuses to distinguish states by color alone \u2014 each state gets a shape or symbol in addition to color",
+              "outcome": "fail",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "All five states use the identical .status__dot circle (border-radius 50%) without distinct shape or symbol. example.html supplies text labels, so meaning does not depend solely on color, but the explicit per-state shape/symbol assertion is unmet. README admits the departure and only conditionally suggests icons."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a02",
+              "criterion": "Recognizes yellow 30 needs a sufficiently contrasting essential outline/symbol on these hosts, or chooses a measured darker mark; does not ban light fills universally.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/README.md",
+                  "observation": "Explicitly records warning fill at 1.37:1 on hover and retains support-warning fill behind a 2px Yellow 60 outline. Independent warning outline contrast is 4.07:1 on hover (4.99 white / 4.53 layer), so no universal ban on light fills."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a03",
+              "criterion": "Checks the healthy mark on hover and uses a measured darker fill or essential contrasting outline/symbol where needed.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "evidence/independent_contrast.json",
+                  "observation": "Healthy Green 60 edge from CSS resolves to #198038 and independently clears hover #e8e8e8 at 4.09:1. README and executed preset identify original success fill hover failure of 2.74:1."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a04",
+              "criterion": "Checks the resolved table hover surface as well as white and default layer surfaces; names the theme or assumptions.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/evidence/pairs.json",
+                  "observation": "Explicit White/Gray 10 Carbon v11 assumptions in CSS/README, and all states/text checked on #ffffff, #f4f4f4 and hover #e8e8e8. Application-specific computed hover is not available and integration limitations are disclosed."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a05",
+              "criterion": "Uses gray 60 for 'not started' and blue 70 (info/in-progress) for 'in progress'",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Not started maps local role to #6f6f6f Gray 60; in progress maps support-info, resolving to #0043ce Blue 70 under stated light theme, also reflected in pair evidence."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a06",
+              "criterion": "Provides reproducible contrast results for required rendered pairs; unsupported claims of running a script do not count as evidence.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "events.jsonl",
+                  "observation": "Completed command item_8 (event line 18) runs check_contrast.py --pairs evidence/pairs.json with exit 0 and 18/18 pass, and runs presets with expected exit 1 and 13/16 clear. Independent script and JSON in evidence reproduce all 18 CSS boundary/text ratios. No runtime check is claimed."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a07",
+              "criterion": "Measures the essential visible symbol or boundary against adjacent hosts, including hover; does not demand contrast between incidental decorative parts.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "evidence/independent_contrast.json",
+                  "observation": "The measured 2px solid outer boundary is painted against the transparent host for each state, including hover; label pairs are measured at text threshold. Interior fill versus outline is not demanded because fills do not carry the essential outer boundary. All 18 required assumed-host pairs pass."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "7": {
+          "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+          "case_id": 7,
+          "output_sha256": "83764a06baa3f9cc4c45f47529e9010a9d4102b2b26ac90c39b159a6c0c3bfdd",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent review of case, response, modal specification, checks artifact and execution events. Guidance assessed as specification; claimed checks verified against recorded commands and web results. No product runtime required. Severity notes and unsupported claims are retained in evidence/reviewer-limitations.json; critical_findings is reserved for serious functional, accessibility or scope failures. Prior review preserved as review-initial.json."
+          },
+          "criteria": [
+            {
+              "id": "case-07-a01",
+              "criterion": "Chooses the container by task complexity, available space and context rather than claiming a universal four-field maximum.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Opening frames one task (add user, assign access, optional invitation); supported medium/large sizing, vertical body scrolling, narrow layouts and list context determine fit. Explicitly rejects field-count cutoff."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a02",
+              "criterion": "Explains whether to retain the requested modal, reduce optional scope, or choose a panel/tearsheet/full page, with task-specific reasons.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Retains a transactional modal with all seven fields visible because the task is short and unified; handles extra height with scrolling and preserves Users context and filters. Product defaults are identified as proposals."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a03",
+              "criterion": "Defines modality, focus containment or page access, supported dismissal and focus return for the chosen container; does not impose a universal no-close rule.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Named modal contains focus and makes background inert; initial focus First name; Cancel, close icon and Escape dismiss and return focus to trigger, outside click does not. Dropdown consumes Escape first and submission dismissal is separately explained."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a04",
+              "criterion": "Allows vertical modal-body scrolling with reachable actions when appropriate and specifies narrow-viewport behavior; avoids horizontal scrolling.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Fixed header/footer, vertical scrollable body, never horizontal scrolling; narrow name stacking, wrapped content, reachable fields at zoom and on-screen keyboard, viewport-bounded option menus."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a05",
+              "criterion": "Marks the minority of fields (required or optional) rather than both",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Only Email and Role labels carry required markers; other field labels omit optional markers. Intro explains the required marking, so only the minority (2 of 7) is marked."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a06",
+              "criterion": "Avoids nested modal confirmations and defines a coherent unsaved-work policy across supported exits.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "All unsubmitted exits discard entries and return focus, with advance Cancel copy and no nested confirmations. During submission, dismissal does not cancel the idempotent request and outcome is reported on Users. This is a coherent explicit policy, though not draft-preserving."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a07",
+              "criterion": "Includes a short decision rationale and evidence that would reopen the container choice.",
+              "outcome": "fail",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Gives a short-task rationale, but no explicit evidence that would reopen modal versus panel/tearsheet/page choice. Realistic excessive scrolling only triggers moving from medium to large modal; long team lists trigger combo-box substitution. Mapping backend rules and running acceptance checks is specified without identifying what result would change the container."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "22": {
+          "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+          "case_id": 22,
+          "output_sha256": "8a20174146f717cd73f3573ea875a1a26fa596551197681579cfd2e3cda1410e",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent manual review of case, response, design specification, evidence and recorded execution. Assessed guidance contract rather than demanding implementation; checked numerical reasoning and recorded evidence for claimed inspection. Severity notes and unsupported claims are retained in evidence/reviewer-limitations.json; critical_findings is reserved for serious functional, accessibility or scope failures. Prior review preserved as review-initial.json."
+          },
+          "criteria": [
+            {
+              "id": "case-22-a01",
+              "criterion": "Does not blindly impose 480px or replace it with a universal 400px; asks for or proposes measuring actual canvas and hit-region geometry.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Layout treats 480px as a candidate and 320\u2013400px as an unapproved heuristic. Requires actual remaining width AND height, real-plan intersection checks and content testing; correctly states that reducing panel width does not increase center spacing at fixed camera zoom."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a02",
+              "criterion": "Preserves physical coordinates and avoids enlarging overlapping invisible targets as the only fix; considers zoom, pan, panel layout or a usable alternative.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Preserves saved coordinates and camera scale, computes circular/aligned target overlap and minimum scale bound with geometric qualifications, pans to expose focus, disallows overlapping invisible regions, and offers zoom-to-select or Seat list fallback at overview density."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a03",
+              "criterion": "Reduces label detail while retaining status identity, accessible full identity and a detail path.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Collision-aware disclosure progresses from full names to short IDs/initials to status symbols. Status is retained, accessible names keep full permitted identity and status, and inspector/list provide full detail. Selected/focused identity gets an unobscured callout."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a04",
+              "criterion": "Distinguishes domain status from selection, focus and search; preserves custom branding and specifies contrast verification on actual hosts in both themes without claiming unperformed measurements.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Names/status section separates domain status symbol/color from selection halo, focus outline and search badge, explicitly preserves approved custom brand, and forbids forcing IBM blue or example palette. Requires actual background/combined-state contrast verification across supported themes; runtime, theme and contrast tests explicitly remain unperformed."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a05",
+              "criterion": "Specifies one roving Tab stop or an equivalently justified spatial focus strategy, directional movement, focus reconciliation and return; inspection does not implicitly assign.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Keyboard contract specifies one roving marker tab stop, directional nearest eligible focus with deterministic tie-break, no unrelated-zone wrapping, focus reconciliation after filtering/removal, inspector entry and return, and native list fallback. Enter/Space inspects; arrows do not change selection or assign. Inspection never reassigns/publishes."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a06",
+              "criterion": "Distinguishes a non-modal inspector from a modal task and describes a narrow/coarse-pointer fallback.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Inspector explicitly remains nonmodal with operable map and Tab exit; future modal task gets inert background/focus containment. Narrow/coarse-pointer full-width details use Back to map preserving camera, filters and selection, with conditional bottom-sheet option only if geometry passes."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "23": {
+          "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+          "case_id": 23,
+          "output_sha256": "504831750d6d4dc6c313126cc9ac308f82b1c041fb9f8a1765883006acd0e46a",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent manual review of case, response, full deliverable and execution log. Guidance judged as specification without requiring implementation; claims checked against recorded commands and web results. Evidence limitations retained in evidence/reviewer-limitations.json."
+          },
+          "criteria": [
+            {
+              "id": "case-23-a01",
+              "criterion": "Retains useful composition or rationale selectively without adopting the prototype as approved product design or copying private fixtures.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Retains hierarchy, type/spacing, semantic status and inspector composition only after source/rendered review; labels them heuristics, preserves product authority, routes learning to existing references, and removes private people, contacts and floor images from reusable fixtures."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a02",
+              "criterion": "Corrects the disabled-control blanket claim and checks version-specific primary documentation rather than repeating the no-radius assertion.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Rejects disabled-never-announced and distinguishes native disabled, aria-disabled, read-only and hidden. Refutes universal no-radius claim with component-specific preview Tag radius while keeping target version unknown and requiring installed exports/styles checks. events.jsonl lines 11, 17 and 22 support official APG/WAI-ARIA and Carbon Tag specification retrieval."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a03",
+              "criterion": "Identifies aria-hidden as insufficient to remove Tab stops; modal behavior needs implemented focus containment and background inertness, while non-modal inspection should remain non-modal.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Identifies aria-hidden as not a focus-management mechanism and invisible Tab stops as a defect. Requires unmount/hide/inert handling including transitions and focus return; separates nonmodal inspector access from modal containment and background inertness."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a04",
+              "criterion": "Identifies toast dismissal as not undo and requires actual state restoration or an explicit simulation label.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Explicitly says toast dismissal is not rollback; requires prior assignment and derived/persisted state restoration or honest simulation label. Validation asserts state A to B to A, reload/persistence as applicable, failure, repeated actions and unrelated edits."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a05",
+              "criterion": "Identifies implicit assignment during inspection as a risk; requires an explicit action mode or separate mutation control.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Says inspection must not assign, generic Edit mode is insufficient, and requires explicit Assign plus person choice or clearly deliberate placement mode with consequence/cancellation. Validation checks pointer and keyboard inspections produce no persistence calls."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a06",
+              "criterion": "Distinguishes source inspection, rendered visuals, interaction tests, contrast checks and model evaluation results; records unresolved limitations instead of claiming full validation.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Separates source findings, screenshots, runtime evidence, accessibility/AT tests, contrast and model evaluations. Explicitly marks prototype not supplied and all implementation checks pending; no full validation claim. Snapshot hashing and deliverable presence checks are recorded at event lines 19 and 24."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "24": {
+          "run_key": "f881e8e085839ca662dbfecf340026fdda32176c72dc69d60cf82262055ffd8b",
+          "case_id": 24,
+          "output_sha256": "008746cbd4dd89c6070cc1833faf3e099d53e8c11795f05085a5a1b9abc8710b",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent review of frozen prompt, expected output, response and execution events. Guidance assessed as proposed correction/verification, not UI implementation. Criterion a02 wording ambiguity explicitly recorded in evidence/reviewer-limitations.json."
+          },
+          "criteria": [
+            {
+              "id": "case-24-a01",
+              "criterion": "Identifies inherited line-height as a likely defect despite no horizontal overflow.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Identifies 28px text with inherited 20px leading as risking overlapping wrapped lines, and explicitly says no horizontal overflow does not establish legibility."
+                }
+              ]
+            },
+            {
+              "id": "case-24-a02",
+              "criterion": "Uses a complete appropriate type style and verifies secondary headings with long copy at 320px.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Specifies complete named Carbon heading-04 (28px/36px regular) replacing inherited leading, allows container growth, and requires computed-style plus visual checks of all secondary headings at 320px with realistic long copy, zoom and wider widths. Pass under frozen guidance task and expected output allowing requested actual inspection; no rendered verification was performed."
+                }
+              ]
+            },
+            {
+              "id": "case-24-a03",
+              "criterion": "Distinguishes proposed checks from actual rendered evidence.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Explicitly states dashboard has not been rendered or inspected and source/screenshot/runtime are absent. Supplied reference review is supported by completed events.jsonl item_2; actual typography, rendering and zoom remain unverified."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        }
+      },
+      "limitations": {
+        "2": {
+          "severity_assessment": "Casebook image-inspection claims are not independently supported by retained CLI events. This can reflect logging coverage limitations and is not proof that viewing never occurred. Reference-image evidence remains unverified, classified as a noncritical evidence limitation rather than a serious functional/accessibility/scope failure.",
+          "notes": [
+            {
+              "path": "workspace/evidence/checks.json",
+              "observation": "Reference review and response.json claim inspection of both White desktop dashboard images. events.jsonl records only file listing, text reference reads/search, hashing, and deliverable edits, with no image-view tool or render/open command. prompt.txt supplies no images. Image inspection is not independently supported by retained CLI events. Snapshot hash execution is supported by events.jsonl item_5 (104 files, matching hash); product runtime verification is correctly disclaimed."
+            }
+          ]
+        },
+        "4": {
+          "severity_assessment": "The distinct-symbol omission remains an assertion failure, but visible labels preserve identity; this is not established as a serious accessibility defect. Token-source verification is an evidence limitation; independent CSS-based contrast passed and no runtime success was claimed.",
+          "notes": [
+            {
+              "path": "workspace/status-legend.css",
+              "observation": "Distinct shape/symbol requirement is not implemented: all statuses are identical circles, though visible labels preserve textual state identity. This is an assertion failure, not evidence of a color-only WCAG failure."
+            },
+            {
+              "path": "workspace/README.md",
+              "observation": "Claim that support-token definitions were checked against official documentation is stronger than available web evidence: events show the first page open failed and subsequent search returned brief token-name snippets, without a successful page open or recorded resolved values. Contrast execution itself is supported and independently reproduced. Actual theme/application integration remains explicitly unverified."
+            }
+          ]
+        },
+        "7": {
+          "severity_assessment": "Casebook image-inspection claims are not independently supported by retained CLI events. This can reflect logging coverage limitations and is not proof that viewing never occurred. Reference-image evidence remains unverified, classified as a noncritical evidence limitation rather than a serious functional/accessibility/scope failure.",
+          "notes": [
+            {
+              "path": "workspace/modal-spec.md",
+              "observation": "Container-choice reconsideration evidence is missing (a07): no criterion for when task growth, page-reference needs or viewport failures would lead away from the modal."
+            },
+            {
+              "path": "workspace/checks.json",
+              "observation": "Claims review of before/after desktop casebook images, echoed by visual observations in modal-spec.md. events.jsonl records form.md text read but no image-view or render/open command and prompt contains no images. Image review is not independently supported by retained CLI events. Snapshot hash and seven-field checks are supported by completed events at lines 20 and 24; official modal/toggle page reads are supported by line 15. Runtime checks are accurately disclaimed."
+            }
+          ]
+        },
+        "22": {
+          "severity_assessment": "Casebook image-inspection claims are not independently supported by retained CLI events. This can reflect logging coverage limitations and is not proof that viewing never occurred. Reference-image evidence remains unverified, classified as a noncritical evidence limitation rather than a serious functional/accessibility/scope failure.",
+          "notes": [
+            {
+              "path": "workspace/evidence/checks.json",
+              "observation": "Claims inspection of table-before-white-desktop.png and table-after-white-desktop.png, repeated as completed image comparison in design document/response. events.jsonl contains only text/manifest/reference reads, hashing and deliverable writes, with no image-view or browser/image opening evidence. prompt supplies no images. Image inspection is not independently supported by retained CLI events. Snapshot and entrypoint hashes are supported at event line 14; geometry arithmetic verification and JSON checks are supported at line 16. Product visual/runtime/contrast checks are correctly disclaimed."
+            }
+          ]
+        },
+        "23": {
+          "severity_assessment": "No critical finding. Missing prototype/package is explicitly disclosed and appropriate to this guidance task.",
+          "notes": [
+            {
+              "path": "workspace/adoption-review.md",
+              "observation": "Target installed Carbon version and actual prototype are absent; radius guidance distinguishes preview component documentation from a released API and implementation verification remains pending. Official source consultations and snapshot/file checks are supported by execution evidence. No unsupported completed-check claim identified."
+            }
+          ]
+        },
+        "24": {
+          "severity_assessment": "No critical finding; guidance-only response has appropriate verification limitations.",
+          "rubric_ambiguity": "a02 literally says verifies secondary headings, which could mean executed rendering. Frozen prompt requests explanation without claiming rendering, kind is guidance, and expected_output explicitly allows requests or performs actual inspection. Graded a02 pass for a concrete required verification plan, not as proof of a rendered check. If executed verification were mandatory, that part would be not_tested, not passed.",
+          "notes": [
+            {
+              "path": "response.json",
+              "observation": "No rendered check or implementation supplied or claimed. Named complete type style and requested narrow/long-copy inspection meet guidance scope."
+            }
+          ]
+        }
+      },
+      "local_archive": {
+        "path": ".verification/behavior/ibm-canonical-117-behavior-01.zip",
+        "sha256": "f1714140c685031707cddbaca8493c442687aef0e0b518e46bea54e3bb923ee0"
+      }
+    },
+    {
+      "run": "ibm-canonical-118-behavior-01",
+      "identity": {
+        "harness_version": "2-evaluation-repair",
+        "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+        "skill_sha256": "8a97fa5860905be598b786822043ca7bca3c5deb3bb2d00374b1648a11f39ac4",
+        "entrypoint_file_sha256": "faad56bca52f5ea14c8daf12d909368a1ab3250e5de721a00147be4e1dc377e6",
+        "fingerprint_algorithm": "SHA256(canonical sorted JSON relative-path-to-file-SHA256 map)",
+        "timeout_seconds": 600,
+        "preview_port": null,
+        "suite_sha256": "451ae5c2783483f02ce059bdf86862159d02130572b9abbbe011b2f5331e218e",
+        "model": "gpt-6-astra",
+        "reasoning": "medium",
+        "sandbox": "workspace-write",
+        "selected_ids": [
+          2,
+          4,
+          7
+        ],
+        "system": "macOS-26.6.2-x86_64-i386-64bit",
+        "python": "3.9.6"
+      },
+      "report": {
+        "run_key": "a3af2a498d1b257a814928d297a48b2d8adbc6977bfa4fa2dc337020e224bfd3",
+        "selected_cases": 3,
+        "counts": {
+          "fail": 1,
+          "pass": 2
+        },
+        "all_selected_pass": false,
+        "cases": [
+          {
+            "case_id": 2,
+            "run_key": "a3af2a498d1b257a814928d297a48b2d8adbc6977bfa4fa2dc337020e224bfd3",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 8,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 8,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent manual review of case, response, full deliverable and execution log. Guidance judged as specification without requiring implementation; claims checked against recorded commands and web results. Evidence limitations retained in evidence/reviewer-limitations.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-118-behavior-01/case-02/review.json",
+            "review_sha256": "784b1ca382be8f036403c2579ab00e7487021a5869222db28622cd95c0a22993",
+            "evidence_sha256": {
+              "workspace/critique.md": "57206f798c2af8caffa016784a9cf154b23345bcd79f43da185c8f3ec5218358"
+            },
+            "output_sha256": "1999e98538aa36d95a47a29bea345bb5da8df1e0c516a7a78fd15d9a451e0038",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 4,
+            "run_key": "a3af2a498d1b257a814928d297a48b2d8adbc6977bfa4fa2dc337020e224bfd3",
+            "verdict": "fail",
+            "assertions": {
+              "pass": 6,
+              "fail": 1,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 7,
+            "assertion_pass_percent": 85.71,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent review of CSS, usage HTML, README, response, source pair artifacts and execution events. Independently recalculated actual CSS boundary/text colors under declared light token assumptions with evidence/independent_contrast.py. Guidance scope does not imply a rendered product check. Limitations in evidence/reviewer-limitations.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-118-behavior-01/case-04/review.json",
+            "review_sha256": "6c2748f5fc4a5278fa6b5ac49cbf4cc074da8789a0c9ae629de09cb8beb854be",
+            "evidence_sha256": {
+              "workspace/status-legend.css": "ab40b1b60bb2dcdc3625c58ddda4bc3d6c1ae45a8770f092c1afc3c5036c7055",
+              "evidence/independent_contrast.json": "7e7eb363a6bd4b3b7a06b31bc499e908acaa204f2a21e5d495b41124b528758d",
+              "workspace/README.md": "cc0a07c8a1a9d4c821763cfc02318d88702ff2e3e4dbb76a7b4d90bca9ed5b6c",
+              "events.jsonl": "3049b661aa9bfa84633c0fc0a7e54e5f146e87f204e596b27c3037c9967f492b"
+            },
+            "output_sha256": "c1553a75a0f2b0871aa6260df8face251dbb2d212b4daba261075f7bec4270b7",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 7,
+            "run_key": "a3af2a498d1b257a814928d297a48b2d8adbc6977bfa4fa2dc337020e224bfd3",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 7,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 7,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "canonical_eval_review",
+              "kind": "agent",
+              "method": "Independent review of unchanged case rubric, response, full modal specification, checks and retained execution events. Guidance assessed as specification, not implemented UI; claimed checks compared with recorded evidence. Limitations in evidence/reviewer-limitations.json."
+            },
+            "review_path": "<local-temp>/ibm-canonical-118-behavior-01/case-07/review.json",
+            "review_sha256": "f9225465a9a834095661a50c7d667bf0463477e57d23552ee741389e6704c2dc",
+            "evidence_sha256": {
+              "workspace/modal-spec.md": "972782fa94ecd497fc37cbe83d0f87101a1217793d7a5dafbe068177a23681eb"
+            },
+            "output_sha256": "5c98fc15cc860b329f3d5069d772b86854d95a39c11c5f3130c5ede2659ad0ea",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          }
+        ],
+        "scope": "Selected cases only; unrun/ungraded cases never count as passes."
+      },
+      "reviews": {
+        "2": {
+          "run_key": "a3af2a498d1b257a814928d297a48b2d8adbc6977bfa4fa2dc337020e224bfd3",
+          "case_id": 2,
+          "output_sha256": "1999e98538aa36d95a47a29bea345bb5da8df1e0c516a7a78fd15d9a451e0038",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent manual review of case, response, full deliverable and execution log. Guidance judged as specification without requiring implementation; claims checked against recorded commands and web results. Evidence limitations retained in evidence/reviewer-limitations.json."
+          },
+          "criteria": [
+            {
+              "id": "case-02-a01",
+              "criterion": "Identifies competing header emphasis and assigns primary emphasis by task; does not force a primary where none is justified.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Header finding identifies competing emphasis and conditionally assigns sole primary to Create report only if creation is the main task; monitoring should not automatically promote creation. Summary is less conditional, but detailed recommendation ties emphasis to task."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a02",
+              "criterion": "Assesses corner and elevation treatments against the installed component anatomy rather than treating all radius or shadow as forbidden.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Surfaces finding recommends following actual component corner/elevation treatment, preserves useful boundaries, and expressly rejects blanket bans on radius/shadow. No installed component/version is available and product-source limits are disclosed."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a03",
+              "criterion": "Flags centered paragraph text \u2014 Carbon type is flush left",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Text finding identifies centered paragraphs as a scanning problem and prescribes start-aligned labels, values and supporting text with consistent productive type hierarchy."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a04",
+              "criterion": "Recommends replacing or reworking the nine-category pie chart (bar chart, direct labels, or fewer categories)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Pie finding recommends sorted directly labeled horizontal bars with shared zero baseline, conditional percentages, meaningful domain order, and cautious Other grouping."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a05",
+              "criterion": "Flags excessive animate-everything treatment without claiming frequent or keyboard interactions can never use productive motion",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Motion finding removes decorative lifting/scaling on static content while preserving supported subtle control feedback and meaningful data transitions, keyboard access/focus and reduced-motion support. No universal keyboard/frequent-interaction prohibition."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a06",
+              "criterion": "Findings are ordered hierarchy-first (hierarchy/actions before color, depth, and polish notes)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Table order is KPI hierarchy, header actions, chart, text, surfaces, motion, explicitly prioritizing hierarchy over polish."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a07",
+              "criterion": "Each finding names the principle behind it and gives a concrete fix (no preference-only notes)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Each row connects a concrete perceptual/task principle to actionable corrections: metric priority, action competition, chart comparison, text scanning, meaningful depth and interaction affordance. Recommendations are identified as craft judgments."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a08",
+              "criterion": "Ends with what's working and/or names the single most valuable change",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Closing substantive recommendations preserve the six metrics and existing actions and prioritize fixing action emphasis before data encoding/text and later metric prominence. Casebook discussion and verification limitations follow; useful foundations and most valuable direction are identified."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "4": {
+          "run_key": "a3af2a498d1b257a814928d297a48b2d8adbc6977bfa4fa2dc337020e224bfd3",
+          "case_id": 4,
+          "output_sha256": "c1553a75a0f2b0871aa6260df8face251dbb2d212b4daba261075f7bec4270b7",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent review of CSS, usage HTML, README, response, source pair artifacts and execution events. Independently recalculated actual CSS boundary/text colors under declared light token assumptions with evidence/independent_contrast.py. Guidance scope does not imply a rendered product check. Limitations in evidence/reviewer-limitations.json."
+          },
+          "criteria": [
+            {
+              "id": "case-04-a01",
+              "criterion": "Refuses to distinguish states by color alone \u2014 each state gets a shape or symbol in addition to color",
+              "outcome": "fail",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Every state uses the same 16px round .status__dot, no distinct shape/symbol. Text labels preserve identity without color, but explicit per-state shape/symbol criterion is unmet; README openly identifies the departure."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a02",
+              "criterion": "Recognizes yellow 30 needs a sufficiently contrasting essential outline/symbol on these hosts, or chooses a measured darker mark; does not ban light fills universally.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "evidence/independent_contrast.json",
+                  "observation": "Yellow 30 support fill retained behind 2px Yellow 60 edge; independent boundary ratio is 4.99 white, 4.53 Gray 10 and 4.07 hover. README recognizes light fill failure without universally banning it."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a03",
+              "criterion": "Checks the healthy mark on hover and uses a measured darker fill or essential contrasting outline/symbol where needed.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "evidence/independent_contrast.json",
+                  "observation": "Healthy support-success fill has 2px Green 60 outline resolving to #198038. Independent hover ratio 4.09 exceeds 3; recorded source check separately diagnoses Green 50 fill hover 2.74 failure."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a04",
+              "criterion": "Checks the resolved table hover surface as well as white and default layer surfaces; names the theme or assumptions.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/README.md",
+                  "observation": "Explicit v11/default cds/White or Gray 10 assumptions; source-value checks include #ffffff, #f4f4f4 and #e8e8e8 hover. Actual app/theme not supplied, and integration/browser measurement limitations disclosed."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a05",
+              "criterion": "Uses gray 60 for 'not started' and blue 70 (info/in-progress) for 'in progress'",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Not started local semantic role is #6f6f6f Gray 60. In progress uses support-info with #0043ce Blue 70 fallback; supplied light token source agrees."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a06",
+              "criterion": "Provides reproducible contrast results for required rendered pairs; unsupported claims of running a script do not count as evidence.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "events.jsonl",
+                  "observation": "Completed command at line 14 executes check_contrast.py --pairs, writes and displays 29/33 pass. Four diagnostic fill failures correctly distinguished from required boundary/label passes. Independent script reproduces all 18 essential painted boundary/label pairs; no browser-measurement claim."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a07",
+              "criterion": "Measures the essential visible symbol or boundary against adjacent hosts, including hover; does not demand contrast between incidental decorative parts.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "evidence/independent_contrast.json",
+                  "observation": "Measures 2px outer edge against actual adjacent assumed host for each status plus label text, including hover. Local scope is present in usage.html, wrappers transparent. Interior fill diagnostics are not treated as required failures after contrasting boundaries are provided."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "7": {
+          "run_key": "a3af2a498d1b257a814928d297a48b2d8adbc6977bfa4fa2dc337020e224bfd3",
+          "case_id": 7,
+          "output_sha256": "5c98fc15cc860b329f3d5069d772b86854d95a39c11c5f3130c5ede2659ad0ea",
+          "reviewer": {
+            "name": "canonical_eval_review",
+            "kind": "agent",
+            "method": "Independent review of unchanged case rubric, response, full modal specification, checks and retained execution events. Guidance assessed as specification, not implemented UI; claimed checks compared with recorded evidence. Limitations in evidence/reviewer-limitations.json."
+          },
+          "criteria": [
+            {
+              "id": "case-07-a01",
+              "criterion": "Chooses the container by task complexity, available space and context rather than claiming a universal four-field maximum.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Chooses provisional transactional modal for one focused creation task, considers medium/large fit, expanded errors, narrow reachability and underlying-list needs. Explicitly rejects seven fields alone as a reason to change container, with no numeric field maximum."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a02",
+              "criterion": "Explains whether to retain the requested modal, reduce optional scope, or choose a panel/tearsheet/full page, with task-specific reasons.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Retains all seven fields in one step for focused creation; vertical scrolling is an acknowledged cost. Side panel or tearsheet is proposed if controls/actions remain hard to reach or operators need list access."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a03",
+              "criterion": "Defines modality, focus containment or page access, supported dismissal and focus return for the chosen container; does not impose a universal no-close rule.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Specifies named modal and focus trap, first-name initial focus, close icon/Cancel/Escape dismissal and trigger return. Dropdown Escape consumes first. Outside clicks do not dismiss; accepted submission dismissal continues request with page feedback. No blanket no-close rule."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a04",
+              "criterion": "Allows vertical modal-body scrolling with reachable actions when appropriate and specifies narrow-viewport behavior; avoids horizontal scrolling.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Visible header/footer and vertically scrolling body, no horizontal scrolling, paired names stack narrowly, long labels/errors wrap and dropdown menus avoid clipping. Explicit acceptance checks include 320px, zoom, mobile keyboard and footer reachability."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a05",
+              "criterion": "Marks the minority of fields (required or optional) rather than both",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Visible labels mark only Team and Notes optional, the minority. Other labels have no required marker, with a shared required-unless-optional instruction and boolean toggle. Provisional Last name policy is explicitly identified."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a06",
+              "criterion": "Avoids nested modal confirmations and defines a coherent unsaved-work policy across supported exits.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Cancel, named close and Escape consistently abandon unsaved entries with visible warning; no nested confirmation. Submitted request exits have distinct semantics and must not remain labeled Cancel. Substantial notes reopen draft-protection/container policy."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a07",
+              "criterion": "Includes a short decision rationale and evidence that would reopen the container choice.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Gives short focused-task rationale and concrete reconsideration evidence: persistent action/control reachability failure or need to consult underlying list triggers side panel/tearsheet proposal; substantial notes requiring draft protection triggers container/dismissal reconsideration."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        }
+      },
+      "limitations": {
+        "2": {
+          "severity_assessment": "Casebook image-inspection claims are not independently supported by retained CLI events. This can reflect logging coverage limitations and is not proof that viewing never occurred. Reference-image evidence remains unverified, classified as a noncritical evidence limitation rather than a serious functional/accessibility/scope failure.",
+          "notes": [
+            {
+              "path": "response.json",
+              "observation": "Casebook visual inspection says both White desktop images were viewed; critique.md repeats this. events.jsonl shows reference text reads and file edits/existence check only, with no image-view/open/render action, and prompt supplies no images. Inspection is not independently supported by retained CLI events; textual reference review does not establish visual inspection."
+            }
+          ]
+        },
+        "4": {
+          "severity_assessment": "No critical functional/accessibility/scope failure established. a01 remains ordinary assertion failure because visible labels preserve textual state identity, although distinct-symbol guidance is unmet.",
+          "notes": [
+            {
+              "path": "workspace/README.md",
+              "observation": "No installed app/package or computed styles available. Independent calculation verifies 18/18 essential pairs under supplied light-token assumptions, not browser output or selected/custom surfaces. Forced-colors and AT remain untested, correctly disclosed."
+            },
+            {
+              "path": "events.jsonl",
+              "observation": "Source contrast and hashing execution supported at line 14. Failed current-documentation fetches at line 11 are correctly disclosed; no unsupported completed-check claim identified."
+            }
+          ]
+        },
+        "7": {
+          "severity_assessment": "No critical finding. Reference-image inspection is a noncritical evidence limitation, not proof viewing never occurred.",
+          "notes": [
+            {
+              "path": "workspace/modal-spec.md",
+              "observation": "Claims two form casebook image inspections and visual comparison. Retained events show text reference reads, file listings, official page opens and deliverable/hash checks, but no image-view event. Claim is not independently supported by retained CLI events; logging coverage may limit observability. Product rendering/runtime checks are accurately disclaimed."
+            },
+            {
+              "path": "events.jsonl",
+              "observation": "Current modal usage/style page retrieval is supported at line 11; snapshot hashing and field completeness are supported by completed command at line 16. Requiredness, service limits and defaults remain explicitly proposed/unresolved."
+            }
+          ]
+        }
+      },
+      "local_archive": {
+        "path": ".verification/behavior/ibm-canonical-118-behavior-01.zip",
+        "sha256": "1799a8008ebaaf1b99f844a0c9d4cf8d1f0c542c9ac11153a83e3e4809e651c2"
+      }
+    }
+  ],
+  "public_export_note": "Selected summary only. Host configuration fingerprints are omitted and local absolute paths are redacted. Original identities, scores and reviews remain unchanged in local raw archives; recorded file hashes refer to those original bytes."
+}

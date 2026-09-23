@@ -176,3 +176,7 @@ The raw `$type-scale` and `type-scale()` function remain available, but role-bas
 - Large type becomes lighter where the token specifies it.
 - Running text is neutral, readable, and left-aligned; semantic color passes contrast.
 - Reset/default type emission is intentional and not duplicated.
+
+## Wrapped heading verification
+
+Apply the complete type style, including line-height. A 28px heading inheriting a 20px body line-height can overlap when it wraps. Inspect secondary headings as well as the hero at narrow widths (including 320px) with long realistic copy. Check computed size/leading and the rendered result; absence of horizontal overflow alone does not establish legibility.

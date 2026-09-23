@@ -88,3 +88,9 @@ Run python -B -X utf8 scripts/test_evaluate.py. The tests replace CLI execution 
 Use Prepare and Report to check packet identity and unrun status locally. An unrun report must not count as a pass. The PowerShell wrapper invokes Python; it does not itself grant permission to run a model.
 
 Exit codes: 0 means a completed Prepare or an all-pass execution/review/report; 1 means a non-passing run, score or report (including unrun cases); 2 means invalid inputs or an evaluation error. A valid unrun report intentionally exits 1.
+
+## 1.1.7 intake and rubric corrections
+
+Bundled cases 2, 4 and 7 correct blanket styling, contrast and modal rules. Keep older results attached to their original suite snapshots; do not compare aggregate scores across changed criteria. The frozen release archives retain the original suites.
+
+Use `--suite` with [evals-intake.json](../evals-intake.json) for the three additional guidance cases (22–24): spatial workspaces, prototype adoption and wrapped headings. These are separate from the bundled 21-case regression suite. Results belong to the exact evaluated snapshot and release evidence; the suite itself makes no performance claim. Guidance answers do not establish working UI, visual quality or assistive-technology behavior.

@@ -1,0 +1,1645 @@
+{
+  "public_export_note": "Selected evidence summary. Host configuration fingerprints omitted and local absolute paths redacted. Original packets, reviews, criteria and logs remain unchanged in ignored local ZIP archives; file hashes identify original bytes.",
+  "runs": [
+    {
+      "run": "ibm-119-final-status",
+      "identity": {
+        "harness_version": "2-evaluation-repair",
+        "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+        "skill_sha256": "8073e65a6968411569c27a57e27540c2d1d8525437e7045dd8e57d1719f8a8ee",
+        "entrypoint_file_sha256": "faad56bca52f5ea14c8daf12d909368a1ab3250e5de721a00147be4e1dc377e6",
+        "fingerprint_algorithm": "SHA256(canonical sorted JSON relative-path-to-file-SHA256 map)",
+        "timeout_seconds": 600,
+        "preview_port": null,
+        "suite_sha256": "6b0df4477ee6ab81e6cc29c6aa9ebafc8ad951d6d9e17399f7e16c1e05bccc66",
+        "model": "gpt-6-astra",
+        "reasoning": "medium",
+        "sandbox": "workspace-write",
+        "selected_ids": [
+          4
+        ],
+        "system": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+        "python": "3.14.7"
+      },
+      "report": {
+        "run_key": "42511d32581a0d3c5c62d9f5faf7430ca83fecf3c0d813248c38c4fc1c4c0c47",
+        "selected_cases": 1,
+        "counts": {
+          "fail": 1
+        },
+        "all_selected_pass": false,
+        "cases": [
+          {
+            "case_id": 4,
+            "run_key": "42511d32581a0d3c5c62d9f5faf7430ca83fecf3c0d813248c38c4fc1c4c0c47",
+            "verdict": "fail",
+            "assertions": {
+              "pass": 6,
+              "fail": 1,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 7,
+            "assertion_pass_percent": 85.71,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read frozen case, template, response, all four deliverables, and relevant execution events. Reviewed requested dot variant and optional symbol alternative as specifications. Independently recalculated source-level essential boundary/host, label/host, and alternative symbol/fill contrast using delivered CSS and frozen light token declarations; retained reproducible script/results. No browser runtime claim."
+            },
+            "review_path": "<local-temp>/ibm-119-final-status/case-04/review.json",
+            "review_sha256": "1bcdd4b66a05f35f0f70bc7d968bd24ee75838a93ba0e0fc09b43c19e6f570ce",
+            "evidence_sha256": {
+              "workspace/README.md": "1248e60b326542a5a6d3c9828a9ed7f5bc2eb29b9280098f91551bf52f669db2",
+              "workspace/status-legend.css": "7a4de1e06fcda7df11e644f1e40bf68b2ceeab5a91d233943d422ab9b5fe3ed4",
+              "evidence/reviewer-contrast.json": "df455eff27be79d50ea64b3b8a31e59bbc495ed899ef3288426d71510996b669",
+              "workspace/evidence/checks.json": "e4460f6879547fe43069c4c90dd47b2abb6644cbf3253bf8c4acfac3e71a4ee2",
+              "events.jsonl": "2b81a8a7b15aaefdcc2aec7402b1b2274c177d54bc712b6daa8e540d19929f79"
+            },
+            "output_sha256": "a7ef9141548061360b057df38d8533519dc0b6e3f98352efb2d5eea94bd7cbe4",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          }
+        ],
+        "scope": "Selected cases only; unrun/ungraded cases never count as passes."
+      },
+      "reviews": {
+        "4": {
+          "run_key": "42511d32581a0d3c5c62d9f5faf7430ca83fecf3c0d813248c38c4fc1c4c0c47",
+          "case_id": 4,
+          "output_sha256": "a7ef9141548061360b057df38d8533519dc0b6e3f98352efb2d5eea94bd7cbe4",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read frozen case, template, response, all four deliverables, and relevant execution events. Reviewed requested dot variant and optional symbol alternative as specifications. Independently recalculated source-level essential boundary/host, label/host, and alternative symbol/fill contrast using delivered CSS and frozen light token declarations; retained reproducible script/results. No browser runtime claim."
+          },
+          "criteria": [
+            {
+              "id": "case-04-a01",
+              "criterion": "Refuses to distinguish states by color alone \u2014 each state gets a shape or symbol in addition to color",
+              "outcome": "fail",
+              "evidence": [
+                {
+                  "path": "workspace/README.md",
+                  "observation": "Default requested HTML deliberately uses identical circles for all five states; distinct symbols are only an optional alternative, so not every delivered state mark has an additional symbol/shape. The optional StatusSymbol.jsx does supply Checkmark, WarningAlt, Close, Renew and Subtract. Visible full labels mean this strict criterion failure does not by itself establish a color-only accessibility violation."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a02",
+              "criterion": "Recognizes yellow 30 needs a sufficiently contrasting essential outline/symbol on these hosts, or chooses a measured darker mark; does not ban light fills universally.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Warning retains support-warning Yellow 30 and adds a 2px Yellow 60 essential outline; independent hover outline contrast is 4.069:1 versus fill 1.374:1. No universal light-fill ban."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a03",
+              "criterion": "Checks the healthy mark on hover and uses a measured darker fill or essential contrasting outline/symbol where needed.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "evidence/reviewer-contrast.json",
+                  "observation": "Healthy support-success fill is 2.735:1 on #e8e8e8 hover, while delivered Green 60 outline is 4.094:1; both generator calculations and independent calculation cover this."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a04",
+              "criterion": "Checks the resolved table hover surface as well as white and default layer surfaces; names the theme or assumptions.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/evidence/checks.json",
+                  "observation": "White/Gray 10 assumptions are explicit, and source results cover #ffffff, default layer #f4f4f4, and table hover #e8e8e8. Frozen light layer-hover-01 resolves to #e8e8e8. Actual installed console token resolution is explicitly untested."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a05",
+              "criterion": "Uses gray 60 for 'not started' and blue 70 (info/in-progress) for 'in progress'",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Not started maps to explicit #6f6f6f Gray 60 local role; in progress consumes support-info, resolving to #0043ce Blue 70 in frozen light tokens."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a06",
+              "criterion": "Provides reproducible contrast results for required rendered pairs; unsupported claims of running a script do not count as evidence.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "events.jsonl",
+                  "observation": "Completed item_10 includes executable WCAG luminance/ratio calculation and emitted results; workspace/evidence/checks.json preserves resolved inputs and ratios. Independent evidence/reviewer-contrast.py reproduces required pairs and agrees to reported precision."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a07",
+              "criterion": "Measures the essential visible symbol or boundary against adjacent hosts, including hover; does not demand contrast between incidental decorative parts.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "evidence/reviewer-contrast.json",
+                  "observation": "All five essential boundaries were calculated against all three adjacent hosts and exceed 3:1; labels exceed 4.5:1. Optional symbols were also calculated against their actual fill backgrounds and exceed 3:1. Outline-to-fill contrast is not wrongly imposed as an additional requirement."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        }
+      },
+      "limitations": {
+        "4": {
+          "scope": "Source/specification assessment only. Requested dot and optional React symbol variants both reviewed.",
+          "visual_evidence": "No screenshots or browser rendering evidence supplied or claimed. Reviewer did not perform visual rendering.",
+          "runtime_limits": [
+            "No installed application/token overrides available; contrast applies to explicit documented light surface assumptions.",
+            "Optional icon imports/build and final 12px symbol legibility are not runtime-verified.",
+            "Forced-colors, custom/selected/dark surfaces, zoom, responsive layout and assistive technology were not tested."
+          ],
+          "critical_findings_rationale": "No serious functional/accessibility/scope failure established. Default identical shapes fail the strict criterion but complete adjacent text labels convey each state, and the supplied optional alternative provides distinct symbols."
+        }
+      },
+      "local_archive": {
+        "path": ".verification/behavior/ibm-119-final-status.zip",
+        "sha256": "89b5ba8be3ef7cdda910a86a91df175ea98f253ef459abb96a6adb0d2305039c"
+      }
+    },
+    {
+      "run": "ibm-119-final-guidance",
+      "identity": {
+        "harness_version": "2-evaluation-repair",
+        "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+        "skill_sha256": "8073e65a6968411569c27a57e27540c2d1d8525437e7045dd8e57d1719f8a8ee",
+        "entrypoint_file_sha256": "faad56bca52f5ea14c8daf12d909368a1ab3250e5de721a00147be4e1dc377e6",
+        "fingerprint_algorithm": "SHA256(canonical sorted JSON relative-path-to-file-SHA256 map)",
+        "timeout_seconds": 600,
+        "preview_port": null,
+        "suite_sha256": "6b0df4477ee6ab81e6cc29c6aa9ebafc8ad951d6d9e17399f7e16c1e05bccc66",
+        "model": "gpt-6-astra",
+        "reasoning": "medium",
+        "sandbox": "workspace-write",
+        "selected_ids": [
+          2,
+          7,
+          22,
+          23,
+          24
+        ],
+        "system": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+        "python": "3.14.7"
+      },
+      "report": {
+        "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+        "selected_cases": 5,
+        "counts": {
+          "fail": 1,
+          "pass": 4
+        },
+        "all_selected_pass": false,
+        "cases": [
+          {
+            "case_id": 2,
+            "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+            "verdict": "fail",
+            "assertions": {
+              "pass": 7,
+              "fail": 1,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 8,
+            "assertion_pass_percent": 87.5,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read case, response, complete critique and checks deliverables, and relevant recorded execution events; assessed recommendations as a specification against each assertion. No runtime or visual product verification was inferred from prose."
+            },
+            "review_path": "<local-temp>/ibm-119-final-guidance/case-02/review.json",
+            "review_sha256": "4de49d22bd06ac95f6407677328567deb4b87a899ae7933f6df2791fa8fcd74b",
+            "evidence_sha256": {
+              "workspace/critique.md": "5aec18126f583b062509654e563c85dda87199bfadff0681b82260881126a763"
+            },
+            "output_sha256": "dde482bd48390aaf303cc843ad2f5c31da45a8c498f75f077e6a7d2b7d5e1a60",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 7,
+            "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 7,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 7,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read frozen initial-candidate case, response, template, complete specification and checks deliverables, and relevant execution events. Assessed exact criteria as specification requirements; no product runtime or visual verification inferred from prose."
+            },
+            "review_path": "<local-temp>/ibm-119-final-guidance/case-07/review.json",
+            "review_sha256": "bc00aa1f2bba37225d6de77d15b0d18c3fca156eb06aaa0887e1ac7f45015ea7",
+            "evidence_sha256": {
+              "workspace/modal-spec.md": "20f025629fa6b383595c89b19f7e25223d5041ee832e59a8286e0ca08a0d2cde"
+            },
+            "output_sha256": "4bf542ca42e86d29b12f63bc5aa61693ef861dd9053f8ef4fdd92bc058c0df65",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 22,
+            "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 6,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 6,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read frozen initial-candidate case, response, template, complete specification and checks deliverables, and relevant execution events. Assessed exact criteria as specification requirements; no product runtime or visual verification inferred from prose."
+            },
+            "review_path": "<local-temp>/ibm-119-final-guidance/case-22/review.json",
+            "review_sha256": "8b3110c8b117a64c923f7ee887e01272222eefb87bd23c4b761a2b47445924de",
+            "evidence_sha256": {
+              "workspace/map-inspector-design.md": "cb0376ebe9125b16a1dda2ac24b8c43cf9faebf4069d33cd1dba3cb390d199ec"
+            },
+            "output_sha256": "67a8b06168801a1a195c3258526dc1bc79d7ee2ff75fa61f733d8cda774010f9",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 23,
+            "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 6,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 6,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read this frozen case, response, template, complete workspace deliverables and relevant recorded events independently. Assessed exact guidance criteria as specification requirements; did not infer runtime, accessibility, or visual acceptance from prose."
+            },
+            "review_path": "<local-temp>/ibm-119-final-guidance/case-23/review.json",
+            "review_sha256": "92022e7caacf6eca0b222e520efa61bd54ce1ac039c3b16410bd030626a30944",
+            "evidence_sha256": {
+              "workspace/adoption-review.md": "5ad541750d5e12e3a6e7ae42bf7c9af31fd8f3c4037862280129f4ec0dcb1488"
+            },
+            "output_sha256": "0ba4a277f96c9c361338e719e4341ba47c90ad82a678e4ed98c2dc967345f21e",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 24,
+            "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 3,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 3,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read frozen case, template, response, workspace deliverables and relevant recorded events. Assessed exact criteria as guidance specifications, distinguishing plans from executed evidence. For case04 independently recalculated source color pairs with retained script/results; no runtime rendering inferred."
+            },
+            "review_path": "<local-temp>/ibm-119-final-guidance/case-24/review.json",
+            "review_sha256": "52e30140ef69a338e4b07f32dbdfdaf9017ac93e70958f3f8b0f2f7758dde98e",
+            "evidence_sha256": {
+              "response.json": "ba87429892940c79533d838f7997b30fe79b7147196d71843435fd6038c91b17"
+            },
+            "output_sha256": "34fb8e909595f52d25d2d6be71ade4939c986f7f8db8f744b8d98fadd11defe6",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          }
+        ],
+        "scope": "Selected cases only; unrun/ungraded cases never count as passes."
+      },
+      "reviews": {
+        "2": {
+          "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+          "case_id": 2,
+          "output_sha256": "dde482bd48390aaf303cc843ad2f5c31da45a8c498f75f077e6a7d2b7d5e1a60",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read case, response, complete critique and checks deliverables, and relevant recorded execution events; assessed recommendations as a specification against each assertion. No runtime or visual product verification was inferred from prose."
+          },
+          "criteria": [
+            {
+              "id": "case-02-a01",
+              "criterion": "Identifies competing header emphasis and assigns primary emphasis by task; does not force a primary where none is justified.",
+              "outcome": "fail",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Header row correctly makes emphasis conditional on the main task, but its alternative is to choose another primary accordingly; summary also says choose one primary. It does not permit no primary when no task dominates, as this criterion requires."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a02",
+              "criterion": "Assesses corner and elevation treatments against the installed component anatomy rather than treating all radius or shadow as forbidden.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Surface row recommends spacing, alignment and subtle layers, directs corner/elevation treatment to the applicable component, explicitly rejects a universal no-rounded-corners rule, and retains useful boundaries. With no actual implementation supplied, this is appropriately conditional component guidance."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a03",
+              "criterion": "Flags centered paragraph text \u2014 Carbon type is flush left",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Centered-paragraph row explains changing reading edges and recommends start-aligning metric labels and explanations."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a04",
+              "criterion": "Recommends replacing or reworking the nine-category pie chart (bar chart, direct labels, or fewer categories)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Nine-category pie row recommends horizontal bars with a shared zero baseline, direct category labels and values/percentages, preserving part-to-whole context."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a05",
+              "criterion": "Flags excessive animate-everything treatment without claiming frequent or keyboard interactions can never use productive motion",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Motion row removes decorative movement from static regions while preserving purposeful subtle control feedback and meaningful data changes; also calls for reduced motion and keyboard/touch access."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a06",
+              "criterion": "Findings are ordered hierarchy-first (hierarchy/actions before color, depth, and polish notes)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Critique begins with competing emphasis, then prioritizes KPIs and header actions before charts/text and surface/motion polish."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a07",
+              "criterion": "Each finding names the principle behind it and gives a concrete fix (no preference-only notes)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Each table finding states its task-related rationale and actionable correction: hierarchy, action competition, comparison/legend burden, scan alignment, enclosure weight, and misleading/noisy motion."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a08",
+              "criterion": "Ends with what's working and/or names the single most valuable change",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Opening names the highest-value change as reading order and action hierarchy; later explicitly preserves concise KPI overview, explicit action labels, and explanatory context."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "7": {
+          "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+          "case_id": 7,
+          "output_sha256": "4bf542ca42e86d29b12f63bc5aa61693ef861dd9053f8ef4fdd92bc058c0df65",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read frozen initial-candidate case, response, template, complete specification and checks deliverables, and relevant execution events. Assessed exact criteria as specification requirements; no product runtime or visual verification inferred from prose."
+          },
+          "criteria": [
+            {
+              "id": "case-07-a01",
+              "criterion": "Chooses the container by task complexity, available space and context rather than claiming a universal four-field maximum.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Container decision retains one bounded user-creation modal without a need to consult the underlying page; medium sizing is provisional and fit must be checked. Explicitly rejects field-count-only rules."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a02",
+              "criterion": "Explains whether to retain the requested modal, reduce optional scope, or choose a panel/tearsheet/full page, with task-specific reasons.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Retains all seven requested fields in a transactional modal because they form one creation task; describes fallback to larger modal, tearsheet or dedicated page if real fit fails."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a03",
+              "criterion": "Defines modality, focus containment or page access, supported dismissal and focus return for the chosen container; does not impose a universal no-close rule.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Defines initial focus, focus containment including popup controls, inert underlying page, Cancel/close/Escape behavior, no outside-click dismissal, and return to trigger or logical fallback. Submission continuation is explicit."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a04",
+              "criterion": "Allows vertical modal-body scrolling with reachable actions when appropriate and specifies narrow-viewport behavior; avoids horizontal scrolling.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Fixed header/footer and vertically scrolling body keep actions reachable; narrow widths retain order and wrap labels/help/errors with no horizontal scrolling. Dropdown viewport/clipping and zoom checks are specified."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a05",
+              "criterion": "Marks the minority of fields (required or optional) rather than both",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Only Notes is labeled optional; required inputs are not individually marked required. Intro states all fields required unless marked optional; toggle has an explicit initial choice."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a06",
+              "criterion": "Avoids nested modal confirmations and defines a coherent unsaved-work policy across supported exits.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "All unsubmitted exits consistently discard with advance warning, outside click is disabled, nested confirmations explicitly forbidden. Submitted requests continue with Return to users and duplicate-request prevention."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a07",
+              "criterion": "Includes a short decision rationale and evidence that would reopen the container choice.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/modal-spec.md",
+                  "observation": "Decision rationale names bounded task/no underlying-page consultation; long errors, expanded notes, short heights, zoom and unreachable controls explicitly reopen size/container choice."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "22": {
+          "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+          "case_id": 22,
+          "output_sha256": "67a8b06168801a1a195c3258526dc1bc79d7ee2ff75fa61f733d8cda774010f9",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read frozen initial-candidate case, response, template, complete specification and checks deliverables, and relevant execution events. Assessed exact criteria as specification requirements; no product runtime or visual verification inferred from prose."
+          },
+          "criteria": [
+            {
+              "id": "case-22-a01",
+              "criterion": "Does not blindly impose 480px or replace it with a universal 400px; asks for or proposes measuring actual canvas and hit-region geometry.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Rejects reported 480px/43px configuration, proposes unapproved 320px candidate and measures remaining canvas width/height, actual bounds and zoom; neither width is universal."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a02",
+              "criterion": "Preserves physical coordinates and avoids enlarging overlapping invisible targets as the only fix; considers zoom, pan, panel layout or a usable alternative.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Preserves saved coordinates and original geometry; explains narrower panel alone cannot change spacing at fixed scale. Uses zoom/pan, overview group targets and synchronized 44px seat-list targets instead of overlapping invisible targets."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a03",
+              "criterion": "Reduces label detail while retaining status identity, accessible full identity and a detail path.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Collision-aware labels progress from names to identifiers/initials to status symbols; selected/focused label receives priority and full identity remains in inspector, accessible names and seat list."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a04",
+              "criterion": "Distinguishes domain status from selection, focus and search; preserves custom branding and specifies contrast verification on actual hosts in both themes without claiming unperformed measurements.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Separate table rows define domain status, selection, focus and search treatments. Preserves approved custom-brand roles and real vocabulary, covers supported themes/states, and calls for actual floor-plan-host contrast including combined states without invented measurements."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a05",
+              "criterion": "Specifies one roving Tab stop or an equivalently justified spatial focus strategy, directional movement, focus reconciliation and return; inspection does not implicitly assign.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "One roving Tab stop, deterministic screen-direction neighbor navigation, no edge wrapping, filtering/removal/zero-result reconciliation and return to origin are specified. Enter/Space inspect without assigning; detail route is explicit."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a06",
+              "criterion": "Distinguishes a non-modal inspector from a modal task and describes a narrow/coarse-pointer fallback.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/map-inspector-design.md",
+                  "observation": "Desktop inspector explicitly nonmodal without focus trap; narrow/coarse-pointer split failures use full-width modal sheet with inert background, focus containment and restored map view."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "23": {
+          "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+          "case_id": 23,
+          "output_sha256": "0ba4a277f96c9c361338e719e4341ba47c90ad82a678e4ed98c2dc967345f21e",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read this frozen case, response, template, complete workspace deliverables and relevant recorded events independently. Assessed exact guidance criteria as specification requirements; did not infer runtime, accessibility, or visual acceptance from prose."
+          },
+          "criteria": [
+            {
+              "id": "case-23-a01",
+              "criterion": "Retains useful composition or rationale selectively without adopting the prototype as approved product design or copying private fixtures.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Selectively retains composition/reasoning only after actual task/source/render checks; labels advice as heuristics and excludes private office data from sanitized reusable examples."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a02",
+              "criterion": "Corrects the disabled-control blanket claim and checks version-specific primary documentation rather than repeating the no-radius assertion.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Rejects universal disabled-announcement claim, distinguishes native disabled/ARIA-disabled/read-only/hidden, and requires browser/AT checks. Cites component-specific preview Tag radius and Carbon Next while distinguishing preview from installed release contract. Recorded web events corroborate W3C and Carbon page consultation."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a03",
+              "criterion": "Identifies aria-hidden as insufficient to remove Tab stops; modal behavior needs implemented focus containment and background inertness, while non-modal inspection should remain non-modal.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Explains aria-hidden does not remove keyboard focus, requires hide/unmount or inert closed content with deliberate focus return and transition checks; distinguishes modal containment/background inertness from accessible nonmodal canvas inspection."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a04",
+              "criterion": "Identifies toast dismissal as not undo and requires actual state restoration or an explicit simulation label.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Rejects toast dismissal as Undo and requires restoration of affected domain/draft/derived state; validation captures before/after state and protects unrelated work. Simulation or absent reversal must be honestly labeled."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a05",
+              "criterion": "Identifies implicit assignment during inspection as a risk; requires an explicit action mode or separate mutation control.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Rejects assignment through ordinary inspection/general edit mode; permits separate explicit Assign or clearly entered assignment mode naming person and consequence. Keyboard focus/inspection must not mutate state."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a06",
+              "criterion": "Distinguishes source inspection, rendered visuals, interaction tests, contrast checks and model evaluation results; records unresolved limitations instead of claiming full validation.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Separates source/provenance, rendering, focus/browser/AT, actual state assertions, resolved contrast, and scenario model evaluation. Explicitly says defects remain supplied observations and validation plan has not passed runtime tests."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "24": {
+          "run_key": "4084c2f6ef02467ba1440e38306c05885af20fad506ac09a40ccb391d1aa0561",
+          "case_id": 24,
+          "output_sha256": "34fb8e909595f52d25d2d6be71ade4939c986f7f8db8f744b8d98fadd11defe6",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read frozen case, template, response, workspace deliverables and relevant recorded events. Assessed exact criteria as guidance specifications, distinguishing plans from executed evidence. For case04 independently recalculated source color pairs with retained script/results; no runtime rendering inferred."
+          },
+          "criteria": [
+            {
+              "id": "case-24-a01",
+              "criterion": "Identifies inherited line-height as a likely defect despite no horizontal overflow.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Rejects readiness: 28px text with inherited 20px leading risks wrapped-line overlap even without horizontal overflow."
+                }
+              ]
+            },
+            {
+              "id": "case-24-a02",
+              "criterion": "Uses a complete appropriate type style and specifies computed-style and rendered inspection of secondary headings with long copy at 320px; does not claim execution when no interface was supplied.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Proposes complete Carbon heading-04 (28px/36px regular) or an appropriately smaller complete role. Explicitly requires computed typography and rendered long-copy wrapped-heading inspection at 320px plus nearby widths and zoom; no interface execution claimed."
+                }
+              ]
+            },
+            {
+              "id": "case-24-a03",
+              "criterion": "Distinguishes proposed checks from actual rendered evidence.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Checks explicitly say rendered verification not performed and assessment is description-only; correction and visual/computed-style checks remain proposed."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        }
+      },
+      "limitations": {
+        "2": {
+          "scope": "Guidance specification review only; no product screenshot/runtime was supplied or tested.",
+          "unsupported_inspection_claims": [
+            {
+              "paths": [
+                "response.json",
+                "workspace/critique.md",
+                "workspace/evidence/checks.json"
+              ],
+              "claim": "Both supplied dashboard casebook White desktop images were opened/inspected.",
+              "observation": "Recorded completed events show reference reads and file listing but no independently corroborating image-view result. This event stream alone does not prove viewing never occurred; claim remains unverified by this reviewer."
+            }
+          ]
+        },
+        "7": {
+          "scope": "Initial-candidate specification only; no product runtime, actual viewport, interaction, assistive-technology or resolved contrast tests performed by this reviewer.",
+          "unsupported_inspection_claims": [
+            {
+              "paths": [
+                "workspace/modal-spec.md",
+                "workspace/evidence/checks.json"
+              ],
+              "claim": "Viewed both supplied form study White desktop images.",
+              "observation": "Recorded completed events show reference reads but no independently corroborating image-view result. This alone does not prove viewing never occurred; claim remains unverified by this reviewer."
+            }
+          ]
+        },
+        "22": {
+          "scope": "Initial-candidate specification only; no product runtime, actual viewport, interaction, assistive-technology or resolved contrast tests performed by this reviewer.",
+          "unsupported_inspection_claims": [
+            {
+              "paths": [
+                "workspace/map-inspector-design.md",
+                "workspace/evidence/checks.json"
+              ],
+              "claim": "Viewed both supplied form study White desktop images.",
+              "observation": "Recorded completed events show reference reads but no independently corroborating image-view result. This alone does not prove viewing never occurred; claim remains unverified by this reviewer."
+            }
+          ]
+        },
+        "23": {
+          "scope": "Guidance review only; no prototype source, images, runtime or installed package supplied. No reviewer browser, AT, contrast or state tests performed.",
+          "source_evidence": "Recorded web events show official W3C and Carbon preview page consultations. Reviewer assessed qualified source/version claims and did not certify an installed v12 package contract.",
+          "inspection_claims": "Deliverable explicitly disclaims prototype inspection and independent reproduction; no unsupported product-inspection claim identified."
+        },
+        "24": {
+          "scope": "Verification-plan assessment as required by frozen case24 criteria. No interface/source/computed styles supplied or inspected; no rendering was performed or claimed.",
+          "inspection_claims": "No unsupported execution claim identified."
+        }
+      },
+      "local_archive": {
+        "path": ".verification/behavior/ibm-119-final-guidance.zip",
+        "sha256": "79f72a57a8910554be3da345272967acd96809a089eb9382cc48af982349cadf"
+      }
+    },
+    {
+      "run": "ibm-119-acceptance-core",
+      "identity": {
+        "harness_version": "2-evaluation-repair",
+        "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+        "skill_sha256": "9f906f7586ff05de2bbde014ac25c4a185596ce109bedba3f0d48bc50d5ae393",
+        "entrypoint_file_sha256": "d653967195d077e05e0937342ff87b2b1267ae105bfcffdffba54e231844b6e3",
+        "fingerprint_algorithm": "SHA256(canonical sorted JSON relative-path-to-file-SHA256 map)",
+        "timeout_seconds": 600,
+        "preview_port": null,
+        "suite_sha256": "07f3e560e164a900413fb35bf85648448421eafe83cc3cae9c6d3115fd133ee4",
+        "model": "gpt-6-astra",
+        "reasoning": "medium",
+        "sandbox": "workspace-write",
+        "selected_ids": [
+          2,
+          4
+        ],
+        "system": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+        "python": "3.14.7"
+      },
+      "report": {
+        "run_key": "de21df2d8cbc4ec9a80115ec9ec8e55932955bb9f6f88557de7f0f00bd5314fb",
+        "selected_cases": 2,
+        "counts": {
+          "pass": 2
+        },
+        "all_selected_pass": true,
+        "cases": [
+          {
+            "case_id": 2,
+            "run_key": "de21df2d8cbc4ec9a80115ec9ec8e55932955bb9f6f88557de7f0f00bd5314fb",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 8,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 8,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read this frozen case, response, template, complete workspace deliverables and relevant recorded events independently. Assessed exact guidance criteria as specification requirements; did not infer runtime, accessibility, or visual acceptance from prose."
+            },
+            "review_path": "<local-temp>/ibm-119-acceptance-core/case-02/review.json",
+            "review_sha256": "afd93e4f881050134899209e74071e1564fa2c01c719cd181697dbd86a1ea426",
+            "evidence_sha256": {
+              "workspace/critique.md": "492cf88022e9f58987a7f795d98315aaab9c2a3da654f1a6353ce3af10b3c6bd"
+            },
+            "output_sha256": "54a64b6ca1bf237690c414b2751626b7a02103affafea35546a31cee4cb5feed",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 4,
+            "run_key": "de21df2d8cbc4ec9a80115ec9ec8e55932955bb9f6f88557de7f0f00bd5314fb",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 7,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 7,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read frozen case, template, response, workspace deliverables and relevant recorded events. Assessed exact criteria as guidance specifications, distinguishing plans from executed evidence. For case04 independently recalculated source color pairs with retained script/results; no runtime rendering inferred."
+            },
+            "review_path": "<local-temp>/ibm-119-acceptance-core/case-04/review.json",
+            "review_sha256": "7dd5fd42590d7dc7bcfd1b312c0a67752d89b8de90af76126395dabaeeb83a14",
+            "evidence_sha256": {
+              "workspace/status-legend.css": "2f120b47b67eaade7f4eecaaec6077ce106dd8a65643cdea25456c2f226035c3",
+              "evidence/reviewer-visual-supplement.json": "fe7171efa10c3e1304b8991708a4465438a7f2c928dfb3dc3e6f634c19b5dd21"
+            },
+            "output_sha256": "f3b6cb9266d528afaaee60afb612cd770791e257a6098e87cf034505c8049497",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          }
+        ],
+        "scope": "Selected cases only; unrun/ungraded cases never count as passes."
+      },
+      "reviews": {
+        "2": {
+          "run_key": "de21df2d8cbc4ec9a80115ec9ec8e55932955bb9f6f88557de7f0f00bd5314fb",
+          "case_id": 2,
+          "output_sha256": "54a64b6ca1bf237690c414b2751626b7a02103affafea35546a31cee4cb5feed",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read this frozen case, response, template, complete workspace deliverables and relevant recorded events independently. Assessed exact guidance criteria as specification requirements; did not infer runtime, accessibility, or visual acceptance from prose."
+          },
+          "criteria": [
+            {
+              "id": "case-02-a01",
+              "criterion": "Identifies competing header emphasis and assigns primary emphasis by task; does not force a primary where none is justified.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Header finding conditions sole primary Create report on actual task and explicitly says a monitoring dashboard may need no page-level primary."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a02",
+              "criterion": "Assesses corner and elevation treatments against the installed component anatomy rather than treating all radius or shadow as forbidden.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Surface finding recommends actual component corner/elevation treatment, rejects global no-rounding rules and retains useful boundaries; no installed implementation was supplied, so anatomical guidance is conditional."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a03",
+              "criterion": "Flags centered paragraph text \u2014 Carbon type is flush left",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Text finding flags centered explanations as slow to scan and recommends left-aligned English text and consistent metric hierarchy."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a04",
+              "criterion": "Recommends replacing or reworking the nine-category pie chart (bar chart, direct labels, or fewer categories)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Pie finding proposes directly labeled horizontal bars with zero baseline, domain-aware sorting and percentages; only defensible grouping for a retained pie."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a05",
+              "criterion": "Flags excessive animate-everything treatment without claiming frequent or keyboard interactions can never use productive motion",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Motion finding removes decorative static-region lifts/scale while preserving supported control microinteractions and purposeful data/disclosure feedback with reduced motion."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a06",
+              "criterion": "Findings are ordered hierarchy-first (hierarchy/actions before color, depth, and polish notes)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "KPI hierarchy and header actions precede chart/text changes, surface treatment and motion."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a07",
+              "criterion": "Each finding names the principle behind it and gives a concrete fix (no preference-only notes)",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Every table finding pairs a user-task rationale with a concrete change; conditional recommendations distinguish task-driven choices from universal rules."
+                }
+              ]
+            },
+            {
+              "id": "case-02-a08",
+              "criterion": "Ends with what's working and/or names the single most valuable change",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/critique.md",
+                  "observation": "Opening names deciding what users should notice/do first as highest-value change; closing preserves metrics, recognizable actions and accessible explanations."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "4": {
+          "run_key": "de21df2d8cbc4ec9a80115ec9ec8e55932955bb9f6f88557de7f0f00bd5314fb",
+          "case_id": 4,
+          "output_sha256": "f3b6cb9266d528afaaee60afb612cd770791e257a6098e87cf034505c8049497",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read frozen case, template, response, workspace deliverables and relevant recorded events. Assessed exact criteria as guidance specifications, distinguishing plans from executed evidence. For case04 independently recalculated source color pairs with retained script/results; no runtime rendering inferred."
+          },
+          "criteria": [
+            {
+              "id": "case-04-a01",
+              "criterion": "Refuses to distinguish states by color alone \u2014 each state gets a shape or symbol in addition to color",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "usage.jsx supplies distinct Checkmark, WarningAlt, Close, Time and Subtract symbols plus persistent labels for all five states; these are the default example, not an optional replacement."
+                },
+                {
+                  "path": "evidence/reviewer-visual-supplement.json",
+                  "observation": "Independent post-generation screenshots visually confirm distinct symbols plus readable labels at 1280px, 320px and forced colors; no material legibility issue observed. This is supplemental reviewer evidence, not a generator-performed check."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a02",
+              "criterion": "Recognizes yellow 30 needs a sufficiently contrasting essential outline/symbol on these hosts, or chooses a measured darker mark; does not ban light fills universally.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Warning retains Yellow 30 support fill and uses a 2px Yellow 60 boundary. Independent evidence/reviewer-contrast.json confirms warning edge/hover 4.069:1 despite fill/hover 1.374:1."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a03",
+              "criterion": "Checks the healthy mark on hover and uses a measured darker fill or essential contrasting outline/symbol where needed.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Healthy uses Green 60 edge over support-success fill; independent healthy edge/hover is 4.094:1 while fill/hover is 2.735:1. README explicitly identifies the fill issue."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a04",
+              "criterion": "Checks the resolved table hover surface as well as white and default layer surfaces; names the theme or assumptions.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "White/Gray 10 stock theme assumptions are named; workspace/evidence/checks.json covers white, #f4f4f4 layer and #e8e8e8 hover. Frozen light layer-hover-01 matches; real host overrides remain untested."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a05",
+              "criterion": "Uses gray 60 for 'not started' and blue 70 (info/in-progress) for 'in progress'",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Not started uses explicit #6f6f6f Gray 60 local role; in progress consumes support-info resolving to Blue 70 #0043ce in the light snapshot."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a06",
+              "criterion": "Provides reproducible contrast results for required rendered pairs; unsupported claims of running a script do not count as evidence.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "events.jsonl completed item_10 contains and executes the WCAG formula with 23 emitted passing pairs. Retained independent reviewer-contrast.py reproduces essential pairs from CSS and frozen tokens."
+                }
+              ]
+            },
+            {
+              "id": "case-04-a07",
+              "criterion": "Measures the essential visible symbol or boundary against adjacent hosts, including hover; does not demand contrast between incidental decorative parts.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/status-legend.css",
+                  "observation": "Generator measures essential boundary/host including hover, symbol/fill and text/host without requiring incidental fill/edge contrast. Independent checks agree and additionally cover symbol/edge where 16px SVG meets the border; essential boundaries exceed 3:1 and labels exceed 4.5:1."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        }
+      },
+      "limitations": {
+        "2": {
+          "scope": "Description-grounded critique only; no product source/runtime or actual visual/contrast testing reviewed.",
+          "unsupported_inspection_claims": [
+            {
+              "paths": [
+                "response.json",
+                "workspace/evidence/checks.json"
+              ],
+              "claim": "Visually inspected dashboard casebook before/after desktop images.",
+              "observation": "Recorded completed events show reference reads but no independently corroborating image-view result. This does not prove viewing never occurred; reviewer cannot independently verify this claim."
+            }
+          ]
+        },
+        "4": {
+          "scope": "Source-level CSS/JSX and independently calculated color-pair review only.",
+          "limits": [
+            "No installed icon package/build or rendered SVG was supplied; exact glyph footprint, legibility and resulting antialiasing remain unverified.",
+            "No browser/AT, actual console token overrides, forced-color, zoom or table integration testing.",
+            "Independent calculation uses delivered local color roles and frozen stock light token values; it is not browser-computed contrast."
+          ],
+          "visual_claims": "No generated claim of runtime visual inspection identified.",
+          "supplemental_evidence": "After original review, independently produced browser fixtures were supplied and visually inspected by reviewer. See reviewer-visual-supplement.json. Original generator checks remain source-only; listed original integration limits are narrowed only for this SSR fixture and pinned versions."
+        }
+      },
+      "local_archive": {
+        "path": ".verification/behavior/ibm-119-acceptance-core.zip",
+        "sha256": "4409092e997d1079caec3ee720dab188431faf60b2121cb65145adfb1b2976d5"
+      }
+    },
+    {
+      "run": "ibm-119-acceptance-flows",
+      "identity": {
+        "harness_version": "2-evaluation-repair",
+        "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+        "skill_sha256": "9f906f7586ff05de2bbde014ac25c4a185596ce109bedba3f0d48bc50d5ae393",
+        "entrypoint_file_sha256": "d653967195d077e05e0937342ff87b2b1267ae105bfcffdffba54e231844b6e3",
+        "fingerprint_algorithm": "SHA256(canonical sorted JSON relative-path-to-file-SHA256 map)",
+        "timeout_seconds": 600,
+        "preview_port": null,
+        "suite_sha256": "07f3e560e164a900413fb35bf85648448421eafe83cc3cae9c6d3115fd133ee4",
+        "model": "gpt-6-astra",
+        "reasoning": "medium",
+        "sandbox": "workspace-write",
+        "selected_ids": [
+          7,
+          22
+        ],
+        "system": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+        "python": "3.14.7"
+      },
+      "report": {
+        "run_key": "ec7f7f7f5e28531f4a5042529b7cda7681d0973ccf2c193baf8e5ff9eae68c11",
+        "selected_cases": 2,
+        "counts": {
+          "pass": 2
+        },
+        "all_selected_pass": true,
+        "cases": [
+          {
+            "case_id": 7,
+            "run_key": "ec7f7f7f5e28531f4a5042529b7cda7681d0973ccf2c193baf8e5ff9eae68c11",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 7,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 7,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read frozen case, template, response, workspace deliverables and relevant recorded events. Assessed exact criteria as guidance specifications, distinguishing plans from executed evidence. For case04 independently recalculated source color pairs with retained script/results; no runtime rendering inferred."
+            },
+            "review_path": "<local-temp>/ibm-119-acceptance-flows/case-07/review.json",
+            "review_sha256": "470e2648c0447657f1a5386892d6db4fb5b06d3b31677e94de53c83238281455",
+            "evidence_sha256": {
+              "workspace/quick-add-user-spec.md": "a99caf8373183454935db6779d3f916d8d87e24d68b5faca4263abfd38a372d9"
+            },
+            "output_sha256": "f89c7278db3183e0922bcb93e7bdce418bde94ac56ab0f86496469037afdddc4",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 22,
+            "run_key": "ec7f7f7f5e28531f4a5042529b7cda7681d0973ccf2c193baf8e5ff9eae68c11",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 6,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 6,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read frozen case, response, template, design specification, checks and relevant recorded events. Assessed each exact criterion as a proposed design contract; no runtime behavior inferred."
+            },
+            "review_path": "<local-temp>/ibm-119-acceptance-flows/case-22/review.json",
+            "review_sha256": "2dbb71e704c4a1ff05f03894c5b8bf1fb52054c0a363228fa191396e560ca1e1",
+            "evidence_sha256": {
+              "workspace/design-recommendation.md": "bbd9d6e0caaafed3568002c0c5e8fc5f501771f5a0e03c96947f72ec337b3e33"
+            },
+            "output_sha256": "4b1cfe016b4f942985d4ef4382a4050ea1006538c31b49e2f0e13011a58aa13e",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          }
+        ],
+        "scope": "Selected cases only; unrun/ungraded cases never count as passes."
+      },
+      "reviews": {
+        "7": {
+          "run_key": "ec7f7f7f5e28531f4a5042529b7cda7681d0973ccf2c193baf8e5ff9eae68c11",
+          "case_id": 7,
+          "output_sha256": "f89c7278db3183e0922bcb93e7bdce418bde94ac56ab0f86496469037afdddc4",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read frozen case, template, response, workspace deliverables and relevant recorded events. Assessed exact criteria as guidance specifications, distinguishing plans from executed evidence. For case04 independently recalculated source color pairs with retained script/results; no runtime rendering inferred."
+          },
+          "criteria": [
+            {
+              "id": "case-07-a01",
+              "criterion": "Chooses the container by task complexity, available space and context rather than claiming a universal four-field maximum.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/quick-add-user-spec.md",
+                  "observation": "Modal choice is based on a bounded single-step task, provisional measured fit and whether underlying Users context is needed; explicitly rejects seven-fields-alone disqualification."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a02",
+              "criterion": "Explains whether to retain the requested modal, reduce optional scope, or choose a panel/tearsheet/full page, with task-specific reasons.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/quick-add-user-spec.md",
+                  "observation": "Retains all seven fields in requested modal; recommends tearsheet if scrolling burdens completion or nonmodal panel if the user must consult the list."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a03",
+              "criterion": "Defines modality, focus containment or page access, supported dismissal and focus return for the chosen container; does not impose a universal no-close rule.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/quick-add-user-spec.md",
+                  "observation": "Defines initial focus, containment/background inertness, dropdown-first Escape, close/Cancel/Escape and focus return. Temporary submission lock is explicitly a bounded product assumption with timeout recovery, not a universal no-close rule."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a04",
+              "criterion": "Allows vertical modal-body scrolling with reachable actions when appropriate and specifies narrow-viewport behavior; avoids horizontal scrolling.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/quick-add-user-spec.md",
+                  "observation": "Allows vertical body scrolling with reachable header/footer, forbids horizontal scrolling and clipped menus, and requires visible labels/errors/focused controls at narrow widths and zoom."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a05",
+              "criterion": "Marks the minority of fields (required or optional) rather than both",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/quick-add-user-spec.md",
+                  "observation": "Only minority Team and Notes labels have optional markers; other labels have no required marker. Intro states fields required unless marked optional."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a06",
+              "criterion": "Avoids nested modal confirmations and defines a coherent unsaved-work policy across supported exits.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/quick-add-user-spec.md",
+                  "observation": "All pre-submit supported exits discard with advance helper warning; backdrop does nothing and no nested confirmation occurs. Submission exits have an explicit consistent temporary lock and recovery policy."
+                }
+              ]
+            },
+            {
+              "id": "case-07-a07",
+              "criterion": "Includes a short decision rationale and evidence that would reopen the container choice.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/quick-add-user-spec.md",
+                  "observation": "Rationale ties choice to one task; long options/errors, short viewports, zoom, excessive scrolling or needing Users context explicitly reopen size/container decisions."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "22": {
+          "run_key": "ec7f7f7f5e28531f4a5042529b7cda7681d0973ccf2c193baf8e5ff9eae68c11",
+          "case_id": 22,
+          "output_sha256": "4b1cfe016b4f942985d4ef4382a4050ea1006538c31b49e2f0e13011a58aa13e",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read frozen case, response, template, design specification, checks and relevant recorded events. Assessed each exact criterion as a proposed design contract; no runtime behavior inferred."
+          },
+          "criteria": [
+            {
+              "id": "case-22-a01",
+              "criterion": "Does not blindly impose 480px or replace it with a universal 400px; asks for or proposes measuring actual canvas and hit-region geometry.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/design-recommendation.md",
+                  "observation": "Rejects reported 480px configuration; treats 320/400/480px as candidates and requires actual remaining canvas, target shape, neighbor and zoom measurements instead of universal width."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a02",
+              "criterion": "Preserves physical coordinates and avoids enlarging overlapping invisible targets as the only fix; considers zoom, pan, panel layout or a usable alternative.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/design-recommendation.md",
+                  "observation": "Preserves physical coordinates and camera scale, exposes only necessary pan, rejects overlapping invisible targets or shrunken targets, and offers explicit zoom, overview groups and synchronized 44px seat-list alternative."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a03",
+              "criterion": "Reduces label detail while retaining status identity, accessible full identity and a detail path.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/design-recommendation.md",
+                  "observation": "Progressively reduces full names to unambiguous short identity then status symbols, preserving full accessible identity, inspector and list paths and focused/selected label priority."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a04",
+              "criterion": "Distinguishes domain status from selection, focus and search; preserves custom branding and specifies contrast verification on actual hosts in both themes without claiming unperformed measurements.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/design-recommendation.md",
+                  "observation": "Separates domain status, selection, focus and search signals, preserves custom approved semantic roles and actual vocabulary, and calls for contrast measurements on real map/state backgrounds in each supported theme without claiming a pass."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a05",
+              "criterion": "Specifies one roving Tab stop or an equivalently justified spatial focus strategy, directional movement, focus reconciliation and return; inspection does not implicitly assign.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/design-recommendation.md",
+                  "observation": "One roving map Tab stop, deterministic geometric arrows, edge behavior, filtering/rerender reconciliation, close focus return and zero-result fallback are specified. Focus and Enter/Space inspection never assign."
+                }
+              ]
+            },
+            {
+              "id": "case-22-a06",
+              "criterion": "Distinguishes a non-modal inspector from a modal task and describes a narrow/coarse-pointer fallback.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/design-recommendation.md",
+                  "observation": "Desktop inspector is explicitly nonmodal; narrow fallback is a full-width detail view with Back to map and hidden map removed from focus order. Distinct 44px list/zoom alternatives address reliable pointer acquisition; coarse-pointer validation is required. A future modal variant is separately conditioned on containment and inertness."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        }
+      },
+      "limitations": {
+        "7": {
+          "scope": "Specification review; no implementation/runtime/AT or responsive behavior validated.",
+          "unsupported_inspection_claims": [
+            {
+              "paths": [
+                "workspace/quick-add-user-spec.md",
+                "workspace/evidence/checks.json"
+              ],
+              "claim": "Viewed both form casebook White desktop images.",
+              "observation": "Recorded completed events show reference reads but no independently corroborating image-view result. Absence in this stream does not prove viewing never occurred."
+            }
+          ]
+        },
+        "22": {
+          "scope": "Guidance specification only; real plan geometry, brand colors, runtime/focus/AT and rendered contrast remain unverified.",
+          "unsupported_inspection_claims": [
+            {
+              "paths": [
+                "workspace/design-recommendation.md",
+                "workspace/evidence/checks.json"
+              ],
+              "claim": "Viewed table casebook before/after White desktop images.",
+              "observation": "Recorded completed events contain reference reads but no independently corroborating image-view result. This does not prove image viewing never happened; claim remains unverified by reviewer."
+            }
+          ]
+        }
+      },
+      "local_archive": {
+        "path": ".verification/behavior/ibm-119-acceptance-flows.zip",
+        "sha256": "987724544b9fe03112f3bc42aa964ac6919a590019e42484da600708131f14b3"
+      }
+    },
+    {
+      "run": "ibm-119-acceptance-intake",
+      "identity": {
+        "harness_version": "2-evaluation-repair",
+        "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+        "skill_sha256": "9f906f7586ff05de2bbde014ac25c4a185596ce109bedba3f0d48bc50d5ae393",
+        "entrypoint_file_sha256": "d653967195d077e05e0937342ff87b2b1267ae105bfcffdffba54e231844b6e3",
+        "fingerprint_algorithm": "SHA256(canonical sorted JSON relative-path-to-file-SHA256 map)",
+        "timeout_seconds": 600,
+        "preview_port": null,
+        "suite_sha256": "07f3e560e164a900413fb35bf85648448421eafe83cc3cae9c6d3115fd133ee4",
+        "model": "gpt-6-astra",
+        "reasoning": "medium",
+        "sandbox": "workspace-write",
+        "selected_ids": [
+          23,
+          24
+        ],
+        "system": "macOS-26.6.2-x86_64-i386-64bit-Mach-O",
+        "python": "3.14.7"
+      },
+      "report": {
+        "run_key": "923414c727b03fb327d88308e277f600b1481c5ab36f269316074c5f1b527f4c",
+        "selected_cases": 2,
+        "counts": {
+          "pass": 2
+        },
+        "all_selected_pass": true,
+        "cases": [
+          {
+            "case_id": 23,
+            "run_key": "923414c727b03fb327d88308e277f600b1481c5ab36f269316074c5f1b527f4c",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 6,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 6,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read this frozen case, response, template, complete workspace deliverables and relevant recorded events independently. Assessed exact guidance criteria as specification requirements; did not infer runtime, accessibility, or visual acceptance from prose."
+            },
+            "review_path": "<local-temp>/ibm-119-acceptance-intake/case-23/review.json",
+            "review_sha256": "dbb67121b65bb8788cc7d483abe3af06ba4b58267e35bc66f354cb3eca042891",
+            "evidence_sha256": {
+              "workspace/adoption-review.md": "e1a70b2b672203f1499c86488c7e7f0bb2ac92d9a74aa3c9826ad41b569acd52"
+            },
+            "output_sha256": "7bfedad749c122e28f25ec1b8286748e89c8abacfdd2d20f80babf3abfe5b788",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          },
+          {
+            "case_id": 24,
+            "run_key": "923414c727b03fb327d88308e277f600b1481c5ab36f269316074c5f1b527f4c",
+            "verdict": "pass",
+            "assertions": {
+              "pass": 3,
+              "fail": 0,
+              "not_tested": 0,
+              "unreviewed": 0
+            },
+            "assertion_total": 3,
+            "assertion_pass_percent": 100.0,
+            "visual": {},
+            "critical_findings": [],
+            "reviewer": {
+              "name": "Codex independent review agent",
+              "kind": "agent",
+              "method": "Read frozen case, template, response, workspace deliverables and relevant recorded events. Assessed exact criteria as guidance specifications, distinguishing plans from executed evidence. For case04 independently recalculated source color pairs with retained script/results; no runtime rendering inferred."
+            },
+            "review_path": "<local-temp>/ibm-119-acceptance-intake/case-24/review.json",
+            "review_sha256": "fba85e12fc393bc5600e4dd9b9dc40f515b8bbcff96c99cd2e583c42fdde0e80",
+            "evidence_sha256": {
+              "response.json": "9e77baf7d9a278fa05db4c1e1fb6408b1cb5ee23c74912a95b4647699526b847"
+            },
+            "output_sha256": "a0c6505bcb03702154c8ad4bd1575da5b6f29ae098b5dff04492efc4225b08f1",
+            "limits": "Evidence presence and integrity validated; the reviewer is responsible for truth and relevance. Model check claims are not independent verification."
+          }
+        ],
+        "scope": "Selected cases only; unrun/ungraded cases never count as passes."
+      },
+      "reviews": {
+        "23": {
+          "run_key": "923414c727b03fb327d88308e277f600b1481c5ab36f269316074c5f1b527f4c",
+          "case_id": 23,
+          "output_sha256": "7bfedad749c122e28f25ec1b8286748e89c8abacfdd2d20f80babf3abfe5b788",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read this frozen case, response, template, complete workspace deliverables and relevant recorded events independently. Assessed exact guidance criteria as specification requirements; did not infer runtime, accessibility, or visual acceptance from prose."
+          },
+          "criteria": [
+            {
+              "id": "case-23-a01",
+              "criterion": "Retains useful composition or rationale selectively without adopting the prototype as approved product design or copying private fixtures.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Selectively retains composition/reasoning only after actual task/source/render checks; labels advice as heuristics and excludes private office data from sanitized reusable examples."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a02",
+              "criterion": "Corrects the disabled-control blanket claim and checks version-specific primary documentation rather than repeating the no-radius assertion.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Rejects universal disabled-announcement claim, distinguishes native disabled/ARIA-disabled/read-only/hidden, and requires browser/AT checks. Cites component-specific preview Tag radius and Carbon Next while distinguishing preview from installed release contract. Recorded web events corroborate W3C and Carbon page consultation."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a03",
+              "criterion": "Identifies aria-hidden as insufficient to remove Tab stops; modal behavior needs implemented focus containment and background inertness, while non-modal inspection should remain non-modal.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Explains aria-hidden does not remove keyboard focus, requires hide/unmount or inert closed content with deliberate focus return and transition checks; distinguishes modal containment/background inertness from accessible nonmodal canvas inspection."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a04",
+              "criterion": "Identifies toast dismissal as not undo and requires actual state restoration or an explicit simulation label.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Rejects toast dismissal as Undo and requires restoration of affected domain/draft/derived state; validation captures before/after state and protects unrelated work. Simulation or absent reversal must be honestly labeled."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a05",
+              "criterion": "Identifies implicit assignment during inspection as a risk; requires an explicit action mode or separate mutation control.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Rejects assignment through ordinary inspection/general edit mode; permits separate explicit Assign or clearly entered assignment mode naming person and consequence. Keyboard focus/inspection must not mutate state."
+                }
+              ]
+            },
+            {
+              "id": "case-23-a06",
+              "criterion": "Distinguishes source inspection, rendered visuals, interaction tests, contrast checks and model evaluation results; records unresolved limitations instead of claiming full validation.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "workspace/adoption-review.md",
+                  "observation": "Separates source/provenance, rendering, focus/browser/AT, actual state assertions, resolved contrast, and scenario model evaluation. Explicitly says defects remain supplied observations and validation plan has not passed runtime tests."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        },
+        "24": {
+          "run_key": "923414c727b03fb327d88308e277f600b1481c5ab36f269316074c5f1b527f4c",
+          "case_id": 24,
+          "output_sha256": "a0c6505bcb03702154c8ad4bd1575da5b6f29ae098b5dff04492efc4225b08f1",
+          "reviewer": {
+            "name": "Codex independent review agent",
+            "kind": "agent",
+            "method": "Read frozen case, template, response, workspace deliverables and relevant recorded events. Assessed exact criteria as guidance specifications, distinguishing plans from executed evidence. For case04 independently recalculated source color pairs with retained script/results; no runtime rendering inferred."
+          },
+          "criteria": [
+            {
+              "id": "case-24-a01",
+              "criterion": "Identifies inherited line-height as a likely defect despite no horizontal overflow.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Rejects readiness: 28px text with inherited 20px leading risks wrapped-line overlap even without horizontal overflow."
+                }
+              ]
+            },
+            {
+              "id": "case-24-a02",
+              "criterion": "Uses a complete appropriate type style and specifies computed-style and rendered inspection of secondary headings with long copy at 320px; does not claim execution when no interface was supplied.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Proposes complete Carbon heading-04 (28px/36px regular) or an appropriately smaller complete role. Explicitly requires computed typography and rendered long-copy wrapped-heading inspection at 320px plus nearby widths and zoom; no interface execution claimed."
+                }
+              ]
+            },
+            {
+              "id": "case-24-a03",
+              "criterion": "Distinguishes proposed checks from actual rendered evidence.",
+              "outcome": "pass",
+              "evidence": [
+                {
+                  "path": "response.json",
+                  "observation": "Checks explicitly say rendered verification not performed and assessment is description-only; correction and visual/computed-style checks remain proposed."
+                }
+              ]
+            }
+          ],
+          "visual": {},
+          "critical_findings": []
+        }
+      },
+      "limitations": {
+        "23": {
+          "scope": "Guidance review only; no prototype source, images, runtime or installed package supplied. No reviewer browser, AT, contrast or state tests performed.",
+          "source_evidence": "Recorded web events show official W3C and Carbon preview page consultations. Reviewer assessed qualified source/version claims and did not certify an installed v12 package contract.",
+          "inspection_claims": "Deliverable explicitly disclaims prototype inspection and independent reproduction; no unsupported product-inspection claim identified."
+        },
+        "24": {
+          "scope": "Verification-plan assessment as required by frozen case24 criteria. No interface/source/computed styles supplied or inspected; no rendering was performed or claimed.",
+          "inspection_claims": "No unsupported execution claim identified."
+        }
+      },
+      "local_archive": {
+        "path": ".verification/behavior/ibm-119-acceptance-intake.zip",
+        "sha256": "521f6401351d30d43d2fa974326a2a7765dda6c726f082d1bdf991bb6848143c"
+      }
+    }
+  ]
+}

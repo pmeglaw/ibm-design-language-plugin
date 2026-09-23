@@ -1,0 +1,90 @@
+/* Load your Carbon White or Gray 10 theme first (default cds prefix).
+   Apply ops-status-scope to the existing console region containing both
+   legend and table. These three local roles are palette exceptions, not
+   invented Carbon support tokens. */
+.ops-status-scope {
+  --ops-status-success-edge: #198038; /* Carbon Green 60 */
+  --ops-status-warning-edge: #8e6a00; /* Carbon Yellow 60 */
+  --ops-status-not-started: #6f6f6f;  /* Carbon Gray 60 */
+}
+
+.ops-status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px; /* spacing-03 / spacing-06 */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ops-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* spacing-03 */
+  color: var(--cds-text-primary);
+  font-family: inherit; /* host console supplies IBM Plex Sans */
+  font-size: 14px; /* body-compact-01 */
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.16px;
+  white-space: nowrap;
+}
+
+.ops-status__dot {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  color: var(--ops-status-symbol);
+}
+.ops-status__dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  border: 2px solid var(--ops-status-edge);
+  border-radius: 50%;
+  background: var(--ops-status-fill);
+}
+.ops-status__dot > svg {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.ops-status--healthy {
+  --ops-status-fill: var(--cds-support-success);
+  --ops-status-edge: var(--ops-status-success-edge);
+  --ops-status-symbol: var(--cds-text-primary);
+}
+.ops-status--warning {
+  --ops-status-fill: var(--cds-support-warning);
+  --ops-status-edge: var(--ops-status-warning-edge);
+  --ops-status-symbol: var(--cds-text-primary);
+}
+.ops-status--critical {
+  --ops-status-fill: var(--cds-support-error);
+  --ops-status-edge: var(--cds-support-error);
+  --ops-status-symbol: var(--cds-text-on-color);
+}
+.ops-status--in-progress {
+  --ops-status-fill: var(--cds-support-info);
+  --ops-status-edge: var(--cds-support-info);
+  --ops-status-symbol: var(--cds-text-on-color);
+}
+.ops-status--not-started {
+  --ops-status-fill: var(--ops-status-not-started);
+  --ops-status-edge: var(--ops-status-not-started);
+  --ops-status-symbol: var(--cds-text-on-color);
+}
+
+/* Keep the installed Carbon table's own hover behavior. Status wrappers
+   stay transparent; do not recolor the statuses on row hover. */
+@media (forced-colors: active) {
+  .ops-status__dot { color: CanvasText; }
+  .ops-status__dot::before { background: Canvas; border-color: CanvasText; }
+}

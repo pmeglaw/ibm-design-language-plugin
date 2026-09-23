@@ -14,31 +14,33 @@ Read this when building a *page* rather than a component: choosing the container
 
 ## Page anatomy
 
-Top to bottom: **UI shell** (global header, optional left panel — `ui-shell.md`) → **page header** (breadcrumb, title, status tags, the one primary action, optional tabs) → **content on the 2x Grid**.
+Top to bottom: **UI shell** (global header, optional left panel — `ui-shell.md`) → **page header** (breadcrumb, title, status tags, a primary action when warranted, optional tabs) → **content on the 2x Grid**.
 
 - Left panel when there are more than five secondary items or users switch between them often. It never holds three tiers.
 - Breadcrumbs on record pages and any full-page flow.
-- Keep one page-level primary action. A focused modal or panel may have its own primary while active; repeated sections do not each need a primary.
+- Use at most one page-level primary action when warranted; a read-only or monitoring page can have none. A focused modal or panel may have its own primary while active; repeated sections do not each need a primary.
 
 ## Create and edit containers
 
 This guide covers Carbon and Carbon for IBM Products containers. Note that Create flows is a *community* pattern in Carbon's docs — strong guidance, not governance-approved.
 
+When fit has not been tested, make the container choice provisional. Name the task or observed constraint that would change it—for example, actions becoming unreachable at a narrow viewport, excessive scrolling, or needing the underlying list during entry. Field count alone is not that evidence.
+
 | Container | Use when | Specifics |
 |---|---|---|
 | **Inline** | Quick, simple creation where the page context helps | Page stays visible and interactive |
-| **Modal** | One or two fields, or a transition to another page after creating | Never with more than four fields or any scrolling |
-| **Side panel** | Medium complexity where the user needs the page behind it | 480px, no overlay, page stays usable |
+| **Modal** | A short focused task that can fit comfortably | Choose by task complexity and available space; core modal bodies may scroll vertically |
+| **Side panel** | Medium complexity where the user needs the page behind it | Size against task and remaining page area; distinguish persistent non-modal and modal variants |
 | **Narrow tearsheet** | Medium complexity with scrolling or sections; no distinct steps | Overlay dims the page; no progress indicator |
 | **Wide tearsheet** | Complex or interactive, or two or more distinct steps | Vertical progress rail, 256px (320px for long labels); optional "show all options" toggle that switches to anchor-link navigation |
-| **Full page** | Nothing works until this is created | Rare. Not a substitute for a wide tearsheet |
+| **Full page** | A sustained task needs room or its own location | Valid when a large modal or tearsheet cannot comfortably support the task |
 
-Rules that apply across all of them:
+For the selected create pattern, verify its documented variant and installed implementation:
 
 - Trigger is a "New [asset]" button with a plus icon.
-- Modal, side panel, and both tearsheets **omit the top-right close** — leaving is a decision, made through Cancel.
+- Do not generalize specialized create-pattern dismissal rules to every dialog. Core Carbon modals support close and Escape; define consistent unsaved-work behavior for each supported exit.
 - Multi-step buttons are Cancel / Back / Next, and Next becomes **Create** on the last step.
-- Leaving a full-page flow by any route other than Cancel gets a confirmation.
+- Protect meaningful unsaved changes consistently across supported exits; avoid unconditional warnings on untouched forms.
 - On submit: loading state, then a success banner if the user stays, or navigate to the new object; errors as a notification with the form intact.
 - Tearsheets can stack for a nested task; **a modal never nests** — no confirmation dialog on top of a modal. When you spec any modal, say this explicitly and design the exit so it never needs one (Cancel discards without confirming, or the task moves to a side panel or tearsheet, which may open a confirmation).
 
@@ -120,3 +122,5 @@ Two kinds: **presentation** (big-picture status) and **exploration** (interactiv
 - Type never sits closer than 32px to a container edge it isn't aligned to.
 - Breakpoints are **viewport** media queries. There's no container query support in the grid package, so a grid inside a narrow docked panel needs its own handling.
 - One full-bleed, container-free moment per flow at most — that's an expressive moment, and it should be deliberate.
+
+Source scope: [core Carbon modal usage](https://carbondesignsystem.com/components/modal/usage/) permits vertical body scrolling. Numeric field-count advice from a specialized create pattern is not a universal modal limit.
