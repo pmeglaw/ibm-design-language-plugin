@@ -14,3 +14,19 @@ jobs:
         with:
           python-version: '3.14'
       - run: python -B scripts/verify.py
+
+  casebook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: python -B scripts/prepare_shell_fixture.py
+      - run: npm ci --prefix .verification/nextjs-shell --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+        working-directory: .verification/nextjs-shell
+      - run: node --test tests/casebook/renderer.test.cjs

@@ -1,29 +1,21 @@
-# IBM Design Language 1.1.12
+# IBM Design Language 1.1.13
 
-Adds a short task-based pattern selector and a version-qualified Next.js App
-Router shell recipe, selectively synthesized from seven supplied teaching
-documents. The documents themselves are not bundled or treated as authority.
+Hardens the offline casebook renderer associated with CodeQL alert #1
+(`js/xss-through-dom`). The shipped viewer used fixed local options, so the
+review did not establish an external attacker input. This release removes the
+unsafe HTML reinterpretation primitive as preventive hardening.
 
-- Routes feedback, loading, search, filtering, form containers, control states
-  and deletion choices into the existing detailed references. Preserves task
-  constraints and identifies local thresholds as heuristics.
-- Adds three reusable shell assets with shared routes, explicit narrow
-  navigation, exact/ancestor selection, one open utility panel, a real skip
-  target, controlled dismissal, and keyboard focus handling.
-- Adds a separate four-case guidance suite with 19 assertions. The existing
-  21-case regression suite and three-case intake suite remain unchanged.
-- Records current primary sources and package boundaries, including the direct
-  PasswordInput export in @carbon/react 1.117.0 and the IBM Products boundary.
+- Constructs elements and text nodes instead of dynamic HTML strings.
+- Allows only the supported study IDs, themes and capture sizes. Invalid
+  selections show a recoverable error rather than becoming markup or paths.
+- Reference links require absolute HTTPS URLs without embedded credentials;
+  unsupported references remain readable as explicitly unavailable text.
+- Preserves all five studies, captions, annotations, images, study links,
+  themes and direct offline opening. No additional runtime dependency.
+- Adds 25 Chromium regression tests and a Linux browser CI job. The old
+  renderer failed the controlled hostile-option probe; the revised renderer
+  passed all 20 supported combinations and five hardening/recovery checks.
 
-The shell compiled with Next.js 16.3.6, React 19.3.0, @carbon/react 1.117.0,
-@carbon/styles 1.116.0 and @carbon/icons-react 11.89.0. A separate fixture passed
-16 Chromium tests covering routing, responsive navigation, forward/reverse Tab,
-Escape, focus restoration, panel switching, long names, white/G100 themes and
-automated axe checks. Selected screenshots were inspected. These checks do not
-certify browser zoom, screen-reader behavior, every contrast pair, all themes,
-other browsers, application auth or backend interactions.
-
-A bounded independent text-only forward check addressed all four new guidance
-scenarios; author review found the 19 criteria satisfied. This was two responses
-(the first combined three scenarios), not four isolated frozen harness runs,
-not a baseline comparison, and not evidence of general skill improvement.
+JavaScript syntax checks and the existing package/evaluator checks pass.
+Previous release archives remain unchanged. No broader security audit,
+screen-reader certification or new model-quality evaluation is implied.
