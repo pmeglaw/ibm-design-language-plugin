@@ -1,0 +1,131 @@
+{
+  "date": "2026-09-24",
+  "platform": "Windows",
+  "node": "v24.19.0",
+  "browser_package": {
+    "name": "chromium",
+    "revision": "1243",
+    "installByDefault": true,
+    "browserVersion": "153.0.8010.12",
+    "title": "Chrome for Testing"
+  },
+  "stats": {
+    "startTime": "2026-09-24T20:37:58.251Z",
+    "duration": 16305.750000000002,
+    "expected": 16,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "long name and white theme at 320px",
+      "status": "passed",
+      "duration_ms": 1523
+    },
+    {
+      "title": "long name and white theme at 1440px",
+      "status": "passed",
+      "duration_ms": 1502
+    },
+    {
+      "title": "long name and g100 theme at 320px",
+      "status": "passed",
+      "duration_ms": 1448
+    },
+    {
+      "title": "long name and g100 theme at 1440px",
+      "status": "passed",
+      "duration_ms": 1571
+    },
+    {
+      "title": "skip link is first and focuses the real main content",
+      "status": "passed",
+      "duration_ms": 304
+    },
+    {
+      "title": "exact, ancestor, sibling prefix, root, and history selection",
+      "status": "passed",
+      "duration_ms": 524
+    },
+    {
+      "title": "navigation works and closes at 320px",
+      "status": "passed",
+      "duration_ms": 587
+    },
+    {
+      "title": "navigation works and closes at 768px",
+      "status": "passed",
+      "duration_ms": 597
+    },
+    {
+      "title": "navigation works and closes at 1055px",
+      "status": "passed",
+      "duration_ms": 595
+    },
+    {
+      "title": "navigation works and closes at 1056px",
+      "status": "passed",
+      "duration_ms": 510
+    },
+    {
+      "title": "navigation works and closes at 1440px",
+      "status": "passed",
+      "duration_ms": 514
+    },
+    {
+      "title": "non-modal navigation allows reverse Tab and closes on leaving",
+      "status": "passed",
+      "duration_ms": 404
+    },
+    {
+      "title": "utilities are ordered, exclusive, dismissible, and restore focus",
+      "status": "passed",
+      "duration_ms": 612
+    },
+    {
+      "title": "utility reverse Tab reaches the header; closed panels leave no controls",
+      "status": "passed",
+      "duration_ms": 423
+    },
+    {
+      "title": "automated accessibility and rendered evidence at 320px",
+      "status": "passed",
+      "duration_ms": 1454
+    },
+    {
+      "title": "automated accessibility and rendered evidence at 1440px",
+      "status": "passed",
+      "duration_ms": 1772
+    }
+  ],
+  "shell_asset_sha256": {
+    "GlobalHeader.tsx": "29fa891588f1f7454d602f5bcb5e8afbd31c303c203fe652e8a67d79ea9a045a",
+    "navigation.ts": "32668f2e5d89bd0d6e493dda388ae1659e61b978de44a785b2be99829c911182",
+    "shell.scss": "f9a09e1f47f50e499d24b66c2760512e7c20dd40ba4c56cddd2a0105c4c86982"
+  },
+  "fixture_sha256": {
+    "next.config.ts": "54b527bd39eefeeec93461bff7aef43c876752f753fd5a5ace5ba5111c602267",
+    "package-lock.json": "0547781e13063c9f6990df1e398ac81e66d7a3235289bebf055a8d87c13dbf09",
+    "package.json": "44d5c484d1e8664bf1293d3fab8314813c99d1e61175513ccadaff012e0251bb",
+    "playwright.config.ts": "bf4ee879130dc8bf6ae77541896661decb50def7fb2a328c2aa51871a22c730c",
+    "tsconfig.json": "c24f32dbc829980bbf943de0808cdaf7eb146a38c35555183db44a8b3b80a29a",
+    "app/fixture.css": "3245b898f406782ed600d187f81b82fa37a3755938dc009cd7e0ae16afebf489",
+    "app/layout.tsx": "ae34f2eec2582c950b23012f6a71aa8a66c32d54a00fed2ead389b15fab73a72",
+    "tests/shell.spec.ts": "bbce87ebfb55070e824291a7274b293290957da38ba24e687cac04786ef5bcd2",
+    "app/[[...slug]]/page.tsx": "c597e76d9ef812c22d853c3cc0a093872227aea9a5866135308ef3eb2472b41c"
+  },
+  "model_check": {
+    "responses": 2,
+    "scenarios": [
+      25,
+      26,
+      27,
+      28
+    ],
+    "author_reviewed_criteria": 19,
+    "passed_criteria": 19,
+    "harness_packet": false,
+    "limits": "Same independent agent; first response combines 3 scenarios; no baseline or repeatability claim."
+  }
+}

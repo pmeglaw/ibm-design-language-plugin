@@ -604,14 +604,82 @@
       "authority": "official-documentation",
       "version_scope": "page snapshot; worked fragment validated against bundled White/Gray 100 fallback only",
       "limits": "Focused token-consumption example and review guidance; installed APIs and other themes require target-version verification."
+    },
+    {
+      "id": "pattern-selection",
+      "url": "https://carbondesignsystem.com/patterns/notification-pattern/",
+      "sections": [
+        "Task selection and implementation boundaries"
+      ],
+      "local_refs": [
+        "references/pattern-selection.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-24",
+      "authority": "official-documentation",
+      "version_scope": "Carbon documentation reviewed 2026-09-24",
+      "limits": "Author synthesis routing to existing pattern, composition and accessibility references; not an exhaustive or governance-approved decision tree."
+    },
+    {
+      "id": "nextjs-shell",
+      "url": "https://nextjs.org/docs/app/getting-started/server-and-client-components",
+      "sections": [
+        "Task selection and implementation boundaries"
+      ],
+      "local_refs": [
+        "references/nextjs-shell.md",
+        "assets/nextjs-shell/GlobalHeader.tsx",
+        "assets/nextjs-shell/navigation.ts",
+        "assets/nextjs-shell/shell.scss"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-24",
+      "authority": "official-documentation",
+      "version_scope": "Next.js 16.3.6 / React 19.3.0 / @carbon/react 1.117.0 / @carbon/styles 1.116.0 / @carbon/icons-react 11.89.0",
+      "limits": "Teaching composition with illustrative external switcher URLs; no authentication, backend, dirty-form or assistive-technology certification. Release evidence records checks actually performed."
+    },
+    {
+      "id": "carbon-react-shell-exports",
+      "url": "https://unpkg.com/@carbon/react@1.117.0/lib/index.js",
+      "sections": [
+        "Task selection and implementation boundaries"
+      ],
+      "local_refs": [
+        "references/pattern-selection.md",
+        "references/nextjs-shell.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-24",
+      "authority": "published-package",
+      "version_scope": "@carbon/react 1.117.0 published package",
+      "limits": "Exports checked at this version; historical snippets and main-branch code do not establish future release contracts."
+    },
+    {
+      "id": "carbon-products-pattern-exports",
+      "url": "https://unpkg.com/@carbon/ibm-products@2.99.0/lib/index.js",
+      "sections": [
+        "Task selection and implementation boundaries"
+      ],
+      "local_refs": [
+        "references/pattern-selection.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-24",
+      "authority": "published-package",
+      "version_scope": "@carbon/ibm-products 2.99.0 published package",
+      "limits": "Tearsheet/EmptyState export boundary only; all props and runtime behavior not verified."
     }
   ],
   "unresolved": [
     "Read-only pattern source was unavailable during the earlier audit; use WAI and current component documentation for semantics.",
     "Detailed IBM creative playbooks remain incomplete; see the specific source routes and limits.",
-    "Selected standalone rendered/source/interaction comparisons are complete; see references/evaluation-history.md. Full-suite validation, target-version Carbon React integration, independent repeated holdouts and assistive-technology checks remain open."
+    "Selected standalone comparisons and a version-pinned Next.js/Carbon shell fixture have been checked. Full-suite model validation, broader Carbon integration, independent repeated holdouts, browser zoom, complete contrast coverage and assistive-technology checks remain open."
   ],
-  "coverage_updated_at": "2026-09-15",
+  "coverage_updated_at": "2026-09-24",
   "evaluation_record": "references/evaluation-history.md",
   "local_resources": [
     {

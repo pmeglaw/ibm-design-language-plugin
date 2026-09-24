@@ -1,5 +1,12 @@
 # UI shell and the global header pattern
 
+For an App Router implementation, read the [Next.js shell recipe](nextjs-shell.md).
+Header navigation does not discover and move its links into SideNav: compose the
+narrow representation explicitly from the same route model. Keep one open utility
+panel state, wire controlled navigation dismissal, and verify the skip target and
+focus restoration with the installed components. A CSS resemblance to Carbon is
+not evidence of Carbon behavior.
+
 The header is the most-seen surface in any IBM product, and the pattern is stricter than it looks because its value comes from being identical everywhere.
 
 **Scope: products only.** The shell is the chrome of a tool a user is signed into. It does not appear on marketing, landing, documentation-marketing or editorial pages — those are expressive surfaces and get a light masthead in the page's own type (wordmark, a few text links, one CTA on the page's grid). Reaching for the shell on a landing page is the productive/expressive mix-up in its most visible form.

@@ -93,4 +93,13 @@ Exit codes: 0 means a completed Prepare or an all-pass execution/review/report; 
 
 Bundled cases 2, 4 and 7 correct blanket styling, contrast and modal rules. Keep older results attached to their original suite snapshots; do not compare aggregate scores across changed criteria. The frozen release archives retain the original suites.
 
-Use `--suite` with [evals-intake.json](../evals-intake.json) for the three additional guidance cases (22–24): spatial workspaces, prototype adoption and wrapped headings. These are separate from the bundled 21-case regression suite. Results belong to the exact evaluated snapshot and release evidence; the suite itself makes no performance claim. Guidance answers do not establish working UI, visual quality or assistive-technology behavior.
+Use `--suite` with [evals-intake.json](../evals-intake.json) for the three additional guidance cases (22-24): spatial workspaces, prototype adoption and wrapped headings. These are separate from the bundled 21-case regression suite. Results belong to the exact evaluated snapshot and release evidence; the suite itself makes no performance claim. Guidance answers do not establish working UI, visual quality or assistive-technology behavior.
+
+## Pattern selection and shell guidance
+
+Use `--suite` with [evals-pattern-shell.json](../evals-pattern-shell.json) for four
+additional guidance cases (25-28), totaling 19 assertions: feedback and recovery,
+container/control-state choices, Next.js shell critique, and prototype/API
+authority. Preserve the older suites. This pack's presence does not mean it has
+passed a full model evaluation. Keep text guidance evaluation separate from
+compilation, browser interaction, visual inspection and assistive-technology tests.

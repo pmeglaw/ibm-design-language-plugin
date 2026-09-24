@@ -1,0 +1,7 @@
+body { margin: 0; background: var(--cds-background); color: var(--cds-text-primary); }
+h1 { font-size: 2rem; line-height: 1.25; margin-block-end: 1.5rem; }
+p, .fixture-links { margin-block: 1rem; }
+.fixture-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+label { display: block; margin-block-end: 0.5rem; }
+input { max-inline-size: 100%; padding: 0.5rem; background: var(--cds-field); color: var(--cds-text-primary); border: 1px solid var(--cds-border-strong); }
+.fixture-links a { color: var(--cds-link-primary); }
