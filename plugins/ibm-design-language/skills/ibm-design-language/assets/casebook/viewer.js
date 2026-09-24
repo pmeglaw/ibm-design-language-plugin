@@ -6,9 +6,9 @@
   const theme = document.getElementById('theme');
   const width = document.getElementById('width');
   const content = document.getElementById('content');
-  const caseIds = new Set(['table', 'form', 'dashboard', 'settings', 'expressive']);
-  const themes = new Set(['white', 'g100']);
-  const widths = new Set(['desktop', 'mobile']);
+  const caseIds = ['table', 'form', 'dashboard', 'settings', 'expressive'];
+  const themes = ['white', 'g100'];
+  const widths = ['desktop', 'mobile'];
 
   function element(tag, className, text) {
     const node = document.createElement(tag);
@@ -40,11 +40,12 @@
   });
 
   function render() {
-    const id = select.value;
-    const t = theme.value;
-    const w = width.value;
+    // Use canonical package constants downstream, never the DOM strings.
+    const id = caseIds.find(value => value === select.value);
+    const t = themes.find(value => value === theme.value);
+    const w = widths.find(value => value === width.value);
     const c = window.CASEBOOK.find(item => item.id === id);
-    if (!caseIds.has(id) || !themes.has(t) || !widths.has(w) || !c) {
+    if (!id || !t || !w || !c) {
       const error = element('p', '', 'Choose a valid study, theme, and capture size.');
       error.setAttribute('role', 'alert');
       content.replaceChildren(error);

@@ -4,7 +4,7 @@
 
 - Version: `1.1.13`
 - Immutable tag: `v1.1.13`
-- `plugin.zip` SHA-256: `0d17737643a1f575b83f1aea970d0166308bd0895f199161ce651f5a165e45a0`
+- `plugin.zip` SHA-256: `41a804706f5edd65f45d5fb01486cb24e63bf26ec97d7266c31dedead35c919b`
 - Manifest: `releases/1.1.13/files.json`
 - Publication and full release commit: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.13)
 
