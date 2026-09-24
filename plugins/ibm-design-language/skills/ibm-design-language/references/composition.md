@@ -16,7 +16,7 @@ Read this when building a *page* rather than a component: choosing the container
 
 Top to bottom: **UI shell** (global header, optional left panel — `ui-shell.md`) → **page header** (breadcrumb, title, status tags, a primary action when warranted, optional tabs) → **content on the 2x Grid**.
 
-- Left panel when there are more than five secondary items or users switch between them often. It never holds three tiers.
+- Consider a left panel when secondary navigation is substantial or users switch between items often. Keep its hierarchy easy to scan; check deeper navigation against the task and available space.
 - Breadcrumbs on record pages and any full-page flow.
 - Use at most one page-level primary action when warranted; a read-only or monitoring page can have none. A focused modal or panel may have its own primary while active; repeated sections do not each need a primary.
 

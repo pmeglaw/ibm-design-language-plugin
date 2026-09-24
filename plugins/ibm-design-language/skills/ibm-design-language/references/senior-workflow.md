@@ -78,7 +78,7 @@ The recurring conflicts and their usual resolutions:
 
 ## The hard choices
 
-- **Modal, side panel, tearsheet, page, or inline** — the container guide in `composition.md`. The short version: modal only when it's tiny; side panel when the page behind it still matters; tearsheet when it's a real task with steps; full page only when nothing works until it's done.
+- **Modal, side panel, tearsheet, page, or inline** — use the container guide in `composition.md`. A modal suits a short, focused task that fits comfortably; a side panel suits a task that needs the page alongside it; a tearsheet can support a sustained or stepped task; a full page gives a task its own location or more room. Check the selected component's supported size and behavior.
 - **Single or multi-column form** — single column by default; it gives one reading path. Two columns only for short paired fields (city / postcode; start / end).
 - **Tabs, accordion, or separate pages** — tabs for peer facets of one object; accordion for long, sequential, mostly-collapsed content; separate pages when each section is its own task with its own URL and permission.
 - **Table or cards** — table when users compare across a consistent set of attributes and scan many rows; cards when items are few, unlike, or image-led.
@@ -108,16 +108,18 @@ Enterprise Design Thinking scales down cleanly:
 
 ## Enterprise decisions and the senior default
 
+These are starting heuristics, not IBM requirements. Choose for the task and revisit them when the product's navigation, content, users, or installed components call for a different pattern.
+
 | Decision | Default |
 |---|---|
-| Navigation | Left panel past five secondary items; never three tiers; breadcrumbs on deep or full-page flows; nav reflects the domain, not the org chart |
+| Navigation | Consider a left panel when secondary navigation is substantial or frequently used; keep hierarchy understandable and use breadcrumbs when they help orientation; organize around users' tasks and domain |
 | Permissions | Preserve information the user may see; distinguish read-only values, temporarily disabled actions, and hidden content using accessibility.md |
 | Bulk actions | Batch bar appears on row selection, in the toolbar |
 | Destructive actions | Undo for reversible; confirm for irreversible; typed confirmation where the action pattern and consequences warrant it (patterns.md) |
 | Long-running work | Optimistic where safe; skeleton on load; explicit submitting state; success or error notification; screen reader told when busy or failed |
-| Forms | Single column; validate on blur or submit, never per keystroke; mark the minority (required or optional); smart defaults |
+| Forms | Start with a single column; validate text fields on blur or submit, with earlier feedback when it helps immediate correction without noise; mark the minority (required or optional); use helpful defaults |
 | Search & filtering | Faceted batch filters for multi-dimension sets; chips with clear-all; saved views for recurring queries; result count always, zero included |
-| Responsive | Desktop-first for tools; header collapses to hamburger at narrow widths; the Carbon grid reads the viewport, not the container |
+| Responsive | Design and test at desktop and narrow widths; adapt navigation to available space and task frequency; Carbon grid breakpoints respond to the viewport, so handle narrow containers separately |
 | Internationalization | Budget 30–50% text expansion; the left nav tolerates it better than the header |
 | Pagination | Pagination when users need addressable positions; infinite scroll or virtualization when they don't |
 | Onboarding | Educational empty state for a primary resource (show what populated looks like); basic empty state for secondary ones |

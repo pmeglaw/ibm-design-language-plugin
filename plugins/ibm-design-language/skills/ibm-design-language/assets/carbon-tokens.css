@@ -485,8 +485,8 @@
 
    Product meaning maps onto the system here, and ONLY here. Components consume
    the product tokens, never the --cds-* ones directly. Two payoffs: a reviewer
-   can read intent off the name, and when Carbon v12 renames tokens to the DTCG
-   spec, exactly one file changes.
+   can read intent off the name, and Carbon token changes have fewer application
+   touchpoints. A migration still needs a value, state, and rendered-theme audit.
 
    The states below are an illustrative set for a resource-status product.
    Replace the names with your own domain's; keep the discipline.

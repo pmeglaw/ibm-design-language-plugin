@@ -1,12 +1,12 @@
 # IBM Design Language plugin
 
-Permanent source package for `ibm-design-language@jp-personal`, version 1.1.10. Canonical public repository: https://github.com/pmeglaw/ibm-design-language-plugin. Use the reviewed release commit and checksums for recovery; release publication and CI status are recorded on GitHub.
+Permanent source package for `ibm-design-language@jp-personal`, version 1.1.11. Canonical public repository: https://github.com/pmeglaw/ibm-design-language-plugin. Use the reviewed release commit and checksums for recovery; release publication and CI status are recorded on GitHub.
 
 ## Contents
 
-- `plugins/ibm-design-language/`: the 1.1.10 plugin, including the visual casebook, sources, evaluator and tests.
+- `plugins/ibm-design-language/`: the 1.1.11 plugin, including the visual casebook, sources, evaluator and tests.
 - `.agents/plugins/marketplace.json`: portable Codex marketplace. Plugin paths resolve from this repository root.
-- `releases/`: the 1.1.10 ZIP plus preserved earlier ZIPs, file manifests and checksums for recovery.
+- `releases/`: the 1.1.11 ZIP plus preserved earlier ZIPs, file manifests and checksums for recovery.
 - `evidence/`: selected existing package, installation, casebook and comparison receipts. Historical absolute paths identify the original machine; they are not dependencies. Full model transcripts and screenshot archives remain in the original task workspace and are not included here.
 - `scripts/verify.py`: offline release, source and marketplace checks plus synthetic evaluator tests. No model calls.
 
