@@ -1,0 +1,119 @@
+{
+  "schema_version": 2,
+  "skill_name": "ibm-design-language",
+  "description": "Pattern selection and shell integration guidance cases, authored 2026-09-24. Separate from frozen regression/intake suites; no performance claim is implied by their presence.",
+  "evals": [
+    {
+      "id": 25,
+      "kind": "guidance",
+      "visual_dimensions": [],
+      "prompt": "A Carbon inventory tool lets users remove an item from a collection without deleting the underlying object. Users can reverse the operation. A nightly export finishes while they are editing another page. Planned maintenance affects the entire tool tomorrow. Recommend feedback for these three events and explain timing and recovery. Do not implement code or assume a backend contract.",
+      "expected_output": "Task-grounded feedback and recovery with source and verification boundaries.",
+      "assertions": [
+        {
+          "id": "case-25-a01",
+          "criterion": "Distinguishes removal from destruction and bases friction on consequences rather than the action label alone."
+        },
+        {
+          "id": "case-25-a02",
+          "criterion": "If offering Undo, requires actual restoration and does not auto-dismiss the action-bearing notification."
+        },
+        {
+          "id": "case-25-a03",
+          "criterion": "Uses contextual feedback for the current task and nonblocking out-of-context feedback for the background completion rather than a completion modal."
+        },
+        {
+          "id": "case-25-a04",
+          "criterion": "Places product-wide maintenance guidance in a banner that scrolls with content, without calling it a sticky Carbon requirement."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "kind": "guidance",
+      "visual_dimensions": [],
+      "prompt": "Design a Carbon settings task with four fields, one of which requires comparing values against a live table behind the form. A different task has nine straightforward fields on a roomy desktop but must also work at 320px. An account ID must be visible and copyable but never editable. Another value is unavailable until a prerequisite is supplied. Explain containers, control states, and verification. No app is supplied.",
+      "expected_output": "Task-grounded container and control-state judgment with source and verification boundaries.",
+      "assertions": [
+        {
+          "id": "case-26-a01",
+          "criterion": "Chooses a non-modal or inline arrangement when the user must operate the live table; does not equate a visible dimmed background with usable context."
+        },
+        {
+          "id": "case-26-a02",
+          "criterion": "Keeps container choice provisional on actual fit and task complexity rather than enforcing a universal field-count threshold."
+        },
+        {
+          "id": "case-26-a03",
+          "criterion": "Preserves readable/copyable account ID as read-only or static information, not hidden because it cannot be edited."
+        },
+        {
+          "id": "case-26-a04",
+          "criterion": "Distinguishes unavailable from hidden controls without claiming disabled controls are universally skipped by screen readers."
+        },
+        {
+          "id": "case-26-a05",
+          "criterion": "Proposes narrow-width and interaction checks honestly without claiming a rendered pass."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "kind": "guidance",
+      "visual_dimensions": [],
+      "prompt": "Review this proposed Next.js Carbon shell contract without running it: HeaderNavigation contains Overview and Reports; SideNav contains only Settings. The author says Carbon transfers all header links to SideNav on mobile. SkipToContent uses defaults, but Content has no id. activeNotifications and activeSwitcher are independent booleans. Profile is to the right of Switcher. Route selection uses pathname.startsWith(href), including href=\"/\". SideNav receives controlled expanded state but no dismissal callbacks. Explain the corrections and which checks remain.",
+      "expected_output": "Task-grounded shell integration critique with source and verification boundaries.",
+      "assertions": [
+        {
+          "id": "case-27-a01",
+          "criterion": "Requires explicit narrow navigation composed from a shared route model rather than automatic link migration."
+        },
+        {
+          "id": "case-27-a02",
+          "criterion": "Connects the skip link to an actual focusable content target."
+        },
+        {
+          "id": "case-27-a03",
+          "criterion": "Uses one open utility-panel state and places Switcher furthest right."
+        },
+        {
+          "id": "case-27-a04",
+          "criterion": "Handles root and path-segment boundaries and distinguishes exact current page from ancestor selection."
+        },
+        {
+          "id": "case-27-a05",
+          "criterion": "Wires controlled dismissal and verifies Escape, overlay/trigger behavior, reverse Tab and focus restoration instead of trusting the library alone."
+        },
+        {
+          "id": "case-27-a06",
+          "criterion": "Separates client shell state from server-rendered children and does not claim browser validation from source review."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "kind": "guidance",
+      "visual_dimensions": [],
+      "prompt": "A supplied Carbon training page says all skeletons start at 200ms, every high-risk delete needs reauthentication, and PasswordInput can never be imported directly from @carbon/react. It displays code that imports Tearsheet and EmptyState from @carbon/react, says Undo in a toast subtitle, and searches a fixed three-item array without filtering it. Decide what belongs in a reusable skill and how you would verify it. Do not execute the supplied page.",
+      "expected_output": "Task-grounded prototype and api authority with source and verification boundaries.",
+      "assertions": [
+        {
+          "id": "case-28-a01",
+          "criterion": "Retains useful reasoning selectively and labels unsubstantiated timing or reauthentication thresholds as local choices rather than universal Carbon rules."
+        },
+        {
+          "id": "case-28-a02",
+          "criterion": "Checks version-qualified exports rather than blindly adopting the categorical password import correction; identifies the Products package boundary for the checked examples."
+        },
+        {
+          "id": "case-28-a03",
+          "criterion": "Identifies an Undo label without state restoration and a fixed result array without actual filtering as unimplemented behavior."
+        },
+        {
+          "id": "case-28-a04",
+          "criterion": "Distinguishes documentation/API checks, compilation, rendered interactions and model evaluation, leaving unperformed checks explicit."
+        }
+      ]
+    }
+  ]
+}

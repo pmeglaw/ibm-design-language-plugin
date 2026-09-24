@@ -1,12 +1,12 @@
 # IBM Design Language plugin
 
-Permanent source package for `ibm-design-language@jp-personal`, version 1.1.11. Canonical public repository: https://github.com/pmeglaw/ibm-design-language-plugin. Use the reviewed release commit and checksums for recovery; release publication and CI status are recorded on GitHub.
+Permanent source package for `ibm-design-language@jp-personal`, version 1.1.12. Canonical public repository: https://github.com/pmeglaw/ibm-design-language-plugin. Use the reviewed release commit and checksums for recovery; release publication and CI status are recorded on GitHub.
 
 ## Contents
 
-- `plugins/ibm-design-language/`: the 1.1.11 plugin, including the visual casebook, sources, evaluator and tests.
+- `plugins/ibm-design-language/`: the 1.1.12 plugin, including the visual casebook, sources, evaluator and tests.
 - `.agents/plugins/marketplace.json`: portable Codex marketplace. Plugin paths resolve from this repository root.
-- `releases/`: the 1.1.11 ZIP plus preserved earlier ZIPs, file manifests and checksums for recovery.
+- `releases/`: the 1.1.12 ZIP plus preserved earlier ZIPs, file manifests and checksums for recovery.
 - `evidence/`: selected existing package, installation, casebook and comparison receipts. Historical absolute paths identify the original machine; they are not dependencies. Full model transcripts and screenshot archives remain in the original task workspace and are not included here.
 - `scripts/verify.py`: offline release, source and marketplace checks plus synthetic evaluator tests. No model calls.
 
@@ -33,3 +33,7 @@ This is an independently maintained plugin, not an official IBM product. Bundled
 See [reviewed intake](docs/REVIEWED-INTAKE.md) for the target correction, adopted changes and evidence limits. The [earlier targeted report](evidence/1.1.8-targeted/REPORT.md) preserves the 1.1.7/1.1.8 failures. The [1.1.9 completion report](evidence/1.1.9-completion/REPORT.md) records the final targeted checks, unchanged status criterion and evidence limitations. Passing targeted cases is not a full-suite or general-quality certification.
 
 The [1.1.10 candidate report](evidence/1.1.10-candidate/REPORT.md) records its local checks and one text-only design critique evaluation. It is not a rendered design validation.
+
+## Release validation
+
+See the [1.1.12 candidate evidence](evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.12). Follow [recovery](docs/RECOVERY.md) for checksum and destination-installation checks.

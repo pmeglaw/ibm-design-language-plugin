@@ -1,0 +1,23 @@
+// Import Carbon's component CSS once in the root app stylesheet. This file only
+// styles the composition. It does not replace supported component states.
+.shell-example__name { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; }
+.shell-example__name > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.shell-example__utilities { margin-inline-start: auto; flex-shrink: 0; }
+.shell-example__panel {
+  padding: var(--cds-spacing-05, 1rem);
+  overflow-wrap: anywhere;
+  display: grid;
+  gap: var(--cds-spacing-05, 1rem);
+}
+.shell-example__panel h2 { font-size: 1.25rem; line-height: 1.4; }
+.shell-example .cds--header-panel { max-inline-size: 100vw; overflow-y: auto; }
+.shell-example .cds--content { min-inline-size: 0; overflow-wrap: anywhere; }
+// This example deliberately uses overlay navigation at desktop too. Carbon's
+// built-in overlay background is narrow-only; keep this extension scoped.
+.shell-example__navigation .cds--side-nav__overlay-active {
+  z-index: 6000;
+  background-color: var(--cds-overlay, rgba(0, 0, 0, 0.6));
+  block-size: calc(100dvh - 3rem);
+  inline-size: 100vw;
+  opacity: 1;
+}

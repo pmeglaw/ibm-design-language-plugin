@@ -42,6 +42,7 @@ Identify the visual register: productive interfaces use efficient, predictable l
 
 | Reference | Use when |
 |---|---|
+| [Pattern selector](references/pattern-selection.md) | Choosing between containers, feedback, loading, search, filters, control states, and deletion treatments from the task |
 | [Components](references/components-preview.md), [index](references/components-preview-index.md), [coverage](references/components-preview-coverage.md) | Selecting a core component; locating its variants, specifications, accessibility, and source sections |
 | [Composition](references/composition.md) | Choosing page, modal, panel, tearsheet, table, or dashboard structure; IBM Products |
 | [Patterns](references/patterns.md), [coverage](references/patterns-coverage.md) | Notifications, forms, search, filtering, loading, empty states, disclosure |
@@ -56,6 +57,7 @@ Identify the visual register: productive interfaces use efficient, predictable l
 | [Spatial workspaces](references/spatial-workspaces.md) | Maps, floor plans, inspectors, spatial keyboard navigation, and draft/publication boundaries |
 | [Artifact intake](references/artifact-intake.md) | Reviewing supplied research, prototypes and mockups for selective reuse |
 | [UI shell](references/ui-shell.md) | Product navigation, headers, panels, and responsive shell behavior |
+| [Next.js shell recipe](references/nextjs-shell.md) | App Router integration with real Carbon navigation, shared routes, dismissal, and focus behavior |
 | [Status and data visualization](references/status-and-dataviz.md) | Status meaning, non-color signals, marks, charts, technical diagrams |
 | [Senior workflow](references/senior-workflow.md), [taste](references/taste.md) | Screen/flow design, density, judgment, critique |
 | [Visual casebook](references/visual-casebook.md) | Annotated before/after table, form, dashboard, settings and expressive composition; task-dependent tradeoffs |

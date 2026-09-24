@@ -1,34 +1,40 @@
 # Recovery
 
-## Current release identity
+## Release identity
 
-- Version: `1.1.11`
-- Commit: `6147bc15d7e4cb3b038dee6f597dfed815ddad03`
-- Tag: `v1.1.11`
-- `plugin.zip` SHA-256: `6a263af142411cf63d6587d3ed2a68cbaded46c78f10bdfd0d8cb7cc997e6d95`
-- Manifest: `releases/1.1.11/files.json`
+- Version: `1.1.12`
+- Immutable tag: `v1.1.12`
+- `plugin.zip` SHA-256: `dcce95650b583951adbf88981666da8f5d3296d4377044fa741bc1c135ee4841`
+- Manifest: `releases/1.1.12/files.json`
+- Publication and full release commit: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.12)
 
-Package identity is separate from successful destination installation and fresh discovery. Keep those checks explicit.
+After publication, fetch the tag and resolve `git rev-parse 'v1.1.12^{commit}'`.
+Record that full commit alongside the checksum. Pin marketplace installation to
+that commit rather than an evolving branch. A missing release/tag means
+publication is incomplete; a locally prepared ZIP is not proof of publication.
+Package identity is separate from successful destination installation and fresh
+discovery. Keep those checks explicit.
 
-## Local restore
+## Restore and verify
 
-1. Obtain this repository or its reviewed backup ZIP and verify its checksum against your separately retained receipt.
-2. Run `python -B scripts/verify.py` from its root. All checks must pass.
-3. Inspect `codex plugin marketplace list --json`. If `jp-personal` already exists, check its source first. Do not add a competing marketplace with the same name or remove unrelated entries. Changing an existing source requires authorization; the owner authorized completing the canonical installation and release on 2026-09-23. Preserve unrelated marketplace entries.
-4. On a fresh setup, register this checkout with `codex plugin marketplace add /absolute/path/to/checkout --json`, then run `codex plugin add ibm-design-language@jp-personal --json`.
-5. Confirm version and enabled status with `codex plugin list --marketplace jp-personal --json`. Compare the returned installed directory's files to `releases/1.1.11/files.json`.
-6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect one enabled IBM entry with pluginId `ibm-design-language@jp-personal` and the installed version's path. If an obsolete user-level standalone copy exists, preserve its files and avoid duplicate discovery. Deliberate project-vendored skills remain governed by their project and must not be removed as installation cleanup. Use the new skill on the next turn.
+1. Obtain the reviewed release, check the downloaded ZIP against the checksum above, and verify its files against the manifest.
+2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
+3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner authorized publishing and installing 1.1.12 on 2026-09-24; that does not authorize unrelated future source changes.
+4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.12/files.json`.
+6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect one enabled IBM entry with pluginId `ibm-design-language@jp-personal` and the installed version's path. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
-## After GitHub publication
+## Previously verified rollback identity
 
-The release is published at https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.11. Its downloaded `plugin.zip` matches the checksum above. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref 6147bc15d7e4cb3b038dee6f597dfed815ddad03 --json`, followed by the plugin add and verification steps above. This pins version 1.1.11 to its reviewed release commit; use the matching version manifest when verifying another release. This source repository is public; authenticate GitHub separately when publishing changes.
+Version 1.1.11: commit `6147bc15d7e4cb3b038dee6f597dfed815ddad03`, tag
+`v1.1.11`, ZIP SHA-256
+`6a263af142411cf63d6587d3ed2a68cbaded46c78f10bdfd0d8cb7cc997e6d95`.
+Earlier release archives, manifests and checksums remain frozen in `releases/`.
 
-Use a reviewed release commit to prevent an unrelated branch update from changing the selected package. A tag such as `v1.1.11` is a convenient label; retain its commit and ZIP checksum separately.
-
-## Rollback to 1.1.5
-
-Preserve the current installation and source before changing them. Extract `releases/1.1.5/plugin.zip` to a new, empty staging folder and verify all files against its `files.json`. Use that tree as the plugin source in a separate staging checkout with the same marketplace identity. After approval, select that source and run the supported installer, then check version, file hashes and fresh discovery. Do not overlay old files onto a newer plugin tree or replace unrelated configuration.
-
-No model evaluations are required to restore identical bytes. Installation and discovery still need checking on the destination machine.
+For a requested rollback, preserve the current installation and source, verify
+the selected frozen archive, select its reviewed commit, and reinstall using
+the supported installer. Do not overlay old files onto a newer plugin tree or
+replace unrelated configuration. No model evaluations are required to restore
+identical bytes; installation and fresh discovery still need checking.
 
 Official references: [plugin commands](https://learn.chatgpt.com/docs/developer-commands#codex-plugin), [skill discovery](https://learn.chatgpt.com/docs/app-server#skills), [marketplace format](https://learn.chatgpt.com/docs/enterprise/plugin-management#supported-formats).

@@ -1,10 +1,29 @@
-# IBM Design Language 1.1.11
+# IBM Design Language 1.1.12
 
-Corrects four guidance issues found in a review of 1.1.10:
+Adds a short task-based pattern selector and a version-qualified Next.js App
+Router shell recipe, selectively synthesized from seven supplied teaching
+documents. The documents themselves are not bundled or treated as authority.
 
-- Carbon Next flags are described by their distinct effects instead of implying a shared visible affordance. The tile icon note identifies ClickableTile and warns about codemod coverage.
-- The semantic token layer is presented as a way to limit migration touchpoints, without promising a one-file Carbon v12 migration. The matching CSS asset comment is corrected.
-- The modal summary now agrees with the task-based container guide and Carbon's range of modal sizes.
-- Navigation, form-validation, and responsive defaults are explicitly task-dependent heuristics rather than IBM requirements. The duplicate navigation rule in the composition guide is aligned.
+- Routes feedback, loading, search, filtering, form containers, control states
+  and deletion choices into the existing detailed references. Preserves task
+  constraints and identifies local thresholds as heuristics.
+- Adds three reusable shell assets with shared routes, explicit narrow
+  navigation, exact/ancestor selection, one open utility panel, a real skip
+  target, controlled dismissal, and keyboard focus handling.
+- Adds a separate four-case guidance suite with 19 assertions. The existing
+  21-case regression suite and three-case intake suite remain unchanged.
+- Records current primary sources and package boundaries, including the direct
+  PasswordInput export in @carbon/react 1.117.0 and the IBM Products boundary.
 
-No component CSS values, JavaScript, evaluator, or evaluation criteria changed. Local skill validation and synthetic evaluator tests check package integrity and harness behavior; no model, rendered-design, or assistive-technology evaluation was run for this guidance correction.
+The shell compiled with Next.js 16.3.6, React 19.3.0, @carbon/react 1.117.0,
+@carbon/styles 1.116.0 and @carbon/icons-react 11.89.0. A separate fixture passed
+16 Chromium tests covering routing, responsive navigation, forward/reverse Tab,
+Escape, focus restoration, panel switching, long names, white/G100 themes and
+automated axe checks. Selected screenshots were inspected. These checks do not
+certify browser zoom, screen-reader behavior, every contrast pair, all themes,
+other browsers, application auth or backend interactions.
+
+A bounded independent text-only forward check addressed all four new guidance
+scenarios; author review found the 19 criteria satisfied. This was two responses
+(the first combined three scenarios), not four isolated frozen harness runs,
+not a baseline comparison, and not evidence of general skill improvement.

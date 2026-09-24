@@ -11,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = '1.1.11'
+CURRENT = '1.1.12'
 
 
 def require(condition, message):
@@ -27,7 +27,7 @@ def main():
     report = ROOT / '.verification'
     report.mkdir(exist_ok=True)
     manifests = {}
-    for version in ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', CURRENT):
+    for version in ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', CURRENT):
         release = ROOT / 'releases' / version
         expected = json.loads((release / 'files.json').read_text(encoding='utf-8'))
         archive = release / 'plugin.zip'
@@ -81,6 +81,11 @@ def main():
     require([c['id'] for c in intake['evals']] == [22, 23, 24]
             and sum(len(c['assertions']) for c in intake['evals']) == 15,
             'Intake guidance suite changed unexpectedly')
+    shell_suite = json.loads((skill / 'evals-pattern-shell.json').read_text(encoding='utf-8'))
+    evaluator.validate_suite(shell_suite)
+    require([c['id'] for c in shell_suite['evals']] == [25, 26, 27, 28]
+            and sum(len(c['assertions']) for c in shell_suite['evals']) == 19,
+            'Pattern/shell guidance suite changed unexpectedly')
     env = dict(os.environ, IBM_EVAL_TEST_TMP=str(report / 'synthetic-temp'))
     tests = subprocess.run([sys.executable, '-B', '-X', 'utf8',
                             str(plugin / 'skills/ibm-design-language/scripts/test_evaluate.py')],
