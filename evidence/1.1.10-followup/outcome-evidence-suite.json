@@ -1,0 +1,66 @@
+{
+  "schema_version": 2,
+  "name": "outcome-evidence-transfer-v1",
+  "evals": [
+    {
+      "id": 25,
+      "kind": "artifact",
+      "prompt": "Design and build a standalone HTML/CSS/JavaScript prototype for an internal service-request triage screen. Use synthetic records only. Operators need to find the oldest unassigned urgent request, assign it, and recover from a failed assignment without losing their place. The current screen is a flat table with title, priority, age, owner, status, and an Assign button; all rows have equal emphasis and failures appear only in a page banner. There are 240 requests in normal use. Preserve search and filters and support desktop and narrow screens. We have no user study or production telemetry; stakeholders suspect missed urgent requests but that is unverified. Deliver your recommended direction and a concise rationale with an actionable verification plan. Do not claim user or assistive-technology testing that you did not perform. Do not access external services or real records. Use local assets when available. You may create a small representative synthetic data set rather than all 240 rows.",
+      "expected_output": "Runnable local prototype and evidence-qualified rationale; a controlled transfer check, not general certification.",
+      "assertions": [
+        {
+          "id": "outcome-25-outcome",
+          "criterion": "Defines observable task-success or recovery criteria before presenting its visual recommendation; proposed targets are clearly not measured results."
+        },
+        {
+          "id": "outcome-25-inputs",
+          "criterion": "Separately identifies supplied constraints, available observations, and unvalidated assumptions without inventing user findings."
+        },
+        {
+          "id": "outcome-25-comparison",
+          "criterion": "Provides current experience and one plausible alternative under matching content, viewport, theme and task state, with concrete tradeoffs."
+        },
+        {
+          "id": "outcome-25-falsification",
+          "criterion": "States what evidence would change a consequential recommendation."
+        },
+        {
+          "id": "outcome-25-user-test",
+          "criterion": "Proposes a relevant representative-user task and uncertainty-driven follow-up, without treating a fixed participant count as proof."
+        },
+        {
+          "id": "outcome-25-task",
+          "criterion": "Prototype supports finding an urgent unassigned request and assigning it, with observable completion feedback."
+        },
+        {
+          "id": "outcome-25-recovery",
+          "criterion": "A reproducible failed assignment preserves user context and provides a usable retry or recovery route."
+        },
+        {
+          "id": "outcome-25-states",
+          "criterion": "Search/filter no-results and assignment submitting, failure and success states are implemented with clear feedback."
+        },
+        {
+          "id": "outcome-25-responsive",
+          "criterion": "Rendered desktop and narrow layouts preserve relevant information and operable controls without material clipping or overlap."
+        },
+        {
+          "id": "outcome-25-keyboard",
+          "criterion": "Browser verification confirms keyboard operation, accessible control names and visible focus for the implemented task."
+        },
+        {
+          "id": "outcome-25-honesty",
+          "criterion": "Distinguishes rendered/source/browser evidence from representative-user and AT evidence, with unperformed checks explicitly unverified."
+        }
+      ],
+      "visual_dimensions": [
+        "hierarchy",
+        "layout",
+        "typography",
+        "color_imagery",
+        "interaction_clarity"
+      ],
+      "notes": "New synthetic transfer case. Same prompt, criteria, model, reasoning and host for both releases. One pair is not repeatability evidence; users and AT remain untested unless separately executed."
+    }
+  ]
+}

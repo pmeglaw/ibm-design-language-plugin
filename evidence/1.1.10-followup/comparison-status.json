@@ -1,0 +1,41 @@
+{
+  "case": 25,
+  "cli_version": "0.154.0-alpha.3",
+  "host_configuration_equal_at_preparation": true,
+  "runs": [
+    {
+      "version": "1.1.9",
+      "skill_sha256": "9f906f7586ff05de2bbde014ac25c4a185596ce109bedba3f0d48bc50d5ae393",
+      "suite_sha256": "f825a5081cccc09491e050bac018c99cbee17e1fd34f4cf28fc65f578e717c48",
+      "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+      "model": "gpt-6-astra",
+      "reasoning": "high",
+      "status": "execution_failed",
+      "assertions_scored": 0,
+      "visual_dimensions_scored": 0,
+      "failure": "Filesystem sandbox failed before model work: bwrap could not create NETLINK_ROUTE socket (Operation not permitted).",
+      "receipt_hashes": {
+        "execution.json": "17e1388b0c8844d7935eeb35563227a225b90cd3c725c21b186a195dbcca49fa",
+        "events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.txt": "30fbb9e547caed421e0a1f6056caa3f59f12a7485ead9f8ed225a1f9e1ed5f5c"
+      }
+    },
+    {
+      "version": "1.1.10",
+      "skill_sha256": "5173fb8c123de45d70956ff71c75cbcf0d4cc6db91b90958e558f9cae3d29b80",
+      "suite_sha256": "f825a5081cccc09491e050bac018c99cbee17e1fd34f4cf28fc65f578e717c48",
+      "harness_sha256": "af2f6a7c64da86b48130ab27c10fa70e4ce594711a4a01bc2ab8410c8835a420",
+      "model": "gpt-6-astra",
+      "reasoning": "high",
+      "status": "not_run",
+      "assertions_scored": 0,
+      "visual_dimensions_scored": 0
+    }
+  ],
+  "limitations": [
+    "No generated output or design scores.",
+    "An installed candidate and pre-existing standalone IBM skill were discoverable in the host; a future valid comparison must resolve or explicitly control competing entrypoints.",
+    "No sandbox bypass or retry with weakened controls was attempted.",
+    "Raw packets remain local and ignored; this is a reviewed public summary."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "1.1.10",
+  "commit": "16ffacdb1c4761a0bc5add45325b256ff2b57a0b",
+  "cli": "0.154.0-alpha.3",
+  "environment": "Linux audit environment; not the user desktop",
+  "installed_file_count": 106,
+  "all_file_hashes_match": true,
+  "discovery": [
+    {
+      "name": "ibm-design-language",
+      "description": "Design, implement, and critique IBM Design Language and Carbon interfaces. Use for IBM/Carbon product UI, IBM Plex, layout and typography, component or flow selection, semantic color and approved brand integration, accessibility, and interaction refinement.",
+      "scope": "user",
+      "enabled": true,
+      "pluginId": null,
+      "path_kind": "pre-existing standalone host skill"
+    },
+    {
+      "name": "ibm-design-language:ibm-design-language",
+      "description": "Design, implement, and critique IBM Design Language and Carbon interfaces. Use for IBM/Carbon product UI, IBM Plex, layout and typography, component or flow selection, semantic color and approved brand integration, accessibility, and interaction refinement.",
+      "scope": "user",
+      "enabled": true,
+      "pluginId": "ibm-design-language@jp-personal",
+      "path_kind": "canonical installed 1.1.10 plugin"
+    }
+  ],
+  "discovery_error": null,
+  "canonical_enabled_count": 1,
+  "total_enabled_ibm_entries": 2,
+  "single_unambiguous_entrypoint": false,
+  "tested_at": "2026-09-24"
+}
