@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ibm-design-language",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "IBM Design Language and Carbon design, implementation, and critique with source routing and evidence-graded evaluation."
 }

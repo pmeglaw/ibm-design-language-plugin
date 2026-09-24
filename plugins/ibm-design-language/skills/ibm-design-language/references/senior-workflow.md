@@ -10,6 +10,7 @@ Read this when the request is "design X" rather than "style X": a new screen or 
 - When principles conflict — the procedure
 - The hard choices
 - The decision log
+- Outcome evidence
 - Borrowing IBM's process when working alone
 - Enterprise decisions and the senior default
 - Worked examples
@@ -32,6 +33,14 @@ A mid-level designer executes the ticket. A senior owns the outcome — reframes
 9. **Polish, budgeted.** The last 10% goes to the primary path and the highest-frequency interactions. The rest ships at good enough.
 
 A design engineer's variant is to skip mockups and prototype in code from step 4, because interaction quality can only be judged in motion. Either way the order of decisions is the same.
+
+## Outcome evidence
+
+Before choosing a visual direction, write down what a person should be able to do, the conditions under which they must do it, and what would show that the design helped. For a product task, use an observable signal such as successful completion, fewer corrections, clear recovery after failure, or an unambiguous next action. The signal is a criterion to test, not a measured result until someone observes it.
+
+Separate three kinds of input: **known constraints** from the product or approved design record; **observations** from users, existing behavior, or rendered screens; and **assumptions** that still need validation. A screenshot can support a hierarchy or composition finding, but cannot establish task success, keyboard behavior, or user comprehension. Source code can establish a possible behavior path, but a browser check is needed to confirm the rendered result.
+
+Choose the smallest useful comparison for a consequential decision: the current experience and one plausible alternative, viewed with the same content, viewport, theme, and task state. Note what each option improves and costs. If the decision relies on an assumption, state what evidence would change it. This makes a design recommendation reviewable without claiming that a polished image proves usability.
 
 ## Layout archetypes
 
@@ -169,4 +178,4 @@ Run these as separate passes; combining them is how things get missed.
 7. **Contrast** — check actual resolved foreground/background pairs for supported surfaces and states; built-in presets are diagnostics.
 8. **Pre-mortem** — "It's launch day and this screen failed; why?" Usually surfaces a missing state.
 
-Five users find most usability problems. Test with five before polishing further.
+Use a small, relevant user test when access permits, then continue testing if consequential uncertainty remains. Do not treat a fixed participant count as proof of usability.

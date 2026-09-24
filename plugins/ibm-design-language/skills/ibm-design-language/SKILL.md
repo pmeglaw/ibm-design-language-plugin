@@ -17,7 +17,7 @@ Design decisions should help people understand the task, act confidently, and re
 
 ## Choose the mode
 
-**Design or build:** Read [senior workflow](references/senior-workflow.md) and the relevant component/container reference. Establish the main task, objects, data volume, and important states. Choose density by region: scanning zones can be compact while decision zones need space.
+**Design or build:** Read [senior workflow](references/senior-workflow.md) and the relevant component/container reference. Establish the main task, objects, data volume, important states, and an observable outcome to judge the result. Choose density by region: scanning zones can be compact while decision zones need space.
 
 **Critique:** Use [taste](references/taste.md). Inspect the supplied screen or running interface when available. Distinguish visible evidence, source-code findings, and hypotheses; do not describe an unseen screenshot. Prioritize hierarchy and task completion, while still checking serious accessibility and functional issues. For reviews spanning pages or tabs, use the [cross-view comparison](references/taste.md#cross-view-consistency) and report coverage before giving an overall verdict.
 
