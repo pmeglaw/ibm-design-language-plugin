@@ -41,7 +41,7 @@ Check which flags exist and their defaults in the target installed release. The 
 | `enable-v12-release` | The v12 feature set as a whole |
 | `enable-v12-overflowmenu` | OverflowMenu rebuilt on Menu subcomponents |
 | `enable-v12-dynamic-floating-styles` | Dynamic placement for Popover, Tooltip and similar |
-| `enable-v12-tile-default-icons` | Default icons in Tile |
+| `enable-v12-tile-default-icons` | Default icons in ClickableTile; check the target package and codemod coverage |
 | `enable-v12-tile-radio-icons` | Radio icons in RadioTile |
 | `enable-v12-structured-list-visible-icons` | Visible selection icons in StructuredList |
 | `enable-v12-toggle-reduced-label-spacing` | Tighter toggle/label gap |
@@ -50,13 +50,13 @@ Check which flags exist and their defaults in the target installed release. The 
 | `enable-presence` | Components unmounted while closed, mounted on open |
 | `enable-focus-wrap-without-sentinels` | Focus wrapping without sentinel nodes |
 
-Read them together: nearly every one adds a **visible affordance** where v11 relied on color or position alone. Progressive disclosure and accessibility arriving component by component, well ahead of any new expression.
+These flags change different things. Some add visible selection cues; others affect positioning, mounting, dialog behavior, or focus management. Evaluate each flag against its component, installed version, and task rather than inferring a shared visual effect.
 
 ## Building v12-aware today
 
 Four things worth doing now rather than later:
 
-1. **Keep a semantic token layer.** Product meaning points at system tokens; product code never touches a Carbon token directly. When the DTCG rename lands, one file changes.
+1. **Keep a semantic token layer.** Map product meaning to available system roles through product-owned tokens. This limits application touchpoints when Carbon changes token names or formats, but migration still needs a value, state, and rendered-theme audit.
 2. **Don't hand-build what's about to be given away** — data grids, side panels, tearsheets, page headers are in the Carbon for IBM Products set.
 3. **Treat motion as structure.** A move between levels should read as one continuous transition that tells you where you went, not several independent fades.
 4. **If the product has an AI surface**, use Carbon for AI — the AI label, the explainability popover, and the AI token set — rather than a bespoke "magic" treatment.

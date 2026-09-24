@@ -1,7 +1,10 @@
-# IBM Design Language 1.1.10
+# IBM Design Language 1.1.11
 
-Adds an outcome-evidence step to senior design work. Before choosing a visual direction, the skill now asks for an observable result, separates constraints and observations from assumptions, and compares consequential alternatives under matching conditions. This makes a design recommendation easier to review without treating a polished image as proof of usability.
+Corrects four guidance issues found in a review of 1.1.10:
 
-The prior fixed five-user claim is replaced with a small, relevant test followed by more testing when consequential uncertainty remains. The 1.1.9 component guidance, visual casebook, evaluator, and frozen historical releases are otherwise preserved.
+- Carbon Next flags are described by their distinct effects instead of implying a shared visible affordance. The tile icon note identifies ClickableTile and warns about codemod coverage.
+- The semantic token layer is presented as a way to limit migration touchpoints, without promising a one-file Carbon v12 migration. The matching CSS asset comment is corrected.
+- The modal summary now agrees with the task-based container guide and Carbon's range of modal sizes.
+- Navigation, form-validation, and responsive defaults are explicitly task-dependent heuristics rather than IBM requirements. The duplicate navigation rule in the composition guide is aligned.
 
-Local structural validation and synthetic evaluator checks are reported separately from model or user testing. This change has no new evidence of better rendered design outcomes. Publication status, immutable commit and release checksums belong to the GitHub release record.
+No component CSS values, JavaScript, evaluator, or evaluation criteria changed. Local skill validation and synthetic evaluator tests check package integrity and harness behavior; no model, rendered-design, or assistive-technology evaluation was run for this guidance correction.
