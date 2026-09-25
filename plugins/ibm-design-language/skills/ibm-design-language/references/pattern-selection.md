@@ -18,6 +18,7 @@ specifies them.
 | Is search expensive, local, or scoped? | Basic results page, active in-place filtering, or focused search with a widening option | Accessible name, actual result count including zero, loading and recovery. Debounce and suggestion behavior depend on the dataset and service. |
 | Why is there no content? | No-data onboarding, no-results recovery, or an error state | Preserve query/filter context for no results; offer a relevant next action. Do not render a misleading empty table as the no-data state. |
 | Can the user see the value? Can they edit it? | Read-only/static information, unavailable control, or hidden content according to the permission contract | Lack of edit permission does not imply lack of view permission. Disabled is not hidden and does not universally disappear from assistive technology. |
+| Is the request about responsive width or expressive fluid styling? | Read [fluid styles](fluid-styles.md); choose style from the task and enclosing structure | Check complexity, assistance needs, separators, and the component-specific form/button rules. |
 | What happens if deletion is a mistake? | Low impact: direct action; moderate: consequence confirmation; high: typed resource-name confirmation | Recovery and cascading effects determine friction. Undo and reauthentication are product decisions, not universal Carbon additions to every delete. |
 
 For a form, preserve the full range of containers: **inline → modal → non-modal

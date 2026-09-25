@@ -46,6 +46,7 @@ Identify the visual register: productive interfaces use efficient, predictable l
 | [Components](references/components-preview.md), [index](references/components-preview-index.md), [coverage](references/components-preview-coverage.md) | Selecting a core component; locating its variants, specifications, accessibility, and source sections |
 | [Composition](references/composition.md) | Choosing page, modal, panel, tearsheet, table, or dashboard structure; IBM Products |
 | [Patterns](references/patterns.md), [coverage](references/patterns-coverage.md) | Notifications, forms, search, filtering, loading, empty states, disclosure |
+| [Fluid styles](references/fluid-styles.md) | Fluid versus default styling, responsive width, attached actions, form help, separators and component-specific exceptions |
 | [Accessibility](references/accessibility.md) | Accessible names, disabled/read-only states, keyboard, focus, and verification limits |
 | [2x Grid](references/2x-grid.md) | Geometry, breakpoints, grid behaviors, guideline subcategories, or implementation |
 | [Tokens](references/tokens.md), [color and brand](references/color-and-brand.md) | Semantic values, contrast traps, approved brand mappings |

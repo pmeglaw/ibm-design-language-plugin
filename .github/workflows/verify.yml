@@ -14,6 +14,7 @@ jobs:
         with:
           python-version: '3.14'
       - run: python -B scripts/verify.py
+      - run: python -B -m unittest discover -s tests -p test_install_parity.py
 
   casebook:
     runs-on: ubuntu-latest
