@@ -27,6 +27,12 @@ Reviewed 2026-09-15 for plugin 1.1.1. Scope: the 14 entries on [Carbon Patterns 
 - [x] Disclosures: profile menus, settings/filter menus, combo buttons, anatomy, action behavior, and keyboard differences.
 - [x] Text toolbar: attachments, link editing, search feedback, saving, responsive arrangements, and focus restoration.
 
+## Fluid styles review: 2026-09-25
+
+- [Focused guide](fluid-styles.md): reviewed the [fluid-styles pattern](https://carbondesignsystem.com/patterns/fluid-styles/) text, including terminology, selection, component types, alignment, placement, sizing, accessibility and hybrids.
+- Cross-checked relevant [form](https://carbondesignsystem.com/components/form/usage/) and [button](https://carbondesignsystem.com/components/button/usage/) passages for gutter, assistance, validation growth and attached-action qualifications.
+- Illustrations, live demos, package API support and application behavior were not tested. Decision exercises are teaching examples, not evaluation results.
+
 ## Verification limits and maintenance
 
 - The three expanded categories were compared with their public Carbon pages on the review date. Other categories retain their existing condensed guidance; they have not received an exhaustive subsection audit.

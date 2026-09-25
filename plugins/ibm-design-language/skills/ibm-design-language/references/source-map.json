@@ -672,6 +672,68 @@
       "authority": "published-package",
       "version_scope": "@carbon/ibm-products 2.99.0 published package",
       "limits": "Tearsheet/EmptyState export boundary only; all props and runtime behavior not verified."
+    },
+    {
+      "id": "fluid-styles",
+      "url": "https://carbondesignsystem.com/patterns/fluid-styles/",
+      "sections": [
+        "Overview and terminology",
+        "When to use and avoid",
+        "Inputs, buttons, containers and forms",
+        "Alignment, placement, sizing and accessibility",
+        "Hybrid compositions"
+      ],
+      "local_refs": [
+        "references/fluid-styles.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "substantial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-25",
+      "authority": "official-documentation",
+      "version_scope": "public page text reviewed; installed component APIs not verified",
+      "limits": "Relevant text reviewed only; illustrations, live demos, runtime APIs and application accessibility not tested. Local decision exercises are not executed evaluations."
+    },
+    {
+      "id": "fluid-form-qualifications",
+      "url": "https://carbondesignsystem.com/components/form/usage/",
+      "sections": [
+        "Styling and alignment",
+        "Two column forms",
+        "Helper text and tooltips in fluid components",
+        "Placeholder text"
+      ],
+      "local_refs": [
+        "references/fluid-styles.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-25",
+      "authority": "official-documentation",
+      "version_scope": "public page text reviewed; installed component APIs not verified",
+      "limits": "Relevant text reviewed only; illustrations, live demos, runtime APIs and application accessibility not tested. Local decision exercises are not executed evaluations."
+    },
+    {
+      "id": "fluid-button-qualifications",
+      "url": "https://carbondesignsystem.com/components/button/usage/",
+      "sections": [
+        "Fluid width",
+        "Fluid button groups and border",
+        "Vertically stacked button groups",
+        "Tertiary button",
+        "Label alignment and overflow"
+      ],
+      "local_refs": [
+        "references/fluid-styles.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed",
+      "reviewed_at": "2026-09-25",
+      "authority": "official-documentation",
+      "version_scope": "public page text reviewed; installed component APIs not verified",
+      "limits": "Relevant text reviewed only; illustrations, live demos, runtime APIs and application accessibility not tested. Local decision exercises are not executed evaluations."
     }
   ],
   "unresolved": [

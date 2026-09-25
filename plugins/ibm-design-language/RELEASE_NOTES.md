@@ -1,21 +1,15 @@
-# IBM Design Language 1.1.13
+# IBM Design Language 1.1.14
 
-Hardens the offline casebook renderer associated with CodeQL alert #1
-(`js/xss-through-dom`). The shipped viewer used fixed local options, so the
-review did not establish an external attacker input. This release removes the
-unsafe HTML reinterpretation primitive as preventive hardening.
+Expands fluid-styles guidance with source-linked selection rules, responsive-width
+distinctions, hybrid forms, field assistance, and form/button-specific qualifications.
+The entrypoint and pattern selector route directly to the focused reference; source
+coverage records the review date and untested areas.
 
-- Constructs elements and text nodes instead of dynamic HTML strings.
-- Allows only the supported study IDs, themes and capture sizes. Invalid
-  selections show a recoverable error rather than becoming markup or paths.
-- Reference links require absolute HTTPS URLs without embedded credentials;
-  unsupported references remain readable as explicitly unavailable text.
-- Preserves all five studies, captions, annotations, images, study links,
-  themes and direct offline opening. No additional runtime dependency.
-- Adds 25 Chromium regression tests and a Linux browser CI job. The old
-  renderer failed the controlled hostile-option probe; the revised renderer
-  passed all 20 supported combinations and five hardening/recovery checks.
+Release maintenance now requires published-source and installed-plugin parity before
+an authorized plugin update is called complete. A read-only installation verifier
+detects missing, changed and extra files against the release manifest.
 
-JavaScript syntax checks and the existing package/evaluator checks pass.
-Previous release archives remain unchanged. No broader security audit,
-screen-reader certification or new model-quality evaluation is implied.
+Skill validation, reference/JSON checks and offline package/evaluator checks pass.
+Installation-verifier tests cover matches and drift. This documentation update does
+not claim a new model-quality evaluation, component API test or accessibility audit.
+Previous release archives remain unchanged.

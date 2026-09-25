@@ -261,14 +261,9 @@ Prefer a **Show more** button over scrolling, gradients or fades when there's a 
 
 ## Fluid styles
 
-Fluid components bleed to one or more container edges and never exist in isolation. Default components are the productive norm; fluid is the expressive alternative.
-
-- Fluid inputs put the label *inside* the field. One height only: **64px**.
-- Fluid buttons are 25%, 50% or 100% of the container and must hug an edge — never embedded mid-layout.
-- Fluid components stack with **0px** between them, in condensed or narrow gutter mode, and need a 3:1 border between them.
-- Fluid forms allow no space between inputs and suit only simple tasks; complex or multi-section forms use the default style.
-- Don't use fluid in dense layouts, in hyper-productive moments like a complex form, or inside accordions where the edges collide with dividers.
-- Fixed-width default buttons have 64px right and 16px left padding; fluid-width default buttons spanning grid columns are preferable to fixed-width ones in a layout.
+Read [fluid styles](fluid-styles.md) when selecting or reviewing this treatment.
+It covers selection, responsive width, hybrid forms, component-specific exceptions,
+implementation checks and source limits.
 
 ## Text toolbar
 
