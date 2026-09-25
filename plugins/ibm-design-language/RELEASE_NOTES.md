@@ -1,15 +1,5 @@
-# IBM Design Language 1.1.14
+# IBM Design Language 1.1.15
 
-Expands fluid-styles guidance with source-linked selection rules, responsive-width
-distinctions, hybrid forms, field assistance, and form/button-specific qualifications.
-The entrypoint and pattern selector route directly to the focused reference; source
-coverage records the review date and untested areas.
+Adds `review-product-experience`, a focused IA/UI/UX review skill. It routes to the existing IBM Design Language authority, senior workflow, taste rubric, and relevant component guidance. The workflow covers task framing, cross-view inspection, matched alternatives, scoped implementation, and evidence-graded verification.
 
-Release maintenance now requires published-source and installed-plugin parity before
-an authorized plugin update is called complete. A read-only installation verifier
-detects missing, changed and extra files against the release manifest.
-
-Skill validation, reference/JSON checks and offline package/evaluator checks pass.
-Installation-verifier tests cover matches and drift. This documentation update does
-not claim a new model-quality evaluation, component API test or accessibility audit.
-Previous release archives remain unchanged.
+The existing design skill and references remain intact. Package integrity, synthetic checks and installation parity tests verify the candidate's structure, not model quality, product usability or assistive-technology behavior. Previous release archives remain unchanged.
