@@ -1,6 +1,6 @@
 # Five reusable workflows
 
-Select the IBM Design Language plugin before using a prompt. Replace bracketed placeholders.
+Load the design/build skill for implementation, or the review-product-experience skill for a flow or multi-view audit. Confirm the actual namespaced entrypoint/version/path when available; replace bracketed placeholders. The widths below are example acceptance targets: the product's requested viewports, supported themes/directions and project checks take precedence.
 
 ## 1. Implement a feature
 
@@ -14,7 +14,7 @@ First read AGENTS.md, existing implementation, and applicable design records. St
 
 Compare related screens before choosing the structure. Apply IBM/Carbon guidance to layout, typography, component selection, states, accessibility, and interactions. Reuse established components and make the smallest maintainable change on a suitable non-default branch, preserving unrelated work.
 
-Cover applicable populated, empty, no-results, loading, error, partial/overflow, submitting, success, disabled, read-only, and permission-dependent states. Review the rendered result at 1920x1080 and 390px wide; check overflow at 320px and relevant breakpoints. Check supported light/dark and system-theme behavior, keyboard/focus, and reduced motion where affected. Explain inapplicable cases instead of manufacturing them.
+Before coding, map each visible link/action, including supporting controls, to a meaningful populated destination or observable outcome. Use practical-implementation-review for relevant pending/recovery, code scrolling/copy and nested sizing checks; verify the ordinary Tab path on the actual overflow owner. Cover applicable populated, empty, no-results, loading, error, partial/overflow, submitting, success, disabled, read-only, and permission-dependent states. Review the rendered result at the required viewports (default examples: 1920x1080, 390px and 320px) and affected breakpoints. Open disclosures/expand long content and trigger relevant error/success feedback before measuring. Check element bounds as well as document overflow in required directions; RTL can clip at negative x. Check supported light/dark and system-theme behavior, keyboard/focus, and reduced motion where affected. Explain inapplicable cases instead of manufacturing them.
 
 Run relevant project checks and fix regressions introduced by the change. Compare sibling views at matching viewport sizes and themes. Do not infer rendered quality from passing tests alone. If browser access is blocked, finish independent work and request only the minimum access needed; keep that evidence marked unverified.
 
@@ -35,7 +35,7 @@ Build a comparison matrix covering:
 - Search/filter controls, helper text, empty/no-results, loading, and error states.
 - Responsive overflow, keyboard navigation, focus, disabled and read-only behavior.
 
-Include long and short content, and wait for loading and transitions to settle before comparing geometry. Check 1920x1080, 390px wide, overflow at 320px, and affected breakpoints in supported themes.
+Include long and short content, open/expanded regions and relevant feedback states; wait for loading and transitions to settle before comparing geometry. Check local element bounds and actual Tab/keyboard paths, not only document scroll width or source tabindex. Check 1920x1080, 390px wide, overflow at 320px, and affected breakpoints in supported themes.
 
 Distinguish deliberate task-driven differences from accidental inconsistency. Do not require all tables to have identical width or every view to expose identical actions. Identify shared invariants and explain justified exceptions.
 

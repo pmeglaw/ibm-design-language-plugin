@@ -19,7 +19,7 @@ Six declared shifts:
 
 ## Declared versus shipped
 
-Snapshot boundary: the table records documentation claims reviewed during the audit. The current target package was not supplied; verify release/API details before using these claims in implementation.
+Snapshot boundary: the table records the 2026-09-15 documentation claims, not the consuming application's release state. A 2026-09-30 live check of the linked Carbon Next page still describes v12 in future tense, but does not independently verify every table entry, count, package or feature flag. Inspect the target package and current release documentation before implementation.
 
 The roadmap includes update dates and component/pattern counts; these are not a release date or a complete shipped specification. Verify the current package release and particular API before implementation. [Carbon Next](https://preview.carbondesignsystem.com/carbon-next), reviewed 2026-09-15.
 
@@ -52,18 +52,18 @@ Check which flags exist and their defaults in the target installed release. The 
 
 These flags change different things. Some add visible selection cues; others affect positioning, mounting, dialog behavior, or focus management. Evaluate each flag against its component, installed version, and task rather than inferring a shared visual effect.
 
-## Building v12-aware today
+## Version-aware preparation
 
 Four things worth doing now rather than later:
 
 1. **Keep a semantic token layer.** Map product meaning to available system roles through product-owned tokens. This limits application touchpoints when Carbon changes token names or formats, but migration still needs a value, state, and rendered-theme audit.
-2. **Don't hand-build what's about to be given away** — data grids, side panels, tearsheets, page headers are in the Carbon for IBM Products set.
+2. **Check existing supported compositions first.** Consider Carbon for IBM Products for grids, panels, tearsheets and page headers when its released package, peers and APIs fit the project. A roadmap promise does not justify waiting for an unavailable component, adding a dependency or replacing an established product shell.
 3. **Treat motion as structure.** A move between levels should read as one continuous transition that tells you where you went, not several independent fades.
 4. **If the product has an AI surface**, use Carbon for AI — the AI label, the explainability popover, and the AI token set — rather than a bespoke "magic" treatment.
 
-## Carbon for AI (stable now)
+## Carbon for AI: guidance and package boundary
 
-The framework for identifying AI-generated content and delivering explainability. Uses light as a metaphor — brightness, glow, gradients — to make AI-generated or AI-recommended content distinctive.
+The guidance identifies AI-generated content and provides explainability. Its visual metaphor uses light to distinguish actual AI presence. The AI label's current official guideline marks it stable; this does not establish that every listed AI variant, token or separate AI Chat offering exists in every framework/package. Read [AI presence and explainability](ai-explainability.md) for focused versus broad labels, overrides/revert and keyboard behavior; verify the consuming package before adopting the summarized design guidance below.
 
 - **Use the AI label wherever AI generates content.** It's both the marker and the entry point to explainability.
 - The explainability popover attached to the label is the first layer: a short, in-context explanation, with the option to go deeper.
