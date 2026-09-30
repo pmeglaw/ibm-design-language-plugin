@@ -46,6 +46,23 @@ For the selected create pattern, verify its documented variant and installed imp
 
 Side panel behavior matters for accessibility: a **slide-in** panel pushes page content and does not trap focus (it's part of the page); a **slide-over** panel overlays and traps focus (it's a dialog). Choose deliberately — slide-in when the page behind stays relevant, slide-over when the task is self-contained.
 
+## Core Modal detail contract
+
+Core Modal's four public tabs were reviewed 2026-09-29 at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`. The following supplements container choice; images/demos and Modal runtime/AT remain unverified.
+
+- Use short, infrequent interruptions tied to the user's workflow. Passive informs without a submission; transactional commits/cancels; danger confirms consequential destruction; acknowledgment records an acknowledgment; progress divides a coherent task into steps. A progress modal is not a workaround for a flow that needs a page. Noncritical feedback belongs in a suitable notification.
+- Explain task/object and consequences in the title/body. Keep trigger/title wording consistent and labels action-specific. The acknowledgment variant's OK example is a narrow exception to the generic advice against vague OK/Done labels. Closing with X/Escape must not count as acknowledgment or submission.
+- Name the dialog, expose its modal relationship, constrain focus, and restore focus to the invoker or a sensible successor after its removal. Initial focus is task-specific: first relevant form field, passive close control, ordinary confirmation action, or **Cancel for destructive confirmation**. Accessibility's explicit danger rule overrides generic Usage prose that puts every transactional modal on its primary. For lengthy structured content, preserve the user's ability to start reading it before acting.
+- Dismissal and rollback are application contracts. X/Escape/cancel must not submit. Public wording that Cancel "undoes all applied changes" does not supply a server rollback; stage edits or implement deliberate reversible behavior rather than promising automatic reversal of already committed effects. Define unsaved exits consistently. Passive outside-click dismissal does not justify enabling accidental loss in every transactional dialog.
+- Validate before closing; client validation does not replace server enforcement. Preserve inputs on failure, associate field errors and expose server failure inline. Pending submission prevents duplicates and conflicting actions, announces progress and retains recovery/cancel behavior appropriate to the operation. A visual overlay alone does not enforce keyboard blocking or correct focus.
+- Only the body scrolls vertically while header/footer remain reachable. Avoid modal-wide horizontal scroll, keep focused controls visible and test long/localized content and mobile keyboards. Full-width tables/lists may bleed their surfaces to the edges; their text still respects content padding. Do not hard-code the prose's universal80% copy width: Style's per-size/breakpoint tables include16px narrow exceptions and even disagree internally. Inspect installed geometry for the chosen size.
+- At wide breakpoints, documented xs/sm/md/lg widths are24/36/48/72% with max heights48/72/84/96%. Widths grow at smaller breakpoints; at320px they span the grid, and mobile maximum-height rules change. Choose from actual content fit rather than copying desktop percentages to mobile. Footer proportions differ for one, two and three actions; preserve logical order in RTL and actual primary/task emphasis.
+- `enable-focus-wrap-without-sentinels` changes focus wrapping and DOM structure. Verify the active implementation, including portaled menus, conditional controls and disabled/loading transitions; do not depend on hidden sentinel selectors as an application contract.
+
+Installed-source receipt, `@carbon/react@1.117.0`: Modal declares `selectorPrimaryFocus`, `launcherButtonRef`, `selectorsFloatingMenus`, `preventCloseOnClickOutside`, `onRequestClose`, `onRequestSubmit` and `shouldSubmitOnEnter`. Default initial selector is `[data-modal-primary-focus]`; source falls back to a secondary button for danger. Those callbacks are requests for application behavior, not proof that save or rollback occurred. Test Enter against textarea/combo interactions before enabling blanket submission. Source inspection is not a browser pass.
+
+Sources: [Usage](https://carbondesignsystem.com/components/modal/usage/), [Style](https://carbondesignsystem.com/components/modal/style/), [Code](https://carbondesignsystem.com/components/modal/code/), [Accessibility](https://carbondesignsystem.com/components/modal/accessibility/).
+
 ## Carbon for IBM Products — what to use and when
 
 `@carbon/ibm-products` (CSS prefix `c4p`) is the library of patterns built on `@carbon/react`. Don't hand-build what it already gives away.
@@ -99,8 +116,42 @@ Senior defaults:
 - **Batch actions on selection**, in the toolbar, with the count shown.
 - **Pagination when positions are addressable** ("page 3, row 12"); infinite scroll or virtualization when they aren't and the set is huge.
 - **Numbers right-aligned, tabular figures.** Text left. Status as icon plus label.
-- **Truncate with a tooltip; collapse tags into +N.**
+- **Preserve full-content access when truncating; collapse tags into +N.** Tooltips need keyboard access; native title/hover alone does not establish touch access to essential content.
 - For no data, replace the table including headers and footer with an empty state. Preserve useful surrounding actions without duplicating primary emphasis. For no results, retain search/filter context and provide recovery. Loading uses its own treatment.
+
+### Public core table contracts
+
+Reviewed 2026-09-29 from the public [Usage](https://carbondesignsystem.com/components/data-table/usage/), [Style](https://carbondesignsystem.com/components/data-table/style/), [Code](https://carbondesignsystem.com/components/data-table/code/) and [Accessibility](https://carbondesignsystem.com/components/data-table/accessibility/) source text. This establishes documented behavior, not a runtime result or access to internal extensions.
+
+- Use a named semantic table. Give sortable headers their controls and `aria-sort`; Enter/Space sorts, and cell links/inputs retain native keyboard behavior. Row hover assists scanning even when the row has no action; it does not authorize whole-row selection or navigation.
+- Keep selection and expansion distinct. Selection uses labeled checkboxes/radios; the header checkbox exposes mixed state. Where both are present, the expansion control precedes selection in the documented LTR layout. Define bulk-selection scope across search/pages; do not hide the affected count.
+- Expansion holds supplementary details or deferred queries. Expanding all is optional and negates some lazy-load benefit; if details are cramped, use a dedicated page or suitable panel instead of nesting another dense table.
+- Batch mode appears on selection. Disable conflicting single-row action icons/menus during batch mode; Cancel or clearing selection exits it. Verify focus when the toolbar changes, the selected-count announcement and failure recovery for the actual batch operation.
+- Reserve the toolbar for collection-wide search/settings/filters/actions, with up to five visible actions before purposeful overflow. Open search starts on the left and fills available space until actions. Table primary emphasis must agree with page-level button hierarchy.
+- Persistent row overflow is the default. The hover option must also reveal on focus and remain available on touch; test the installed implementation rather than assuming hover-only discovery is accessible. Fewer than three contextual commands can be inline, with explicit names and destructive-action treatment.
+- Header and data row heights match: 24/32/40/48/64px. The 64px option accommodates two-line content with top padding. Small/large toolbars and batch bars are 32/48px; docs pair them to xs/sm and lg/xl but leave the medium pairing unspecified. Resolve that case from the actual component and task, rather than inventing an official mapping.
+- Loading data uses appropriate skeletons, with an accessible loading indication. Pagination belongs below the table and has its own count/navigation contract. Search and sort apply to the intended collection before pagination; changing results must leave a valid current page.
+- Style's three-column guidance is a design preference, not an HTML table validity rule or reason to invent dummy columns. Column labels can wrap; expose complete meanings if further truncated. Vertical centering of compact-row text does not imply centered horizontal text alignment.
+- AI presence follows data provenance: whole-table treatment only when the whole table is AI-generated; individual generated cells receive inline labels without broad layering; generated rows/columns get their scoped treatment. Do not extend provenance styling to human-authored data.
+
+Verify names/header relationships, sorting state and outcomes, selection scope, expansion, keyboard and touch actions, batch-mode focus, skeleton/empty/error states, valid pagination after filtering, long content and rendered theme contrast. The Code tab links framework Storybooks and provides sample records; it does not fully document render-prop wiring or server-side sorting/paging. Inspect the installed API.
+
+## Pagination detail contract
+
+Pagination four-tab source prose reviewed 2026-09-29 at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`. Images/demos and Pagination runtime/AT remain unverified.
+
+- Pagination divides a collection; it does not represent form steps or processing completion. Usage's link to Progress bar for a linear journey must not be mistaken for a workflow progress-indicator contract. Use the appropriate step control and real next/previous actions.
+- Table Pagination attaches directly below the table at its width; PaginationNav sits near the page/section it controls. Ordinary heights are32/40/48px, normally matching table rows, with compact/extra-large rows paired to the nearest supported pagination size. Verify responsive content rather than assuming all desktop selects persist: public design removes them at the small breakpoint while retaining range and previous/next access.
+- Keep current page, page size, item range and total consistent with the actual filtered/sorted collection. Reconcile page after filtering, deletion, page-size changes and remote responses; no out-of-range blank page or stale range. Distinguish unknown total from zero. Concurrent requests must not render an older page under a newer selected control. These are application/data obligations, not supplied by a styled pagination bar.
+- Native selects retain platform keyboard behavior; previous/next and numbered buttons activate with Enter/Space. Disable impossible boundaries unless looping is deliberately chosen. Give multiple pagination regions distinct context, preserve translated Page/Previous/Next names and current-page state, and announce changed content appropriately without stealing focus on every refresh.
+- Ellipsis represents available intervening pages rather than a decoration at the first/last position. Check access to every page, huge-option performance, long localized count labels, focus after page-window changes and narrow layouts. Do not replace native selects with custom combobox roles merely because Accessibility links an APG combobox example.
+- Style says sentence case but then says capitalizing every word; use actual sentence case. Its disabled roles differ between Pagination and PaginationNav and defer to nested components; inspect implemented semantic states rather than copying a contradictory table into new overrides.
+
+Installed-source receipt, `@carbon/react@1.117.0`: Pagination uses one-based `page` (default1) and calls `onChange` with `{page,pageSize,...}`; PaginationNav uses zero-based `page` (default0), calls `onChange` with an index, and exposes its active native button with `aria-current="page"`. PaginationNav's `totalItems` counts page options, while Pagination's counts records. Translate between these explicitly; reusing a page-state object blindly causes off-by-one errors. Pagination declares `pagesUnknown` and `renderPageSelect`; a custom render must retain the supplied name/value/change contract. Pagination declarations also include `xs`, beyond the public three-size design table. Source does not prove rendered compatibility.
+
+PaginationNav source uses native buttons/selects without the Up/Down button-roving described in Usage; Accessibility's tab sequence is the applicable contract for this inspected release. Verify actual keyboard behavior before adding competing handlers. Its `disableOverflow` mode leaves a disabled ellipsis select rather than full direct page access; choose this performance tradeoff deliberately and provide a viable navigation route.
+
+Sources: [Usage](https://carbondesignsystem.com/components/pagination/usage/), [Style](https://carbondesignsystem.com/components/pagination/style/), [Code](https://carbondesignsystem.com/components/pagination/code/), [Accessibility](https://carbondesignsystem.com/components/pagination/accessibility/).
 
 ## Dashboards
 

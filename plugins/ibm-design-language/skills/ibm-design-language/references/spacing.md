@@ -1,6 +1,6 @@
 # Spacing
 
-Read this for negative space, token selection, Stack, responsive spacing decisions, whitespace, or `@carbon/layout` implementation. It reflects Carbon's Spacing Overview and Code pages last updated 9 September 2026 (React Components `^1.115.0`).
+Read this for negative space, token selection, Stack, responsive spacing decisions, whitespace, or `@carbon/layout` implementation. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed both public source pages at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`, inspected Stack in React 1.117.0, and compiled selected layout functions with Sass 1.105.0. Visual examples and rendered Stack geometry remain unverified.
 
 ## Introduction
 
@@ -42,7 +42,7 @@ Non-token options have narrow purposes:
 
 ## Stacking
 
-Carbon's Stack component creates equal spacing between children using the spacing scale and supports horizontal or vertical orientation. It lets children remain free of layout margins and assigns positioning to the parent. A custom `gap` is supported, but prefer a token unless content demonstrates a real exception.
+Carbon's Stack component creates equal spacing between children using the spacing scale and supports horizontal or vertical orientation. It lets children remain free of layout margins and assigns positioning to the parent. In React 1.117.0, a numeric `gap` is a spacing-scale step, not pixels: `gap={5}` selects the step for 16px. A string gap is written to the prefixed Stack CSS custom property and can use a project-approved token, for example `gap="var(--cds-spacing-05)"` with the corresponding CSS loaded. Prefer a scale step or approved semantic token unless content demonstrates a real exception. Orientation defaults to vertical; there is no JavaScript default gap. `as` changes the wrapper element, so preserve required list/group semantics when choosing it.
 
 ## Designing with space
 
@@ -74,12 +74,12 @@ White space helps users process information and rest between dense zones. A sect
 
 .selector {
   margin-bottom: layout.$spacing-05;
-  width: layout.rem(24px);
-  height: layout.rem(24px);
+  width: layout.to-rem(24px);
+  height: layout.to-rem(24px);
 }
 ```
 
-The package exports `$spacing-01` through `$spacing-13`, the `$spacing` map, `$fluid-spacing-01` through `$fluid-spacing-04`, the `$fluid-spacing` map, `em()` and `rem()` functions, and `$base-font-size`. Configurable `!default` values may be changed with Sass Modules; do not change `$base-font-size` merely to make a local component fit.
+The package exports `$spacing-01` through `$spacing-13`, the `$spacing` map, `$fluid-spacing-01` through `$fluid-spacing-04`, the `$fluid-spacing` map, `em()`, `to-rem()` and the deprecated `rem()` alias, and `$base-font-size`. Configurable `!default` values may be changed with Sass Modules; do not change `$base-font-size` merely to make a local component fit.
 
 ## Review checks
 
@@ -88,3 +88,11 @@ The package exports `$spacing-01` through `$spacing-13`, the `$spacing` map, `$f
 - Children do not fight a parent Stack or grid with independent margins.
 - Responsive layouts switch token steps intentionally; tokens themselves are not described as responsive.
 - The page includes calm whitespace between dense zones.
+
+## Version and verification boundaries
+
+`@carbon/layout@11.60.0` converts 24px to 1.5rem with its default 16px base; `$spacing-05` compiles to 1rem. Prefer `to-rem()`: source marks `rem()` deprecated, but both compiled successfully in the inspected Sass 1.105.0 fixture. Do not repeat the source comment's blanket claim that modern Sass necessarily rejects `rem()`. Conversion relies on the configured base, not a measurement of a user's computed browser font size.
+
+Fixed spacing tokens and fluid-spacing exports are separate tools; the existence of fluid exports does not make `$spacing-05` automatically responsive. Stack generates scale classes for numeric gaps and a CSS variable for string gaps; component source alone does not prove the installed stylesheet, wrapping behavior or overflow. Verify long children, both orientations, responsive token changes, theme and RTL geometry in the consuming application.
+
+Sources: [Spacing Overview](https://carbondesignsystem.com/elements/spacing/overview/), [Spacing Code](https://carbondesignsystem.com/elements/spacing/code/). Source prose, installed Stack/layout APIs and narrow Sass compilation have been reviewed; no final candidate model evaluation or rendered spacing pass is implied.

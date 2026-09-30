@@ -91,3 +91,12 @@ The pattern's text sections and the relevant form/button passages were reviewed.
 Illustrations, live demos, package APIs and rendered/assistive-technology behavior
 were not tested in this documentation update. Follow each input's own documentation
 for its anatomy and states. Recheck dated guidance when the target version differs.
+
+
+## Full pattern source review: 29 September 2026
+
+Read all Overview, component-type, design/alignment/placement/sizing/accessibility and hybrid sections at website commit d8783ad2ae3b5e59c58f58311491f8a2c4e62631. Fluid width, fluid style and fluid typography remain separate concepts. The source's “same functionality” statement is design intent; verify actual exports, helper/error behavior and supported states instead of assuming identical prop interfaces. Its 64px input height is nominal and must grow for supported validation/localization. The preferred responsive-width default buttons are a layout recommendation, not a universal CSS percentage override for every action.
+
+The source describes fixed side panels as non-collapsible; that statement does not override a particular installed SideNav/panel's collapse behavior. Likewise, use the selected container's actual width/breakpoint contract instead of recasting every modal/panel as the same generic fluid container. The source's three-to-one separators are a Carbon design recommendation; evaluate necessary control boundaries and actual adjacent surfaces without assuming token naming proves contrast.
+
+No artwork, live fluid layout, assistance interaction, invalid/read-only rendering or AT pass was performed in this continuation. The component-specific qualifications above remain controlling; adding a fluid visual treatment cannot replace missing behavior or authorize a brand change.

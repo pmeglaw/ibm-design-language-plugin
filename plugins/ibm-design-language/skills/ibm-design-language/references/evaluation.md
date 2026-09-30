@@ -73,6 +73,8 @@ The scorer checks run/output identity, assertion coverage, evidence existence an
 
 The supplied unit tests simulate CLI responses to validate harness behavior. They are not actual model evaluations and must never be reported as skill success rates.
 
+On Windows, the hasher uses the extended-path form for directory traversal and file reads, including deep npm-cache paths inside a case. This does not remove those files from fingerprint coverage. Keep failed packets produced by an older hasher attached to their original harness; prepare a fresh packet with the corrected harness rather than rewriting a historical execution failure.
+
 ## Existing evidence and remaining work
 
 Selected real comparisons are complete and recorded in [evaluation history](evaluation-history.md). They include standalone rendered prototypes and source/interaction checks. This supersedes the former blanket statement that no comparisons or rendered checks had run.
@@ -103,3 +105,21 @@ container/control-state choices, Next.js shell critique, and prototype/API
 authority. Preserve the older suites. This pack's presence does not mean it has
 passed a full model evaluation. Keep text guidance evaluation separate from
 compilation, browser interaction, visual inspection and assistive-technology tests.
+
+## Contribution-readiness evaluation boundary
+
+When evaluating a reusable component contribution, require evidence for design, code, documentation and kit readiness separately. A candidate should distinguish preview from stable, configurable strings and typed APIs, controlled state and actual product behavior, documented state/variant coverage, migration and consumer compatibility. For application work, retain the repository's approved runner and gates; recognizing upstream Jest/Percy/Storybook requirements does not justify replacing the project stack.
+
+A useful additional practical case is to review a plausible default demo with untranslated strings, missing error/RTL/keyboard states, placeholder links, stale props and a kit mismatch. The correct outcome identifies missing evidence and scoped repairs instead of certifying readiness from a screenshot or passing scan. Test documentation examples and accessibility behavior as well as appearance. This is an evaluation design recommendation, not an executed case or passing result; freeze the revised candidate and case before any future run. Prior model packets do not cover this amendment.
+
+## 2026-09-29 practical regression review
+
+The author-reviewed real Carbon fixture for frozen candidate 45a1163d4d5c244f5408d1bd34b31905564e736cd57e2393b655a5e123461f35 failed: 6/11 assertions passed, 4 failed, 1 not tested; visual scores 4/3/3/4/2. An independent rebuild reproduced JS/CSS byte for byte. Browser review identified dead breadcrumb fragments, misleading removal behavior, classic-scrollbar 320px overflow and failed CodeSnippet disclosure; font URLs returned HTML. Checkbox/accordion and async recovery behavior passed. Clipboard payload/denial, full contrast, zoom, race checks and screen reader remain unverified. This known author-written case is not a holdout, and later practical/gallery amendments are outside its frozen snapshot. See [practical implementation review](practical-implementation-review.md); do not describe text-guidance scores or synthetic evaluator tests as a practical pass.
+
+## 2026-09-29 later regression and chart guidance
+
+Frozen snapshot `5e316597b1edd96088007405ef4a6cbdd8ba43415cc7104f42e86635099f6f6d` failed the known practical case: 6 pass, 3 fail, 2 not tested, visual scores 4/4/3/4/3. The author reviewer reproduced compilation and tested real browser behavior; missing navigation targets, accordion trigger heading structure and a pending Reset/stale-completion race failed. Snippet disclosure and measured narrow geometry improved. Exact clipboard/denial, full relevant contrast/matrix and AT remain unverified. A separate new author-written chart guidance transfer case passed 6/6 criteria; this is text guidance only. Later heading/font/request-fence amendments are outside that snapshot and have structural/compile probes, not a new model practical pass. Preserve these results separately from older snapshots and synthetic harness tests.
+
+## Recipe snapshot result and subsequent amendments
+
+Frozen snapshot `add261d63d7e9af095b925074b35a353cac151b3fd846b8b6696d91b48a44058` failed the same known practical case with 8 pass, 2 fail and 1 not tested; visual scores 4/4/4/4/3. Root author-agent review verified real ancestor destinations, heading/disclosure structure, checkbox behavior, pending controls, preserved failure/retry, removal and narrow geometry. Independent compilation reproduced JS/CSS; observed Plex Sans/Mono resources matched the installed font bytes. Real browser clipboard-write denial correctly reported failure. Reset retained an Applied summary, and RTL changed English content's lang to ar. Exact clipboard readback, complete code keyboard scrolling, full state/focus contrast and assistive technology remain unverified. Reviewer evidence is separate from unchanged frozen output; the evaluator rejected accidental evidence additions inside the workspace before they were moved outside and original identity was re-established. The domain-state/reset and language/direction guidance was added afterward and is not covered by this result. Preserve a failed practical verdict rather than treating partial improvement or a chart-guidance pass as certification.

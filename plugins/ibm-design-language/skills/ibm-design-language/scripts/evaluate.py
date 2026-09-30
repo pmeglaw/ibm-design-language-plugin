@@ -45,8 +45,20 @@ def digest(value: Any) -> str:
                                      ensure_ascii=False).encode("utf-8")).hexdigest()
 
 
+def filesystem_path(path: Path) -> Path:
+    # npm's content-addressed cache can exceed MAX_PATH inside a case workspace.
+    # Preserve every file in the receipt instead of excluding caches from integrity.
+    if os.name == "nt":
+        absolute = str(path.resolve())
+        if not absolute.startswith("\\\\?\\"):
+            absolute = ("\\\\?\\UNC\\" + absolute[2:] if absolute.startswith("\\\\")
+                        else "\\\\?\\" + absolute)
+        return Path(absolute)
+    return path
+
+
 def file_hash(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(filesystem_path(path).read_bytes()).hexdigest()
 
 
 def read_json(path: Path) -> Any:
@@ -74,7 +86,8 @@ def confined(root: Path, relative: str) -> Path:
 
 def tree_hashes(root: Path) -> dict[str, str]:
     result = {}
-    for parent, dirs, files in os.walk(root, followlinks=False):
+    scan_root = filesystem_path(root)
+    for parent, dirs, files in os.walk(scan_root, followlinks=False):
         parent_path = Path(parent)
         for name in dirs + files:
             path = parent_path / name
@@ -85,7 +98,7 @@ def tree_hashes(root: Path) -> dict[str, str]:
             if name.endswith(".pyc"):
                 continue
             path = parent_path / name
-            result[path.relative_to(root).as_posix()] = file_hash(path)
+            result[path.relative_to(scan_root).as_posix()] = file_hash(path)
     return result
 
 

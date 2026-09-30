@@ -1,6 +1,6 @@
 # Typography
 
-Read this for IBM Plex, productive versus expressive selection, regional blending, type-token roles, fluid behavior, or `@carbon/type` implementation. It reflects Carbon's Typography Overview, Style strategies, Type sets, and Code pages last updated 9 September 2026 (React Components `^1.115.0`).
+Read this for IBM Plex, productive versus expressive selection, regional blending, type-token roles, fluid behavior, or `@carbon/type` implementation. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed all four public source pages and their type-table data/rendering source at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`. Selected Sass APIs were compiled with `@carbon/type@11.68.0` and Sass 1.105.0; visual specimens, loaded faces and actual responsive rendering remain unverified.
 
 ## Overview
 
@@ -36,7 +36,7 @@ Use Mono for code and technical values, Serif for a deliberate editorial/quotati
 
 The scale begins at 12px and follows Carbon's equation rather than a conventional modular ratio. Common steps are 12, 14, 16, 18, 20, 24, 28, 32, 36, 42, 48, 54, 60, 68, 76, 84, and 92px, with larger display steps available.
 
-Keep running text neutral. Use core blue for links and primary actions. Reserve other colored text for semantic cases such as warnings, alerts, or code, and verify contrast on every surface.
+Keep running text neutral. Carbon defaults use core blue for links and primary actions; implement the approved semantic interaction tokens of the consuming product. This generic default does not authorize replacing a governed brand palette. Reserve other colored text for semantic cases such as warnings, alerts, or code, and verify contrast on every surface.
 
 ## Style strategies
 
@@ -114,7 +114,7 @@ Fixed means the type size does not change with the viewport.
 
 `fluid-heading-03` through `fluid-heading-06` belong to the expressive set and interpolate between breakpoint values. They may be used on a product page only as a deliberate outside-container expressive region. Do not put fluid headings inside cards, fields, tables, or other fixed product containers.
 
-At the Large/1056px breakpoint, the documented specimens are:
+At the Large/1056px breakpoint, the website source-data specimens are (size/leading in px at a 16px rem base; rounded design values, not exact computed CSS):
 
 | Token | Size/line | Weight |
 |---|---|---:|
@@ -151,15 +151,15 @@ Use Carbon type-style helpers instead of setting `font-size`, `font-weight`, `li
 @use '@carbon/type';
 
 .heading {
-  @include type.type-style('productive-heading-01');
+  @include type.type-style('heading-01');
 }
 
 .expressive-heading {
-  @include type.type-style('fluid-heading-01', true);
+  @include type.type-style('fluid-heading-05', true);
 }
 ```
 
-The documentation also shows `type.style(...)` in one example; verify the installed package API and prefer the supported `type.type-style(...)` form used by the standard/fluid token examples.
+The website's `type.style(...)` example fails with an undefined mixin in 11.68.0. Its `fluid-heading-01` example also fails: the installed fluid-heading tokens are `03` through `06`. The supported examples above compile. A fluid token must use the second argument `true`; omitting it fails here because the token's breakpoint map cannot be serialized as a CSS property. Do not describe that omission merely as disabling interpolation.
 
 `type-classes()` emits `.cds--type-{token}`, font-family utilities (Sans, Mono, Serif and language variants), font-weight utilities, and `.cds--type-italic`. Use utilities where markup-level styling is appropriate; prefer the mixin in maintained component Sass.
 
@@ -180,3 +180,14 @@ The raw `$type-scale` and `type-scale()` function remain available, but role-bas
 ## Wrapped heading verification
 
 Apply the complete type style, including line-height. A 28px heading inheriting a 20px body line-height can overlap when it wraps. Inspect secondary headings as well as the hero at narrow widths (including 320px) with long realistic copy. Check computed size/leading and the rendered result; absence of horizontal overflow alone does not establish legibility.
+
+## Installed type-package boundaries (29 September audit)
+
+- Modern `heading-01` is 14px with about 20px leading; legacy `productive-heading-01` is 14px with about 18px leading and aliases `heading-compact-01`. An older token that compiles is not necessarily the same role as a similarly numbered modern token. Keep body/heading pairings intentional. `helper-text-01` does not supply an explicit weight in the inspected map; the table's 400 describes its intended specimen, so verify inherited weight in the app. Source marks helper-text tokens deprecated; check the consuming component's current role before creating new utility use.
+- Fixed type styles emit CSS variables with map fallbacks, permitting approved runtime token overrides. Complete type styles may include a family (Mono code, Serif quotation) as well as size/leading/weight/tracking. Fluid styles emit viewport-based `calc()` and breakpoint rules; line-height remains a ratio. The two code paths are not interchangeable. Inspect the output when customizing breakpoint maps or theme type variables.
+- The website type-set widget starts its simulated width at 1056px, uses a handwritten specimen data map and chooses a breakpoint rather than calculating package interpolation. Its displayed leading is specified in rem, while the installed package uses unitless ratios. Examples such as the maximum `fluid-heading-03` specimen (24/28) differ from the installed map's 24px × 1.334 (about 32px). Treat website specimens as design guidance, not a guarantee of exact package output. The scale table lists through 92px; installed step 23 also exists and compiles to 9.75rem (156px at the default base), despite the source comment saying the scale supports through 92px.
+- `reset()` plus `default-type()` compiles but emits global heading, paragraph and link rules. In this version, its paragraph default is `body-02`, and its link rule has a Carbon-blue fallback. Scope or adapt emission to approved product roles instead of assuming a productive 14px page or owner brand is preserved by default. Preserve semantic heading rank independently of visual token size; use a styled inline element for a control label rather than nesting a heading inside its button.
+- `reset()`, `default-type()` and `type-classes()` emit no `@font-face` in these probes. A family declaration or matching computed `font-family` is not proof of a loaded Plex face. Use the project's approved font-loading pipeline, verify successful font requests and the actual rendered face, and check the intended weight/script rather than synthetic or fallback glyphs. Do not copy historical paths such as `~@ibm/plex` without resolving them through the actual build tool.
+- Website body guidance says left-aligned. For localized RTL text, review logical alignment, bidi isolation and mixed-script code with representative content and a fluent reader; do not blindly pin all scripts to physical left or apply page direction to code syntax. Keep 200% text enlargement, narrow long headings, user spacing and font-failure states in rendered verification.
+
+Sources: [Overview](https://carbondesignsystem.com/elements/typography/overview/), [Style strategies](https://carbondesignsystem.com/elements/typography/style-strategies/), [Type sets](https://carbondesignsystem.com/elements/typography/type-sets/), [Code](https://carbondesignsystem.com/elements/typography/code/). The source-data and Sass receipts do not establish a final candidate evaluation pass.

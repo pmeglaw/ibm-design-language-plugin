@@ -2,7 +2,7 @@
 
 ## Status indicators
 
-Four variants. Pick by space and by how much attention the information deserves.
+Four variant families, with numbered and unnumbered badge subtypes. Pick by space and by how much attention the information deserves.
 
 | Variant | Use when | Typically found in |
 |---|---|---|
@@ -18,8 +18,8 @@ Four variants. Pick by space and by how much attention the information deserves.
 
 - **Carbon recommends at least two of color, shape and symbol in a status mark**, with a descriptive label for scanning. Distinct symbols inside a constant circular carrier can preserve a requested dot layout. This pattern recommendation is not a blanket WCAG failure for decorative dots paired with complete, persistently visible text labels. A requested circular dot fixes the carrier geometry, not necessarily its contents: keep the requested size and circle, and put a distinct approved status symbol inside each carrier in the recommended implementation. For CSS/code requests, provide the usable markup/styles, not merely a suggestion to add icons later. If the user explicitly requires plain dots with no symbols, honor that constraint with complete visible labels and disclose the departure from Carbon’s independent mark-recognition pattern; do not claim identical decorative dots are distinguishable marks.
 - **Measure essential graphical information against its adjacent surfaces**, including default and hover hosts; non-text contrast requires at least 3:1 where applicable. Do not require every nonadjacent status color or decorative internal part to contrast with every other color. Use resolved theme values and report actual pair results. `scripts/check_contrast.py --preset status-light status-dark` is a palette diagnostic, not acceptance evidence for a proposed implementation. See [WCAG non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) for the applicable boundary; Carbon’s broad wording about between-color contrast should not be interpreted as an all-pairs test.
-- **Every shape indicator gets its own shape AND a 1px outline** (filled circle, hollow ring, triangle, square, dashed ring — one per state, plus the outline stroke). The outline is what keeps light yellows and oranges legible on light themes; the distinct shape is what keeps the set legible in grayscale. Icon indicators need neither, because the symbol already carries both contrast and identity. Don't mix: a legend is all shape indicators (shape + outline) or all icon indicators.
-- **More than five or six indicators on screen overwhelms.** Treat five as the budget.
+- Shape indicators use descriptive labels and the appropriate outline treatment, especially for low-contrast orange/yellow fills. Prefer distinct shapes when marks must be recognized independently. Inspect the approved asset's optical/stroke details and actual adjacent contrast rather than inventing a universal 1px stroke. An icon symbol can supply recognition but its contrast still needs verification. Keep a coherent legend; the reviewed source does not prohibit every combination of icon and shape families.
+- The source cautions that more than five or six indicators can overwhelm, but explicitly sets no strict limit. Use significance and scannability to decide; do not hide important status data to meet a fabricated five-item quota.
 - Prefer distinct shapes or symbols when users need to recognize marks independently of labels. For a spatial map with fixed seat geometry, add domain symbols or textures without changing physical coordinates. State whether a supplied implementation meets this Carbon pattern or only provides labeled decorative marks; do not claim the two are equivalent.
 - When several statuses roll up into one, **the group takes the highest-attention color of its members** — green, yellow and red underneath means red on top.
 - Place indicators before labels; left-align icons with text when stacked so the column scans. Don't let variable label lengths push icons out of alignment.
@@ -38,7 +38,7 @@ Four variants. Pick by space and by how much attention the information deserves.
 | Purple 60 `#8a3ffc` | Outlier, undefined status |
 | Gray 60 `#6f6f6f` | **Draft, not started** — use the palette grade, not `$icon-secondary` (gray 70) or `$text-helper`; those are text/icon tokens, not the status colour |
 
-Gray-for-draft and purple-for-undefined are easy to miss and solve real problems — a draft/published product already has its color decided.
+Gray-for-draft and purple-for-undefined are Carbon reference meanings, not a universal decision for every product. Approved owner brand/state mappings govern; never override a sanctioned Draft-purple role merely because Carbon suggests gray.
 
 The extended yellow and orange ramps exist purely so those hues can reach accessible contrast. They are **not part of the IBM brand palette** and are reserved for data visualization and status indicators. Don't use them in layout.
 
@@ -94,3 +94,24 @@ Type: node primary label 14/18 semibold, secondary 14/18 regular, connector labe
 Color: light theme canvas white, primary colors grades 50–80 or black, secondary white or grade 10, text always black. Dark theme canvas gray 100, primary grades 30–50 or white, secondary gray 100 or grade 90, text always white. Primary colors are for outlines, side bars, blocks and connectors; secondary only for fills. Never rely on color alone — pair with labels, line styles or icons, and always include a legend.
 
 Artboards: 1584, 1312 or 1080px wide, in 16:9, 4:3, 2:1 or 1:1.
+
+
+## Status source audit amendment: 29 September 2026
+
+The complete [Status indicator pattern](https://carbondesignsystem.com/patterns/status-indicator-pattern/) prose, StatusIndicatorTable/Row code, its YAML and status palettes were read at website commit d8783ad2ae3b5e59c58f58311491f8a2c4e62631. This source review does not establish rendered SVG appearance, installed React exports, actual AT support or an application's compliance.
+
+### Data and source boundaries
+
+The page injects 12 icon-status rows from YAML high and 11 shape-status rows from glyph. These are example taxonomies, not a severity engine: even the high table contains normal/informative/not-started states. Product teams define severity, urgency and rollup order. Unknown/Pending are not proof of failure/success; a high-priority summary must not erase underlying details. The same YAML also contains seven medium/two low legacy rows using severitylevel rather than statusname, whereas the renderer accepts statusname. Do not use that renderer as a generic application component or assume all YAML categories display identically.
+
+The light palette has nine swatches including orange/yellow outlines; dark has seven with changed red/green/blue/purple/gray grades. The two extended ten-stop ramps are yellow and orange, despite container metadata naming them red and teal. Labels, values and roles need reconciliation before copying data. `$status-*` labels in this website table are not proof that a target `@carbon/themes` package exports those names. Use the inspected component/design token API and approved brand aliases; do not create a parallel hard-coded palette from an example table.
+
+The typography table literally uses pt next to px icon sizes. Treat those as source notation requiring reconciliation with the installed type tokens, rather than turning a nominal14 into14pt CSS automatically. Keep logical icon/label alignment for localized content. The source's shape-cultural examples and indicator labels are explanatory examples, not global meanings to impose on a different audience. Source icons are loaded via website `/status-icons/...svg` object paths; rendered icon identity, optical outline and accessibility have not been inspected here.
+
+### Accessibility and state contracts
+
+The visual-guidance section claims three of symbol/shape/color/type are needed “for WCAG”; its later accessibility section recommends two of color/shape/symbol. Neither count is a universal WCAG test. [Use of Color](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) requires a visible alternative when color conveys meaning; an accessible name alone does not serve sighted people who cannot distinguish hues. [Non-text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) evaluates necessary graphical/control-state information against adjacent colors, with applicable exceptions. Distinguish these requirements from the stronger Carbon mark-recognition recommendation. Do not treat grayscale distinguishability or contrast between every pair of palette swatches as sufficient comprehensive compliance.
+
+Give visible status labels meaningful text and expose that information programmatically. Decorative repeated icons beside complete labels should not produce duplicate announcements; an unlabeled icon carrying meaning needs an equivalent accessible name. A badge on a button must preserve the action's name and communicate meaningful unread/update status. The visual cap is three characters including a plus, not proof of an exact displayed count. Define actual count, zero, unknown count and acknowledgement/clearing behavior; opening a panel need not mark every notification read unless that is the product contract.
+
+Differential marks need sign/direction and a contextual label. Positive/negative direction is not necessarily good/bad: decreasing latency or increasing failures has different meaning from rising revenue. Apply domain-specific semantics, show units and baseline/timeframe, and do not announce a number without its context. A status mark does not implement live updates, aria-live policy, sorting or read/unread persistence. Test change announcements, label/name, forced-colors visibility, actual icon/outline contrast, long/localized labels and badge overflow before claiming a practical pass.

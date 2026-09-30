@@ -1,6 +1,6 @@
 # 2x Grid
 
-Read this for layout geometry, responsive behavior, gutter choice, grid-influencing panels, style models, Figma setup, or Carbon grid code. It reflects the Carbon 2x Grid Overview, Usage, and Code guidance last updated 9 September 2026 (React Components `^1.115.0`).
+Read this for layout geometry, responsive behavior, gutter choice, grid-influencing panels, style models, Figma setup, or Carbon grid code. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed all three public source pages at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631` and selected installed `@carbon/react@1.117.0` APIs. Images, gated galleries, Figma operations and rendered grid geometry remain unverified.
 
 ## Overview
 
@@ -240,7 +240,7 @@ Current Carbon uses CSS Grid. In `@carbon/react`, use `Grid` and `Column` to exp
 
 ### AspectRatio
 
-Use Carbon's `AspectRatio` component and its `ratio` prop for fluid cards or assets that must preserve a width-to-height proportion. React and Vue implementations are documented.
+Use Carbon's `AspectRatio` component for fluid assets that must preserve a width-to-height proportion. In React 1.117.0, `ratio` uses strings such as `"16x9"`, not the design notation `"16:9"`; default is `"1x1"`. Supported values include `1x1`, `2x1`, `1x2`, `4x3`, `3x4`, `3x2`, `2x3`, `16x9`, and `9x16`. It supplies layout classes; callers still own image alternatives, object fit, and content overflow. Do not force expanding text into a clipped fixed ratio. Vue behavior was not inspected.
 
 ### Breakpoint API and helpers
 
@@ -261,14 +261,16 @@ For Sass breakpoint logic:
 For visibility helpers:
 
 ```scss
-@use '@carbon/styles/scss/utilities/helper-classes';
+@use '@carbon/styles/scss/utilities/hide-at-breakpoint';
 
 .my-class {
-  @include helper-classes.hide-at-sm();
+  @include hide-at-breakpoint.hide-at-sm();
 }
 ```
 
-Prefer semantic responsive layout over hiding essential content. Verify the installed package API and version before copying mixin or helper names.
+The website's `utilities/helper-classes` import fails in installed `@carbon/styles@1.116.0`; the `hide-at-breakpoint` module above compiles. With `@carbon/grid@11.63.0` and Sass 1.105.0, `breakpoint-down('md')` emits `max-width: 41.98rem`, while `breakpoint('lg')` emits `min-width: 66rem`. “Md or below” must not be interpreted as the entire medium band through 1056px. The actual `hide-at-sm` helper covers 20–42rem and `hide-at-md` covers 42–66rem, both inclusive: their boundary overlaps at 42rem. Below 20rem is outside that small helper. Test exact boundaries and adjacent widths when visibility matters.
+
+Prefer semantic responsive layout over hiding essential content. Recheck package versions before copying mixins. These are compilation receipts, not a browser geometry or accessibility pass.
 
 ### Legacy FlexGrid
 
@@ -281,3 +283,13 @@ The v11 default is CSS Grid. Enable the legacy Flexbox implementation only for a
 ```
 
 Do not start new work on `FlexGrid`.
+
+## Installed React API boundaries (29 September audit)
+
+- `Grid` selects CSS Grid or legacy FlexGrid through `enable-css-grid`; match the installed flag configuration rather than assuming a prose default establishes the actual mode. In CSS mode, choose one gutter mode: `narrow` wins over `condensed` if both are supplied. `withRowGap` adds the corresponding row-gap class. `fullWidth` removes the outer maximum width; it does not itself implement the high-density design model's extra columns.
+- Use breakpoint spans on `Column`, for example `<Column sm={4} md={8} lg={8}>`. In CSS mode the breakpoint props also accept percentages (`"25%"`, `"50%"`, `"75%"`, `"100%"`) or objects such as `lg={{ span: 8, offset: 4 }}`. Positive offsets map to a start line of offset plus one; `start` and `end` are direct line numbers. Avoid competing `offset` and `start` values. `true` requests auto span; `false` does not generate a hide class.
+- Prefer supported breakpoint objects to undocumented constant `span` objects. The inspected constant-object implementation concatenates multiple class names without spaces, and the public Column declaration limits `span` to number/percentage. Do not build a recipe around that source branch without a version-specific rendered regression check.
+- Descendant grids use the parent's Grid context to become Carbon subgrids; wrap a nested Grid in a Column as the documentation prescribes. In the inspected subgrid branch, outer `align` and `fullWidth` are consumed without being forwarded. A class named subgrid is not proof of native CSS `subgrid` behavior. `ColumnHang` adds the hang class; keep text on the key line and verify overflow and RTL geometry.
+- The design recommendation to adapt older three-column compositions is not authority to migrate an established product or change its information architecture. Respect approved owner constraints. Keep fixed labeled controls wide; inspect a fluid variant's own contract before extending that rule.
+
+Sources: [Overview](https://carbondesignsystem.com/elements/2x-grid/overview/), [Usage](https://carbondesignsystem.com/elements/2x-grid/usage/), [Code](https://carbondesignsystem.com/elements/2x-grid/code/). Installed receipts inspect Grid, CSSGrid, Column, ColumnHang, AspectRatio and Sass helpers. Render all breakpoint bands, content growth, nested grids, open panels, gutter modes, RTL and keyboard access before claiming implementation completion.

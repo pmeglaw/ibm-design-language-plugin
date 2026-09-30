@@ -1,6 +1,6 @@
 # Motion
 
-Read this for motion style, easing, duration, choreography, sequencing, adaptive behavior, or `@carbon/motion` implementation. It reflects Carbon's Overview, Choreography, and Code pages last updated 9 September 2026 (React Components `^1.115.0`).
+Read this for motion style, easing, duration, choreography, sequencing, adaptive behavior, or `@carbon/motion` implementation. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed Overview, Choreography, Code and Resources source at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631` and inspected/compiled selected motion11.53.0 APIs. Videos, Motion Generator output and rendered animations remain unverified.
 
 ## Carbon in motion
 
@@ -49,7 +49,7 @@ Prefer `motion(standard|entrance|exit, productive|expressive)` from the package 
 
 ## Duration
 
-Duration grows nonlinearly with travel distance and size. Use IBM's Motion Generator when a custom duration is justified; static Carbon tokens remain the current built-in option.
+Duration grows nonlinearly with travel distance and size. Use IBM's Motion Generator when a custom duration is justified; use the installed duration tokens when appropriate. The website's upcoming-dynamic-duration language is not evidence that a consuming component computes its duration automatically.
 
 ### Duration tokens
 
@@ -101,7 +101,7 @@ The same meaning or function uses the same motion language. For example, a table
 
 #### Spatial consistency
 
-- Content on a higher layer slides with its panel; dim the lower layer.
+- Content on a higher layer may slide with its panel. The choreography illustration dims the lower layer; use the selected component's overlay/modal contract rather than adding a scrim to every popover or tooltip.
 - Content introduced on the same layer pushes existing content and reveals through a mask.
 
 #### Intentional inconsistency
@@ -114,7 +114,7 @@ Carry shared elements across screens to preserve location in a layered journey. 
 
 ### Sequence and stagger
 
-Staggering can reduce the cognitive load of simultaneous entrance. Carbon illustrates 20ms between table rows; adjust the interval to keep the entire sequence within 500ms.
+Staggering can reduce the cognitive load of simultaneous entrance. Carbon illustrates 20ms between table rows; cap the interval and animated item count so the complete sequence, including each item’s duration, fits the intended 500ms choreography budget. This guidance is not proof of lower cognitive load in the consuming application.
 
 Recommended entrance order:
 
@@ -159,7 +159,7 @@ motion('standard', 'productive');
 
 ### Configuration
 
-The Sass `$prefix` defaults to `'cds'` and can be configured with `@use ... with` when the project already has a deliberate custom prefix.
+The website's `$prefix` configuration fails in installed motion11.53.0: that variable is not a configurable public default in this module. Do not copy it without verifying the actual package version.
 
 ## Review checks
 
@@ -169,3 +169,14 @@ The Sass `$prefix` defaults to `'cds'` and can be configured with `@use ... with
 - Staggered sequences finish within 500ms and do not block interaction.
 - Rapid retriggering and resize do not cause jumps or restarts.
 - Reduced-motion and static state communication are present.
+
+## Installed implementation boundaries (29 September audit)
+
+- The motion mixin sets only `transition-timing-function`; the function returns a cubic-bezier value. Both require a separately supplied duration to produce visible transitions. The website's `transition: opacity motion.motion(...)` compiles but leaves duration at CSS's zero default. Prefer the complete transition above and name the properties deliberately rather than `transition: all`. Its 70ms fast token and general 90–120ms checklist are different guidance levels; follow the selected component/event instead of changing every built-in microinteraction to match one checklist range.
+- Version11.53.0 adds `$surfaces`, a `surface()` lookup function and a `surface` Sass mixin beyond the website's listed API. The inspected catalog has `disclosure` (reveal, moderate-01, block-size/opacity), `contextual` (reveal, fast-02, opacity/scale), and `expand`/`invoke` shared-element definitions. The CSS mixin rejects shared-element surfaces, missing/invalid properties, unknown duration keys and invalid easing modes. Do not assume all catalog names can be passed to the CSS reveal mixin.
+- A compiled contextual reveal uses resting/enter styles, an exit attribute selector and `@starting-style`, with transitions inside `prefers-reduced-motion: no-preference`. The disclosure also uses `interpolate-size: allow-keywords` for auto sizing; verify actual target-browser support and content overflow. The mixin applies styling, not an accessible open/close lifecycle: opacity zero or block-size zero does not itself remove descendants from focus or the accessibility tree.
+- Callers must coordinate mounted state, interruption/reversal, focus transfer, hidden/inert state and unmount timing. Support reduced motion when no transition event fires; do not depend solely on `transitionend`, which can be absent after cancellation, property changes, removal or zero duration. Review rapid open-close-open, keyboard dismissal, async content growth, resize and RTL paths with the chosen component's interaction contract.
+- Selected JS exports include `motion`, `easings`, duration values and surface helpers. Only export presence and standard/productive output were checked; the surface-engine lifecycle is not evaluated. Do not add another animation dependency merely because a shared-element recipe references one. First inspect the application's installed engine and owner constraints.
+- Preserve static status and immediate user feedback when disabling movement. Do not hide a primary action or delay a meaningful result to complete the illustrated entrance sequence. A sequential illustration is not permission to block interaction for 500ms.
+
+Sources: [Overview](https://carbondesignsystem.com/elements/motion/overview/), [Choreography](https://carbondesignsystem.com/elements/motion/choreography/), [Code](https://carbondesignsystem.com/elements/motion/code/), [Resources](https://carbondesignsystem.com/elements/motion/resources/). Seven narrow compilation probes: four outputs compile (including the incomplete easing-only example); three reject unsupported/invalid calls. Sass emitted upstream if-function deprecation warnings. Compilation and source review do not establish animation quality, browser support, reduced-motion behavior or final model competence.

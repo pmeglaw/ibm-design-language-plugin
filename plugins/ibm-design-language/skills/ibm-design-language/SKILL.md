@@ -11,13 +11,13 @@ Design decisions should help people understand the task, act confidently, and re
 
 - Use the requested workspace, product, and brand. A generic request remains generic; examples and remembered projects do not authorize changes elsewhere.
 - Inspect the installed framework, Carbon packages, versions, existing styles, and applicable project guidance before implementation. Prefer the project's supported Carbon components and theme APIs.
-- Use current component documentation for behavior and measurements, installed package documentation/exports for APIs, and the approved product system for its semantic brand values. A preview page is not proof that an API is released.
+- Use current component documentation for behavior and measurements, installed package documentation/exports for APIs, and the approved product system for its semantic brand values. Read the applicable Usage, Style, Code and Accessibility contracts with [documentation intake](references/documentation-intake.md); resolve dynamic content and stale examples rather than treating heading coverage as detail review. A preview page is not proof that an API is released.
 - Label local craft advice as a heuristic. When sources disagree, identify the conflict and choose the instruction applicable to this version, component, and task. Preserve accessibility and explain material deviations.
 - Treat this skill as guidance, not evidence of a passing design or working component. See [source coverage](references/source-map.json) for reviewed sources and known gaps.
 
 ## Choose the mode
 
-**Design or build:** Read [senior workflow](references/senior-workflow.md) and the relevant component/container reference. Establish the main task, objects, data volume, important states, and an observable outcome to judge the result. Choose density by region: scanning zones can be compact while decision zones need space.
+**Design or build:** Read [senior workflow](references/senior-workflow.md) and the relevant component/container reference. Before coding runnable interactions, also read [practical implementation review](references/practical-implementation-review.md) and the applicable interaction contracts; use them to establish action destinations, heading/control structure, pending-state and font-delivery acceptance before implementation. Establish the main task, objects, data volume, important states, and an observable outcome to judge the result. Choose density by region: scanning zones can be compact while decision zones need space.
 
 **Critique:** Use [taste](references/taste.md). Inspect the supplied screen or running interface when available. Distinguish visible evidence, source-code findings, and hypotheses; do not describe an unseen screenshot. Prioritize hierarchy and task completion, while still checking serious accessibility and functional issues. For reviews spanning pages or tabs, use the [cross-view comparison](references/taste.md#cross-view-consistency) and report coverage before giving an overall verdict.
 
@@ -35,7 +35,7 @@ Identify the visual register: productive interfaces use efficient, predictable l
 4. Design the relevant no-data, no-results, loading, failure, partial/overflow, submitting, and success states. For a table's no-data state, replace the empty table including headers/footer; preserve useful surrounding actions. Keep search/filter context in a no-results state. See [patterns](references/patterns.md).
 5. Follow [accessibility](references/accessibility.md) for names, control states, keyboard/focus, and evidence. Disabled is not hidden. A search field still needs an accessible name when its visible label is omitted.
 6. Preserve supported Carbon microinteractions. Choose motion by purpose and event semantics, keep feedback immediate, and honor reduced-motion preferences. Frequent use and keyboard input do not impose a blanket animation ban. See [motion](references/motion.md).
-7. Test what the task changes: actual interactions, required states, responsive behavior, supported themes, and relevant contrast pairs. The contrast checker's built-in presets are diagnostics, not product acceptance tests. Report checks run and results; keep untested behavior explicit. Reading a casebook caption, file path, or source snippet is not viewing its image or verifying its linked source. Claim inspection only for content actually opened, and distinguish source calculations from browser measurements.
+7. For runnable implementations, read [practical implementation review](references/practical-implementation-review.md) and verify actual action/navigation outcomes, settled disclosures, normal viewport geometry and font responses. Test what the task changes: actual interactions, required states, responsive behavior, supported themes, and relevant contrast pairs. The contrast checker's built-in presets are diagnostics, not product acceptance tests. Report checks run and results; keep untested behavior explicit. Reading a casebook caption, file path, or source snippet is not viewing its image or verifying its linked source. Claim inspection only for content actually opened, and distinguish source calculations from browser measurements.
 8. Review the result against the task and [taste rubric](references/taste.md), including [source review](references/design-engineering.md#source-review-for-authored-color). Record meaningful tradeoffs, evidence, and the next corrective action if work remains.
 
 ## Reference routing
@@ -44,8 +44,17 @@ Identify the visual register: productive interfaces use efficient, predictable l
 |---|---|
 | [Pattern selector](references/pattern-selection.md) | Choosing between containers, feedback, loading, search, filters, control states, and deletion treatments from the task |
 | [Components](references/components-preview.md), [index](references/components-preview-index.md), [coverage](references/components-preview-coverage.md) | Selecting a core component; locating its variants, specifications, accessibility, and source sections |
+| [Core interaction contracts](references/core-interaction-contracts.md) | Tree view hierarchy/state/flags/keyboard; Tile variants/nesting/expansion; Tabs activation/panels/dismissal; Accordion, Breadcrumb, Button, Checkbox, Code snippet, Contained list, Content switcher and List; source conflicts and released-API limits |
+| [Menus and triggers](references/menus-and-triggers.md) | Tooltip/Toggletip naming/focus/placement, command menus and Popover composition, menu/combo/overflow actions, focus/selection roles, controlled closing, placement and feature-flag/API differences |
+| [Date and time](references/date-and-time.md) | Date question, locale/format/timezone, manual/calendar/range entry, validation, dismissal and responsive calendar checks |
+| [Selection controls](references/selection-controls.md) | Toggle state/persistence, Tag variants, radio/native Select/dropdown/multiselect/combo-box choice, StructuredList selection, keyboard/read-only differences, mixed/clear scope and custom values |
+| [Forms and upload](references/forms-and-upload.md) | Text input/textarea counters, editing and password reveal; Search scope/results/clear, Slider range/keys/callbacks, required/optional instructions, fluid help, numeric validation, uploader state and focus/recovery |
+| [Action feedback and links](references/action-feedback-and-links.md) | Notifications, system progress versus user steps, loading lifecycle/announcements, callbacks/recovery, true links and navigation semantics |
 | [Composition](references/composition.md) | Choosing page, modal, panel, tearsheet, table, or dashboard structure; IBM Products |
 | [Patterns](references/patterns.md), [coverage](references/patterns-coverage.md) | Notifications, forms, search, filtering, loading, empty states, disclosure |
+| [Framework integration](references/framework-integration.md) | Official/community setup, Web Components, legacy snippets and Carbon MCP prompt/client boundaries |
+| [MCP result validation](references/mcp-result-validation.md) | Reconcile retrieved examples, chart completeness, stylesheet delivery and supplemental instruction conflicts |
+| [Community flows](references/community-flows.md) | Community/core boundaries; create/edit/remove, import/export, API keys and chat |
 | [Fluid styles](references/fluid-styles.md) | Fluid versus default styling, responsive width, attached actions, form help, separators and component-specific exceptions |
 | [Accessibility](references/accessibility.md) | Accessible names, disabled/read-only states, keyboard, focus, and verification limits |
 | [2x Grid](references/2x-grid.md) | Geometry, breakpoints, grid behaviors, guideline subcategories, or implementation |
@@ -53,13 +62,16 @@ Identify the visual register: productive interfaces use efficient, predictable l
 | [Themes](references/themes.md) | White, Gray 10, Gray 90, Gray 100, nested layers, or user/system preferences |
 | [Spacing](references/spacing.md) | Fixed token values, responsive composition, Stack/gap, component spacing |
 | [Typography](references/typography.md), [typeface](references/typeface.md), [coverage](references/typeface-coverage.md) | Productive/expressive type, Plex families, multilingual text, fonts |
-| [Icons and pictograms](references/icons-and-pictograms.md) | Library symbols, sizes, foregrounds, optical alignment, clearance |
+| [Icons and pictograms](references/icons-and-pictograms.md), [dynamic libraries](references/dynamic-svg-libraries.md) | Library symbols, sizes, foregrounds, optical alignment, clearance |
 | [Motion](references/motion.md) | Productive/expressive movement, easing, duration, choreography, reduced motion |
 | [Spatial workspaces](references/spatial-workspaces.md) | Maps, floor plans, inspectors, spatial keyboard navigation, and draft/publication boundaries |
 | [Artifact intake](references/artifact-intake.md) | Reviewing supplied research, prototypes and mockups for selective reuse |
-| [UI shell](references/ui-shell.md) | Product navigation, headers, panels, and responsive shell behavior |
+| [UI shell](references/ui-shell.md) | Header/side-nav/utility composition, controlled state, skip/focus/route contracts and responsive navigation |
 | [Next.js shell recipe](references/nextjs-shell.md) | App Router integration with real Carbon navigation, shared routes, dismissal, and focus behavior |
-| [Status and data visualization](references/status-and-dataviz.md) | Status meaning, non-color signals, marks, charts, technical diagrams |
+| [Status and data visualization](references/status-and-dataviz.md), [chart behavior](references/chart-behavior.md), [chart example integration](references/chart-example-integration.md) | Status meaning, chart choice, domains, missing data, legends, dashboards and design-only/code boundaries |
+| [Content design](references/content-design.md) | Action semantics, writing style, localization and label/behavior agreement |
+| [AI explainability](references/ai-explainability.md) | AI provenance, focused/broad labels, read-only access, override/revert and keyboard behavior |
+| [Documentation intake](references/documentation-intake.md) | Public category routing, four component tabs, contribution readiness/templates, dynamic documentation and source conflicts |
 | [Senior workflow](references/senior-workflow.md), [taste](references/taste.md) | Screen/flow design, density, judgment, critique |
 | [Visual casebook](references/visual-casebook.md) | Annotated before/after table, form, dashboard, settings and expressive composition; task-dependent tradeoffs |
 | [Design engineering](references/design-engineering.md) | Browser behavior, interruption/recovery, implementation polish |

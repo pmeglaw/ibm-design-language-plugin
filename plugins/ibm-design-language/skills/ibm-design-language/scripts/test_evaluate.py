@@ -2,6 +2,7 @@
 from __future__ import annotations
 import base64
 import copy
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -45,6 +46,28 @@ class HarnessTests(unittest.TestCase):
         # Confirm the managed temporary tree stays under the intended test root.
         self.assertTrue(self.root.is_relative_to(TEST_ROOT))
         self.temp.cleanup()
+
+    @unittest.skipUnless(os.name == "nt", "Windows extended-path regression")
+    def test_long_windows_path_remains_in_workspace_fingerprint(self):
+        nested = self.root / "workspace" / ".npm-cache" / ("a" * 120)
+        source = nested / ("b" * 120)
+        self.assertGreater(len(str(source)), 260)
+        prefix = "\\\\?\\"
+        extended_dir = Path(prefix + str(nested))
+        extended_file = Path(prefix + str(source))
+        extended_dir.mkdir(parents=True)
+        payload = b"cache bytes are still fingerprinted"
+        extended_file.write_bytes(payload)
+        try:
+            hashes = ev.tree_hashes(self.root / "workspace")
+            expected = hashlib.sha256(payload).hexdigest()
+            self.assertEqual(hashes[source.relative_to(self.root / "workspace").as_posix()], expected)
+            extended_file.write_bytes(b"changed cache bytes")
+            self.assertNotEqual(ev.file_hash(source), expected)
+        finally:
+            # Remove only this test's known extended-path file and directory.
+            extended_file.unlink()
+            extended_dir.rmdir()
 
     def fake_cli(self, command, **kwargs):
         if command[-1] == "--version":
