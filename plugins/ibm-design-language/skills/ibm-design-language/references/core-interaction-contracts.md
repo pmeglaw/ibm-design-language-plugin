@@ -90,7 +90,7 @@ Use as secondary navigation in a sufficiently deep hierarchy. It supplements pri
 - Use a named navigation landmark and a semantic list. Give an overflow trigger a meaningful name and use the overflow menu's keyboard contract.
 - Keep a single line. At ordinary widths preserve the first and last two links, moving intervening items into overflow. At the smallest widths Carbon allows overflow followed by one breadcrumb. Verify the particular responsive trail rather than insisting all three visible positions survive every width.
 
-Verify real destinations, named navigation, current-page semantics, keyboard access to hidden ancestors, long labels, narrow widths and the chosen trail model.
+Verify real destinations, named navigation, current-page semantics, keyboard access to hidden ancestors, long labels, narrow widths and the chosen trail model. Destination content must become usable after activation; existence of a fragment ID or a clipped placeholder is insufficient. See [destination and outcome acceptance](practical-implementation-review.md#implement-destinations-and-outcomes-before-presentation).
 
 Sources: [Usage](https://carbondesignsystem.com/components/breadcrumb/usage/), [Style](https://carbondesignsystem.com/components/breadcrumb/style/), [Code](https://carbondesignsystem.com/components/breadcrumb/code/), [Accessibility](https://carbondesignsystem.com/components/breadcrumb/accessibility/).
 
@@ -110,7 +110,7 @@ Use a button for an action and a link for navigation. Prefer native semantics. K
 - Generic Button prose says a dialog's primary typically takes focus. Apply the specific dialog/task contract instead of auto-focusing a destructive commit action. Initial focus must account for consequences, content reading and the installed modal behavior.
 - Fluid/full-span, hanging and stacked-fluid examples carry production caveats. They may require an override; verify current installed capabilities and do not invent a `fluid` prop. The source also conflicts over tertiary buttons in fluid arrangements: favor the explicit tertiary restriction and inspect the actual chosen variant before extending it.
 
-Verify action/destination semantics, hierarchy, keyboard activation, RTL, translated-label wrapping, names/tooltips, menu/toggle states, duplicate-submission prevention, failure recovery and target-package support. Check the full state/theme matrix; a Style table or static screenshot cannot prove rendered focus/contrast.
+Verify action/destination semantics, hierarchy, keyboard activation, RTL, translated-label wrapping, names/tooltips, menu/toggle states, duplicate-submission prevention, failure recovery and target-package support. Include every enabled supporting action in [outcome acceptance](practical-implementation-review.md#implement-destinations-and-outcomes-before-presentation), and inspect long labels inside open nested regions rather than testing only the primary group. Check the full state/theme matrix; a Style table or static screenshot cannot prove rendered focus/contrast.
 
 Sources: [Usage](https://carbondesignsystem.com/components/button/usage/), [Style](https://carbondesignsystem.com/components/button/style/), [Code](https://carbondesignsystem.com/components/button/code/), [Accessibility](https://carbondesignsystem.com/components/button/accessibility/).
 
@@ -144,7 +144,7 @@ Use read-only reusable text; editable code needs a different control. Inline sni
 - The Style table lists single-line height as `40 / 3` px/rem, an inconsistent conversion. At a 16px root, 40px is 2.5rem. Treat dimensions and typography tables as versioned design specifications; inspect implemented CSS before copying a contradictory number.
 - Sample code in Code is example snippet content (including old React resolutions), not a recommended current app manifest or toolchain.
 
-Verify exact clipboard payload, success/error feedback, focus retention, full-text reachability, expansion/collapse, keyboard scrolling, syntax contrast, nested themes and constrained widths.
+Verify exact clipboard payload, success/error feedback, focus retention, full-text reachability, expansion/collapse, keyboard scrolling, syntax contrast, nested themes and constrained widths. Match the Tab focus target to the actual rendered overflow owner; a focusable outer wrapper does not establish that its inner code scrolls by keyboard. For the inspected-version boundary and app-scoped integration choices, see [practical implementation review](practical-implementation-review.md#make-the-keyboard-focus-target-own-the-overflow).
 
 Installed-source receipt, `@carbon/react@1.117.0`: CodeSnippet accepts `copyText`, `hideCopyButton` and collapsed/expanded row-count props. Its copy handler calls copy-to-clipboard without checking the returned outcome; Copy feedback is activated on click. If the task requires confirmed failure/success, the built-in feedback alone is insufficient. A deliberate integration can retain the CodeSnippet display/disclosure, hide its copy button, and use a separately named Carbon action that reports the actual clipboard result. Check the installed release before adopting this boundary. Minimum expanded rows and resize-observer logic can affect Show more behavior; test the actual line count instead of assuming a button's presence proves expansion works.
 
