@@ -1,11 +1,11 @@
 # Senior workflow — from a brief to a shipped screen
 
-Read this when the request is "design X" rather than "style X": a new screen or flow from a one-line brief, a redesign, or any time two principles conflict and no table in this skill settles it.
+Read this for a new screen or flow, a redesign, or a consequential design tradeoff. This is an author-created synthesis of design practice, not a mandatory IBM process. Scale it to the task: a narrow fix, screenshot translation or focused question does not require a new brief, decision log, sponsor user or complete project lifecycle. Keep implementation and publication within the user's scope.
 
 ## Contents
 
 - What senior means here
-- The sequence — never start in visuals
+- Start from the task
 - Layout archetypes
 - When principles conflict — the procedure
 - The hard choices
@@ -20,7 +20,7 @@ Read this when the request is "design X" rather than "style X": a new screen or 
 
 A mid-level designer executes the ticket. A senior owns the outcome — reframes the brief when a form is the wrong answer, cuts scope to protect the primary task, designs the unhappy paths before the happy one, and can explain every decision along with the alternatives rejected. The ambiguity is the job: as the problem gets vaguer, you go looking for what's actually being asked.
 
-## The sequence — never start in visuals
+## Start from the task
 
 1. **Job to be done.** What is the *one* thing the user came here to do? Everything else is secondary.
 2. **Data first.** What objects exist, how they relate, and how many there are. Cardinality picks the layout: one record is a detail page; hundreds is a table; a handful of unlike things might be cards.
@@ -46,7 +46,7 @@ Choose the smallest useful comparison for a consequential decision: the current 
 
 | Archetype | Use when | Built from |
 |---|---|---|
-| App shell | Any product with more than one section | UI shell header + left panel (`ui-shell.md`) |
+| App shell | Products needing persistent cross-section navigation | UI shell header + left panel (`ui-shell.md`) |
 | Index page — filters + data table | Browsing and acting on many records | PageHeader, DataTable or Datagrid, toolbar, batch actions, pagination |
 | List–detail split | Triage; users move between items quickly | Two panes, or a slide-in side panel that pushes content |
 | Record page with tabs | One object, several facets | PageHeader with tabs; sticky tabs on scroll |
@@ -99,7 +99,7 @@ Would change if: <the evidence that reopens this>
 
 ## Borrowing IBM's process when working alone
 
-Enterprise Design Thinking scales down cleanly:
+For substantial product design, these Enterprise Design Thinking practices can help. The suggested counts and cadence below are local examples, not required IBM quotas or prerequisites for a scoped implementation:
 
 - **One Hill per project**, written as *Who / What / Wow*: who is enabled, what they can now do, what makes it remarkable. Keep it to an outcome, never a feature list. Test every screen against it.
 - **Playbacks.** Narrate the flow aloud as the user's story before you build it and again before you ship. Misalignment shows up in the telling.
@@ -169,12 +169,12 @@ These are starting heuristics, not IBM requirements. Choose for the task and rev
 
 ## Pre-release passes
 
-Run these as separate passes; combining them is how things get missed.
+Use the relevant passes for the affected task and acceptance conditions. Reuse valid evidence on unchanged behavior; record unavailable or out-of-scope checks as untested. Review does not itself authorize a release.
 
 1. **Rubric crit** against `taste.md`, top-down.
-2. **State coverage** — every screen has empty, loading, error, partial, overflow, success.
-3. **Keyboard** — full path with the mouse unplugged; skip link, landmarks, arrow keys on grids, Escape closes.
-4. **Screen reader** — dynamic content announced; icon-only controls named; disabled versus read-only correct.
+2. **State coverage** — exercise applicable empty, loading, error, partial, overflow and success states; do not invent irrelevant states.
+3. **Keyboard** — complete the task without pointer assistance; check relevant skip/landmark paths and the selected widget's focus, activation, traversal and dismissal contract. Ordinary tables/lists do not automatically need grid arrow navigation.
+4. **Screen reader** — when in scope and available, test names, dynamic announcements and disabled/read-only semantics with the actual assistive-technology/browser combination. DOM/AX or keyboard checks are separate evidence; unavailable AT remains untested.
 5. **Responsive** — each breakpoint, not just the one you designed at.
 6. **Copy** — verbs on buttons, actionable errors, sentence case, no jargon in titles.
 7. **Contrast** — check actual resolved foreground/background pairs for supported surfaces and states; built-in presets are diagnostics.

@@ -1,8 +1,10 @@
 # Carbon documentation intake and conflict resolution
 
-Use when researching a component or translating design into code. The 2026-09-29 audit retrieved the public Carbon website's 317 MDX source files and navigation at commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`. Retrieval/indexing is separate from reading all content, viewing examples, checking exports, and running an application. The exhaustive review remains in progress; no general mastery claim is supported.
+Use when researching a component or translating design into code. The 2026-09-29 audit retrieved the public Carbon website's 317 MDX source files and navigation at commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`. Retrieval/indexing is separate from reading all content, viewing examples, checking exports, and running an application. The audit ledger records source-text review of all 317 pages and 17 supplemental MCP documents. Images, dynamic examples, gated content, live tools and application behavior have separate, incomplete coverage; source-text completion supports no general mastery claim. Read per-source dates and limits in [the source map](source-map.json).
 
 ## Four component contracts
+
+These are information contracts, not permanent tab names or URL suffixes. A 2026-09-30 live check of [AI label](https://www.carbondesignsystem.com/building-blocks/core/components/ai-label/guidelines) redirected the old Usage URL to a Guidelines route. Follow the official page's current navigation to locate usage, style, code and accessibility content; do not construct replacement paths or treat a failed extraction as proof that the guidance is absent. Retain pinned historical URLs as provenance and disclose inaccessible content.
 
 | Surface | Extract for the requested task | Insufficient evidence |
 |---|---|---|

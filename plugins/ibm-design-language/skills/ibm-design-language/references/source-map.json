@@ -1234,7 +1234,7 @@
       "reviewed_at": "2026-09-29",
       "authority": "official-documentation",
       "version_scope": "Website d8783ad2ae3b5e59c58f58311491f8a2c4e62631; narrow styles1.116.0/Sass1.105.0 recipe probes",
-      "limits": "No framework/client setup, live MCP/auth, internal access, rendered specimens or final model evaluation. Retrieved carbon-builder ZIP/GUIDELINES/user prompt/llms index require further content review; tutorials still pending."
+      "limits": "No live MCP/auth/client setup, internal access or rendered tutorial/AT proof. The later audit ledger records all 17 supplemental documents and the React/Angular/Vue/Web Components tutorial source reviews; these are source/limited-probe evidence, not full tutorial runtime passes."
     }
   ],
   "unresolved": [
@@ -1242,7 +1242,7 @@
     "Detailed IBM creative playbooks remain incomplete; see the specific source routes and limits.",
     "Selected standalone comparisons and a version-pinned Next.js/Carbon shell fixture have been checked. Full-suite model validation, broader Carbon integration, independent repeated holdouts, browser zoom, complete contrast coverage and assistive-technology checks remain open."
   ],
-  "coverage_updated_at": "2026-09-24",
+  "coverage_updated_at": "2026-09-30",
   "evaluation_record": "references/evaluation-history.md",
   "local_resources": [
     {
@@ -1266,8 +1266,8 @@
     "website_source_commit": "d8783ad2ae3b5e59c58f58311491f8a2c4e62631",
     "retrieved_mdx_files": 317,
     "indexed_source_headings": 4361,
-    "status": "in-progress; fetched/indexed does not mean fully read",
-    "implementation_runtime": "one intermediate snapshot practical probe failed; final candidate not evaluated",
+    "status": "Pinned source-text review complete: 317 MDX pages and 17 separate supplemental MCP documents; rendered/dynamic/gated/runtime coverage remains limited.",
+    "implementation_runtime": "Historical intermediate snapshot failed; subsequent published 1.1.17 practical evidence is recorded separately in latest_published_practical_evaluation.",
     "local_routing": "references/documentation-intake.md",
     "reviewed_source_pages": 317,
     "partial_source_pages": 0,
@@ -1386,7 +1386,32 @@
       "latest_evaluated_snapshot_sha256": "add261d63d7e9af095b925074b35a353cac151b3fd846b8b6696d91b48a44058",
       "latest_practical_result": "fail:8pass2fail1not_tested; visual4/4/4/4/3; author browser review, exact independent JS/CSS rebuild, observed delivered Plex bytes and real browser clipboard-policy denial",
       "chart_guidance_result": "pass6/6; new author-written guidance case, no runtime/AT/holdout claim",
-      "current_post_snapshot_changes": "Domain-state/reset consistency and independent lang/dir guidance added after add261; these amendments were reviewed against observed failure and W3C direction/language guidance, not a fresh model practical pass."
+      "current_post_snapshot_changes": "Domain-state/reset consistency and independent lang/dir guidance added after add261; these amendments were reviewed against observed failure and W3C direction/language guidance, not a fresh model practical pass.",
+      "record_scope": "Historical 2026-09-29 audit checkpoint; pending/latest/current fields below describe that checkpoint, not current publication or installation. See latest_published_practical_evaluation for the later result."
     }
+  },
+  "latest_published_practical_evaluation": {
+    "version": "1.1.17",
+    "reviewed_at": "2026-09-30",
+    "release_commit": "9f4366bd78f69f30ae5f4e691ab6e44b3fb2570b",
+    "skill_snapshot_sha256": "a29ee79082ee5037e80476857c9687dc6c83be03ca705040be8544e6ebf285bc",
+    "rubric_sha256": "087629a407d5a7125eaae775b12ca2db9699149b7623d8d0ea8e289d595a21f2",
+    "output_sha256": "acbce500e58f6abdf109794c95ec41be29e16b92b95126ded707f792c0adb8e9",
+    "verdict": "fail",
+    "assertions": {
+      "pass": 9,
+      "fail": 2,
+      "not_tested": 0
+    },
+    "failed_assertions": [
+      "a08: 320px containment",
+      "a09: 320px RTL"
+    ],
+    "local_refs": [
+      "references/evaluation-history.md",
+      "references/practical-implementation-review.md"
+    ],
+    "evidence": "https://github.com/pmeglaw/ibm-design-language-plugin/blob/9f4366bd78f69f30ae5f4e691ab6e44b3fb2570b/evidence/1.1.17-candidate/REPORT.md",
+    "limits": "One known author-written regression; changed completion prefix/time ceiling versus baseline; author-associated frozen-output review. Other browsers, AT and exhaustive contrast untested. Later documentation refinements have no fresh model result."
   }
 }

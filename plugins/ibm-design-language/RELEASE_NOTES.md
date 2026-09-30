@@ -1,5 +1,7 @@
-# IBM Design Language 1.1.15
+# IBM Design Language 1.1.18
 
-Adds `review-product-experience`, a focused IA/UI/UX review skill. It routes to the existing IBM Design Language authority, senior workflow, taste rubric, and relevant component guidance. The workflow covers task framing, cross-view inspection, matched alternatives, scoped implementation, and evidence-graded verification.
+Published 1.1.17 strengthens real navigation destinations, observable supporting-action outcomes, nested narrow/RTL sizing, code scroll-owner keyboard checks and post-commit async focus recovery. Its fresh known practical generation failed with 9 pass, 2 fail and 0 untested; 320px containment/RTL remain deferred. Tested 390px and 1920px layouts fit. See [evaluation history](skills/ibm-design-language/references/evaluation-history.md#published-1117-practical-regression) for exact snapshot identity and limitations.
 
-The existing design skill and references remain intact. Package integrity, synthetic checks and installation parity tests verify the candidate's structure, not model quality, product usability or assistive-technology behavior. Previous release archives remain unchanged.
+Version 1.1.18 refines agent entrypoint/routing, task-scaled review, source-review freshness and the Chrome-native scroll focus evidence boundary. These documentation edits have no new generation score. The prior practical result belongs to published 1.1.17; its historical ZIP and manifest remain unchanged. Package, CI, downloaded asset and installation checks are separate from behavioral evidence.
+
+Version 1.1.15 introduced the sibling review-product-experience skill for IA/UI/UX review. Both skills preserve Carbon authority, approved product branding and separate source, rendered, assistive-technology and model-evaluation evidence. Structural/package tests are not product usability or accessibility certification.

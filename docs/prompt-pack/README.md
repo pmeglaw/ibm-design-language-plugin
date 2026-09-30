@@ -1,6 +1,6 @@
 # IBM Design Language prompt pack
 
-Copy-ready prompts for a new implementation or review session. Prepared 2026-09-21 against the installed IBM Design Language plugin 1.1.6 guidance.
+Copy-ready prompts for implementation or review. Originally prepared 2026-09-21 against 1.1.6; reviewed and refined 2026-09-30 against published 1.1.17 and its practical evidence. Check the current installed version and applicable project rules each time.
 
 ## Choose a prompt
 
@@ -10,7 +10,7 @@ Copy-ready prompts for a new implementation or review session. Prepared 2026-09-
 ## Use in a new session
 
 1. Open the intended project or checkout.
-2. Select `@ibm-design-language` from the session's plugin autocomplete. For Seat Planner, also select `@brand-system` if available. These selections are UI actions; copying an @name as plain text is not proof that its guidance loaded.
+2. Select the IBM Design Language plugin/skill offered by the host. Codex exposes `ibm-design-language:ibm-design-language` for design/build and `ibm-design-language:review-product-experience` for a flow or multi-view audit. For Seat Planner, load its project brand-system guidance too. Autocomplete syntax varies by host; a plain-text @name or an installed plugin alone does not prove that the intended entrypoint loaded.
 3. Copy one fenced prompt and replace its bracketed placeholders. Attach any referenced screenshots or identify the actual report path.
 4. The prompt asks the agent to confirm which guidance it loaded. If a plugin is unavailable, it should disclose that boundary.
 
@@ -18,4 +18,4 @@ For an existing interface, use **audit → approved repair → final review**. F
 
 The Seat Planner prompt is deliberately project-specific. General prompts do not import its branding or repository rules into other products. Prompts improve review discipline; they do not guarantee that every defect will be found.
 
-This pack is companion repository documentation. It does not install or modify the plugin and is not part of the frozen 1.1.6 release ZIP.
+This pack is companion repository documentation, outside the plugin and its release ZIPs. It does not install or modify the plugin. The published 1.1.17 generation still failed 320px containment/RTL assertions; these prompts do not establish that those defects or future generation reliability are solved.

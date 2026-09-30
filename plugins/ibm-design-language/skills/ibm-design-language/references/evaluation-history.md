@@ -61,3 +61,23 @@ These names identify provenance; their absence in a copied plugin must not be tr
 The completed composition comparison does not establish that 1.1.5-rc.1 improves task outcomes; rc.2 has no separate model-performance result. The complete bundled suite, independent blind or repeated holdouts, version-specific Carbon React integration, screen readers, real browser zoom, other browser engines, physical devices and broader IBM creative disciplines are not certified by the results above.
 
 An annotated casebook can explain a design decision and expose tradeoffs. Its author-created examples and local checks are not independent model-performance evidence.
+
+## Published 1.1.17 practical regression
+
+These 2026-09-30 observations use the same known private 11-assertion rubric, whose canonical SHA-256 is `087629a407d5a7125eaae775b12ca2db9699149b7623d8d0ea8e289d595a21f2`. Preserve separate generated outputs and verdicts:
+
+| Attempt | Pass / fail / untested | Boundary |
+|---|---|---|
+| Fresh released 1.1.16 | 8 / 3 / 0 | Narrow sizing, RTL and code scrolling failed |
+| Separately repaired prototype | 11 / 0 / 0 | Assisted repair-technique proof; not unassisted generation |
+| First candidate saved output | 9 / 2 / 0 | Generation timed out during cleanup; no formal response |
+| Completed candidate recovery | 7 / 4 / 0 | Destinations, supporting action, narrow sizing and RTL failed |
+| Fresh 1.1.17 candidate | 9 / 2 / 0 | Completed formal response; a08 narrow sizing and a09 RTL failed |
+
+The released skill snapshot is `a29ee79082ee5037e80476857c9687dc6c83be03ca705040be8544e6ebf285bc`; its fresh generated output is `acbce500e58f6abdf109794c95ec41be29e16b92b95126ded707f792c0adb8e9`. Fresh visual scores were 4/3/4/4/3 and the overall verdict remained FAIL. At 320px, open content reached 336px against 305px available, and RTL Copy began at x=-31px. Tested 390px/1920px layouts fit. The owner deferred the 320px failures for publication; acceptance of a release is separate from passing this rubric.
+
+Rendered checks used Chrome 154.0.8037.58. Native Tab reached the actual PRE despite no authored tabindex; collapsed/expanded keyboard endpoints passed. Exact clipboard readback allowed Windows newline normalization, and a real Permissions-Policy denial reported failure. Other browsers and assistive technology were not tested; sampled enabled-text contrast is not exhaustive conformance.
+
+Fresh generation used gpt-5.5/medium, Codex 0.159.2, 1800 seconds and the recovery completion prefix. The baseline used 1200 seconds without that prefix. An initially stalled sandbox install completed through a scoped elevated retry. This comparison is not perfectly controlled, blind or repeated. Generation and frozen-output review were separate agents, but the review remains author-associated, with no external independent score. Source/package/CI/install checks prove integrity, not model quality.
+
+The [published candidate receipt](https://github.com/pmeglaw/ibm-design-language-plugin/blob/9f4366bd78f69f30ae5f4e691ab6e44b3fb2570b/evidence/1.1.17-candidate/REPORT.md) is a sanitized summary. Private fixtures, transcripts and rendered receipts remain outside the package. Historical entries above retain their snapshot boundaries; these results do not retroactively verify them or later documentation changes.
