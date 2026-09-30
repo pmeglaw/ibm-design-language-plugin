@@ -21,7 +21,7 @@ The notes below are concise selection and verification prompts. The linked sourc
 |---|---|
 | [Accordion](components-preview-index.md#accordion) | Reveal optional sections while keeping their headings scannable. Check expansion, heading semantics, and whether hidden content is essential to the task. |
 | [AI label](components-preview-index.md#ai-label) | Identify AI involvement and expose an explanation. Keep provenance separate from the action that requests generation; test focused and container placements. |
-| [Breadcrumb](components-preview-index.md#breadcrumb) | Represent location in a hierarchy, not a history of clicks. Preserve a usable route to ancestors when the trail overflows. |
+| [Breadcrumb](components-preview-index.md#breadcrumb) | Prefer a clear hierarchy trail; public Usage also supports a consistent path-based trail. Preserve access through overflow and identify the trail model; see [core contracts](core-interaction-contracts.md#breadcrumb). |
 | [Button](components-preview-index.md#button) | Use for actions; choose emphasis from task priority. Verify the particular variant, icon treatment, group layout, and installed-package support before adopting preview modifiers. |
 | [Checkbox](components-preview-index.md#checkbox) | Use for independent choices or multiple selections. Model the mixed parent state explicitly when child selections differ. |
 | [Code snippet](components-preview-index.md#code-snippet) | Present code with a suitable inline, single-line, or multiline treatment. Verify copying preserves the source and overflow leaves the content reachable. |
@@ -58,7 +58,7 @@ The notes below are concise selection and verification prompts. The linked sourc
 | [Toggle](components-preview-index.md#toggle) | Use for a binary setting with clear state language. Distinguish immediate setting changes from choices submitted later in a form. |
 | [Toggletip](components-preview-index.md#toggletip) | Use an explicitly activated explanation that may contain interaction. Verify opening, dismissal, and keyboard access to the disclosed content. |
 | [Tooltip](components-preview-index.md#tooltip) | Use concise supplemental text on hover/focus. Keep critical instructions visible and interactive content in a suitable alternative. |
-| [Tree view](components-preview-index.md#tree-view) | Use for hierarchical data. Distinguish expanding a branch from selecting a node and preserve predictable keyboard focus across collapsed branches. |
+| [Tree view](components-preview-index.md#tree-view) | Use for hierarchical data. Distinguish branch expansion, selection and current destination. Read [released Tree view contracts](core-interaction-contracts.md#tree-view) for flag-dependent state/callbacks and keyboard verification. |
 | [UI shell](components-preview-index.md#ui-shell) | Compose header and optional panels for product navigation. Separate product navigation from system utilities and check narrow-screen relocation. |
 | [UI shell left panel](components-preview-index.md#ui-shell-left-panel) | Use for product navigation hierarchy. Keep nested navigation manageable and verify collapsed, expanded, and responsive behavior. |
 | [UI shell right panel](components-preview-index.md#ui-shell-right-panel) | Use for system utilities or switching products. Keep expansion, dismissal, and selection behavior distinct from persistent product navigation. |
@@ -68,3 +68,5 @@ The notes below are concise selection and verification prompts. The linked sourc
 For the selected component and variant, identify the task, states, content, keyboard model, focus movement, accessible name, responsive changes, and relevant loading/error/empty behavior. Test those interactions in the implementation; source retrieval alone is not a passing UI test. For overlays, explicitly decide whether focus is trapped. For selectable collections, separate selection from navigation and expansion.
 
 Use [Patterns](patterns.md) for multi-component flows, [Composition](composition.md) for container decisions, and [UI shell](ui-shell.md) for navigation. Keep existing Typeface and typography references for text roles.
+
+For the public site's detailed Accordion, Breadcrumb and Button contracts, including source conflicts and production caveats, read [core interaction contracts](core-interaction-contracts.md). This supplements the preview catalog; it does not establish unreviewed component APIs.

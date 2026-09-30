@@ -734,6 +734,507 @@
       "authority": "official-documentation",
       "version_scope": "public page text reviewed; installed component APIs not verified",
       "limits": "Relevant text reviewed only; illustrations, live demos, runtime APIs and application accessibility not tested. Local decision exercises are not executed evaluations."
+    },
+    {
+      "id": "carbon-content-detail",
+      "url": "https://carbondesignsystem.com/guidelines/content/overview/",
+      "sections": [
+        "Overview",
+        "Writing style",
+        "Action labels"
+      ],
+      "local_refs": [
+        "references/content-design.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned Carbon website source; target framework not supplied",
+      "limits": "Public prose and full injected glossary source reviewed; this playbook summarizes selected implementation contracts. Internal IBM Style, images and runtime remain unverified."
+    },
+    {
+      "id": "carbon-ai-detail",
+      "url": "https://carbondesignsystem.com/components/ai-label/usage/",
+      "sections": [
+        "Usage",
+        "Style",
+        "Code",
+        "Accessibility",
+        "Carbon for AI"
+      ],
+      "local_refs": [
+        "references/ai-explainability.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned Carbon website source; target framework not supplied",
+      "limits": "Public component and guideline text reviewed; image examples, internal patterns and framework runtime remain unverified."
+    },
+    {
+      "id": "carbon-charts-detail",
+      "url": "https://carbondesignsystem.com/data-visualization/chart-types/",
+      "sections": [
+        "Get started",
+        "Chart types",
+        "Chart anatomy",
+        "Simple charts",
+        "Flow charts",
+        "Spatial charts",
+        "Gantt charts",
+        "Color palettes",
+        "Axes and labels",
+        "Legends",
+        "Dashboards"
+      ],
+      "local_refs": [
+        "references/chart-behavior.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned Carbon website source; target framework not supplied",
+      "limits": "Public page prose reviewed; simple chart bodies are injected from package demo data and were not reviewed or executed."
+    },
+    {
+      "id": "carbon-core-contracts-detail",
+      "url": "https://carbondesignsystem.com/components/overview/components/",
+      "sections": [
+        "Accordion: Usage, Style, Code, Accessibility",
+        "Breadcrumb: Usage, Style, Code, Accessibility",
+        "Button: Usage, Style, Code, Accessibility",
+        "Checkbox: Usage, Style, Code, Accessibility",
+        "Code snippet: Usage, Style, Code, Accessibility",
+        "Accessibility status overview and widget source",
+        "Contained list: Usage, Style, Code, Accessibility",
+        "Content switcher: Usage, Style, Code, Accessibility",
+        "Data table: Usage, Style, Code, Accessibility",
+        "Date picker: Usage, Style, Code, Accessibility",
+        "Dropdown: Usage, Style, Code, Accessibility",
+        "File uploader: Usage, Style, Code, Accessibility",
+        "Form: Usage, Style, Code, Accessibility",
+        "Inline loading: Usage, Style, Code, Accessibility",
+        "Link: Usage, Style, Code, Accessibility",
+        "List: Usage, Style, Code, Accessibility",
+        "Loading: Usage, Style, Code, Accessibility",
+        "Number input: Usage, Style, Code, Accessibility",
+        "Menu: Usage, Style, Code, Accessibility",
+        "Menu buttons: Usage, Style, Code, Accessibility",
+        "Overflow menu: Usage, Style, Code, Accessibility",
+        "Modal: Usage, Style, Code, Accessibility",
+        "Pagination: Usage, Style, Code, Accessibility",
+        "Notification: Usage, Style, Code, Accessibility",
+        "Popover: Usage, Style, Code, Accessibility",
+        "Progress bar: Usage, Style, Code, Accessibility",
+        "Progress indicator: Usage, Style, Code, Accessibility",
+        "Radio button: Usage, Style, Code, Accessibility",
+        "Search: Usage, Style, Code, Accessibility",
+        "Select: Usage, Style, Code, Accessibility",
+        "Slider: Usage, Style, Code, Accessibility",
+        "Structured list: Usage, Style, Code, Accessibility",
+        "Tabs: Usage, Style, Code, Accessibility",
+        "Tag: Usage, Style, Code, Accessibility",
+        "Text input: Usage, Style, Code, Accessibility",
+        "Tile: Usage, Style, Code, Accessibility",
+        "Toggle: Usage, Style, Code, Accessibility",
+        "Toggletip: Usage, Style, Code, Accessibility",
+        "Tooltip: Usage, Style, Code, Accessibility",
+        "Tree view: Usage, Style, Code, Accessibility",
+        "UI shell header: Usage, Style, Code, Accessibility",
+        "UI shell left panel: Usage, Style, Code, Accessibility",
+        "UI shell right panel: Usage, Style, Code, Accessibility"
+      ],
+      "local_refs": [
+        "references/core-interaction-contracts.md",
+        "references/documentation-intake.md",
+        "references/composition.md",
+        "references/date-and-time.md",
+        "references/selection-controls.md",
+        "references/forms-and-upload.md",
+        "references/action-feedback-and-links.md",
+        "references/menus-and-triggers.md",
+        "references/ui-shell.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned Carbon website prose; selected @carbon/react1.117.0 source receipts and one failed intermediate fixture probe",
+      "limits": "Source prose, tables and framework links reviewed. Images and Storybooks uninspected; actual AVT report and rendered badge values unverified. Native checkbox readonly applicability checked against WHATWG."
+    },
+    {
+      "id": "carbon-grid-spacing-detail",
+      "url": "https://carbondesignsystem.com/elements/2x-grid/overview/",
+      "sections": [
+        "2x Grid: Overview, Usage, Code",
+        "Spacing: Overview, Code"
+      ],
+      "local_refs": [
+        "references/2x-grid.md",
+        "references/spacing.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website prose; selected React1.117.0 APIs; layout11.60.0/grid11.63.0/styles1.116.0/Sass1.105.0 compilation",
+      "limits": "Images, videos, gated galleries, Figma operations and rendered geometry unverified. Six narrow Sass probes are not final model evaluation."
+    },
+    {
+      "id": "carbon-typography-detail",
+      "url": "https://carbondesignsystem.com/elements/typography/overview/",
+      "sections": [
+        "Overview",
+        "Style strategies",
+        "Type sets",
+        "Code",
+        "TypeScaleTable/TypeWeight/TypesetStyle/TypesetExample and injected typeScale/typeSets/weight Markdown"
+      ],
+      "local_refs": [
+        "references/typography.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website prose and type-data/widget source; type11.68.0/Sass1.105.0 compilation",
+      "limits": "Images, interactive controls, loaded fonts and rendered type geometry unverified. Specimen data is not exact package output. Nine compile probes are not final model evaluation."
+    },
+    {
+      "id": "carbon-themes-detail",
+      "url": "https://carbondesignsystem.com/elements/themes/overview/",
+      "sections": [
+        "Overview",
+        "Code",
+        "React Theme/Layer context, CSS classes and zero-based levels",
+        "Themes Sass mixin and selected JS exports"
+      ],
+      "local_refs": [
+        "references/themes.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website prose; React1.117.0 source; themes11.82.0/Sass1.105.0 receipts",
+      "limits": "Images, browser cascade, runtime switching, contrast and final model evaluation unverified. Compiled output does not prove a valid browser color or correct nested scope."
+    },
+    {
+      "id": "carbon-motion-detail",
+      "url": "https://carbondesignsystem.com/elements/motion/overview/",
+      "sections": [
+        "Overview",
+        "Choreography",
+        "Code",
+        "Resources",
+        "Installed Sass motion/surface and generated catalog"
+      ],
+      "local_refs": [
+        "references/motion.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website prose; motion11.53.0/Sass1.105.0 compilation",
+      "limits": "Videos, Generator, actual motion, interruption, reduced-motion browser and final model evaluation unverified."
+    },
+    {
+      "id": "carbon-icons-pictograms-detail",
+      "url": "https://carbondesignsystem.com/elements/icons/usage/",
+      "sections": [
+        "Icons Usage/Code",
+        "Pictograms Usage/Code",
+        "Selected installed Icon/helper/Add/WarningFilled and SSR markup"
+      ],
+      "local_refs": [
+        "references/icons-and-pictograms.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website prose; icons-react11.89.0 SSR/source",
+      "limits": "Dynamic libraries, visual assets, target/contrast geometry, AX/AT, pictograms runtime and final model evaluation unverified."
+    },
+    {
+      "id": "carbon-color-detail",
+      "url": "https://carbondesignsystem.com/elements/color/overview/",
+      "sections": [
+        "Overview",
+        "Usage",
+        "Code",
+        "Tokens prose/widget and all 19 injected groups"
+      ],
+      "local_refs": [
+        "references/tokens.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website source; colors11.59.0/themes11.82.0 full JS entry comparison and selected Sass receipts",
+      "limits": "Source data fully read; images, Figma, rendered table, browser contrast/cascade, component Sass availability and final model evaluation unverified."
+    },
+    {
+      "id": "carbon-design-kits-detail",
+      "url": "https://carbondesignsystem.com/designing/kits/figma/",
+      "sections": [
+        "Internal users",
+        "External users",
+        "Start designing",
+        "Sketch get/start/use/additional kits/info and deprecation notice"
+      ],
+      "local_refs": [
+        "references/documentation-intake.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Website commit d8783ad2ae3b5e59c58f58311491f8a2c4e62631; kit files not accessed",
+      "limits": "Images, actual kit contents, current Figma UI, account access, publication and runtime parity unverified. Sketch source example arithmetic and historical update prose conflict."
+    },
+    {
+      "id": "carbon-availability-empty-loading-detail",
+      "url": "https://carbondesignsystem.com/patterns/empty-states-pattern/",
+      "sections": [
+        "Disabled variations/default/read-only/hidden",
+        "Read-only overview/format/visual/content/accessibility",
+        "Empty-state anatomy/layout/types/alternatives/accessibility",
+        "Loading skeleton/indicator/progressive/load-more/accessibility"
+      ],
+      "local_refs": [
+        "references/patterns.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned Carbon website source; live MDN disabled/aria-disabled/readonly references checked",
+      "limits": "Images, GIFs, external onboarding kits and actual browser/AT state transitions unverified. Universal screen-reader exclusion and progress-indicator terminology qualified."
+    },
+    {
+      "id": "carbon-dialog-pattern-detail",
+      "url": "https://carbondesignsystem.com/patterns/dialog-pattern/",
+      "sections": [
+        "Overview/anatomy/types",
+        "Modal variants/dismissal",
+        "Non-modal tasks/variants",
+        "Button groups/behaviors/validation/loading",
+        "Components/accessibility/tab order"
+      ],
+      "local_refs": [
+        "references/patterns.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website source plus current W3C APG modality and initial-focus notes",
+      "limits": "Images and actual dialog browser/AT/state/rollback behavior unverified. General trapping, initial focus, movable window and Cancel rollback claims qualified."
+    },
+    {
+      "id": "carbon-actions-disclosures-detail",
+      "url": "https://carbondesignsystem.com/patterns/disclosures-pattern/",
+      "sections": [
+        "Common actions all12 actions and error content",
+        "Disclosures overview/profile/settings-filter/combo/accessibility",
+        "Patterns overview/universal/community inventory"
+      ],
+      "local_refs": [
+        "references/patterns.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website source and current W3C APG Button/Disclosure pages",
+      "limits": "Images/internal profile guidance and actual runtime/AT/clipboard/cancellation unverified. Malformed disclosure standards URL and stale read-only overview route recorded; action presentation not equivalent to HTML semantics."
+    },
+    {
+      "id": "carbon-filter-search-detail",
+      "url": "https://carbondesignsystem.com/patterns/search-pattern/",
+      "sections": [
+        "Filtering overview/selection/single/multi/category/batch/instant/states/reset",
+        "Search overview/anatomy/types/best practices",
+        "Basic/active/focused behavior and results",
+        "Search/faceted accessibility"
+      ],
+      "local_refs": [
+        "references/patterns.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website source; existing component API receipts are separate",
+      "limits": "Images/runtime/AT/capacity/suggestions unverified; ineffective universal keyboard, label omission, progress/capacity and stale/misdirected links qualified."
+    },
+    {
+      "id": "carbon-status-fluid-detail",
+      "url": "https://carbondesignsystem.com/patterns/status-indicator-pattern/",
+      "sections": [
+        "Full status prose",
+        "Injected high/glyph tables and full YAML",
+        "Light/dark/extended palettes and widget source",
+        "Full fluid-styles pattern prose"
+      ],
+      "local_refs": [
+        "references/status-and-dataviz.md",
+        "references/fluid-styles.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned Carbon website source plus current W3C Use of Color/Non-text Contrast",
+      "limits": "SVGs/images/rendered tables/AT/runtime unverified. Conflicting WCAG element counts, overstrict five-item quota, palette metadata, pt notation and universal brand assumptions qualified."
+    },
+    {
+      "id": "carbon-global-header-pattern-detail",
+      "url": "https://carbondesignsystem.com/patterns/global-header/",
+      "sections": [
+        "Overview/anatomy/persistence/task hierarchy",
+        "Configurations/global/local navigation",
+        "State/sense of place/drill-down/organizational schemes",
+        "DOM order/headings/skip/landmarks"
+      ],
+      "local_refs": [
+        "references/ui-shell.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned Carbon website source; runtime UI Shell receipts separately scoped",
+      "limits": "Artwork/GIFs/current browser/AT/responsive route relocation/state persistence unverified. IBM-prefix scope and application-owned restoration explicit."
+    },
+    {
+      "id": "carbon-forms-notifications-pattern-detail",
+      "url": "https://carbondesignsystem.com/patterns/forms-pattern/",
+      "sections": [
+        "Full Forms pattern prose and exact alignment-table reread",
+        "Full Notifications pattern prose",
+        "Actual React export presence/absence",
+        "Current W3C instructions/timing/interruption identity"
+      ],
+      "local_refs": [
+        "references/patterns.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Pinned website source; @carbon/react1.117.0 narrow export check; W3C current page text",
+      "limits": "Images/GIFs/external research/runtime/AT unverified. Bound-validation exemption, help/autofocus/variant heuristics and swapped AAA criterion numbers qualified."
+    },
+    {
+      "id": "carbon-contribution-detail",
+      "url": "https://carbondesignsystem.com/contributing/component-checklist/",
+      "sections": [
+        "Get started: Overview, Design, Code",
+        "Product development lifecycle",
+        "Component checklist: Design, Code, Documentation, Kit",
+        "Documentation: single/multiple-variant Usage and Style, Code, Accessibility, pattern templates, writing, publishing"
+      ],
+      "local_refs": [
+        "references/documentation-intake.md",
+        "references/evaluation.md"
+      ],
+      "coverage": "source-prose-reviewed",
+      "review_status": "public-source-text-reviewed",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Carbon website commit d8783ad2ae3b5e59c58f58311491f8a2c4e62631; upstream requirements distinguished from application policy",
+      "limits": "Images, videos, internal kit files, rendered templates, actual contribution and publication not tested. Latest guidance outside prior model snapshots."
+    },
+    {
+      "id": "carbon-releases-support-detail",
+      "url": "https://carbondesignsystem.com/help/faq/",
+      "sections": [
+        "Releases and ecosystem",
+        "Help: FAQ, contact, certificate of originality",
+        "News and meetups",
+        "Root homepage and deprecations",
+        "MediumPosts and Homepage wrapper source"
+      ],
+      "local_refs": [
+        "references/documentation-intake.md"
+      ],
+      "coverage": "source-prose-reviewed",
+      "review_status": "public-source-text-reviewed",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Website d8783ad2ae3b5e59c58f58311491f8a2c4e62631; selected React1.117.0/styles1.116.0/Sass1.105.0 checks",
+      "limits": "Dynamic feed, linked articles/events/internal resources, imagery and rendered pages not inspected; telemetry selected manifest/config only, no collector/payload/execution proof."
+    },
+    {
+      "id": "carbon-v11-migration-detail",
+      "url": "https://carbondesignsystem.com/migrating/guide/develop/",
+      "sections": [
+        "Guide: Overview, Design, Develop",
+        "Migration FAQ",
+        "Five narrow installed Sass compile probes"
+      ],
+      "local_refs": [
+        "references/documentation-intake.md"
+      ],
+      "coverage": "source-prose-reviewed",
+      "review_status": "public-source-text-reviewed",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Website d8783ad2ae3b5e59c58f58311491f8a2c4e62631; selected React1.117.0/styles1.116.0/Sass1.105.0 checks",
+      "limits": "No actual migration/codemods, design-kit operations, browser cascade/geometry, font-loading, AT or final model evaluation."
+    },
+    {
+      "id": "carbon-community-flows-detail",
+      "url": "https://carbondesignsystem.com/community/patterns/",
+      "sections": [
+        "Community overview, component index, domain guidance, pattern index",
+        "Create, Edit, Remove, Import, Export, Generate an API key",
+        "Chatbot: Overview, Usage, Content, Flows"
+      ],
+      "local_refs": [
+        "references/community-flows.md",
+        "references/documentation-intake.md",
+        "references/patterns-coverage.md"
+      ],
+      "coverage": "source-prose-reviewed",
+      "review_status": "public-source-text-reviewed",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-community-documentation",
+      "version_scope": "Website d8783ad2ae3b5e59c58f58311491f8a2c4e62631; selected React1.117.0 named export check; MDN platform checks",
+      "limits": "Catalog web extraction unavailable and direct DNS failed; images/GIFs/kit/internal assets and workflows/AT not tested. Latest reference outside prior model snapshots."
+    },
+    {
+      "id": "carbon-framework-mcp-detail",
+      "url": "https://carbondesignsystem.com/developing/get-started/",
+      "sections": [
+        "Developing get started",
+        "Web Components",
+        "Community: Angular, LWC, Other frameworks, Svelte, Vanilla, Vue",
+        "Developer resources: Core and Community",
+        "Carbon MCP: Overview, Onboarding, Prompts, Token conservation"
+      ],
+      "local_refs": [
+        "references/framework-integration.md",
+        "references/documentation-intake.md"
+      ],
+      "coverage": "source-prose-reviewed",
+      "review_status": "public-source-text-reviewed",
+      "reviewed_at": "2026-09-29",
+      "authority": "official-documentation",
+      "version_scope": "Website d8783ad2ae3b5e59c58f58311491f8a2c4e62631; narrow styles1.116.0/Sass1.105.0 recipe probes",
+      "limits": "No framework/client setup, live MCP/auth, internal access, rendered specimens or final model evaluation. Retrieved carbon-builder ZIP/GUIDELINES/user prompt/llms index require further content review; tutorials still pending."
     }
   ],
   "unresolved": [
@@ -760,5 +1261,132 @@
       "coverage": "five annotated before/after static compositions; White and Gray 100; 1440px and 390px captures",
       "limits": "Original teaching material, not official IBM exemplars or model-evaluation results. Static product controls; target-version Carbon integration and product interaction verification remain open."
     }
-  ]
+  ],
+  "audit_2026_09_29": {
+    "website_source_commit": "d8783ad2ae3b5e59c58f58311491f8a2c4e62631",
+    "retrieved_mdx_files": 317,
+    "indexed_source_headings": 4361,
+    "status": "in-progress; fetched/indexed does not mean fully read",
+    "implementation_runtime": "one intermediate snapshot practical probe failed; final candidate not evaluated",
+    "local_routing": "references/documentation-intake.md",
+    "reviewed_source_pages": 317,
+    "partial_source_pages": 0,
+    "retrieved_only_pages": 0,
+    "installed_api_receipts": {
+      "package": "@carbon/react@1.117.0",
+      "scope": "AccordionItem renderToggle; Checkbox readOnly/indeterminate; CodeSnippet/Copy clipboard/rows; MenuButton/ComboButton sizing/translation; Menu radio groups/shortcut hints; OverflowMenu flag switch; Modal focus/close props; Pagination/PaginationNav indexes/counts/native controls; Notification roles/timeout/focus/Callout; Popover controlled close/autoAlign/floating flags; ProgressBar status/value/live text; ProgressIndicator controlled index/button keyboard/state translation; RadioButton/Group native markup/readonly/selection callbacks; Search clear/Escape/landmark/native input; Select native markup/readOnly event suppression; Slider unstable range props/multiplier/keys/value semantics; StructuredList roles/native input names/row selection dispatch; Tabs activation/index/dismissal/panel/scroll controls; Tag variants selected/close/operational markup and handlers; TextInput/TextArea counters/native props/error associations; PasswordInput reveal state/button; Tile/ClickableTile/SelectableTile/ExpandableTile/RadioTile/TileGroup markup/state/keys/decorators; Toggle/useControllableState button state/naming/callbacks/readOnly; Toggletip coordinated state/trigger/content/close; Tooltip label/description/hover/Escape and DefinitionTooltip; TreeView/TreeNode flag modes/state/callbacks/traversal/link markup; UIShell Header/Container/Name/Menu/MenuItem/MenuButton/GlobalAction/Navigation/SideNavItems/SkipToContent/Content; SideNav/Menu/Link/MenuItem; HeaderPanel/Switcher/Item and shell Link; Grid/CSSGrid/Column/ColumnHang/AspectRatio/Stack layout APIs; layout conversion and grid visibility Sass compilation",
+      "evidence": "Installed declarations/source inspected in isolated practical fixture",
+      "limits": "Not a browser or assistive-technology pass; implementation model packets are separate, exact snapshots."
+    },
+    "practical_evaluation": {
+      "case": 32,
+      "snapshot_sha256": "70ddf677712f92e423737c7de853d73cfcf69a138ea69308a2817f3e68b6121a",
+      "model": "gpt-5.5",
+      "reasoning": "medium",
+      "verdict": "fail",
+      "assertions": {
+        "pass": 6,
+        "fail": 4,
+        "not_tested": 1
+      },
+      "method": "Known author-written prompt; root author reviewed source and actual browser states/screenshots. Scorer validates identity and evidence integrity, not independent semantic truth.",
+      "limits": "Latest reference amendments lie outside snapshot. No final candidate pass, complete contrast, screen reader, clipboard denial/exact-payload proof, independent rebuild or repeated holdout."
+    },
+    "sass_receipt": {
+      "packages": {
+        "@carbon/layout": "11.60.0",
+        "@carbon/grid": "11.63.0",
+        "@carbon/styles": "1.116.0",
+        "sass": "1.105.0"
+      },
+      "method": "Six narrow compileString probes; five compile and documented helper import fails; installed replacement compiles",
+      "limits": "No rendered geometry, AT or final candidate model evaluation"
+    },
+    "type_receipt": {
+      "package": "@carbon/type11.68.0",
+      "sass": "1.105.0",
+      "method": "Nine narrow compileString probes; six compile and three documented or missing-argument recipes fail",
+      "limits": "No loaded-face, rendering, localization, zoom, AT or final candidate model pass"
+    },
+    "themes_receipt": {
+      "package": "@carbon/themes11.82.0",
+      "sass": "1.105.0",
+      "method": "Nine compileString probes; seven compiled outputs including questionable recipes, two errors; selected JS exports and React Theme/Layer source checked",
+      "limits": "No browser cascade, OS-change, persistence, overlays, contrast or final candidate evaluation"
+    },
+    "motion_receipt": {
+      "package": "@carbon/motion11.53.0",
+      "method": "Seven compile probes; four outputs compile, three errors; selected JS export presence and easing output",
+      "limits": "No video/Generator, rendered animation, cancellation, browser reduced-motion or final model pass"
+    },
+    "icons_receipt": {
+      "package": "@carbon/icons-react11.89.0",
+      "method": "Nine actual SSR cases and installed Icon/helper/Add/WarningFilled source",
+      "limits": "No browser AX/AT, visuals, contrast, targets, pictograms runtime or final model pass"
+    },
+    "color_receipt": {
+      "packages": {
+        "@carbon/colors": "11.59.0",
+        "@carbon/themes": "11.82.0"
+      },
+      "method": "All 19 injected source groups read: 297 tokens, 1188 theme entries; full JS export comparison and four Sass output inspections",
+      "limits": "590 literal differences include alpha spellings and absent component JS exports; not a defect count. Component Sass availability, rendering, full contrast, AT and final model evaluation remain unverified"
+    },
+    "migration_receipt": {
+      "method": "Five narrow Sass compile probes; all compile, string true does not emit flex-row while boolean true does",
+      "limits": "No actual migration, codemod, browser or final model pass"
+    },
+    "community_receipt": {
+      "method": "All14 source pages reviewed; nine selected named exports checked",
+      "limits": "Current catalog inaccessible in these checks; no community runtime, AT or final model evaluation"
+    },
+    "mcp_sass_receipt": {
+      "method": "Three narrow compilation cases: short recipe and namespace repair fail, full recipe compiles",
+      "limits": "No actual MCP/client or browser/AT proof"
+    },
+    "react_tutorial_receipt": {
+      "source": "Eight pinned React tutorial MDX sources, including all raw code fences",
+      "checks": "Two Sass assembly probes: initial type-only fragment fails, spacing import compiles; selected Next16.3.6 local docs and App Router Link source; React1.117.0 TableExpandedRow source",
+      "limits": "No tutorial build, rendered tutorial, live API, AT or final candidate evaluation"
+    },
+    "angular_tutorial_receipt": {
+      "source": "Seven pinned Angular tutorial MDX sources including raw imports/templates/examples",
+      "checks": "Synthetic exact slice/split-expression probe; official Angular environment/lifecycle documents and IBM Cloud Foundry deprecation notice read",
+      "limits": "No installed Angular/Apollo runtime, tutorial build, live GraphQL, browser, AT or final candidate evaluation"
+    },
+    "vue_tutorial_receipt": {
+      "source": "Seven pinned Vue tutorial MDX sources read raw in full",
+      "checks": "jsdom target lookup and exact-expression zero-page/null-cell/identity probes; official Vue CLI env/maintenance, ARIA article and WCAG contrast sections",
+      "limits": "No Vue/Apollo/Carbon Vue installation/runtime, tutorial build, live GraphQL, browser, AT or final candidate evaluation"
+    },
+    "web_components_tutorial_receipt": {
+      "source": "Six pinned Web Components tutorial MDX sources read raw in full",
+      "checks": "Synthetic jsdom/JS sink, tab-target, media-object, pagination probes; four Sass compile probes all compile; official MDN/Vite selected sections",
+      "limits": "No custom-element package installed/runtime, tutorial build, CDN, API, browser/AT or final candidate model evaluation"
+    },
+    "supplemental_mcp_documents": {
+      "source_commit": "d8783ad2ae3b5e59c58f58311491f8a2c4e62631",
+      "source_content_reviewed": 17,
+      "pending_source_text": 0,
+      "reference": "references/mcp-result-validation.md",
+      "limits": "Separate from317MDX pages; linked targets/injected assets/live MCP schemas/runtimes/browser/AT not established by text review."
+    },
+    "post_snapshot_amendments": {
+      "references": [
+        "references/practical-implementation-review.md",
+        "references/dynamic-svg-libraries.md",
+        "references/chart-example-integration.md"
+      ],
+      "evaluated": false,
+      "practical_snapshot_sha256": "45a1163d4d5c244f5408d1bd34b31905564e736cd57e2393b655a5e123461f35",
+      "practical_result": "fail: 6 pass, 4 fail, 1 not tested; independent rebuild and author browser review",
+      "gallery_scope": "19 website sources and resolved icon/pictogram metadata taxonomy reviewed;4351 records structurally scanned; not every glyph/render/AT",
+      "pending": "Publication/installation unfinished; exact clipboard readback, full contrast/AT and broader rendered coverage remain unverified.",
+      "chart_source_scope": "29 unbundled demo/data JS sources fully content-reviewed, plus complete create-codesandbox.js helper. The 167407-byte generated UMD bundle had edges inspected only, is not imported by the reviewed ES-module index, and is excluded from full-content review. No chart build, rendered chart, sandbox or assistive-technology proof.",
+      "latest_evaluated_snapshot_sha256": "add261d63d7e9af095b925074b35a353cac151b3fd846b8b6696d91b48a44058",
+      "latest_practical_result": "fail:8pass2fail1not_tested; visual4/4/4/4/3; author browser review, exact independent JS/CSS rebuild, observed delivered Plex bytes and real browser clipboard-policy denial",
+      "chart_guidance_result": "pass6/6; new author-written guidance case, no runtime/AT/holdout claim",
+      "current_post_snapshot_changes": "Domain-state/reset consistency and independent lang/dir guidance added after add261; these amendments were reviewed against observed failure and W3C direction/language guidance, not a fresh model practical pass."
+    }
+  }
 }

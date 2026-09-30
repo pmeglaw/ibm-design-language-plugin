@@ -1,6 +1,6 @@
 # Icons and pictograms
 
-Read this when selecting, sizing, aligning, coloring, or coding a Carbon icon or pictogram. It reflects the Library, Usage, and Code pages for both categories, last updated 9 September 2026 (React Components `^1.115.0`). Use the live libraries to confirm the current component name and import path; do not reproduce or invent a near-match when an approved symbol exists.
+Read this when selecting, sizing, aligning, coloring, or coding a Carbon icon or pictogram. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed both Usage and Code source pages at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631` and inspected/SSR-rendered selected icons-react11.89.0 APIs. Dynamic libraries, individual artwork visuals and pictograms-react runtime remain unverified. Use the live libraries to confirm the current component name and import path; do not reproduce or invent a near-match when an approved symbol exists.
 
 ## Choose the right family
 
@@ -52,7 +52,7 @@ import { Add } from '@carbon/icons-react';
 
 The default size is 16. Set fill through a semantic class rather than inline raw color. For a library two-tone icon, target `[data-icon-path='inner-path']` only as documented for that icon.
 
-Icon components default to decorative `aria-hidden="true"`. If the SVG itself conveys information, supply `aria-label` or `aria-labelledby`; Carbon then adds the appropriate role. If the icon sits inside a button or link, normally name the control and leave the SVG decorative. Make the SVG directly focusable with `tabIndex={0}` only when the SVG itself is the interactive element—do not add a second focus stop inside an already interactive control.
+Icon components default to decorative `aria-hidden="true"`. If the SVG itself conveys information, supply `aria-label` or `aria-labelledby`; Carbon then adds the appropriate role. If the icon sits inside a button or link, normally name the control and leave the SVG decorative. Prefer a native button or link for an action and keep the SVG decorative. `tabIndex` alone does not implement button semantics, keyboard activation or disabled behavior. Do not add a second focus stop inside an already interactive control.
 
 ## Pictograms
 
@@ -117,7 +117,7 @@ npm install -S @carbon/pictograms-react
 import { Airplane } from '@carbon/pictograms-react';
 ```
 
-CommonJS and UMD builds are also available. Style fill with a semantic class. Accessibility behavior matches icons: pictograms default to decorative; label the SVG only when its meaning is not otherwise expressed, and avoid making it a separate focus target inside another control.
+CommonJS and UMD builds are also available. Style fill with a semantic class. The website documents the same decorative/naming behavior for pictograms, but that package was not installed or runtime-verified in this audit; label the SVG only when its meaning is not otherwise expressed, and avoid making it a separate focus target inside another control.
 
 ## Review checks
 
@@ -127,3 +127,17 @@ CommonJS and UMD builds are also available. Style fill with a semantic class. Ac
 - Icons meet 4.5:1 on every state surface.
 - Pictograms are at least 48px, retain one-quarter-grid clearance, and are not acting as UI controls or logos.
 - Expressive pictograms are rare, background-compatible, and never placed over a gradient.
+
+## Installed icon and documentation boundaries (29 September audit)
+
+- React icons default to 16px and `fill="currentColor"`. `Add` uses its 32px viewBox even at size24, while `WarningFilled` selects size-specific artwork at 16/20/24 and otherwise its 32px version. Do not infer every icon uses the same viewBox or that any arbitrary scaled size is an approved artboard. Additional width/height props can override the size dimensions; verify square aspect and optical alignment in rendered layout.
+- Actual SSR markup from icons-react11.89.0 confirms: an unlabelled icon gets `aria-hidden="true"`; setting `aria-hidden={false}` without a name does not defeat that helper behavior. Supplying a non-empty label adds `role="img"`, but an explicitly supplied `aria-hidden={true}` is retained. Do not assume a label always makes the SVG exposed. Provide one coherent decorative or informative contract and inspect its accessible representation.
+- `tabIndex={0}` without a label is dropped by the inspected helper. With a label it emits tabindex0 and focusabletrue. This is focus metadata, not a tested accessibility pass or support promise for IE11. Prefer `<button type="button" aria-label="Add"><Add /></button>` for an icon-only action, with real click/keyboard behavior, target size and visible focus. For a visible text label, name the control through that text and keep the adjacent icon decorative.
+- WarningFilled has an inner-path marker with opacity0; the two-tone override needs both the intended fill and opacity1. Website examples use an unrelated label “Add” and mismatched class names for a warning icon; correct action/status semantics and selectors rather than copying them. Raw rebeccapurple/yellow examples show API mechanics, not approved product colors. Its code fences marked CSS also contain `//` comments: use valid CSS comments or actual Sass.
+- The Usage page's monochrome rule has the Code page's documented two-tone exception. Its statement about interaction backgrounds explicitly references Carbon v10; check the current component's state tokens before assuming its icon foreground never changes. Carbon's documented icon contrast target here is 4.5:1; this is a design-system rule, not a blanket description of every accessibility criterion. Verify the actual foreground, inner path and every state surface.
+- Pictogram themes are separate artwork, especially expressive gradients. Do not assume the productive React component exports every expressive variant or that a single inherited fill recolors all gradient layers. Confirm the exact file, theme, dimensions and provenance before using it. Do not add packages merely to follow installation examples when existing assets or dependencies already meet the need.
+- The expressive theme table overlaps at grade50 and lists monochrome variants for mid-tones, while nearby guidance rejects expressive/gradient art on mid-tones. Treat that as a documentation distinction needing exact-asset review; use the appropriate monochrome artwork or a recommended extreme background and verify contrast, rather than inventing a universal grade50 choice. Clearance follows the scaled artwork grid; SVG width alone is not proof of the required quarter-grid spacing or touch target.
+
+Sources: [Icons Usage](https://carbondesignsystem.com/elements/icons/usage/), [Icons Code](https://carbondesignsystem.com/elements/icons/code/), [Pictograms Usage](https://carbondesignsystem.com/elements/pictograms/usage/), [Pictograms Code](https://carbondesignsystem.com/elements/pictograms/code/). Nine actual SSR cases establish emitted markup only; no browser accessible-name computation, assistive technology, library visual review, target geometry, contrast, pictograms runtime or final candidate model pass is implied.
+
+For injected gallery metadata, search/category scope, dynamic asset resolution and source-level focus/copy/download concerns, see [dynamic SVG libraries](dynamic-svg-libraries.md).
