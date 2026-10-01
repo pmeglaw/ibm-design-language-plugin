@@ -23,6 +23,8 @@ Design decisions should help people understand the task, act confidently, and re
 
 When a composition decision benefits from a visual analogue, use one relevant [casebook study](references/visual-casebook.md) to examine visible choices and tradeoffs. Adapt its reasoning to the actual task; the examples are teaching material, not product acceptance evidence.
 
+For a product shell header, use the [Carbon header visual benchmark](references/ui-shell.md#what-good-looks-like-header-benchmark) in both design and critique. The linked Carbon guidelines and React Storybook are the reference for its compact silhouette, identity/navigation hierarchy and contiguous utilities. Compare the actual rendered header with the relevant example; preserve approved brand authority and verify behavior separately.
+
 **Focused guidance:** Read only the references needed to answer the question. Explain a concrete decision and its conditions rather than prescribing an unrelated build or test sequence.
 
 Identify the visual register: productive interfaces use efficient, predictable layout and fixed UI typography; expressive reading/arrival regions can use fluid type, imagery, and greater scale. Mix deliberately by region, with consistent component behavior. A marketing page should not acquire product shell chrome simply because Carbon is in use. An approved product brand can override generic values through semantic roles; see [color authority](references/color-and-brand.md).

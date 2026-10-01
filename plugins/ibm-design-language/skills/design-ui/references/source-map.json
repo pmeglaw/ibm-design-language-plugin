@@ -12,6 +12,25 @@
   ],
   "sources": [
     {
+      "id": "carbon-header-visual-benchmark",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines",
+      "sections": [
+        "Guidelines prose and anatomy illustration",
+        "React overview API and Navigation and Actions rendered story",
+        "Positive header composition and local correction pairs"
+      ],
+      "local_refs": [
+        "references/ui-shell.md",
+        "references/taste.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-10-01",
+      "authority": "official-documentation",
+      "version_scope": "Live Guidelines and https://react.carbondesignsystem.com/?path=/docs/components-ui-shell-header--overview; Storybook label @carbon/react@1.117.0",
+      "limits": "Browser source/example inspection only: white Navigation and Actions story at wide and narrower preview widths. Other stories, full theme/responsive matrix, keyboard/AT and generated-product quality not tested. Correction pairs are labeled local craft judgments; historical receipts unchanged."
+    },
+    {
       "id": "ibm-philosophy",
       "url": "https://www.ibm.com/design/language/philosophy/principles/",
       "sections": [

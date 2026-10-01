@@ -48,6 +48,12 @@ Prioritize findings by task impact, but inspect every material dimension. A hier
 
 Use one relevant [visual casebook](visual-casebook.md) study when a task benefits from a visible example. Explain why the choice fits the actual task and when an alternative would be better. The paired studies deliberately combine changes; they do not establish measured usability or model improvement.
 
+### Product shell header
+
+Use the [Carbon header benchmark](ui-shell.md#what-good-looks-like-header-benchmark) as the positive visual standard: a compact, continuous top band with a clear product name, adjacent navigation and a contiguous utility group. Its quality comes from proportion, alignment, restraint and stable orientation. Compare silhouette, type scale, spacing, utility grouping and the boundary between shell navigation and page work. A floating rounded container, oversized wordmark or row of separated utility pills needs an explicit product rationale; adding decoration alone is not a refinement of this pattern.
+
+Choose the matching example and compare at equivalent viewport, theme and state. Record each material mismatch as an observation, task impact and correction, or a justified product deviation. The benchmark's colors, IBM name and optional utilities are not a requirement to copy its branding or invent capabilities. Rendered resemblance does not establish keyboard, routing or accessibility correctness.
+
 ## Cross-view consistency
 
 When the requested scope includes sibling pages, tabs or repeated sections, review them as a set as well as individually. Enumerate the requested views; record each as inspected, partially inspected or uninspected, with the screenshot/runtime/source evidence used. Do not imply full coverage when a view or required state was inaccessible.
