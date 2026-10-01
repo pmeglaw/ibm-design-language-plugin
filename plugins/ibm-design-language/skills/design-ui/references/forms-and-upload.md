@@ -79,7 +79,7 @@ These correction pairs are local craft heuristics, not additional Carbon specifi
 
 **Inspection boundary.** Guidelines prose and the default anatomy illustration, plus the React overview's white desktop empty default field, were inspected on 2026-10-01. Storybook identified `@carbon/react@1.117.0`. Size support/defaults are package-source evidence, not measurements of all four rendered sizes. Fluid/expandable interactions, other themes, responsive/RTL states, keyboard/assistive technology and generated-product quality were not tested for this amendment. Historical evaluation results retain their original scope.
 
-Public Form and File uploader Usage/Style/Code/Accessibility source text reviewed 2026-09-29 at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`. This supplements [patterns](patterns.md#forms) and [fluid styles](fluid-styles.md); it does not replace the larger Forms pattern or each input's installed API. Images, live examples and runtime remain unverified.
+Public Form and File uploader Usage/Style/Code/Accessibility source text reviewed 2026-09-29 at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`. This supplements [patterns](patterns.md#forms) and [fluid styles](fluid-styles.md); it does not replace the larger Forms pattern or each input's installed API. Images, live examples and runtime were unverified in that review; the later Form benchmark below adds bounded visual evidence only.
 
 ## Form handoff
 
@@ -89,13 +89,40 @@ Public Form and File uploader Usage/Style/Code/Accessibility source text reviewe
 - Fluid inputs use disclosed help because they lack the usual helper-text area. This documented exception does not permit hover-only essential instructions: use the supported keyboard/touch-operable toggletip or component help contract, and expose the relevant description. Enter/Space opens an information toggletip and Escape dismisses it. Tooltip text with interactive links needs a suitable interaction pattern.
 - Keep default inputs aligned to wide-grid columns, with about 32px vertical separation; fluid inputs form an attached unit with no open spacing and a 1px condensed gutter between columns. Don't hang default field labels into gutters.
 - Prefer one column on mobile. Where a desktop row has two logically related fields, account for validation height as a row: a longer error on one side must not leave the other field visually detached. Avoid CSS order that changes reading/keyboard sequence.
-- Input height follows the selected variant: 32/40/48px default, 64px fluid before messages. Use actual type tokens rather than copying inconsistent numbers: Form Style lists 28px with heading-03, while Data table Style lists heading-03 as 20px. Verify installed token definitions and the chosen hierarchy.
-- Form Usage's read-only Coming soon row conflicts with current input-specific guidance. Check each supported control and [control-state semantics](accessibility.md#control-states); do not equate read-only with disabled or claim that every input supports a native readonly attribute.
+- Form Guidelines describes 32/40/48px default inputs and 64px fluid inputs before messages. This is not a universal list of every control's supported sizes: see the [benchmark reconciliation](#what-good-looks-like-form-benchmark) for the Web Components story's selective xs support. Use actual type tokens rather than copying inconsistent numbers: the September Form Style source lists 28px with heading-03, while Data table Style lists heading-03 as 20px. Verify installed token definitions and the chosen hierarchy.
+- The September Form Usage source labeled read-only Coming soon; the live Guidelines checked on 2026-10-01 now describes it as an available state. Check each supported control and [control-state semantics](accessibility.md#control-states); do not equate read-only with disabled, describe it as universally noninteractive, or claim that every input supports a native readonly attribute.
 - Apply AI styling to the parts actually generated, not a whole mixed-origin form. Saved original suggestions and explanation access remain separate from user edits and submission.
 
 Verify native submission/Enter behavior, supporting button types, labels/instructions, required/error association, loading and duplicate prevention, failure preservation, help keyboard/touch access, multicolumn error growth, focus and actual mobile/zoom/theme behavior.
 
 Sources: [Form Usage](https://carbondesignsystem.com/components/form/usage/), [Style](https://carbondesignsystem.com/components/form/style/), [Code](https://carbondesignsystem.com/components/form/code/), [Accessibility](https://carbondesignsystem.com/components/form/accessibility/).
+
+### What good looks like: Form benchmark
+
+Use these owner-selected official references when designing or critiquing a Carbon form:
+
+- [Carbon Form guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/form/guidelines): optional context header, form body and action footer; default/fluid anatomy, alignment, field content and states.
+- [Web Components Form Default story](https://web-components.carbondesignsystem.com/?path=/story/components-form--default): a rendered composition of labeled controls, adjacent helper text, related fields and a final named action. This is a Web Components example, not the React Form API or a requirement to reproduce its project setup fields.
+
+**Positive composition.** Default fields have a shared reading edge: concise labels sit above restrained input surfaces, and helper text stays close to the field it explains. Related inputs may share a row when their relationship and available width support it; other controls can span the form. Radio/checkbox groups have clear group labels. Preserve enough separation to scan from one question to the next without making help look like the next field's label. The final action belongs after the input sequence and names the task. Add a title or instructions only when they provide useful context. Choose fluid's internal labels and attached fields as a complete composition, not a mixture of isolated default and fluid styling.
+
+These correction pairs are local craft heuristics, not additional Carbon specifications:
+
+| Observation | Direction |
+|---|---|
+| Labels, inputs and help start on unrelated edges | Restore the shared grid/reading edge and keep help visually associated with its field |
+| Every input has a decorative card or heavy enclosure | Let question grouping, spacing and supported input surfaces establish structure |
+| Unrelated fields share a row or validation breaks the row rhythm | Group by meaning, allow the row to grow together for errors, and reflow to one column when needed |
+| A placeholder carries the only label or essential instructions | Provide a persistent label and the appropriate associated helper treatment |
+| Primary action is detached from the questions or a supporting action dominates | Place the task action after the form and set supporting emphasis according to the actual workflow |
+
+**Compare the render.** At equivalent viewport, theme, zoom, input size and state, compare field/label edges, label-to-input and input-to-help relationships, group spacing, row proportions, error growth and action placement. Include long labels/help, validation and the required narrow layout in product verification. Keep semantic brand roles authoritative. The demo's field inventory, placeholder text, upload button emphasis, full-width Create project button and sample password policy are not universal product requirements. Visual similarity does not establish form participation, validation, submission, focus or accessibility; verify those separately using the consuming implementation.
+
+**Guidelines and demo reconciliation, 2026-10-01.** Guidelines recommends roughly 32px vertical spacing and 32px wide gutters between default form columns; fluid uses flush stacking and a 1px condensed column gutter. The inspected default story's Project name and Project ID inputs were each 292px wide and 40px high, at x=42 and x=350: a 16px horizontal gap. That example-specific gap differs from the default-form recommendation. Start from the Guidelines for authored layouts and justify any contextual exception rather than promoting a demo measurement into a spacing rule.
+
+Guidelines lists default heights of 32/40/48px and fluid height 64px. The live Web Components story selects md and its size-control description says xs is supported by TextInput, Select and Search, while other components clamp to sm. This describes the story's composition; it is not proof of a global Form size prop, identical support across every input, or a particular published package version. Check installed custom-element tags, properties, events, slots and size support for each control before implementation. React consumers must use their own supported components and APIs. The story's readOnly, invalid, skeleton and onSubmit controls likewise do not prove every child's semantics, native form participation or an application submission result. Current Guidelines describes read-only without the historical Coming soon label; preserve focus, selection/copy and readable values where supported.
+
+**Inspection boundary.** Current Guidelines prose, the white desktop default Web Components form from its upper fields through its final action, story-control descriptions and the single paired-field geometry above were inspected on 2026-10-01. No Web Components package version was established for this live deployment. Other sizes, fluid/modal/AI/error variants, responsive/RTL/themes, keyboard, submission and assistive technology were not tested. This is reference evidence, not generated-product evaluation; the [local form case study](casebook/form.md) remains a separate author-created teaching example.
 
 ## Number input
 

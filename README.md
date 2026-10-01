@@ -1,12 +1,12 @@
 # IBM Design Language plugin
 
-Permanent source package for `ibm-design-language@jp-personal`, version 1.1.22. Canonical public repository: https://github.com/pmeglaw/ibm-design-language-plugin. Use the reviewed release commit and checksums for recovery; release publication and CI status are recorded on GitHub.
+Permanent source package for `ibm-design-language@jp-personal`, version 1.1.23. Canonical public repository: https://github.com/pmeglaw/ibm-design-language-plugin. Use the reviewed release commit and checksums for recovery; release publication and CI status are recorded on GitHub.
 
 ## Contents
 
-- `plugins/ibm-design-language/`: the 1.1.22 plugin, including the visual casebook, sources, evaluator and tests.
+- `plugins/ibm-design-language/`: the 1.1.23 plugin, including the visual casebook, sources, evaluator and tests.
 - `.agents/plugins/marketplace.json`: portable Codex marketplace. Plugin paths resolve from this repository root.
-- `releases/`: the 1.1.22 ZIP plus preserved earlier ZIPs, file manifests and checksums for recovery.
+- `releases/`: the 1.1.23 ZIP plus preserved earlier ZIPs, file manifests and checksums for recovery.
 - `evidence/`: selected existing package, installation, casebook and comparison receipts. Historical absolute paths identify the original machine; they are not dependencies. Full model transcripts and screenshot archives remain in the original task workspace and are not included here.
 - `scripts/verify.py`: offline release, source and marketplace checks plus synthetic evaluator tests. No model calls.
 
@@ -36,7 +36,7 @@ The [1.1.10 candidate report](evidence/1.1.10-candidate/REPORT.md) records its l
 
 ## Release validation
 
-See the [1.1.12 candidate evidence](evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.22). Follow [recovery](docs/RECOVERY.md) for checksum and destination-installation checks.
+See the [1.1.12 candidate evidence](evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.23). Follow [recovery](docs/RECOVERY.md) for checksum and destination-installation checks.
 
 Version 1.1.13 replaces HTML-string rendering in the offline casebook with DOM construction and strict control-value checks. See the [casebook regression tests](tests/casebook/README.md) for all 20 supported combinations and hostile-input/recovery coverage.
 
@@ -55,3 +55,5 @@ Version 1.1.20 adds a source-linked UI shell header visual benchmark and concret
 Version 1.1.21 adds an official data table visual benchmark and version-qualified sizing reconciliation. See the [table guidance review](evidence/1.1.21-table/REPORT.md) for source inspection and evidence limits.
 
 Version 1.1.22 adds an official Search visual benchmark and the supported four-size mapping. See the [Search guidance review](evidence/1.1.22-search/REPORT.md) for source inspection and evidence limits.
+
+Version 1.1.23 adds the official Form visual benchmark and Web Components demo boundaries. See the [Form guidance review](evidence/1.1.23-form/REPORT.md) for spacing/sizing reconciliation and evidence limits.
