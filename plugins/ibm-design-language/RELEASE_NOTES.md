@@ -1,4 +1,6 @@
-# IBM Design Language 1.1.21
+# IBM Design Language 1.1.22
+
+Version 1.1.22 adds an explicit Search visual benchmark, routed from design-ui and its taste rubric, using the owner-selected Carbon Search Guidelines and React Search overview. It teaches field silhouette, magnifier/text alignment, clear-control space, variant choice and placement through labeled craft correction pairs. Inspected React 1.117.0 and styles 1.116.0 confirm xs/sm/md/lg support at 24/32/40/48px, correcting the earlier three-height summary. Approved branding and historical evaluations remain intact. Bounded reference inspection and retrieval review do not establish generated-UI quality, all-size runtime geometry or accessibility.
 
 Version 1.1.21 adds an official data table visual benchmark, routed from design-ui and its taste rubric, using the owner-selected Carbon Guidelines and React Basic overview. It teaches column alignment, density, restrained boundaries, action placement and long-content handling through labeled craft correction pairs. It reconciles conflicting toolbar sizing prose with inspected React/style package support, distinguishing the medium design recommendation from the React large default. Approved branding, component authority and historical evaluations remain intact. Reference inspection and bounded retrieval review do not establish improved generated UI, runtime toolbar geometry or accessibility.
 
