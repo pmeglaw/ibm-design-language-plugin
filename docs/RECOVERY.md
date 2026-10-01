@@ -2,13 +2,13 @@
 
 ## Release identity
 
-- Version: `1.1.20`
-- Immutable tag: `v1.1.20`
-- `plugin.zip` SHA-256: `ceb4837e5b1587a4079fafac4f27e8cb58985a46bc5f18bbcbdc12c9a47914c5`
-- Manifest: `releases/1.1.20/files.json`
-- Publication and full release commit: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.20)
+- Version: `1.1.21`
+- Immutable tag: `v1.1.21`
+- `plugin.zip` SHA-256: `aa537d56d87b03ec1dd76d8f33da52f4a0071e76e4f16de3a924f3c8d7f52a40`
+- Manifest: `releases/1.1.21/files.json`
+- Publication and full release commit: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.21)
 
-After publication, fetch the tag and resolve `git rev-parse 'v1.1.20^{commit}'`.
+After publication, fetch the tag and resolve `git rev-parse 'v1.1.21^{commit}'`.
 Record that full commit alongside the checksum. Pin marketplace installation to
 that commit rather than an evolving branch. A missing release/tag means
 publication is incomplete; a locally prepared ZIP is not proof of publication.
@@ -21,10 +21,12 @@ discovery. Keep those checks explicit.
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.20/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.21/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui` and `ibm-design-language:review-product-experience` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Previous release rollback identity
+
+Version 1.1.20: commit `d758a5031262a6eea4efdfba4e3f11bf5e363914`, tag `v1.1.20`, ZIP SHA-256 `ceb4837e5b1587a4079fafac4f27e8cb58985a46bc5f18bbcbdc12c9a47914c5`. Its frozen archive and manifest remain in `releases/1.1.20/`.
 
 Version 1.1.19: commit `28d050cf314d786e0373baf1a8c3b9a6f2508080`, tag `v1.1.19`, ZIP SHA-256 `e0c22711cb02604092a648b6be9fdbe6b5598c04e653355ed9c657dae8ba3c99`. Its frozen archive and manifest remain in `releases/1.1.19/`.
 

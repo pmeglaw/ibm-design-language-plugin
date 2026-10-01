@@ -54,6 +54,10 @@ Use the [Carbon header benchmark](ui-shell.md#what-good-looks-like-header-benchm
 
 Choose the matching example and compare at equivalent viewport, theme and state. Record each material mismatch as an observation, task impact and correction, or a justified product deviation. The benchmark's colors, IBM name and optional utilities are not a requirement to copy its branding or invent capabilities. Rendered resemblance does not establish keyboard, routing or accessibility correctness.
 
+### Data table
+
+Use the [Carbon data table benchmark](composition.md#what-good-looks-like-data-table-benchmark) as the positive visual standard: aligned comparison columns, deliberate density, restrained row boundaries and a clear relationship between collection controls and data. Compare the rendered candidate with the matching official example at equivalent viewport, theme, zoom and state. Check reading edges, header/body contrast, cell padding, row rhythm, toolbar emphasis, pagination and long-content handling. Explain task-specific departures; neither extra whitespace nor squeezing all columns onto one screen automatically improves a table. Read the benchmark's sizing reconciliation before treating design recommendations as released props. The local casebook teaches composition but does not replace official component examples or behavior verification.
+
 ## Cross-view consistency
 
 When the requested scope includes sibling pages, tabs or repeated sections, review them as a set as well as individually. Enumerate the requested views; record each as inspected, partially inspected or uninspected, with the screenshot/runtime/source evidence used. Do not imply full coverage when a view or required state was inaccessible.

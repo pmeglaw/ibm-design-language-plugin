@@ -1,4 +1,6 @@
-# IBM Design Language 1.1.20
+# IBM Design Language 1.1.21
+
+Version 1.1.21 adds an official data table visual benchmark, routed from design-ui and its taste rubric, using the owner-selected Carbon Guidelines and React Basic overview. It teaches column alignment, density, restrained boundaries, action placement and long-content handling through labeled craft correction pairs. It reconciles conflicting toolbar sizing prose with inspected React/style package support, distinguishing the medium design recommendation from the React large default. Approved branding, component authority and historical evaluations remain intact. Reference inspection and bounded retrieval review do not establish improved generated UI, runtime toolbar geometry or accessibility.
 
 Version 1.1.20 adds an explicit UI shell header visual benchmark, routed from design-ui and its taste rubric, using the owner-selected Carbon Guidelines and React Storybook. It teaches compact full-width composition, identity/navigation hierarchy, contiguous utilities and shell-versus-page action placement through labeled craft correction pairs. Approved branding, semantic themes, installed-version authority and separate behavior verification remain intact. Live reference inspection and bounded local retrieval review are not a generated-UI quality or accessibility evaluation. Prior evaluation verdicts remain unchanged.
 
