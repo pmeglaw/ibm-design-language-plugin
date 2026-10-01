@@ -10,7 +10,7 @@ Copy-ready prompts for implementation or review. Originally prepared 2026-09-21 
 ## Use in a new session
 
 1. Open the intended project or checkout.
-2. Select the IBM Design Language plugin/skill offered by the host. Codex exposes `ibm-design-language:ibm-design-language` for design/build and `ibm-design-language:review-product-experience` for a flow or multi-view audit. For Seat Planner, load its project brand-system guidance too. Autocomplete syntax varies by host; a plain-text @name or an installed plugin alone does not prove that the intended entrypoint loaded.
+2. Select the IBM Design Language plugin/skill offered by the host. Codex exposes `ibm-design-language:design-ui` for design/build and `ibm-design-language:review-product-experience` for a flow or multi-view audit. For Seat Planner, load its project brand-system guidance too. Autocomplete syntax varies by host; a plain-text @name or an installed plugin alone does not prove that the intended entrypoint loaded.
 3. Copy one fenced prompt and replace its bracketed placeholders. Attach any referenced screenshots or identify the actual report path.
 4. The prompt asks the agent to confirm which guidance it loaded. If a plugin is unavailable, it should disclose that boundary.
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "skill_name": "ibm-design-language",
+  "skill_name": "design-ui",
   "description": "Intake guidance cases. Version 1.1.9 clarifies case-24-a02 as a verification plan, matching the existing guidance prompt; older snapshots retain their original wording. Scores require release-specific evidence.",
   "evals": [
     {

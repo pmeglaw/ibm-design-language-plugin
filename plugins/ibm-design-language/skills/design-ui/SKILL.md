@@ -1,5 +1,5 @@
 ---
-name: ibm-design-language
+name: design-ui
 description: "Design, implement, and critique IBM Design Language and Carbon interfaces. Use for IBM/Carbon product UI, IBM Plex, layout and typography, component or flow selection, semantic color and approved brand integration, accessibility, and interaction refinement."
 ---
 

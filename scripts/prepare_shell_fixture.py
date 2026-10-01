@@ -10,7 +10,7 @@ import shutil
 ROOT = Path(__file__).resolve().parents[1]
 target = ROOT / '.verification' / 'nextjs-shell'
 shutil.copytree(ROOT / 'tests' / 'nextjs-shell', target, dirs_exist_ok=True)
-assets = ROOT / 'plugins/ibm-design-language/skills/ibm-design-language/assets/nextjs-shell'
+assets = ROOT / 'plugins/ibm-design-language/skills/design-ui/assets/nextjs-shell'
 destination = target / 'components/shell'
 destination.mkdir(parents=True, exist_ok=True)
 hashes = {}
