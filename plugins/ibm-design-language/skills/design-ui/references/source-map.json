@@ -12,6 +12,25 @@
   ],
   "sources": [
     {
+      "id": "carbon-data-table-visual-benchmark",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines",
+      "sections": [
+        "Guidelines prose and anatomy illustration",
+        "React DataTable Basic rendered overview",
+        "Positive table composition, correction pairs and sizing reconciliation"
+      ],
+      "local_refs": [
+        "references/composition.md",
+        "references/taste.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-10-01",
+      "authority": "official-documentation",
+      "version_scope": "Live Guidelines and https://react.carbondesignsystem.com/?path=/docs/components-datatable-basic--overview; Storybook @carbon/react@1.117.0; local sizing source @carbon/react@1.117.0 and @carbon/styles@1.116.0",
+      "limits": "Guidelines anatomy and white desktop Basic overview inspected. Toolbar sizing is package-source evidence only; other stories, theme/responsive matrix, keyboard/AT and generated-product quality untested. Current toolbar prose conflicts are explicit. Correction pairs are local craft judgments; historical receipts unchanged."
+    },
+    {
       "id": "carbon-header-visual-benchmark",
       "url": "https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines",
       "sections": [

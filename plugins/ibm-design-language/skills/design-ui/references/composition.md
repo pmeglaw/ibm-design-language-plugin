@@ -112,12 +112,39 @@ Base DataTable gives you: single-select (radio) or multi-select (checkbox); sing
 Senior defaults:
 
 - **Row height by task.** Compact or short when the job is scanning; comfortable only when rows carry rich content. Row hover always on — it carries the eye across.
-- **Expandable rows before extra columns.** Progressive disclosure inside the row beats a table that scrolls sideways.
+- **Disclose supplementary details.** Use expansion for secondary information; retain columns needed for cross-row comparison and use local horizontal scrolling when necessary.
 - **Batch actions on selection**, in the toolbar, with the count shown.
 - **Pagination when positions are addressable** ("page 3, row 12"); infinite scroll or virtualization when they aren't and the set is huge.
 - **Numbers right-aligned, tabular figures.** Text left. Status as icon plus label.
 - **Preserve full-content access when truncating; collapse tags into +N.** Tooltips need keyboard access; native title/hover alone does not establish touch access to essential content.
 - For no data, replace the table including headers and footer with an empty state. Preserve useful surrounding actions without duplicating primary emphasis. For no results, retain search/filter context and provide recovery. Loading uses its own treatment.
+
+### What good looks like: data table benchmark
+
+Use these owner-selected official references when designing or critiquing a Carbon data table:
+
+- [Carbon data table guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines): anatomy, density, placement, toolbar hierarchy and state examples.
+- [React DataTable Basic overview](https://react.carbondesignsystem.com/?path=/docs/components-datatable-basic--overview): the rendered baseline for header/body contrast, type, cell padding and row boundaries. Use the sibling Toolbar, Selection, Expansion, Sorting and Pagination stories for the features the task actually needs; Basic alone does not demonstrate those contracts.
+
+**Positive composition.** A table is one coherent comparison surface: stable column edges, readable headers, consistent row rhythm and quiet horizontal separators keep attention on differences between records. The Basic example uses a stronger header surface above neutral body rows without a heavy border around every cell. In the Guidelines anatomy, the title and optional description establish context, collection controls sit immediately above the headers, and pagination attaches below at the table's width. Include only the controls the task needs. The table should have enough space for its useful columns; full page width is not mandatory for a small dataset.
+
+These correction pairs are local craft judgments derived from the references, not additional Carbon specifications:
+
+| If the candidate shows | Prefer this benchmark quality |
+|---|---|
+| Oversized single-line rows with large empty gaps | Choose density from content and task; start at the documented medium 40px when there is no special requirement, use compact rows for dense scanning and 64px for expected two-line content |
+| Centered names or headers drifting away from their values | Stable start-aligned text edges; align numeric headings with their values and use right-aligned tabular figures when comparing quantities; identifiers need not behave like quantities |
+| Heavy cell grids, repeated card outlines or competing shadows | A coherent table surface, restrained row separators and clear header/body distinction; preserve boundaries that carry meaning |
+| Collection actions floating far from a narrow table | Group search and collection controls with that table; keep row actions in rows and preserve a page-level action when its wider scope justifies the position |
+| Squeezed columns, tiny type or clipped essential data | Allocate width to the comparison; expose supplementary details through expansion or a panel, or retain necessary columns in a usable local horizontal scroll region |
+
+**Apply the reference.** Select the matching variant and compare rendered candidate and reference at comparable viewport, theme, zoom, density and state. Inspect title-to-toolbar-to-header alignment, column reading edges, row rhythm, padding, header/body surfaces, separators, action emphasis and pagination attachment. Use realistic long content. At narrow widths, check the actual overflow owner, keyboard access and access to full cell content; disclosure is suitable for supplementary details but must not hide the attributes users need to compare across rows. Record each material mismatch as observation, task impact and correction, or explain the product requirement behind the deviation. Keep approved semantic brand colors and installed component treatments. The Storybook demo frame, placeholder records and sample controls are not product requirements. Visual resemblance does not prove sorting, selection, focus or accessibility.
+
+**Sizing reconciliation, 2026-10-01.** Guidelines maps xs/sm/md/lg/xl rows to 24/32/40/48/64px, recommends md when no special density requirement exists, and matches header height to body rows. This design recommendation is distinct from React's default: inspected `@carbon/react@1.117.0` uses `lg` when table size is omitted. Set the intended size explicitly.
+
+The current Guidelines first describes small/tall toolbars paired with xs/sm and lg/xl, then says toolbar height always matches the row; its batch and pagination prose adds an xl-to-lg exception. These statements are not a consistent implementation matrix. In `@carbon/react@1.117.0`, `TableToolbar` accepts only `xs`, `sm` and `lg`; `DataTable.getToolbarProps()` passes xs/sm through and leaves other sizes unset. Inspected `@carbon/styles@1.116.0` defaults the toolbar to lg/48px and maps its md/xl layout heights to 48px. For this version, a 40px table with the helper's default 48px toolbar is the supported starting composition, not an invented `TableToolbar size="md"`. Use the installed helper and supported children, verify batch controls fit that toolbar, and choose pagination through its separate supported size contract. Recheck package/flags and rendered geometry before overriding sizes; do not force every nested component to the row height from prose alone.
+
+**Inspection boundary.** The current Guidelines prose and anatomy illustration and the React Basic overview's white, desktop, unselected table were inspected on 2026-10-01; Storybook identified `@carbon/react@1.117.0`. The sizing receipt above is package-source inspection, not a rendered toolbar test. Other stories, themes, responsive sizes, keyboard/assistive technology and generated-product quality were not tested for this amendment. The [local table case study](casebook/table.md) remains an author-created teaching comparison, not an official Carbon React exemplar. Historical receipts below retain their original scope.
 
 ### Public core table contracts
 
@@ -129,7 +156,7 @@ Reviewed 2026-09-29 from the public [Usage](https://carbondesignsystem.com/compo
 - Batch mode appears on selection. Disable conflicting single-row action icons/menus during batch mode; Cancel or clearing selection exits it. Verify focus when the toolbar changes, the selected-count announcement and failure recovery for the actual batch operation.
 - Reserve the toolbar for collection-wide search/settings/filters/actions, with up to five visible actions before purposeful overflow. Open search starts on the left and fills available space until actions. Table primary emphasis must agree with page-level button hierarchy.
 - Persistent row overflow is the default. The hover option must also reveal on focus and remain available on touch; test the installed implementation rather than assuming hover-only discovery is accessible. Fewer than three contextual commands can be inline, with explicit names and destructive-action treatment.
-- Header and data row heights match: 24/32/40/48/64px. The 64px option accommodates two-line content with top padding. Small/large toolbars and batch bars are 32/48px; docs pair them to xs/sm and lg/xl but leave the medium pairing unspecified. Resolve that case from the actual component and task, rather than inventing an official mapping.
+- Header and data row heights match: xs/sm/md/lg/xl are 24/32/40/48/64px. The 64px option accommodates two-line content with top padding. The earlier source described small/large toolbars and batch bars as 32/48px and left the medium pairing unspecified. Use the [current sizing reconciliation](#what-good-looks-like-data-table-benchmark) for the live prose conflict and version-specific toolbar support; keep this dated source receipt distinct from runtime evidence.
 - Loading data uses appropriate skeletons, with an accessible loading indication. Pagination belongs below the table and has its own count/navigation contract. Search and sort apply to the intended collection before pagination; changing results must leave a valid current page.
 - Style's three-column guidance is a design preference, not an HTML table validity rule or reason to invent dummy columns. Column labels can wrap; expose complete meanings if further truncated. Vertical centering of compact-row text does not imply centered horizontal text alignment.
 - AI presence follows data provenance: whole-table treatment only when the whole table is AI-generated; individual generated cells receive inline labels without broad layering; generated rows/columns get their scoped treatment. Do not extend provenance styling to human-authored data.
