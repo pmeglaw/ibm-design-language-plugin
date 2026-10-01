@@ -1,4 +1,6 @@
-# IBM Design Language 1.1.19
+# IBM Design Language 1.1.20
+
+Version 1.1.20 adds an explicit UI shell header visual benchmark, routed from design-ui and its taste rubric, using the owner-selected Carbon Guidelines and React Storybook. It teaches compact full-width composition, identity/navigation hierarchy, contiguous utilities and shell-versus-page action placement through labeled craft correction pairs. Approved branding, semantic themes, installed-version authority and separate behavior verification remain intact. Live reference inspection and bounded local retrieval review are not a generated-UI quality or accessibility evaluation. Prior evaluation verdicts remain unchanged.
 
 Version 1.1.19 renames the main skill from `ibm-design-language` to `design-ui`, so its Codex mention is `ibm-design-language:design-ui`. The plugin identity remains `ibm-design-language@jp-personal`; the sibling `review-product-experience` skill keeps its name. Existing prompts using the old skill mention must use the new name. Skill instructions, assets, evaluation assertions and historical evidence are preserved. Only skill identity, paths and release metadata change. No new model generation or product usability/accessibility evaluation was run.
 

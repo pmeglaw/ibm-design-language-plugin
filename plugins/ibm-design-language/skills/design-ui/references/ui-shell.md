@@ -7,7 +7,30 @@ panel state, wire controlled navigation dismissal, and verify the skip target an
 focus restoration with the installed components. A CSS resemblance to Carbon is
 not evidence of Carbon behavior.
 
-The header is the most-seen surface in any IBM product, and the pattern is stricter than it looks because its value comes from being identical everywhere.
+The header is a persistent orientation surface. Keep its structure and behavior predictable across related products while respecting each product's approved identity and actual capabilities.
+
+## What good looks like: header benchmark
+
+Use these owner-selected official examples as the visual standard for Carbon product shell headers:
+
+- [Carbon UI shell header guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines): anatomy, placement examples, content and responsive intent.
+- [React UI shell header overview](https://react.carbondesignsystem.com/?path=/docs/components-ui-shell-header--overview): component API and runnable sibling stories. Start with **Header with Navigation and Actions** for a simple product, **Header with Navigation, Actions and Side Nav** for deeper navigation, or **Header with Actions and Right Panel** for utilities.
+
+**Positive composition.** A slim, continuous, full-width top band establishes the product before the page begins. Compact product identity anchors the left, navigation follows on the same baseline, and spare space separates it from a contiguous group of utilities at the right edge. The header provides orientation while the page title and task actions below carry the work. Use the documented 48px header and action targets, compact 14px type styles and component spacing described below.
+
+The following correction pairs are local craft judgments derived from those examples, not additional Carbon specifications:
+
+| If the candidate shows | Prefer this benchmark quality |
+|---|---|
+| An inset floating card, rounded capsule or decorative shadow around the entire header | A continuous rectangular band aligned to the viewport; distinguish shell from content with the component's surface and border treatment |
+| A giant wordmark or centered product name competing with page content | Brief, compact identity at the start of the navigation sequence; keep the page title in the content region |
+| Separated pill buttons for account, help and notifications | Adjacent full-height utility targets with aligned glyphs and no inter-button gaps |
+| New record or Export mixed into the account utility group | Place task actions with their page or collection; reserve the shell utility group for system scope |
+| Extra icons added to make the header look complete | Use only working utilities the product needs; a standalone tool does not need a cross-product switcher |
+
+**Apply the reference.** Choose the example matching the actual navigation depth and utilities. Compare the candidate and reference at comparable viewport, theme, zoom and open/closed state. Check the silhouette, baseline, name-to-link spacing, utility rhythm, selected/hover/focus treatment, and separation from page content. At narrow widths, inspect the explicit left-panel representation and long labels rather than shrinking type or squeezing targets. Explain meaningful departures using the approved product requirement. Use its semantic theme and brand; neither a black header nor IBM branding is universal. Storybook placeholders and demonstration handlers must become real application destinations and actions.
+
+**Inspection boundary, 2026-10-01.** The current Guidelines prose and anatomy illustration were inspected in a browser. The React overview API and the white-theme Navigation and Actions story were inspected at wide and narrower preview widths; Storybook identified `@carbon/react@1.117.0`. This is source/example inspection, not a generated-product evaluation or a keyboard, responsive-matrix or assistive-technology pass. Earlier dated receipts below retain their original limits. Recheck the live examples and installed package when implementing.
 
 **Scope: products only.** The shell is the chrome of a tool a user is signed into. It does not appear on marketing, landing, documentation-marketing or editorial pages — those are expressive surfaces and get a light masthead in the page's own type (wordmark, a few text links, one CTA on the page's grid). Reaching for the shell on a landing page is the productive/expressive mix-up in its most visible form.
 
@@ -43,7 +66,7 @@ Left to right:
 4. **Sub-menus** — down chevron, open on click, chevron points up when open. Close by selecting an item, clicking the label again, or clicking outside. **A sub-menu label opens the menu and nothing else — it can never also be a link.**
 5. **Utilities** — universal system functions. Icon buttons, 48×48, **flush right with no gaps between them**. They open panels rather than navigating directly.
 
-Utility order is fixed so icons don't move as users cross between products:
+Preserve the relative utility order across related products. The positions below describe the full example set, not mandatory empty slots; omit capabilities the product does not have:
 
 | Position | Icon |
 |---|---|
