@@ -29,6 +29,8 @@ For a data table, use the [Carbon data table visual benchmark](references/compos
 
 For search, use the [Carbon Search visual benchmark](references/forms-and-upload.md#what-good-looks-like-search-benchmark) in both design and critique. Compare the rendered field with the official Guidelines and React Search overview for field shape, icon/text alignment, clear-control space and placement. Read its version-qualified size mapping; distinguish the default, fluid and expandable treatments and verify application results separately.
 
+For a form, use the [Carbon Form visual benchmark](references/forms-and-upload.md#what-good-looks-like-form-benchmark) in both design and critique. Compare labels, helper text, field alignment, grouping and actions with the Guidelines and Web Components Default example. Read the spacing/sizing reconciliation and preserve the consuming framework's API and submission contracts; a Web Components story does not establish React behavior.
+
 **Focused guidance:** Read only the references needed to answer the question. Explain a concrete decision and its conditions rather than prescribing an unrelated build or test sequence.
 
 Identify the visual register: productive interfaces use efficient, predictable layout and fixed UI typography; expressive reading/arrival regions can use fluid type, imagery, and greater scale. Mix deliberately by region, with consistent component behavior. A marketing page should not acquire product shell chrome simply because Carbon is in use. An approved product brand can override generic values through semantic roles; see [color authority](references/color-and-brand.md).

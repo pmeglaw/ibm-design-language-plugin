@@ -1,4 +1,6 @@
-# IBM Design Language 1.1.22
+# IBM Design Language 1.1.23
+
+Version 1.1.23 adds an explicit Form visual benchmark using the owner-selected Carbon Guidelines and Web Components Default story, routed from design-ui and its taste rubric. It teaches label/input/help alignment, field grouping, default/fluid composition and final action placement. It records the Guidelines' 32px default column gutter versus a measured 16px demo pair, qualifies the story's selective xs support, and updates the historical read-only note. Live story controls are kept separate from released APIs and React submission behavior. Visual reference inspection and bounded retrieval checks do not establish application behavior, accessibility or generated-design quality; historical evaluations and frozen releases remain unchanged.
 
 Version 1.1.22 adds an explicit Search visual benchmark, routed from design-ui and its taste rubric, using the owner-selected Carbon Search Guidelines and React Search overview. It teaches field silhouette, magnifier/text alignment, clear-control space, variant choice and placement through labeled craft correction pairs. Inspected React 1.117.0 and styles 1.116.0 confirm xs/sm/md/lg support at 24/32/40/48px, correcting the earlier three-height summary. Approved branding and historical evaluations remain intact. Bounded reference inspection and retrieval review do not establish generated-UI quality, all-size runtime geometry or accessibility.
 

@@ -62,6 +62,10 @@ Use the [Carbon data table benchmark](composition.md#what-good-looks-like-data-t
 
 Use the [Carbon Search benchmark](forms-and-upload.md#what-good-looks-like-search-benchmark) as the positive visual standard: a restrained field surface, balanced magnifier/text alignment, protected clear-control space and placement that expresses search scope. Compare the rendered candidate with the matching official example at equivalent viewport, theme, zoom, size and state. Distinguish default, fluid and expandable anatomy; use the benchmark's version-qualified size mapping. Preserve approved brand roles and verify results, focus and keyboard behavior separately from appearance.
 
+### Form
+
+Use the [Carbon Form benchmark](forms-and-upload.md#what-good-looks-like-form-benchmark) for shared label/input/help edges, meaningful field groups and clear final actions. Compare matching viewport, theme, zoom, size and state, including validation growth and narrow layouts when reviewing a product. Distinguish default from fluid composition and read the Guidelines/demo spacing and sizing reconciliation. The Web Components example supplies a visual reference, not interchangeable React APIs or proof of submission and accessibility.
+
 ## Cross-view consistency
 
 When the requested scope includes sibling pages, tabs or repeated sections, review them as a set as well as individually. Enumerate the requested views; record each as inspected, partially inspected or uninspected, with the screenshot/runtime/source evidence used. Do not imply full coverage when a view or required state was inaccessible.

@@ -12,6 +12,25 @@
   ],
   "sources": [
     {
+      "id": "carbon-form-visual-benchmark",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/components/form/guidelines",
+      "sections": [
+        "Current Guidelines prose, spacing and read-only state",
+        "Web Components Form Default rendered example and story controls",
+        "Positive form composition, correction pairs and framework boundaries"
+      ],
+      "local_refs": [
+        "references/forms-and-upload.md",
+        "references/taste.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-10-01",
+      "authority": "official-documentation",
+      "version_scope": "Live Guidelines and https://web-components.carbondesignsystem.com/?path=/story/components-form--default; no deployed Web Components package version established",
+      "limits": "White desktop default form and one paired-field measurement inspected. Story sizing/control descriptions are not published API or all-control runtime proof. Other sizes/variants/themes, responsive/RTL, keyboard, submission, AT and generated-product quality untested. The 16px demo column gap differs from the 32px Guidelines recommendation; correction pairs are local heuristics. Historical receipts unchanged."
+    },
+    {
       "id": "carbon-search-visual-benchmark",
       "url": "https://www.carbondesignsystem.com/building-blocks/core/components/search/guidelines",
       "sections": [
