@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "skill_name": "ibm-design-language",
+  "skill_name": "design-ui",
   "description": "Pattern selection and shell integration guidance cases, authored 2026-09-24. Separate from frozen regression/intake suites; no performance claim is implied by their presence.",
   "evals": [
     {

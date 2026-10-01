@@ -11,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = '1.1.18'
+CURRENT = '1.1.19'
 
 
 def require(condition, message):
@@ -27,7 +27,7 @@ def main():
     report = ROOT / '.verification'
     report.mkdir(exist_ok=True)
     manifests = {}
-    for version in ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', CURRENT):
+    for version in ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', CURRENT):
         release = ROOT / 'releases' / version
         expected = json.loads((release / 'files.json').read_text(encoding='utf-8'))
         archive = release / 'plugin.zip'
@@ -68,10 +68,10 @@ def main():
         json.loads(p.read_text(encoding='utf-8'))
     for p in plugin.rglob('*.py'):
         ast.parse(p.read_text(encoding='utf-8-sig'))
-    suite = json.loads((plugin / 'skills/ibm-design-language/evals.json').read_text())
+    suite = json.loads((plugin / 'skills/design-ui/evals.json').read_text())
     require(len(suite['evals']) == 21 and sum(len(c['assertions']) for c in suite['evals']) == 121,
             'Bundled regression suite changed')
-    skill = plugin / 'skills/ibm-design-language'
+    skill = plugin / 'skills/design-ui'
     spec = importlib.util.spec_from_file_location('ibm_evaluator', skill / 'scripts/evaluate.py')
     evaluator = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(evaluator)
@@ -88,7 +88,7 @@ def main():
             'Pattern/shell guidance suite changed unexpectedly')
     env = dict(os.environ, IBM_EVAL_TEST_TMP=str(report / 'synthetic-temp'))
     tests = subprocess.run([sys.executable, '-B', '-X', 'utf8',
-                            str(plugin / 'skills/ibm-design-language/scripts/test_evaluate.py')],
+                            str(plugin / 'skills/design-ui/scripts/test_evaluate.py')],
                            cwd=ROOT, env=env, capture_output=True, timeout=120)
     (report / 'synthetic-tests.txt').write_bytes(tests.stdout + tests.stderr)
     require(tests.returncode == 0, 'Synthetic tests failed; see .verification/synthetic-tests.txt')

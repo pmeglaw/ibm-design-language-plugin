@@ -1,6 +1,8 @@
-# IBM Design Language 1.1.18
+# IBM Design Language 1.1.19
 
-Published 1.1.17 strengthens real navigation destinations, observable supporting-action outcomes, nested narrow/RTL sizing, code scroll-owner keyboard checks and post-commit async focus recovery. Its fresh known practical generation failed with 9 pass, 2 fail and 0 untested; 320px containment/RTL remain deferred. Tested 390px and 1920px layouts fit. See [evaluation history](skills/ibm-design-language/references/evaluation-history.md#published-1117-practical-regression) for exact snapshot identity and limitations.
+Version 1.1.19 renames the main skill from `ibm-design-language` to `design-ui`, so its Codex mention is `ibm-design-language:design-ui`. The plugin identity remains `ibm-design-language@jp-personal`; the sibling `review-product-experience` skill keeps its name. Existing prompts using the old skill mention must use the new name. Skill instructions, assets, evaluation assertions and historical evidence are preserved. Only skill identity, paths and release metadata change. No new model generation or product usability/accessibility evaluation was run.
+
+Published 1.1.17 strengthens real navigation destinations, observable supporting-action outcomes, nested narrow/RTL sizing, code scroll-owner keyboard checks and post-commit async focus recovery. Its fresh known practical generation failed with 9 pass, 2 fail and 0 untested; 320px containment/RTL remain deferred. Tested 390px and 1920px layouts fit. See [evaluation history](skills/design-ui/references/evaluation-history.md#published-1117-practical-regression) for exact snapshot identity and limitations.
 
 Version 1.1.18 refines agent entrypoint/routing, task-scaled review, source-review freshness and the Chrome-native scroll focus evidence boundary. These documentation edits have no new generation score. The prior practical result belongs to published 1.1.17; its historical ZIP and manifest remain unchanged. Package, CI, downloaded asset and installation checks are separate from behavioral evidence.
 

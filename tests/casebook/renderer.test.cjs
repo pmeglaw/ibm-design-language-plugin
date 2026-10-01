@@ -5,7 +5,7 @@ const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 const deps = process.env.CASEBOOK_TEST_DEPS || path.resolve(__dirname, '../../.verification/nextjs-shell');
 const { chromium } = require(require.resolve('playwright', { paths: [deps] }));
-const assets = path.resolve(__dirname, '../../plugins/ibm-design-language/skills/ibm-design-language/assets/casebook');
+const assets = path.resolve(__dirname, '../../plugins/ibm-design-language/skills/design-ui/assets/casebook');
 const cases = JSON.parse(fs.readFileSync(path.join(assets, 'cases.json'), 'utf8'));
 let browser;
 before(async () => { browser = await chromium.launch(); });
