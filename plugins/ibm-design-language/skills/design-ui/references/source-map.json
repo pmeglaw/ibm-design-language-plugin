@@ -12,6 +12,25 @@
   ],
   "sources": [
     {
+      "id": "carbon-search-visual-benchmark",
+      "url": "https://www.carbondesignsystem.com/building-blocks/core/components/search/guidelines",
+      "sections": [
+        "Guidelines prose and default anatomy illustration",
+        "React Search rendered overview",
+        "Positive Search composition, correction pairs and sizing reconciliation"
+      ],
+      "local_refs": [
+        "references/forms-and-upload.md",
+        "references/taste.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-10-01",
+      "authority": "official-documentation",
+      "version_scope": "Live Guidelines and https://react.carbondesignsystem.com/?path=/docs/components-search--overview; Storybook @carbon/react@1.117.0; local sizing source @carbon/react@1.117.0 and @carbon/styles@1.116.0",
+      "limits": "Default anatomy and white desktop empty default overview inspected. Four-size support/defaults are package-source evidence only; fluid/expandable interactions, theme/responsive/RTL matrix, keyboard/AT and generated-product quality untested. Correction pairs are local craft judgments; historical receipts unchanged."
+    },
+    {
       "id": "carbon-data-table-visual-benchmark",
       "url": "https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines",
       "sections": [

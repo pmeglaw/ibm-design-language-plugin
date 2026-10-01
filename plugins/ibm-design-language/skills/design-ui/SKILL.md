@@ -27,6 +27,8 @@ For a product shell header, use the [Carbon header visual benchmark](references/
 
 For a data table, use the [Carbon data table visual benchmark](references/composition.md#what-good-looks-like-data-table-benchmark) in both design and critique. Compare the rendered table with the official Guidelines and React Basic example for column alignment, density, surfaces, separators and action placement. Read its sizing reconciliation before selecting toolbar sizes; use the relevant sibling stories for richer variants.
 
+For search, use the [Carbon Search visual benchmark](references/forms-and-upload.md#what-good-looks-like-search-benchmark) in both design and critique. Compare the rendered field with the official Guidelines and React Search overview for field shape, icon/text alignment, clear-control space and placement. Read its version-qualified size mapping; distinguish the default, fluid and expandable treatments and verify application results separately.
+
 **Focused guidance:** Read only the references needed to answer the question. Explain a concrete decision and its conditions rather than prescribing an unrelated build or test sequence.
 
 Identify the visual register: productive interfaces use efficient, predictable layout and fixed UI typography; expressive reading/arrival regions can use fluid type, imagery, and greater scale. Mix deliberately by region, with consistent component behavior. A marketing page should not acquire product shell chrome simply because Carbon is in use. An approved product brand can override generic values through semantic roles; see [color authority](references/color-and-brand.md).
