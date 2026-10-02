@@ -99,6 +99,7 @@ Against a gradient, check text against the lowest-contrast stop regardless of wh
 Four themes: White, Gray 10 (light), Gray 90, Gray 100 (dark). Surfaces stack in a layering ladder; each rung has its own hover, active and selected value.
 
 | Token | White | Gray 10 | Gray 90 | Gray 100 |
+|---|---|---|---|---|
 | `background` | ffffff | f4f4f4 | 262626 | 161616 |
 | `layer-01` | f4f4f4 | ffffff | 393939 | 262626 |
 | `layer-02` | ffffff | f4f4f4 | 525252 | 393939 |

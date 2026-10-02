@@ -2,9 +2,9 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.24**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.24) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.25**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.25) · [Install](docs/INSTALLATION.md)
 
-Version 1.1.24 improves shell route-heading focus and skip-to-main history behavior. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.24) for completed verification and evidence limits.
+Version 1.1.25 restores the theme-token table and adds scoped touch-hover and font-loading craft checks. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.25) for completed verification and evidence limits.
 
 ## What it does
 
@@ -51,7 +51,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.24 package with its two skills, references, visual casebook, assets, evaluator, and tests.
+- `plugins/ibm-design-language/`: the published 1.1.25 package with its two skills, references, visual casebook, assets, evaluator, and tests.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
