@@ -18,6 +18,16 @@ The release fixture is a publication blocker for any plugin version after 1.1.23
 
 The keyboard gate is a second publication blocker for any plugin version after 1.1.23. Run `npm test` in `tests/behavior-fixture` with its lockfile and Chromium installed. CI runs that job on Linux. Do not publish unless it is green on the exact release commit, alongside the release fixture and the Windows and Linux package jobs. Corrected must be 13 of 13 on White and on Gray 100. Missed must fail every check. The checks send real keys. They cover the menu, search, table filter, long cell, label, failed submit, a 320px frame, and right-to-left. Do not edit the assertions or the Missed pattern to force a pass. A green run is not a screen-reader certification and does not change the frozen 1.1.23 bytes.
 
+## Authorization and documentation scope
+
+Distinguish three kinds of work:
+
+- **Using the plugin on a product:** follow the user's task and that project's rules. Review-only requests stay read-only; local implementation does not independently authorize commits, pushes, PRs, merges, deployment, or production changes. The companion prompt pack defaults to local work.
+- **Maintaining the packaged plugin:** the owner's synchronization directive below covers authorized changes to `plugins/ibm-design-language/` and their scoped release/install verification, unless explicitly limited to local or unpublished work. It does not authorize unrelated changes or override an explicit approval boundary in the current task.
+- **Editing companion repository documentation:** README, installation/recovery guidance, history, and prompts outside the package can change without a plugin version bump, regenerated release artifacts, or reinstallation. Commit, push, PR, and merge still need authorization for the documentation task. A documentation-only update does not require a new plugin release.
+
+Preserve frozen package bytes and historical evidence in all three cases. Report the actual delivery state; local documentation edits are not published documentation.
+
 ## Local and published synchronization
 
 Owner directive, 2026-09-25: keep the installed personal plugin and its published

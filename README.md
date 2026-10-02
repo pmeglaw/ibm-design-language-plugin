@@ -1,63 +1,72 @@
 # IBM Design Language plugin
 
-Permanent source package for `ibm-design-language@jp-personal`, version 1.1.23. Canonical public repository: https://github.com/pmeglaw/ibm-design-language-plugin. Use the reviewed release commit and checksums for recovery; release publication and CI status are recorded on GitHub.
+An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-## Contents
+The current published package is **1.1.23**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.23) · [Install](docs/INSTALLATION.md)
 
-- `plugins/ibm-design-language/`: the 1.1.23 plugin, including the visual casebook, sources, evaluator and tests.
-- `.agents/plugins/marketplace.json`: portable Codex marketplace. Plugin paths resolve from this repository root.
-- `releases/`: the 1.1.23 ZIP plus preserved earlier ZIPs, file manifests and checksums for recovery.
-- `evidence/`: selected existing package, installation, casebook and comparison receipts. Historical absolute paths identify the original machine; they are not dependencies. Full model transcripts and screenshot archives remain in the original task workspace and are not included here.
-- `scripts/verify.py`: offline release, source and marketplace checks plus synthetic evaluator tests. No model calls.
+## What it does
 
-## Verify
+| Skill | Use it for |
+|---|---|
+| `ibm-design-language:design-ui` | Design, implementation, or focused critique: layout, typography, component selection, semantic color, approved branding, accessibility, and interactions. |
+| `ibm-design-language:review-product-experience` | Information architecture, navigation, task-flow, cross-view, and responsive reviews. Implementation follows only when requested. |
 
-Requires Python 3.11 or later, with only the standard library:
+Codex sees each skill's name and description, then loads its instructions when the task matches or you explicitly select it. The instructions route to relevant references rather than requiring every reference for every task. They ask the agent to inspect the actual project, installed Carbon version, and approved brand before making decisions, and to verify the affected rendered behavior afterward.
+
+The package supplies guidance and optional assets; edits and browser checks use the tools available in your Codex environment. It does not automatically add Carbon to your application or certify generated results. See the [design skill](plugins/ibm-design-language/skills/design-ui/SKILL.md) and [review skill](plugins/ibm-design-language/skills/review-product-experience/SKILL.md) for the workflows.
+
+## Quick start
+
+Install the plugin using [first-time installation](docs/INSTALLATION.md), then open the intended project and select the skill offered by your host. Ask the agent to identify the guidance it loaded; autocomplete syntax varies by host.
+
+For design or implementation:
+
+```text
+Use ibm-design-language:design-ui to improve [form or screen] in [repository/route].
+Outcome: [what the person should be able to do].
+Read project instructions and inspect the installed Carbon version first.
+Preserve approved branding and existing behavior. Implement and validate locally,
+including the affected narrow layout and keyboard flow. Report evidence and
+untested states. Do not commit, push, open a PR, merge, or deploy.
+```
+
+For a read-only review:
+
+```text
+Use ibm-design-language:review-product-experience to review [flow and listed views]
+in [repository/route]. Keep the review read-only. Inspect source and the rendered
+interface where available. Rank findings by task impact, identify supporting
+evidence and uninspected states, and propose the smallest coherent repairs.
+```
+
+Replace bracketed placeholders. For fuller implementation, screenshot, cross-view audit, and repair prompts, use the [prompt pack](docs/prompt-pack/README.md). Its Seat Planner examples are project-specific; general work does not inherit that project's branding or rules.
+
+## Scope and evidence
+
+Using the plugin on a product follows that task's authorization and project rules. A review does not authorize edits; local implementation does not authorize publication or production changes. Maintaining this plugin has a separate owner-specific release/install workflow in [release maintenance](docs/RELEASING.md#authorization-and-documentation-scope).
+
+Source inspection, screenshots, keyboard checks, assistive-technology checks, and model evaluations establish different things. Report what was actually tested. Historical targeted results and model-free browser fixtures are not general design-quality, usability, or accessibility certifications. The published 1.1.17 practical generation passed 9 of 11 assertions and failed 320px containment/RTL checks; subsequent documentation and fixture work does not erase that result. See [release history and evidence](docs/HISTORY.md).
+
+## Repository contents
+
+- `plugins/ibm-design-language/`: the frozen 1.1.23 package with its two skills, references, visual casebook, assets, evaluator, and tests.
+- `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
+- `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
+- `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
+- `evidence/`: selected package, installation, casebook, and comparison receipts. Historical absolute paths are provenance, not dependencies. Full model transcripts and screenshot archives are not included.
+- `tests/`: repository fixtures and regression checks; see maintenance for applicable publication gates.
+- `scripts/verify.py`: offline package, release, source, marketplace, and synthetic evaluator checks. No model calls.
+
+## Verify and maintain
+
+Requires Python 3.11 or later with only the standard library:
 
 ```sh
 python -B scripts/verify.py
 ```
 
-Reports are written under ignored `.verification/`. Git preserves exact bytes through `.gitattributes`; do not normalize the frozen plugin or release files.
+Reports are written under ignored `.verification/`. This verifies package and synthetic checks; it does not run all browser gates. Later plugin releases must also pass the release and keyboard fixtures on the exact release commit, as specified in [release maintenance](docs/RELEASING.md).
 
-[Recovery and installation](docs/RECOVERY.md) | [Maintaining releases](docs/RELEASING.md)
+Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or release files. Repository-only documentation edits do not change the installed plugin version. Bundled IBM Plex fonts retain their license and provenance files; no new blanket license is assigned to third-party material.
 
-## Reusable prompts
-
-Use the [prompt pack](docs/prompt-pack/README.md) for new implementation and review sessions. It includes five general workflows and Seat Planner-specific prompts. These companion documents do not change the frozen plugin package or release version.
-
-This package preserves verified work so restoration does not require repeating model evaluations. The 1.1.6 guidance passed 9/9 on one known screenshot regression. This author-graded case does not establish general improvement or repeatability; host skill-description truncation warnings are disclosed in the evidence. Earlier composition comparisons had two tied pairs, one incomplete pair and host configuration drift. Synthetic tests check evaluator mechanics, not design taste.
-
-This is an independently maintained plugin, not an official IBM product. Bundled IBM Plex fonts retain their license and provenance files. No new blanket license is assigned to third-party material.
-
-See [reviewed intake](docs/REVIEWED-INTAKE.md) for the target correction, adopted changes and evidence limits. The [earlier targeted report](evidence/1.1.8-targeted/REPORT.md) preserves the 1.1.7/1.1.8 failures. The [1.1.9 completion report](evidence/1.1.9-completion/REPORT.md) records the final targeted checks, unchanged status criterion and evidence limitations. Passing targeted cases is not a full-suite or general-quality certification.
-
-The [1.1.10 candidate report](evidence/1.1.10-candidate/REPORT.md) records its local checks and one text-only design critique evaluation. It is not a rendered design validation.
-
-## Release validation
-
-See the [1.1.12 candidate evidence](evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.23). Follow [recovery](docs/RECOVERY.md) for checksum and destination-installation checks.
-
-Version 1.1.13 replaces HTML-string rendering in the offline casebook with DOM construction and strict control-value checks. See the [casebook regression tests](tests/casebook/README.md) for all 20 supported combinations and hostile-input/recovery coverage.
-
-Version 1.1.14 adds focused fluid-styles guidance and a release-to-installation synchronization workflow. Use the read-only installation verifier described in [release maintenance](docs/RELEASING.md) to check the installed plugin against its published manifest.
-
-Version 1.1.16 expands public Carbon documentation intake and version-aware implementation guidance, with explicit source coverage and evaluation limits. See [the intake report](evidence/1.1.16-intake/REPORT.md).
-
-Version 1.1.17 strengthens real navigation destinations, observable supporting-action outcomes, nested narrow/RTL sizing, code scroll-owner keyboard verification and async focus recovery. The fresh known practical evaluation passed 9 of 11 assertions; 320px containment and RTL failures remain accepted for follow-up, not resolved or waived from the rubric. See [the candidate report](evidence/1.1.17-candidate/REPORT.md).
-
-Version 1.1.18 refines agent entrypoints, task-scoped workflow, source freshness and published evaluation boundaries. Documentation validation passed; no new model generation was run. The prior 1.1.17 practical verdict remains 9/11 with deferred 320px failures. See [the documentation review](evidence/1.1.18-docs/REPORT.md).
-
-Version 1.1.19 renames the main skill to `design-ui`, exposed in Codex as `ibm-design-language:design-ui`. The plugin and sibling review skill keep their identities; design guidance and historical evaluation results are unchanged.
-
-Version 1.1.20 adds a source-linked UI shell header visual benchmark and concrete craft correction pairs. See the [header guidance review](evidence/1.1.20-header/REPORT.md) for reference inspection and validation limits.
-
-Version 1.1.21 adds an official data table visual benchmark and version-qualified sizing reconciliation. See the [table guidance review](evidence/1.1.21-table/REPORT.md) for source inspection and evidence limits.
-
-Version 1.1.22 adds an official Search visual benchmark and the supported four-size mapping. See the [Search guidance review](evidence/1.1.22-search/REPORT.md) for source inspection and evidence limits.
-
-Version 1.1.23 adds the official Form visual benchmark and Web Components demo boundaries. See the [Form guidance review](evidence/1.1.23-form/REPORT.md) for spacing/sizing reconciliation and evidence limits.
-
-The [release fixture](tests/release-fixture/README.md) is a model-free browser gate for the 1.1.20 through 1.1.23 header, table, search, and form benchmarks. Corrected must be 29 of 29 on White, Gray 100, and a 390px width. The Missed candidate must fail all 29 checks. A later plugin release is not ready to publish until `npm test` in that directory passes. The gate does not change the frozen 1.1.23 package, does not replace the 1.1.17 practical verdict, and is not a model evaluation.
-
-The [keyboard gate](tests/behavior-fixture/README.md) is a separate publication blocker for the same four compositions. It sends real keys. Corrected must be 13 of 13 on White and on Gray 100. Missed must fail all 13 checks, including 320px containment and right-to-left with English left as `lang="en"`. A green run is not a screen-reader certification and does not change the frozen 1.1.23 package.
+[First-time installation](docs/INSTALLATION.md) · [Recovery and rollback](docs/RECOVERY.md) · [Maintaining releases](docs/RELEASING.md) · [Release history and evidence](docs/HISTORY.md)

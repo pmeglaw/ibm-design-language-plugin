@@ -19,3 +19,11 @@ For an existing interface, use **audit → approved repair → final review**. F
 The Seat Planner prompt is deliberately project-specific. General prompts do not import its branding or repository rules into other products. Prompts improve review discipline; they do not guarantee that every defect will be found.
 
 This pack is companion repository documentation, outside the plugin and its release ZIPs. It does not install or modify the plugin. The published 1.1.17 generation still failed 320px containment/RTL assertions; these prompts do not establish that those defects or future generation reliability are solved.
+
+## Product work versus plugin maintenance
+
+The local-only defaults above apply to the product targeted by a prompt. They do
+not describe the owner's separate release/install workflow for maintaining the
+packaged plugin itself. See [authorization and documentation scope](../RELEASING.md#authorization-and-documentation-scope).
+Companion prompt/documentation edits can be reviewed and published separately
+from the frozen plugin package; publication still needs task-specific approval.
