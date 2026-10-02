@@ -7,11 +7,12 @@ export default async function Page({ params }: { params: Promise<{ slug?: string
     path === '/reports/quarterly' ? 'Quarterly report' : path === '/reports-old' ? 'Archived reports' :
     path === '/assets' ? 'Assets' : 'Settings';
   return <>
-    <h1>{title}</h1>
+    {path !== '/no-heading' && <h1>{title}</h1>}
     <p>This isolated fixture exercises product navigation and supporting utility panels.</p>
     <div className="fixture-links">
       <Link href="/reports/quarterly">Quarterly report</Link>
       <Link href="/reports-old">Archived reports</Link>
+      <Link href="/no-heading">Content without heading</Link>
     </div>
     <label htmlFor="notes">Page notes</label>
     <input id="notes" type="text" />

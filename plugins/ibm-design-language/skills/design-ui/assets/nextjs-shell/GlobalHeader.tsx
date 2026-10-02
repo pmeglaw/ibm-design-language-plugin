@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode, type MouseEvent } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -64,6 +64,16 @@ export default function GlobalHeader({ children, productName = 'Workspace' }: {
     return () => document.removeEventListener('pointerdown', outside);
   }, [panel]);
 
+  function focusRouteContent() {
+    const main = document.getElementById('main-content');
+    const heading = main?.querySelector<HTMLElement>('h1');
+    const target = heading && heading.getClientRects().length > 0 &&
+      !heading.closest('[hidden], [inert]') && getComputedStyle(heading).visibility !== 'hidden'
+      ? heading : main;
+    if (target && !target.hasAttribute('tabindex')) target.tabIndex = -1;
+    target?.focus();
+  }
+
   // The shared layout persists across App Router navigation. On an actual route
   // change, close shell overlays and give the new content a stable focus target.
   const previousPath = useRef(pathname);
@@ -72,15 +82,18 @@ export default function GlobalHeader({ children, productName = 'Workspace' }: {
       previousPath.current = pathname;
       setSideOpen(false);
       setPanel(null);
-      document.getElementById('main-content')?.focus();
+      focusRouteContent();
     }
   }, [pathname]);
 
-  function navigate() {
+  function navigate(event: MouseEvent<HTMLElement>) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey ||
+        event.shiftKey || event.altKey) return;
     setSideOpen(false);
     setPanel(null);
-    // Also handles selecting the current route, when pathname does not change.
-    document.getElementById('main-content')?.focus();
+    // A changed destination is focused by the pathname effect after commit.
+    // Selecting the current route does not trigger that effect.
+    if (event.currentTarget.getAttribute('href') === pathname) focusRouteContent();
   }
 
   return <div className="shell-example" onKeyDownCapture={(event) => {
@@ -89,9 +102,20 @@ export default function GlobalHeader({ children, productName = 'Workspace' }: {
     else if (sideOpen) { event.preventDefault(); dismissSide(true); }
   }}>
     <Header aria-label={productName}>
-      <SkipToContent href="#main-content" onClick={() => {
+      <SkipToContent href="#main-content" onClick={(event) => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey ||
+            event.shiftKey || event.altKey) return;
+        const main = document.getElementById('main-content');
+        if (!main) return;
+        event.preventDefault();
+        // Native fragment navigation creates a null-state history entry. Next.js
+        // integrates pushState so Back can restore the matching route content.
+        if (window.location.hash !== '#main-content') {
+          window.history.pushState(null, '', '#main-content');
+        }
         setSideOpen(false); setPanel(null);
-        document.getElementById('main-content')?.focus();
+        main.focus();
+        main.scrollIntoView();
       }} />
       <HeaderMenuButton ref={menuRef} isCollapsible
         aria-label={sideOpen ? 'Close navigation' : 'Open navigation'}

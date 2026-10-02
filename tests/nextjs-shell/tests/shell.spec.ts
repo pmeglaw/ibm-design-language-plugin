@@ -66,7 +66,7 @@ for (const width of [320, 768, 1055, 1056, 1440]) {
       await expect(nav.getByRole('link', { name: 'Reports', exact: true })).toBeVisible();
       await nav.getByRole('link', { name: 'Reports', exact: true }).click();
       await expect(nav).toBeHidden();
-      await expect(page.getByRole('main')).toBeFocused();
+      await expect(page.getByRole('heading', { level: 1, name: 'Reports', exact: true })).toBeFocused();
       await page.getByRole('button', { name: 'Open navigation', exact: true }).click();
     }
     await page.keyboard.press('Escape');
@@ -156,3 +156,58 @@ for (const width of [320, 1440]) {
     expect(errors).toEqual([]);
   });
 }
+
+test('mobile keyboard selection focuses the committed destination heading', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('/reports');
+  await page.getByRole('button', { name: 'Open navigation', exact: true }).press('Enter');
+  const nav = page.getByRole('navigation', { name: 'Product navigation', exact: true });
+  await expect(nav.getByRole('link', { name: 'Overview', exact: true })).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/');
+  await expect(nav).toBeHidden();
+  await expect(page.getByRole('heading', { level: 1, name: 'Overview', exact: true })).toBeFocused();
+  await expect(page.getByRole('main')).not.toBeFocused();
+});
+
+test('route without a heading falls back to main', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Content without heading', exact: true }).press('Enter');
+  await expect(page).toHaveURL('/no-heading');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveCount(0);
+  await expect(page.getByRole('main')).toBeFocused();
+});
+
+test('route history after a skip fragment retains matching destination content', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Skip to main content', exact: true }).press('Enter');
+  await expect(page.getByRole('main')).toBeFocused();
+  await page.getByRole('navigation', { name: 'Primary', exact: true })
+    .getByRole('link', { name: 'Reports', exact: true }).press('Enter');
+  await expect(page.getByRole('heading', { level: 1, name: 'Reports', exact: true })).toBeFocused();
+  await page.goBack();
+  await expect(page).toHaveURL(/\/#main-content$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Overview', exact: true })).toBeVisible();
+  await page.goForward();
+  await expect(page).toHaveURL(/\/reports$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Reports', exact: true })).toBeFocused();
+});
+
+
+test('repeated skip preserves query state without duplicate fragment entries', async ({ page }) => {
+  await page.goto('/reports?period=quarter');
+  const skip = page.getByRole('link', { name: 'Skip to main content', exact: true });
+  await skip.press('Enter');
+  await expect(page).toHaveURL(/\/reports\?period=quarter#main-content$/);
+  await skip.press('Enter');
+  await expect(page.getByRole('main')).toBeFocused();
+  await page.getByRole('navigation', { name: 'Primary', exact: true })
+    .getByRole('link', { name: 'Assets', exact: true }).press('Enter');
+  await expect(page.getByRole('heading', { level: 1, name: 'Assets', exact: true })).toBeFocused();
+  await page.goBack();
+  await expect(page).toHaveURL(/\/reports\?period=quarter#main-content$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Reports', exact: true })).toBeVisible();
+  await page.goBack();
+  await expect(page).toHaveURL(/\/reports\?period=quarter$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Reports', exact: true })).toBeVisible();
+});

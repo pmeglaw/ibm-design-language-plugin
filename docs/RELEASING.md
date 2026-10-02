@@ -1,6 +1,6 @@
 # Maintaining releases
 
-Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects drift from the current locally prepared snapshot (1.1.23) until a new release is prepared.
+Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects drift from the current locally prepared snapshot (1.1.24; unpublished candidate) until a new release is prepared.
 
 For a new release, review the source diff, run relevant local checks, write accurate release notes, build a fresh ZIP and file manifest, and update the validator's current release version. Never regenerate hashes merely to hide an unexpected difference. Preserve older versions for rollback.
 
@@ -17,6 +17,14 @@ Casebook rendering changes also require `node --test tests/casebook/renderer.tes
 The release fixture is a publication blocker for any plugin version after 1.1.23. Run `npm test` in `tests/release-fixture` with its lockfile and Chromium installed. CI runs that job on Linux. Do not publish unless it is green on the exact release commit, alongside the Windows and Linux package jobs. Corrected must be 29 of 29 on White, Gray 100, and a 390px width. Missed must fail every check. Do not edit the assertions or the Missed pattern to force a pass. A green run is not a model evaluation, not an assistive-technology certification, and not a change to the frozen 1.1.23 bytes.
 
 The keyboard gate is a second publication blocker for any plugin version after 1.1.23. Run `npm test` in `tests/behavior-fixture` with its lockfile and Chromium installed. CI runs that job on Linux. Do not publish unless it is green on the exact release commit, alongside the release fixture and the Windows and Linux package jobs. Corrected must be 13 of 13 on White and on Gray 100. Missed must fail every check. The checks send real keys. They cover the menu, search, table filter, long cell, label, failed submit, a 320px frame, and right-to-left. Do not edit the assertions or the Missed pattern to force a pass. A green run is not a screen-reader certification and does not change the frozen 1.1.23 bytes.
+
+The Next.js shell is an additional publication gate for 1.1.24 and later. Prepare
+it with `python -B scripts/prepare_shell_fixture.py`, build the pinned production
+fixture, and run `npm test` in `.verification/nextjs-shell`. The dedicated Linux
+CI job must pass on the exact release commit. It checks committed heading focus,
+same-route focus, separate skip-to-main behavior, fallback and route history as
+well as the existing shell behavior. Do not remove the skip-fragment regression
+to hide a failure. Targeted CUA observations do not replace this complete gate.
 
 ## Authorization and documentation scope
 

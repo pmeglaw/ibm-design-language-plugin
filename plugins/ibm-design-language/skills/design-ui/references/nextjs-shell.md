@@ -75,9 +75,23 @@ same product. No IBM prefix is imposed on a non-IBM product.
   before the open shell region is dismissed. Revisit event ownership if adding
   nested widgets that need their own Escape behavior.
 - The first focusable skip link targets a real `Content id="main-content"` with
-  `tabIndex={-1}`. Route changes and selecting the current route close overlays
-  and focus content. If a product has its own route announcer or focus manager,
-  integrate with it instead of adding competing focus changes.
+  `tabIndex={-1}`. Ordinary skip activation focuses and scrolls to that main target.
+  Its fragment entry uses Next.js-integrated `history.pushState` rather than native
+  hash navigation, which creates a null-state entry that App Router cannot restore.
+  Repeated activation keeps one fragment entry; modified clicks retain native behavior.
+  Route changes close
+  overlays and focus the visible H1 inside the committed destination content;
+  the helper adds `tabIndex={-1}` only when the target has no explicit tabindex.
+  It falls back to main if no visible heading is available. Selecting the current
+  route uses the same heading target without waiting for a pathname change.
+  Ordinary changed-route clicks wait for the pathname effect, so they do not
+  focus the outgoing page. Modifier clicks keep their native link behavior.
+  If the task requires the new page heading, main focus alone does not satisfy
+  that contract: provide the destination heading and verify its actual focus.
+  A consuming product's route announcer/focus manager takes precedence. Streaming,
+  Suspense/loading content, cancelled navigation and delayed heading mounting need
+  that product's committed-content coordination; the pathname effect alone is not
+  proof that all such transitions are ready.
 
 ## Application responsibilities
 
@@ -94,14 +108,16 @@ the full accessible name and do not propagate it to page titles or field labels.
 ## Verify in the consuming application
 
 Check exact, ancestor, sibling-prefix and root route selection; desktop and narrow
-links; header order; same-route clicks; Back/Forward; skip focus; Escape; reverse
+links; header order; committed destination-heading focus; same-route clicks;
+Back/Forward; skip-to-main focus; Escape; reverse
 Tab; outside/overlay dismissal; trigger toggling; utility switching; long names;
 zoom; supported themes; and relevant rendered contrast pairs. Record actual
 package versions and separate compile, automated browser, visual and assistive-
 technology evidence. A passing fixture does not validate a different product's
 auth, data, routing or unsaved-work behavior.
 
-Sources: [Next.js server/client composition](https://nextjs.org/docs/app/getting-started/server-and-client-components),
+Sources: [Next.js native History API](https://nextjs.org/docs/app/getting-started/linking-and-navigating#native-history-api),
+[Next.js server/client composition](https://nextjs.org/docs/app/getting-started/server-and-client-components),
 [header usage](https://carbondesignsystem.com/components/UI-shell-header/usage/),
 [HeaderSideNavItems source](https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/react/src/components/UIShell/HeaderSideNavItems.tsx),
 [SideNav 1.117.0](https://unpkg.com/@carbon/react@1.117.0/lib/components/UIShell/SideNav.js),
