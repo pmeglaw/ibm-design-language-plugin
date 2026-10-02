@@ -16,6 +16,7 @@ Prototype in code when interaction quality is uncertain. Preserve the approved d
 - Test interruption and rapid input while panels open or requests remain pending.
 - Honor reduced motion across authored transitions and animation, preserving static state feedback.
 - Use native activation and the actual widget's keyboard contract. Do not add roving focus to ordinary lists or pointer-only activation shortcuts to menus.
+- For authored hover enhancements, check touch and hybrid input. Scope effects that require hovering with `@media (hover: hover)` where appropriate; the query describes the primary input, not every connected device. Keep essential information and actions available by touch and keyboard. Preserve supported Carbon behavior, and keep focus, selected, disabled and static feedback outside the hover guard.
 
 ## Layout and states
 
@@ -24,6 +25,14 @@ Use grid mini-unit geometry and finer Carbon component spacing tokens where appr
 Use named type roles. Approved raw values belong in the token/theme layer; the fallback's font shorthands are a limited baseline, not additional official roles.
 
 Use optimistic updates only where consequences and reliable rollback justify them. Preserve entered data on failure. Distinguish initial loading, no data, no matches, partial failure, and completion.
+
+## Font loading
+
+These are local engineering craft checks, not additional Carbon specifications. Use the project's approved font-loading pipeline and the [typography delivery checks](typography.md#installed-type-package-boundaries-29-september-audit).
+
+- Check fallback text, delayed loading and font failure as well as the loaded face. Choose `font-display` deliberately for the task; inspect text visibility and any shift as the intended face replaces its fallback. A casebook example using `swap` is not a requirement for every product.
+- Preload only critical faces or weights when measured loading behavior justifies it. Match the actual font URL, format and request mode; do not preload every weight, duplicate requests or bypass a vendored-font contract with remote downloads.
+- Subset only when the product's language coverage and font license permit it. Verify required glyphs, combining marks, shaping and fallback with representative content; reducing bytes must not remove supported scripts. Recheck the emitted font assets and their actual delivery after optimization.
 
 ## Accessibility and themes
 
