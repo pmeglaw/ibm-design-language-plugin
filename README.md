@@ -2,9 +2,9 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.23**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.23) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.24**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.24) · [Install](docs/INSTALLATION.md)
 
-Working source on this branch is the **unpublished 1.1.24 candidate**. See [candidate notes](releases/1.1.24/NOTES.md) for changes and remaining release gates. Installation instructions continue to target published 1.1.23.
+Version 1.1.24 improves shell route-heading focus and skip-to-main history behavior. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.24) for completed verification and evidence limits.
 
 ## What it does
 
@@ -51,7 +51,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.24 candidate with its two skills, references, visual casebook, assets, evaluator, and tests.
+- `plugins/ibm-design-language/`: the published 1.1.24 package with its two skills, references, visual casebook, assets, evaluator, and tests.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
@@ -67,7 +67,7 @@ Requires Python 3.11 or later with only the standard library:
 python -B scripts/verify.py
 ```
 
-Reports are written under ignored `.verification/`. This verifies package and synthetic checks; it does not run all browser gates. Later plugin releases must also pass the release and keyboard fixtures on the exact release commit, as specified in [release maintenance](docs/RELEASING.md).
+Reports are written under ignored `.verification/`. This verifies package and synthetic checks; it does not run all browser gates. Later plugin releases must also pass the release, keyboard, and Next.js shell fixtures on the exact release commit, as specified in [release maintenance](docs/RELEASING.md).
 
 Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or release files. Repository-only documentation edits do not change the installed plugin version. Bundled IBM Plex fonts retain their license and provenance files; no new blanket license is assigned to third-party material.
 
