@@ -31,6 +31,8 @@ For search, use the [Carbon Search visual benchmark](references/forms-and-upload
 
 For a form, use the [Carbon Form visual benchmark](references/forms-and-upload.md#what-good-looks-like-form-benchmark) in both design and critique. Compare labels, helper text, field alignment, grouping and actions with the Guidelines and Web Components Default example. Read the spacing/sizing reconciliation and preserve the consuming framework's API and submission contracts; a Web Components story does not establish React behavior.
 
+For design and critique of these four compositions, read [release gates](references/release-gates.md) alongside the visual benchmarks. Use the geometry and keyboard checks as applicable acceptance criteria; report unrun checks as untested.
+
 **Focused guidance:** Read only the references needed to answer the question. Explain a concrete decision and its conditions rather than prescribing an unrelated build or test sequence.
 
 Identify the visual register: productive interfaces use efficient, predictable layout and fixed UI typography; expressive reading/arrival regions can use fluid type, imagery, and greater scale. Mix deliberately by region, with consistent component behavior. A marketing page should not acquire product shell chrome simply because Carbon is in use. An approved product brand can override generic values through semantic roles; see [color authority](references/color-and-brand.md).
@@ -50,6 +52,7 @@ Identify the visual register: productive interfaces use efficient, predictable l
 
 | Reference | Use when |
 |---|---|
+| [Release gates](references/release-gates.md) | Design and critique of header, table, search, and form compositions; geometry and keyboard acceptance checks and evidence limits |
 | [Practical implementation review](references/practical-implementation-review.md) | Runnable destinations/actions, async lifecycle and focus, code scrolling/copy, nested narrow/RTL sizing, fonts and frozen-output verification |
 | [Pattern selector](references/pattern-selection.md) | Choosing between containers, feedback, loading, search, filters, control states, and deletion treatments from the task |
 | [Components](references/components-preview.md), [index](references/components-preview-index.md), [coverage](references/components-preview-coverage.md) | Selecting a core component; locating its variants, specifications, accessibility, and source sections |
