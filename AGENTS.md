@@ -11,3 +11,10 @@ success. Never finish with only an edited cache or silently discard local drift.
 
 This authority is limited to the requested plugin changes. It does not permit
 publishing unrelated work, private data, product changes or new unrequested features.
+
+For approval scope, distinguish packaged plugin maintenance, companion repository
+documentation, and product work using the plugin as described in
+[release maintenance](docs/RELEASING.md#authorization-and-documentation-scope).
+Repository-only documentation edits do not require a plugin release or reinstall;
+their Git publication still requires task-specific authorization. Current explicit
+task restrictions take precedence over the synchronization default above.

@@ -1,5 +1,9 @@
 # Recovery
 
+For a fresh Codex setup, start with [First-time installation](INSTALLATION.md).
+This guide also covers the owner-managed `jp-personal` installation, drift checks,
+and rollback; preserve existing marketplace entries and unrelated configuration.
+
 ## Release identity
 
 - Version: `1.1.23`
