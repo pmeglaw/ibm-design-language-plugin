@@ -57,3 +57,5 @@ Version 1.1.21 adds an official data table visual benchmark and version-qualifie
 Version 1.1.22 adds an official Search visual benchmark and the supported four-size mapping. See the [Search guidance review](evidence/1.1.22-search/REPORT.md) for source inspection and evidence limits.
 
 Version 1.1.23 adds the official Form visual benchmark and Web Components demo boundaries. See the [Form guidance review](evidence/1.1.23-form/REPORT.md) for spacing/sizing reconciliation and evidence limits.
+
+The [release fixture](tests/release-fixture/README.md) is a model-free browser gate for the 1.1.20 through 1.1.23 header, table, search, and form benchmarks. Corrected must be 29 of 29 on White, Gray 100, and a 390px width. The Missed candidate must fail all 29 checks. A later plugin release is not ready to publish until `npm test` in that directory passes. The gate does not change the frozen 1.1.23 package, does not replace the 1.1.17 practical verdict, and is not a model evaluation.

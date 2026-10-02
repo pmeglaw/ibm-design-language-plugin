@@ -1,0 +1,26 @@
+{
+  "name": "release-fixture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4174 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@carbon/icons-react": "11.89.0",
+    "@carbon/react": "1.117.0",
+    "@carbon/styles": "1.116.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/react": "19.1.16",
+    "@types/react-dom": "19.1.9",
+    "@vitejs/plugin-react": "5.0.4",
+    "typescript": "5.9.3",
+    "vite": "6.3.6"
+  }
+}
