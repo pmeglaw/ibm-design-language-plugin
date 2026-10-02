@@ -14,6 +14,8 @@ The canonical repository is public. Keep private fixtures, raw transcripts and l
 
 Casebook rendering changes also require `node --test tests/casebook/renderer.test.cjs` with the pinned fixture dependencies and Chromium installed. CI runs this browser check on Linux, separately from the Windows/Linux package verification.
 
+The release fixture is a publication blocker for any plugin version after 1.1.23. Run `npm test` in `tests/release-fixture` with its lockfile and Chromium installed. CI runs that job on Linux. Do not publish unless it is green on the exact release commit, alongside the Windows and Linux package jobs. Corrected must be 29 of 29 on White, Gray 100, and a 390px width. Missed must fail every check. Do not edit the assertions or the Missed pattern to force a pass. A green run is not a model evaluation, not an assistive-technology certification, and not a change to the frozen 1.1.23 bytes.
+
 ## Local and published synchronization
 
 Owner directive, 2026-09-25: keep the installed personal plugin and its published

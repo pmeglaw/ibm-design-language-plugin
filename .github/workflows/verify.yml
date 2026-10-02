@@ -31,3 +31,17 @@ jobs:
       - run: npx playwright install --with-deps chromium
         working-directory: .verification/nextjs-shell
       - run: node --test tests/casebook/renderer.test.cjs
+
+  release-fixture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+        working-directory: tests/release-fixture
+      - run: npx playwright install --with-deps chromium
+        working-directory: tests/release-fixture
+      - run: npm test
+        working-directory: tests/release-fixture
