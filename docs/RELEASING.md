@@ -16,6 +16,8 @@ Casebook rendering changes also require `node --test tests/casebook/renderer.tes
 
 The release fixture is a publication blocker for any plugin version after 1.1.23. Run `npm test` in `tests/release-fixture` with its lockfile and Chromium installed. CI runs that job on Linux. Do not publish unless it is green on the exact release commit, alongside the Windows and Linux package jobs. Corrected must be 29 of 29 on White, Gray 100, and a 390px width. Missed must fail every check. Do not edit the assertions or the Missed pattern to force a pass. A green run is not a model evaluation, not an assistive-technology certification, and not a change to the frozen 1.1.23 bytes.
 
+The keyboard gate is a second publication blocker for any plugin version after 1.1.23. Run `npm test` in `tests/behavior-fixture` with its lockfile and Chromium installed. CI runs that job on Linux. Do not publish unless it is green on the exact release commit, alongside the release fixture and the Windows and Linux package jobs. Corrected must be 13 of 13 on White and on Gray 100. Missed must fail every check. The checks send real keys. They cover the menu, search, table filter, long cell, label, failed submit, a 320px frame, and right-to-left. Do not edit the assertions or the Missed pattern to force a pass. A green run is not a screen-reader certification and does not change the frozen 1.1.23 bytes.
+
 ## Local and published synchronization
 
 Owner directive, 2026-09-25: keep the installed personal plugin and its published
