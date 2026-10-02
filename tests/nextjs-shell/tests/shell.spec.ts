@@ -188,4 +188,26 @@ test('route history after a skip fragment retains matching destination content',
   await page.goBack();
   await expect(page).toHaveURL(/\/#main-content$/);
   await expect(page.getByRole('heading', { level: 1, name: 'Overview', exact: true })).toBeVisible();
+  await page.goForward();
+  await expect(page).toHaveURL(/\/reports$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Reports', exact: true })).toBeFocused();
+});
+
+
+test('repeated skip preserves query state without duplicate fragment entries', async ({ page }) => {
+  await page.goto('/reports?period=quarter');
+  const skip = page.getByRole('link', { name: 'Skip to main content', exact: true });
+  await skip.press('Enter');
+  await expect(page).toHaveURL(/\/reports\?period=quarter#main-content$/);
+  await skip.press('Enter');
+  await expect(page.getByRole('main')).toBeFocused();
+  await page.getByRole('navigation', { name: 'Primary', exact: true })
+    .getByRole('link', { name: 'Assets', exact: true }).press('Enter');
+  await expect(page.getByRole('heading', { level: 1, name: 'Assets', exact: true })).toBeFocused();
+  await page.goBack();
+  await expect(page).toHaveURL(/\/reports\?period=quarter#main-content$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Reports', exact: true })).toBeVisible();
+  await page.goBack();
+  await expect(page).toHaveURL(/\/reports\?period=quarter$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Reports', exact: true })).toBeVisible();
 });

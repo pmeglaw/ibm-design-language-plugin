@@ -102,9 +102,20 @@ export default function GlobalHeader({ children, productName = 'Workspace' }: {
     else if (sideOpen) { event.preventDefault(); dismissSide(true); }
   }}>
     <Header aria-label={productName}>
-      <SkipToContent href="#main-content" onClick={() => {
+      <SkipToContent href="#main-content" onClick={(event) => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey ||
+            event.shiftKey || event.altKey) return;
+        const main = document.getElementById('main-content');
+        if (!main) return;
+        event.preventDefault();
+        // Native fragment navigation creates a null-state history entry. Next.js
+        // integrates pushState so Back can restore the matching route content.
+        if (window.location.hash !== '#main-content') {
+          window.history.pushState(null, '', '#main-content');
+        }
         setSideOpen(false); setPanel(null);
-        document.getElementById('main-content')?.focus();
+        main.focus();
+        main.scrollIntoView();
       }} />
       <HeaderMenuButton ref={menuRef} isCollapsible
         aria-label={sideOpen ? 'Close navigation' : 'Open navigation'}

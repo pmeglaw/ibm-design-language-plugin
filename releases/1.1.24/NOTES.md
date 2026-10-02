@@ -8,8 +8,12 @@ these contracts and defer delayed/streamed content to the product focus manager.
 
 The fixture now checks heading focus and the no-heading fallback. A dedicated
 Linux shell CI job runs its complete production-build browser suite. An additional
-skip-fragment/history regression preserves an observed URL/content mismatch as a
-potential publication blocker. It is not fixed or claimed to pass here.
+skip-fragment/history regression confirmed a URL/content mismatch on the original
+candidate CI runs. The local repair uses Next.js-integrated History API entries
+for ordinary skip activation, preserving main focus, scrolling, query state and
+native modified clicks. Back/Forward and repeated skip checks passed in targeted
+Chrome observations. The complete automated shell gate remains pending on this
+revised candidate; the original failing receipts are preserved.
 
 Targeted CUA checks passed for the revised example at 320px LTR/RTL Gray 100 and 1440px
 desktop, with same-route, skip, Escape, fallback and ordinary history checks.

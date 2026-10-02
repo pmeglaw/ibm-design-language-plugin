@@ -75,7 +75,11 @@ same product. No IBM prefix is imposed on a non-IBM product.
   before the open shell region is dismissed. Revisit event ownership if adding
   nested widgets that need their own Escape behavior.
 - The first focusable skip link targets a real `Content id="main-content"` with
-  `tabIndex={-1}`. Skip activation focuses that main target. Route changes close
+  `tabIndex={-1}`. Ordinary skip activation focuses and scrolls to that main target.
+  Its fragment entry uses Next.js-integrated `history.pushState` rather than native
+  hash navigation, which creates a null-state entry that App Router cannot restore.
+  Repeated activation keeps one fragment entry; modified clicks retain native behavior.
+  Route changes close
   overlays and focus the visible H1 inside the committed destination content;
   the helper adds `tabIndex={-1}` only when the target has no explicit tabindex.
   It falls back to main if no visible heading is available. Selecting the current
@@ -112,7 +116,8 @@ package versions and separate compile, automated browser, visual and assistive-
 technology evidence. A passing fixture does not validate a different product's
 auth, data, routing or unsaved-work behavior.
 
-Sources: [Next.js server/client composition](https://nextjs.org/docs/app/getting-started/server-and-client-components),
+Sources: [Next.js native History API](https://nextjs.org/docs/app/getting-started/linking-and-navigating#native-history-api),
+[Next.js server/client composition](https://nextjs.org/docs/app/getting-started/server-and-client-components),
 [header usage](https://carbondesignsystem.com/components/UI-shell-header/usage/),
 [HeaderSideNavItems source](https://raw.githubusercontent.com/carbon-design-system/carbon/main/packages/react/src/components/UIShell/HeaderSideNavItems.tsx),
 [SideNav 1.117.0](https://unpkg.com/@carbon/react@1.117.0/lib/components/UIShell/SideNav.js),
