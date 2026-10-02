@@ -59,3 +59,23 @@ jobs:
         working-directory: tests/behavior-fixture
       - run: npm test
         working-directory: tests/behavior-fixture
+
+  nextjs-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: python -B scripts/prepare_shell_fixture.py
+      - run: npm ci --ignore-scripts
+        working-directory: .verification/nextjs-shell
+      - run: npx playwright install --with-deps chromium
+        working-directory: .verification/nextjs-shell
+      - run: npm run build
+        working-directory: .verification/nextjs-shell
+      - run: npm test
+        working-directory: .verification/nextjs-shell

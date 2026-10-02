@@ -21,7 +21,8 @@ Use the pinned lockfile. Review dependency installation scripts according to
 your environment's policy. No script approvals are needed for the recorded run.
 
 Tests start and stop their own production server on loopback port 49424.
-They cover route boundaries/history, responsive navigation, skip focus, Escape,
+They cover route boundaries/history, responsive navigation, committed heading
+focus and same-route heading focus, separate skip-to-main focus, Escape,
 reverse Tab, dismissal/restoration, utility order/exclusivity, long names,
 white/G100 CSS themes, and automated axe checks. Screenshots and traces belong
 to the local test output. Screenshots require separate inspection; axe does not
