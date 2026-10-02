@@ -68,3 +68,23 @@ test("missed fails every check, including at 390px", async ({ page }) => {
   await expect(page.locator("[data-release-summary]")).toHaveText("Missed 0 of 29.", { timeout: 15000 });
   await expectAll(page, "fail");
 });
+
+test("search rule rejects an otherwise corrected field with a 1px box", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator("[data-release-summary]")).toHaveText("Corrected 29 of 29.", { timeout: 15000 });
+  const rule = await page.evaluate(async () => {
+    // Exercise the release judge with only the Search border changed.
+    const checksModulePath = "/src/checks.ts";
+    const { judgeRelease }: typeof import("../src/checks") = await import(checksModulePath);
+    const root = document.querySelector<HTMLElement>("[data-release-root]")!;
+    const input = root.querySelector<HTMLInputElement>("[data-release-search] input")!;
+    input.style.border = "1px solid black";
+    const style = getComputedStyle(input);
+    return {
+      widths: [style.borderTopWidth, style.borderRightWidth, style.borderBottomWidth, style.borderLeftWidth],
+      verdict: judgeRelease(root).find((check) => check.id === "search-rule")!.verdict,
+    };
+  });
+  expect(rule.widths).toEqual(["1px", "1px", "1px", "1px"]);
+  expect(rule.verdict).toBe("fail");
+});

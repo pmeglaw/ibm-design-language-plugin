@@ -444,12 +444,16 @@ function tableClip(table: Element) {
 }
 
 function fineRule(style: CSSStyleDeclaration) {
-  const bottom = Number.parseFloat(style.borderBottomWidth) || 0;
-  const left = Number.parseFloat(style.borderLeftWidth) || 0;
-  const ok = Math.abs(bottom - 1) <= 0.5 && left <= bottom;
+  const bottom = Number.parseFloat(style.borderBottomWidth);
+  const top = Number.parseFloat(style.borderTopWidth);
+  const right = Number.parseFloat(style.borderRightWidth);
+  const left = Number.parseFloat(style.borderLeftWidth);
+  const ok = Math.abs(bottom - 1) <= 0.5 && top === 0 && right === 0 && left === 0;
   return {
     ok,
-    detail: ok ? "The field keeps a 1px bottom rule." : `The bottom border is ${Math.round(bottom)}px. A default field uses 1px.`,
+    detail: ok
+      ? "The field keeps a 1px bottom rule."
+      : `Borders are top ${top}px, right ${right}px, bottom ${bottom}px, left ${left}px. A default field uses only a 1px bottom rule.`,
   };
 }
 
