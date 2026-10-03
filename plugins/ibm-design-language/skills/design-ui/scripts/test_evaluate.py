@@ -492,6 +492,57 @@ class SiblingSnapshotTests(unittest.TestCase):
                 self.assertEqual(ev.markdown_destinations(prefix), [])
                 self.assertEqual(ev.markdown_destinations(prefix + closer + ')'), ['reference.md'])
 
+    def test_escaped_link_openings_are_literals_in_packets(self):
+        for count in (1, 3):
+            for form in ('[example](missing.md)', '[example][missing]', '[example][]'):
+                with self.subTest(backslashes=count, form=form):
+                    (self.review / "SKILL.md").write_text('\\' * count + form + '\n')
+                    packet = f"escaped-{count}-{len(form)}"
+                    manifest = self.prepare(packet)
+                    self.assertEqual(ev.load_manifest(self.root / packet), manifest)
+
+    def test_even_backslashes_preserve_real_link_dependencies(self):
+        for count in (0, 2, 4):
+            for index, form in enumerate(('[example](missing.md)', '[example][missing]', '[example][]')):
+                with self.subTest(backslashes=count, form=form):
+                    (self.review / "SKILL.md").write_text('\\' * count + form + '\n')
+                    packet = f"real-missing-{count}-{index}"
+                    with self.assertRaisesRegex(ev.EvaluationError, "local reference"):
+                        self.prepare(packet)
+                    self.assertFalse((self.root / packet).exists())
+            (self.review / "reference.md").write_text("Review reference.\n")
+            (self.review / "SKILL.md").write_text(
+                '\\' * count + '[example](reference.md)\n' +
+                '\\' * count + '[example][ref][literal]\n' +
+                '\\' * count + '[example][]\n' +
+                '[ref]: reference.md\n[example]: reference.md\n')
+            packet = f"real-present-{count}"
+            manifest = self.prepare(packet)
+            self.assertEqual(ev.load_manifest(self.root / packet), manifest)
+
+    def test_nested_and_escaped_label_brackets_keep_real_links(self):
+        for text in ('[outer [inner] label](missing.md)',
+                     r'[outer \[literal\] label](missing.md)'):
+            with self.subTest(text=text):
+                self.assertEqual(ev.markdown_destinations(text), ['missing.md'])
+
+    def test_literal_opening_does_not_hide_a_later_real_reference(self):
+        for count in (1, 3):
+            for index, form in enumerate(('[real][missing]', '[real][]')):
+                with self.subTest(backslashes=count, form=form):
+                    prefix = '\\' * count + '[literal '
+                    (self.review / "SKILL.md").write_text(prefix + form + '\n')
+                    packet = f"later-real-missing-{count}-{index}"
+                    with self.assertRaisesRegex(ev.EvaluationError, "local reference"):
+                        self.prepare(packet)
+                    self.assertFalse((self.root / packet).exists())
+                    (self.review / "reference.md").write_text("Review reference.\n")
+                    (self.review / "SKILL.md").write_text(
+                        prefix + form + '\n[missing]: reference.md\n[real]: reference.md\n')
+                    packet = f"later-real-present-{count}-{index}"
+                    manifest = self.prepare(packet)
+                    self.assertEqual(ev.load_manifest(self.root / packet), manifest)
+
     def test_nested_parenthesis_reference_is_validated(self):
         (self.review / "SKILL.md").write_text('[reference](reference(one(two)).md)\n')
         with self.assertRaisesRegex(ev.EvaluationError, "local reference"):

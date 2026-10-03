@@ -1,8 +1,9 @@
 # 1.1.26 combined candidate - unpublished
 
-This candidate integrates three separately reviewed components from main
-`b63641855c241a7fbbabde15144405c4e1613131`. Existing notes-only PR #30 and routing
-PR #29 remain available as review history; this draft does not merge or close them.
+This unpublished candidate integrates three separately reviewed components through
+merged PR #31. Notes-only PR #30 and routing PR #29 were closed as superseded.
+The focused escaped-Markdown follow-up starts from main
+`f1b47abd93130d3466a3047815babd5ff7063266`; publication remains on hold.
 
 ## Package history correction
 
@@ -35,6 +36,15 @@ historical manifests, scores and evaluation suites are not rewritten.
 No prior evaluator patch was available for transfer; this narrow fix was
 implemented from the recovered requirements and verified with fresh regressions.
 Contrast-checker empty-batch work is excluded.
+
+### Escaped Markdown follow-up
+
+Treat link opening brackets preceded by an odd number of backslashes as literal
+text rather than false local dependencies. Ordinary and even-backslash openings
+continue to validate inline, full-reference and collapsed-reference links.
+Focused regressions demonstrate the previous false rejections, preserve valid
+dependency failures and acceptance, and cover nested or escaped label brackets.
+No unrelated parser refactor or historical packet rewrite is included.
 
 ## Preservation and evidence limits
 

@@ -180,6 +180,23 @@ def markdown_destinations(text: str) -> list[str]:
             prose.append(line)
     text = re.sub(r'(?<!`)(`+)(?!`)(.*?)(?<!`)\1(?!`)', "", "".join(prose), flags=re.S)
 
+    def escaped(index: int) -> bool:
+        start = index
+        while start and text[start - 1] == "\\":
+            start -= 1
+        return (index - start) % 2 == 1
+
+    # Pair only syntactic brackets; escaped brackets are literal label text.
+    openings = []
+    brackets = {}
+    for index, char in enumerate(text):
+        if char not in "[]" or escaped(index):
+            continue
+        if char == "[":
+            openings.append(index)
+        elif openings:
+            brackets[index] = openings.pop()
+
     def destination(start: int) -> tuple[str | None, int]:
         while start < len(text) and text[start].isspace():
             start += 1
@@ -210,6 +227,8 @@ def markdown_destinations(text: str) -> list[str]:
 
     inline = []
     for match in re.finditer(r'\]\(\s*', text):
+        if match.start() not in brackets:
+            continue
         target, end = destination(match.end())
         suffix = r'(?:\s+(?:"(?:\\.|[^"\\\n])*"|\'(?:\\.|[^\'\\\n])*\'|\((?:\\.|[^)\\\n])*\)))?\s*\)'
         if target and re.match(suffix, text[end:]):
@@ -220,7 +239,15 @@ def markdown_destinations(text: str) -> list[str]:
         if target:
             definitions.append((match[1], target))
     labels = {" ".join(label.split()).casefold() for label, _ in definitions}
-    for title, label in re.findall(r'\[([^\]\n]+)\]\[([^\]\n]*)\]', text):
+    references = re.compile(r'\[([^\]\n]+)\]\[([^\]\n]*)\]')
+    start = 0
+    while match := references.search(text, start):
+        literal = escaped(match.start())
+        # Retry after a literal opening; consume a real reference as before.
+        start = match.start() + 1 if literal else match.end()
+        if literal:
+            continue
+        title, label = match.groups()
         if " ".join((label or title).split()).casefold() not in labels:
             raise EvaluationError(f"Missing local reference definition: {label or title}")
     targets = inline + [target for _, target in definitions]
