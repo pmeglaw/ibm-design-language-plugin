@@ -1,6 +1,6 @@
 {
   "plugin.json": "f6cedde6192d91e8ac0a21cc8811786339f3f1358d1a8d77c9b06c639aa92d31",
-  "RELEASE_NOTES.md": "bc8c6b2c823e90db0cb1288116f9c44b73f0df809f1a153276ca43bb4f220cb8",
+  "RELEASE_NOTES.md": "f0cd3f2d9162ab80d11045a53f5a414049dcffd000dd551235e56b30c790eb5c",
   "skills/design-ui/assets/carbon-components.css": "adf88b4f4765ff667ed7f28ae98ceba76ca89c4af64b9b71ea8022f041077937",
   "skills/design-ui/assets/carbon-tokens.css": "cc8cb8d56d1bb22173b79f9b9f50e9ce8cb5872c3f660fde853921e149ae5755",
   "skills/design-ui/assets/casebook/casebook.css": "02c11f1550604ff120428205323a039f0c27aa8a892c11b9b02ae0f6359d6040",
@@ -136,10 +136,10 @@
   "skills/design-ui/references/vue-tutorial-integration.md": "4b09662640b9e8d2164b009c0e191c3379a8656514f30d6fec15d026d12bd2a2",
   "skills/design-ui/references/web-components-tutorial-integration.md": "0cbf7cd2385fc400719bf45b78db4a66c9aaf4555d927d0ac135eed1632e8303",
   "skills/design-ui/scripts/check_contrast.py": "ef7cec2255cc4e396eda2aaf5739bd1bfcd9d2695d3be4cfda7105848989707b",
-  "skills/design-ui/scripts/evaluate.py": "35fdf3e89f5c1738e8c251250a6ff794c44341425f92c05a388a7adc9e92f818",
+  "skills/design-ui/scripts/evaluate.py": "2b2b68003ca722a4fea8cd14e94601e15fb5e0c55a072eafd175bb93c260e062",
   "skills/design-ui/scripts/fixtures/evaluation-contracts.json": "c019b5775ded0ccdeddebeaf90d4a18e645782cb59e188058711cbcfc178a0ed",
   "skills/design-ui/scripts/run_evals.ps1": "971867e3ce1fc533728cd720aa88e1ffdcece6f166a0353fa8edab8c474e96db",
-  "skills/design-ui/scripts/test_evaluate.py": "0566e83285def21dd5fac0195bd2706de447a65886eeaea82c5f9ee83d1829b8",
+  "skills/design-ui/scripts/test_evaluate.py": "d32b167fbcb30e06fdfacf3ede1f7846e42afad23527dbe386758bea9b43ea3d",
   "skills/design-ui/SKILL.md": "85778dc299092984a4cc9a0c756bcf5f76ebcb089b68a682e2e48fab9386af10",
   "skills/review-product-experience/SKILL.md": "70c5d1b9aa2749fc3861e6b9a090d94217262b367a2347272e8e144aa96a6c46"
 }
