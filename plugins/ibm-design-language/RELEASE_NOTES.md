@@ -1,8 +1,12 @@
-# IBM Design Language 1.1.25
+# IBM Design Language 1.1.26 candidate - unpublished
+
+Version 1.1.26 is a notes-only candidate. It restores the missing 1.1.24 package release-note entry and corrects the stale preparation wording in the repository's 1.1.24 publication notes using the authoritative GitHub release record. Published 1.1.24 and 1.1.25 archives, manifests and checksums remain unchanged. Skill instructions, examples, fixtures, assertions and frozen evidence are unchanged. This candidate adds no model-generation or screen-reader result; the frozen 1.1.23 practical verdict remains 9 pass, 2 fail.
+
+## Earlier release notes
 
 Version 1.1.25 restores the Theme tokens Markdown table separator and adds scoped engineering craft checks for touch/hybrid hover, font-display choices, measured critical font preloads and language-safe subsetting. The guidance preserves supported Carbon behavior, native activation, focus/state feedback and the approved font-loading pipeline. It does not change runtime assets, component APIs, evaluation assertions or historical verdicts. No fresh model generation, product font-performance test or manual screen-reader evaluation was performed for this documentation release.
 
-## Earlier release notes
+Version 1.1.24 focuses the maintained Next.js shell on the visible destination H1 after a committed route change and on same-route selection. Main is the fallback. Ordinary skip-to-main uses Next.js-integrated history, so Back does not restore a fragment URL over stale route content. Modified clicks stay native. A production-build shell gate covers heading focus, fallback, Back/Forward, and repeated skip. The release-fixture Node types setup was corrected without changing assertions or the Missed pattern. These checks are example and fixture evidence, not a new model-generation result or a screen-reader certification. Delayed or streaming headings remain the product's focus manager. The frozen 1.1.23 practical verdict remains 9 pass, 2 fail.
 
 Version 1.1.23 adds an explicit Form visual benchmark using the owner-selected Carbon Guidelines and Web Components Default story, routed from design-ui and its taste rubric. It teaches label/input/help alignment, field grouping, default/fluid composition and final action placement. It records the Guidelines' 32px default column gutter versus a measured 16px demo pair, qualifies the story's selective xs support, and updates the historical read-only note. Live story controls are kept separate from released APIs and React submission behavior. Visual reference inspection and bounded retrieval checks do not establish application behavior, accessibility or generated-design quality; historical evaluations and frozen releases remain unchanged.
 
