@@ -396,5 +396,130 @@ class HarnessTests(unittest.TestCase):
 
 
 
+class SiblingSnapshotTests(unittest.TestCase):
+    def setUp(self):
+        TEST_ROOT.mkdir(parents=True, exist_ok=True)
+        self.temp = tempfile.TemporaryDirectory(prefix="siblings-", dir=TEST_ROOT)
+        self.root = Path(self.temp.name).resolve()
+        self.skills = self.root / "skills"
+        self.design = self.skills / "design-ui"
+        self.review = self.skills / "review-product-experience"
+        self.design.mkdir(parents=True)
+        self.review.mkdir()
+        (self.design / "SKILL.md").write_text("Read [review](../review-product-experience/SKILL.md).\n")
+        (self.design / "reference.md").write_text("Design reference.\n")
+        (self.review / "SKILL.md").write_text("Read [design](../design-ui/reference.md).\n")
+        self.suite = self.design / "evals.json"
+        ev.write_json(self.suite, {"schema_version": 2, "evals": [
+            {"id": 1, "kind": "guidance", "prompt": "Review a product.", "visual_dimensions": [],
+             "assertions": [{"id": "a1", "criterion": "Resolved review workflow"}]}]})
+
+    def tearDown(self):
+        self.assertTrue(self.root.is_relative_to(TEST_ROOT))
+        self.temp.cleanup()
+
+    def prepare(self, name):
+        return ev.prepare(self.design, self.root / name, self.suite,
+                          "fixture-model", "high", [1], [])
+
+    def test_review_workflow_links_resolve_in_packet(self):
+        manifest = self.prepare("packet")
+        snapshot = self.root / "packet/snapshot"
+        self.assertEqual((snapshot / "design-ui/SKILL.md").read_bytes(),
+                         (self.design / "SKILL.md").read_bytes())
+        self.assertEqual((snapshot / "design-ui/../review-product-experience/SKILL.md").read_bytes(),
+                         (self.review / "SKILL.md").read_bytes())
+        self.assertTrue((snapshot / "review-product-experience/../design-ui/reference.md").is_file())
+        self.assertIn(str(snapshot / "design-ui"), (self.root / "packet/case-01/prompt.txt").read_text())
+        self.assertEqual(ev.load_manifest(self.root / "packet"), manifest)
+        review_packet = self.root / "review-packet"
+        review_manifest = ev.prepare(self.review, review_packet, self.suite,
+                                     "fixture-model", "high", [1], [])
+        self.assertEqual(review_manifest["identity"]["entrypoint_relative_path"],
+                         "review-product-experience/SKILL.md")
+        self.assertEqual(review_manifest["identity"]["skill_sha256"], manifest["identity"]["skill_sha256"])
+        self.assertEqual(ev.load_manifest(review_packet), review_manifest)
+
+    def test_missing_dependency_or_local_reference_fails_clearly(self):
+        review_entry = self.review / "SKILL.md"
+        saved = review_entry.read_bytes()
+        review_entry.unlink()
+        with self.assertRaisesRegex(ev.EvaluationError, "Missing skill dependency.*review-product-experience"):
+            self.prepare("missing-sibling")
+        self.assertFalse((self.root / "missing-sibling").exists())
+        review_entry.write_bytes(saved)
+        for name, target in (("missing-file", "missing.md"), ("outside-snapshot", "../../outside.md")):
+            with self.subTest(target=target):
+                (self.root / "outside.md").write_text("Outside the delivered snapshot.\n")
+                review_entry.write_text(f"Read [reference]({target}).\n")
+                with self.assertRaisesRegex(ev.EvaluationError, "local reference"):
+                    self.prepare(name)
+                self.assertFalse((self.root / name).exists())
+
+    def test_valid_markdown_destinations_remain_supported(self):
+        reference = self.review / "reference (one).md"
+        reference.write_text("Review reference.\n")
+        (self.review / "SKILL.md").write_text(
+            '[title](<reference (one).md> "Reference title")\n'
+            '[angle](<../design-ui/reference.md>)\n'
+            '[bare](../design-ui/reference.md "Design reference")\n'
+            '[balanced](reference%20(one).md)\n'
+            '[reference][review]\n[review]: <reference (one).md> "Title"\n')
+        manifest = self.prepare("markdown-destinations")
+        self.assertEqual(ev.load_manifest(self.root / "markdown-destinations"), manifest)
+
+    def test_reference_style_missing_dependencies_are_rejected(self):
+        for name, content in (("missing-reference-file", "[reference][ref]\n\n[ref]: missing.md\n"),
+                              ("missing-reference-definition", "[reference][missing]\n")):
+            with self.subTest(name=name):
+                (self.review / "SKILL.md").write_text(content)
+                with self.assertRaisesRegex(ev.EvaluationError, "local reference"):
+                    self.prepare(name)
+                self.assertFalse((self.root / name).exists())
+
+    def test_markdown_code_does_not_create_reference_dependencies(self):
+        (self.review / "SKILL.md").write_text(
+            'Inline `matrix[0][1]` and ``[literal](missing.md)``.\n'
+            '```python\nvalue = matrix[0][1]\n[literal](missing.md)\n```\n'
+            '~~~~text\n[literal][missing]\n~~~~~\n')
+        manifest = self.prepare("literal-code")
+        self.assertEqual(ev.load_manifest(self.root / "literal-code"), manifest)
+
+    def test_escaped_markdown_titles_do_not_backtrack(self):
+        for opener, closer, escaped in (('"', '"', '\\!'), ("'", "'", '\\&'), ('(', ')', '\\(')):
+            with self.subTest(opener=opener):
+                prefix = '[reference](reference.md ' + opener + escaped * 4096
+                self.assertEqual(ev.markdown_destinations(prefix), [])
+                self.assertEqual(ev.markdown_destinations(prefix + closer + ')'), ['reference.md'])
+
+    def test_nested_parenthesis_reference_is_validated(self):
+        (self.review / "SKILL.md").write_text('[reference](reference(one(two)).md)\n')
+        with self.assertRaisesRegex(ev.EvaluationError, "local reference"):
+            self.prepare("missing-nested-reference")
+        self.assertFalse((self.root / "missing-nested-reference").exists())
+        (self.review / "reference(one(two)).md").write_text("Nested reference.\n")
+        manifest = self.prepare("valid-nested-reference")
+        self.assertEqual(ev.load_manifest(self.root / "valid-nested-reference"), manifest)
+
+    def test_each_skill_changes_fingerprint_and_invalidates_tampered_packet(self):
+        manifest = self.prepare("original")
+        self.assertIn("design-ui/reference.md", manifest["skill_files"])
+        self.assertIn("review-product-experience/SKILL.md", manifest["skill_files"])
+        for skill in (self.design, self.review):
+            with self.subTest(skill=skill.name):
+                entry = skill / "SKILL.md"
+                original = entry.read_bytes()
+                entry.write_bytes(original + b"Changed source.\n")
+                revised = self.prepare("changed-" + skill.name)
+                self.assertNotEqual(manifest["identity"]["skill_sha256"], revised["identity"]["skill_sha256"])
+                entry.write_bytes(original)
+                copied = self.root / "original/snapshot" / skill.name / "SKILL.md"
+                copied.write_bytes(original + b"Changed snapshot.\n")
+                with self.assertRaisesRegex(ev.EvaluationError, "snapshot changed"):
+                    ev.load_manifest(self.root / "original")
+                copied.write_bytes(original)
+        self.assertEqual(ev.load_manifest(self.root / "original"), manifest)
+
+
 if __name__ == "__main__":
     unittest.main()

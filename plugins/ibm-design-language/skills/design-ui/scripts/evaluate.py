@@ -7,14 +7,16 @@ import hashlib
 import json
 import os
 import platform
+import re
 import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import unquote, urlsplit
 
-VERSION = "2-evaluation-repair"
+VERSION = "3-sibling-snapshots"
 DIMENSIONS = ("hierarchy", "layout", "typography", "color_imagery", "interaction_clarity")
 SKIP_DIRS = {".git", "__pycache__", "node_modules", ".next"}
 RESPONSE_SCHEMA = {
@@ -151,6 +153,103 @@ def context_hashes(paths: list[Path]) -> dict[str, str]:
     return result
 
 
+def snapshot_sources(skill: Path) -> tuple[Path, dict[str, Path], str]:
+    if skill.name in ("design-ui", "review-product-experience"):
+        sources = {name: skill.parent / name for name in ("design-ui", "review-product-experience")}
+        for name, source in sources.items():
+            if not (source / "SKILL.md").is_file():
+                raise EvaluationError(f"Missing skill dependency: {name}/SKILL.md")
+        return skill.parent, sources, f"{skill.name}/SKILL.md"
+    return skill, {"": skill}, "SKILL.md"
+
+
+def markdown_destinations(text: str) -> list[str]:
+    # Fenced blocks and inline code contain literal syntax, not reference links.
+    prose = []
+    fence = None
+    for line in text.splitlines(keepends=True):
+        marker = re.match(r' {0,3}(`{3,}|~{3,})(.*)', line)
+        if fence is not None:
+            if marker and marker[1][0] == fence[0] and len(marker[1]) >= fence[1] and not marker[2].strip():
+                fence = None
+            prose.append("\n")
+        elif marker and (marker[1][0] == "~" or "`" not in marker[2]):
+            fence = (marker[1][0], len(marker[1]))
+            prose.append("\n")
+        else:
+            prose.append(line)
+    text = re.sub(r'(?<!`)(`+)(?!`)(.*?)(?<!`)\1(?!`)', "", "".join(prose), flags=re.S)
+
+    def destination(start: int) -> tuple[str | None, int]:
+        while start < len(text) and text[start].isspace():
+            start += 1
+        angled = start < len(text) and text[start] == "<"
+        index = start + int(angled)
+        path = []
+        depth = 0
+        while index < len(text):
+            char = text[index]
+            if char == "\\" and index + 1 < len(text):
+                path.extend((char, text[index + 1]))
+                index += 2
+                continue
+            if angled:
+                if char == ">":
+                    return "".join(path), index + 1
+                if char == "\n":
+                    return None, index
+            elif char.isspace() or (char == ")" and depth == 0):
+                break
+            elif char == "(":
+                depth += 1
+            elif char == ")":
+                depth -= 1
+            path.append(char)
+            index += 1
+        return (None if angled or depth else "".join(path)), index
+
+    inline = []
+    for match in re.finditer(r'\]\(\s*', text):
+        target, end = destination(match.end())
+        suffix = r'(?:\s+(?:"(?:\\.|[^"\\\n])*"|\'(?:\\.|[^\'\\\n])*\'|\((?:\\.|[^)\\\n])*\)))?\s*\)'
+        if target and re.match(suffix, text[end:]):
+            inline.append(target)
+    definitions = []
+    for match in re.finditer(r'(?m)^ {0,3}\[([^\]\n]+)\]:[ \t]*', text):
+        target, _ = destination(match.end())
+        if target:
+            definitions.append((match[1], target))
+    labels = {" ".join(label.split()).casefold() for label, _ in definitions}
+    for title, label in re.findall(r'\[([^\]\n]+)\]\[([^\]\n]*)\]', text):
+        if " ".join((label or title).split()).casefold() not in labels:
+            raise EvaluationError(f"Missing local reference definition: {label or title}")
+    targets = inline + [target for _, target in definitions]
+    return [re.sub(r'\\([!"#$%&\'()*+,\-./:;<=>?@\[\]\\^_`{|}~])', r'\1', target)
+            for target in targets]
+
+
+def validate_local_links(root: Path, files: dict[str, str]) -> None:
+    for name in files:
+        if not name.endswith(".md"):
+            continue
+        source = root / name
+        for target in markdown_destinations(source.read_text(encoding="utf-8-sig")):
+            parsed = urlsplit(target)
+            if parsed.scheme in ("http", "https", "mailto", "data") or parsed.netloc:
+                continue
+            if not parsed.path:
+                continue
+            relative = (Path(name).parent / unquote(parsed.path)).as_posix()
+            try:
+                path = confined(root, relative)
+                key = path.relative_to(root.resolve()).as_posix()
+            except (EvaluationError, ValueError) as error:
+                raise EvaluationError(f"Invalid local reference: {name}: {target}") from error
+            included = key in files or (path.is_dir() and any(p.startswith(key + "/") for p in files))
+            if parsed.scheme or not included or not path.exists():
+                raise EvaluationError(f"Missing local reference in skill snapshot: {name}: {target}")
+
+
 def prepare(skill: Path, results: Path, suite_path: Path, model: str, reasoning: str,
             ids: list[int] | None, context: list[Path], *,
             timeout_seconds: int | None = None, preview_port: int | None = None) -> dict[str, Any]:
@@ -172,7 +271,13 @@ def prepare(skill: Path, results: Path, suite_path: Path, model: str, reasoning:
         raise EvaluationError("Timeout must be a positive integer")
     if preview_port is not None and (type(preview_port) is not int or not 1024 <= preview_port <= 65535):
         raise EvaluationError("Preview port must be an integer from 1024 to 65535")
-    hashes = tree_hashes(skill)
+    source_root, sources, entrypoint_path = snapshot_sources(skill)
+    for source in sources.values():
+        if results == source or results.is_relative_to(source) or source.is_relative_to(results):
+            raise EvaluationError("Results and source skills must be separate trees")
+    hashes = {(f"{name}/" if name else "") + path: value
+              for name, source in sources.items() for path, value in tree_hashes(source).items()}
+    validate_local_links(source_root, hashes)
     context_files = list(context)
     codex_home = Path(os.environ.get("CODEX_HOME", Path.home() / ".codex"))
     user_config = codex_home / "config.toml"
@@ -181,7 +286,8 @@ def prepare(skill: Path, results: Path, suite_path: Path, model: str, reasoning:
     contexts = context_hashes(context_files)
     identity = {
         "harness_version": VERSION, "harness_sha256": file_hash(Path(__file__)),
-        "skill_sha256": digest(hashes), "entrypoint_file_sha256": hashes["SKILL.md"],
+        "skill_sha256": digest(hashes), "entrypoint_file_sha256": hashes[entrypoint_path],
+        "entrypoint_relative_path": entrypoint_path,
         "fingerprint_algorithm": "SHA256(canonical sorted JSON relative-path-to-file-SHA256 map)",
         "timeout_seconds": timeout_seconds, "preview_port": preview_port,
         "suite_sha256": digest(suite),
@@ -191,7 +297,8 @@ def prepare(skill: Path, results: Path, suite_path: Path, model: str, reasoning:
     }
     results.mkdir(parents=True)
     snapshot = results / "snapshot"
-    shutil.copytree(skill, snapshot, ignore=shutil.ignore_patterns(*SKIP_DIRS, "*.pyc"))
+    for name, source in sources.items():
+        shutil.copytree(source, snapshot / name, ignore=shutil.ignore_patterns(*SKIP_DIRS, "*.pyc"))
     if tree_hashes(snapshot) != hashes:
         raise EvaluationError("Skill snapshot differs from source")
     write_json(results / "suite.json", suite)
@@ -200,7 +307,8 @@ def prepare(skill: Path, results: Path, suite_path: Path, model: str, reasoning:
                 "run_key": digest(identity), "skill_files": hashes, "packets": {},
                 "scope_note": "Exact entrypoint delivered; this is not proof of exclusive model reliance. "
                               "User/managed policies still apply; context hashes are a declared snapshot."}
-    entrypoint = (snapshot / "SKILL.md").read_text(encoding="utf-8-sig")
+    validate_local_links(snapshot, hashes)
+    entrypoint = (snapshot / entrypoint_path).read_text(encoding="utf-8-sig")
     for case in cases:
         case_root = results / f"case-{case['id']:02d}"
         (case_root / "workspace").mkdir(parents=True)
@@ -208,7 +316,8 @@ def prepare(skill: Path, results: Path, suite_path: Path, model: str, reasoning:
         write_json(case_root / "case.json", case)
         prompt = (
             "Complete the request using the exact skill entrypoint embedded below and its supporting "
-            f"files at {snapshot}. The whole-snapshot map SHA-256 is {identity['skill_sha256']}. "
+            f"files at {snapshot / Path(entrypoint_path).parent}. Sibling skills retain their relative "
+            f"paths within {snapshot}. The whole-snapshot map SHA-256 is {identity['skill_sha256']}. "
             f"The separate SKILL.md file SHA-256 is {identity['entrypoint_file_sha256']}. "
             "These hash different inputs and are expected to differ. The harness verifies the complete "
             "snapshot map: SHA256 of UTF-8 canonical JSON (sorted keys, compact separators) mapping "
@@ -252,10 +361,12 @@ def load_manifest(results: Path) -> dict[str, Any]:
         raise EvaluationError("Harness changed; prepare a new run with this harness")
     if tree_hashes(results / "snapshot") != manifest["skill_files"]:
         raise EvaluationError("Skill snapshot changed")
-    if identity["entrypoint_file_sha256"] != manifest["skill_files"]["SKILL.md"]:
+    entrypoint_path = identity.get("entrypoint_relative_path", "SKILL.md")
+    if identity["entrypoint_file_sha256"] != manifest["skill_files"].get(entrypoint_path):
         raise EvaluationError("Entrypoint file fingerprint changed")
     if digest(manifest["skill_files"]) != identity["skill_sha256"]:
         raise EvaluationError("Skill fingerprint changed")
+    validate_local_links(results / "snapshot", manifest["skill_files"])
     if digest(read_json(results / "suite.json")) != identity["suite_sha256"]:
         raise EvaluationError("Suite changed")
     if file_hash(results / "response.schema.json") != manifest["schema_sha256"]:

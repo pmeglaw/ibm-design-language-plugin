@@ -11,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = '1.1.25'
+CURRENT = '1.1.26'
 
 
 def require(condition, message):
@@ -27,7 +27,7 @@ def main():
     report = ROOT / '.verification'
     report.mkdir(exist_ok=True)
     manifests = {}
-    for version in ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', '1.1.19', '1.1.20', '1.1.21', '1.1.22', '1.1.23', '1.1.24', CURRENT):
+    for version in ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', '1.1.19', '1.1.20', '1.1.21', '1.1.22', '1.1.23', '1.1.24', '1.1.25', CURRENT):
         release = ROOT / 'releases' / version
         expected = json.loads((release / 'files.json').read_text(encoding='utf-8'))
         archive = release / 'plugin.zip'
@@ -50,6 +50,12 @@ def main():
     require(actual == manifests[CURRENT], 'Plugin differs from frozen release')
     manifest = json.loads((plugin / 'plugin.json').read_text())
     require(manifest['version'] == CURRENT, 'Wrong plugin version')
+    definitions = plugin / 'skills/design-ui/references/release-gate-definitions'
+    for source in ('release-fixture/src/checks.ts', 'release-fixture/tests/release.spec.ts',
+                   'behavior-fixture/src/sequence.ts', 'behavior-fixture/src/driver.ts',
+                   'behavior-fixture/src/dom.ts', 'behavior-fixture/tests/behavior.spec.ts'):
+        require((definitions / source).read_bytes() == (ROOT / 'tests' / source).read_bytes(),
+                f'Packaged gate definition differs from canonical fixture: {source}')
     market = json.loads((ROOT / '.agents/plugins/marketplace.json').read_text())
     require(market['name'] == 'jp-personal' and len(market['plugins']) == 1, 'Marketplace mismatch')
     entry = market['plugins'][0]
