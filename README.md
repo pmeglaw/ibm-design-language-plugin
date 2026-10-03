@@ -6,6 +6,8 @@ The current published package is **1.1.25**. [Source](https://github.com/pmeglaw
 
 Version 1.1.25 restores the theme-token table and adds scoped touch-hover and font-loading craft checks. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.25) for completed verification and evidence limits.
 
+The working source is **1.1.26, an unpublished combined candidate**. It corrects the 1.1.24 release-note history, routes composition reviews to packaged release-gate definitions, and includes both sibling skills in evaluation packets and fingerprints. See the [candidate notes](releases/1.1.26/NOTES.md). Published 1.1.24 and 1.1.25 archives, manifests and checksums remain unchanged.
+
 ## What it does
 
 | Skill | Use it for |
@@ -51,7 +53,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.25 package with its two skills, references, visual casebook, assets, evaluator, and tests.
+- `plugins/ibm-design-language/`: the unpublished 1.1.26 working source with its two skills, references, visual casebook, assets, evaluator, and tests; the published 1.1.25 package remains frozen in `releases/1.1.25/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

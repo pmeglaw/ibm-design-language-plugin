@@ -1,30 +1,35 @@
-# 1.1.24 candidate - unpublished
+# IBM Design Language 1.1.24 - published
 
-The maintained Next.js shell example focuses the visible destination H1 after a
-committed route change and on same-route selection; main is the fallback if no
-heading is available. Skip links continue to focus main, Escape restores its
-invoker, and modifier clicks retain native link behavior. References distinguish
-these contracts and defer delayed/streamed content to the product focus manager.
+Published from commit `ee7dbf087bffc69fc78b08e6b6dd7bd7ca53fd73` via
+[PR #26](https://github.com/pmeglaw/ibm-design-language-plugin/pull/26).
+The [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.24)
+is the authoritative publication record. The old "unpublished" and "shell gate
+pending" sentences were preparation wording retained at publication; this
+repository note corrects that wording without changing the published package.
 
-The fixture now checks heading focus and the no-heading fallback. A dedicated
-Linux shell CI job runs its complete production-build browser suite. An additional
-skip-fragment/history regression confirmed a URL/content mismatch on the original
-candidate CI runs. The local repair uses Next.js-integrated History API entries
-for ordinary skip activation, preserving main focus, scrolling, query state and
-native modified clicks. Back/Forward and repeated skip checks passed in targeted
-Chrome observations. The complete automated shell gate remains pending on this
-revised candidate; the original failing receipts are preserved.
+The maintained Next.js shell focuses the visible destination H1 after committed
+route navigation and same-route selection, with main as the no-heading fallback.
+Skip-to-main and Escape restoration retain separate focus contracts. Ordinary
+skip activation uses Next.js-integrated history entries so Back does not restore
+a fragment URL over stale route content. Repeated skip preserves query state
+without duplicate fragment entries; modified clicks retain native behavior.
 
-Targeted CUA checks passed for the revised example at 320px LTR/RTL Gray 100 and 1440px
-desktop, with same-route, skip, Escape, fallback and ordinary history checks.
-That is example evidence, not a fresh model-generation result or accessibility
-certification. The frozen 1.1.23 outputs and evaluation verdicts remain unchanged.
+The repository adds a production-build shell gate covering heading focus,
+fallback, Back/Forward and repeated skip. The release-fixture Node types setup
+was corrected without changing runtime dependency versions, assertions or the
+Missed pattern.
 
-Candidate preparation does not establish publication. Required release/keyboard/
-shell browser gates and exact-commit Windows/Linux CI must pass before release.
-No tag, public release, marketplace update or installation has occurred.
+[Exact-commit CI](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/37066829246)
+passed Windows/Linux package/parity verification, casebook, release fixture,
+keyboard fixture and all 20 shell tests before publication. Local package
+verification, 42 synthetic tests and six install-parity unit tests also passed.
+These checks are maintained-example and fixture evidence, not a fresh
+model-generation result or a screen-reader certification. Delayed or streaming
+headings remain the product's focus manager; multiple-heading selection and a
+dedicated modified-click browser regression remain outside the demonstrated
+scope. The frozen 1.1.23 practical verdict remains 9 pass, 2 fail.
 
-Candidate preparation also corrects the release fixture TypeScript setup with
-`@types/node` 22.18.6 (already pinned by the shell fixture) and explicit Node types.
-Existing runtime dependency versions, assertion rules and the Missed control are
-unchanged. The original process-type build failure is retained privately.
+The published package contains 135 files. `plugin.zip` SHA-256:
+`e751ce210bfbdc91f0b99e167560a30cc2e02f576aa51c1a2ceafd968306a0f7`.
+The published ZIP, `files.json`, `SHA256SUMS`, tag and GitHub release are unchanged.
+Marketplace registration and installation are separate from publication.
