@@ -211,7 +211,7 @@ def markdown_destinations(text: str) -> list[str]:
     inline = []
     for match in re.finditer(r'\]\(\s*', text):
         target, end = destination(match.end())
-        suffix = r'(?:\s+(?:"(?:\\.|[^"\n])*"|\'(?:\\.|[^\'\n])*\'|\((?:\\.|[^)\n])*\)))?\s*\)'
+        suffix = r'(?:\s+(?:"(?:\\.|[^"\\\n])*"|\'(?:\\.|[^\'\\\n])*\'|\((?:\\.|[^)\\\n])*\)))?\s*\)'
         if target and re.match(suffix, text[end:]):
             inline.append(target)
     definitions = []

@@ -136,10 +136,10 @@
   "skills/design-ui/references/vue-tutorial-integration.md": "4b09662640b9e8d2164b009c0e191c3379a8656514f30d6fec15d026d12bd2a2",
   "skills/design-ui/references/web-components-tutorial-integration.md": "0cbf7cd2385fc400719bf45b78db4a66c9aaf4555d927d0ac135eed1632e8303",
   "skills/design-ui/scripts/check_contrast.py": "ef7cec2255cc4e396eda2aaf5739bd1bfcd9d2695d3be4cfda7105848989707b",
-  "skills/design-ui/scripts/evaluate.py": "1355dec3dd767219107f93960a3ae334f7ed902828e9df486fc1cc9a6e36eba5",
+  "skills/design-ui/scripts/evaluate.py": "35fdf3e89f5c1738e8c251250a6ff794c44341425f92c05a388a7adc9e92f818",
   "skills/design-ui/scripts/fixtures/evaluation-contracts.json": "c019b5775ded0ccdeddebeaf90d4a18e645782cb59e188058711cbcfc178a0ed",
   "skills/design-ui/scripts/run_evals.ps1": "971867e3ce1fc533728cd720aa88e1ffdcece6f166a0353fa8edab8c474e96db",
-  "skills/design-ui/scripts/test_evaluate.py": "9a22b4b779286680ede8a928390ebdfc5c4c17ec06182db1337cf20a4e9f090e",
+  "skills/design-ui/scripts/test_evaluate.py": "0566e83285def21dd5fac0195bd2706de447a65886eeaea82c5f9ee83d1829b8",
   "skills/design-ui/SKILL.md": "85778dc299092984a4cc9a0c756bcf5f76ebcb089b68a682e2e48fab9386af10",
   "skills/review-product-experience/SKILL.md": "70c5d1b9aa2749fc3861e6b9a090d94217262b367a2347272e8e144aa96a6c46"
 }

@@ -485,6 +485,13 @@ class SiblingSnapshotTests(unittest.TestCase):
         manifest = self.prepare("literal-code")
         self.assertEqual(ev.load_manifest(self.root / "literal-code"), manifest)
 
+    def test_escaped_markdown_titles_do_not_backtrack(self):
+        for opener, closer, escaped in (('"', '"', '\\!'), ("'", "'", '\\&'), ('(', ')', '\\(')):
+            with self.subTest(opener=opener):
+                prefix = '[reference](reference.md ' + opener + escaped * 4096
+                self.assertEqual(ev.markdown_destinations(prefix), [])
+                self.assertEqual(ev.markdown_destinations(prefix + closer + ')'), ['reference.md'])
+
     def test_nested_parenthesis_reference_is_validated(self):
         (self.review / "SKILL.md").write_text('[reference](reference(one(two)).md)\n')
         with self.assertRaisesRegex(ev.EvaluationError, "local reference"):
