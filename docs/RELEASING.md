@@ -61,6 +61,40 @@ record before reporting the documentation current. This can be a documentation-o
 follow-up under the applicable authorization; it requires no package version bump,
 retagging or rewriting of the published archive.
 
+## Automated documentation checks
+
+Run `python -B scripts/verify_release_docs.py` to compare the current release
+identity in `docs/RECOVERY.md` with README, installation, history and maintenance
+claims, the source/validator versions and the recorded ZIP checksum. This offline
+check establishes consistency only. Keep the explicit current-version sentences
+and identity fields when editing these documents; missing or ambiguous fields
+fail with the affected document named. Historical release notes and rollback
+entries are excluded from current-version checks.
+
+Add `--github` to require a live check of the latest stable GitHub release and its
+resolved tag commit. The command uses the standard library and optionally reads
+`GITHUB_TOKEN`; CI supplies its read-only token. Network/API failures fail the
+check instead of silently downgrading to offline success. Neither mode verifies
+downloaded release assets, installed-copy parity or generated-product quality.
+Continue running the package verifier and applicable browser/installation gates.
+
+The `Verify release documentation` workflow runs on push, pull request, release
+publication and manual dispatch. On publication it checks the default branch's
+current companion documentation, not frozen preparation wording at the tag. A
+publication-triggered failure reports drift after publication; correct current
+companion docs in a follow-up and confirm the new push run. The workflow does not
+rewrite documentation or make itself a required branch-protection check.
+
+A newer unpublished source can coexist with the current published package. Keep
+recovery and installation pinned to the published version, set the validator and
+maintenance `CURRENT` to the candidate, and state both in README. Use
+`The working source is **VERSION, an unpublished combined candidate**` and
+`the unpublished VERSION working source` in its package contents entry. Once
+published, reconcile these with the published-source wording and release commit.
+Do not rewrite frozen notes or hashes merely to satisfy documentation checks.
+
+Regression command: `python -B -m unittest discover -s tests -p test_release_docs.py`.
+
 ## Authorization and documentation scope
 
 Distinguish three kinds of work:
