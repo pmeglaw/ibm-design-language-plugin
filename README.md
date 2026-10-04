@@ -2,11 +2,11 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.25**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.25) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.26**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.26) · [Install](docs/INSTALLATION.md)
 
-Version 1.1.25 restores the theme-token table and adds scoped touch-hover and font-loading craft checks. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.25) for completed verification and evidence limits.
+Version 1.1.26 corrects the 1.1.24 release-note history, routes composition reviews to packaged release-gate definitions, includes both sibling skills in evaluation packets and fingerprints, and fixes escaped Markdown link handling. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.26) for completed verification and evidence limits.
 
-The working source is **1.1.26, an unpublished combined candidate**. It corrects the 1.1.24 release-note history, routes composition reviews to packaged release-gate definitions, and includes both sibling skills in evaluation packets and fingerprints. See the [candidate notes](releases/1.1.26/NOTES.md). Published 1.1.24 and 1.1.25 archives, manifests and checksums remain unchanged.
+The working package matches published **1.1.26**, released from commit `85368ab8927a375889292a112d58df75495eac9d`. The frozen [preparation notes](releases/1.1.26/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication does not establish marketplace or installed-copy parity; installation and fresh skill discovery remain unverified in that release record.
 
 ## What it does
 
@@ -53,7 +53,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.26 working source with its two skills, references, visual casebook, assets, evaluator, and tests; the published 1.1.25 package remains frozen in `releases/1.1.25/`.
+- `plugins/ibm-design-language/`: the published 1.1.26 package source with its two skills, references, visual casebook, assets, evaluator, and tests; its frozen archive and manifest are in `releases/1.1.26/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
@@ -62,6 +62,8 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 - `scripts/verify.py`: offline package, release, source, marketplace, and synthetic evaluator checks. No model calls.
 
 ## Verify and maintain
+
+Codex maintenance follows the verify, context and orchestrator rules in [AGENTS.md](AGENTS.md). Before reporting delivery, use the [delivery verification checklist](docs/RELEASING.md#delivery-verification) to reconcile documentation and release state as well as the artifact checks.
 
 Requires Python 3.11 or later with only the standard library:
 
