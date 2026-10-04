@@ -58,6 +58,8 @@ The current published plugin package is 1.2.3; historical results stay frozen.
 ## Release validation
 Current publication: [GitHub release]({URL}).
 Version 1.2.2 was published earlier.
+
+Version 1.2.3 is the [published release]({URL}), from `{SHA}`.
 ''')
         self.write('docs/RELEASING.md', 'The validator uses `CURRENT` (currently 1.2.3).\n')
         self.write('plugins/ibm-design-language/plugin.json', json.dumps({'version': '1.2.3'}))
@@ -142,6 +144,32 @@ Version 1.2.2 was published earlier.
         self.replace('README.md', 'archive in `releases/1.2.3/`', 'archive in `releases/1.2.2/`')
         with self.assertRaisesRegex(ValueError, 'README'):
             self.module.verify(self.root)
+
+    def test_missing_or_malformed_archive_reference_fails(self):
+        original = (self.root / 'README.md').read_text(encoding='utf-8')
+        for replacement in ['', 'releases/current/', 'releases/1.2.3/` and `releases/current/']:
+            with self.subTest(replacement=replacement):
+                self.write('README.md', original.replace('releases/1.2.3/', replacement))
+                with self.assertRaisesRegex(ValueError, 'README'):
+                    self.module.verify(self.root)
+
+    def test_current_history_entry_requires_matching_release_url_and_commit(self):
+        original = (self.root / 'docs/HISTORY.md').read_text(encoding='utf-8')
+        entry = f'Version 1.2.3 is the [published release]({URL}), from `{SHA}`.'
+        for changed in [entry.replace(URL, URL.replace('1.2.3', '1.2.2')),
+                        entry.replace(SHA, 'c' * 40),
+                        entry.replace(f'`{SHA}`', 'an unspecified commit'),
+                        '', entry + '\n\n' + entry]:
+            with self.subTest(changed=changed):
+                self.write('docs/HISTORY.md', original.replace(entry, changed))
+                with self.assertRaisesRegex(ValueError, 'HISTORY'):
+                    self.module.verify(self.root)
+
+    def test_wrapped_current_history_and_older_identity_remain_supported(self):
+        self.replace('docs/HISTORY.md', f'({URL}), from `{SHA}`.', f'({URL}),\nfrom `{SHA}`.')
+        self.replace('docs/HISTORY.md', 'Version 1.2.2 was published earlier.',
+                     f'Version 1.2.2 was published at {URL.replace("1.2.3", "1.2.2")} from `{"c" * 40}`.')
+        self.assertEqual(self.module.verify(self.root)['status'], 'pass')
 
     def test_single_identity_field_allows_harmless_trailing_whitespace(self):
         self.replace('docs/RECOVERY.md', '- Version: `1.2.3`\n', '- Version: `1.2.3`  \n')

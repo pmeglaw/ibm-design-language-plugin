@@ -106,9 +106,9 @@ def verify(root, online=False):
     release_links(intro, expected_url, 'README.md')
     contents = section(readme, 'Repository contents', 'README.md')
     package_entry = one(contents, r'^- `plugins/ibm-design-language/`: (.*)$', 'README.md package entry')
-    archives = re.findall(rf'releases/({VERSION})/', package_entry)
-    require(all(v in (version, source) for v in archives),
-            'README.md: package archive reference must match published or candidate version')
+    archives = re.findall(r'releases/([^/\s`)\]]+)', package_entry)
+    require(bool(archives) and all(v in (version, source) for v in archives),
+            'README.md: require archive references matching published or candidate version')
     if source == version:
         claim = one(intro, rf'The working package matches published \*\*({VERSION})\*\*, released from commit `([0-9a-f]{{40}})`', 'README.md source identity')
         require(claim == (version, commit), 'README.md: source release identity mismatch')
@@ -139,6 +139,12 @@ def verify(root, online=False):
             'docs/HISTORY.md: current version mismatch')
     current_history = section(history, 'Release validation', 'docs/HISTORY.md').split('\nVersion ', 1)[0]
     release_links(current_history, expected_url, 'docs/HISTORY.md')
+    entries = re.findall(rf'^Version {re.escape(version)}[ \t]+[^\n]*(?:\n(?![ \t]*$|Version )[^\n]+)*',
+                         history, re.MULTILINE)
+    require(len(entries) == 1, 'docs/HISTORY.md: require exactly one current Version entry')
+    release_links(entries[0], expected_url, 'docs/HISTORY.md current entry')
+    require(one(entries[0], r'`([0-9a-f]{40})`', 'docs/HISTORY.md current commit') == commit,
+            'docs/HISTORY.md: current entry commit mismatch')
 
     if online:
         release = github_json('releases/latest')

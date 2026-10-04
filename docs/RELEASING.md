@@ -68,8 +68,10 @@ identity in `docs/RECOVERY.md` with README, installation, history and maintenanc
 claims, the source/validator versions and the recorded ZIP checksum. This offline
 check establishes consistency only. Keep the explicit current-version sentences
 and identity fields when editing these documents; missing or ambiguous fields
-fail with the affected document named. Historical release notes and rollback
-entries are excluded from current-version checks.
+fail with the affected document named. README's package entry must include a
+versioned archive reference, and HISTORY's current `Version` paragraph must
+include the release URL and full commit ID. Older version entries, frozen
+release notes and rollback entries are excluded from current-version checks.
 
 Add `--github` to require a live check of the latest stable GitHub release and its
 resolved tag commit. The command uses the standard library and optionally reads
