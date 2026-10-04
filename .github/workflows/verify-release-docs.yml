@@ -1,0 +1,25 @@
+name: Verify release documentation
+on:
+  push:
+  pull_request:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  release-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Publication can leave preparation wording in the immutable tag.
+          # Check current companion docs on the default branch for this event.
+          ref: ${{ github.event_name == 'release' && github.event.repository.default_branch || github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: python -B -m unittest discover -s tests -p test_release_docs.py
+      - run: python -B scripts/verify_release_docs.py --github
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
