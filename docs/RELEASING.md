@@ -1,6 +1,6 @@
 # Maintaining releases
 
-Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects drift from the current published snapshot (1.1.25) until a new release is prepared.
+Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects source drift from the manifest selected by its `CURRENT` version (currently 1.1.26). A prepared candidate passing this check is not proof of publication.
 
 For a new release, review the source diff, run relevant local checks, write accurate release notes, build a fresh ZIP and file manifest, and update the validator's current release version. Never regenerate hashes merely to hide an unexpected difference. Preserve older versions for rollback.
 
@@ -25,6 +25,41 @@ CI job must pass on the exact release commit. It checks committed heading focus,
 same-route focus, separate skip-to-main behavior, fallback and route history as
 well as the existing shell behavior. Do not remove the skip-fragment regression
 to hide a failure. Targeted CUA observations do not replace this complete gate.
+
+## Delivery verification
+
+Verify the claims made in documentation and the final handoff as well as the
+changed artifacts. Apply the checks relevant to the task; report inaccessible
+or unrun checks as unverified, with the reason.
+
+- Record the reviewed commit and package version from `plugin.json`. Confirm
+  that the validator's `CURRENT`, release manifest and source agree.
+- For publication claims, confirm the GitHub release exists and resolve its
+  immutable tag to the intended full commit. Package preparation notes and a
+  passing local validator do not prove publication.
+- Check README, installation, recovery and history guidance for the same
+  published version, release URL, commit and checksum where stated. Explicitly
+  distinguish any newer unpublished source. Preserve frozen preparation notes,
+  ZIPs, manifests and historical evidence; explain historical wording in current
+  companion documentation instead of rewriting frozen bytes.
+- Check applicable CI results on the exact commit being delivered. Prior-release
+  CI is historical evidence, not a passing result for a new PR. Report an open
+  PR, merged change, published release and installed copy as separate states.
+- For release assets, verify downloaded bytes against the manifest and checksum
+  before claiming artifact verification. A release page alone proves neither
+  downloaded-byte integrity nor destination installation.
+- For installation or synchronization claims, inspect the destination version,
+  marketplace commit, enabled state, file-hash parity and fresh skill discovery
+  using [Recovery](RECOVERY.md). If the destination is unavailable, say so;
+  never infer its state from a GitHub release.
+- Summarize the checks actually performed, their commit/version and evidence
+  links, plus failures, reused evidence and remaining limitations. Do not turn
+  synthetic or fixture results into generated-product or accessibility claims.
+
+After publication, reconcile current companion documentation against the release
+record before reporting the documentation current. This can be a documentation-only
+follow-up under the applicable authorization; it requires no package version bump,
+retagging or rewriting of the published archive.
 
 ## Authorization and documentation scope
 
