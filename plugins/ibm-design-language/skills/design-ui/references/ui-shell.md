@@ -34,6 +34,71 @@ The following correction pairs are local craft judgments derived from those exam
 
 **Scope: products only.** The shell is the chrome of a tool a user is signed into. It does not appear on marketing, landing, documentation-marketing or editorial pages — those are expressive surfaces and get a light masthead in the page's own type (wordmark, a few text links, one CTA on the page's grid). Reaching for the shell on a landing page is the productive/expressive mix-up in its most visible form.
 
+## Current header reference - reviewed 2026-10-06
+
+The live [Guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines), [Specifications](https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/specifications), [Code](https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/code) and [Accessibility](https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/accessibility) pages identify this component as Stable and last updated **2026-10-02**. This is the website's component date, not a React release version or proof of a change to every rule. All four contracts were read for this refresh. Historical receipts below retain their dates and limits.
+
+### Choose the composition
+
+| Current Guidelines type | Purpose | React example |
+|---|---|---|
+| Header base | Persistent product identity for a simple, single-page tool | Compose Header and HeaderName; no separate base story is listed in this React overview |
+| Header with navigation | A small set of product destinations and navigation disclosures | [Navigation](https://react.carbondesignsystem.com/?path=/story/components-ui-shell-header--header-w-navigation) |
+| Header with actions | System utilities that need quick access | [Actions and Right Panel](https://react.carbondesignsystem.com/?path=/story/components-ui-shell-header--header-w-actions-and-right-panel) or [Actions and Switcher](https://react.carbondesignsystem.com/?path=/story/components-ui-shell-header--header-w-actions-and-switcher) |
+| Header with sidenav | Deeper product navigation through a left panel | [Side Nav](https://react.carbondesignsystem.com/?path=/story/components-ui-shell-header--header-w-side-nav) |
+| Combined composition | Product destinations plus utilities, optionally with deeper navigation | [Navigation and Actions](https://react.carbondesignsystem.com/?path=/story/components-ui-shell-header--header-w-navigation-and-actions) or [Navigation, Actions and Side Nav](https://react.carbondesignsystem.com/?path=/story/components-ui-shell-header--header-w-navigation-actions-and-side-nav) |
+
+The combined row maps Storybook examples; it is not an additional Guidelines type. Header, left panel and right panel remain independently usable. Add a hamburger only for collapsible left navigation. Keep product identity and product destinations toward the left, system functions toward the right, and a cross-product switcher at the far right when the product needs one. Utilities are optional, adjacent and right aligned. Search precedes the other utilities; the full example then places other utilities, Help, Notifications, Account and Switcher in that order. Do not reserve empty slots for absent utilities.
+
+Keep the name brief and identify the parent domain. Use the IBM prefix for IBM products; other products retain their approved identity. Navigation labels describe distinct destinations, using sentence case; avoid action verbs that suggest a command. A submenu trigger only opens its disclosure. Its chevron points down when closed and up when open. Selection, an outside click or reactivating the trigger dismisses it. Check the installed component's actual keyboard and dismissal behavior independently.
+
+### Specifications: geometry, typography and state roles
+
+Apply an inline shell theme to choose White, Gray 10, Gray 90 or Gray 100. The illustrations' dark band is an example, not a mandatory header color. Resolve semantic roles in that theme and the approved product brand.
+
+| Part | Current specification |
+|---|---|
+| Header and menu/action targets | Header height 48px / 3rem; menu and action targets 48 by 48px |
+| Name spacing | Leading 16px / spacing-05; trailing 32px / spacing-07 |
+| Links, submenu triggers and items | 16px / spacing-05 horizontal padding |
+| Chevron separation | 8px / spacing-03 |
+| Product name | heading-compact-01, 14px / 0.875rem, weight 600 |
+| Prefix, links and submenu text | body-compact-01, 14px / 0.875rem, weight 400 |
+| Placement | Full browser width; Specifications permits sticky placement or scrolling away |
+
+| Part/state | Semantic roles from the current Specifications |
+|---|---|
+| Header surface and identity | background; bottom border border-subtle; name text-primary |
+| Hamburger | icon-primary; hover background-hover; press background-active; focus border focus |
+| Header link | Enabled text-secondary; hover/press text-primary with background-hover/background-active; selected background and text-primary with a bottom border-interactive |
+| Submenu trigger | Enabled background, text-secondary and icon-secondary; hover background-hover; press background-active; selected layer; interactive text/icon use text-primary/icon-primary |
+| Submenu item | Enabled layer, text-secondary and icon-secondary; hover layer-hover; press layer-active; selected layer-selected with a leading border-interactive; interactive text/icon use text-primary/icon-primary |
+| Global action | Enabled icon-secondary; hover background-hover; press background-active; selected layer with border-subtle; interactive icon-primary |
+| Focus | The interactive state tables specify focus for the focus border; verify its visibility in the actual theme and composition |
+
+The two submenu tables distinguish the trigger's background roles from the item's layer roles. Preserve this distinction rather than applying one hover/selected treatment to the whole navigation. These are specification roles, not new API props or a directive to replace component CSS.
+
+At narrow widths, represent header links and menus in the left panel above existing side-navigation items. Neither current page supplies a universal numeric collapse breakpoint. Use the installed framework's behavior and verify actual available width. Render the narrow items explicitly from the same route model; a hidden wide navigation does not automatically populate SideNav.
+
+### Code and accessibility responsibilities
+
+The Code page routes React and Web Components to their own stories and marks Angular and Vue as community implementations. It does not provide an inline React implementation. The inspected [React overview](https://react.carbondesignsystem.com/?path=/docs/components-ui-shell-header--overview) identifies **@carbon/react@1.117.0**. Confirm the consuming package before using these APIs; do not infer that a website update upgrades the application's dependency.
+
+- Header accepts children and optional aria-label/aria-labelledby. Compose the actual skip link and main target; the wrapper alone is insufficient.
+- HeaderGlobalAction's API requires accessible labeling and an icon child. HeaderMenuButton also exposes labeling, onClick and isActive. Describe the actual function, translate labels, and coordinate expanded state and the controlled panel. Styling state alone does not establish an accessible expanded relationship.
+- HeaderName defaults its prefix to IBM. Its API offers as for a custom link component and deprecates element in favor of as. Check the installed version when integrating a router.
+- HeaderSideNavItems accepts explicit children and an optional hasDivider, default false. It is not automatic navigation relocation.
+- SkipToContent defaults to the skip-to-main label, href #main-content and tabIndex 0. Supply a unique, usable target and verify focus/scroll and fixed-header clearance.
+- The Accessibility page requires Tab reachability, Enter activation for links and buttons, and Space activation for icons. Annotate product-specific header names, roles, keyboard behavior and deviations once; individual pages need annotations only when they differ. The Guidelines also describes screen-reader activation keys, but reading those descriptions is not an assistive-technology test.
+
+Accessibility prose describes default labels and an included skip link at the composition level. The selected APIs still require the consumer to supply utility names and compose SkipToContent. Storybook story controls such as platformName or headerAriaLabel are demonstration arguments, not necessarily props on Header. The Right Panel story exposes an experimental notification badge; do not treat that demonstration as a stable HeaderGlobalAction contract. Its notification click did not expose a panel in the inspected DOM. Examples with placeholder href values are visual/composition references and need actual destinations before product use.
+
+### Saved visual references and inspection limits
+
+Use the [dated image index](../assets/ui-shell-header/2026-10-06/README.md) for all **21** header-specific images from Guidelines (8), Specifications (8) and Accessibility (5). Original PNG/GIF bytes are preserved, including the animated skip-link file and its static fallback. The [asset manifest](../assets/ui-shell-header/2026-10-06/manifest.json) records page and asset URLs, byte lengths, dimensions and SHA-256 hashes. These are attributed Carbon/IBM documentation references, not product artwork or proof of implementation compliance.
+
+The Guidelines, all four documentation contracts, six selected overview API tabs, and the White desktop Navigation and Actions, Navigation/Actions/Side Nav, and Actions/Right Panel rendered stories were inspected. The Navigation and Actions preview measured 48px header height and 48 by 48px visible utility targets at a 1219px iframe width. The images were reviewed in contact sheets; only the GIF's first frame was visually inspected. No full keyboard, responsive/RTL/theme matrix, zoom, assistive-technology or generated-product evaluation was run. Storybook addon counts are not a passing accessibility receipt. Earlier source-level API observations below remain version-qualified historical evidence.
+
 ## The organising axis
 
 **Left to right runs product → global.** The left side holds what's relevant inside this product. The middle holds system-level controls. The far right holds the most global thing there is — the switcher, which spans products.
