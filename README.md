@@ -2,11 +2,11 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.26**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.26) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.27**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.27) · [Install](docs/INSTALLATION.md)
 
-Version 1.1.26 corrects the 1.1.24 release-note history, routes composition reviews to packaged release-gate definitions, includes both sibling skills in evaluation packets and fingerprints, and fixes escaped Markdown link handling. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.26) for completed verification and evidence limits.
+Version 1.1.27 refreshes the UI shell header guidance from Carbon's 2 October 2026 documentation and React Storybook, with current variants, measurements, state roles, accessibility responsibilities and 21 original reference images. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.27) and [preparation evidence](evidence/1.1.27-header/REPORT.md) for verification and inspection limits.
 
-The working source is **1.1.27, an unpublished header-reference candidate**, based on repository commit `60a4ed0`. Published 1.1.26 remains the recovery/install target, released from commit `85368ab8927a375889292a112d58df75495eac9d`. The frozen [preparation notes](releases/1.1.26/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication does not establish marketplace or installed-copy parity; installation and fresh skill discovery remain unverified in that release record.
+The working package matches published **1.1.27**, released from commit `bf99217379e43a55a1816b962cac910773455873`. The frozen [preparation notes](releases/1.1.27/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication and downloaded-byte verification are separate from destination installation and fresh skill discovery.
 
 ## What it does
 
@@ -53,7 +53,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.27 working source with its two skills, references, visual casebook, assets, evaluator, and tests; the published frozen archive is in `releases/1.1.26/` and the unpublished candidate archive is in `releases/1.1.27/`.
+- `plugins/ibm-design-language/`: the published 1.1.27 package source with its two skills, references, visual casebook, assets, evaluator, and tests; its frozen archive and manifest are in `releases/1.1.27/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
