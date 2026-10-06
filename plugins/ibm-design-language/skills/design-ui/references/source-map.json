@@ -72,20 +72,23 @@
       "id": "carbon-header-visual-benchmark",
       "url": "https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines",
       "sections": [
-        "Guidelines prose and anatomy illustration",
-        "React overview API and Navigation and Actions rendered story",
-        "Positive header composition and local correction pairs"
+        "Current Guidelines variants, anatomy, content and responsive intent",
+        "Specifications geometry, typography and semantic state roles",
+        "Code framework routing and Accessibility composition responsibilities",
+        "Six selected React overview API tabs and three White desktop story compositions",
+        "21 original header-specific image assets, provenance and hashes"
       ],
       "local_refs": [
         "references/ui-shell.md",
-        "references/taste.md"
+        "references/taste.md",
+        "assets/ui-shell-header/2026-10-06/README.md"
       ],
       "coverage": "partial",
       "review_status": "content-reviewed-with-limits",
-      "reviewed_at": "2026-10-01",
+      "reviewed_at": "2026-10-06",
       "authority": "official-documentation",
-      "version_scope": "Live Guidelines and https://react.carbondesignsystem.com/?path=/docs/components-ui-shell-header--overview; Storybook label @carbon/react@1.117.0",
-      "limits": "Browser source/example inspection only: white Navigation and Actions story at wide and narrower preview widths. Other stories, full theme/responsive matrix, keyboard/AT and generated-product quality not tested. Correction pairs are labeled local craft judgments; historical receipts unchanged."
+      "version_scope": "Live Guidelines, Specifications, Code and Accessibility pages marked updated 2026-10-02; React Storybook label @carbon/react@1.117.0",
+      "limits": "Source/example inspection only. Three White desktop compositions; Navigation and Actions measured at 1219px iframe width. Six selected overview APIs. 21 images saved and contact-sheet reviewed; GIF first-frame inspection only. No full responsive/theme/RTL/zoom matrix, keyboard, AT or generated-product evaluation. Placeholder destinations and experimental badge are not product contracts. Historical receipts preserved."
     },
     {
       "id": "ibm-philosophy",

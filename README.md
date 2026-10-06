@@ -6,7 +6,7 @@ The current published package is **1.1.26**. [Source](https://github.com/pmeglaw
 
 Version 1.1.26 corrects the 1.1.24 release-note history, routes composition reviews to packaged release-gate definitions, includes both sibling skills in evaluation packets and fingerprints, and fixes escaped Markdown link handling. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.26) for completed verification and evidence limits.
 
-The working package matches published **1.1.26**, released from commit `85368ab8927a375889292a112d58df75495eac9d`. The frozen [preparation notes](releases/1.1.26/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication does not establish marketplace or installed-copy parity; installation and fresh skill discovery remain unverified in that release record.
+The working source is **1.1.27, an unpublished header-reference candidate**, based on repository commit `60a4ed0`. Published 1.1.26 remains the recovery/install target, released from commit `85368ab8927a375889292a112d58df75495eac9d`. The frozen [preparation notes](releases/1.1.26/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication does not establish marketplace or installed-copy parity; installation and fresh skill discovery remain unverified in that release record.
 
 ## What it does
 
@@ -53,7 +53,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.26 package source with its two skills, references, visual casebook, assets, evaluator, and tests; its frozen archive and manifest are in `releases/1.1.26/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.27 working source with its two skills, references, visual casebook, assets, evaluator, and tests; the published frozen archive is in `releases/1.1.26/` and the unpublished candidate archive is in `releases/1.1.27/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

@@ -1,6 +1,6 @@
 # Maintaining releases
 
-Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects source drift from the manifest selected by its `CURRENT` version (currently 1.1.26). A prepared candidate passing this check is not proof of publication.
+Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects source drift from the manifest selected by its `CURRENT` version (currently 1.1.27). A prepared candidate passing this check is not proof of publication.
 
 For a new release, review the source diff, run relevant local checks, write accurate release notes, build a fresh ZIP and file manifest, and update the validator's current release version. Never regenerate hashes merely to hide an unexpected difference. Preserve older versions for rollback.
 

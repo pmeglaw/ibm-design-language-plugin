@@ -1,3 +1,26 @@
+# 1.1.27 header reference candidate - unpublished
+
+Refresh the packaged UI shell header reference from the Carbon Guidelines,
+Specifications, Code and Accessibility pages marked updated October 2, 2026,
+reviewed October 6. Add current variant-to-Storybook routing, geometry and
+typography, semantic state roles, naming and responsive rules, and accessibility
+composition responsibilities. Preserve historical receipts and framework/version
+boundaries. Storybook identifies @carbon/react@1.117.0; six selected overview APIs
+and three White desktop compositions were inspected.
+
+Bundle 21 original Carbon/IBM header illustrations with an index, source URLs,
+dimensions, byte lengths and SHA-256 hashes, including the skip-link GIF and its
+static fallback. Exclude site decoration and framework logos. The contact-sheet
+review inspected only the GIF's first frame. Existing application code, fixture
+assertions, historical releases and installed caches remain unchanged.
+
+This is source and example inspection, not generated-product, keyboard, reflow,
+assistive-technology or accessibility certification. Placeholder Storybook routes,
+demonstration arguments and experimental badges are not stable product contracts.
+Publication, exact-commit CI, supported installation and fresh discovery remain
+pending. Record local verification in the task report; no published release claim
+is made by preparing this archive.
+
 # IBM Design Language 1.1.26 candidate - unpublished
 
 Version 1.1.26 is an unpublished combined candidate. It restores the missing 1.1.24 package release-note entry and corrects the repository's stale publication note. It routes design and critique of header, table, search and form compositions to geometry and keyboard gates, with unchanged check definitions bundled for offline installed use. The menu-first keyboard condition is fixture-local; product shells preserve their first-focusable skip link. Evaluation packets now preserve both sibling skills, fingerprint both trees and validate local reference dependencies. Escaped Markdown link openings remain literal text; ordinary and even-backslash link openings retain dependency validation. Published archives, shell examples, fixture assertions, Missed patterns, evaluation suites and frozen evidence remain unchanged. Synthetic evaluator tests and fixture/example checks are not fresh model-generation or screen-reader results; the frozen 1.1.23 practical verdict remains 9 pass, 2 fail.
