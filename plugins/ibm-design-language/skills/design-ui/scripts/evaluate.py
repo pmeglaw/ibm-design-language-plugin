@@ -126,7 +126,7 @@ def validate_suite(suite: dict[str, Any]) -> None:
         if any(not isinstance(a.get("criterion"), str) or not a["criterion"].strip()
                for a in assertions):
             raise EvaluationError(f"Case {cid} has an empty criterion")
-        dims = case.get("visual_dimensions", [])
+        dims = case.get("visual_dimensions")
         if not isinstance(dims, list) or len(set(dims)) != len(dims) or any(
                 d not in DIMENSIONS for d in dims):
             raise EvaluationError(f"Case {cid} has invalid visual dimensions")

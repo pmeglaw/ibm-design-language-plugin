@@ -29,6 +29,22 @@ discovery. Keep those checks explicit.
 5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.27/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui` and `ibm-design-language:review-product-experience` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
+## Uploaded account installations
+
+For an existing uploaded account plugin, update that same plugin through the
+host's supported update flow; do not create a duplicate Git marketplace install.
+Keep its identity, sharing, metadata and unrelated files unchanged, and verify
+the published payload after updating.
+
+The current source's `scripts/verify-install.py` accepts the exact observed
+skills-only Codex upload wrapper at `.codex-plugin/plugin.json` as separately
+reported `host_metadata`, only when its complete shape and identity match the
+hash-verified root manifest. It does not ignore that directory or arbitrary
+metadata. Unknown keys, different skill paths, identity mismatches and symlinks
+fail; any compatibility manifest already owned by the release remains
+hash-checked. The verifier does not prove enabled state or fresh discovery.
+Use the verifier from the checkout matching the installed release version.
+
 ## Previous release rollback identity
 
 Version 1.1.26: commit `85368ab8927a375889292a112d58df75495eac9d`, tag `v1.1.26`, ZIP SHA-256 `dd37d800fe3c77ff2b1a4c3c02fb5dde6d60a00cd57509e492049427ed2ca1d9`. Its frozen archive and manifest remain in `releases/1.1.26/`.

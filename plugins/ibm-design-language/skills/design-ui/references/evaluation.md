@@ -79,6 +79,8 @@ On Windows, the hasher uses the extended-path form for directory traversal and f
 
 Selected real comparisons are complete and recorded in [evaluation history](evaluation-history.md). They include standalone rendered prototypes and source/interaction checks. This supersedes the former blanket statement that no comparisons or rendered checks had run.
 
+Custom suites must include `visual_dimensions` on every case: use `[]` for cases without visual scoring. An omitted field is rejected during preparation before any model execution.
+
 The bundled suite retains 21 cases and 121 assertions. Only the prompts for cases 1, 5 and 10 incorporate the previously reviewed clarifications; their assertion IDs, criteria, expected outputs and visual dimensions are preserved. External transfer and composition cases remain separate frozen packs, not silently merged into this regression suite. Previously run cases must not be described as unseen.
 
 The separate composition-transfer-v1.2 comparison evaluated frozen 1.1.4 and 1.1.5-rc.1: five valid outputs passed, one baseline execution failed, and the two scorable pairs were visual ties. Host configuration changed during run 2. Improvement remains unproven; see the history for counts and limits. No model run evaluates rc.2 itself. Local synthetic tests validate evaluator mechanics, not skill quality. Broader independent practical evaluation, installed Carbon React integration and assistive-technology checks remain open. Instructional casebook examples are teaching material, not held-out evaluation cases.

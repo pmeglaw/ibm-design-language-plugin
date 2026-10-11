@@ -6,7 +6,7 @@ The current published package is **1.1.27**. [Source](https://github.com/pmeglaw
 
 Version 1.1.27 refreshes the UI shell header guidance from Carbon documentation reviewed October 6, 2026 and React Storybook, with current variants, measurements, state roles, accessibility responsibilities and 21 original reference images. The review recorded Guidelines, Specifications and Accessibility as updated October 2, and Code as updated September 30. See the [provenance erratum](docs/1.1.27-PROVENANCE-ERRATUM.md) for corrections to frozen date claims, and the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.27) and [preparation evidence](evidence/1.1.27-header/REPORT.md) for verification and inspection limits.
 
-The working package matches published **1.1.27**, released from commit `bf99217379e43a55a1816b962cac910773455873`. The frozen [preparation notes](releases/1.1.27/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication and downloaded-byte verification are separate from destination installation and fresh skill discovery.
+The working source is **1.1.28, an unpublished combined candidate** fixing contrast-batch validation, evaluation preparation, and uploaded-installation verification. The current published release remains 1.1.27 from commit `bf99217379e43a55a1816b962cac910773455873`. The frozen [preparation notes](releases/1.1.27/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication and downloaded-byte verification are separate from destination installation and fresh skill discovery.
 
 ## What it does
 
@@ -53,7 +53,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.27 package source with its two skills, references, visual casebook, assets, evaluator, and tests; its frozen archive and manifest are in `releases/1.1.27/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.28 working source with its two skills, references, visual casebook, assets, evaluator, and tests; its candidate archive and manifest are in `releases/1.1.28/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

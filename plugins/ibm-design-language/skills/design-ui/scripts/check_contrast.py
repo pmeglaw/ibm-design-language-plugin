@@ -219,6 +219,21 @@ def main():
         if args.pairs:
             raw = sys.stdin.read() if args.pairs == "-" else open(args.pairs).read()
             items = json.loads(raw)
+            if not isinstance(items, list) or not items:
+                raise ValueError("pairs must be a nonempty JSON array")
+            # Validate the complete batch before emitting any pass/fail results.
+            for index, item in enumerate(items, 1):
+                if not isinstance(item, dict):
+                    raise ValueError(f"pair {index} must be an object")
+                for field in ("fg", "bg"):
+                    if not isinstance(item.get(field), str):
+                        raise ValueError(f"pair {index} needs a string {field}")
+                    resolve(item[field])
+                kind = item.get("kind", "text")
+                if not isinstance(kind, str) or kind not in THRESHOLDS:
+                    raise ValueError(f"pair {index} has an invalid kind")
+                if not isinstance(item.get("name", ""), str):
+                    raise ValueError(f"pair {index} needs a string name when supplied")
             results = [report(i.get("name", ""), i["fg"], i["bg"], i.get("kind", "text"))
                        for i in items]
             failed = results.count(False)
