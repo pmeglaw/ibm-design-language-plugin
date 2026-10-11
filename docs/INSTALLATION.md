@@ -4,7 +4,7 @@ Use this path to install the published package in Codex. For an existing owner-m
 
 ## Select the published release
 
-1. Obtain the [published 1.1.27 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.27). Resolve the full commit behind `v1.1.27` in a repository checkout with `git rev-parse 'v1.1.27^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
+1. Obtain the [published 1.1.28 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.28). Resolve the full commit behind `v1.1.28` in a repository checkout with `git rev-parse 'v1.1.28^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
 2. Verify the downloaded ZIP against the checksum and file manifest in [Recovery](RECOVERY.md#release-identity). From the matching checkout, run `python -B scripts/verify.py`.
 3. Run `codex plugin marketplace list --json` first. This repository declares its marketplace name as `jp-personal`; that name is a catalog identifier, not a requirement to adopt the owner's personal configuration. If the name is already in use for another source, stop and resolve the collision without replacing unrelated entries.
 
@@ -18,7 +18,7 @@ codex plugin add ibm-design-language@jp-personal --json
 codex plugin list --marketplace jp-personal --json
 ```
 
-Confirm version `1.1.27`, enabled state, and the returned installation directory. From the matching checkout, run:
+Confirm version `1.1.28`, enabled state, and the returned installation directory. From the matching checkout, run:
 
 ```sh
 python -B scripts/verify-install.py INSTALL_DIRECTORY
