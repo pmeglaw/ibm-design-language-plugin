@@ -6,7 +6,7 @@ The current published package is **1.1.28**. [Source](https://github.com/pmeglaw
 
 Version 1.1.28 fixes contrast-batch validation, rejects incomplete evaluation cases during preparation, and recognizes the exact Codex upload metadata wrapper while retaining strict package hash checks. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.28) for verification and limits. The earlier [1.1.27 provenance erratum](docs/1.1.27-PROVENANCE-ERRATUM.md) remains applicable to its frozen header evidence.
 
-The working package matches published **1.1.28**, released from commit `7f1af9669e137708798cd95bce3f41893f9f9917`. The frozen [preparation notes](releases/1.1.28/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication and downloaded-byte verification are separate from destination installation and fresh skill discovery.
+The working source is **1.1.29, an unpublished combined candidate** adding the approved dedicated Seat Planner UI/UX skill. The current published release remains 1.1.28 from commit `7f1af9669e137708798cd95bce3f41893f9f9917`. The frozen [preparation notes](releases/1.1.28/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication and downloaded-byte verification are separate from destination installation and fresh skill discovery.
 
 ## What it does
 
@@ -14,6 +14,7 @@ The working package matches published **1.1.28**, released from commit `7f1af966
 |---|---|
 | `ibm-design-language:design-ui` | Design, implementation, or focused critique: layout, typography, component selection, semantic color, approved branding, accessibility, and interactions. |
 | `ibm-design-language:review-product-experience` | Information architecture, navigation, task-flow, cross-view, and responsive reviews. Implementation follows only when requested. |
+| `ibm-design-language:seat-planner-ui-ux` (1.1.29 candidate) | Dedicated Bench/Seat Planner UI/UX run; defaults to read-only review and follows current project contracts. |
 
 Codex sees each skill's name and description, then loads its instructions when the task matches or you explicitly select it. The instructions route to relevant references rather than requiring every reference for every task. They ask the agent to inspect the actual project, installed Carbon version, and approved brand before making decisions, and to verify the affected rendered behavior afterward.
 
@@ -53,7 +54,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.28 package source with its two skills, references, visual casebook, assets, evaluator, and tests; its published archive and manifest are in `releases/1.1.28/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.29 working source with its three skills, references, visual casebook, assets, evaluator, and tests; its candidate archive and manifest are in `releases/1.1.29/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
