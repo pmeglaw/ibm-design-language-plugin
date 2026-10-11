@@ -1,10 +1,10 @@
 # Maintaining releases
 
-Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects source drift from the manifest selected by its `CURRENT` version (currently 1.1.27). A prepared candidate passing this check is not proof of publication.
+Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects source drift from the manifest selected by its `CURRENT` version (currently 1.1.28). A prepared candidate passing this check is not proof of publication.
 
 For a new release, review the source diff, run relevant local checks, write accurate release notes, build a fresh ZIP and file manifest, and update the validator's current release version. Never regenerate hashes merely to hide an unexpected difference. Preserve older versions for rollback.
 
-Run `python -B scripts/verify.py`. This invokes synthetic tests only. Behavioral or visual changes may need targeted evaluation with separate authorization; routine restoration does not. Record what was tested, reused, failed or untested. Preserve known evidence limitations.
+Run `python -B scripts/verify.py` and `python -B -m unittest discover -s tests -p 'test_*.py'`. These run package, evaluator, contrast-input, installation and documentation regressions without model calls. Behavioral or visual changes may need targeted evaluation with separate authorization; routine restoration does not. Record what was tested, reused, failed or untested. Preserve known evidence limitations.
 
 After review and publication authorization (including a request to synchronize the local plugin with its published version), commit, push to the canonical repository, tag the reviewed commit and attach the ZIP/checksums to its GitHub release. Record the full commit ID. Do not move published tags. Verify the downloaded release bytes and supported marketplace installation before calling remote recovery tested.
 

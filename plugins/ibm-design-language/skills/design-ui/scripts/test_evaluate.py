@@ -142,6 +142,16 @@ class HarnessTests(unittest.TestCase):
         with self.assertRaises(ev.EvaluationError):
             ev.validate_suite(suite)
 
+    def test_missing_visual_dimensions_fails_before_preparing_a_run(self):
+        suite = copy.deepcopy(self.suite)
+        del suite['evals'][0]['visual_dimensions']
+        ev.write_json(self.suite_path, suite)
+        results = self.root / 'missing-dimensions'
+        with self.assertRaisesRegex(ev.EvaluationError, 'visual dimensions'):
+            ev.prepare(self.skill, results, self.suite_path,
+                       'fixture-model', 'high', None, [])
+        self.assertFalse(results.exists())
+
     def test_changed_snapshot_is_rejected(self):
         (self.results / "snapshot" / "SKILL.md").write_text("changed")
         with self.assertRaisesRegex(ev.EvaluationError, "snapshot changed"):

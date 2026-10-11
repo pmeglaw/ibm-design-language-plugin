@@ -18,6 +18,6 @@ The panel closing transition uses standard productive easing for a nearby surfac
 
 ## Contrast checking
 
-scripts/check_contrast.py --preset all is a diagnostic palette exercise and intentionally includes failing combinations. It is not a release gate. Use individual pairs or the checker's CSV input to verify resolved application consumers and keep the foreground kind/threshold explicit. See the checker's --help and tokens.md.
+scripts/check_contrast.py --preset all is a diagnostic palette exercise and intentionally includes failing combinations. It is not a release gate. Use individual pairs or the checker's JSON `--pairs` input to verify resolved application consumers and keep the foreground kind/threshold explicit. Batch input must be a nonempty array of objects with string `fg` and `bg` colors; optional `name` is a string and `kind` is `text`, `large-text`, or `graphic` (default `text`). The complete batch is validated before results: exit 0 means every pair passed, 1 means a contrast failure, and 2 means invalid input. See the checker's --help and tokens.md.
 
 Do not blindly replace official support fills with darker values: distinguish the fill from the border, icon, text, and current surface. A green 50 graphic on the bundled light hover surface fails 3:1, for example, while a different foreground/surface combination can be correct.
