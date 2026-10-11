@@ -1,3 +1,22 @@
+# 1.1.30 Context7 reference refresh candidate - unpublished
+
+Add version-aware Context7 discovery, official-source reconciliation,
+bounded fallback, privacy and permission boundaries. Refresh the dated
+Carbon v11.118.0/package-version receipt, v12 Migrated-component export
+boundary and consolidated DTCG token-source lookup. Add release-derived
+review scenarios for SideNav, forced-colors inputs, DataTable selection
+and CodeSnippet keyboard stops. These scenarios are guidance, not
+executed application or assistive-technology tests.
+
+Preserve the approved three-file refresh from PR #45, all three skills,
+runtime assets, fixture assertions, dependencies and historical evidence.
+No Carbon upgrade, v12 opt-in, Seat Planner change or new model evaluation
+is included. Previous release bytes remain unchanged.
+
+This is an unpublished preparation record. Final candidate verification
+is recorded in PR #45; publication and installation require separate
+approval and evidence. Do not infer either from archive preparation.
+
 # 1.1.29 Seat Planner UI/UX candidate - unpublished
 
 Add the approved dedicated seat-planner-ui-ux skill alongside design-ui and

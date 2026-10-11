@@ -6,7 +6,7 @@ The current published package is **1.1.29**. [Source](https://github.com/pmeglaw
 
 Version 1.1.29 adds the dedicated `seat-planner-ui-ux` skill alongside the two general-purpose IBM skills. A bare run defaults to read-only review and follows current Bench/Seat Planner repository contracts. Its ten authored scenarios remain unrun. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.29) for verification and limits. The earlier [1.1.27 provenance erratum](docs/1.1.27-PROVENANCE-ERRATUM.md) remains applicable to its frozen header evidence.
 
-The working package matches published **1.1.29**, released from commit `f7f91e5b5fc4183247a9cf5eafa430ea17f1ecd5`. The frozen [preparation notes](releases/1.1.29/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication and downloaded-byte verification are separate from destination installation and fresh skill discovery.
+The working source is **1.1.30, an unpublished Context7 refresh candidate**. It adds version-aware retrieval and updated Carbon references from PR #45; it does not change application dependencies or enable v12 flags. Candidate artifacts are in `releases/1.1.30/`. Recovery and installation remain pinned to published **1.1.29**, released from commit `f7f91e5b5fc4183247a9cf5eafa430ea17f1ecd5`. The frozen [preparation notes](releases/1.1.29/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication and downloaded-byte verification are separate from destination installation and fresh skill discovery.
 
 ## What it does
 
@@ -54,7 +54,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.29 package source with its three skills, references, visual casebook, assets, evaluator, and tests; its published archive and manifest are in `releases/1.1.29/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.30 working source with its three skills, references, visual casebook, assets, evaluator, and tests; candidate artifacts are in `releases/1.1.30/`, while the published archive and manifest remain in `releases/1.1.29/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
