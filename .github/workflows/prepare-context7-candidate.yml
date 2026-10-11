@@ -1,0 +1,208 @@
+name: Prepare unpublished Context7 candidate
+on:
+  push:
+    branches: [docs/context7-carbon-refresh]
+    paths: [.github/workflows/prepare-context7-candidate.yml]
+permissions: {}
+jobs:
+  prepare:
+    if: github.repository == 'pmeglaw/ibm-design-language-plugin' && github.ref == 'refs/heads/docs/context7-carbon-refresh'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Prepare and verify candidate bytes without publishing
+        shell: bash
+        run: |
+          python -B - <<'PY'
+          from pathlib import Path
+          import hashlib, io, json, os, subprocess, sys, zipfile
+
+          root = Path.cwd()
+          report = root / '.verification'
+          report.mkdir(exist_ok=True)
+          source = root / 'plugins/ibm-design-language'
+          original = '87b816cc410796645440865a74a9e04c449a3cf4'
+          temporary = '.github/workflows/prepare-context7-candidate.yml'
+          def git(*args):
+              return subprocess.check_output(['git', *args], text=True).strip()
+          def require(condition, message):
+              if not condition:
+                  raise RuntimeError(message)
+          def sha256(data):
+              return hashlib.sha256(data).hexdigest()
+          def snapshot(directory):
+              return {p.relative_to(root).as_posix(): sha256(p.read_bytes())
+                      for p in directory.rglob('*') if p.is_file()}
+          def replace(path, before, after):
+              p = root / path
+              text = p.read_text(encoding='utf-8')
+              require(text.count(before) == 1, f'Expected exactly one baseline in {path}: {before}')
+              p.write_text(text.replace(before, after), encoding='utf-8', newline='\n')
+          def run(name, args, expected_failure=False):
+              result = subprocess.run(args, text=True, capture_output=True, timeout=240)
+              output = result.stdout + result.stderr
+              (report / f'candidate-{name}.txt').write_text(output, encoding='utf-8')
+              print(f'\n=== {name}: exit {result.returncode} ===\n{output}', flush=True)
+              if expected_failure:
+                  require(result.returncode != 0 and 'RuntimeError: Plugin differs from frozen release' in output,
+                          'Baseline did not fail at the documented frozen-source mismatch')
+              else:
+                  require(result.returncode == 0, f'{name} failed')
+
+          require(git('rev-parse', 'HEAD^') == original, 'Unexpected PR head; do not overwrite concurrent work')
+          require(git('diff', '--name-only', 'HEAD^', 'HEAD') == temporary, 'Preparation commit changed other files')
+          require(not git('status', '--porcelain'), 'Checkout is not clean')
+          instructions = [p for p in git('ls-files').splitlines()
+                          if Path(p).name in ('AGENTS.md', 'AGENTS.override.md', 'CLAUDE.md')]
+          require(instructions == ['AGENTS.md'], f'Unreviewed nested instructions: {instructions}')
+          expected_blobs = {
+              'skills/design-ui/SKILL.md': 'd9f39e8c8f55b548b711884457d4c37f4587f22d',
+              'skills/design-ui/references/carbon-next.md': '0af3006e8c2e8f4b7dbf27b154b9d5830cc1926b',
+              'skills/design-ui/references/context7-refresh.md': '497845a41c4ec84d579662d2f5fb466bad98e5f8',
+          }
+          for name, blob in expected_blobs.items():
+              require(git('hash-object', str(source / name)) == blob, f'Approved refresh changed: {name}')
+          frozen = snapshot(root / 'releases')
+          frozen_paths = set(frozen)
+          candidate = root / 'releases/1.1.30'
+          require(not candidate.exists(), 'Candidate version already exists')
+          require(not any(p.is_symlink() for p in source.rglob('*')), 'Source symlink found')
+          run('baseline', [sys.executable, '-B', 'scripts/verify.py'], expected_failure=True)
+
+          replace('plugins/ibm-design-language/plugin.json', '"version": "1.1.29"', '"version": "1.1.30"')
+          notes = '''# 1.1.30 Context7 reference refresh candidate - unpublished
+
+          Add version-aware Context7 discovery, official-source reconciliation,
+          bounded fallback, privacy and permission boundaries. Refresh the dated
+          Carbon v11.118.0/package-version receipt, v12 Migrated-component export
+          boundary and consolidated DTCG token-source lookup. Add release-derived
+          review scenarios for SideNav, forced-colors inputs, DataTable selection
+          and CodeSnippet keyboard stops. These scenarios are guidance, not
+          executed application or assistive-technology tests.
+
+          Preserve the approved three-file refresh from PR #45, all three skills,
+          runtime assets, fixture assertions, dependencies and historical evidence.
+          No Carbon upgrade, v12 opt-in, Seat Planner change or new model evaluation
+          is included. Previous release bytes remain unchanged.
+
+          This is an unpublished preparation record. Final candidate verification
+          is recorded in PR #45; publication and installation require separate
+          approval and evidence. Do not infer either from archive preparation.
+
+          '''
+          p = source / 'RELEASE_NOTES.md'
+          p.write_text(notes + p.read_text(encoding='utf-8'), encoding='utf-8', newline='\n')
+          replace('scripts/verify.py', "CURRENT = '1.1.29'", "CURRENT = '1.1.30'")
+          replace('scripts/verify.py', "'1.1.28', CURRENT", "'1.1.28', '1.1.29', CURRENT")
+          replace('docs/RELEASING.md', '(currently 1.1.29)', '(currently 1.1.30)')
+          replace('README.md',
+                  'The working package matches published **1.1.29**, released from commit `f7f91e5b5fc4183247a9cf5eafa430ea17f1ecd5`.',
+                  'The working source is **1.1.30, an unpublished Context7 refresh candidate**. It adds version-aware retrieval and updated Carbon references from PR #45; it does not change application dependencies or enable v12 flags. Candidate artifacts are in `releases/1.1.30/`. Recovery and installation remain pinned to published **1.1.29**, released from commit `f7f91e5b5fc4183247a9cf5eafa430ea17f1ecd5`.')
+          replace('README.md',
+                  '- `plugins/ibm-design-language/`: the published 1.1.29 package source with its three skills, references, visual casebook, assets, evaluator, and tests; its published archive and manifest are in `releases/1.1.29/`.',
+                  '- `plugins/ibm-design-language/`: the unpublished 1.1.30 working source with its three skills, references, visual casebook, assets, evaluator, and tests; candidate artifacts are in `releases/1.1.30/`, while the published archive and manifest remain in `releases/1.1.29/`.')
+          candidate.mkdir()
+          (candidate / 'NOTES.md').write_text('''# 1.1.30 - unpublished Context7 reference refresh candidate
+
+          Prepared from PR #45 input commit
+          `87b816cc410796645440865a74a9e04c449a3cf4`.
+
+          Includes the approved Context7 retrieval guidance, dated Carbon/v12/DTCG
+          reference refresh and release-derived review scenarios. The three approved
+          Markdown files are preserved byte-for-byte. Other package changes are
+          limited to the version and these package release notes.
+
+          The archive, file manifest and SHA-256 checksum identify this candidate;
+          they do not establish publication, installation or product quality.
+          Final verification receipts belong in PR #45. Keep all previous release
+          archives, manifests, checksums and historical evidence unchanged.
+
+          No merge, tag, publication or installation is authorized by this record.
+          No model evaluation, Seat Planner runtime test, native Windows high-contrast
+          test or screen-reader test is claimed. Existing geometry, keyboard,
+          casebook and Next.js fixtures are separate model-free release gates.
+          ''', encoding='utf-8', newline='\n')
+          files = sorted(p for p in source.rglob('*') if p.is_file())
+          manifest = {p.relative_to(source).as_posix(): sha256(p.read_bytes()) for p in files}
+          def archive_bytes():
+              out = io.BytesIO()
+              with zipfile.ZipFile(out, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+                  for p in files:
+                      info = zipfile.ZipInfo(p.relative_to(source).as_posix(), (1980, 1, 1, 0, 0, 0))
+                      info.create_system = 3
+                      info.external_attr = 0o100644 << 16
+                      info.compress_type = zipfile.ZIP_DEFLATED
+                      z.writestr(info, p.read_bytes(), compresslevel=9)
+              return out.getvalue()
+          archive = archive_bytes()
+          require(archive == archive_bytes(), 'Archive is not reproducible')
+          (candidate / 'plugin.zip').write_bytes(archive)
+          (candidate / 'files.json').write_text(json.dumps(manifest, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          (candidate / 'SHA256SUMS').write_text(sha256(archive) + '  plugin.zip\n', encoding='utf-8')
+          require({k: v for k, v in snapshot(root / 'releases').items() if k in frozen_paths} == frozen,
+                  'A frozen release changed')
+          for name, blob in expected_blobs.items():
+              require(git('hash-object', str(source / name)) == blob, f'Approved reference was modified: {name}')
+          changed = ['README.md', 'docs/RELEASING.md', 'plugins/ibm-design-language/plugin.json',
+                     'plugins/ibm-design-language/RELEASE_NOTES.md', 'scripts/verify.py',
+                     'releases/1.1.30/NOTES.md', 'releases/1.1.30/files.json',
+                     'releases/1.1.30/SHA256SUMS', 'releases/1.1.30/plugin.zip']
+          actual_changed = set(git('diff', '--name-only').splitlines()) | set(git('ls-files', '--others', '--exclude-standard').splitlines())
+          require(actual_changed == set(changed), f'Unexpected preparation scope: {actual_changed}')
+          run('package', [sys.executable, '-B', 'scripts/verify.py'])
+          run('regressions', [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py'])
+          run('release-docs', [sys.executable, '-B', 'scripts/verify_release_docs.py', '--github'])
+          run('whitespace', ['git', 'diff', '--check'])
+          receipt = {'version': '1.1.30', 'input_sha': original, 'preparation_sha': git('rev-parse', 'HEAD'),
+                     'zip_sha256': sha256(archive), 'plugin_files': len(manifest),
+                     'frozen_files_preserved': len(frozen), 'published_version': '1.1.29',
+                     'full_python_regressions': 'pass', 'package_verifier': 'pass', 'release_documentation': 'pass',
+                     'browser_gates': 'not yet run on final candidate commit',
+                     'model_evaluation': 'not run', 'publication': 'not performed', 'installation': 'not performed',
+                     'files': [{'path': path, 'sha256': sha256((root / path).read_bytes())} for path in changed]}
+          (report / 'candidate-preparation.json').write_text(json.dumps(receipt, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps(receipt, indent=2))
+          PY
+      - name: Store verified content-addressed blobs only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python -B - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, json, os
+          from urllib.request import Request, urlopen
+          root = Path.cwd()
+          receipt = json.loads((root / '.verification/candidate-preparation.json').read_text())
+          base = 'https://api.github.com/repos/pmeglaw/ibm-design-language-plugin/'
+          def api(path, data=None):
+              headers = {'Authorization': 'Bearer ' + os.environ['GH_TOKEN'],
+                         'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28'}
+              body = None if data is None else json.dumps(data).encode()
+              with urlopen(Request(base + path, data=body, headers=headers), timeout=90) as response:
+                  return json.load(response)
+          assert api('git/ref/heads/docs/context7-carbon-refresh')['object']['sha'] == receipt['preparation_sha'], 'Branch moved'
+          assert api('releases/latest')['tag_name'] == 'v1.1.29', 'Published release changed'
+          entries = []
+          for item in receipt['files']:
+              data = (root / item['path']).read_bytes()
+              assert hashlib.sha256(data).hexdigest() == item['sha256'], 'Prepared file drift'
+              blob = api('git/blobs', {'encoding': 'base64', 'content': base64.b64encode(data).decode()})
+              expected = hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
+              assert blob['sha'] == expected, 'Uploaded blob mismatch'
+              entries.append({'path': item['path'], 'mode': '100644', 'type': 'blob', 'sha': blob['sha']})
+          receipt['tree_elements'] = entries
+          (root / '.verification/candidate-upload.json').write_text(json.dumps(receipt, indent=2) + '\n')
+          print('CANDIDATE_UPLOAD_RECEIPT\n' + json.dumps(receipt, indent=2))
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('## Unpublished 1.1.30 candidate prepared\n\nPackage, full Python regressions and release-documentation checks passed for the prepared bytes.\n\nZIP SHA-256: `' + receipt['zip_sha256'] + '`.\n\nContent-addressed blobs stored; no branch ref, tag, release or installation changed by this workflow. Final-commit browser and Windows/Linux gates remain separate.\n')
+          PY
