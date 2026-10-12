@@ -1,5 +1,44 @@
 # Carbon Next (v12) — direction, and what's actually shipping
 
+## Source refresh — 2026-10-10
+
+This targeted refresh supplements the September snapshots below; it does not
+revalidate every roadmap claim, AI variant, component count or source-map entry.
+The [release schedule](https://github.com/carbon-design-system/carbon/blob/main/docs/release-schedule.md),
+checked on this date, still lists v11 as Active and v12 as Preview, with v12's
+active-release date TBD. The latest published monorepo release checked was
+[v11.118.0, October 7, 2026](https://github.com/carbon-design-system/carbon/releases/tag/v11.118.0).
+Its package entries include `@carbon/react@1.118.0`, `@carbon/styles@1.117.0`
+and `@carbon/themes@11.83.0`. These are separate package versions, not an
+application lockfile or an instruction to upgrade. Recheck before later use.
+
+### Preview flags do not create missing exports
+
+The [v11.118.0 feature-flag contract](https://github.com/carbon-design-system/carbon/blob/v11.118.0/docs/feature-flags.md)
+distinguishes React, Sass and Web Components availability. Components marked
+**Migrated** in the v12 Storybook are not public exports of the published v11
+package; enabling `enable-v12-release` does not expose them. Check the installed
+exports, chosen variant and each required runtime/style flag. Do not add a
+package, run a codemod or enable the umbrella flag merely to reproduce a preview.
+Any authorized opt-in needs scoped behavior, visual and recovery checks.
+
+### DTCG source is implemented, not a required consumer migration
+
+The [v11.118.0 token-source documentation](https://github.com/carbon-design-system/carbon/blob/v11.118.0/packages/themes/src/dtcg/README.md)
+records all four themes in `packages/themes/src/dtcg/themes.json`, with component
+tokens in `components/*.json`. Read nested keys and the selected theme under
+`$extensions["carbon.themes"]`; entries can be strings or `{ value, alpha }`
+objects. Preserve opacity when resolving a color. Component-token files can also
+use the documented legacy `org.carbon.alphaModifiers` map. A node can contain both
+its own token and child tokens; do not flatten by blindly splitting every hyphen.
+
+This is source lookup guidance, not a new application import path. Keep supported
+Sass/CSS entrypoints, product-owned semantic aliases, theme/layer ownership and
+approved brand mappings. Generated token files are build output, not a place to
+patch product colors. Source format alone proves neither emitted CSS, rendered
+contrast nor compatibility with the installed version. See [Context7 retrieval
+and regression checks](context7-refresh.md) for the source receipt and limits.
+
 ## What IBM published
 
 v12 is presented as a statement of direction, not a spec. The argument: interfaces are splitting into two kinds — generated on demand and reshaping to context on one side, stable and predictable on the other — and the system has to serve both. The design goal is **progressive disclosure by default**: reveal depth in sequence, surface the right action at the right time, and let hierarchy, contrast and motion work together so people spend less time orienting.
@@ -38,7 +77,7 @@ Check which flags exist and their defaults in the target installed release. The 
 
 | Flag | Turns on |
 |---|---|
-| `enable-v12-release` | The v12 feature set as a whole |
+| `enable-v12-release` | All v12 flags present in the installed package; not every preview component (see the dated refresh above) |
 | `enable-v12-overflowmenu` | OverflowMenu rebuilt on Menu subcomponents |
 | `enable-v12-dynamic-floating-styles` | Dynamic placement for Popover, Tooltip and similar |
 | `enable-v12-tile-default-icons` | Default icons in ClickableTile; check the target package and codemod coverage |
