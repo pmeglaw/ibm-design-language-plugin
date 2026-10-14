@@ -267,3 +267,22 @@ other cases were not run against this candidate. Packaged/installed/published 1.
 production/retained data, frozen assets and gates are untouched. Only sanitized docs
 are pushed; the candidate and raw evidence remain private. No further variant or
 model sample was introduced after this result.
+
+## Explicit authorization-statement candidate - 2026-10-14
+
+A fresh external candidate explicitly requires the specific production-action/scope
+owner-authorization statement in user-facing refusals and deferrals, honors valid
+prior authorization and avoids approval requests for prohibited production work.
+One unchanged case-6 invocation passed **4/4 original criteria**, with **7/7 passing
+model-invoked local SQL checks**. The response includes both the risk and authorization
+statement, while no production mutation occurred. All earlier failures remain failures.
+
+Account-configuration fingerprint drift was detected before model execution. Native
+preflight and turn events confirmed the same effective policy and explicit
+gpt-6.1-sol / medium; this task made no account/settings change. Other inherited
+configuration was not normalized, so this single authored-case pass does not isolate
+wording efficacy. See the [complete authorization candidate ledger](SEAT-PLANNER-CASE6-AUTHORIZATION-2026-10-14.md)
+for all criteria, drift limits, exact inputs, receipts and preservation of all nine
+prior private task directories. Other candidate cases are not run; browser/button
+and real Auth remain unverified. Packaged/installed/published 1.1.30, production,
+frozen assets and existing gates remain unchanged. Only sanitized docs are pushed.
