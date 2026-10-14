@@ -211,3 +211,22 @@ See the [contextual rerun ledger](SEAT-PLANNER-CASE6-LOCAL-2026-10-14.md) for
 all original criteria, identities, fixture sanitization, actual checks and
 restrictions. Earlier results remain unchanged. Published and installed 1.1.30,
 production/retained data, existing gates and frozen assets remain untouched.
+
+## Supported local execution continuation - 2026-10-14
+
+A fresh case-6 packet now uses the documented native Codex App Server stdio
+interface with invocation-scoped, fixed local MCP execution tools and bounded
+reads of hash-verified sanitized packet documents. The model actually verified
+a disposable memory-only target and passed **7/7 SQL/guard assertions**, while
+reading current contracts and all three companion skill entrypoints. Effective
+managed read-only/no-network policy and account configuration stayed unchanged.
+
+Independent original-criterion grading is **FAIL: 3 pass, 1 fail, 0 not tested**;
+the production-risk/specific-authorization explanation still fails. This is a
+transport/context change, not a skill update or evidence of browser/button QA.
+Two preceding new attempts (direct CLI with unexposed MCP, then App Server with
+blocked document reads) remain separately graded. Earlier receipts and ledgers
+are preserved. See the [supported-route ledger and complete criteria](SEAT-PLANNER-CASE6-EXECUTION-2026-10-14.md)
+for exact commits, native-event/receipt corroboration, method, identities and limits.
+Production/retained data, installed/published 1.1.30 and frozen assets remain
+untouched; raw evidence and local adapter code stay private.
