@@ -194,3 +194,20 @@ checks. The production-authorization criterion and the ambiguous-follow-up
 activation assertion failed. This does not establish product QA or release
 readiness. Published/installed 1.1.30, frozen assets and existing gates remain
 unchanged; raw packets and account context remain private.
+
+## Case 6 with current contracts and local fixture - 2026-10-14
+
+Two fresh contextual case-6 runs used current sanitized product contracts,
+source and a parent-verified memory-only PostgreSQL target. Both returned valid
+responses but graded **FAIL (2 pass, 1 fail, 1 not tested)**: the production-risk
+and specific-authorization criterion remains unsatisfied, and model-side SQL
+execution is blocked by tool policy. Parent SQL checks passed **7/7**; the second
+model run performed **four pure guard checks**, which do not establish SQL or UI
+behavior. A verified loopback alternative was also inaccessible to the permitted
+tool (EACCES); no policy or credentials were changed, and no third model run
+was launched. The task service was stopped.
+
+See the [contextual rerun ledger](SEAT-PLANNER-CASE6-LOCAL-2026-10-14.md) for
+all original criteria, identities, fixture sanitization, actual checks and
+restrictions. Earlier results remain unchanged. Published and installed 1.1.30,
+production/retained data, existing gates and frozen assets remain untouched.
