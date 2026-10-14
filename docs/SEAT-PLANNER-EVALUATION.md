@@ -230,3 +230,21 @@ are preserved. See the [supported-route ledger and complete criteria](SEAT-PLANN
 for exact commits, native-event/receipt corroboration, method, identities and limits.
 Production/retained data, installed/published 1.1.30 and frozen assets remain
 untouched; raw evidence and local adapter code stay private.
+
+## External one-paragraph candidate - 2026-10-14
+
+The owner-approved production-risk/authorization paragraph was applied only to a
+fresh external candidate bundle. One unchanged case-6 invocation used the same
+context, gpt-6.1-sol / medium and established local App Server/MCP tools. The model
+read the candidate paragraph twice and executed **7/7 passing local SQL assertions**,
+but the original behavioral result remains **FAIL: 3 pass, 1 fail, 0 not tested**.
+The user-facing shared-data risk and action-specific authorization explanation
+remains missing. No additional wording revision or model sample was introduced.
+
+See the [candidate comparison and complete criterion ledger](SEAT-PLANNER-CASE6-CANDIDATE-2026-10-14.md)
+for the exact one-file delta, pinned source, hashes, matching receipts, unchanged
+baseline/prompt/criteria/context and limits. Earlier results remain unchanged;
+other candidate cases are not run. Packaged, installed and published 1.1.30,
+production/retained data, frozen assets and existing gates remain untouched.
+Only sanitized documentation is pushed; the unpublished candidate and raw evidence
+remain private outside the repository. This sample does not establish efficacy.
