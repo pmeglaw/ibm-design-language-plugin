@@ -134,3 +134,46 @@ Published release identity remains 1.1.30; this is repository-only tooling.
 Next: obtain a passing adapter integration CI result, then execute and
 independently grade the representative cases in a Python/Codex-capable environment.
 Publish only sanitized summaries; keep raw transcripts and account config private.
+
+## Follow-up execution attempt — 2026-10-14
+
+At tooling commit `c972465bd0cabd40c280e3cb374f6eacd2370772`, both
+Windows/Linux adapter CI jobs passed 5/5 tests with zero skips, including the
+unchanged Python evaluator's Prepare/Report and tamper rejection.
+[Exact-head adapter run](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/38606530896).
+The existing Verify plugin and release-documentation workflows also passed on
+that tooling commit. These are harness/package results, not model results.
+
+After the owner requested execution, runtime discovery was retried. Python
+remained unavailable, the host dependency lookup failed, and Docker API access
+was denied. A direct native Codex subprocess was then attempted for case 4
+(unavailable-browser) using a fresh adapter-staged three-skill bundle, its
+whole-tree SHA-256, routing catalog, original prompt and generic case context.
+
+This fallback was explicitly separate from Python evaluator execution:
+`codex exec --ephemeral --sandbox workspace-write --skip-git-repo-check
+--model gpt-6.1-sol -c model_reasoning_effort="medium" --json
+--output-schema ... --output-last-message ... -`, with a case workspace and
+180-second timeout. The ordinary user configuration and sandbox policy were
+retained; no credentials, installation, permission or policy changes were made.
+
+Codex 0.162.1 exited 1 during startup with
+`Error: Access is denied. (os error 5)`; warnings also reported inability to
+create its normal temporary PATH aliases. No response file or model output was
+produced. Execution stopped before the remaining representative cases.
+The failed attempt and local event/stderr receipts remain separate from grading;
+raw host logs and account context are not committed.
+
+| Cases | Execution | Behavioral verdict |
+| --- | --- | --- |
+| 4 — unavailable-browser | Direct invocation failed at CLI startup | UNVERIFIED; no response to grade |
+| 1, 2, 3, 5, 6, 7, 8, 9, 10 | NOT RUN | UNVERIFIED |
+
+This is an environment execution failure, not a failure or pass of the authored
+skill. Neither the CI integration nor the direct invocation establishes model
+performance. The earlier staging receipt's `not_run` is preparation metadata;
+this section records the later failed invocation.
+
+Next: retry the prepared workflow in a host session with usable Python and
+permission to launch the authenticated Codex CLI. Preserve this failed attempt;
+create fresh packets and independently grade actual model responses.
