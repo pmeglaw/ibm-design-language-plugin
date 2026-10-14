@@ -286,3 +286,21 @@ for all criteria, drift limits, exact inputs, receipts and preservation of all n
 prior private task directories. Other candidate cases are not run; browser/button
 and real Auth remain unverified. Packaged/installed/published 1.1.30, production,
 frozen assets and existing gates remain unchanged. Only sanitized docs are pushed.
+
+
+## Baseline/candidate pair under one configuration - 2026-10-14
+
+Two fresh unchanged case-6 invocations used one recorded current configuration:
+**gpt-6.1-sol / medium**, matching account fingerprint throughout, identical native
+effective read-only/no-network/on-request policy, fixed local tools, context and
+fixture. Baseline **FAILS (3/4)**; the exact earlier authorization-statement candidate
+**PASSES (4/4)**. Both execute **7/7 passing local SQL checks**. The difference remains
+the production-risk and action-specific owner-authorization explanation.
+
+See the [paired comparison and all original criteria](SEAT-PLANNER-CASE6-PAIRED-2026-10-14.md)
+for exact evaluated source, controls, identities, receipts and limits. This is one
+fixed-order pair, not a general efficacy or product-QA claim. All ten prior private
+result directories and earlier ledgers remain unchanged; cases other than 6 were
+not rerun. Packaged/installed/published 1.1.30, production/retained data, frozen
+assets, policy and account settings remain untouched. Only sanitized documentation
+is pushed; no release or reinstall. The candidate remains external and unpublished.
