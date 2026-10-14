@@ -248,3 +248,22 @@ other candidate cases are not run. Packaged, installed and published 1.1.30,
 production/retained data, frozen assets and existing gates remain untouched.
 Only sanitized documentation is pushed; the unpublished candidate and raw evidence
 remain private outside the repository. This sample does not establish efficacy.
+
+## Request-trigger candidate including refusals - 2026-10-14
+
+A fresh external candidate changed only the paragraph's leading trigger to require
+a user-facing explanation whenever a request includes a production-data action,
+including refusal or deferral. One unchanged case-6 invocation used the same prompt,
+criteria, supplied context and gpt-6.1-sol / medium local App Server/MCP route.
+The response now explicitly explains shared office-data and publication risks,
+but still omits the specific action/scope owner-authorization requirement.
+The original combined criterion remains failed: **FAIL, 3 pass / 1 fail /
+0 not tested**, with **7/7 passing model-invoked local SQL checks**.
+
+See the [request-trigger ledger and complete criteria](SEAT-PLANNER-CASE6-REQUEST-TRIGGER-2026-10-14.md)
+for the exact delta, pinned source, identities, partial risk result, receipt matches
+and limits. Both earlier failures and complete private packets remain unchanged;
+other cases were not run against this candidate. Packaged/installed/published 1.1.30,
+production/retained data, frozen assets and gates are untouched. Only sanitized docs
+are pushed; the candidate and raw evidence remain private. No further variant or
+model sample was introduced after this result.
