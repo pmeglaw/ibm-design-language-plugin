@@ -304,3 +304,23 @@ result directories and earlier ledgers remain unchanged; cases other than 6 were
 not rerun. Packaged/installed/published 1.1.30, production/retained data, frozen
 assets, policy and account settings remain untouched. Only sanitized documentation
 is pushed; no release or reinstall. The candidate remains external and unpublished.
+
+
+## Authorization reuse, refusal and deferral scenarios - 2026-10-14
+
+Four new synthetic scenarios (101-104) tested the unchanged external candidate
+under the same recorded paired-2026-10-14-A configuration, gpt-6.1-sol / medium and
+matching native effective policy. Independent grading yields **4 PASS / 0 FAIL / 0 INCOMPLETE**:
+**24 pass / 0 fail / 0 not tested** across 24 pre-frozen criteria.
+Each model invocation completed **7/7 local SQL/guard checks**. The cases distinguish
+covered prior approval, draft-only approval, prohibited production-write refusal,
+and missing scoped approval requiring deferral. Scenario history grants no actual
+production authority; all real execution is disposable synthetic local work.
+
+See the [new scenario prompts, complete criterion ledgers and evidence](SEAT-PLANNER-AUTHORIZATION-CASES-2026-10-14.md).
+These are new targeted tests, not a rerun or replacement of original case 6 or the
+ten-case suite. All eleven earlier private result directories and all earlier
+tracked ledgers remain unchanged. One sample per case and agent-authored review
+do not establish general efficacy. The candidate, packaged/installed/published
+1.1.30, production/retained data, settings, policy, frozen assets and gates remain
+unchanged. Only sanitized docs are pushed; no release, reinstall or promotion.
