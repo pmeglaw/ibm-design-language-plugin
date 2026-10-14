@@ -177,3 +177,20 @@ this section records the later failed invocation.
 Next: retry the prepared workflow in a host session with usable Python and
 permission to launch the authenticated Codex CLI. Preserve this failed attempt;
 create fresh packets and independently grade actual model responses.
+
+## Completed representative execution - 2026-10-14
+
+A fresh packet evaluated exact commit
+`76e68b57db846245ed11a7dde834bc2ee3d05965` using the existing Python evaluator,
+`gpt-6.1-sol`, medium reasoning and Codex 0.162.1. All five authorized cases
+(1, 4, 6, 7, 10) returned valid responses, with no execution failures. Independent
+criterion grading yields **1 pass, 2 fail, 2 incomplete**; the remaining five
+cases are **not run**. Missing product inputs remain untested, and the earlier
+startup failure above remains a separate historical attempt.
+
+See the [sanitized results and complete criterion ledger](SEAT-PLANNER-EVALUATION-2026-10-14.md)
+for immutable identity, concrete observations, runtime limits and applicable
+checks. The production-authorization criterion and the ambiguous-follow-up
+activation assertion failed. This does not establish product QA or release
+readiness. Published/installed 1.1.30, frozen assets and existing gates remain
+unchanged; raw packets and account context remain private.
