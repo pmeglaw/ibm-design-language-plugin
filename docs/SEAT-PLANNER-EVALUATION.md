@@ -1,0 +1,136 @@
+# Seat Planner behavioral evaluation (repository tooling)
+
+This bridge evaluates the ten authored scenarios in published 1.1.30 without
+editing `plugins/ibm-design-language/`, frozen releases, or any installation.
+It requires Node 24, Python 3.11+, and a working authenticated Codex CLI for
+model execution. Staging and packet preparation consume no model usage.
+
+## Method and limits
+
+`scripts/prepare_seat_evaluation.cjs` converts the original schema-1 scenarios
+to the existing evaluator's schema 2. Numeric IDs 1–10 follow authored order;
+`source_id` retains each original string ID. Prompts and every original
+expected-outcome description are copied verbatim into explicit assertions.
+A separate activation assertion checks routing. No visual dimensions are
+scored: these are behavioral guidance cases, not rendered product evaluations.
+
+The bridge copies all three complete sibling trees from the same repository:
+`design-ui`, `review-product-experience`, and `seat-planner-ui-ux`.
+A generated evaluation-only catalog embeds their original descriptions and
+routes to those copies. This avoids forcing Seat Planner activation for generic
+Carbon, other-product, and repository-status exclusion cases. It tests routing
+with an explicit catalog, not native host skill discovery. The root entrypoint
+is the evaluation catalog; the Seat Planner entrypoint itself remains unchanged.
+Both companions are available; the flow-review companion is required where the
+authored skill requires it.
+
+The existing evaluator snapshots and fingerprints this entire bundle, validates
+local Markdown links, freezes prompts, records model/settings/config hashes,
+and checks output/review integrity. The adapter also records source hashes and
+the authored-scenario hash. Include its source and provenance as context files
+so the run identity binds the conversion tooling. No source-snapshot special
+case or packaged evaluator change is needed.
+
+Expected outcomes are not inserted into model prompts. They remain present in
+the frozen authored source and grader packet: this is an authored regression,
+not a concealed holdout. Tool events must corroborate claimed skill reads.
+Inherited host policy/config and installed skills can still influence responses;
+the catalog does not prove exclusive reliance or native routing.
+
+The generic context supplies no live product repository, credentials, browser,
+or approved correction artifact. Thus these cases can evaluate truthful handling
+of missing evidence and scope boundaries; they cannot establish actual marker
+stability, implementation correctness, or production safeguards under live use.
+The ambiguous-follow-up case represents prior review context as text in its
+unchanged prompt, not a real resumed conversation. Use a separate authorized,
+sanitized product fixture evaluation for stronger runtime claims.
+
+## Reproduce
+
+Start from the PR commit or another recorded immutable checkout. Record
+`git rev-parse HEAD`, `node --version`, `python --version`, and
+`codex --version`. Use fresh absolute staging and results directories outside
+the checkout. Keep packets/transcripts/configuration private and uncommitted.
+
+Commands below use shell variables for clarity; on PowerShell use `$stage`,
+`$results`, `$model` and `$evaluator` rather than shell-style expansions.
+
+```sh
+node scripts/prepare_seat_evaluation.cjs . "$stage"
+evaluator=plugins/ibm-design-language/skills/design-ui/scripts/evaluate.py
+python -B "$evaluator" prepare --skill-root "$stage/bundle" \
+  --suite "$stage/suite.json" --results-root "$results" \
+  --model "$model" --reasoning medium --timeout-seconds 600 \
+  --context-file scripts/prepare_seat_evaluation.cjs \
+  --context-file "$stage/provenance.json"
+python -B "$evaluator" report --results-root "$results"
+```
+
+The initial report must show ten `not_run` cases and exit 1. Choose a model
+available to the execution account; preparation records but does not validate it.
+Do not treat a staging receipt's `not_run` field as the live execution report.
+
+The owner has authorized representative model execution for this task.
+Suggested representative IDs: 1 (review default/companions), 4 (unavailable
+browser), 6 (production protection), 7 (routing exclusion), 10 (ambiguous
+approval). Run against the prepared packet:
+
+```sh
+python -B "$evaluator" run --results-root "$results" --timeout 600 --ids 1 4 6 7 10
+```
+
+Failed attempts stay failed; use a fresh packet for a retry. Independently
+inspect each response and tool-event log. Copy its generated
+`review.template.json` to `review.json`; identify reviewer/method and grade
+every criterion with concrete evidence paths and observations. Missing evidence
+is `not_tested`, never a pass. Do not repair generated output for scoring.
+
+```sh
+python -B "$evaluator" score --results-root "$results" --case-id 1 \
+  --review "$results/case-01/review.json"
+python -B "$evaluator" report --results-root "$results"
+```
+
+Repeat scoring for each executed case. Report all ten rows: selected execution,
+grading and unexecuted statuses separately. A response claiming “passed” is not
+independent verification. Grader truth/relevance remains the reviewer's duty.
+See the unchanged packaged evaluator's evaluation reference for its evidence
+contract and exit codes.
+
+## Regression coverage
+
+`node --test tests/seat-evaluation.test.cjs` verifies conversion, malformed
+inputs, same-plugin companion staging, source preservation, missing dependencies,
+fresh output and external-directory restrictions. With `SEAT_EVAL_PYTHON`
+set to the Python executable, it also invokes the real evaluator's Prepare and
+Report, checks all three snapshot entrypoints, ten unrun cases, and tamper
+rejection. This integration runs no model. Without that variable, integration
+is explicitly skipped.
+
+The separate Seat evaluation adapter CI workflow requires Python integration
+on Linux and Windows. Existing package and fixture gates remain unchanged.
+CI never launches Codex or treats fixture success as model behavior.
+
+## Results recorded 2026-10-14
+
+Inspected main: `a82f34c957e72aa9a3fec49a5b7faa5fb01e2e6a`.
+Published release identity remains 1.1.30; this is repository-only tooling.
+
+- All ten original scenarios passed Node structural conversion checks.
+- Four Node regression tests passed locally on Windows / Node 24.21.0.
+- The Python evaluator integration test was explicitly skipped locally:
+  the available `python.exe` is an inaccessible WindowsApps alias and the
+  host's bundled-runtime lookup failed.
+- All 168 files of the three copied source trees matched Git blob hashes at
+  the inspected main commit. The installed source was read/copied only.
+- Codex CLI 0.162.1 was detected. No model call was made because the Python
+  evaluator runtime was unavailable. Local Git also could not resolve GitHub.
+- Cases 1–10: actual model execution **NOT RUN**, behavioral verdict
+  **UNVERIFIED**. Synthetic/structural passes do not change those statuses.
+- Package verification, Python suite, browser fixtures and model execution
+  were not run locally. Exact-commit CI is separate evidence and must be checked
+  on the PR; this receipt does not predeclare its results.
+
+Next: obtain a passing adapter integration CI result, then execute and
+independently grade the representative cases in a Python/Codex-capable environment.
+Publish only sanitized summaries; keep raw transcripts and account config private.
