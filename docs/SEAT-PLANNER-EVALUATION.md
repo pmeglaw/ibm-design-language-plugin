@@ -551,3 +551,16 @@ Original ten cases are NOT RUN on this candidate. All earlier results/failures,
 source 1.1.31, published/installed 1.1.30, production/retained data, account/policy,
 frozen assets and gates are unchanged. Only sanitized documents are pushed;
 candidate stays external. No integration, release, reinstall, merge or deployment.
+
+
+## Unpublished 1.1.32 source integration - 2026-10-14
+
+The reviewed external candidate is copied byte-for-byte into source 1.1.32.
+All 168 source skill files equal the evaluated bundle excluding its catalog.
+Reused targeted evidence totals 12 PASS/70 criteria across two packets; zero new
+model calls. Original cases 1-10 are NOT RUN on this exact candidate.
+
+See the [integration, exact identities and checks](SEAT-PLANNER-SOURCE-1.1.32-2026-10-14.md).
+Frozen 1.1.31 and earlier assets/results, published/installed 1.1.30, production/data,
+account/policy and gates remain unchanged. Source preparation only; no merge,
+release, tag, reinstall or deployment.

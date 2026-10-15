@@ -1,3 +1,23 @@
+# 1.1.32 Seat Planner contract-discovery and safeguards candidate - unpublished
+
+Integrate the exact reviewed external candidate: discover supplied project
+contracts before reporting them unavailable, update the bundled baseline to
+the approved all-width/200% zoom admin-editing policy, and explicitly report
+current safeguards for production actions whose prior authorization survives.
+The two skill-content files match the frozen evaluated candidate byte-for-byte;
+all other skill files are unchanged from prepared 1.1.31.
+
+Reuse 70/70 known-regression criteria across two packets for cases 101-104 and
+201-208 under gpt-6.1-sol / medium; no new model calls. Historical failures and
+incomplete results remain intact. Original cases 1-10 are NOT RUN on this exact
+candidate. Single unblinded samples and source/synthetic SQL do not establish
+causal improvement, general reliability, browser/real Auth/production behavior,
+native installed discovery or generated-product quality.
+
+This is unpublished source/preparation only. Preserve published/installed 1.1.30,
+frozen 1.1.31 and all older artifacts, data, account configuration and security
+policy. No merge, tag, release, account update, reinstall or deployment.
+
 # 1.1.31 Seat Planner authorization correction candidate - unpublished
 
 Integrate the reviewed production-action paragraph into seat-planner-ui-ux.

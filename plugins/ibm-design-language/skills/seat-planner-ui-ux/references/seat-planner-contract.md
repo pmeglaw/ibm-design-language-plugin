@@ -111,7 +111,7 @@ Use resolved colors and rendered evidence for text, meaningful graphics, borders
 
 Use the repository's current viewport and browser matrix. Its current UI baseline includes Chrome at 1920×1080, responsive coverage down to 320px, and Reception's 480–1055px band when affected. Inspect layout transitions and sweep widths where wrapping or collisions are involved; fixed screenshots alone do not prove responsive stability.
 
-Preserve the approved narrow-admin read-only policy and retain unsaved work when widening again. Keep selection, input, focus, scroll ownership, and important actions usable across reflow. Do not enable mobile mutations merely to create feature parity.
+Use the current repository's approved responsive editing policy. Its 2026-10-10 amendment makes admin editing available at every viewport width, including 200% zoom: viewport size changes layout, not permission. Preserve selection, unsaved edits, input, focus, scroll ownership, and reachable actions through reflow. Viewer surfaces remain read-only; retain admin/database enforcement, draft isolation, protected seats, and required confirmations.
 
 Inspect individual controls and nested content, not only document overflow. Verify that long dialogs and panels retain reachable headings, Close, Cancel, and primary actions. Exercise the actual scrolling container.
 
