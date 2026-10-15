@@ -18,7 +18,19 @@ PR overview and private final delivery receipt; earlier CI is not substituted.
 | 5. Execute representatives1/4/6/7/10 using existing Python evaluator | [Initial representative ledger](SEAT-PLANNER-EVALUATION-2026-10-14.md) | All five actual exit0 invocations at76e68b57db846245ed11a7dde834bc2ee3d05965:1PASS/2FAIL/2INCOMPLETE,13/2/3 across18 assertions. Initial five unrun cases remain historical NOTRUN records. |
 | 6. Independently grade every original criterion, distinguish statuses | Initial18-assertion ledger; [all-ten source32 ledger](SEAT-PLANNER-SOURCE-1.1.32-ORIGINALS-2026-10-14.md); hash-bound per-case reviews/scores/events | All10 originals subsequently executed and all36 criteria graded24PASS/0FAIL/12NOT_TESTED/0unreviewed. A failing scorer exit is distinct from execution failure. No historical score backfilled. |
 | 7. Commit/push sanitized summary to existing PR, keep raw/config/credentials private | Public frozen ledgers and current three-document diff; private raw packets; PR47 history/readback receipts | Sanitized documentation only. All earlier delivered ledgers retained; latest case8/closeout delivery is verified against the final remote head and PR body after commit. |
-| 8. Applicable checks and exact commit/model/reasoning/results/limits/current CI | Each cohort ledger and versioned private manifest; local checks; exact-head Actions runs recorded in PR/final receipt | Exact evaluated identities and model settings below; local package/live-publication/install parity/privacy/reference/whitespace checks. Final CI belongs to the final delivered commit, not a previous head. No unsupported application/runtime or downloaded-asset claim. |
+| 8. Applicable checks and exact commit/model/reasoning/results/limits/current CI | Each cohort ledger and versioned private manifest; local checks; exact-head Actions runs recorded in PR/final receipt | Exact evaluated identities and model settings below; local package/live-publication/install parity/privacy/reference checks; whitespace results are scoped below. Final CI belongs to the final delivered commit, not a previous head. No unsupported application/runtime or downloaded-asset claim. |
+
+Whitespace scope: the default staged `git diff --cached --check` PASS for
+the case8/closeout delivery at `6b7a2ca547e62836ac049a911138146c1a91dcb6`
+covers exactly its three documents: `SEAT-PLANNER-CASE8-ROUTING-2026-10-14.md`,
+this closeout, and `SEAT-PLANNER-EVALUATION.md`. The whole PR's default
+`git diff --check BASE...HEAD` continues to flag the two preserved CRLF endings
+at skill entrypoint lines20-21, where BASE is
+`a82f34c957e72aa9a3fec49a5b7faa5fb01e2e6a`. The existing
+[CRLF preservation caveat](SEAT-PLANNER-SOURCE-1.1.32-2026-10-14.md#preservation-and-validation)
+records the passing process-only CRLF-recognition check. Frozen/evaluated skill
+bytes and persistent Git configuration stay unchanged. This documentation-only
+scope correction has its own default staged whitespace check for this file.
 
 ## Complete original-suite accounting
 
