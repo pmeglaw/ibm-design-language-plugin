@@ -564,3 +564,22 @@ See the [integration, exact identities and checks](SEAT-PLANNER-SOURCE-1.1.32-20
 Frozen 1.1.31 and earlier assets/results, published/installed 1.1.30, production/data,
 account/policy and gates remain unchanged. Source preparation only; no merge,
 release, tag, reinstall or deployment.
+
+
+## Unpublished 1.1.32 original-suite evidence continuation - 2026-10-14
+
+Fresh unchanged original cases 1-10: **3 PASS / 0 FAIL / 7 INCOMPLETE**, **24 pass /
+0 fail /12 not tested** across 36 unchanged criteria. All 10 native invocations
+exit0; blocked/missing evidence does not become a pass. Separate enhanced-input
+cases 2,3,5,9: **3 PASS / 0 FAIL / 1 INCOMPLETE**, **12/0/3** across 15 criteria, with unchanged
+candidate/prompts/criteria/model/reasoning/native settings but changed context and
+declared synthetic component/browser/status capabilities. These are not an
+unchanged comparison or backfill of original scores. Case2's broader selector is
+rejected; no successful model-authored patch. Case3's measured geometry is fixture
+evidence; induced wrapping overlap is not a current-product finding.
+
+See the [complete two-cohort criterion ledger, identities and limitations](SEAT-PLANNER-SOURCE-1.1.32-ORIGINALS-2026-10-14.md).
+Evaluated commit `821f700f5a63207fcd11b8adde211c5dc21ed806`, gpt-6.1-sol/medium/default,
+same 169-file 3568 candidate. All prior results/failures, frozen assets, unpublished
+source 1.1.32, published/installed 1.1.30, production/retained data, account/policy and
+gates remain unchanged. Only sanitized docs; no merge/tag/release/reinstall/deploy.
