@@ -656,3 +656,21 @@ configuration paired-2026-10-14-A, unchanged169-file3568 candidate. All33 prior
 packets/31,876 files, frozen assets, source1.1.32, published/installed1.1.30,
 production/retained data and account/policy are preserved. Only sanitized docs;
 no release/reinstall/merge/tag/deploy. No original score is backfilled.
+
+
+## Case 8 and request-completion audit - 2026-10-14
+
+One unchanged-input case8 repetition: **PASS,3 pass/0 fail/
+0 not tested** across three original criteria. Original case8 remains
+**INCOMPLETE,2 pass/0 fail/1 not tested**. See the [case8 evidence ledger](SEAT-PLANNER-CASE8-ROUTING-2026-10-14.md).
+Evaluated `465c50a949789aef548660aae9f5d5a06cbc3237`,gpt-6.1-sol/medium/default,
+configuration paired-2026-10-14-A, unchanged169-file3568 candidate.
+
+The [consolidated requirement-by-requirement closeout](SEAT-PLANNER-EVALUATION-CLOSEOUT-2026-10-14.md)
+reconciles the original eight requirements and named follow-ups. All10 originals
+were executed and all36 criteria graded; their frozen3PASS/7INCOMPLETE and24/0/12
+totals remain unchanged. Separate enhanced/repeated/prompted samples are not
+backfilled or combined into an all-pass suite. All34 prior packets/32,647 files,
+frozen assets, source1.1.32, published/installed1.1.30, production/retained data and
+account/policy are preserved. Final delivery identity/CI are recorded in PR47 and
+the final receipt. No release/reinstall/merge/tag/deploy; raw evidence stays private.
