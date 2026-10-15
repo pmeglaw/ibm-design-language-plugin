@@ -2,6 +2,12 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
+The existing uploaded account installation has separately verified **1.1.32** file
+parity and fresh native-host discovery; see the [dated installation receipt](INSTALLATION-1.1.32-VERIFICATION-2026-10-15.md)
+for scope and limits. Existing account plugins use their supported update flow in
+[Recovery](RECOVERY.md#uploaded-account-installations), rather than creating a
+duplicate Git marketplace installation with the first-time commands below.
+
 ## Select the published release
 
 1. Obtain the [published 1.1.32 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.32). Resolve the full commit behind `v1.1.32` in a repository checkout with `git rev-parse 'v1.1.32^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.

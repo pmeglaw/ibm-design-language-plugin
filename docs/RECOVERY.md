@@ -31,10 +31,14 @@ discovery. Keep those checks explicit.
 
 ## Uploaded account installations
 
-The existing owner installation remains **1.1.30** under explicit publication-only
-authority. This 1.1.32 release does not update that destination or its marketplace
-configuration. An installation update and fresh discovery require separate
-authorization and verification.
+The existing owner installation was subsequently updated to **1.1.32** under
+separate installation authorization. Installed-file parity and fresh native
+stdio app-server discovery passed for all three enabled skills. The
+[dated installation verification](INSTALLATION-1.1.32-VERIFICATION-2026-10-15.md)
+records sanitized evidence, the preserved limited first smoke attempt and failed
+preflights, and the unverified running-desktop connection refresh. This is a
+recorded destination result, not proof for every installation or a production
+workflow. The earlier publication-only receipt remains unchanged as history.
 
 For an existing uploaded account plugin, update that same plugin through the
 host's supported update flow; do not create a duplicate Git marketplace install.
