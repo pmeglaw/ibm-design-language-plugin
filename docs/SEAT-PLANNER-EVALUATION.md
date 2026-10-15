@@ -480,3 +480,19 @@ All earlier results and frozen assets remain unchanged; other original cases are
 NOT RUN on this candidate. Production/retained data, source 1.1.31,
 published/installed 1.1.30, policy/account settings and gates are preserved.
 Only sanitized docs are pushed; no release, reinstall, merge or deployment.
+
+
+## Remaining original cases on unchanged discovery candidate - 2026-10-14
+
+Cases 2, 7, 8, 9 and 10 each run once on the unchanged external candidate under
+recorded gpt-6.1-sol / medium controls. New results: **3 PASS / 0 FAIL / 2 INCOMPLETE**;
+**12 pass / 0 fail / 4 not tested** across 16 unchanged criteria.
+Reusing the preceding 20 criteria yields all ten originals: **6 PASS /
+0 FAIL / 4 INCOMPLETE**, **28 pass / 0 fail /
+8 not tested** across 36 criteria, explicitly across two run keys.
+
+See the [new criterion ledger and cumulative view](SEAT-PLANNER-DISCOVERY-REMAINING-2026-10-14.md).
+No wording or rubric changes. Earlier failures, incomplete and unrun records remain
+unchanged. Candidate stays external; source 1.1.31, published/installed 1.1.30,
+production/retained data, policy/account settings, frozen assets and gates are preserved.
+Only sanitized docs are pushed; no release, reinstall, merge or deployment.
