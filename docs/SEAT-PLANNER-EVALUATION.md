@@ -603,3 +603,22 @@ same 169-file 3568 candidate. All 30 prior packets/28,271 files, 95 frozen files
 unpublished source 1.1.32, published/installed 1.1.30, production/retained data,
 account/policy and gates are preserved. Only sanitized docs; no merge, release,
 tag, reinstall or deployment. All earlier scores/failures remain unchanged.
+
+
+## Case 2 explicitly prompted SQL continuation - 2026-10-14
+
+A separate verification-only continuation is **PASS, 5 pass / 0 fail /
+0 not tested** across five newly frozen criteria. It starts from the
+prior model's completed CSS fixture and explicitly requests the omitted local
+SQL verification. The original selector-contract case2 remains **INCOMPLETE,
+3 pass / 0 fail / 1 not tested**; no original score is backfilled. This is prompted
+completion evidence, not spontaneous verification or a new implementation sample.
+
+See the [complete continuation criterion ledger, identities and limitations](SEAT-PLANNER-CASE2-SQL-CONTINUATION-2026-10-14.md).
+Evaluated commit `89fc34a64dd9e9e5cdad029f4095d5bfc081034c`, gpt-6.1-sol/medium/default,
+configuration paired-2026-10-14-A, unchanged169-file3568 candidate. Fresh model
+receipts establish only disposable memory SQL/Auth emulation, not real Auth,
+component-action/database integration or production. All31 earlier packets /
+29,709 files, frozen assets, source1.1.32, published/installed1.1.30, production/
+retained data and account/policy are preserved. Only sanitized docs; no release,
+reinstall, merge, tag or deployment. All earlier failures/results remain unchanged.
