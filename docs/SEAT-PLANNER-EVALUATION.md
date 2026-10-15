@@ -324,3 +324,22 @@ tracked ledgers remain unchanged. One sample per case and agent-authored review
 do not establish general efficacy. The candidate, packaged/installed/published
 1.1.30, production/retained data, settings, policy, frozen assets and gates remain
 unchanged. Only sanitized docs are pushed; no release, reinstall or promotion.
+
+
+## Broader independent candidate tests - 2026-10-14
+
+Review of the frozen 101-104 ledger identified limits in sample size, same-author
+grading, synthetic history, fixed tool capability and routing coverage. A separate
+agent authored eight new tests (201-208), and another independently graded all 46
+criteria frozen before execution. The unchanged candidate yields **6 PASS / 2 FAIL / 0 INCOMPLETE**:
+**44 pass / 2 fail / 0 not tested**.
+All candidate invocations used the matching recorded gpt-6.1-sol / medium controls.
+
+See the [independent review, exact prompts, complete criterion ledger and evidence](SEAT-PLANNER-INDEPENDENT-EVALUATION-2026-10-14.md).
+All failures and the preserved schema-only grading correction are reported; no
+candidate wording revision or rerun followed the results. Earlier suites retain
+their statuses and were not rerun. All twelve prior private result directories,
+production/retained data, packaged/installed/published 1.1.30, frozen assets, account
+settings, policy and gates remain unchanged. This is agent review and narrow
+behavioral/source/SQL evidence, not human, browser/button or release verification.
+Only sanitized documentation is pushed; no release, reinstall or promotion.
