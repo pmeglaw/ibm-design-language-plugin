@@ -343,3 +343,23 @@ production/retained data, packaged/installed/published 1.1.30, frozen assets, ac
 settings, policy and gates remain unchanged. This is agent review and narrow
 behavioral/source/SQL evidence, not human, browser/button or release verification.
 Only sanitized documentation is pushed; no release, reinstall or promotion.
+
+
+## Case 201 unpublished clarification correction - 2026-10-14
+
+A single sentence in a fresh external candidate requires a focused question when
+prior assent leaves options or scopes ambiguous, while independent authorized work
+continues. The historical case 201 baseline remains **FAIL (5/6)**. The first new
+attempt is **EXECUTION_FAILED/INCOMPLETE** because two native final messages exposed
+an external adapter capture assumption; it is preserved without output repair.
+After a bounded external terminal-message selection correction and offline replay
+checks, one fresh unchanged-candidate retry is **PASS (6/6)**.
+Both new model runs execute **7/7 local SQL checks** under the same recorded
+gpt-6.1-sol / medium controls. Every original criterion remains unchanged.
+
+See the [complete comparison, transport failure and criterion evidence](SEAT-PLANNER-CASE201-CLARIFICATION-2026-10-14.md).
+All 13 prior result directories and the additional failed attempt remain unchanged.
+Other cases are not rerun on this candidate; case 206's strict finding remains.
+Packaged/installed/published 1.1.30, production/retained data, product checkout,
+policy, account settings, frozen assets and gates are untouched. Candidate stays
+external/unpublished; only sanitized docs are pushed. No release or reinstall.
