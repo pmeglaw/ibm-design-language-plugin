@@ -381,3 +381,21 @@ statuses; case 206 is not rerun or corrected. No new candidate wording is introd
 Production/retained data, product checkout, packaged/installed/published 1.1.30,
 policy/account settings, frozen assets and gates stay unchanged. Candidate remains
 external/unpublished; only sanitized docs are pushed. No release or reinstall.
+
+
+## Case 206 unpublished explicit-safeguards candidate - 2026-10-14
+
+A single required user-facing sentence in a fresh external candidate now names
+the applicable target, admin/database, scope-review and stale-edit/concurrency
+safeguards. The frozen case 206 baseline remains **FAIL (5/6)**. One unchanged
+case 206 invocation is **PASS (6/6)** with **7/7 passing disposable
+local SQL checks**, under the same recorded gpt-6.1-sol / medium controls.
+All six original criteria remain unchanged; no per-action repetition rule is added.
+
+See the [complete comparison, exact delta and criterion evidence](SEAT-PLANNER-CASE206-SAFEGUARDS-2026-10-14.md).
+All 16 prior private result directories and older ledgers remain unchanged.
+Other cases are not run on this new candidate. The earlier clarification sentence
+and corrected adapter are retained; historical comparison confounds are disclosed.
+Production/retained data, product checkout, packaged/installed/published 1.1.30,
+policy/account settings, frozen assets and gates remain untouched. Candidate stays
+external/unpublished; only sanitized docs are pushed. No release or reinstall.
