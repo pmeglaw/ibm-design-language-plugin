@@ -583,3 +583,23 @@ Evaluated commit `821f700f5a63207fcd11b8adde211c5dc21ed806`, gpt-6.1-sol/medium/
 same 169-file 3568 candidate. All prior results/failures, frozen assets, unpublished
 source 1.1.32, published/installed 1.1.30, production/retained data, account/policy and
 gates remain unchanged. Only sanitized docs; no merge/tag/release/reinstall/deploy.
+
+
+## Case 2 selector-contract clarification - 2026-10-14
+
+A fresh external approval record adds only the exact selector already enforced
+by the unchanged validator. The unchanged candidate applies the scoped correction
+to both synthetic CSS mirrors and runs before/after wrapping checks
+(baseline FAIL, corrected PASS), plus mocked draft-save, review-before-publish
+and zero-change checks. Frozen result:
+**INCOMPLETE, 3 pass / 0 fail / 1 not tested** across all four original
+criteria; the model does not invoke the required separate SQL checks. No parent
+preflight or prior score is substituted. This is clarified fixture evidence,
+not an unchanged-input comparison, skill correction or all-pass suite.
+
+See the [selector contract, complete criterion ledger and limitations](SEAT-PLANNER-CASE2-SELECTOR-CONTRACT-2026-10-14.md).
+Evaluated commit `aebda23f2e129c7e388df8580942643dd19111bc`, gpt-6.1-sol/medium/default,
+same 169-file 3568 candidate. All 30 prior packets/28,271 files, 95 frozen files,
+unpublished source 1.1.32, published/installed 1.1.30, production/retained data,
+account/policy and gates are preserved. Only sanitized docs; no merge, release,
+tag, reinstall or deployment. All earlier scores/failures remain unchanged.
