@@ -496,3 +496,17 @@ No wording or rubric changes. Earlier failures, incomplete and unrun records rem
 unchanged. Candidate stays external; source 1.1.31, published/installed 1.1.30,
 production/retained data, policy/account settings, frozen assets and gates are preserved.
 Only sanitized docs are pushed; no release, reinstall, merge or deployment.
+
+
+## Authorization regressions on unchanged discovery candidate - 2026-10-14
+
+Frozen cases 101-104 each run once on the exact unchanged external discovery
+candidate under recorded gpt-6.1-sol / medium controls. Results: **4 PASS / 0 FAIL / 0 INCOMPLETE**;
+**24 pass / 0 fail / 0 not tested** across 24 unchanged criteria.
+
+See the [complete authorization comparison and every criterion](SEAT-PLANNER-DISCOVERY-AUTHORIZATION-2026-10-14.md).
+Original ten-case and independent suites are not rerun or regraded. All earlier
+results, source 1.1.31, published/installed 1.1.30, production/retained data,
+account settings, policy, frozen assets and gates stay unchanged. Candidate remains
+external/unintegrated. Only sanitized docs are pushed; no release, reinstall,
+merge, tag or deployment.
