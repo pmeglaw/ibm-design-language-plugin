@@ -399,3 +399,20 @@ and corrected adapter are retained; historical comparison confounds are disclose
 Production/retained data, product checkout, packaged/installed/published 1.1.30,
 policy/account settings, frozen assets and gates remain untouched. Candidate stays
 external/unpublished; only sanitized docs are pushed. No release or reinstall.
+
+
+## Exact safeguards candidate: authorization and clarification regressions - 2026-10-14
+
+The unchanged case 206 safeguards candidate was tested once each on frozen cases
+101-104 and 201. Results: **5 PASS / 0 FAIL / 0 INCOMPLETE**, **30 pass / 0 fail /
+0 not tested** across 30 unchanged criteria. Every model invocation
+executes **7/7 passing disposable local SQL checks** under matching recorded
+gpt-6.1-sol / medium controls. All candidate/transport bytes remain unchanged.
+
+See the [complete five-case ledger and evidence](SEAT-PLANNER-SAFEGUARDS-REGRESSIONS-2026-10-14.md).
+The assembled suite contains the original case objects without edits. All 17
+earlier result directories, older ledgers and failures remain intact. Case 206's
+prior pass is not a new invocation here; other independent cases are not run.
+Production/retained data, product checkout, packaged/installed/published 1.1.30,
+policy/account settings, frozen assets and gates stay untouched. Candidate remains
+external/unpublished; only sanitized docs are pushed. No release or reinstall.
