@@ -510,3 +510,16 @@ results, source 1.1.31, published/installed 1.1.30, production/retained data,
 account settings, policy, frozen assets and gates stay unchanged. Candidate remains
 external/unintegrated. Only sanitized docs are pushed; no release, reinstall,
 merge, tag or deployment.
+
+
+## Independent regressions on unchanged discovery candidate - 2026-10-14
+
+Frozen cases 201-208 run once each on the unchanged external discovery candidate,
+with the same gpt-6.1-sol / medium controls. New results: **7 PASS / 1 FAIL / 0 INCOMPLETE**;
+**45 pass / 1 fail / 0 not tested** across 46 unchanged criteria.
+
+See the [complete eight-case comparison and every criterion](SEAT-PLANNER-DISCOVERY-INDEPENDENT-2026-10-14.md).
+Original/authorization suites are not rerun or regraded. All prior results,
+production/retained data, source 1.1.31, published/installed 1.1.30, account/policy,
+frozen assets and gates are preserved. Candidate remains external/unintegrated.
+Only sanitized documents are pushed; no release, reinstall, merge or deployment.
