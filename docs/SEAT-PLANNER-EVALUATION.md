@@ -622,3 +622,20 @@ component-action/database integration or production. All31 earlier packets /
 29,709 files, frozen assets, source1.1.32, published/installed1.1.30, production/
 retained data and account/policy are preserved. Only sanitized docs; no release,
 reinstall, merge, tag or deployment. All earlier failures/results remain unchanged.
+
+
+## Case 4 bounded-reader investigation - 2026-10-14
+
+One fresh unchanged-input case4 repetition: **PASS, 4 pass / 0 fail /
+0 not tested** across four original criteria. The original case4 stays
+**INCOMPLETE, 2 pass / 0 fail / 2 not tested**. Parent preflight proves the existing
+bounded reader/native exposure; parent reads are not model credit or hints.
+No skill, prompt/context, criterion, capability, validator or policy changes.
+
+See the [complete case4 criterion ledger and limitations](SEAT-PLANNER-CASE4-READER-2026-10-14.md).
+Evaluated commit `65e1aa669460d5066439f09a8dd48ae826f31e35`, gpt-6.1-sol/medium/default,
+configuration paired-2026-10-14-A, unchanged169-file3568 candidate. One known
+unblinded repetition is not a causal or reliability study and backfills no score.
+All32 prior packets/31,106 files, frozen assets, source1.1.32, published/installed
+1.1.30, production/retained data and account/policy are preserved. Only sanitized
+docs; no release/reinstall/merge/tag/deploy. Browser/mobile/actual AT remain unverified.
