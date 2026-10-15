@@ -639,3 +639,20 @@ unblinded repetition is not a causal or reliability study and backfills no score
 All32 prior packets/31,106 files, frozen assets, source1.1.32, published/installed
 1.1.30, production/retained data and account/policy are preserved. Only sanitized
 docs; no release/reinstall/merge/tag/deploy. Browser/mobile/actual AT remain unverified.
+
+
+## Case 7 generic Carbon routing investigation - 2026-10-14
+
+One unchanged-input case7 repetition: **PASS, 3 pass / 0 fail /
+0 not tested** across all three original criteria. Original case7 remains
+**INCOMPLETE, 2 pass / 0 fail / 1 not tested**. Negative routing and actual general
+guidance use are graded separately; parent reader preflight is neither model
+credit nor a model-visible hint. No skill, prompt/context, criterion, capability,
+validator or policy change; one known repetition is not a causal/reliability study.
+
+See the [complete case7 criterion ledger and limitations](SEAT-PLANNER-CASE7-ROUTING-2026-10-14.md).
+Evaluated commit `9526ad72d5c8ae469ba00149d5428afb10b1ed2f`, gpt-6.1-sol/medium/default,
+configuration paired-2026-10-14-A, unchanged169-file3568 candidate. All33 prior
+packets/31,876 files, frozen assets, source1.1.32, published/installed1.1.30,
+production/retained data and account/policy are preserved. Only sanitized docs;
+no release/reinstall/merge/tag/deploy. No original score is backfilled.
