@@ -536,3 +536,18 @@ The failed parent sample and all earlier results stay intact. Other cases are
 NOT RUN on this candidate. Source 1.1.31, published/installed 1.1.30, production/
 retained data, account/policy, frozen assets and gates remain unchanged. Only
 sanitized documents are pushed; no integration, release, reinstall or deployment.
+
+
+## Regressions on unchanged case 202 safeguards candidate - 2026-10-14
+
+Frozen cases 101-104, 201 and 203-208 each run once on the unchanged external
+candidate under gpt-6.1-sol / medium: **11 PASS / 0 FAIL / 0 INCOMPLETE**, **64 pass /
+0 fail / 0 not tested** across 64 unchanged criteria.
+Reusing case 202's prior 6/6 yields **12 PASS / 0 FAIL / 0 INCOMPLETE**, **70/0/0**
+across 70 criteria/12 cases and two run keys; case 202 is not rerun.
+
+See the [complete new ledger and cumulative comparison](SEAT-PLANNER-CASE202-REGRESSIONS-2026-10-14.md).
+Original ten cases are NOT RUN on this candidate. All earlier results/failures,
+source 1.1.31, published/installed 1.1.30, production/retained data, account/policy,
+frozen assets and gates are unchanged. Only sanitized documents are pushed;
+candidate stays external. No integration, release, reinstall, merge or deployment.
