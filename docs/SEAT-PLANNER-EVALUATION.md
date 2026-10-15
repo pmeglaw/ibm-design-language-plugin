@@ -465,3 +465,18 @@ results, all 20 earlier private directories, frozen assets, source 1.1.31,
 published/installed 1.1.30, production/retained data, account settings, policy and
 gates remain unchanged. Independent/authorization suites are not rerun. Only
 sanitized docs are pushed; no merge, release, tag, reinstall or deployment.
+
+
+## External current-contract discovery correction - 2026-10-14
+
+A fresh external candidate changes only two paragraphs: supported supplied-evidence
+discovery and the superseded narrow-admin read-only baseline. Source 1.1.31 stays
+unchanged. Original cases 1, 3, 4, 5 and 6 each run once under recorded
+gpt-6.1-sol / medium controls, with unchanged prompts, contexts and 20 criteria.
+Results: **3 PASS / 0 FAIL / 2 INCOMPLETE**; **16 pass / 0 fail / 4 not tested**.
+
+See the [exact delta, baseline comparison and every criterion](SEAT-PLANNER-CONTRACT-DISCOVERY-2026-10-14.md).
+All earlier results and frozen assets remain unchanged; other original cases are
+NOT RUN on this candidate. Production/retained data, source 1.1.31,
+published/installed 1.1.30, policy/account settings and gates are preserved.
+Only sanitized docs are pushed; no release, reinstall, merge or deployment.
