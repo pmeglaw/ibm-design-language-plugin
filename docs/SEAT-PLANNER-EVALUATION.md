@@ -416,3 +416,20 @@ prior pass is not a new invocation here; other independent cases are not run.
 Production/retained data, product checkout, packaged/installed/published 1.1.30,
 policy/account settings, frozen assets and gates stay untouched. Candidate remains
 external/unpublished; only sanitized docs are pushed. No release or reinstall.
+
+
+## Exact safeguards candidate: remaining independent cases - 2026-10-14
+
+The unchanged safeguards candidate was tested once each on frozen cases 202-205
+and 207-208. Results: **6 PASS / 0 FAIL / 0 INCOMPLETE**, **34 pass / 0 fail /
+0 not tested** across 34 unchanged criteria, using matching recorded
+gpt-6.1-sol / medium controls. Candidate/transport, suite and normalized prompts
+remain unchanged. Routing-control database execution is reported separately.
+
+See the [complete six-case ledger and all criterion evidence](SEAT-PLANNER-SAFEGUARDS-REMAINING-2026-10-14.md).
+Cases 201 and 206 retain their prior exact-candidate results; neither is rerun here.
+The cumulative independent eight-case view spans separate tasks/run keys. All 18
+earlier result directories and historical failures remain intact. Production and
+retained data, product checkout, packaged/installed/published 1.1.30, policy/account
+settings, frozen assets and gates stay unchanged. Only sanitized docs are pushed;
+candidate remains external/unpublished. No release or reinstall.
