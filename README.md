@@ -6,7 +6,7 @@ The current published package is **1.1.30**. [Source](https://github.com/pmeglaw
 
 Version 1.1.30 adds version-aware Context7 retrieval, official-source reconciliation, the dated Carbon/v12/DTCG reference refresh and release-derived review scenarios. It preserves all three skills, application dependencies, runtime assets and existing test gates; it does not enable v12 flags. The scenarios are guidance, not executed model or product tests. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.30) for verification and limits. The earlier [1.1.27 provenance erratum](docs/1.1.27-PROVENANCE-ERRATUM.md) remains applicable to its frozen header evidence.
 
-The working package matches published **1.1.30**, released from commit `cd2ad7c5af0fd7e77079e60b674a57d681d9c0d7`. The frozen [preparation notes](releases/1.1.30/NOTES.md) and packaged notes retain candidate wording; the GitHub release is the authoritative publication record. Earlier archives, manifests and checksums remain unchanged. Publication and downloaded-byte verification are separate from destination installation and fresh skill discovery.
+The working source is **1.1.31, an unpublished combined candidate**. Its only skill-content change is the reviewed Seat Planner production-authorization paragraph; version and preparation metadata distinguish it from the published package. See the [source integration and reused evidence](docs/SEAT-PLANNER-SOURCE-INTEGRATION-2026-10-14.md). Published 1.1.30 remains at `cd2ad7c5af0fd7e77079e60b674a57d681d9c0d7`, and the installed copy remains 1.1.30 with published-file parity; recovery and installation continue to use that release. Candidate preparation is not publication or installation. Earlier archives, manifests, checksums and historical evidence remain unchanged.
 
 ## What it does
 
@@ -54,7 +54,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.30 package source with its three skills, references, visual casebook, assets, evaluator, and tests; its published archive and manifest are in `releases/1.1.30/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.31 working source with its three skills, references, assets and evaluator; candidate preparation files are in `releases/1.1.31/`, while published recovery remains in `releases/1.1.30/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

@@ -1,3 +1,24 @@
+# 1.1.31 Seat Planner authorization correction candidate - unpublished
+
+Integrate the reviewed production-action paragraph into seat-planner-ui-ux.
+Require explicit consequences, specific owner authority and applicable current
+safeguards, including refusals and deferrals; reuse valid prior approval, clarify
+ambiguous assent and continue independent work. No other skill content changes.
+
+The skill file exactly matches the externally evaluated safeguards candidate.
+Reused known-regression evidence covers independent cases 201-208 (46/46 criteria)
+and authorization cases 101-104 (24/24), across separate single-sample runs with
+gpt-6.1-sol / medium. Historical failures, incomplete attempts and recovered tool
+errors remain recorded in PR #47's companion ledgers. No new model call or claim
+of causal improvement, repeatability, native discovery or generated-product QA.
+
+Published/installed 1.1.30, production and retained data, security policy, frozen
+earlier archives and existing gates remain unchanged. This is source/preparation
+only: no merge, tag, release, installation, account update or deployment. Original
+cases 1-10 on this exact candidate, browser/button, real Auth, accessibility and
+production behavior remain unverified. Publication requires separate authority
+and completion of applicable release gates and destination verification.
+
 # 1.1.30 Context7 reference refresh candidate - unpublished
 
 Add version-aware Context7 discovery, official-source reconciliation,
