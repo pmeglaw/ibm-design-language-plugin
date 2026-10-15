@@ -523,3 +523,16 @@ Original/authorization suites are not rerun or regraded. All prior results,
 production/retained data, source 1.1.31, published/installed 1.1.30, account/policy,
 frozen assets and gates are preserved. Candidate remains external/unintegrated.
 Only sanitized documents are pushed; no release, reinstall, merge or deployment.
+
+
+## Case 202 surviving-authorization safeguards correction - 2026-10-14
+
+The approved sentence is added only to a fresh external candidate; 168 other bundle
+files remain unchanged. Frozen case 202 runs once under gpt-6.1-sol / medium:
+**PASS**, **6 pass / 0 fail / 0 not tested** across six unchanged criteria.
+
+See the [exact sentence, baseline comparison and every criterion](SEAT-PLANNER-CASE202-SAFEGUARDS-2026-10-14.md).
+The failed parent sample and all earlier results stay intact. Other cases are
+NOT RUN on this candidate. Source 1.1.31, published/installed 1.1.30, production/
+retained data, account/policy, frozen assets and gates remain unchanged. Only
+sanitized documents are pushed; no integration, release, reinstall or deployment.
