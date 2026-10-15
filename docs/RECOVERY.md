@@ -27,7 +27,7 @@ discovery. Keep those checks explicit.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
 5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.32/files.json`.
-6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
+6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
@@ -53,6 +53,51 @@ metadata. Unknown keys, different skill paths, identity mismatches and symlinks
 fail; any compatibility manifest already owned by the release remains
 hash-checked. The verifier does not prove enabled state or fresh discovery.
 Use the verifier from the checkout matching the installed release version.
+
+## Bounded discovery readiness
+
+Use this read-only check after an authorized installation or when verifying an
+existing destination. A fresh app-server may initially return no plugin skills
+while startup work is still completing. That first snapshot alone does not prove
+that the package is absent. The [dated investigation](DISCOVERY-READINESS-2026-10-15.md)
+preserves both the failed immediate probes and the later readiness observations.
+
+1. Record the intended workspace, installed version and destination from the
+   supported host flow, and check file parity separately. Resolve the exact
+   existing plugin identity; do not select a similarly named catalog entry.
+2. Before the first app-server RPC, start one monotonic five-second deadline.
+   Bound every RPC by the remaining time, including `initialize`, `plugin/list`
+   and the initial `skills/list`. If no time remains, issue no further calls;
+   record the applicable failure from step 5. Initialize the native app-server.
+   For an uploaded account plugin, read the existing remote catalog with
+   `plugin/list`, the matching
+   `marketplaceKinds` (for example `["created-by-me-remote"]`) and
+   `forceRefetch: true`. This is a catalog read, not `plugin/install`.
+   Keep the returned plugin identity for comparison; preserve unrelated entries.
+3. Call `skills/list` with the intended `cwds` and `forceReload: true`.
+   Require the exact three skill names listed above, enabled, belonging to the
+   intended plugin, with paths under that destination's expected version.
+   Do not add `perCwdExtraUserRoots` or copy files to manufacture discovery.
+4. If the result is incomplete, retry the same read at 200 ms intervals within
+   the remaining budget. Do not reset the deadline after initialization, catalog
+   reads or any discovery result. Cap each wait by the remaining time and stop
+   when the exact readiness condition is met. The RPC timeout is a client
+   transport setting, not an extra `skills/list` parameter. Do not replace this
+   condition with a fixed sleep.
+5. At the deadline, record **FAIL (readiness timeout)** when completed scans have
+   not returned the expected complete result. Preserve partial/disabled/wrong-version
+   results and errors. Record a transport failure separately when any request
+   cannot complete, including initialization, catalog or initial discovery RPCs;
+   never treat an expired RPC as a completed empty scan. Never count either
+   outcome as PASS or retry indefinitely. Complete independent read-only checks,
+   then investigate the failing layer.
+
+A readiness PASS is scoped to that fresh native session and recorded destination.
+It does not prove automatic skill selection, refresh of an existing desktop
+conversation, model behavior or product quality. The five-second bound is a
+verification limit, not a host startup guarantee. On failure, do not reinstall,
+enable feature/trust flags, change policy or relax the identity/version checks
+merely to obtain a pass. Those actions need their own task authority.
 
 ## Previous release rollback identity
 
