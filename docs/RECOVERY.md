@@ -65,8 +65,12 @@ preserves both the failed immediate probes and the later readiness observations.
 1. Record the intended workspace, installed version and destination from the
    supported host flow, and check file parity separately. Resolve the exact
    existing plugin identity; do not select a similarly named catalog entry.
-2. Initialize the native app-server. For an uploaded account plugin, read the
-   existing remote catalog with `plugin/list`, the matching
+2. Before the first app-server RPC, start one monotonic five-second deadline.
+   Bound every RPC by the remaining time, including `initialize`, `plugin/list`
+   and the initial `skills/list`. If no time remains, issue no further calls;
+   record the applicable failure from step 5. Initialize the native app-server.
+   For an uploaded account plugin, read the existing remote catalog with
+   `plugin/list`, the matching
    `marketplaceKinds` (for example `["created-by-me-remote"]`) and
    `forceRefetch: true`. This is a catalog read, not `plugin/install`.
    Keep the returned plugin identity for comparison; preserve unrelated entries.
@@ -74,16 +78,19 @@ preserves both the failed immediate probes and the later readiness observations.
    Require the exact three skill names listed above, enabled, belonging to the
    intended plugin, with paths under that destination's expected version.
    Do not add `perCwdExtraUserRoots` or copy files to manufacture discovery.
-4. If the result is incomplete, retry the same read at 200 ms intervals within a
-   bounded five-second discovery window. Use a monotonic deadline, stop when
-   the exact readiness condition is met, and bound each RPC by the remaining
-   time. The RPC timeout is a client transport setting, not an extra
-   `skills/list` parameter. Do not replace this condition with a fixed sleep.
-5. At the deadline, record discovery as **FAIL (readiness timeout)** if the
-   expected complete result has not arrived. Preserve partial/disabled/wrong-version
-   results and errors. Record a transport failure separately when a request
-   cannot complete. Never count either outcome as PASS or retry indefinitely.
-   Complete independent read-only checks, then investigate the failing layer.
+4. If the result is incomplete, retry the same read at 200 ms intervals within
+   the remaining budget. Do not reset the deadline after initialization, catalog
+   reads or any discovery result. Cap each wait by the remaining time and stop
+   when the exact readiness condition is met. The RPC timeout is a client
+   transport setting, not an extra `skills/list` parameter. Do not replace this
+   condition with a fixed sleep.
+5. At the deadline, record **FAIL (readiness timeout)** when completed scans have
+   not returned the expected complete result. Preserve partial/disabled/wrong-version
+   results and errors. Record a transport failure separately when any request
+   cannot complete, including initialization, catalog or initial discovery RPCs;
+   never treat an expired RPC as a completed empty scan. Never count either
+   outcome as PASS or retry indefinitely. Complete independent read-only checks,
+   then investigate the failing layer.
 
 A readiness PASS is scoped to that fresh native session and recorded destination.
 It does not prove automatic skill selection, refresh of an existing desktop
