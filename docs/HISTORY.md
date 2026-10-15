@@ -1,6 +1,6 @@
 # Release history and evidence
 
-This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.30; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
+This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.32; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
 
 This package preserves verified work so restoration does not require repeating model evaluations. The 1.1.6 guidance passed 9/9 on one known screenshot regression. This author-graded case does not establish general improvement or repeatability; host skill-description truncation warnings are disclosed in the evidence. Earlier composition comparisons had two tied pairs, one incomplete pair and host configuration drift. Synthetic tests check evaluator mechanics, not design taste.
 
@@ -10,7 +10,9 @@ The [1.1.10 candidate report](../evidence/1.1.10-candidate/REPORT.md) records it
 
 ## Release validation
 
-See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.30). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.32). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+
+Version 1.1.32 improves Seat Planner contract discovery, scoped production-authorization reporting and the current all-width admin-editing baseline. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.32) is from `08839a956be8f0f3829986a0c414e3f496545b4f`. All nine required CI jobs and three additional code-analysis jobs passed on that commit. Original scenarios retain 24 passing and 12 not-tested criteria; separate known targeted and follow-up samples do not backfill those scores. Frozen preparation notes and prior failures remain unchanged. Downloaded release assets match the frozen target bytes; see the [publication verification](RELEASE-1.1.32-PUBLICATION-2026-10-15.md). Post-publication documentation validation is tracked by the [release-documentation workflow](https://github.com/pmeglaw/ibm-design-language-plugin/actions/workflows/verify-release-docs.yml). Destination installation and fresh discovery remain unverified; the existing owner installation stays at 1.1.30.
 
 Version 1.1.13 replaces HTML-string rendering in the offline casebook with DOM construction and strict control-value checks. See the [casebook regression tests](../tests/casebook/README.md) for all 20 supported combinations and hostile-input/recovery coverage.
 

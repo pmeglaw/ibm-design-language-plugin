@@ -2,11 +2,11 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.30**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.30) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.32**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.32) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-Version 1.1.30 adds version-aware Context7 retrieval, official-source reconciliation, the dated Carbon/v12/DTCG reference refresh and release-derived review scenarios. It preserves all three skills, application dependencies, runtime assets and existing test gates; it does not enable v12 flags. The scenarios are guidance, not executed model or product tests. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.30) for verification and limits. The earlier [1.1.27 provenance erratum](docs/1.1.27-PROVENANCE-ERRATUM.md) remains applicable to its frozen header evidence.
+Version 1.1.32 improves Seat Planner contract discovery, scoped production-authorization reporting and the current all-width admin-editing baseline. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.32) and [consolidated evaluation closeout](https://github.com/pmeglaw/ibm-design-language-plugin/blob/08839a956be8f0f3829986a0c414e3f496545b4f/docs/SEAT-PLANNER-EVALUATION-CLOSEOUT-2026-10-14.md) for scope and limits. Original scenarios retain 24 passing and 12 not-tested criteria; later targeted results do not replace those scores. Downloaded release assets match the frozen target bytes; see the [publication verification](docs/RELEASE-1.1.32-PUBLICATION-2026-10-15.md). Post-publication documentation validation is tracked by the [release-documentation workflow](https://github.com/pmeglaw/ibm-design-language-plugin/actions/workflows/verify-release-docs.yml). Destination installation and fresh discovery remain unverified; the existing owner installation stays at 1.1.30.
 
-The working source is **1.1.32, an unpublished combined candidate**. It integrates the reviewed Seat Planner contract-discovery guidance, current responsive baseline and surviving-authorization safeguard statement. See the [exact source integration and reused evidence](docs/SEAT-PLANNER-SOURCE-1.1.32-2026-10-14.md). Published 1.1.30 remains at `cd2ad7c5af0fd7e77079e60b674a57d681d9c0d7`, and the installed copy remains 1.1.30 with published-file parity; recovery and installation continue to use that release. Candidate preparation is not publication or installation. Frozen 1.1.31 and earlier archives, manifests, checksums and historical evidence remain unchanged.
+The working package matches published **1.1.32**, released from commit `08839a956be8f0f3829986a0c414e3f496545b4f`. Frozen preparation notes retain their original candidate wording; later evaluation ledgers and the GitHub release record establish subsequent execution and publication. The existing owner installation remains **1.1.30**; this publication does not update it. Destination installation and fresh discovery are separate checks.
 
 ## What it does
 
@@ -54,7 +54,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.32 working source with its three skills, references, assets and evaluator; candidate preparation files are in `releases/1.1.32/`, while published recovery remains in `releases/1.1.30/`.
+- `plugins/ibm-design-language/`: the published 1.1.32 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.32/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
@@ -79,3 +79,7 @@ Run `python -B scripts/verify_release_docs.py` for offline consistency of curren
 Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or release files. Repository-only documentation edits do not change the installed plugin version. Bundled IBM Plex fonts retain their license and provenance files; no new blanket license is assigned to third-party material.
 
 [First-time installation](docs/INSTALLATION.md) · [Recovery and rollback](docs/RECOVERY.md) · [Maintaining releases](docs/RELEASING.md) · [Release history and evidence](docs/HISTORY.md)
+
+## Earlier release summary
+
+Version 1.1.30 adds version-aware Context7 retrieval, official-source reconciliation, the dated Carbon/v12/DTCG reference refresh and release-derived review scenarios. It preserves all three skills, application dependencies, runtime assets and existing test gates; it does not enable v12 flags. The scenarios are guidance, not executed model or product tests. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.30) for verification and limits. The earlier [1.1.27 provenance erratum](docs/1.1.27-PROVENANCE-ERRATUM.md) remains applicable to its frozen header evidence.
