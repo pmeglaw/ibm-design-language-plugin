@@ -449,3 +449,19 @@ criterion results remain reused, separately recorded evidence with their existin
 limits. All 19 prior private result directories remain intact. Production,
 account settings, security policy and installed plugin are unchanged. No merge,
 release, tag, reinstall or deployment.
+
+
+## Original ten cases on integrated unpublished source - 2026-10-14
+
+All ten original cases execute once against source 1.1.31 at
+`cbb3717011ae4e2f5918ed5b55ba51654d80aa74`, using matching recorded gpt-6.1-sol / medium
+controls and unchanged native local transport. Original prompts, generic contexts,
+activation expectations and all 36 criteria remain unchanged. Results:
+**4 PASS / 3 FAIL / 3 INCOMPLETE**, **25 pass / 3 fail / 8 not tested**.
+
+See the [complete original-suite ledger and every criterion](SEAT-PLANNER-ORIGINAL-TEN-1.1.31-2026-10-14.md).
+No extra wording or sample follows an outcome. Prior failures/incomplete/unrun/pass
+results, all 20 earlier private directories, frozen assets, source 1.1.31,
+published/installed 1.1.30, production/retained data, account settings, policy and
+gates remain unchanged. Independent/authorization suites are not rerun. Only
+sanitized docs are pushed; no merge, release, tag, reinstall or deployment.
