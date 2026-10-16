@@ -2,15 +2,15 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
-The existing uploaded account installation has separately verified **1.1.32** file
-parity and fresh native-host discovery; see the [dated installation receipt](INSTALLATION-1.1.32-VERIFICATION-2026-10-15.md)
+The existing uploaded account installation has separately verified **1.1.33** file
+parity and fresh native-host discovery; see the [dated installation receipt](INSTALLATION-1.1.33-VERIFICATION-2026-10-15.md)
 for scope and limits. Existing account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations), rather than creating a
 duplicate Git marketplace installation with the first-time commands below.
 
-Published 1.1.33 has verified downloaded assets; see the [publication receipt](RELEASE-1.1.33-PUBLICATION-2026-10-15.md). The existing owner installation remains 1.1.32. Updating an
-existing account plugin requires its separately authorized supported update flow;
-publication alone does not activate the new guidance.
+Published 1.1.33 has verified downloaded assets; see the [publication receipt](RELEASE-1.1.33-PUBLICATION-2026-10-15.md). The existing owner installation was separately updated to 1.1.33. Future updates
+to an existing account plugin use its supported flow under applicable authority;
+publication alone does not update an installation.
 
 ## Select the published release
 

@@ -31,9 +31,13 @@ discovery. Keep those checks explicit.
 
 ## Uploaded account installations
 
-The published package is **1.1.33**, but the existing uploaded account installation
-remains **1.1.32** under publication-only authority. The [new publication receipt](RELEASE-1.1.33-PUBLICATION-2026-10-15.md) verifies downloaded bytes; it does not establish installation
-or discovery of 1.1.33.
+The published package and existing uploaded account installation are **1.1.33**.
+The separately authorized update passed account/installed-file parity and fresh
+native discovery of all three enabled skills; see the [dated installation receipt](INSTALLATION-1.1.33-VERIFICATION-2026-10-15.md). The initial empty scan, old archived bytes and desktop-refresh
+limits remain recorded. The [publication receipt](RELEASE-1.1.33-PUBLICATION-2026-10-15.md)
+retains its earlier publication-only scope.
+
+The following 1.1.32 verification is retained as earlier history.
 
 The existing owner installation was subsequently updated to **1.1.32** under
 separate installation authorization. Installed-file parity and fresh native
