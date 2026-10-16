@@ -1,3 +1,26 @@
+# 1.1.33 Design-deliverable retention candidate - unpublished
+
+Keep the requested critique or redesign deliverable primary across the requested
+surfaces, including a visual proposal when requested. Record discovered bugs
+separately and assess whether their implementation survives or is superseded by
+the proposed direction. Require the owner's scoped choice before repair-only
+work replaces the design task; reuse valid prior approval and honor explicit
+repair-only tasks and justified no-change recommendations.
+
+The two entrypoints and separate four-scenario specification exactly match the
+reviewed candidate. Reused response-only evidence: five baseline and five
+candidate samples each met20/20criteria; three candidate controls met9/9;
+two later three-turn controls met5/5and4/4under independent grading. The baseline
+also passed, so no behavioral advantage is established. One known sample per
+later control, unavailable exact collaboration model ID and missing full
+tool-event review limit reliability and execution claims. No new model calls
+during versioned preparation. Original suites and scores stay frozen.
+
+This is unpublished preparation only. Published and installed1.1.32, older
+frozen bytes, runtime assets, dependencies and gate assertions remain unchanged.
+No commit, push, merge, tag, release, account update, reinstall or production
+action. See the companion design-focus evaluation ledger.
+
 # 1.1.32 Seat Planner contract-discovery and safeguards candidate - unpublished
 
 Integrate the exact reviewed external candidate: discover supplied project
