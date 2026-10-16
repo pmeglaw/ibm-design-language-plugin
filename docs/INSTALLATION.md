@@ -8,9 +8,13 @@ for scope and limits. Existing account plugins use their supported update flow i
 [Recovery](RECOVERY.md#uploaded-account-installations), rather than creating a
 duplicate Git marketplace installation with the first-time commands below.
 
+Published 1.1.33 has verified downloaded assets; see the [publication receipt](RELEASE-1.1.33-PUBLICATION-2026-10-15.md). The existing owner installation remains 1.1.32. Updating an
+existing account plugin requires its separately authorized supported update flow;
+publication alone does not activate the new guidance.
+
 ## Select the published release
 
-1. Obtain the [published 1.1.32 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.32). Resolve the full commit behind `v1.1.32` in a repository checkout with `git rev-parse 'v1.1.32^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
+1. Obtain the [published 1.1.33 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.33). Resolve the full commit behind `v1.1.33` in a repository checkout with `git rev-parse 'v1.1.33^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
 2. Verify the downloaded ZIP against the checksum and file manifest in [Recovery](RECOVERY.md#release-identity). From the matching checkout, run `python -B scripts/verify.py`.
 3. Run `codex plugin marketplace list --json` first. This repository declares its marketplace name as `jp-personal`; that name is a catalog identifier, not a requirement to adopt the owner's personal configuration. If the name is already in use for another source, stop and resolve the collision without replacing unrelated entries.
 
@@ -24,7 +28,7 @@ codex plugin add ibm-design-language@jp-personal --json
 codex plugin list --marketplace jp-personal --json
 ```
 
-Confirm version `1.1.32`, enabled state, and the returned installation directory. From the matching checkout, run:
+Confirm version `1.1.33`, enabled state, and the returned installation directory. From the matching checkout, run:
 
 ```sh
 python -B scripts/verify-install.py INSTALL_DIRECTORY
