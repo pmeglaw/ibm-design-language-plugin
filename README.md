@@ -6,7 +6,7 @@ The current published package is **1.1.32**. [Source](https://github.com/pmeglaw
 
 Version 1.1.32 improves Seat Planner contract discovery, scoped production-authorization reporting and the current all-width admin-editing baseline. See the [published release notes](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.32) and [consolidated evaluation closeout](https://github.com/pmeglaw/ibm-design-language-plugin/blob/08839a956be8f0f3829986a0c414e3f496545b4f/docs/SEAT-PLANNER-EVALUATION-CLOSEOUT-2026-10-14.md) for scope and limits. Original scenarios retain 24 passing and 12 not-tested criteria; later targeted results do not replace those scores. Downloaded release assets match the frozen target bytes; see the [publication verification](docs/RELEASE-1.1.32-PUBLICATION-2026-10-15.md). Post-publication documentation validation is tracked by the [release-documentation workflow](https://github.com/pmeglaw/ibm-design-language-plugin/actions/workflows/verify-release-docs.yml). The existing owner installation was subsequently updated to **1.1.32**; installed-file parity and fresh native-host discovery passed. See the [dated installation verification](docs/INSTALLATION-1.1.32-VERIFICATION-2026-10-15.md) for sanitized evidence, preserved failures and host/smoke limits.
 
-The working package matches published **1.1.32**, released from commit `08839a956be8f0f3829986a0c414e3f496545b4f`. Frozen preparation notes retain their original candidate wording; later evaluation ledgers and the GitHub release record establish subsequent execution and publication. Publication and the separately authorized installation update are distinct events; the dated installation receipt records the verified 1.1.32 destination without revising earlier evaluation grades.
+The working source is **1.1.33, an unpublished combined candidate** for design-deliverable retention. The published package and existing installation remain **1.1.32**. The reviewed skill content and separate response-only results are described in the [design-focus evaluation ledger](docs/DESIGN-FOCUS-EVALUATION-2026-10-15.md); candidate archive and manifest are in `releases/1.1.33/`. Candidate integrity is not publication, installation or proof of general behavioral improvement.
 
 ## What it does
 
@@ -41,7 +41,8 @@ For a read-only review:
 Use ibm-design-language:review-product-experience to review [flow and listed views]
 in [repository/route]. Keep the review read-only. Inspect source and the rendered
 interface where available. Rank findings by task impact, identify supporting
-evidence and uninspected states, and propose the smallest coherent repairs.
+evidence and uninspected states, and deliver the requested design comparison and
+any requested visual proposal. Track discovered bugs separately against that direction.
 ```
 
 Replace bracketed placeholders. For fuller implementation, screenshot, cross-view audit, and repair prompts, use the [prompt pack](docs/prompt-pack/README.md). Its Seat Planner examples are project-specific; general work does not inherit that project's branding or rules.
@@ -54,7 +55,7 @@ Source inspection, screenshots, keyboard checks, assistive-technology checks, an
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.32 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.32/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.33 working source with its three skills, references, assets and evaluator; candidate archive and manifest are in `releases/1.1.33/`. Published1.1.32 remains preserved in `releases/1.1.32/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
