@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.33**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.33) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working package matches published **1.1.33**, released from commit `16a5e4a5845bc736aed9c116ded93f25bf1a1b3d`.
+The working source is **1.1.34, an unpublished combined candidate** with three reviewed wording clarifications. Loading, context cost and behavioral effectiveness remain unverified. Recovery and installation remain pinned to published 1.1.33.
 
 ## Install
 
@@ -73,7 +73,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.33 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.33/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.34 working source with its three skills, references, assets and evaluator; candidate assets are in `releases/1.1.34/`. Published 1.1.33 archives remain in `releases/1.1.33/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

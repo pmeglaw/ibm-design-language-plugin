@@ -147,7 +147,7 @@ These are starting heuristics, not IBM requirements. Choose for the task and rev
 
 *Job:* assess status and decide where to drill in. A presentation dashboard, not an exploration one.
 
-*Hierarchy:* prioritize data by importance, then give the most important the highest contrast and the largest area, top-left. Everything else steps down.
+*Hierarchy:* prioritize data by importance, then give the most important the highest contrast and the largest area, positioned early in the intended reading order for the page’s writing direction. Everything else steps down.
 
 *Charts:* maximize data ink — drop gridlines and chrome that don't aid reading; label series directly; no legend for a single category; titles that state the insight. One chart per decision; if two tell the same story, cut one.
 
@@ -163,7 +163,7 @@ These are starting heuristics, not IBM requirements. Choose for the task and rev
 
 *Form:* single column per step, section headers, smart defaults, room for the interactive step.
 
-*Validation:* on blur; Next disabled until the step is valid; errors at the field and marked on the step in the rail.
+*Validation:* validate on blur or an attempt to continue, according to the task. If Next is disabled, make unmet requirements clear and keep their controls and explanations accessible. Show errors at the field and mark the affected step in the rail.
 
 *Exit:* define the chosen variant’s close, Escape and Cancel behavior consistently; protect meaningful unsaved work; warn before turning off advanced options if it discards input. On Create: submitting state, then open the new object or show a success banner; error as a notification with the form preserved.
 

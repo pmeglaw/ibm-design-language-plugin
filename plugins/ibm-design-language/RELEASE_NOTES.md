@@ -1,3 +1,26 @@
+# 1.1.34 Focused guidance and contextual examples candidate - unpublished
+
+Apply three reviewed wording clarifications in two guidance files:
+
+- Put Focused guidance first in mode selection and make its precedence over
+  composition benchmark/gate reading explicit for focused questions. Preserve
+  applicable component and accessibility contracts.
+- Describe dashboard priority placement through the intended reading order and
+  writing direction instead of a fixed physical corner.
+- Make create-flow validation task-dependent and explain unmet requirements
+  accessibly when Next is disabled.
+
+The exact wording received independent source/evidence review with no actionable
+findings. Behavioral effectiveness, loading and context-cost effects remain
+unverified. No new model evaluation, generated-product verification or
+assistive-technology test is established by this preparation. Earlier scores,
+failures and evidence limits retain their original scope.
+
+This is an unpublished candidate. Published and installed 1.1.33 remain unchanged.
+Descriptions, companion skill guidance, runtime assets, dependency manifests,
+evaluation assertions and existing release/browser gates are preserved.
+Publication and installation require separate authorization and verification.
+
 # 1.1.33 Design-deliverable retention candidate - unpublished
 
 Keep the requested critique or redesign deliverable primary across the requested
