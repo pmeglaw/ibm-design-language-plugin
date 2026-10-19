@@ -31,13 +31,22 @@ discovery. Keep those checks explicit.
 
 ## Uploaded account installations
 
-The published package is **1.1.34**; the existing uploaded account installation remains **1.1.33**.
+The published package and existing uploaded account installation are **1.1.34**.
+The separately authorized account update passed complete 172-file account and
+installed parity and fresh native discovery of all three enabled skills at
+0.890 seconds within the shared five-second deadline; see the
+[dated installation receipt](INSTALLATION-1.1.34-VERIFICATION-2026-10-19.md).
+Identity, private sharing and presentation were preserved. Existing desktop-session
+refresh and automatic selection remain unverified.
+
+The following 1.1.33 verification is retained as earlier history.
+
 The separately authorized update passed account/installed-file parity and fresh
 native discovery of all three enabled skills; see the [dated installation receipt](INSTALLATION-1.1.33-VERIFICATION-2026-10-15.md). The initial empty scan, old archived bytes and desktop-refresh
 limits remain recorded. The [1.1.33 publication receipt](RELEASE-1.1.33-PUBLICATION-2026-10-15.md)
 retains its earlier publication-only scope.
 
-The [1.1.34 publication receipt](RELEASE-1.1.34-PUBLICATION-2026-10-19.md) verifies the new release and downloaded bytes. No 1.1.34 account update, installation or fresh discovery was run. Publication does not activate its wording in installed 1.1.33.
+The [1.1.34 publication receipt](RELEASE-1.1.34-PUBLICATION-2026-10-19.md) retains its original publication-time scope: no 1.1.34 installation had yet run. The later separately authorized installation is recorded above; publication alone did not update the existing copy.
 
 The following 1.1.32 verification is retained as earlier history.
 
