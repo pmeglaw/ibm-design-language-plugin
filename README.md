@@ -2,9 +2,9 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.33**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.33) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
+The current published package is **1.1.34**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.34) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working source is **1.1.34, an unpublished combined candidate** with three reviewed wording clarifications. Loading, context cost and behavioral effectiveness remain unverified. Recovery and installation remain pinned to published 1.1.33.
+The working package matches published **1.1.34**, released from commit `9ba059d9664d8892673848162256c82a0ebe20f3`. It clarifies focused-question reading precedence, writing-direction-aware dashboard placement and task-dependent validation. Behavioral effectiveness, loading/context cost and actual RTL remediation remain unverified; the historical configuration-provenance limit remains disclosed. Frozen preparation notes retain their original wording. All four downloaded assets match the frozen target bytes; see the [publication verification](docs/RELEASE-1.1.34-PUBLICATION-2026-10-19.md). The existing owner installation remains **1.1.33**; publication and installation are separate.
 
 ## Install
 
@@ -73,7 +73,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.34 working source with its three skills, references, assets and evaluator; candidate assets are in `releases/1.1.34/`. Published 1.1.33 archives remain in `releases/1.1.33/`.
+- `plugins/ibm-design-language/`: the published 1.1.34 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.34/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
