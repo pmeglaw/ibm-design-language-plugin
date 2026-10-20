@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.34**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.34) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working package matches published **1.1.34**, released from commit `9ba059d9664d8892673848162256c82a0ebe20f3`. It clarifies focused-question reading precedence, writing-direction-aware dashboard placement and task-dependent validation. Behavioral effectiveness, loading/context cost and actual RTL remediation remain unverified; the historical configuration-provenance limit remains disclosed. Frozen preparation notes retain their original wording. All four downloaded assets match the frozen target bytes; see the [publication verification](docs/RELEASE-1.1.34-PUBLICATION-2026-10-19.md). The existing owner installation is separately verified **1.1.34**, including file parity and fresh native discovery; see the [installation verification](docs/INSTALLATION-1.1.34-VERIFICATION-2026-10-19.md). Existing desktop-session refresh and automatic selection remain unverified; publication and installation are separate.
+The working source is **1.1.35, an unpublished combined candidate** with a catalog-only static instruction-size reduction; see the [candidate evidence](docs/CATALOG-CONTEXT-REDUCTION-1.1.35.md). No truncation, context-use or behavioral improvement is established. Published and installed 1.1.34 remain unchanged. Published 1.1.34, released from commit `9ba059d9664d8892673848162256c82a0ebe20f3`, clarifies focused-question reading precedence, writing-direction-aware dashboard placement and task-dependent validation. Behavioral effectiveness, loading/context cost and actual RTL remediation remain unverified; the historical configuration-provenance limit remains disclosed. Frozen preparation notes retain their original wording. All four downloaded assets match the frozen target bytes; see the [publication verification](docs/RELEASE-1.1.34-PUBLICATION-2026-10-19.md). The existing owner installation is separately verified **1.1.34**, including file parity and fresh native discovery; see the [installation verification](docs/INSTALLATION-1.1.34-VERIFICATION-2026-10-19.md). Existing desktop-session refresh and automatic selection remain unverified; publication and installation are separate.
 
 ## Install
 
@@ -73,7 +73,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.34 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.34/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.35 working source with its three skills, references, assets and evaluator; candidate archive and manifest are in `releases/1.1.35/`. Published 1.1.34 remains frozen in `releases/1.1.34/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
