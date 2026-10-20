@@ -1,3 +1,20 @@
+# 1.1.35 Compact reference catalog candidate - unpublished
+
+Shorten only design-ui's Reference routing section into eleven grouped routes.
+Preserve all 51 destination occurrences, component-name lookup cues, topic
+coverage and the reference-routing anchor. Every instructional byte outside
+that section and both companion skills remains unchanged.
+
+The catalog decreases from 6,909 to 6,437 UTF-8 bytes; the complete entrypoint
+decreases from 17,171 to 16,699 bytes (472 bytes, 2.75%). This is a measured
+static instruction-size reduction, not evidence of reduced model context use,
+removed truncation warnings, improved triggering or better behavior.
+
+Published and installed 1.1.34 remain unchanged. The loading experiment stays
+parked; no model experiments or historical regrading are part of this candidate.
+Existing frozen releases, runtime assets, dependencies, assertions and gates
+are preserved. This is unpublished preparation, not release or installation.
+
 # 1.1.34 Focused guidance and contextual examples candidate - unpublished
 
 Apply three reviewed wording clarifications in two guidance files:
