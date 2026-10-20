@@ -17,9 +17,9 @@ This is a project-specific companion to the installed IBM skills, not a replacem
 
 ## 1. Establish authority and context
 
-Before substantive work, read root `AGENTS.md`, applicable nested instruction files, and the relevant sections of `docs/AGENT-WORKFLOW.md`. Follow `CLAUDE.md` where applicable without creating a competing instruction hierarchy.
+Before substantive work, read root `AGENTS.md`, applicable nested instruction files, `docs/DESIGN-FOUNDATIONS.md`, and the relevant sections of `docs/AGENT-WORKFLOW.md`. Follow `CLAUDE.md` where applicable without creating a competing instruction hierarchy.
 
-Read the affected code and the approved decisions and later amendments referenced by those guides. Use current source to establish implementation and approved decisions to establish intent. An existing defect is not an approved requirement; a historical mockup is not a current specification.
+Read the affected code. Use current source to establish implementation and the current task and design foundations to establish visual intent. The foundations govern the supported Carbon system, brand colors, and seat-label/map-marker integrity. Earlier screen decisions and mockups are historical context, not permanent constraints on layout, panel widths, action placement, hierarchy, density, or component geometry. Routine choices within authorized UI work do not need a new owner ruling; new standing visual constraints require an explicit change to the foundations. Preserve functional, accessibility, and data contracts separately. An existing defect is not an approved requirement.
 
 Apply these boundaries:
 
@@ -43,11 +43,11 @@ Treat the following as preservation checks; read the current repository contract
 
 **Three different states.** Distinguish local unsaved edits, saved shared draft, and published information. Saving a draft is not publishing. Do not describe the shared draft as private or imply that staff already see unpublished changes.
 
-**Publication and recovery.** Preserve review-before-publish behavior, the approved Publish labels and explanatory copy, zero-change state, pending behavior, Discard, undo, unsaved-navigation protection, and stale-draft refusal. Preserve each action's exact scope. Opening review must not publish; ordinary UI saves must not write published seats directly.
+**Publication and recovery.** Preserve review-before-publish behavior, truthful Publish labels and explanatory copy, zero-change state, pending behavior, Discard, undo, unsaved-navigation protection, and stale-draft refusal. Copy may evolve within authorized refinement while preserving meaning and behavior. Preserve each action's exact scope. Opening review must not publish; ordinary UI saves must not write published seats directly.
 
 **Privacy and concurrency.** Preserve published employee snapshots, private-note boundaries, existing server-side authorization, and database enforcement. Do not expose live directory data or private notes through a viewer shortcut. Preserve documented exceptions without broadening them. Never solve a stale-edit conflict with silent overwrite.
 
-**Protected operations.** Preserve protected original seats and atomic multi-row operations. Do not change deletion, restoration, directory deactivation, or transaction semantics as a visual cleanup. Ask Planner remains read-only.
+**Protected operations.** Preserve protected original seats and atomic multi-row operations. Do not change deletion, restoration, directory deactivation, or transaction semantics as a visual cleanup. Ask Bench remains read-only. Use “Ask Bench” for visible and accessible UI naming; preserve the technical identifiers `AskPlannerDrawer` and `askPlannerAction`, `ask-planner` element IDs, and the `ask-planner` URL parameter. Opening via `?ask-planner=open` must retain other query parameters, the hash, and history state while removing only that parameter.
 
 For any affected flow, trace entry, orientation, action, feedback, completion, and recovery. Verify what the person sees and what data actually changes.
 
@@ -57,11 +57,11 @@ Use a quiet, professional, scan-friendly interface. Choose density by task: comp
 
 Prefer improvements to hierarchy, information placement, labels, spacing, and interaction over new navigation destinations or a new shell. A consequential structural change needs a demonstrated user benefit and the required approval. A narrow defect does not need several invented design alternatives.
 
-Preserve the single application shell, constant-dark header, role-limited destinations, status presentation, and established utility-panel behavior. Distinguish navigation, map filters, page actions, and shell utilities. Do not add a second rail, duplicate status, or a Draft navigation destination merely to make planning more visible.
+Build on the current application shell. Preserve role-limited destinations, meaningful status, and utility interactions; use the current design foundations for layout and presentation. Distinguish navigation, map filters, page actions, and shell utilities. Do not add a second rail, duplicate status, or a Draft navigation destination merely to make planning more visible.
 
 Keep search and selection understandable across the map, results, inspector, and directory. Distinguish no data from no search results; retain useful search/filter context and a clear recovery action. Long names may truncate visually only when the full relevant information remains accessible through an appropriate supported interaction.
 
-Use labels that state the actual action and consequence. Preserve approved copy unless wording changes are in scope. Prefer explicit draft/publication feedback over an ambiguous “Saved” message. Use existing confirmation patterns; do not introduce typed confirmations or extra steps without an approved need.
+Use labels that state the actual action and consequence. Refine copy within the authorized scope while preserving its meaning and behavior. Prefer explicit draft/publication feedback over an ambiguous “Saved” message. Use existing confirmation patterns; do not introduce typed confirmations or extra steps without an approved need.
 
 Use at most one page-level primary action when the task warrants it. A read-only view may need none; an active focused dialog or panel can have its own primary action. Do not move page actions into the shell to satisfy an arbitrary count.
 
@@ -73,7 +73,7 @@ Use semantic `--sp-*` aliases and the established Carbon/brand bridge. Preserve 
 
 Preserve light, dark, and system-selected behavior, including regional themes and nested layers. Do not infer additional product themes from Carbon's available themes. Check foregrounds, borders, focus, and interaction states against their actual hosts, including the floor-plan image.
 
-Use the project's productive IBM Plex typography, vendored font delivery, spacing tokens, and 2x Grid guidance. Do not impose an 8px-only spacing rule or blanket corner-radius rule. Preserve approved component geometry and documented exceptions.
+Use the project's productive IBM Plex typography, vendored font delivery, spacing tokens, and 2x Grid guidance. Do not impose an 8px-only spacing rule or blanket corner-radius rule. Use the current design foundations for component presentation; preserve supported component APIs, interaction semantics, and accessibility when adapting geometry.
 
 Prefer supported Carbon components already used by the application. Reuse existing wrappers when they preserve the intended contract. Do not replace a working custom spatial control solely because it is not a stock Carbon component, and do not hand-build a Carbon lookalike when an appropriate supported component exists.
 
@@ -83,7 +83,7 @@ Do not edit vendored Carbon CSS to rebrand. When an authorized change affects `a
 
 ## 5. Protect seat-map geometry and state
 
-The floor plan is spatial truth. Preserve its proportions, approved marker geometry, seat identities, and alignment with office landmarks.
+The floor plan is spatial truth. Preserve its proportions, seat IDs and recognizable seat/person identity, and stable alignment with chair landmarks through resizing, zoom, and panel changes. Keep full identity accessible and state meanings clear without color alone.
 
 Keep persisted coordinates normalized in `[0,1]`. Use the established coordinate and display-calibration utilities, including `lib/seatMath.ts` and `lib/mapLayoutTransform.ts`. Distinguish saved coordinates, map-image bounds, rendered bounds, and display transforms.
 
@@ -95,7 +95,7 @@ For map-related changes, check:
 - Occupied, empty, selected, focused, search-matched, and draft-changed seats, including relevant combinations. An empty seat must not lose an applicable search or draft-change indicator merely because it lacks an occupant.
 - Long labels, adjacent targets, hit areas, overlap, clipping, and consistency between map selection, results, and inspector content.
 
-Preserve approved marker and target dimensions. Do not apply a blanket mobile enlargement or shrink targets to fit a screenshot. Report a demonstrated accessibility or collision problem with evidence and the applicable design decision.
+Use foundation 3 in `docs/DESIGN-FOUNDATIONS.md` for seat labels and map markers. Current marker size, label format, natural-width labels, typography, and zoom treatment are implementation defaults, not permanent geometry restrictions. They may evolve within authorized refinement when a matched comparison supports a clearer, more usable result. Verify realistic long names, dense neighboring seats, usable pointer/keyboard targets, and spatial stability through resizing, zoom, and panel transitions. Explain tradeoffs and distinguish observed results from expected benefits; an isolated mockup does not establish improvement.
 
 ## 6. Accessibility and responsive behavior
 
