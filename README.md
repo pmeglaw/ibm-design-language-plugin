@@ -2,9 +2,11 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.35**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.35) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
+The current published package is **1.1.36**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.36) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working source is **1.1.36, an unpublished combined candidate** containing the reviewed IBM Products/v12 reference refresh; see the [candidate evidence](docs/PRODUCTS-V12-REFERENCES-1.1.36.md). All three SKILL.md entrypoints remain unchanged. No migration compatibility or behavioral improvement is established. Published and installed 1.1.35 remain unchanged. Published 1.1.35, released from commit `5e967e95e3fccda5ad4d8e69d818d57eee2374d4`, reduces the design-ui reference catalog by 472 UTF-8 bytes while retaining routing coverage and all other instructions. Model-context consumption, behavior and truncation remediation remain unverified. Frozen preparation notes retain their original wording; dated publication receipts establish later status. The existing owner installation was subsequently updated to **1.1.35** through its supported account flow; complete 172-file account/installed parity and fresh native discovery of all three enabled skills passed. Publication and installation are separate. Existing desktop-session refresh and automatic selection remain unverified. See the unchanged [publication verification](docs/RELEASE-1.1.35-PUBLICATION-2026-10-20.md) and the later [1.1.35 installation verification](docs/INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md).
+The working package matches published **1.1.36**, released from commit `42cc6a9529b355ec5bf67fa47f2748053cbc4bf1`. It refreshes three supporting IBM Products/v12 references while preserving all SKILL.md entrypoints. Roadmap guidance does not establish released target APIs/codemods, migration compatibility or improved model behavior. Frozen preparation notes retain their original wording; dated publication receipts establish later status. The raw candidate-diff whitespace check retains 19 CRLF-at-EOL diagnostics in preserved source-map additions; other changed paths passed. The existing owner installation remains verified **1.1.35**, with its separately recorded file-parity and fresh native-discovery evidence. Publication and installation are separate. Existing desktop-session refresh and automatic selection remain unverified; the loading experiment stays parked.
+
+See the [1.1.36 publication verification](docs/RELEASE-1.1.36-PUBLICATION-2026-10-21.md) and unchanged [1.1.35 installation verification](docs/INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md). The [earlier 1.1.35 publication receipt](docs/RELEASE-1.1.35-PUBLICATION-2026-10-20.md) remains historical evidence.
 
 ## Install
 
@@ -73,7 +75,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.36 working source with its three skills, references, assets and evaluator; candidate archive and manifest are in `releases/1.1.36/`. Published 1.1.35 remains frozen in `releases/1.1.35/`.
+- `plugins/ibm-design-language/`: the published 1.1.36 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.36/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

@@ -1,6 +1,6 @@
 # Release history and evidence
 
-This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.35; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
+This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.36; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
 
 This package preserves verified work so restoration does not require repeating model evaluations. The 1.1.6 guidance passed 9/9 on one known screenshot regression. This author-graded case does not establish general improvement or repeatability; host skill-description truncation warnings are disclosed in the evidence. Earlier composition comparisons had two tied pairs, one incomplete pair and host configuration drift. Synthetic tests check evaluator mechanics, not design taste.
 
@@ -8,19 +8,17 @@ See [reviewed intake](../docs/REVIEWED-INTAKE.md) for the target correction, ado
 
 The [1.1.10 candidate report](../evidence/1.1.10-candidate/REPORT.md) records its local checks and one text-only design critique evaluation. It is not a rendered design validation.
 
-## Unpublished reference candidate
+## Reference refresh preparation
 
-Version 1.1.36 is an unpublished IBM Products 2.101.0/v12 reference candidate.
-It refreshes three supporting references while preserving every SKILL.md
-entrypoint and prior evaluation result. The corrected PageHeader wording
-distinguishes the existing Products preview from planned stable Carbon-core
-delivery. See the [candidate evidence](PRODUCTS-V12-REFERENCES-1.1.36.md).
-Published and installed 1.1.35 remain unchanged; no migration, model behavior,
-release or installation claim is established by this preparation.
+The 21 October [candidate evidence](PRODUCTS-V12-REFERENCES-1.1.36.md) retains
+its original unpublished preparation wording and verification limits. The later
+publication and downloaded-asset verification are recorded separately below.
 
 ## Release validation
 
-See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.35). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.36). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+
+Version 1.1.36 refreshes three supporting IBM Products 2.101.0/v12 references, including the distinction between the existing Products composable PageHeader preview and planned stable Carbon-core delivery. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.36) is from `42cc6a9529b355ec5bf67fa47f2748053cbc4bf1`. Nine validation jobs and three analysis jobs passed on that exact commit. The 171-file source, manifest and ZIP agree; all three SKILL.md entrypoints and prior release-note bytes are unchanged. The raw full candidate-diff whitespace check remains FAIL with 19 preserved CRLF-at-EOL diagnostics; narrower checks do not supersede it. Migration compatibility, target API/codemod availability and behavioral improvement remain unverified. Historical limits, grades, failed attempts, host skips and frozen preparation notes are preserved. All four downloaded assets match the frozen target bytes; see the [publication verification](RELEASE-1.1.36-PUBLICATION-2026-10-21.md). Post-publication documentation checks and Git delivery are recorded separately in that receipt and the documentation workflow. The transition-window failure remains preserved. The existing owner installation remains verified 1.1.35; installed 1.1.36 parity, enabled state and fresh discovery are unverified. The loading experiment remains parked.
 
 Version 1.1.35 groups the design-ui Reference routing catalog while preserving all 51 destination occurrences, topic and component lookup cues, the anchor and all other instructional bytes. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.35) is from `5e967e95e3fccda5ad4d8e69d818d57eee2374d4`. Nine validation jobs and three analysis jobs passed on that exact commit. The 171-file source, manifest and ZIP agree. The entrypoint decreases from 17,171 to 16,699 UTF-8 bytes; model-context use, behavior and truncation remediation remain unverified. Historical limits, grades, failed attempts and frozen preparation notes are unchanged. All four downloaded assets match the frozen target bytes; see the [publication verification](RELEASE-1.1.35-PUBLICATION-2026-10-20.md). Post-publication documentation checks and Git delivery are recorded separately in that receipt and the documentation workflow. The transition-window failure remains preserved. At publication, the existing owner installation remained 1.1.34 and 1.1.35 destination verification was pending. A later separately authorized update of the same private account plugin passed 172-file account/installed parity and fresh native discovery of all three enabled skills at 0.687 seconds within the shared five-second deadline; see the [installation verification](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md). Codex CLI 0.163.0 was used. The original installed 1.1.34 bytes were privately archived; older receipts and results remain unchanged. Existing desktop-session refresh and automatic selection remain unverified; no new model evaluation ran.
 
