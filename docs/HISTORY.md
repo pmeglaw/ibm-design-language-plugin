@@ -8,6 +8,16 @@ See [reviewed intake](../docs/REVIEWED-INTAKE.md) for the target correction, ado
 
 The [1.1.10 candidate report](../evidence/1.1.10-candidate/REPORT.md) records its local checks and one text-only design critique evaluation. It is not a rendered design validation.
 
+## Unpublished reference candidate
+
+Version 1.1.36 is an unpublished IBM Products 2.101.0/v12 reference candidate.
+It refreshes three supporting references while preserving every SKILL.md
+entrypoint and prior evaluation result. The corrected PageHeader wording
+distinguishes the existing Products preview from planned stable Carbon-core
+delivery. See the [candidate evidence](PRODUCTS-V12-REFERENCES-1.1.36.md).
+Published and installed 1.1.35 remain unchanged; no migration, model behavior,
+release or installation claim is established by this preparation.
+
 ## Release validation
 
 See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.35). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.

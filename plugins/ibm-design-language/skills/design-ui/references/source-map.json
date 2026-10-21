@@ -1314,6 +1314,25 @@
       "authority": "official-documentation",
       "version_scope": "Website d8783ad2ae3b5e59c58f58311491f8a2c4e62631; narrow styles1.116.0/Sass1.105.0 recipe probes",
       "limits": "No live MCP/auth/client setup, internal access or rendered tutorial/AT proof. The later audit ledger records all 17 supplemental documents and the React/Angular/Vue/Web Components tutorial source reviews; these are source/limited-probe evidence, not full tutorial runtime passes."
+    },
+    {
+      "id": "ibm-products-v2-101-v12-migration",
+      "url": "https://github.com/carbon-design-system/ibm-products/blob/98ae41eaf299c34c31791548eb153ea1f99263d7/packages/ibm-products/.storybook/MigrationToCarbon/MigrationToCarbon.mdx",
+      "sections": [
+        "Package transition phases",
+        "Component destinations and legacy replacements",
+        "Import/API migration and codemod timing"
+      ],
+      "local_refs": [
+        "references/carbon-next.md",
+        "references/composition.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-10-21",
+      "authority": "official-documentation",
+      "version_scope": "@carbon/ibm-products 2.101.0 migration overview at 98ae41eaf299c34c31791548eb153ea1f99263d7; target package exports must be inspected separately",
+      "limits": "Documentation/source review only. Future roadmap is not released API/codemod availability or authorization to migrate. No exhaustive component, runtime, browser, assistive-technology or model evaluation. Historical source entries and grades unchanged."
     }
   ],
   "unresolved": [

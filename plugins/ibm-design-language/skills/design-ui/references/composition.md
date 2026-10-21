@@ -67,10 +67,17 @@ Sources: [Usage](https://carbondesignsystem.com/components/modal/usage/), [Style
 
 `@carbon/ibm-products` (CSS prefix `c4p`) is the library of patterns built on `@carbon/react`. Don't hand-build what it already gives away.
 
+**v12 transition, reviewed 2026-10-21:** This remains a v11 selection guide.
+The [dated Products migration overview](carbon-next.md#ibm-products-migration-refresh-2026-10-21)
+distinguishes released APIs, composable previews and legacy replacements.
+Verify the selected package and variant; no import migration is required now.
+SidePanel's planned move preserves its API; legacy PageHeader and Tearsheet
+require composable API migrations. Pattern examples do not establish exports.
+
 | Component | Reach for it when |
 |---|---|
-| **PageHeader** | Every record and index page. Composable family (title, breadcrumb, actions, tags, status, tabs); breadcrumb and tabs can stick on scroll |
-| **Tearsheet / TearsheetNarrow** | A focused task anchored to the bottom of the viewport; wide for steps, narrow for a single sectioned form |
+| **PageHeader** | Record/index-page title, breadcrumb, actions, tags, status and tabs when needed; distinguish the legacy API from the existing composable preview in IBM Products, planned to become stable in Carbon core at v12 |
+| **Tearsheet / TearsheetNarrow** | A focused task anchored to the bottom of the viewport; wide for steps, narrow for a single sectioned form. Verify legacy versus composable-preview API |
 | **SidePanel** | A task that needs the page alongside it; sizes `xs`–`2xl` |
 | **Create\*** (CreateModal, CreateSidePanel, CreateTearsheet, CreateTearsheetNarrow, CreateFullPage) | Resource creation, per the container table above |
 | **Datagrid** | Tables beyond base DataTable: nested rows, batch actions, inline edit, sticky columns, column customization, infinite scroll — but see the maturity note |
@@ -79,8 +86,8 @@ Sources: [Usage](https://carbondesignsystem.com/components/modal/usage/), [Style
 | **ExportModal / ImportModal** | Data export and file import |
 | **FullPageError** | Full-page 403 / 404 / custom errors with a recovery path |
 | **StatusIcon** | Standard status glyphs (fatal, critical, major, minor, normal, info) |
-| **TagSet / TagOverflow** | Many tags collapsing into "+N" |
-| **ProductiveCard / ExpressiveCard** | Data-and-action cards vs. visual cards |
+| **TagSet / TagOverflow** | Many tags collapsing into "+N"; the migration plan deprecates TagSet in favor of TagOverflow. Verify the released replacement |
+| **ProductiveCard / ExpressiveCard** | Legacy data-and-action/visual cards; the migration plan replaces them with composable Card. Verify its preview/stable status and API |
 | **Coachmark / InterstitialScreen** | Feature spotlight; welcome flow — sparingly |
 | **Saving / AboutModal** | Save status; product info |
 
