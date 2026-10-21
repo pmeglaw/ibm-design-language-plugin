@@ -32,14 +32,18 @@ discovery. Keep those checks explicit.
 ## Uploaded account installations
 
 The published package is **1.1.35**; all four downloaded assets are verified in the
-[publication receipt](RELEASE-1.1.35-PUBLICATION-2026-10-20.md). The existing uploaded account
-installation remains **1.1.34**; this publication does not update it.
-The separately authorized account update passed complete 172-file account and
-installed parity and fresh native discovery of all three enabled skills at
-0.890 seconds within the shared five-second deadline; see the
-[dated installation receipt](INSTALLATION-1.1.34-VERIFICATION-2026-10-19.md).
+[publication receipt](RELEASE-1.1.35-PUBLICATION-2026-10-20.md), which retains its
+publication-time installation status. The existing uploaded account installation
+was subsequently updated to **1.1.35**. The separately authorized account update
+passed complete 172-file account and installed parity and fresh native discovery
+of all three enabled skills at 0.687 seconds within the shared five-second
+deadline; see the [dated installation receipt](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md).
 Identity, private sharing and presentation were preserved. Existing desktop-session
 refresh and automatic selection remain unverified.
+
+The earlier 1.1.34 update passed 172-file account/installed parity and fresh native
+discovery at 0.890 seconds within its shared five-second deadline; its
+[installation receipt](INSTALLATION-1.1.34-VERIFICATION-2026-10-19.md) remains unchanged.
 
 The following 1.1.33 verification is retained as earlier history.
 
@@ -48,7 +52,7 @@ native discovery of all three enabled skills; see the [dated installation receip
 limits remain recorded. The [1.1.33 publication receipt](RELEASE-1.1.33-PUBLICATION-2026-10-15.md)
 retains its earlier publication-only scope.
 
-The [1.1.34 publication receipt](RELEASE-1.1.34-PUBLICATION-2026-10-19.md) retains its original publication-time scope: no 1.1.34 installation had yet run. The later separately authorized installation is recorded above; publication alone did not update the existing copy.
+The [1.1.34 publication receipt](RELEASE-1.1.34-PUBLICATION-2026-10-19.md) retains its original publication-time scope: no 1.1.34 installation had yet run. The later separately authorized 1.1.34 installation is recorded in its unchanged receipt above; publication alone did not update the existing copy.
 
 The following 1.1.32 verification is retained as earlier history.
 
