@@ -1,3 +1,21 @@
+# 1.1.36 IBM Products migration references candidate - unpublished
+
+Refresh only carbon-next.md, composition.md and source-map.json with the
+reviewed IBM Products 2.101.0/v12 migration-documentation snapshot. Distinguish
+the existing composable PageHeader preview in IBM Products from its planned
+stable Carbon-core delivery at v12. Qualify legacy/composable APIs, SidePanel,
+TagSet and card migration routes without treating roadmap notes as released
+target exports, available codemods or authorization to migrate an application.
+
+All three SKILL.md entrypoints, executable assets, dependency manifests,
+evaluation criteria and existing gates remain unchanged. Earlier source-map
+entries, historical notes, results and frozen release bytes are preserved.
+This is reference preparation, not evidence of migration compatibility,
+improved model behavior or generated-product quality.
+
+Published and installed 1.1.35 remain unchanged. The loading experiment stays
+parked. No new model experiment, release or installation is part of this work.
+
 # 1.1.35 Compact reference catalog candidate - unpublished
 
 Shorten only design-ui's Reference routing section into eleven grouped routes.

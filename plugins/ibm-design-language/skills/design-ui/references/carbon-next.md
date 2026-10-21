@@ -39,6 +39,26 @@ patch product colors. Source format alone proves neither emitted CSS, rendered
 contrast nor compatibility with the installed version. See [Context7 retrieval
 and regression checks](context7-refresh.md) for the source receipt and limits.
 
+## IBM Products migration refresh (2026-10-21)
+
+The [stable Products v2.101.0 release](https://github.com/carbon-design-system/ibm-products/releases/tag/v2.101.0),
+published October 14, adds a [v12 migration overview](https://github.com/carbon-design-system/ibm-products/blob/98ae41eaf299c34c31791548eb153ea1f99263d7/packages/ibm-products/.storybook/MigrationToCarbon/MigrationToCarbon.mdx).
+This is a dated documentation refresh, not a complete API or runtime review.
+
+Before v12, retain supported Products imports and styles; no consumer migration
+is required by this overview. At v12, selected components are planned for Carbon
+core. Web Components ports may follow the React implementations separately.
+Products remains available and enters minimal maintenance after v12 ships,
+not when adopting Products 2.101.0.
+
+SidePanel is planned to move with its existing API. Legacy PageHeader and
+Tearsheet instead give way to composable versions, requiring API as well as
+import changes. See the [selection notes](composition.md#carbon-for-ibm-products--what-to-use-and-when)
+for legacy replacements. Codemods are promised alongside v12; this source does
+not establish that they or migrated exports are available in a target package.
+Recheck released exports, peers, styles and the component migration guide before
+an authorized migration. Earlier snapshots below remain historical.
+
 ## What IBM published
 
 v12 is presented as a statement of direction, not a spec. The argument: interfaces are splitting into two kinds — generated on demand and reshaping to context on one side, stable and predictable on the other — and the system has to serve both. The design goal is **progressive disclosure by default**: reveal depth in sequence, surface the right action at the right time, and let hierarchy, contrast and motion work together so people spend less time orienting.
