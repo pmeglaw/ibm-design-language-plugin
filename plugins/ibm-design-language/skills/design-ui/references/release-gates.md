@@ -1,6 +1,6 @@
 # Release gates
 
-Use both gates for design and critique of header, table, search, and form compositions. They block publication of plugin versions after 1.1.23 alongside the existing package checks.
+Use this reference when maintaining or publishing the plugin, or investigating an exact fixture assertion. Ordinary header, table, search and form design or critique starts with the scoped [product acceptance checklist](product-acceptance.md). Both gates below block publication of plugin versions after 1.1.23 alongside the existing package checks and other repository release requirements.
 
 Read the check names and conditions from the [packaged gate definitions](release-gate-definitions/README.md), available in an installed plugin without the repository or network access. For geometry, read the [release specification](release-gate-definitions/release-fixture/tests/release.spec.ts) and [geometry checks](release-gate-definitions/release-fixture/src/checks.ts); for keyboard, read the [behavior specification](release-gate-definitions/behavior-fixture/tests/behavior.spec.ts), [keyboard sequence](release-gate-definitions/behavior-fixture/src/sequence.ts) and its [DOM conditions](release-gate-definitions/behavior-fixture/src/dom.ts). These are unchanged copies of the canonical repository fixtures, checked for byte parity. Do not invent check names. They define fixture checks, not a self-contained application test runner; adapt their applicable criteria and selectors to the product and keep unrun checks untested.
 

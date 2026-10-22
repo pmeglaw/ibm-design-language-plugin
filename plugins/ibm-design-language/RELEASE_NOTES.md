@@ -1,3 +1,27 @@
+# 1.1.37 Focused design-ui refinement candidate - unpublished
+
+Route ordinary header, table, search and form work to a scoped product acceptance
+checklist. Preserve traceability to all 29 geometry and 13 keyboard fixture checks,
+component/version contracts, skip links and explicit untested outcomes. Exact
+fixture source and publication gates remain available for maintenance and inspection.
+Move detailed historical practical records out of the everyday implementation
+reference without changing their bytes, failures or evidence limitations.
+
+Keep frequently used secondary actions visible. Distinguish pagination and other
+collection navigation from virtualization as a rendering strategy. Revise only
+case-01-a03 to permit a justified active creation flow's scoped primary action in
+a modal, nonmodal panel or focused task. Preserve all case IDs, prompts, counts and
+other criteria. Comparisons across versions must use the same revised suite hash;
+older scores retain their original rubric boundaries. The evaluator regression now
+permits only that documented exception; its frozen contract remains unchanged.
+
+Runtime assets, evaluator implementation, dependency manifests and all canonical and packaged fixture assertions,
+Missed patterns, companion skill entrypoints and all earlier releases are unchanged.
+This is unpublished preparation. Package verification and a limited hosted source/
+build comparison do not establish improved model behavior, a new rendered practical
+pass, accessibility certification, publication or installation. Historical practical
+failures remain failures. The loading experiment remains parked.
+
 # 1.1.36 IBM Products migration references candidate - unpublished
 
 Refresh only carbon-next.md, composition.md and source-map.json with the

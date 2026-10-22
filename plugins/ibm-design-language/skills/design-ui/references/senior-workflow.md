@@ -28,7 +28,7 @@ A mid-level designer executes the ticket. A senior owns the outcome — reframes
 4. **Layout archetype.** Choose from the table below.
 5. **All states before styling.** Empty (first-run, no-results, error, deleted), loading, error, partial, overflow, success. Carbon has patterns for empty and loading because that's where enterprise apps fail.
 6. **Unhappy paths.** Validation, permission denied, long-running work, network failure, destructive-action recovery.
-7. **Progressive disclosure.** Primary visible, secondary in overflow, advanced on request.
+7. **Progressive disclosure.** Keep primary and frequently used secondary actions visible; use overflow for less frequent contextual commands and disclose advanced options when needed.
 8. **Composition on the grid.**
 9. **Polish, budgeted.** The last 10% goes to the primary path and the highest-frequency interactions. The rest ships at good enough.
 
@@ -73,7 +73,7 @@ The recurring conflicts and their usual resolutions:
 | Density vs. whitespace | Resolve by *zone*, not by screen. Dense where the user scans (the table); calm where the user decides (toolbar, filters, side panel). Undifferentiated density is the problem, not density. |
 | Consistency vs. the better local solution | Default to the system — it compounds across every screen. Deviate only with evidence that the task suffers, and record it as a purposeful deviation. |
 | Speed vs. polish | Budget polish by frequency × visibility. Frequent actions need immediate feedback and efficient productive motion; an occasional onboarding moment can justify expressive choreography. |
-| Discoverability vs. simplicity | Progressive disclosure: primary visible, secondary in an overflow menu, advanced behind a "show all options" toggle. |
+| Discoverability vs. simplicity | Keep primary and frequently used secondary actions visible; use overflow for less frequent contextual commands and disclose advanced options when needed. |
 | System compliance vs. product need | Compliance by default; product need wins with evidence, and leaves an audit trail. |
 
 ## The hard choices
@@ -121,7 +121,7 @@ These are starting heuristics, not IBM requirements. Choose for the task and rev
 | Search & filtering | Faceted batch filters for multi-dimension sets; chips with clear-all; saved views for recurring queries; result count always, zero included |
 | Responsive | Design and test at desktop and narrow widths; adapt navigation to available space and task frequency; Carbon grid breakpoints respond to the viewport, so handle narrow containers separately |
 | Internationalization | Budget 30–50% text expansion; the left nav tolerates it better than the header |
-| Pagination | Pagination when users need addressable positions; infinite scroll or virtualization when they don't |
+| Pagination | Use pagination when users need addressable positions; choose load more or continuous browsing by task and recovery needs. Consider virtualization independently for rendering performance, including with pagination, when the installed component supports it |
 | Onboarding | Educational empty state for a primary resource (show what populated looks like); basic empty state for secondary ones |
 | Interruptions | Match disruption to urgency: modal for critical only, toast for non-blocking, inline for contextual |
 
@@ -135,7 +135,7 @@ These are starting heuristics, not IBM requirements. Choose for the task and rev
 
 *Density:* compact rows — the task is scanning. The toolbar and any detail panel stay calm. That's the density conflict resolved by zone.
 
-*Components:* sortable headers; multi-select checkboxes driving batch actions in the toolbar; expandable rows for secondary detail instead of more columns; advanced pagination because positions matter (switch to virtualization only if they don't). Filtering as a batch panel with chips and clear-all, since selections span categories. Row hover on.
+*Components:* sortable headers; multi-select checkboxes driving batch actions in the toolbar; expandable rows for secondary detail instead of more columns; advanced pagination because positions matter, with virtualization if rendering cost warrants it and the installed component supports that combination. Filtering as a batch panel with chips and clear-all, since selections span categories. Row hover on.
 
 *Create:* one or two fields → modal; medium with page context → side panel; multi-step → wide tearsheet with the progress rail. Follow the selected variant’s dismissal contract; Next becomes Create on the last step. Field count alone does not determine the container.
 

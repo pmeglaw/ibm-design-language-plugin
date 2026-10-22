@@ -121,7 +121,7 @@ Senior defaults:
 - **Row height by task.** Compact or short when the job is scanning; comfortable only when rows carry rich content. Row hover always on — it carries the eye across.
 - **Disclose supplementary details.** Use expansion for secondary information; retain columns needed for cross-row comparison and use local horizontal scrolling when necessary.
 - **Batch actions on selection**, in the toolbar, with the count shown.
-- **Pagination when positions are addressable** ("page 3, row 12"); infinite scroll or virtualization when they aren't and the set is huge.
+- **Choose collection navigation from the task:** pagination suits addressable positions ("page 3, row 12"); load more or continuous browsing may suit other navigation and recovery needs. **Virtualization is a separate rendering strategy** that can coexist with pagination when the installed component supports it. Use it when rendering cost warrants it, and verify keyboard access, stable selection, focus and scroll restoration.
 - **Numbers right-aligned, tabular figures.** Text left. Status as icon plus label.
 - **Preserve full-content access when truncating; collapse tags into +N.** Tooltips need keyboard access; native title/hover alone does not establish touch access to essential content.
 - For no data, replace the table including headers and footer with an empty state. Preserve useful surrounding actions without duplicating primary emphasis. For no results, retain search/filter context and provide recovery. Loading uses its own treatment.

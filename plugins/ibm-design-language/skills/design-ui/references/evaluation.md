@@ -81,7 +81,7 @@ Selected real comparisons are complete and recorded in [evaluation history](eval
 
 Custom suites must include `visual_dimensions` on every case: use `[]` for cases without visual scoring. An omitted field is rejected during preparation before any model execution.
 
-The bundled suite retains 21 cases and 121 assertions. Only the prompts for cases 1, 5 and 10 incorporate the previously reviewed clarifications; their assertion IDs, criteria, expected outputs and visual dimensions are preserved. External transfer and composition cases remain separate frozen packs, not silently merged into this regression suite. Previously run cases must not be described as unseen.
+The bundled suite retains 21 cases and 121 assertions. Prompts for cases 1, 5 and 10 retain the previously reviewed clarifications. The 2026-10-22 rubric revision below changes only criterion case-01-a03; case and assertion IDs, prompts, expected outputs and visual dimensions are unchanged in this revision. External transfer and composition cases remain separate frozen packs, not silently merged into this regression suite. Previously run cases must not be described as unseen.
 
 The separate composition-transfer-v1.2 comparison evaluated frozen 1.1.4 and 1.1.5-rc.1: five valid outputs passed, one baseline execution failed, and the two scorable pairs were visual ties. Host configuration changed during run 2. Improvement remains unproven; see the history for counts and limits. No model run evaluates rc.2 itself. Local synthetic tests validate evaluator mechanics, not skill quality. Broader independent practical evaluation, installed Carbon React integration and assistive-technology checks remain open. Instructional casebook examples are teaching material, not held-out evaluation cases.
 
@@ -92,6 +92,12 @@ Run python -B -X utf8 scripts/test_evaluate.py. The tests replace CLI execution 
 Use Prepare and Report to check packet identity and unrun status locally. An unrun report must not count as a pass. The PowerShell wrapper invokes Python; it does not itself grant permission to run a model.
 
 Exit codes: 0 means a completed Prepare or an all-pass execution/review/report; 1 means a non-passing run, score or report (including unrun cases); 2 means invalid inputs or an evaluation error. A valid unrun report intentionally exits 1.
+
+## 2026-10-22 create-flow rubric revision
+
+The `evals.json` summary identifies rubric revision **2026-10-22**. Criterion `case-01-a03` preserves one page-level New key primary and permits one appropriately scoped primary while a justified modal, nonmodal panel or focused creation task is active. This aligns grading with the skill's container choices; the previous dialog-only exception could reject a justified panel. The suite remains schema version 2 with 21 cases and 121 assertions.
+
+For new baseline/candidate comparisons, pass the same revised `evals.json` through `--suite` for both packets and confirm their suite hashes match. Older results remain attached to their original frozen suites in the existing release archives; do not rescore them in place or compare aggregate scores across changed criteria. This rubric correction is not a new model evaluation or practical pass.
 
 ## 1.1.7 intake and rubric corrections
 
