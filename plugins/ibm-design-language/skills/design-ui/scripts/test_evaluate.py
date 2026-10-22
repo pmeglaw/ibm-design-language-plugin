@@ -383,16 +383,28 @@ class HarnessTests(unittest.TestCase):
             with self.assertRaises(ev.EvaluationError):
                 ev.prepare(self.skill, self.root / "invalid", self.suite_path, "fixture-model", "high", [1], [], **kwargs)
 
-    def test_rerun_criteria_are_unchanged(self):
+    def test_rerun_criteria_allow_only_documented_revision(self):
         script_root = Path(__file__).resolve().parent
         frozen = ev.read_json(script_root / "fixtures/evaluation-contracts.json")
         shipped = ev.read_json(script_root.parent / "evals.json")
         self.assertEqual([c["id"] for c in shipped["evals"]], list(range(1, 22)))
         self.assertEqual([c["id"] for c in frozen["cases"]], [1, 5, 10])
+        self.assertIn("Rubric revision 2026-10-22 changes case-01-a03", shipped["summary"])
         for case in frozen["cases"]:
+            expected = copy.deepcopy(case)
+            if case["id"] == 1:
+                action = next(a for a in expected["assertions"] if a["id"] == "case-01-a03")
+                self.assertEqual(action["criterion"],
+                    "Exactly one primary button on the page (the header's 'New key'); "
+                    "a create dialog's own Create button is the only other primary allowed, "
+                    "and only inside that dialog")
+                action["criterion"] = (
+                    "Exactly one page-level primary action ('New key'); an active creation "
+                    "flow may also have one appropriately scoped primary action in a "
+                    "justified modal, nonmodal panel, or focused creation task.")
             revised = next(c for c in shipped["evals"] if c["id"] == case["id"])
             for key in ("assertions", "expected_output", "visual_dimensions"):
-                self.assertEqual(case[key], revised[key])
+                self.assertEqual(expected[key], revised[key])
 
     def test_matching_prepared_timeout_reaches_cli(self):
         target = self.root / "matching-timeout"

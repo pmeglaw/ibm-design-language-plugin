@@ -16,7 +16,7 @@
         },
         {
           "id": "case-01-a03",
-          "criterion": "Exactly one primary button on the page (the header's 'New key'); a create dialog's own Create button is the only other primary allowed, and only inside that dialog"
+          "criterion": "Exactly one page-level primary action ('New key'); an active creation flow may also have one appropriately scoped primary action in a justified modal, nonmodal panel, or focused creation task."
         },
         {
           "id": "case-01-a04",
@@ -711,7 +711,7 @@
       ]
     }
   ],
-  "summary": "21 evals, 121 assertions. Version 1.1.7 revises cases 2, 4 and 7 for component-specific styling, evidence-based contrast and scoped modal guidance. Scores against older criteria are not directly comparable.",
+  "summary": "21 evals, 121 assertions. Version 1.1.7 revises cases 2, 4 and 7 for component-specific styling, evidence-based contrast and scoped modal guidance. Rubric revision 2026-10-22 changes case-01-a03 to allow the active creation task's scoped primary across justified containers. Scores against different rubric revisions are not directly comparable.",
   "schema_version": 2,
   "description": "Evidence-graded regression cases; model execution and review are separate. No current skill performance score is implied."
 }

@@ -75,7 +75,8 @@ The October 7 release includes the changes below. The checks in the right column
 are application-review recommendations derived from those changes, not executed
 results. Apply only when the actual component, variant and installed version are
 relevant; do not assume a consumer has either the defect or the fix. Preserve the
-existing [release gates](release-gates.md) and product acceptance requirements.
+applicable [product acceptance requirements](product-acceptance.md). Plugin
+maintenance also retains the existing [release gates](release-gates.md).
 
 | Surface and upstream evidence | Targeted application check |
 |---|---|
