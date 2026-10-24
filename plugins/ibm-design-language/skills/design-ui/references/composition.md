@@ -5,6 +5,7 @@ Read this when building a *page* rather than a component: choosing the container
 ## Contents
 
 - Page anatomy
+- Hybrid page composition
 - Create and edit containers
 - Carbon for IBM Products — what to use and when
 - Maturity model and recent renames
@@ -19,6 +20,14 @@ Top to bottom: **UI shell** (global header, optional left panel — `ui-shell.md
 - Consider a left panel when secondary navigation is substantial or users switch between items often. Keep its hierarchy easy to scan; check deeper navigation against the task and available space.
 - Breadcrumbs on record pages and any full-page flow.
 - Use at most one page-level primary action when warranted; a read-only or monitoring page can have none. A focused modal or panel may have its own primary while active; repeated sections do not each need a primary.
+
+## Hybrid page composition — local guidance
+
+Use [expressive surfaces](expressive-surfaces.md) for a product shell with an arrival or educational region. This local craft guidance leaves the live component and accessibility contracts in force. IDL Hybrid UI illustration is a separate [artwork style](imagery-and-illustration.md#hybrid-ui-artwork-is-not-a-working-interface).
+
+For a first-run collection, retain shell orientation, explain what belongs here and place the useful create/import action with that explanation. When records exist, a compact title, controls and data may better serve repeated work. Treat no-results and errors as their own states: preserve search/filter context or recovery rather than replaying onboarding artwork. Keep [brand role scope](color-and-brand.md#hybrid-and-expressive-brand-decisions--local-guidance) clear across the regions.
+
+For a source-inspected benchmark comparison, use [composition craft](composition-craft.md) to trace reading edges, relative spacing, action scope, density and state growth. It adds correction heuristics without changing the dated header/table/search/form evidence or prescribing one density for the whole page.
 
 ## Create and edit containers
 

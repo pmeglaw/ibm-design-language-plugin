@@ -7,6 +7,7 @@ Read this when choosing an accent, applying an approved brand palette to Carbon,
 - Authority before palette
 - Role mapping contract
 - What a brand may and may not override
+- Hybrid and expressive brand decisions
 - Verification
 - Governed example: Seat Planner
 
@@ -62,6 +63,18 @@ Do not:
 - change component CSS directly when a token or product alias should own the value.
 
 Grays and layers should still dominate productive interfaces. Brand color guides action and meaning; it does not decorate every region.
+
+## Hybrid and expressive brand decisions — local guidance
+
+This is a local decision path under the existing authority order, not new IBM brand policy. Use [expressive surfaces](expressive-surfaces.md) to classify regions and [composition](composition.md#hybrid-page-composition--local-guidance) to preserve the relationship between explanation and work.
+
+1. **Identify the owner and role.** Separate product interaction/state colors, expressive artwork colors, data encodings and identity assets. One region can contain all four without sharing one palette mapping.
+2. **If an approved override covers the role, use it.** Follow its scope and full state family through semantic tokens to painted consumers. Do not reintroduce generic Carbon blue because a neighboring official example uses it.
+3. **If the override does not cover the role, retain the applicable system guidance.** Approval of a logo accent or illustration palette alone does not approve a new focus, error or link value. When authorization is genuinely missing, identify the unresolved role; existing approved roles can still be used while a proposal is prepared.
+4. **Keep expressive choices scoped to artwork/content.** [Imagery](imagery-and-illustration.md) can use an appropriate approved palette without exporting every swatch into live control tokens. IBM-owned [marks and app icons](brand-marks-and-app-icons.md) retain their own asset restrictions; another product's semantic override does not authorize recoloring them.
+5. **Recheck the boundary on its actual hosts.** A light welcome region inside a dark product, or artwork behind a live action, needs the correct local text/control roles and visible states. Verify contrast, focus and interaction as applicable; a brand approval or Gallery resemblance supplies none of those passes.
+
+For example, an approved product accent may govern a welcome action, while the adjoining diagram uses categorical data colors and the product's error state keeps its established meaning. That is a local illustration of separate authorities, not a newly approved palette. Read [taste](taste.md#hybrid-and-expressive-critique--local-guidance) for how to report the resulting tradeoff.
 
 ## Verification
 

@@ -2,19 +2,21 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
-The existing uploaded account installation has separately verified **1.1.35** file
-parity and fresh native-host discovery; see the [dated installation receipt](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md)
-for scope and limits. Existing account plugins use their supported update flow in
+The published recovery target is **1.1.36**. The 1.1.37 working source is an
+unpublished local candidate and is not the installation target. Publication
+alone does not update a destination installation; this preparation did not
+inspect or change the existing installation.
+
+Earlier 1.1.35 publication and installation results remain in the unchanged
+[publication receipt](RELEASE-1.1.35-PUBLICATION-2026-10-20.md) and
+[installation receipt](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md). Existing
+account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations), rather than creating a
 duplicate Git marketplace installation with the first-time commands below.
 
-Published 1.1.35 has verified downloaded assets; see the unchanged [publication receipt](RELEASE-1.1.35-PUBLICATION-2026-10-20.md), which records the installation at 1.1.34 at publication. The existing owner installation was subsequently updated to verified 1.1.35 through its separately authorized supported account flow. Its identity was preserved; existing desktop-session refresh and automatic selection remain unverified. Future updates
-to an existing account plugin use its supported flow under applicable authority;
-publication alone does not update an installation.
-
 ## Select the published release
 
-1. Obtain the [published 1.1.35 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.35). Resolve the full commit behind `v1.1.35` in a repository checkout with `git rev-parse 'v1.1.35^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
+1. Obtain the [published 1.1.36 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.36). Resolve the full commit behind `v1.1.36` in a repository checkout with `git rev-parse 'v1.1.36^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
 2. Verify the downloaded ZIP against the checksum and file manifest in [Recovery](RECOVERY.md#release-identity). From the matching checkout, run `python -B scripts/verify.py`.
 3. Run `codex plugin marketplace list --json` first. This repository declares its marketplace name as `jp-personal`; that name is a catalog identifier, not a requirement to adopt the owner's personal configuration. If the name is already in use for another source, stop and resolve the collision without replacing unrelated entries.
 
@@ -28,7 +30,7 @@ codex plugin add ibm-design-language@jp-personal --json
 codex plugin list --marketplace jp-personal --json
 ```
 
-Confirm version `1.1.35`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
+Confirm version `1.1.36`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
 
 ```sh
 python -B scripts/verify-install.py INSTALL_DIRECTORY

@@ -6,14 +6,14 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.35`
-- Immutable tag: `v1.1.35`
-- `plugin.zip` SHA-256: `b92e9b5cc3a39cf72371304d9455e3831848bb25982add17d12fe0c18dca4165`
-- Manifest: `releases/1.1.35/files.json`
-- Release commit: `5e967e95e3fccda5ad4d8e69d818d57eee2374d4`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.35)
+- Version: `1.1.36`
+- Immutable tag: `v1.1.36`
+- `plugin.zip` SHA-256: `b281eb4ec28c42fcc46d5b21de4516ed6b0c37640d6f7eb0c01d7772bf716cee`
+- Manifest: `releases/1.1.36/files.json`
+- Release commit: `42cc6a9529b355ec5bf67fa47f2748053cbc4bf1`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.36)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.35^{commit}'`.
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.36^{commit}'`.
 Record that full commit alongside the checksum. Pin marketplace installation to
 that commit rather than an evolving branch. A missing release/tag means
 publication is incomplete; a locally prepared ZIP is not proof of publication.
@@ -26,20 +26,22 @@ discovery. Keep those checks explicit.
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.35/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.36/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The published package is **1.1.35**; all four downloaded assets are verified in the
-[publication receipt](RELEASE-1.1.35-PUBLICATION-2026-10-20.md), which retains its
-publication-time installation status. The existing uploaded account installation
-was subsequently updated to **1.1.35**. The separately authorized account update
-passed complete 172-file account and installed parity and fresh native discovery
-of all three enabled skills at 0.687 seconds within the shared five-second
-deadline; see the [dated installation receipt](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md).
-Identity, private sharing and presentation were preserved. Existing desktop-session
-refresh and automatic selection remain unverified.
+The published package is **1.1.36**; use the release identity above for recovery.
+The 1.1.37 working source is an unpublished candidate. This local preparation
+did not inspect or update any destination installation.
+
+The earlier 1.1.35 publication and installation receipts remain historical
+evidence: [publication](RELEASE-1.1.35-PUBLICATION-2026-10-20.md) and
+[installation](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md). They record complete
+172-file account/installed parity and fresh native discovery at 0.687 seconds
+within a shared five-second deadline for that update. Identity and private
+sharing were preserved; desktop-session refresh and automatic selection were
+unverified. These results do not establish the present destination state.
 
 The earlier 1.1.34 update passed 172-file account/installed parity and fresh native
 discovery at 0.890 seconds within its shared five-second deadline; its
