@@ -92,3 +92,9 @@ reconcile the task branch with the later companion-documentation commits on
 `main`, preserving their 1.1.36 publication and installation receipts. Report the
 exact pushed commit and CI status in the PR and final handoff; the local results
 above remain scoped to their original preparation tree.
+
+The task branch reconciles active guidance with `main` commit
+`90fdff6b2b5262b59774e682c3b21c2d712ac1a8`. Its three 1.1.36 review, publication
+and installation records are retained byte-for-byte. The reconciliation only
+changes companion documentation; the 177-file candidate payload, ZIP, checksum,
+prior release archives, evidence and regression assertions are unchanged.

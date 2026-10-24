@@ -31,17 +31,27 @@ discovery. Keep those checks explicit.
 
 ## Uploaded account installations
 
-The published package is **1.1.36**; use the release identity above for recovery.
-The 1.1.37 working source is an unpublished candidate. This local preparation
-did not inspect or update any destination installation.
+The 1.1.37 working source is an unpublished candidate. This task did not
+inspect or update a destination installation; the recorded 1.1.36 results
+below retain their original evidence scope.
 
-The earlier 1.1.35 publication and installation receipts remain historical
-evidence: [publication](RELEASE-1.1.35-PUBLICATION-2026-10-20.md) and
-[installation](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md). They record complete
-172-file account/installed parity and fresh native discovery at 0.687 seconds
-within a shared five-second deadline for that update. Identity and private
-sharing were preserved; desktop-session refresh and automatic selection were
-unverified. These results do not establish the present destination state.
+The published package is **1.1.36**; all four downloaded assets are verified in
+the unchanged [publication receipt](RELEASE-1.1.36-PUBLICATION-2026-10-21.md), which
+retains its publication-time installation status. The existing uploaded account
+plugin was subsequently updated to **1.1.36** through its supported account flow.
+Complete 172-file account/installed parity and fresh native discovery of all
+three enabled skills passed at 1.578 seconds within the shared five-second
+deadline; see the [dated installation receipt](INSTALLATION-1.1.36-VERIFICATION-2026-10-21.md).
+Identity, private sharing, presentation and earlier receipts were preserved.
+
+The earlier separately authorized 1.1.35 account update passed complete 172-file
+account and installed parity and fresh native discovery of all three enabled
+skills at 0.687 seconds within the shared five-second deadline; see the unchanged
+[dated installation receipt](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md).
+Identity, private sharing and presentation were preserved. Existing desktop-session
+refresh and automatic selection remain unverified. Publication alone does not
+update any installation; the later installation receipt records that separate
+authorized operation.
 
 The earlier 1.1.34 update passed 172-file account/installed parity and fresh native
 discovery at 0.890 seconds within its shared five-second deadline; its
@@ -127,6 +137,8 @@ enable feature/trust flags, change policy or relax the identity/version checks
 merely to obtain a pass. Those actions need their own task authority.
 
 ## Previous release rollback identity
+
+Version 1.1.35: commit `5e967e95e3fccda5ad4d8e69d818d57eee2374d4`, tag `v1.1.35`, ZIP SHA-256 `b92e9b5cc3a39cf72371304d9455e3831848bb25982add17d12fe0c18dca4165`. Its frozen archive and manifest remain in `releases/1.1.35/`.
 
 Version 1.1.34: commit `9ba059d9664d8892673848162256c82a0ebe20f3`, tag `v1.1.34`, ZIP SHA-256 `731b32694c4ad7a7feebeb76cbd0078ace94ed628749db0ff6257ebf4fa0c191`. Its frozen archive and manifest remain in `releases/1.1.34/`.
 

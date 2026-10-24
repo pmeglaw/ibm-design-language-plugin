@@ -7,12 +7,15 @@ unpublished local candidate and is not the installation target. Publication
 alone does not update a destination installation; this preparation did not
 inspect or change the existing installation.
 
-Earlier 1.1.35 publication and installation results remain in the unchanged
-[publication receipt](RELEASE-1.1.35-PUBLICATION-2026-10-20.md) and
-[installation receipt](INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md). Existing
-account plugins use their supported update flow in
+The existing uploaded account installation has separately verified **1.1.36** file
+parity and fresh native-host discovery; see the [dated installation receipt](INSTALLATION-1.1.36-VERIFICATION-2026-10-21.md)
+for scope and limits. Existing account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations), rather than creating a
 duplicate Git marketplace installation with the first-time commands below.
+
+Published 1.1.36 has verified downloaded assets; see the [publication receipt](RELEASE-1.1.36-PUBLICATION-2026-10-21.md). The existing owner installation was subsequently updated to verified 1.1.36 through its separately authorized supported account flow. Complete 172-file account/installed parity and fresh discovery of all three enabled skills passed at 1.578 seconds within the shared five-second deadline; identity, sharing and earlier evidence were preserved. Existing desktop-session refresh and automatic selection remain unverified. Future updates
+to an existing account plugin use its supported flow under applicable authority;
+publication alone does not update an installation.
 
 ## Select the published release
 
