@@ -2,6 +2,11 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
+The published recovery target is **1.1.36**. The 1.1.37 working source is an
+unpublished local candidate and is not the installation target. Publication
+alone does not update a destination installation; this preparation did not
+inspect or change the existing installation.
+
 The existing uploaded account installation has separately verified **1.1.36** file
 parity and fresh native-host discovery; see the [dated installation receipt](INSTALLATION-1.1.36-VERIFICATION-2026-10-21.md)
 for scope and limits. Existing account plugins use their supported update flow in

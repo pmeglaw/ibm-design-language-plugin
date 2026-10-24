@@ -1,3 +1,22 @@
+# 1.1.37 Expressive and desktop composition references candidate - unpublished
+
+Add focused local playbooks for expressive/hybrid surfaces and selected Gallery
+studies, IBM marks/app icons, illustration/photography, creative animation,
+infographic/chart selection and desktop composition craft. Connect these through
+design-ui routing and the color, composition and taste references. Keep source
+summaries separate from labeled local heuristics and retain partial coverage.
+
+All three skill names and frontmatter blocks, both sibling entrypoints,
+executable assets, dependencies and evaluator assertions remain unchanged.
+Existing release archives, evaluation records and historical scores are preserved.
+Only three selected static Gallery images add visual source observations; no new
+product runtime, theme matrix, AT pass, model evaluation or regrading is claimed.
+No narrow/RTL remediation, Seat Planner skill change or migration is included.
+
+This is an unpublished local release candidate. Publication, installation and
+marketplace updates are separate actions. Earlier notes below retain their
+preparation-time wording and limits.
+
 # 1.1.36 IBM Products migration references candidate - unpublished
 
 Refresh only carbon-next.md, composition.md and source-map.json with the

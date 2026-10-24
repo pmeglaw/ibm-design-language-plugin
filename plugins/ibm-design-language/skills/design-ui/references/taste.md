@@ -6,6 +6,14 @@ These are craft heuristics, not additional Carbon specifications. Correct compon
 
 Productive tools favor predictable controls, scanning, and efficient density. Expressive pages can use fluid type, imagery, and more dramatic composition. Apply the approved product brand when one is in scope. Judge against the task rather than forcing every surface into an admin-console aesthetic.
 
+### Hybrid and expressive critique — local guidance
+
+Name the register of each region using [expressive surfaces](expressive-surfaces.md). Judge a welcome illustration by what it explains, and the adjacent table by comparison and action clarity. A well-composed image does not excuse weak controls; productive table density is not a reason to flatten an editorial message. Distinguish the IDL conceptual artwork style from a working hybrid page.
+
+Use [imagery](imagery-and-illustration.md), [identity](brand-marks-and-app-icons.md), [creative animation](creative-animation.md) and [data-graphic selection](infographics-and-chart-selection.md) for a specific correction rather than a generic request to make the screen more branded. Resolve [brand role authority](color-and-brand.md#hybrid-and-expressive-brand-decisions--local-guidance) before criticizing a governed color for differing from generic Carbon. Inspect [composition craft](composition-craft.md) for hierarchy, spacing and density relationships.
+
+For each material finding, identify the region, observed hierarchy/focal issue, task cost, correction and evidence limit. Source summaries and the three selected Gallery images do not establish a full visual catalog, interaction or accessibility pass. Use the sibling review workflow's current-versus-recommended comparison when the task spans a flow.
+
 ## Rubric
 
 | Dimension | Inspect |

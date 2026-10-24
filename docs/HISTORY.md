@@ -8,11 +8,17 @@ See [reviewed intake](../docs/REVIEWED-INTAKE.md) for the target correction, ado
 
 The [1.1.10 candidate report](../evidence/1.1.10-candidate/REPORT.md) records its local checks and one text-only design critique evaluation. It is not a rendered design validation.
 
-## Reference refresh preparation
+## Unpublished reference candidate
 
-The 21 October [candidate evidence](PRODUCTS-V12-REFERENCES-1.1.36.md) retains
-its original unpublished preparation wording and verification limits. The later
-publication and downloaded-asset verification are recorded separately below.
+Version 1.1.37 is an unpublished expressive/brand and desktop composition
+reference candidate. It adds six focused playbooks and strengthens design-ui
+routing, source coverage and approved-brand/hybrid decisions. Skill identities,
+frontmatter, sibling entrypoints, executable assets and evaluator assertions
+are preserved. See the [reference review](UI-DESIGN-COVERAGE-2026-10-24.md) and
+[local candidate preparation](RELEASE-1.1.37-PREPARATION-2026-10-24.md).
+No model-quality, runtime, AT, publication or installation result is established.
+The earlier [1.1.36 preparation record](PRODUCTS-V12-REFERENCES-1.1.36.md) retains
+its original scope and preparation-time wording.
 
 ## Release validation
 

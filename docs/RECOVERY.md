@@ -31,6 +31,10 @@ discovery. Keep those checks explicit.
 
 ## Uploaded account installations
 
+The 1.1.37 working source is an unpublished candidate. This task did not
+inspect or update a destination installation; the recorded 1.1.36 results
+below retain their original evidence scope.
+
 The published package is **1.1.36**; all four downloaded assets are verified in
 the unchanged [publication receipt](RELEASE-1.1.36-PUBLICATION-2026-10-21.md), which
 retains its publication-time installation status. The existing uploaded account
