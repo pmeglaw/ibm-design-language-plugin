@@ -2,13 +2,11 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.36**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.36) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
+The current published package is **1.1.37**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.37) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working source is **1.1.37, an unpublished combined candidate** containing focused expressive/brand playbooks, desktop composition craft and hybrid/approved-brand decision paths. See the [reference review](docs/UI-DESIGN-COVERAGE-2026-10-24.md) and [candidate preparation](docs/RELEASE-1.1.37-PREPARATION-2026-10-24.md). The published 1.1.36 package remains pinned to `42cc6a9529b355ec5bf67fa47f2748053cbc4bf1`. Local preparation does not establish publication, installation, improved model behavior or new product accessibility results. Historical receipts and scores remain unchanged; installation state was not inspected or modified by this preparation.
+The working package matches published **1.1.37**, released from commit `fa2f1fa5e3fed0c3119806fd968ace7a81c5074d`. It adds six focused expressive/brand and desktop composition playbooks, source coverage and hybrid/approved-brand decision paths. Local advice is labeled as craft guidance or heuristics; complete visual catalogs, production kits and consuming-product runtime/theme/AT checks remain partial or unverified. Frozen archives, historical scores and evaluator assertions are preserved. Source review and passing fixtures do not establish improved model behavior or generated-product quality.
 
-Published **1.1.36** was released from commit `42cc6a9529b355ec5bf67fa47f2748053cbc4bf1`. It refreshes three supporting IBM Products/v12 references while preserving all SKILL.md entrypoints. Roadmap guidance does not establish released target APIs/codemods, migration compatibility or improved model behavior. Frozen preparation notes retain their original wording; dated publication receipts establish later status. The raw candidate-diff whitespace check retains 19 CRLF-at-EOL diagnostics in preserved source-map additions; other changed paths passed. The existing owner installation was subsequently updated to verified **1.1.36**, with separately recorded 172-file account/installed parity and fresh native discovery of all three enabled skills at 1.578 seconds within the shared five-second deadline. Publication and installation are separate. Existing desktop-session refresh and automatic selection remain unverified; the loading experiment stays parked.
-
-See the [1.1.36 publication verification](docs/RELEASE-1.1.36-PUBLICATION-2026-10-21.md) and [1.1.36 installation verification](docs/INSTALLATION-1.1.36-VERIFICATION-2026-10-21.md). The unchanged [1.1.35 installation receipt](docs/INSTALLATION-1.1.35-VERIFICATION-2026-10-20.md) and [1.1.35 publication receipt](docs/RELEASE-1.1.35-PUBLICATION-2026-10-20.md) remain historical evidence.
+All four public downloads match the frozen target bytes; see the [1.1.37 publication verification](docs/RELEASE-1.1.37-PUBLICATION-2026-10-24.md). Frozen [reference-review](docs/UI-DESIGN-COVERAGE-2026-10-24.md) and [preparation](docs/RELEASE-1.1.37-PREPARATION-2026-10-24.md) records retain their earlier scope and unpublished wording. Publication and installation are separate. The last recorded owner-installation verification is [1.1.36](docs/INSTALLATION-1.1.36-VERIFICATION-2026-10-21.md); this publication did not inspect or update a destination. Existing desktop-session refresh and automatic selection remain unverified; the loading experiment stays parked.
 
 ## Install
 
@@ -77,7 +75,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.37 working source with its three skills, references, assets and evaluator; candidate archive and manifest are in `releases/1.1.37/`. Published 1.1.36 remains frozen in `releases/1.1.36/`.
+- `plugins/ibm-design-language/`: the published 1.1.37 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.37/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
