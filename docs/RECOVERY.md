@@ -6,14 +6,14 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.36`
-- Immutable tag: `v1.1.36`
-- `plugin.zip` SHA-256: `b281eb4ec28c42fcc46d5b21de4516ed6b0c37640d6f7eb0c01d7772bf716cee`
-- Manifest: `releases/1.1.36/files.json`
-- Release commit: `42cc6a9529b355ec5bf67fa47f2748053cbc4bf1`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.36)
+- Version: `1.1.37`
+- Immutable tag: `v1.1.37`
+- `plugin.zip` SHA-256: `e5c57f25c688262c9846c2ea5334ee7733e408049dff1309b896089f77d825e7`
+- Manifest: `releases/1.1.37/files.json`
+- Release commit: `fa2f1fa5e3fed0c3119806fd968ace7a81c5074d`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.37)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.36^{commit}'`.
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.37^{commit}'`.
 Record that full commit alongside the checksum. Pin marketplace installation to
 that commit rather than an evolving branch. A missing release/tag means
 publication is incomplete; a locally prepared ZIP is not proof of publication.
@@ -26,16 +26,18 @@ discovery. Keep those checks explicit.
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.36/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.37/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The 1.1.37 working source is an unpublished candidate. This task did not
-inspect or update a destination installation; the recorded 1.1.36 results
-below retain their original evidence scope.
+The published package is **1.1.37**; all four public assets and the 177-file
+ZIP/source manifest match the frozen release, as recorded in the
+[publication verification](RELEASE-1.1.37-PUBLICATION-2026-10-24.md). Installation, enabled state and fresh
+discovery of 1.1.37 were not checked or changed. The installation records below
+retain their original dated scope; publication does not update a destination.
 
-The published package is **1.1.36**; all four downloaded assets are verified in
+Version **1.1.36** has all four downloaded assets verified in
 the unchanged [publication receipt](RELEASE-1.1.36-PUBLICATION-2026-10-21.md), which
 retains its publication-time installation status. The existing uploaded account
 plugin was subsequently updated to **1.1.36** through its supported account flow.
@@ -137,6 +139,8 @@ enable feature/trust flags, change policy or relax the identity/version checks
 merely to obtain a pass. Those actions need their own task authority.
 
 ## Previous release rollback identity
+
+Version 1.1.36: commit `42cc6a9529b355ec5bf67fa47f2748053cbc4bf1`, tag `v1.1.36`, ZIP SHA-256 `b281eb4ec28c42fcc46d5b21de4516ed6b0c37640d6f7eb0c01d7772bf716cee`. Its frozen archive and manifest remain in `releases/1.1.36/`.
 
 Version 1.1.35: commit `5e967e95e3fccda5ad4d8e69d818d57eee2374d4`, tag `v1.1.35`, ZIP SHA-256 `b92e9b5cc3a39cf72371304d9455e3831848bb25982add17d12fe0c18dca4165`. Its frozen archive and manifest remain in `releases/1.1.35/`.
 
