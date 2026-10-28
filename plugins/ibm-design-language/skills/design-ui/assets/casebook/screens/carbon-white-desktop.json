@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-28T00:48:38.505Z",
+  "fixture": "tests/release-fixture",
+  "pattern": "corrected",
+  "theme": "white",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "deviceScaleFactor": 1,
+  "colorScheme": "light",
+  "reducedMotion": "reduce",
+  "platform": {
+    "os": "win32",
+    "arch": "x64"
+  },
+  "browser": {
+    "name": "chromium",
+    "version": "153.0.8010.12"
+  },
+  "versions": {
+    "@carbon/react": "1.117.0",
+    "@carbon/styles": "1.116.0",
+    "@carbon/icons-react": "11.89.0",
+    "@playwright/test": "1.63.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "sourceHashes": {
+    "package-lock.json": "f120ee6e971e8ac9541c7bf74e885d8bf65fb63456336a9e84ab8aec7b0befb3",
+    "playwright.config.ts": "28c3b89266387a8f3028a2d357e7622d71a926ff8c8910727f03c4ca1a9e1784",
+    "src/main.tsx": "4bab995d511f4952f8b8f12bc6d242a825ecd99bf4b276b692ad2d3b7085a3b9",
+    "src/candidate.tsx": "873e166f46780d8c91358430b6d4b1de24f50a730fdd7214965df4fe70da54e6",
+    "src/desk.tsx": "e07324c614c9c9ed1c6289173901b3895b2a0fed759db6fbf9ecdbe730e25324",
+    "src/checks.ts": "b8b2e0538415659a5e3c15934c7cbbe491acf30f9ccfd821160ecf5d801b4ea8",
+    "src/styles.css": "498fd9c16818d835c70608d63d76a22b598819a30f28d1adc64e6832ad3b2c69",
+    "tests/screenshots.spec.ts": "20765166bf8caea14bcc7053bb884488e53035834c19f8629472f0aa23b9a8ec",
+    "public/fonts/IBMPlexSans-Regular.woff2": "ba711a3085ff9f27440b6b9c4550cfc47c97bf36591d5da958b975bb3add8c1a",
+    "public/fonts/IBMPlexSans-SemiBold.woff2": "f78048030eab62e860efa39a0df79e2e5581bf122eb95b9bc42c0b8a4988d205",
+    "public/fonts/IBMPlexMono-Regular.woff2": "49ce58b41a0e1cb921c0f58d9a5b8b96a2cc21437c7066f3ba4f24873076d131"
+  },
+  "geometry": {
+    "passed": 29,
+    "total": 29
+  },
+  "images": [
+    {
+      "file": "carbon-table-white-desktop.png",
+      "region": "table",
+      "width": 734,
+      "height": 295,
+      "cssWidth": 734,
+      "cssHeight": 294.5,
+      "sha256": "dee798fffea96799b2a949df6b61344aeb8e24c9d0095ca15ada9ee21dbcfe35"
+    },
+    {
+      "file": "carbon-form-white-desktop.png",
+      "region": "form",
+      "width": 734,
+      "height": 339,
+      "cssWidth": 734,
+      "cssHeight": 337.96875,
+      "sha256": "141b8488e7cd0e0fce00c09c4f9e2f9b953f6fc6884e6f030b2cb59f11a511d5"
+    },
+    {
+      "file": "carbon-header-white-desktop.png",
+      "region": "header",
+      "width": 766,
+      "height": 49,
+      "cssWidth": 766,
+      "cssHeight": 48,
+      "sha256": "a25693dfec3536243a3bb7c84fefe24b74b40f0a4a821586ae374687c97b7de9"
+    },
+    {
+      "file": "carbon-search-white-desktop.png",
+      "region": "search",
+      "width": 734,
+      "height": 41,
+      "cssWidth": 734,
+      "cssHeight": 40,
+      "sha256": "8f4414d7104db5cbae33d4a8bc44f112c92214617ece04733106002cb340898c"
+    }
+  ]
+}

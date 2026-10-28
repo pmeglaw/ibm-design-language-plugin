@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.37**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.37) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working package matches published **1.1.37**, released from commit `fa2f1fa5e3fed0c3119806fd968ace7a81c5074d`. It adds six focused expressive/brand and desktop composition playbooks, source coverage and hybrid/approved-brand decision paths. Local advice is labeled as craft guidance or heuristics; complete visual catalogs, production kits and consuming-product runtime/theme/AT checks remain partial or unverified. Frozen archives, historical scores and evaluator assertions are preserved. Source review and passing fixtures do not establish improved model behavior or generated-product quality.
+The working source is **1.1.38, an unpublished combined candidate**. It adds 16 controlled local Carbon table, form, header and search captures with provenance records and links from the design-ui casebooks and benchmarks. These are related anatomy examples using the pinned Carbon fixture, with different content from the static studies. See the [candidate preparation](docs/RELEASE-1.1.38-PREPARATION-2026-10-27.md) and [capture index](plugins/ibm-design-language/skills/design-ui/assets/casebook/screens/README-carbon-benchmarks.md). Frozen archives, historical scores and evaluator assertions are preserved. Neither source review, passing fixtures nor these images establish product interaction, AT or improved model-generation quality.
 
 All four public downloads match the frozen target bytes; see the [1.1.37 publication verification](docs/RELEASE-1.1.37-PUBLICATION-2026-10-24.md). Frozen [reference-review](docs/UI-DESIGN-COVERAGE-2026-10-24.md) and [preparation](docs/RELEASE-1.1.37-PREPARATION-2026-10-24.md) records retain their earlier scope and unpublished wording. Publication and installation are separate. The last recorded owner-installation verification is [1.1.36](docs/INSTALLATION-1.1.36-VERIFICATION-2026-10-21.md); this publication did not inspect or update a destination. Existing desktop-session refresh and automatic selection remain unverified; the loading experiment stays parked.
 
@@ -75,7 +75,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.37 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.37/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.38 working source with its three skills, references, assets and evaluator; its candidate archive and manifest are in `releases/1.1.38/`. The published recovery archive remains in `releases/1.1.37/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

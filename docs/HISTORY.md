@@ -10,6 +10,12 @@ The [1.1.10 candidate report](../evidence/1.1.10-candidate/REPORT.md) records it
 
 ## Reference preparation
 
+The [1.1.38 candidate preparation](RELEASE-1.1.38-PREPARATION-2026-10-27.md)
+records 16 Carbon-rendered anatomy examples, their provenance and draft-PR
+verification scope. This source is unpublished; published recovery and
+installation guidance remain on 1.1.37. It adds no product-interaction, AT or
+model-generation claim.
+
 The 24 October [reference review](UI-DESIGN-COVERAGE-2026-10-24.md) and
 [local candidate preparation](RELEASE-1.1.37-PREPARATION-2026-10-24.md) retain
 their original scope, preparation-time wording and bounded evidence. Later

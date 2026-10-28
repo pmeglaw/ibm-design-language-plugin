@@ -56,6 +56,15 @@ Sources: [Usage](https://carbondesignsystem.com/components/search/usage/), [Styl
 
 ### What good looks like: Search benchmark
 
+**Carbon-rendered local example.** The release fixture's
+[filled White desktop Search](../assets/casebook/screens/carbon-search-white-desktop.png)
+uses `@carbon/react@1.117.0` with fixture CSS. Compare the field silhouette,
+magnifier, text and reserved clear-control space. The
+[capture index](../assets/casebook/screens/README-carbon-benchmarks.md) links
+Gray 100 and 390px crops with provenance and limits. The sample query does not
+filter the fixture collection; these local images do not establish result,
+clear/focus or keyboard behavior and do not replace official examples.
+
 Use these owner-selected official references when designing or critiquing Carbon Search:
 
 - [Carbon Search guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/search/guidelines): anatomy, default/fluid styling, size, placement and states.

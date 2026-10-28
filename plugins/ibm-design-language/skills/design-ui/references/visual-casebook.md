@@ -30,6 +30,7 @@ The original versions deliberately expose composition problems. Several changes 
 - [Structured annotations](../assets/casebook/cases.json): 15 decisions with tradeoffs, alternatives and five transfer exercises.
 - assets/casebook/studies/: ten static HTML compositions.
 - assets/casebook/screens/: 40 browser-rendered PNGs, 1440px and 390px wide, before/after in both themes.
+- [Carbon-rendered anatomy examples](../assets/casebook/screens/README-carbon-benchmarks.md): 16 additional element crops of the release fixture's table, form, header and search in White/Gray 100 at 1440px/390px viewports, with four JSON provenance records. These use real Carbon components with local fixture CSS and different content from the studies; see the individual table/form cases and header/search benchmarks.
 - [Font provenance](../assets/casebook/font-sources.json) and [SIL Open Font License](../assets/casebook/fonts/license.txt): two bundled IBM Plex Sans weights from the pinned official IBM repository.
 
 The viewer works locally without a server or external runtime requests. Open index.html in a browser; select a study, theme and capture size. PNGs are illustrative snapshots. The linked HTML exposes responsive composition, including the table's own scroll region.

@@ -1,3 +1,22 @@
+# 1.1.38 Carbon-rendered anatomy examples candidate - unpublished
+
+Supplement the static design-ui casebooks with 16 controlled local captures
+of real Carbon React 1.117.0 table, form, header and search components.
+White/Gray 100 and 1440px/390px viewport examples include provenance records,
+image/source/font hashes and explicit differences from the fictional studies.
+The repository fixture gains a dedicated screenshot command; reviewed images
+are promoted manually rather than overwritten automatically.
+
+All three skill identities/frontmatter blocks, sibling entrypoints, runtime
+assets, dependencies, evaluator assertions and earlier release bytes remain
+unchanged. Fixture content and demonstration behavior are preserved.
+These are related anatomy examples, not official IBM exemplars, functioning
+product workflows, keyboard/AT certification or model-generation evidence.
+
+This is an unpublished candidate prepared for draft-PR review. Merging,
+tagging, publication, installation and marketplace updates are separate.
+Earlier notes below retain their exact bytes and original evidence limits.
+
 # 1.1.37 Expressive and desktop composition references candidate - unpublished
 
 Add focused local playbooks for expressive/hybrid surfaces and selected Gallery
