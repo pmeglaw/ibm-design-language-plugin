@@ -6,7 +6,8 @@
     "dev": "vite --host 127.0.0.1 --port 4174 --strictPort",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
-    "test": "playwright test"
+    "test": "playwright test",
+    "screenshots": "playwright test screenshots.spec.ts"
   },
   "dependencies": {
     "@carbon/icons-react": "11.89.0",
