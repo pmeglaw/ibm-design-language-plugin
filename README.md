@@ -2,11 +2,13 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.37**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.37) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
+The current published package is **1.1.38**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.38) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working source is **1.1.38, an unpublished combined candidate**. It adds 16 controlled local Carbon table, form, header and search captures with provenance records and links from the design-ui casebooks and benchmarks. These are related anatomy examples using the pinned Carbon fixture, with different content from the static studies. See the [candidate preparation](docs/RELEASE-1.1.38-PREPARATION-2026-10-27.md) and [capture index](plugins/ibm-design-language/skills/design-ui/assets/casebook/screens/README-carbon-benchmarks.md). Frozen archives, historical scores and evaluator assertions are preserved. Neither source review, passing fixtures nor these images establish product interaction, AT or improved model-generation quality.
+The working package matches published **1.1.38**, released from commit `fb8b1fb7dae700e064421bd0f2f1fa78f797a43a`. It adds 16 controlled local Carbon table, form, header and search captures, provenance records, and casebook/benchmark links. The related anatomy examples use different content from the static studies; they do not establish functioning product workflows, assistive-technology behavior or improved model generation.
 
-All four public downloads match the frozen target bytes; see the [1.1.37 publication verification](docs/RELEASE-1.1.37-PUBLICATION-2026-10-24.md). Frozen [reference-review](docs/UI-DESIGN-COVERAGE-2026-10-24.md) and [preparation](docs/RELEASE-1.1.37-PREPARATION-2026-10-24.md) records retain their earlier scope and unpublished wording. Publication and installation are separate. The last recorded owner-installation verification is [1.1.36](docs/INSTALLATION-1.1.36-VERIFICATION-2026-10-21.md); this publication did not inspect or update a destination. Existing desktop-session refresh and automatic selection remain unverified; the loading experiment stays parked.
+All four public downloads match the frozen 198-file package; see the [1.1.38 publication verification](docs/RELEASE-1.1.38-PUBLICATION-2026-10-27.md). Frozen [candidate preparation](docs/RELEASE-1.1.38-PREPARATION-2026-10-27.md), package notes and capture provenance retain their original dates, dependency versions and preparation wording. Separate fixture dependency maintenance preceded the release; the historical capture bytes were not rewritten.
+
+The existing private account plugin was updated to **1.1.38** through its supported update flow. Complete account and installed-file parity passed for the 198 release files plus the preserved host wrapper. Fresh native discovery returned all three enabled skills in 1.54 seconds within the shared five-second deadline; see the [installation verification](docs/INSTALLATION-1.1.38-VERIFICATION-2026-10-27.md). Existing desktop-session refresh and automatic skill selection remain unverified.
 
 ## Install
 
@@ -75,7 +77,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.38 working source with its three skills, references, assets and evaluator; its candidate archive and manifest are in `releases/1.1.38/`. The published recovery archive remains in `releases/1.1.37/`.
+- `plugins/ibm-design-language/`: the published 1.1.38 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.38/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

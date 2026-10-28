@@ -2,16 +2,15 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
-The published recovery target is **1.1.37**. All four public downloads match
-the frozen release; see the [publication verification](RELEASE-1.1.37-PUBLICATION-2026-10-24.md). This
-publication did not inspect or update a destination installation. Follow the
-separate parity, enabled-state and fresh-discovery checks after installation.
-
-The last recorded uploaded account installation has separately verified **1.1.36** file
-parity and fresh native-host discovery; see the [dated installation receipt](INSTALLATION-1.1.36-VERIFICATION-2026-10-21.md)
-for scope and limits. Existing account plugins use their supported update flow in
+The published recovery target is **1.1.38**. All four public downloads match
+the frozen release; see the [publication verification](RELEASE-1.1.38-PUBLICATION-2026-10-27.md). The existing
+private account plugin also has complete 199-file account/installed parity
+and fresh native discovery of its three enabled skills; see the
+[installation verification](INSTALLATION-1.1.38-VERIFICATION-2026-10-27.md).
+Existing account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations), rather than creating a
 duplicate Git marketplace installation with the first-time commands below.
+New installations still need their own parity, enabled-state and fresh-discovery checks.
 
 Published 1.1.36 has verified downloaded assets; see the [publication receipt](RELEASE-1.1.36-PUBLICATION-2026-10-21.md). The existing owner installation was subsequently updated to verified 1.1.36 through its separately authorized supported account flow. Complete 172-file account/installed parity and fresh discovery of all three enabled skills passed at 1.578 seconds within the shared five-second deadline; identity, sharing and earlier evidence were preserved. Existing desktop-session refresh and automatic selection remain unverified. Future updates
 to an existing account plugin use its supported flow under applicable authority;
@@ -19,7 +18,7 @@ publication alone does not update an installation.
 
 ## Select the published release
 
-1. Obtain the [published 1.1.37 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.37). Resolve the full commit behind `v1.1.37` in a repository checkout with `git rev-parse 'v1.1.37^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
+1. Obtain the [published 1.1.38 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.38). Resolve the full commit behind `v1.1.38` in a repository checkout with `git rev-parse 'v1.1.38^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
 2. Verify the downloaded ZIP against the checksum and file manifest in [Recovery](RECOVERY.md#release-identity). From the matching checkout, run `python -B scripts/verify.py`.
 3. Run `codex plugin marketplace list --json` first. This repository declares its marketplace name as `jp-personal`; that name is a catalog identifier, not a requirement to adopt the owner's personal configuration. If the name is already in use for another source, stop and resolve the collision without replacing unrelated entries.
 
@@ -33,7 +32,7 @@ codex plugin add ibm-design-language@jp-personal --json
 codex plugin list --marketplace jp-personal --json
 ```
 
-Confirm version `1.1.37`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
+Confirm version `1.1.38`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
 
 ```sh
 python -B scripts/verify-install.py INSTALL_DIRECTORY

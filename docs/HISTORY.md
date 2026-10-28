@@ -1,6 +1,6 @@
 # Release history and evidence
 
-This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.37; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
+This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.38; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
 
 This package preserves verified work so restoration does not require repeating model evaluations. The 1.1.6 guidance passed 9/9 on one known screenshot regression. This author-graded case does not establish general improvement or repeatability; host skill-description truncation warnings are disclosed in the evidence. Earlier composition comparisons had two tied pairs, one incomplete pair and host configuration drift. Synthetic tests check evaluator mechanics, not design taste.
 
@@ -11,10 +11,9 @@ The [1.1.10 candidate report](../evidence/1.1.10-candidate/REPORT.md) records it
 ## Reference preparation
 
 The [1.1.38 candidate preparation](RELEASE-1.1.38-PREPARATION-2026-10-27.md)
-records 16 Carbon-rendered anatomy examples, their provenance and draft-PR
-verification scope. This source is unpublished; published recovery and
-installation guidance remain on 1.1.37. It adds no product-interaction, AT or
-model-generation claim.
+retains its original unpublished scope and local checks. Later publication and
+destination verification are recorded in the [publication](RELEASE-1.1.38-PUBLICATION-2026-10-27.md) and
+[installation](INSTALLATION-1.1.38-VERIFICATION-2026-10-27.md) receipts.
 
 The 24 October [reference review](UI-DESIGN-COVERAGE-2026-10-24.md) and
 [local candidate preparation](RELEASE-1.1.37-PREPARATION-2026-10-24.md) retain
@@ -25,7 +24,9 @@ unchanged as history.
 
 ## Release validation
 
-See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.37). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.38). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+
+Version 1.1.38 adds 16 Carbon-rendered local anatomy examples, four provenance records and casebook/benchmark links, plus the repository screenshot command. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.38) is from `fb8b1fb7dae700e064421bd0f2f1fa78f797a43a`. Required Windows/Linux package and browser gates passed on that exact commit before publication; the 198-file source, manifest and ZIP agree and all four downloaded assets match the frozen bytes. See the [publication verification](RELEASE-1.1.38-PUBLICATION-2026-10-27.md) for the preserved publication-time documentation transition. The same private account plugin was subsequently updated, with full 199-file account/installed parity and fresh native discovery of all three enabled skills in 1.54 seconds; see the [installation verification](INSTALLATION-1.1.38-VERIFICATION-2026-10-27.md). Historical preparation/capture records, earlier frozen releases, skill entrypoints and evaluator assertions remain unchanged. No model evaluation, AT certification or product-workflow validation is claimed; running desktop-session refresh and automatic selection remain unverified.
 
 Version 1.1.37 adds six focused expressive/brand and desktop composition playbooks, routing/source coverage and hybrid/approved-brand decision paths. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.37) is from `fa2f1fa5e3fed0c3119806fd968ace7a81c5074d`. All nine validation jobs passed on that exact commit, including Windows/Linux package verification and all required browser fixture gates. The 177-file source, manifest and ZIP agree, and all four public downloads match the frozen target; see the [publication verification](RELEASE-1.1.37-PUBLICATION-2026-10-24.md). Skill identities/frontmatter, sibling entrypoints, evaluator assertions, earlier frozen archives, historical results and scores are preserved. Local craft guidance is labeled, and complete visual/production catalogs remain partial. No new model evaluation, generated-product/runtime/theme/AT pass, narrow/RTL remediation or migration is claimed. Preparation notes retain their unpublished wording. The publication-time documentation mismatch is preserved in the receipt; subsequent documentation CI is separate. Installation, enabled state and fresh discovery of 1.1.37 remain unverified; this publication did not inspect or update a destination.
 
