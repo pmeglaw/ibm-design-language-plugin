@@ -34,11 +34,15 @@ The published package and existing private account installation are **1.1.39**.
 All four public assets and all 177 ZIP/source manifest entries match the frozen
 release; see the [publication verification](RELEASE-1.1.39-PUBLICATION-2026-10-29.md).
 Complete account/installed parity passed for 178 files including the validated
-host wrapper, and native catalog reads confirm installed/enabled 1.1.39. Fresh
-native discovery did not return the three skills within the five-second bound;
-see the [installation verification](INSTALLATION-1.1.39-VERIFICATION-2026-10-29.md).
+host wrapper, and native catalog reads confirm installed/enabled 1.1.39. The
+diagnostic follow-up verified all three enabled skills within the shared
+five-second bound: 0.966 seconds on the CLI and 0.914 seconds on the desktop
+native binary. The earlier reported failure was a verifier false negative
+caused by matching bare names against plugin-qualified names; see the
+[correction and preserved evidence](DISCOVERY-VERIFIER-CORRECTION-2026-10-29.md) and
+[installation verification](INSTALLATION-1.1.39-VERIFICATION-2026-10-29.md).
 No reinstall, account update or policy/configuration change was performed.
-Byte parity does not resolve the discovery failure or prove automatic selection.
+These destination results do not prove automatic selection or desktop refresh.
 
 The following records describe earlier versions and their original scope.
 
@@ -134,6 +138,8 @@ preserves both the failed immediate probes and the later readiness observations.
    `forceRefetch: true`. This is a catalog read, not `plugin/install`.
    Keep the returned plugin identity for comparison; preserve unrelated entries.
 3. Call `skills/list` with the intended `cwds` and `forceReload: true`.
+   Compare the complete plugin-qualified names returned by the API, such as
+   `ibm-design-language:design-ui`, rather than bare frontmatter names.
    Require the exact three skill names listed above, enabled, belonging to the
    intended plugin, with paths under that destination's expected version.
    Do not add `perCwdExtraUserRoots` or copy files to manufacture discovery.

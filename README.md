@@ -8,7 +8,7 @@ The working package matches published **1.1.39**, released from commit `d34cb062
 
 All four public assets match the 177-file frozen package; see the [publication verification](docs/RELEASE-1.1.39-PUBLICATION-2026-10-29.md). All 12 checks passed on the exact release commit. Frozen package notes retain their original preparation wording.
 
-Complete account and installed parity passed for the 177 release files plus the validated host wrapper. Native catalog reads confirm installed/enabled 1.1.39. Fresh native discovery failed the bounded readiness check and remains unresolved; see the [existing-installation verification](docs/INSTALLATION-1.1.39-VERIFICATION-2026-10-29.md). No account update, reinstall or configuration change was needed for byte parity. Automatic selection and desktop refresh remain unverified.
+Complete account and installed parity passed for the 177 release files plus the validated host wrapper. Native catalog reads confirm installed/enabled 1.1.39. The diagnostic follow-up verified all three enabled skills within the shared five-second bound: 0.966 seconds on the CLI and 0.914 seconds on the desktop native binary. The earlier reported discovery failure was a verifier false negative caused by comparing bare names with plugin-qualified names; see the [correction and preserved evidence](docs/DISCOVERY-VERIFIER-CORRECTION-2026-10-29.md) and [existing-installation verification](docs/INSTALLATION-1.1.39-VERIFICATION-2026-10-29.md). No account update, reinstall or configuration change was needed for byte parity. Automatic selection and desktop refresh remain unverified.
 
 ## Install
 

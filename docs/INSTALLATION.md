@@ -5,8 +5,10 @@ Use this path to install the published package in Codex. For an existing owner-m
 The published recovery target is **1.1.39**. All four public downloads match
 the frozen release; see the [publication verification](RELEASE-1.1.39-PUBLICATION-2026-10-29.md). The existing
 private account plugin has complete 178-file account/installed parity and
-native catalog installed/enabled state. Fresh native discovery failed its
-five-second readiness bound and remains unresolved; see the
+native catalog installed/enabled state. The diagnostic follow-up verified fresh
+discovery in 0.966 seconds on the CLI and 0.914 seconds on the desktop native
+binary. The earlier failure was a verifier false negative; see the
+[correction and preserved evidence](DISCOVERY-VERIFIER-CORRECTION-2026-10-29.md) and the
 [installation verification](INSTALLATION-1.1.39-VERIFICATION-2026-10-29.md).
 Existing account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations), rather than creating a
