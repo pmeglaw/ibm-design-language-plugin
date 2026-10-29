@@ -16,6 +16,8 @@ Published 1.1.36 has verified downloaded assets; see the [publication receipt](R
 to an existing account plugin use its supported flow under applicable authority;
 publication alone does not update an installation.
 
+The dated 1.1.44 [publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md) receipts preserve its separate verification.
+
 ## Select the published release
 
 1. Obtain the [published 1.1.45 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.45). Resolve the full commit behind `v1.1.45` in a repository checkout with `git rev-parse 'v1.1.45^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.

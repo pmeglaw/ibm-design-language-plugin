@@ -42,6 +42,8 @@ The following 1.1.44 observations describe its earlier verification.
 This task verified its four downloaded assets and complete 179-file account/local
 parity including the exact host wrapper. The current candidate is separate.
 
+The dated 1.1.44 [publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md) receipts preserve its separate verification. Fresh native discovery of the three enabled 1.1.44 skills passed in 1.187 seconds at that verification; these historical results do not describe the current installation.
+
 The following 1.1.43 observations describe its earlier verification.
 All four public assets and 178 source/ZIP files match the frozen release. The same
 private USER-scoped account plugin was updated through its supported flow.

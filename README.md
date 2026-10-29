@@ -51,6 +51,8 @@ Codex sees each skill's name and description, then loads its instructions when t
 
 The package supplies guidance and optional assets; edits and browser checks use the tools available in your Codex environment. It does not automatically add Carbon to your application or certify generated results. See the [design skill](plugins/ibm-design-language/skills/design-ui/SKILL.md) and [review skill](plugins/ibm-design-language/skills/review-product-experience/SKILL.md) for the workflows.
 
+Earlier 1.1.44 verification is preserved in its [publication](docs/RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [installation](docs/INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md) receipts.
+
 ## Documentation
 
 [First-time installation](docs/INSTALLATION.md) · [Recovery and rollback](docs/RECOVERY.md) · [Maintaining releases](docs/RELEASING.md) · [Release history and evidence](docs/HISTORY.md)
