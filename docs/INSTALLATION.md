@@ -2,9 +2,12 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
-The published recovery target is **1.1.43**. Verify its assets and destination
-state using the procedure below. Earlier 1.1.42 publication and installation
-receipts remain historical evidence, not verification of this target.
+The published recovery target is **1.1.43**. All four downloaded assets match
+the frozen 178-file release; see the [publication receipt](RELEASE-1.1.43-PUBLICATION-2026-10-29.md).
+The existing private account installation has complete 179-file parity including
+the validated host wrapper, installed/enabled catalog state and fresh native
+discovery of all three skills in 1.544 seconds within the shared five-second
+bound; see the [installation receipt](INSTALLATION-1.1.43-VERIFICATION-2026-10-29.md).
 Existing account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations); do not create a duplicate
 Git marketplace installation. New destinations require their own verification.

@@ -14,9 +14,8 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 - Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43)
 
 Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.43^{commit}'`.
-Pin installation to that immutable commit. Publication identity was checked against
-GitHub; downloaded-asset parity and destination installation were not reverified
-for this candidate update. The working source is an unpublished 1.1.44 candidate.
+Pin installation to that immutable commit. See the [publication receipt](RELEASE-1.1.43-PUBLICATION-2026-10-29.md)
+and [installation receipt](INSTALLATION-1.1.43-VERIFICATION-2026-10-29.md).
 
 ## Restore and verify
 
@@ -29,8 +28,17 @@ for this candidate update. The working source is an unpublished 1.1.44 candidate
 
 ## Uploaded account installations
 
-The following 1.1.42 record describes its earlier publication and private account
-installation verification; it is not a claim about current destination state.
+The published package and existing private account installation are **1.1.43**.
+All four public assets and 178 source/ZIP files match the frozen release. The same
+private USER-scoped account plugin was updated through its supported flow.
+Complete 179-file account/installed parity includes the validated host wrapper.
+Fresh catalog reads confirm installed/enabled 1.1.43; all three enabled qualified
+skills were discovered in 1.544 seconds within the shared five-second deadline.
+See the [publication](RELEASE-1.1.43-PUBLICATION-2026-10-29.md) and
+[installation](INSTALLATION-1.1.43-VERIFICATION-2026-10-29.md) receipts.
+Automatic selection and existing desktop-conversation refresh remain unverified.
+
+The following 1.1.42 observations describe its earlier verification.
 All four public assets and 178 source/ZIP files match the frozen release. The same
 private USER-scoped account plugin was updated through its supported flow.
 Complete 179-file account/installed parity includes the validated host wrapper.
@@ -196,6 +204,8 @@ enable feature/trust flags, change policy or relax the identity/version checks
 merely to obtain a pass. Those actions need their own task authority.
 
 ## Previous release rollback identity
+
+Version 1.1.42: commit `0020d5be7606634578917493a762f58d09fd42ed`, tag `v1.1.42`, ZIP SHA-256 `adba0955775b518d217fab9a5eb6466697c38e8fe629645266d45e480716cc79`. Frozen assets remain in `releases/1.1.42/`.
 
 Version 1.1.41: commit `c5b31f4c47ffae0516a9245bb73720101d77e07b`, tag `v1.1.41`, ZIP SHA-256 `a6ec45f21960f6eefeff2035bbc525ce4f9b429f8b948baf2e5cf7c69f599a1d`. Frozen assets remain in `releases/1.1.41/`.
 

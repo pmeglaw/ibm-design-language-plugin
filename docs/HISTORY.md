@@ -26,10 +26,7 @@ unchanged as history.
 
 See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
 
-
-Version 1.1.43 adds version-qualified Carbon React deprecated import and prop checks. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43) is from `ec62468dd6481fed8fe22a01dec8d627fad5f1b9`. Publication identity was checked against GitHub. Downloaded-asset parity and destination installation were not reverified during the 1.1.44 candidate update. Earlier evidence and frozen release bytes remain unchanged.
-
-The working source is an unpublished 1.1.44 candidate containing five review-wording refinements. Candidate packaging does not publish a release or update any installation.
+Version 1.1.43 adds Carbon React deprecated import and prop checks with main-skill routing. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43) is from `ec62468dd6481fed8fe22a01dec8d627fad5f1b9`. Required exact-commit CI and downloaded asset integrity passed; complete account/installed parity, enabled state and bounded fresh discovery passed separately. See the [publication](RELEASE-1.1.43-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.43-VERIFICATION-2026-10-29.md) receipts. No model or AT evaluation is claimed.
 
 Version 1.1.42 adds IBM Products deprecation and migration checks with main-skill routing. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.42) is from `0020d5be7606634578917493a762f58d09fd42ed`. Required exact-commit CI and downloaded asset integrity passed; complete account/installed parity, enabled state and bounded fresh discovery passed separately. See the [publication](RELEASE-1.1.42-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.42-VERIFICATION-2026-10-29.md) receipts. No model or AT evaluation is claimed.
 
