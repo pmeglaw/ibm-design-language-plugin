@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.40**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.40) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working package matches published **1.1.40**, released from commit `e602082a6a7d291297fbce0478fa166f3f89cea4`. It adds the [dated UI shell observation reference](plugins/ibm-design-language/skills/design-ui/references/ui-shell-observed-2026-10-29.md): desktop measurements, typography, hover/tooltips, dropdown, demonstration modal, responsive boundaries, hamburger and side navigation. Example-specific values, version uncertainty, inspection overlays and phone clipping remain explicitly bounded.
+The working source is **1.1.41, an unpublished combined candidate**. It adds a source-linked Carbon deprecation checklist and main-skill routing; publication and installation remain pending. Published 1.1.40 evidence below describes that earlier release.
 
 All four downloaded public assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.40-PUBLICATION-2026-10-29.md). Complete account and installed parity passed for 179 files including the validated host wrapper. The existing private account plugin remains installed/enabled, and fresh native discovery returned all three enabled skills within the shared five-second bound (1.977 seconds); see the [installation receipt](docs/INSTALLATION-1.1.40-VERIFICATION-2026-10-29.md).
 
@@ -77,7 +77,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.40 package source; frozen archive in `releases/1.1.40/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.41 working source; candidate archive in `releases/1.1.41/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
