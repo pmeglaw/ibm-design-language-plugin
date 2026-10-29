@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.43**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working package matches published **1.1.43**, released from commit `ec62468dd6481fed8fe22a01dec8d627fad5f1b9`. It extends the [Carbon deprecation checklist](plugins/ibm-design-language/skills/design-ui/references/framework-integration.md#deprecation-checklist) and links it from main-skill intake: Carbon React public exports, deprecated imports/props, aliases, wrappers/spreads, runtime warnings and coverage limits.
+The working source is **1.1.44, an unpublished combined candidate**. It adds five focused product-review wording refinements. Candidate publication and installation remain pending; the following publication and installation receipts describe published 1.1.43.
 
 All four downloaded assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.43-PUBLICATION-2026-10-29.md). Complete account and installed parity passed for 179 files including the validated host wrapper. The existing private account plugin is installed/enabled, and fresh native discovery returned all three enabled skills within the shared five-second bound (1.544 seconds); see the [installation receipt](docs/INSTALLATION-1.1.43-VERIFICATION-2026-10-29.md).
 
@@ -77,7 +77,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.43 package source; frozen archive in `releases/1.1.43/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.44 working source; frozen candidate archive in `releases/1.1.44/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

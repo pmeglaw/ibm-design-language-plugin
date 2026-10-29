@@ -44,7 +44,7 @@ Prioritize findings by task impact, but inspect every material dimension. A hier
 
 ## Craft heuristics
 
-- Keep related information close and make stronger separations between tasks.
+- Keep related information close and make stronger separations between tasks. When recommending simplification, check that it preserves useful structure, information, recognizable identity and recovery cues; fewer elements alone do not establish improvement.
 - Prefer a coherent type hierarchy over arbitrary per-element sizes; use tabular figures where numbers align or change.
 - For productive tools, begin with neutral surfaces and semantic emphasis. For expressive work, derive color and imagery from applicable IBM or product guidance.
 - Preserve matching paired icon/text foregrounds where required; do not dim the icon to repair the wrong glyph or size.
