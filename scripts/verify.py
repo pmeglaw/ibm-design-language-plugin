@@ -11,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = '1.1.45'
+CURRENT = '1.1.46'
 
 
 def require(condition, message):
