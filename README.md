@@ -2,13 +2,13 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.43**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
+The current published package is **1.1.44**. [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.44) · [Install](docs/INSTALLATION.md)
 
-The working source is **1.1.44, an unpublished combined candidate**. It adds five focused product-review wording refinements. Candidate publication and installation remain pending; the following publication and installation receipts describe published 1.1.43.
+The working source is **1.1.45, an unpublished combined candidate**. It adds Carbon Sass/token checks and warning attribution while preserving 1.1.44 review refinements. Candidate publication and installation remain pending.
 
-All four downloaded assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.43-PUBLICATION-2026-10-29.md). Complete account and installed parity passed for 179 files including the validated host wrapper. The existing private account plugin is installed/enabled, and fresh native discovery returned all three enabled skills within the shared five-second bound (1.544 seconds); see the [installation receipt](docs/INSTALLATION-1.1.43-VERIFICATION-2026-10-29.md).
+The published 1.1.44 is from `8ba51becc9362bf247667d37f0b92d9cc79b0ecb`. This task verified its four downloaded assets and complete account/local file parity against the frozen release. Frozen 1.1.44 notes retain their preparation-time unpublished wording; they do not override actual publication. Earlier 1.1.43 [publication](docs/RELEASE-1.1.43-PUBLICATION-2026-10-29.md) and [installation](docs/INSTALLATION-1.1.43-VERIFICATION-2026-10-29.md) receipts remain historical evidence.
 
-No dependencies, product code, runtime assets or fixture assertions change. Earlier frozen releases and evidence remain preserved. No new model evaluation, generated-product improvement or AT certification is claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
+No product, dependency, runtime asset or fixture assertion changes. Existing-chat refresh, automatic selection, generated-product quality and AT behavior remain unverified.
 
 ## Install
 
@@ -77,7 +77,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.44 working source; frozen candidate archive in `releases/1.1.44/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.45 working source; candidate archive in `releases/1.1.45/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
