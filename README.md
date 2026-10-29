@@ -2,11 +2,11 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.43**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
+The current published package is **1.1.44**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) Ã‚Â· [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.44) Ã‚Â· [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working source is **1.1.44, an unpublished combined candidate**. It adds five focused product-review wording refinements. Candidate publication and installation remain pending; the following publication and installation receipts describe published 1.1.43.
+The working package matches published **1.1.44**, released from commit `8ba51becc9362bf247667d37f0b92d9cc79b0ecb`. It clarifies five existing product-review instructions without adding another checklist.
 
-All four downloaded assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.43-PUBLICATION-2026-10-29.md). Complete account and installed parity passed for 179 files including the validated host wrapper. The existing private account plugin is installed/enabled, and fresh native discovery returned all three enabled skills within the shared five-second bound (1.544 seconds); see the [installation receipt](docs/INSTALLATION-1.1.43-VERIFICATION-2026-10-29.md).
+All four downloaded assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.44-PUBLICATION-2026-10-29.md). Complete account and installed parity passed for 179 files including the validated host wrapper. The existing private account plugin is installed/enabled, and fresh native discovery returned all three enabled skills within the shared five-second bound (1.187 seconds); see the [installation receipt](docs/INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md).
 
 No dependencies, product code, runtime assets or fixture assertions change. Earlier frozen releases and evidence remain preserved. No new model evaluation, generated-product improvement or AT certification is claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
 
@@ -53,7 +53,7 @@ The package supplies guidance and optional assets; edits and browser checks use 
 
 ## Documentation
 
-[First-time installation](docs/INSTALLATION.md) · [Recovery and rollback](docs/RECOVERY.md) · [Maintaining releases](docs/RELEASING.md) · [Release history and evidence](docs/HISTORY.md)
+[First-time installation](docs/INSTALLATION.md) Ã‚Â· [Recovery and rollback](docs/RECOVERY.md) Ã‚Â· [Maintaining releases](docs/RELEASING.md) Ã‚Â· [Release history and evidence](docs/HISTORY.md)
 
 Using the plugin on a product follows that task's authorization and project rules. A review does not authorize edits; local implementation does not authorize publication or production changes. Maintaining this plugin has a separate owner-specific release/install workflow in [release maintenance](docs/RELEASING.md#authorization-and-documentation-scope).
 
@@ -77,7 +77,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.44 working source; frozen candidate archive in `releases/1.1.44/`.
+- `plugins/ibm-design-language/`: the published 1.1.44 package source; frozen archive in `releases/1.1.44/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
