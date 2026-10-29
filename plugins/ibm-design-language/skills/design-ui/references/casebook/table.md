@@ -12,24 +12,6 @@ Author-created static composition study with fictional content. Local craft judg
 
 ![Revised desktop composition](../../assets/casebook/screens/table-after-white-desktop.png)
 
-## Carbon-rendered anatomy example
-
-The composition above is a custom-CSS teaching illustration. The related
-example below uses real `@carbon/react@1.117.0` table components with
-`@carbon/styles@1.116.0` and local fixture CSS (White, 1440px viewport).
-Compare the title/toolbar/header relationship, row rhythm, reading edges and
-numeric alignment. Its Statements content and two-column layout are different
-from this service-account study; it is not a Carbon recreation of the study.
-
-![Carbon table anatomy example, White desktop](../../assets/casebook/screens/carbon-table-white-desktop.png)
-
-The [capture index](../../assets/casebook/screens/README-carbon-benchmarks.md)
-links White/Gray 100 at desktop/390px, plus versions, hashes and evidence limits.
-These controlled local element crops are not official IBM exemplars or
-Storybook/product screenshots. The fixture clips its long name; the image
-does not establish full-value recovery. Keyboard, AT, other themes and content
-states still need separate verification.
-
 ## Decisions and conditions
 
 ### 1. Establish the task before the controls

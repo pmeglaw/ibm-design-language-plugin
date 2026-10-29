@@ -12,23 +12,6 @@ Author-created static composition study with fictional content. Local craft judg
 
 ![Revised desktop composition](../../assets/casebook/screens/form-after-white-desktop.png)
 
-## Carbon-rendered anatomy example
-
-The composition above is a custom-CSS teaching illustration. The related
-example below uses real `@carbon/react@1.117.0` inputs and buttons with
-`@carbon/styles@1.116.0` and local fixture CSS (White, 1440px viewport).
-Compare persistent labels, helper-text placement, related-field spacing and
-action hierarchy. Its simple project/note fields differ from this deployment
-study; it does not implement the study's review region or a save workflow.
-
-![Carbon form anatomy example, White desktop](../../assets/casebook/screens/carbon-form-white-desktop.png)
-
-The [capture index](../../assets/casebook/screens/README-carbon-benchmarks.md)
-links White/Gray 100 at desktop/390px, plus versions, hashes and evidence limits.
-These controlled local element crops are not official IBM exemplars or
-Storybook/product screenshots. They do not establish validation, submission,
-keyboard or AT behavior, other themes or additional content states.
-
 ## Decisions and conditions
 
 ### 1. Group by the user's decision

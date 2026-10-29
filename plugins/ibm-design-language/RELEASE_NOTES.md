@@ -1,3 +1,26 @@
+# 1.1.39 Restoration of 1.1.37 content candidate - unpublished
+
+Restore the complete 1.1.37 skill, guidance and runtime-asset content at the
+owner's request following reported dissatisfaction with 1.1.38 design output.
+Five reference files return to their exact 1.1.37 bytes; all 21 files introduced
+by 1.1.38 are removed from the current package. All 175 files under skills/
+match the frozen 1.1.37 release. The three skill identities remain unchanged.
+
+The account update flow requires an increasing semantic version, so this
+restoration uses 1.1.39. The version and this release-note prefix are the only
+payload differences from the restored behavior; the previous release notes,
+archives, manifests, tags and evaluation evidence remain preserved.
+
+This change does not implement the gap-remediation plan. It does not change
+product code, dependencies, evaluator assertions or fixture behavior. Routine
+restoration requires package, fixture and delivery verification but no new
+model evaluation; restored content is not a measured claim of improved output.
+
+This is an unpublished restoration candidate. Publication, downloaded-asset
+verification, the existing account update and fresh discovery are separate
+steps recorded in current companion documentation. Earlier notes below retain
+their exact bytes and original evidence limits.
+
 # 1.1.38 Carbon-rendered anatomy examples candidate - unpublished
 
 Supplement the static design-ui casebooks with 16 controlled local captures
