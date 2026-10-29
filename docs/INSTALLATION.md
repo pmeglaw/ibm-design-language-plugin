@@ -4,8 +4,9 @@ Use this path to install the published package in Codex. For an existing owner-m
 
 The published recovery target is **1.1.39**. All four public downloads match
 the frozen release; see the [publication verification](RELEASE-1.1.39-PUBLICATION-2026-10-29.md). The existing
-private account plugin also has complete 199-file account/installed parity
-and fresh native discovery of its three enabled skills; see the
+private account plugin has complete 178-file account/installed parity and
+native catalog installed/enabled state. Fresh native discovery failed its
+five-second readiness bound and remains unresolved; see the
 [installation verification](INSTALLATION-1.1.39-VERIFICATION-2026-10-29.md).
 Existing account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations), rather than creating a
