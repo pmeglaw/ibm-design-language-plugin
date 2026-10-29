@@ -1,3 +1,13 @@
+> **Correction — 29 October 2026:** The original record below is retained
+> verbatim. Its unresolved-discovery assessment was a **verifier false negative**,
+> not a native loader failure. The probe rejected valid plugin-qualified names;
+> both original logs contained all three enabled 1.1.39 skills on completed scan 2.
+> Corrected strict five-second probes passed in **0.966 seconds on the CLI** and
+> **0.914 seconds on the desktop native binary**. See the
+> [diagnostic addendum](DISCOVERY-VERIFIER-CORRECTION-2026-10-29.md) for the corrected
+> result, preserved original outcomes, evidence-retention limitation and scope.
+> No reinstall, account update or configuration repair was needed.
+
 # 1.1.39 publication verification
 
 Verified 29 October 2026 PDT.
