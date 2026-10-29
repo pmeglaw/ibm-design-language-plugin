@@ -6,16 +6,16 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.44`
-- Immutable tag: `v1.1.44`
-- `plugin.zip` SHA-256: `14874e9e25091b72a3387d89e30021a6cc1ce7f688955993aeaa79045590eb64`
-- Manifest: `releases/1.1.44/files.json`
-- Release commit: `8ba51becc9362bf247667d37f0b92d9cc79b0ecb`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.44)
+- Version: `1.1.45`
+- Immutable tag: `v1.1.45`
+- `plugin.zip` SHA-256: `5ef4ef4e855b9602a544da57430d8807d6001b804de1fcdda22ba866f85873f8`
+- Manifest: `releases/1.1.45/files.json`
+- Release commit: `412068d0f164a57e1f3a5d540daae3188897c954`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.45)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.44^{commit}'`.
-Pin installation to that immutable commit. See the [publication receipt](RELEASE-1.1.44-PUBLICATION-2026-10-29.md)
-and [installation receipt](INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md).
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.45^{commit}'`.
+Pin installation to that immutable commit. Frozen 1.1.45 notes describe original
+preparation; publication is established by the release and tag above.
 
 ## Restore and verify
 
@@ -23,21 +23,18 @@ and [installation receipt](INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md).
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.44/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.45/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The published package and same existing private account installation are **1.1.44**.
-All four downloaded public assets match the frozen 178-file release. Complete
-account/archive/installed parity passed for 179 files, including the separately
-validated host wrapper, with zero missing/extra/changed. Fresh native catalog
-reads confirm version/localVersion 1.1.44, installed and enabled. All three enabled
+The following dated verification describes published 1.1.44 and its existing
+private account installation at the time; it is not a current-version claim.
+This task verified its four downloaded assets and complete 179-file account/local
+parity including the exact host wrapper. The newer published 1.1.45 has not been installed or reverified by this task.
+Fresh native catalog reads confirmed installed/enabled 1.1.44; all three enabled
 qualified skills were discovered in 1.187 seconds within one five-second deadline.
-See the [publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and
-[installation](INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md) receipts.
-Existing-chat refresh and automatic selection remain unverified.
-
+See the [1.1.44 publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md) receipts.
 
 The following 1.1.43 observations describe its earlier verification.
 All four public assets and 178 source/ZIP files match the frozen release. The same
