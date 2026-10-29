@@ -2,9 +2,9 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.42**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.42) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
+The current published package is **1.1.43**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working source is **1.1.43, an unpublished combined candidate**. It adds Carbon React deprecated import and prop checks. Published 1.1.42 evidence below describes that earlier release; candidate publication and installation remain pending.
+The working source is **1.1.44, an unpublished combined candidate**. It adds five focused product-review wording refinements. Candidate publication and installation remain pending. Published 1.1.43 is from commit `ec62468dd6481fed8fe22a01dec8d627fad5f1b9`; the following 1.1.42 publication and installation evidence describes that earlier release, not current destination state.
 
 All four downloaded assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.42-PUBLICATION-2026-10-29.md). Complete account and installed parity passed for 179 files including the validated host wrapper. The existing private account plugin is installed/enabled, and fresh native discovery returned all three enabled skills within the shared five-second bound (2.212 seconds); see the [installation receipt](docs/INSTALLATION-1.1.42-VERIFICATION-2026-10-29.md).
 
@@ -77,7 +77,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.43 working source; candidate archive in `releases/1.1.43/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.44 working source; candidate archive in `releases/1.1.44/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.

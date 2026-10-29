@@ -6,16 +6,17 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.42`
-- Immutable tag: `v1.1.42`
-- `plugin.zip` SHA-256: `adba0955775b518d217fab9a5eb6466697c38e8fe629645266d45e480716cc79`
-- Manifest: `releases/1.1.42/files.json`
-- Release commit: `0020d5be7606634578917493a762f58d09fd42ed`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.42)
+- Version: `1.1.43`
+- Immutable tag: `v1.1.43`
+- `plugin.zip` SHA-256: `1c59d0a208f6aa6e8d1c47b27340355596a0f15b60212fbca13cc880d89eb1a5`
+- Manifest: `releases/1.1.43/files.json`
+- Release commit: `ec62468dd6481fed8fe22a01dec8d627fad5f1b9`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.43)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.42^{commit}'`.
-Pin installation to that immutable commit. See the [publication receipt](RELEASE-1.1.42-PUBLICATION-2026-10-29.md)
-and [installation receipt](INSTALLATION-1.1.42-VERIFICATION-2026-10-29.md).
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.43^{commit}'`.
+Pin installation to that immutable commit. Publication identity was checked against
+GitHub; downloaded-asset parity and destination installation were not reverified
+for this candidate update. The working source is an unpublished 1.1.44 candidate.
 
 ## Restore and verify
 
@@ -23,12 +24,13 @@ and [installation receipt](INSTALLATION-1.1.42-VERIFICATION-2026-10-29.md).
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.42/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.43/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The published package and existing private account installation are **1.1.42**.
+The following 1.1.42 record describes its earlier publication and private account
+installation verification; it is not a claim about current destination state.
 All four public assets and 178 source/ZIP files match the frozen release. The same
 private USER-scoped account plugin was updated through its supported flow.
 Complete 179-file account/installed parity includes the validated host wrapper.
