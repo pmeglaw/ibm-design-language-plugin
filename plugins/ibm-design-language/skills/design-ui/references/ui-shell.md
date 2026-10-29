@@ -1,5 +1,13 @@
 # UI shell and the global header pattern
 
+For measured desktop and responsive examples, read the [29 October 2026 UI shell
+observation record](ui-shell-observed-2026-10-29.md). It covers header geometry,
+mouse hover/tooltips, the desktop dropdown, hamburger, 256px drawer, nested links,
+tested 1056px/672px boundaries and phone clipping. Its g90-background Storybook
+values and demo-page/modal dimensions are observations, not universal Carbon
+rules; addon outlines, intermediate transition colors and narrow-layout defects
+must not become product styling. The live package version was not re-established.
+
 For an App Router implementation, read the [Next.js shell recipe](nextjs-shell.md).
 Header navigation does not discover and move its links into SideNav: compose the
 narrow representation explicitly from the same route model. Keep one open utility
