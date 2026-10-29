@@ -14,8 +14,8 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 - Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.45)
 
 Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.45^{commit}'`.
-Pin installation to that immutable commit. Frozen 1.1.45 notes describe original
-preparation; publication is established by the release and tag above.
+Pin installation to that immutable commit. See the [publication receipt](RELEASE-1.1.45-PUBLICATION-2026-10-29.md)
+and [installation receipt](INSTALLATION-1.1.45-VERIFICATION-2026-10-29.md).
 
 ## Restore and verify
 
@@ -28,13 +28,21 @@ preparation; publication is established by the release and tag above.
 
 ## Uploaded account installations
 
-The following dated verification describes published 1.1.44 and its existing
-private account installation at the time; it is not a current-version claim.
+The published package and existing private account installation are **1.1.45**.
+All four public assets and 178 source/ZIP files match the frozen release. The same
+private USER-scoped account plugin was updated through its supported flow.
+Complete 179-file account/installed parity includes the validated host wrapper.
+Fresh catalog reads confirm installed/enabled 1.1.45; all three enabled qualified
+skills were discovered in 1.211 seconds within the shared five-second deadline.
+See the [publication](RELEASE-1.1.45-PUBLICATION-2026-10-29.md) and
+[installation](INSTALLATION-1.1.45-VERIFICATION-2026-10-29.md) receipts.
+Automatic selection and existing desktop-conversation refresh remain unverified.
+
+The following 1.1.44 observations describe its earlier verification.
 This task verified its four downloaded assets and complete 179-file account/local
-parity including the exact host wrapper. The newer published 1.1.45 has not been installed or reverified by this task.
-Fresh native catalog reads confirmed installed/enabled 1.1.44; all three enabled
-qualified skills were discovered in 1.187 seconds within one five-second deadline.
-See the [1.1.44 publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md) receipts.
+parity including the exact host wrapper. The current candidate is separate.
+
+The dated 1.1.44 [publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.44-VERIFICATION-2026-10-29.md) receipts preserve its separate verification. Fresh native discovery of the three enabled 1.1.44 skills passed in 1.187 seconds at that verification; these historical results do not describe the current installation.
 
 The following 1.1.43 observations describe its earlier verification.
 All four public assets and 178 source/ZIP files match the frozen release. The same
@@ -212,6 +220,8 @@ enable feature/trust flags, change policy or relax the identity/version checks
 merely to obtain a pass. Those actions need their own task authority.
 
 ## Previous release rollback identity
+
+Version 1.1.44: commit `8ba51becc9362bf247667d37f0b92d9cc79b0ecb`, tag `v1.1.44`, ZIP SHA-256 `14874e9e25091b72a3387d89e30021a6cc1ce7f688955993aeaa79045590eb64`. Frozen assets remain in `releases/1.1.44/`.
 
 Version 1.1.42: commit `0020d5be7606634578917493a762f58d09fd42ed`, tag `v1.1.42`, ZIP SHA-256 `adba0955775b518d217fab9a5eb6466697c38e8fe629645266d45e480716cc79`. Frozen assets remain in `releases/1.1.42/`.
 
