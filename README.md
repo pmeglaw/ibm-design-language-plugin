@@ -2,13 +2,13 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.39**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.39) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
+The current published package is **1.1.40**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.40) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working source is **1.1.40, an unpublished combined candidate** adding the dated UI shell measurement and responsive observation reference. The current published 1.1.39 was released from commit `d34cb0621b636fcc72d4971eb411d79cddd16c84`. The published 1.1.39 restores all 175 skill files to frozen 1.1.37 content and reconciles the repository with the existing account installation. The 21 anatomy-example files added in 1.1.38 are removed from the current package; earlier frozen archives retain them. No improved model-generation claim is made.
+The working package matches published **1.1.40**, released from commit `e602082a6a7d291297fbce0478fa166f3f89cea4`. It adds the [dated UI shell observation reference](plugins/ibm-design-language/skills/design-ui/references/ui-shell-observed-2026-10-29.md): desktop measurements, typography, hover/tooltips, dropdown, demonstration modal, responsive boundaries, hamburger and side navigation. Example-specific values, version uncertainty, inspection overlays and phone clipping remain explicitly bounded.
 
-All four public assets match the 177-file frozen package; see the [publication verification](docs/RELEASE-1.1.39-PUBLICATION-2026-10-29.md). All 12 checks passed on the exact release commit. Frozen package notes retain their original preparation wording.
+All four downloaded public assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.40-PUBLICATION-2026-10-29.md). Complete account and installed parity passed for 179 files including the validated host wrapper. The existing private account plugin remains installed/enabled, and fresh native discovery returned all three enabled skills within the shared five-second bound (1.977 seconds); see the [installation receipt](docs/INSTALLATION-1.1.40-VERIFICATION-2026-10-29.md).
 
-Complete account and installed parity passed for the 177 release files plus the validated host wrapper. Native catalog reads confirm installed/enabled 1.1.39. The diagnostic follow-up verified all three enabled skills within the shared five-second bound: 0.966 seconds on the CLI and 0.914 seconds on the desktop native binary. The earlier reported discovery failure was a verifier false negative caused by comparing bare names with plugin-qualified names; see the [correction and preserved evidence](docs/DISCOVERY-VERIFIER-CORRECTION-2026-10-29.md) and [existing-installation verification](docs/INSTALLATION-1.1.39-VERIFICATION-2026-10-29.md). No account update, reinstall or configuration change was needed for byte parity. Automatic selection and desktop refresh remain unverified.
+This reference update changes no product code, dependencies, runtime assets or fixture assertions. Prior frozen releases and historical findings remain preserved. No new model evaluation, improved-generation, touch, keyboard/AT or complete theme pass is claimed. Existing desktop-conversation refresh and automatic skill selection remain unverified.
 
 ## Install
 
@@ -77,7 +77,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.40 working source; candidate archive in `releases/1.1.40/`, published archive in `releases/1.1.39/`.
+- `plugins/ibm-design-language/`: the published 1.1.40 package source; frozen archive in `releases/1.1.40/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
