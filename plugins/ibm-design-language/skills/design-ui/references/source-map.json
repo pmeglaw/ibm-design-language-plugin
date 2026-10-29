@@ -12,6 +12,26 @@
   ],
   "sources": [
     {
+      "id": "carbon-ui-shell-observed-2026-10-29",
+      "url": "https://react.carbondesignsystem.com/iframe.html?id=components-ui-shell-header--header-w-navigation-and-actions&viewMode=story&globals=measureEnabled%3A!true%3Bbackgrounds.value%3Ag90%3Boutline%3A!true&args=",
+      "sections": [
+        "Desktop DOM geometry, typography, spacing, hover, tooltips and dropdown",
+        "Demonstration page and modal geometry and hovered controls",
+        "Responsive 1056/1055 and 672/671 boundaries, hamburger, drawer and nested links",
+        "Phone utility tooltips and observed 320px clipping and constrained text columns"
+      ],
+      "local_refs": [
+        "references/ui-shell.md",
+        "references/ui-shell-observed-2026-10-29.md"
+      ],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-10-29",
+      "authority": "official-example-observation",
+      "version_scope": "Live React Navigation and Actions story in Chrome; deployed package version not re-established. g90 background, measure and outline addons enabled; CSS pixels, initial viewport 1920x889, DPR 1.",
+      "limits": "Dated mouse and DOM observations, not universal Carbon specifications. Resized desktop widths 1056, 1055, 1024, 768, 672, 671, 375 and 320; no physical-touch, keyboard, AT, native zoom, RTL, reduced-motion or full-theme pass. Addon outlines excluded; transient desktop submenu/modal hover samples are not settled tokens. Demo content spacing and 320px action clipping are limitations, not patterns to copy. No new screenshot corpus, model evaluation, generated-product quality or real utility-panel workflow verification. Earlier evidence remains unchanged."
+    },
+    {
       "id": "carbon-form-visual-benchmark",
       "url": "https://www.carbondesignsystem.com/building-blocks/core/components/form/guidelines",
       "sections": [
