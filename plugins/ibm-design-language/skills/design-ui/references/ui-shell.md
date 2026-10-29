@@ -11,16 +11,6 @@ The header is a persistent orientation surface. Keep its structure and behavior 
 
 ## What good looks like: header benchmark
 
-**Carbon-rendered local example.** The release fixture provides a
-[White desktop header crop](../assets/casebook/screens/carbon-header-white-desktop.png)
-using `@carbon/react@1.117.0` and fixture CSS. Compare identity, navigation
-spacing and utility rhythm. The
-[capture index](../assets/casebook/screens/README-carbon-benchmarks.md) also links
-Gray 100 and 390px captures with provenance and limits. The narrow example
-shows a menu trigger, not a functioning mobile navigation flow. These are
-controlled local examples, not Storybook captures; continue to use the official
-references and verify real navigation and focus behavior.
-
 Use these owner-selected official examples as the visual standard for Carbon product shell headers:
 
 - [Carbon UI shell header guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines): anatomy, placement examples, content and responsive intent.

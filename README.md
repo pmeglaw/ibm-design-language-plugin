@@ -4,11 +4,9 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.38**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.38) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working package matches published **1.1.38**, released from commit `fb8b1fb7dae700e064421bd0f2f1fa78f797a43a`. It adds 16 controlled local Carbon table, form, header and search captures, provenance records, and casebook/benchmark links. The related anatomy examples use different content from the static studies; they do not establish functioning product workflows, assistive-technology behavior or improved model generation.
+The working source is **1.1.39, an unpublished restoration candidate**. It reconciles the repository with the existing private account restoration. All 175 skill files match frozen 1.1.37; the 21 files introduced by 1.1.38 are absent. Older releases remain frozen. This restoration does not establish improved generated-product quality.
 
-All four public downloads match the frozen 198-file package; see the [1.1.38 publication verification](docs/RELEASE-1.1.38-PUBLICATION-2026-10-27.md). Frozen [candidate preparation](docs/RELEASE-1.1.38-PREPARATION-2026-10-27.md), package notes and capture provenance retain their original dates, dependency versions and preparation wording. Separate fixture dependency maintenance preceded the release; the historical capture bytes were not rewritten.
-
-The existing private account plugin was updated to **1.1.38** through its supported update flow. Complete account and installed-file parity passed for the 198 release files plus the preserved host wrapper. Fresh native discovery returned all three enabled skills in 1.54 seconds within the shared five-second deadline; see the [installation verification](docs/INSTALLATION-1.1.38-VERIFICATION-2026-10-27.md). Existing desktop-session refresh and automatic skill selection remain unverified.
+The account and this chat currently use 1.1.39. Publication, downloaded-asset verification, installed-file parity and fresh discovery are tracked separately. Published recovery remains 1.1.38 until the new release is verified.
 
 ## Install
 
@@ -77,7 +75,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.38 package source with its three skills, references, assets and evaluator; the frozen release archive and manifest are in `releases/1.1.38/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.39 working source; candidate archive in `releases/1.1.39/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
