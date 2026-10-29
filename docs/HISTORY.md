@@ -1,6 +1,6 @@
 # Release history and evidence
 
-This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.40; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
+This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.41; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
 
 This package preserves verified work so restoration does not require repeating model evaluations. The 1.1.6 guidance passed 9/9 on one known screenshot regression. This author-graded case does not establish general improvement or repeatability; host skill-description truncation warnings are disclosed in the evidence. Earlier composition comparisons had two tied pairs, one incomplete pair and host configuration drift. Synthetic tests check evaluator mechanics, not design taste.
 
@@ -24,7 +24,9 @@ unchanged as history.
 
 ## Release validation
 
-See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.40). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.41). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+
+Version 1.1.41 adds the dated Carbon deprecation checklist and main-skill routing. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.41) is from `c5b31f4c47ffae0516a9245bb73720101d77e07b`. Required exact-commit CI and downloaded asset integrity passed; complete account/installed parity, enabled state and bounded fresh discovery passed separately. See the [publication](RELEASE-1.1.41-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.41-VERIFICATION-2026-10-29.md) receipts. No model or AT evaluation is claimed.
 
 Version 1.1.40 adds the dated UI shell observation reference and focused routing. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.40) is from `e602082a6a7d291297fbce0478fa166f3f89cea4`. Required exact-commit CI passed; all four downloads match the 178-file frozen source/manifest/ZIP. The same private account plugin was updated through its supported flow; complete account/installed parity passed for 179 files including the host wrapper, with installed/enabled catalog state and fresh native discovery of all three enabled skills in 1.977 seconds within five seconds. See the [publication](RELEASE-1.1.40-PUBLICATION-2026-10-29.md) and [installation](INSTALLATION-1.1.40-VERIFICATION-2026-10-29.md) receipts. No product/runtime/dependency/fixture change or model evaluation is claimed; example version uncertainty, addon exclusions and phone clipping remain explicit. Earlier frozen releases and historical evidence remain unchanged.
 
