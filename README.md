@@ -14,6 +14,17 @@ No dependencies, product code, runtime assets or fixture assertions change. Earl
 
 Install the plugin using [first-time installation](docs/INSTALLATION.md), then open the intended project and select the skill offered by your host. Ask the agent to identify the guidance it loaded; autocomplete syntax varies by host.
 
+### Claude Code
+
+The same package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. It points at the unchanged `plugins/ibm-design-language/` source, so both hosts load identical skills:
+
+```text
+/plugin marketplace add pmeglaw/ibm-design-language-plugin
+/plugin install ibm-design-language@jp-personal
+```
+
+On Windows, enable long paths before cloning (`git config --global core.longpaths true`); some repository paths exceed the default limit. Claude Code installation is a separate destination with its own verification state; the Codex installation receipts above do not cover it.
+
 ## Quick start
 
 For design or implementation:
@@ -81,6 +92,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 - `plugins/ibm-design-language/`: the published 1.1.46 package source; frozen archive in `releases/1.1.46/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
+- `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
 - `releases/`: current and preserved earlier ZIPs, manifests, and checksums for recovery.
 - `evidence/`: selected package, installation, casebook, and comparison receipts. Historical absolute paths are provenance, not dependencies. Full model transcripts and screenshot archives are not included.
