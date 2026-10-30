@@ -1,0 +1,26 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "jp-personal",
+  "owner": {
+    "name": "pmeglaw"
+  },
+  "metadata": {
+    "description": "JP Personal Plugins"
+  },
+  "plugins": [
+    {
+      "name": "ibm-design-language",
+      "source": "./plugins/ibm-design-language",
+      "version": "1.1.46",
+      "description": "IBM Design Language and Carbon design, implementation, and critique with source routing and evidence-graded evaluation.",
+      "author": {
+        "name": "pmeglaw"
+      },
+      "homepage": "https://github.com/pmeglaw/ibm-design-language-plugin",
+      "repository": "https://github.com/pmeglaw/ibm-design-language-plugin",
+      "category": "design",
+      "keywords": ["ibm", "carbon", "design-system", "ui", "accessibility"],
+      "strict": false
+    }
+  ]
+}
