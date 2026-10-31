@@ -1,6 +1,6 @@
 # Themes
 
-Read this for theme terminology, customization, theme switching, system preference handling, or `@carbon/themes` implementation. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed both public source pages at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`, inspected React 1.117.0 Theme/Layer, and compiled selected Sass with themes11.82.0/Sass1.105.0. Images, rendered cascade and system-theme behavior remain unverified. Read `color-and-brand.md` when an approved product palette changes Carbon's generic color values.
+Read this for theme terminology, customization, theme switching, system preference handling, or `@carbon/themes` implementation. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed both public source pages at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631`, inspected React 1.117.0 Theme/Layer, and compiled selected Sass with themes 11.82.0/Sass 1.105.0. Images, rendered cascade and system-theme behavior remain unverified. Read `color-and-brand.md` when an approved product palette changes Carbon's generic color values.
 
 ## Theming basics
 
