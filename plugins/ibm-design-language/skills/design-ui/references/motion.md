@@ -1,6 +1,6 @@
 # Motion
 
-Read this for motion style, easing, duration, choreography, sequencing, adaptive behavior, or `@carbon/motion` implementation. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed Overview, Choreography, Code and Resources source at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631` and inspected/compiled selected motion11.53.0 APIs. Videos, Motion Generator output and rendered animations remain unverified.
+Read this for motion style, easing, duration, choreography, sequencing, adaptive behavior, or `@carbon/motion` implementation. The earlier reference used the 9 September 2026 website baseline (`^1.115.0`). The 29 September audit reviewed Overview, Choreography, Code and Resources source at website commit `d8783ad2ae3b5e59c58f58311491f8a2c4e62631` and inspected/compiled selected motion 11.53.0 APIs. Videos, Motion Generator output and rendered animations remain unverified.
 
 ## Carbon in motion
 
@@ -159,7 +159,7 @@ motion('standard', 'productive');
 
 ### Configuration
 
-The website's `$prefix` configuration fails in installed motion11.53.0: that variable is not a configurable public default in this module. Do not copy it without verifying the actual package version.
+The website's `$prefix` configuration fails in installed motion 11.53.0: that variable is not a configurable public default in this module. Do not copy it without verifying the actual package version.
 
 ## Review checks
 
@@ -173,7 +173,7 @@ The website's `$prefix` configuration fails in installed motion11.53.0: that var
 ## Installed implementation boundaries (29 September audit)
 
 - The motion mixin sets only `transition-timing-function`; the function returns a cubic-bezier value. Both require a separately supplied duration to produce visible transitions. The website's `transition: opacity motion.motion(...)` compiles but leaves duration at CSS's zero default. Prefer the complete transition above and name the properties deliberately rather than `transition: all`. Its 70ms fast token and general 90–120ms checklist are different guidance levels; follow the selected component/event instead of changing every built-in microinteraction to match one checklist range.
-- Version11.53.0 adds `$surfaces`, a `surface()` lookup function and a `surface` Sass mixin beyond the website's listed API. The inspected catalog has `disclosure` (reveal, moderate-01, block-size/opacity), `contextual` (reveal, fast-02, opacity/scale), and `expand`/`invoke` shared-element definitions. The CSS mixin rejects shared-element surfaces, missing/invalid properties, unknown duration keys and invalid easing modes. Do not assume all catalog names can be passed to the CSS reveal mixin.
+- Version 11.53.0 adds `$surfaces`, a `surface()` lookup function and a `surface` Sass mixin beyond the website's listed API. The inspected catalog has `disclosure` (reveal, moderate-01, block-size/opacity), `contextual` (reveal, fast-02, opacity/scale), and `expand`/`invoke` shared-element definitions. The CSS mixin rejects shared-element surfaces, missing/invalid properties, unknown duration keys and invalid easing modes. Do not assume all catalog names can be passed to the CSS reveal mixin.
 - A compiled contextual reveal uses resting/enter styles, an exit attribute selector and `@starting-style`, with transitions inside `prefers-reduced-motion: no-preference`. The disclosure also uses `interpolate-size: allow-keywords` for auto sizing; verify actual target-browser support and content overflow. The mixin applies styling, not an accessible open/close lifecycle: opacity zero or block-size zero does not itself remove descendants from focus or the accessibility tree.
 - Callers must coordinate mounted state, interruption/reversal, focus transfer, hidden/inert state and unmount timing. Support reduced motion when no transition event fires; do not depend solely on `transitionend`, which can be absent after cancellation, property changes, removal or zero duration. Review rapid open-close-open, keyboard dismissal, async content growth, resize and RTL paths with the chosen component's interaction contract.
 - Selected JS exports include `motion`, `easings`, duration values and surface helpers. Only export presence and standard/productive output were checked; the surface-engine lifecycle is not evaluated. Do not add another animation dependency merely because a shared-element recipe references one. First inspect the application's installed engine and owner constraints.

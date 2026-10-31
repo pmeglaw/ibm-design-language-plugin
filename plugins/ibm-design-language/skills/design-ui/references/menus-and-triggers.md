@@ -87,8 +87,8 @@ Sources: Menu [Usage](https://carbondesignsystem.com/components/menu/usage/), [S
 
 ## Separate legacy Overflow menu guidance
 
-The standalone Overflow menu four-tab text was also reviewed. It places consequential actions below a divider, uses32/40/48px trigger/item sizes and describes left/right placement to keep the menu visible. These principles supplement contextual action naming and recovery; a divider alone is not a safety mechanism.
+The standalone Overflow menu four-tab text was also reviewed. It places consequential actions below a divider, uses 32/40/48px trigger/item sizes and describes left/right placement to keep the menu visible. These principles supplement contextual action naming and recovery; a divider alone is not a safety mechanism.
 
-Its Style table specifies a0.3-opacity shadow and button-danger-primary hover, while newer Menu specifies0.2-opacity shadow and support-error hover. Do not combine both tables into a new global component skin. Resolve against the actual active OverflowMenu implementation and semantic tokens. Standalone Code lists broader framework availability, while new Menu buttons Code lists several coming-soon implementations: verify the specific framework and variant rather than treating those pages as interchangeable support matrices.
+Its Style table specifies a 0.3-opacity shadow and button-danger-primary hover, while newer Menu specifies 0.2-opacity shadow and support-error hover. Do not combine both tables into a new global component skin. Resolve against the actual active OverflowMenu implementation and semantic tokens. Standalone Code lists broader framework availability, while new Menu buttons Code lists several coming-soon implementations: verify the specific framework and variant rather than treating those pages as interchangeable support matrices.
 
 Sources: Overflow menu [Usage](https://carbondesignsystem.com/components/overflow-menu/usage/), [Style](https://carbondesignsystem.com/components/overflow-menu/style/), [Code](https://carbondesignsystem.com/components/overflow-menu/code/), [Accessibility](https://carbondesignsystem.com/components/overflow-menu/accessibility/).

@@ -1,3 +1,18 @@
+# 1.1.47 Reference spacing corrections
+
+Restore missing spaces between words and numbers in shipped reference text, such
+as `All17supplemental`, `with75nodes`, `React1.117.0` and `September2026`. The
+change inserts spaces only: no wording, values, links, code spans, identifiers
+or line endings change. Component and token identifiers such as `Context7`,
+`Notification20` and `HTTPError403` are unchanged.
+
+No product code, dependencies, runtime assets or fixture assertions change.
+Seat Planner remains unchanged. Frozen earlier releases and evidence are preserved.
+No model-quality or assistive-technology certification is claimed. Publication and
+installation require separate verification.
+
+---
+
 # 1.1.46 Stable Carbon Sass warning fix checks
 
 Extend the Sass/token deprecation checklist with live stable-release and transitive
@@ -223,14 +238,14 @@ repair-only tasks and justified no-change recommendations.
 
 The two entrypoints and separate four-scenario specification exactly match the
 reviewed candidate. Reused response-only evidence: five baseline and five
-candidate samples each met20/20criteria; three candidate controls met9/9;
-two later three-turn controls met5/5and4/4under independent grading. The baseline
+candidate samples each met 20/20 criteria; three candidate controls met 9/9;
+two later three-turn controls met 5/5 and 4/4 under independent grading. The baseline
 also passed, so no behavioral advantage is established. One known sample per
 later control, unavailable exact collaboration model ID and missing full
 tool-event review limit reliability and execution claims. No new model calls
 during versioned preparation. Original suites and scores stay frozen.
 
-This is unpublished preparation only. Published and installed1.1.32, older
+This is unpublished preparation only. Published and installed 1.1.32, older
 frozen bytes, runtime assets, dependencies and gate assertions remain unchanged.
 No commit, push, merge, tag, release, account update, reinstall or production
 action. See the companion design-focus evaluation ledger.
