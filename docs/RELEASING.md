@@ -2,7 +2,7 @@
 
 Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects source drift from the manifest selected by its `CURRENT` version (currently 1.1.46). A prepared candidate passing this check is not proof of publication.
 
-For a new release, review the source diff, run relevant local checks, write accurate release notes, build a fresh ZIP and file manifest, and update the validator's current release version. Never regenerate hashes merely to hide an unexpected difference. Preserve older versions for rollback.
+For a new release, review the source diff, run relevant local checks, write accurate release notes, build a fresh ZIP and file manifest, and update the validator's current release version. Add the previous current version to the validator's frozen release list, and update the version and description in `.claude-plugin/marketplace.json` to match `plugin.json`; the validator fails on any unlisted `releases/` directory or catalog drift. Never regenerate hashes merely to hide an unexpected difference. Preserve older versions for rollback.
 
 Run `python -B scripts/verify.py` and `python -B -m unittest discover -s tests -p 'test_*.py'`. These run package, evaluator, contrast-input, installation and documentation regressions without model calls. Behavioral or visual changes may need targeted evaluation with separate authorization; routine restoration does not. Record what was tested, reused, failed or untested. Preserve known evidence limitations.
 

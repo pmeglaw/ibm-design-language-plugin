@@ -27,7 +27,10 @@ def main():
     report = ROOT / '.verification'
     report.mkdir(exist_ok=True)
     manifests = {}
-    for version in ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', '1.1.19', '1.1.20', '1.1.21', '1.1.22', '1.1.23', '1.1.24', '1.1.25', '1.1.26', '1.1.27', '1.1.28', '1.1.29', '1.1.30', '1.1.31', '1.1.32', '1.1.33', '1.1.34', '1.1.35', '1.1.36', '1.1.37', '1.1.38', '1.1.39', '1.1.40', '1.1.41', '1.1.42', '1.1.43', '1.1.44', CURRENT):
+    versions = ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', '1.1.19', '1.1.20', '1.1.21', '1.1.22', '1.1.23', '1.1.24', '1.1.25', '1.1.26', '1.1.27', '1.1.28', '1.1.29', '1.1.30', '1.1.31', '1.1.32', '1.1.33', '1.1.34', '1.1.35', '1.1.36', '1.1.37', '1.1.38', '1.1.39', '1.1.40', '1.1.41', '1.1.42', '1.1.43', '1.1.44', '1.1.45', CURRENT)
+    unlisted = sorted({p.name for p in (ROOT / 'releases').iterdir() if p.is_dir()} - set(versions))
+    require(not unlisted, f'Frozen releases not verified: {", ".join(unlisted)}')
+    for version in versions:
         release = ROOT / 'releases' / version
         expected = json.loads((release / 'files.json').read_text(encoding='utf-8'))
         archive = release / 'plugin.zip'
@@ -61,6 +64,14 @@ def main():
     entry = market['plugins'][0]
     require(entry['name'] == manifest['name'] and entry['source'] == {
         'source': 'local', 'path': './plugins/ibm-design-language'}, 'Marketplace source mismatch')
+    claude = json.loads((ROOT / '.claude-plugin/marketplace.json').read_text(encoding='utf-8'))
+    require(claude['name'] == 'jp-personal' and len(claude['plugins']) == 1,
+            'Claude Code marketplace mismatch')
+    entry = claude['plugins'][0]
+    require(entry['name'] == manifest['name'] and entry['source'] == './plugins/ibm-design-language'
+            and entry['version'] == manifest['version']
+            and entry['description'] == manifest['description'],
+            'Claude Code marketplace entry differs from plugin.json')
     links = 0
     for p in plugin.rglob('*.md'):
         for target in re.findall(r'\]\(([^)]+)\)', p.read_text(encoding='utf-8')):
