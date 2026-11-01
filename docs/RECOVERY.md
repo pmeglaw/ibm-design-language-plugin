@@ -6,16 +6,16 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.46`
-- Immutable tag: `v1.1.46`
-- `plugin.zip` SHA-256: `3334337cadf80259ff1b2b1c4f46db009d8dd7c29d2cac63aed3fa7ee7c0143b`
-- Manifest: `releases/1.1.46/files.json`
-- Release commit: `85ceab4ef61844fb65d58dc92aee766f9958f4ec`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.46)
+- Version: `1.1.47`
+- Immutable tag: `v1.1.47`
+- `plugin.zip` SHA-256: `006aac5e6f4f3b3184355eca79cd7499ae9362c5825e55b02d1e62348ef41b40`
+- Manifest: `releases/1.1.47/files.json`
+- Release commit: `d469633cfa77c3652d111cb05da5c46f8e3c52fd`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.47)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.46^{commit}'`.
-Pin installation to that immutable commit. See the [publication receipt](RELEASE-1.1.46-PUBLICATION-2026-10-29.md)
-and [installation receipt](INSTALLATION-1.1.46-VERIFICATION-2026-10-29.md).
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.47^{commit}'`.
+Pin installation to that immutable commit. See the [publication receipt](RELEASE-1.1.47-PUBLICATION-2026-10-31.md).
+Installation of 1.1.47 is not yet verified; the last [installation receipt](INSTALLATION-1.1.46-VERIFICATION-2026-10-29.md) covers 1.1.46.
 
 ## Restore and verify
 
@@ -23,12 +23,15 @@ and [installation receipt](INSTALLATION-1.1.46-VERIFICATION-2026-10-29.md).
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.46/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.47/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The published package and existing private account installation are **1.1.46**.
+The published package is **1.1.47**; all four public assets match the frozen
+178-file release (see the [publication receipt](RELEASE-1.1.47-PUBLICATION-2026-10-31.md)).
+The existing private account installation has not yet been updated to or verified
+at 1.1.47. Until then, the following 1.1.46 observations are its latest verification.
 All four public assets and 178 source/ZIP files match the frozen release. The same
 private USER-scoped account plugin was updated through its supported flow.
 Complete 179-file account/installed parity includes the validated host wrapper.
@@ -230,6 +233,8 @@ enable feature/trust flags, change policy or relax the identity/version checks
 merely to obtain a pass. Those actions need their own task authority.
 
 ## Previous release rollback identity
+
+Version 1.1.46: commit `85ceab4ef61844fb65d58dc92aee766f9958f4ec`, tag `v1.1.46`, ZIP SHA-256 `3334337cadf80259ff1b2b1c4f46db009d8dd7c29d2cac63aed3fa7ee7c0143b`. Frozen assets remain in `releases/1.1.46/`.
 
 Version 1.1.45: commit `412068d0f164a57e1f3a5d540daae3188897c954`, tag `v1.1.45`, ZIP SHA-256 `5ef4ef4e855b9602a544da57430d8807d6001b804de1fcdda22ba866f85873f8`. Frozen assets remain in `releases/1.1.45/`.
 
