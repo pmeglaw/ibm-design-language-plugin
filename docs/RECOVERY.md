@@ -15,7 +15,7 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 
 Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.47^{commit}'`.
 Pin installation to that immutable commit. See the [publication receipt](RELEASE-1.1.47-PUBLICATION-2026-10-31.md).
-Installation of 1.1.47 is not yet verified; the last [installation receipt](INSTALLATION-1.1.46-VERIFICATION-2026-10-29.md) covers 1.1.46.
+The existing account installation is verified at 1.1.47; see the [installation receipt](INSTALLATION-1.1.47-VERIFICATION-2026-11-02.md).
 
 ## Restore and verify
 
@@ -30,8 +30,13 @@ Installation of 1.1.47 is not yet verified; the last [installation receipt](INST
 
 The published package is **1.1.47**; all four public assets match the frozen
 178-file release (see the [publication receipt](RELEASE-1.1.47-PUBLICATION-2026-10-31.md)).
-The existing private account installation has not yet been updated to or verified
-at 1.1.47. Until then, the following 1.1.46 observations are its latest verification.
+The existing private account installation is verified at **1.1.47**: complete
+179-file account/local parity, installed/enabled catalog state, and fresh
+discovery of all three skills in 4.814 seconds within the shared five-second
+deadline. See the [installation receipt](INSTALLATION-1.1.47-VERIFICATION-2026-11-02.md).
+Automatic selection and existing desktop-conversation refresh remain unverified.
+
+The following 1.1.46 observations describe its earlier verification.
 All four public assets and 178 source/ZIP files match the frozen release. The same
 private USER-scoped account plugin was updated through its supported flow.
 Complete 179-file account/installed parity includes the validated host wrapper.

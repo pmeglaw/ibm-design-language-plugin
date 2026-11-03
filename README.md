@@ -6,7 +6,7 @@ The current published package is **1.1.47**. [Source](https://github.com/pmeglaw
 
 The working package matches published **1.1.47**, released from commit `d469633cfa77c3652d111cb05da5c46f8e3c52fd`. It restores missing spaces between words and numbers in shipped reference text; no wording, values or identifiers change.
 
-All four downloaded assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.47-PUBLICATION-2026-10-31.md). Installation of 1.1.47 is not yet verified: the existing private account plugin was last verified at 1.1.46 (179-file parity, installed/enabled, fresh discovery in 1.391 seconds); see the [1.1.46 installation receipt](docs/INSTALLATION-1.1.46-VERIFICATION-2026-10-29.md).
+All four downloaded assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.47-PUBLICATION-2026-10-31.md). The existing private account plugin is installed/enabled at 1.1.47 with complete 179-file account/local parity and fresh discovery of all three skills in 4.814 seconds within the shared five-second deadline; see the [installation receipt](docs/INSTALLATION-1.1.47-VERIFICATION-2026-11-02.md).
 
 No dependencies, product code, runtime assets or fixture assertions change. Earlier frozen releases and evidence remain preserved. No new model evaluation, generated-product improvement or AT certification is claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
 
