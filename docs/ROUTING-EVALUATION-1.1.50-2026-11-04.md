@@ -71,3 +71,61 @@ host installation.
 - Codex hosts, the installed plugin, skill selection, and generated-product
   quality were not tested.
 - This evaluation does not establish publication or installation of 1.1.50.
+
+## Follow-up on the published 1.1.50 release
+
+This later run tested all ten tasks, three runs each, against the published
+v1.1.50 `plugin.zip`, downloaded from the GitHub release.
+
+- **Package:** its SHA-256 is
+  `a0755cfba04a87fe67d1612801185b58f7a5a58d485f13602b8a3a62bc4f76cb`, and its tag
+  resolves to `0f18e810572b3a16579c9c17ccc483792a067ced`. These bytes are identical
+  to the candidate tested above.
+- **Method:** the same blinding, isolation, model and scoring as above.
+- **Runs:** all 30 completed with valid JSON.
+- **Installation:** this run neither tested nor changed the installed account
+  plugin.
+
+| Measure | 1.1.48 | 1.1.49 | 1.1.50 published |
+|---|---|---|---|
+| Benchmark tasks: benchmark section read | 15/15 | 15/15 | 15/15 |
+| Benchmark tasks: acceptance checks read | 15/15 | 15/15 | 15/15 |
+| Header: saved header images index opened | 3/3 | 0/3 | 3/3 |
+| Header: 29 October observation record opened | 3/3 | 2/3 | 3/3 |
+| All tasks: expected reference opened | 30/30 | 28/30 | 30/30 |
+| Non-benchmark tasks: `release-gates.md` opened | 3/15 | 11/15 | 8/15 |
+| Header: mean reads, cost per run | 8.7, $0.45 | 7.3, $0.43 | 7.7, $0.41 |
+
+`release-gates.md` opened on non-benchmark tasks:
+
+| Task | 1.1.48 | 1.1.49 | 1.1.50 published |
+|---|---|---|---|
+| tokens | 0/3 | 0/3 | 0/3 |
+| date | 0/3 | 3/3 | 3/3 |
+| menu | 3/3 | 3/3 | 3/3 |
+| chart | 0/3 | 2/3 | 0/3 |
+| expressive | 0/3 | 3/3 | 2/3 |
+
+- **The header fix holds on the published release.** Header research reached the
+  saved image index and the observation record in every run. Header research cost
+  no more than in 1.1.48.
+- **No regressions.** Every benchmark task reached its benchmark and acceptance
+  checks, and every task opened its expected reference.
+- **Release-gate reads on chart and expressive tasks are harmless.** When those
+  runs opened `release-gates.md`, they stated that no composition benchmark covers
+  the task.
+- **The date task borrows a neighbouring benchmark, starting with 1.1.49.** For
+  the date range filter:
+  - 1.1.48: no run named a benchmark.
+  - 1.1.49: all three runs cited the data table benchmark.
+  - 1.1.50: two of three cited the Form benchmark for the filter's labels and
+    fields.
+
+  No run misapplied the benchmark. This is wider use of the composition
+  benchmarks than in 1.1.48, not a 1.1.50 regression.
+- **The menu task cited the data table benchmark in every version.** That suits a
+  row overflow menu.
+
+The limits above still apply. This run covers research-step routing on one model
+and one host; generated-product quality, Codex hosts and skill selection remain
+untested.
