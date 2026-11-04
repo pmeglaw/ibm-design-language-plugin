@@ -1,6 +1,7 @@
 """Regression checks for current claims; frozen historical prose is not rewritten."""
 from pathlib import Path
 import importlib.util
+import hashlib
 import json
 import tempfile
 import unittest
@@ -188,6 +189,59 @@ Version 1.2.3 is the [published release]({URL}), from `{SHA}`.
     def test_published_source_cannot_be_called_unpublished(self):
         self.replace('README.md', f'The working package matches published **1.2.3**, released from commit `{SHA}`.', 'The working source is **1.2.3, an unpublished combined candidate**.')
         with self.assertRaisesRegex(ValueError, 'README'):
+            self.module.verify(self.root)
+
+    def unpublished_source_docs(self):
+        self.replace('README.md',
+                     f'The working package matches published **1.2.3**, released from commit `{SHA}`.',
+                     'The working source contains **unpublished changes based on 1.2.3**. '
+                     'Version metadata remains **1.2.3**; this source does not match the frozen release and is not release-ready. '
+                     'Do not install this branch as verified 1.2.3.\n'
+                     f'Published **1.2.3** was released from commit `{SHA}`.')
+        self.replace('README.md', 'the published 1.2.3 package source',
+                     'unpublished source changes based on 1.2.3')
+
+    def test_explicit_unversioned_source_drift_is_reported(self):
+        self.unpublished_source_docs()
+        result = self.module.verify(self.root)
+        self.assertEqual(result['source_status'], 'unpublished source changes; not release-ready')
+        self.assertEqual(result['source_version'], result['published_version'])
+        self.assertEqual(result['installation'], 'unverified')
+
+    def test_unversioned_drift_rejects_unsafe_or_conflicting_claims(self):
+        self.unpublished_source_docs()
+        original = (self.root / 'README.md').read_text()
+        mutations = [
+            ('unpublished changes based on 1.2.3', 'unpublished changes based on 1.2.2'),
+            ('Version metadata remains **1.2.3**', 'Version metadata remains **1.2.4**'),
+            ('this source does not match the frozen release and is not release-ready', 'ready'),
+            ('Do not install this branch as verified 1.2.3.', ''),
+            (SHA, 'c' * 40),
+            ('unpublished source changes based on 1.2.3', 'the published 1.2.3 package source'),
+            ('## What it does', f'The working package matches published **1.2.3**, released from commit `{SHA}`.\n## What it does'),
+        ]
+        for old, new in mutations:
+            with self.subTest(old=old):
+                self.write('README.md', original.replace(old, new))
+                with self.assertRaisesRegex(ValueError, 'README'):
+                    self.module.verify(self.root)
+        self.write('README.md', original)
+
+    def test_unversioned_drift_requires_actual_difference(self):
+        self.unpublished_source_docs()
+        plugin = self.root / 'plugins/ibm-design-language'
+        manifest = {p.relative_to(plugin).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                    for p in plugin.rglob('*') if p.is_file()}
+        self.write('releases/1.2.3/files.json', json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'requires source drift'):
+            self.module.verify(self.root)
+
+    def test_unversioned_drift_cannot_mask_a_new_version(self):
+        self.unpublished_source_docs()
+        self.write('plugins/ibm-design-language/plugin.json', '{"version":"1.2.4"}')
+        self.write('scripts/verify.py', "CURRENT = '1.2.4'\n")
+        self.replace('docs/RELEASING.md', '(currently 1.2.3)', '(currently 1.2.4)')
+        with self.assertRaisesRegex(ValueError, 'retain the published version'):
             self.module.verify(self.root)
 
     def test_newer_explicit_candidate_is_allowed(self):

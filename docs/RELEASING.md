@@ -1,6 +1,6 @@
 # Maintaining releases
 
-Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects source drift from the manifest selected by its `CURRENT` version (currently 1.1.47). A prepared candidate passing this check is not proof of publication.
+Keep frozen release ZIPs and their manifests unchanged. Make new work on a task branch. Change the source plugin and increment its version only for an intentional release; the validator deliberately rejects source drift from the manifest selected by its `CURRENT` version (currently 1.1.48). A prepared candidate passing this check is not proof of publication.
 
 For a new release, review the source diff, run relevant local checks, write accurate release notes, build a fresh ZIP and file manifest, and update the validator's current release version. Add the previous current version to the validator's frozen release list, and update the version and description in `.claude-plugin/marketplace.json` to match `plugin.json`; the validator fails on any unlisted `releases/` directory or catalog drift. Never regenerate hashes merely to hide an unexpected difference. Preserve older versions for rollback.
 
@@ -96,6 +96,19 @@ published, reconcile these with the published-source wording and release commit.
 Do not rewrite frozen notes or hashes merely to satisfy documentation checks.
 
 Regression command: `python -B -m unittest discover -s tests -p test_release_docs.py`.
+
+For an explicitly unpublished source-only PR that retains the published version,
+README must identify `The working source contains **unpublished changes based on VERSION**`,
+retain `Version metadata remains **VERSION**`, state that
+`this source does not match the frozen release and is not release-ready`, and warn
+`Do not install this branch as verified VERSION.` Record the published baseline
+as `Published **VERSION** was released from commit` followed by its full backticked
+SHA. Describe the source directory as `unpublished source changes based on VERSION`
+in Repository contents. The documentation checker verifies these identities and
+requires an actual source/manifest difference; it reports this state separately.
+This is not an exception to `scripts/verify.py`: package integrity still fails
+until a separately authorized release is prepared. Preserve frozen artifacts and
+installed state; a documentation pass does not make the source release-ready.
 
 ## Authorization and documentation scope
 

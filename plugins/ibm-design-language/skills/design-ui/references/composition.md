@@ -130,7 +130,7 @@ Senior defaults:
 - **Row height by task.** Compact or short when the job is scanning; comfortable only when rows carry rich content. Row hover always on — it carries the eye across.
 - **Disclose supplementary details.** Use expansion for secondary information; retain columns needed for cross-row comparison and use local horizontal scrolling when necessary.
 - **Batch actions on selection**, in the toolbar, with the count shown.
-- **Pagination when positions are addressable** ("page 3, row 12"); infinite scroll or virtualization when they aren't and the set is huge.
+- **Choose collection navigation from the task:** pagination suits addressable positions ("page 3, row 12"); load more or continuous browsing may suit other navigation and recovery needs. **Virtualization is a separate rendering strategy** that can coexist with pagination when the installed component supports it. Use it when rendering cost warrants it, and verify keyboard access, stable selection, focus and scroll restoration.
 - **Numbers right-aligned, tabular figures.** Text left. Status as icon plus label.
 - **Preserve full-content access when truncating; collapse tags into +N.** Tooltips need keyboard access; native title/hover alone does not establish touch access to essential content.
 - For no data, replace the table including headers and footer with an empty state. Preserve useful surrounding actions without duplicating primary emphasis. For no results, retain search/filter context and provide recovery. Loading uses its own treatment.
@@ -178,6 +178,63 @@ Reviewed 2026-09-29 from the public [Usage](https://carbondesignsystem.com/compo
 - AI presence follows data provenance: whole-table treatment only when the whole table is AI-generated; individual generated cells receive inline labels without broad layering; generated rows/columns get their scoped treatment. Do not extend provenance styling to human-authored data.
 
 Verify names/header relationships, sorting state and outcomes, selection scope, expansion, keyboard and touch actions, batch-mode focus, skeleton/empty/error states, valid pagination after filtering, long content and rendered theme contrast. The Code tab links framework Storybooks and provides sample records; it does not fully document render-prop wiring or server-side sorting/paging. Inspect the installed API.
+
+### Collection navigation, rendering and action acceptance
+
+Choose two decisions independently. Pagination, load more and infinite scrolling
+define how people navigate or extend the collection. Virtualization renders a
+window of rows to reduce DOM/rendering cost; it does not supply page navigation,
+data fetching, selection scope or a return location. Pagination can coexist with
+virtualization. Measure rendering cost before adding it, and verify support in
+the installed framework/component version rather than assuming a shared Carbon
+API. Absence of page-addressing requirements alone does not justify virtualization
+or infinite scrolling. Consider bounded review, finding a previous record,
+loading failures and reaching content after the collection.
+
+Action visibility is a task-frequency decision, not a button-kind rule. Keep
+frequently used secondary actions visible; reserve overflow for less frequent
+contextual commands. Within Carbon's table toolbar limit of up to five actions,
+prioritize by task importance and frequency. If space is insufficient, revise
+grouping or placement and document the tradeoff rather than hiding all secondary
+actions. For fewer than three row actions, Carbon recommends inline icon buttons;
+give them accessible names. Keep row actions distinct from collection-wide and
+batch actions. See [menu contracts](menus-and-triggers.md).
+
+For the affected product, record pass, fail or untested for these outcomes:
+
+- **Navigation and recovery:** after search, sort, filtering, deletion or loading
+  failure, show a valid page/range or loading boundary. Define return location and
+  scroll restoration after visiting a record; load-more/infinite browsing must
+  allow keyboard access to subsequent content and recovery from a failed fetch.
+- **Rendering and selection:** when virtualized, test moving beyond the rendered
+  window and back. Use stable record IDs; retain selection independently of mounted
+  rows and define whether select-all means page, loaded results or the full query.
+  Check names, row/header relationships and applicable position/count metadata.
+- **Keyboard and focus:** for an ordinary semantic table, reach interactive row
+  controls and visible actions through Tab navigation. For an interactive
+  datagrid, follow its supported entry, arrow-key traversal and cell-action
+  contract; do not make every cell a Tab stop. Verify focus survives row recycling
+  or moves to a meaningful target after removal. Do not impose grid arrow
+  navigation on an ordinary semantic table. Test menu opening, traversal,
+  Escape and focus return with actual keys, including when the trigger disappears.
+- **Discoverability:** at required widths, verify frequent actions applicable to
+  the current mode remain findable and usable. In batch mode, expose the relevant
+  batch actions and disable conflicting single-row actions and menus; restore
+  the normal action set and appropriate focus on exit. Keep applicable named menu
+  triggers accessible by keyboard and touch. Do not rely on hover alone.
+
+These are local product-acceptance criteria, adapted from PR #70's scoped-evidence
+approach, not new Carbon API guarantees or fixture passes. Record component
+version, content, viewport and state; keep source inspection, rendered behavior,
+keyboard and assistive-technology results separate. Unavailable checks remain
+untested. Existing [release gates](release-gates.md) remain unchanged.
+
+Sources checked 2026-11-03: [Data table guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines),
+[Pagination guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/pagination/guidelines),
+[Menu buttons guidelines](https://www.carbondesignsystem.com/building-blocks/core/components/menu-buttons/guidelines),
+and [Menu buttons accessibility](https://www.carbondesignsystem.com/building-blocks/core/components/menu-buttons/accessibility).
+These support pagination, action placement and menu behavior; the independent
+rendering decision and recovery checks above are engineering guidance.
 
 ## Pagination detail contract
 
