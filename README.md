@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.49**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.49) · [Install](docs/INSTALLATION.md)
 
-The working package matches published **1.1.49**, released from commit `bd615db6a6ebc4650bd1103cf8fe60cbb742e270`. It moves composition benchmark routing out of the `design-ui` entry point and simplifies reference routing; the entry point shrinks from about 18.9 KB to 16.3 KB.
+The working source is **1.1.50, an unpublished combined candidate** that links the saved header images and header observation record directly from the `design-ui` entry point again. Published **1.1.49** remains the release to install; it was released from commit `bd615db6a6ebc4650bd1103cf8fe60cbb742e270` and moves composition benchmark routing out of the `design-ui` entry point and simplifies reference routing.
 
 All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. The existing private account plugin is installed/enabled at 1.1.49, with complete 179-file account/local parity and fresh discovery of all three skills in 2.203 seconds within the shared five-second deadline. See the [delivery receipt](docs/RELEASE-1.1.49-VERIFICATION-2026-11-03.md).
 
@@ -90,7 +90,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.49 package source; archive in `releases/1.1.49/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.50 working source; candidate archive in `releases/1.1.50/`, published archive in `releases/1.1.49/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
