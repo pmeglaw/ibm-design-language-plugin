@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.47**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.47) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working source contains **unpublished changes based on 1.1.47**. Version metadata remains **1.1.47**; this source does not match the frozen release and is not release-ready. Do not install this branch as verified 1.1.47. The changes clarify table navigation, virtualization and action visibility; see the [review record](docs/TABLE-GUIDANCE-REVIEW.md).
+The working source is **1.1.48, an unpublished combined candidate**. It separates table navigation from virtualization, preserves frequent action visibility, and adds scoped selection, focus and recovery acceptance guidance. Release preparation is authorized; publication and installation are not yet verified. See the [review record](docs/TABLE-GUIDANCE-REVIEW.md).
 
 Published **1.1.47** was released from commit `d469633cfa77c3652d111cb05da5c46f8e3c52fd`. That frozen release restores missing spaces between words and numbers in reference text.
 
@@ -92,7 +92,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: unpublished source changes based on 1.1.47; frozen archive in `releases/1.1.47/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.48 working source; candidate archive in `releases/1.1.48/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.

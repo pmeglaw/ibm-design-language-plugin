@@ -1,10 +1,10 @@
-# Unpublished table and action guidance correction
+# Table and action guidance correction
 
 Baseline: main `a555015dacfdca25c6db445e86a69d13f4c76558` (PR #97).
-Version metadata and installed/published package remain 1.1.47. This branch
-changes source guidance only; it is not a replacement release or installation.
-README explicitly identifies unpublished source changes and directs installation
-to the published checkout. Do not install this branch as verified 1.1.47.
+The owner subsequently authorized release preparation, all checks, merge,
+publication and installed-plugin synchronization. The working candidate is
+1.1.48; published and installed 1.1.47 remain the baseline until delivery.
+The following review history preserves the earlier source-only scope and failures.
 
 ## Review of draft PR #70
 
@@ -76,5 +76,7 @@ model-generation or assistive-technology evaluation was performed for this prose
 change; no new usability score or keyboard pass is claimed. Runtime assets,
 fixture assertions, Seat Planner, frozen releases and installation are unchanged.
 
-This PR is for source review. It is not release-ready: a separately authorized
-future release would need version/package preparation and all existing gates.
+The original source-only review was not release-ready. The authorized 1.1.48
+preparation adds version metadata, release notes, archive and manifest; all
+existing gates must pass before merge/publication. Destination parity and fresh
+discovery remain separate post-publication checks.
