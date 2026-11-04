@@ -97,6 +97,19 @@ Do not rewrite frozen notes or hashes merely to satisfy documentation checks.
 
 Regression command: `python -B -m unittest discover -s tests -p test_release_docs.py`.
 
+For an explicitly unpublished source-only PR that retains the published version,
+README must identify `The working source contains **unpublished changes based on VERSION**`,
+retain `Version metadata remains **VERSION**`, state that
+`this source does not match the frozen release and is not release-ready`, and warn
+`Do not install this branch as verified VERSION.` Record the published baseline
+as `Published **VERSION** was released from commit` followed by its full backticked
+SHA. Describe the source directory as `unpublished source changes based on VERSION`
+in Repository contents. The documentation checker verifies these identities and
+requires an actual source/manifest difference; it reports this state separately.
+This is not an exception to `scripts/verify.py`: package integrity still fails
+until a separately authorized release is prepared. Preserve frozen artifacts and
+installed state; a documentation pass does not make the source release-ready.
+
 ## Authorization and documentation scope
 
 Distinguish three kinds of work:

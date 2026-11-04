@@ -210,14 +210,18 @@ For the affected product, record pass, fail or untested for these outcomes:
   window and back. Use stable record IDs; retain selection independently of mounted
   rows and define whether select-all means page, loaded results or the full query.
   Check names, row/header relationships and applicable position/count metadata.
-- **Keyboard and focus:** reach row controls and visible actions through ordinary
-  Tab navigation. Verify focus survives row recycling or moves to a meaningful
-  target after removal. Follow the installed table variant; do not impose grid
-  arrow navigation on an ordinary semantic table. Test menu opening, traversal,
+- **Keyboard and focus:** for an ordinary semantic table, reach interactive row
+  controls and visible actions through Tab navigation. For an interactive
+  datagrid, follow its supported entry, arrow-key traversal and cell-action
+  contract; do not make every cell a Tab stop. Verify focus survives row recycling
+  or moves to a meaningful target after removal. Do not impose grid arrow
+  navigation on an ordinary semantic table. Test menu opening, traversal,
   Escape and focus return with actual keys, including when the trigger disappears.
-- **Discoverability:** at required widths and in batch mode, verify frequent
-  actions remain findable and usable, with named menu triggers accessible by
-  keyboard and touch. Do not rely on hover alone.
+- **Discoverability:** at required widths, verify frequent actions applicable to
+  the current mode remain findable and usable. In batch mode, expose the relevant
+  batch actions and disable conflicting single-row actions and menus; restore
+  the normal action set and appropriate focus on exit. Keep applicable named menu
+  triggers accessible by keyboard and touch. Do not rely on hover alone.
 
 These are local product-acceptance criteria, adapted from PR #70's scoped-evidence
 approach, not new Carbon API guarantees or fixture passes. Record component

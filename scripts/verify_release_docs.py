@@ -6,6 +6,7 @@ Historical release notes and rollback entries intentionally remain untouched.
 from pathlib import Path
 import argparse
 import ast
+import hashlib
 import json
 import os
 import re
@@ -109,7 +110,29 @@ def verify(root, online=False):
     archives = re.findall(r'releases/([^/\s`)\]]+)', package_entry)
     require(bool(archives) and all(v in (version, source) for v in archives),
             'README.md: require archive references matching published or candidate version')
-    if source == version:
+    source_status = 'published version metadata' if source == version else 'versioned unpublished candidate'
+    if 'The working source contains' in intro:
+        require(source == version, 'README.md: unversioned changes must retain the published version')
+        require(one(intro, rf'The working source contains \*\*unpublished changes based on ({VERSION})\*\*',
+                    'README.md unpublished baseline') == version, 'README.md: unpublished baseline mismatch')
+        require(one(intro, rf'Version metadata remains \*\*({VERSION})\*\*',
+                    'README.md retained version') == source, 'README.md: retained version mismatch')
+        require('this source does not match the frozen release and is not release-ready' in intro
+                and f'Do not install this branch as verified {version}.' in intro,
+                'README.md: unpublished source requires release and installation warnings')
+        require('The working package matches published' not in intro and 'The working source is' not in intro,
+                'README.md: contradictory source status')
+        require(one(intro, rf'Published \*\*({VERSION})\*\* was released from commit `([0-9a-f]{{40}})`',
+                    'README.md published baseline identity') == (version, commit),
+                'README.md: published baseline identity mismatch')
+        require(one(contents, rf'`plugins/ibm-design-language/`: unpublished source changes based on ({VERSION})',
+                    'README.md unpublished contents') == version, 'README.md: unpublished contents mismatch')
+        plugin = root / 'plugins/ibm-design-language'
+        actual = {p.relative_to(plugin).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                  for p in plugin.rglob('*') if p.is_file()}
+        require(actual != json.loads(read(manifest)), 'README.md: unpublished claim requires source drift')
+        source_status = 'unpublished source changes; not release-ready'
+    elif source == version:
         claim = one(intro, rf'The working package matches published \*\*({VERSION})\*\*, released from commit `([0-9a-f]{{40}})`', 'README.md source identity')
         require(claim == (version, commit), 'README.md: source release identity mismatch')
         require('The working source is' not in intro, 'README.md: contradictory source status')
@@ -163,6 +186,7 @@ def verify(root, online=False):
                 'GitHub release tag commit differs from docs/RECOVERY.md')
 
     return {'status': 'pass', 'published_version': version, 'source_version': source,
+            'source_status': source_status,
             'release_commit': commit,
             'publication': 'verified (GitHub release and tag)' if online else 'unverified (offline)',
             'downloaded_release_assets': 'unverified', 'installation': 'unverified'}

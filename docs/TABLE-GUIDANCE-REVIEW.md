@@ -3,8 +3,8 @@
 Baseline: main `a555015dacfdca25c6db445e86a69d13f4c76558` (PR #97).
 Version metadata and installed/published package remain 1.1.47. This branch
 changes source guidance only; it is not a replacement release or installation.
-README's published-package identity describes the frozen baseline, not parity
-with this edited branch. Do not install this branch as verified 1.1.47.
+README explicitly identifies unpublished source changes and directs installation
+to the published checkout. Do not install this branch as verified 1.1.47.
 
 ## Review of draft PR #70
 
@@ -32,6 +32,20 @@ prioritization and rendering/recovery checks are explicitly local engineering
 guidance, not a claim that every Carbon framework has a virtualization API.
 
 ## Verification and limits
+
+Review follow-up: qualify action visibility by current mode, preserving disabled
+conflicting row actions in batch mode; distinguish semantic-table Tab behavior
+from a datagrid's supported traversal contract. Correct README's source identity
+and installation wording. The documentation checker now recognizes explicitly
+warned, unversioned source drift, verifies the retained baseline identity and
+actual source/manifest difference, and reports `not release-ready`. The package
+integrity checker remains unchanged and continues to fail on that drift.
+
+Final follow-up validation: 49 repository tests passed (seven table-guidance
+tests and four additional release-documentation methods among them), offline
+release-documentation verification passed with the unpublished-source status,
+and `git diff --check` passed. The results below retain the initial patch's
+verification history; they are not new-head CI results.
 
 - Before edits, `python -B scripts/verify.py` passed for 178 source files and
   frozen releases 1.1.4–1.1.47, including synthetic evaluator checks.

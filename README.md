@@ -4,7 +4,9 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.47**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.47) · [Install](https://github.com/pmeglaw/ibm-design-language-plugin/blob/main/docs/INSTALLATION.md)
 
-The working package matches published **1.1.47**, released from commit `d469633cfa77c3652d111cb05da5c46f8e3c52fd`. It restores missing spaces between words and numbers in shipped reference text; no wording, values or identifiers change.
+The working source contains **unpublished changes based on 1.1.47**. Version metadata remains **1.1.47**; this source does not match the frozen release and is not release-ready. Do not install this branch as verified 1.1.47. The changes clarify table navigation, virtualization and action visibility; see the [review record](docs/TABLE-GUIDANCE-REVIEW.md).
+
+Published **1.1.47** was released from commit `d469633cfa77c3652d111cb05da5c46f8e3c52fd`. That frozen release restores missing spaces between words and numbers in reference text.
 
 All four downloaded assets match the 178-file frozen package. Required CI passed on the exact release commit; see the [publication receipt](docs/RELEASE-1.1.47-PUBLICATION-2026-10-31.md). The existing private account plugin is installed/enabled at 1.1.47 with complete 179-file account/local parity and fresh discovery of all three skills in 4.814 seconds within the shared five-second deadline; see the [installation receipt](docs/INSTALLATION-1.1.47-VERIFICATION-2026-11-02.md).
 
@@ -16,7 +18,7 @@ Install the plugin using [first-time installation](docs/INSTALLATION.md), then o
 
 ### Claude Code
 
-The same package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. It points at the unchanged `plugins/ibm-design-language/` source, so both hosts load identical skills:
+The published package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. Use the immutable published release checkout specified in [Installation](docs/INSTALLATION.md), not this unpublished source branch. The catalog loads `plugins/ibm-design-language/` from the selected checkout:
 
 ```text
 /plugin marketplace add pmeglaw/ibm-design-language-plugin
@@ -90,7 +92,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.47 package source; frozen archive in `releases/1.1.47/`.
+- `plugins/ibm-design-language/`: unpublished source changes based on 1.1.47; frozen archive in `releases/1.1.47/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.

@@ -61,6 +61,22 @@ class TableGuidanceTest(unittest.TestCase):
                 self.assertIn(requirement, section)
         self.assertIn('not new Carbon API guarantees or fixture passes', section)
 
+    def test_batch_mode_preserves_conflicting_row_action_restriction(self):
+        text = (REFS / 'composition.md').read_text(encoding='utf-8')
+        section = text.split('- **Discoverability:**')[1].split('\n\n')[0]
+        normalized = ' '.join(section.split())
+        self.assertIn('actions applicable to the current mode', normalized)
+        self.assertIn('disable conflicting single-row actions and menus', normalized)
+        self.assertIn('appropriate focus on exit', normalized)
+
+    def test_keyboard_contract_distinguishes_table_and_datagrid(self):
+        text = (REFS / 'composition.md').read_text(encoding='utf-8')
+        section = ' '.join(text.split('- **Keyboard and focus:**')[1].split('- **Discoverability:**')[0].split())
+        self.assertIn('ordinary semantic table', section)
+        self.assertIn('Tab navigation', section)
+        self.assertIn('datagrid, follow its supported entry, arrow-key traversal and cell-action contract', section)
+        self.assertIn('do not make every cell a Tab stop', section)
+
     def test_worked_example_routes_to_acceptance_and_links_resolve(self):
         text = (REFS / 'senior-workflow.md').read_text(encoding='utf-8')
         self.assertIn('composition.md#collection-navigation-rendering-and-action-acceptance', text)
