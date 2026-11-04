@@ -2,9 +2,10 @@
 
 Baseline: main `a555015dacfdca25c6db445e86a69d13f4c76558` (PR #97).
 The owner subsequently authorized release preparation, all checks, merge,
-publication and installed-plugin synchronization. The working candidate is
-1.1.48; published and installed 1.1.47 remain the baseline until delivery.
-The following review history preserves the earlier source-only scope and failures.
+publication and installed-plugin synchronization. Version 1.1.48 is published
+and the existing account/local installation is verified; see the
+[delivery receipt](RELEASE-1.1.48-VERIFICATION-2026-11-03.md). The following review history preserves the
+earlier source-only scope and failures.
 
 ## Review of draft PR #70
 
