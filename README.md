@@ -18,14 +18,14 @@ Install the plugin using [first-time installation](docs/INSTALLATION.md), then o
 
 ### Claude Code
 
-The published package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. Use the immutable published release checkout specified in [Installation](docs/INSTALLATION.md), not this unpublished source branch. The catalog loads `plugins/ibm-design-language/` from the selected checkout:
+The published package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. The command below pins the immutable published release tag verified in [Installation](docs/INSTALLATION.md). The catalog loads `plugins/ibm-design-language/` from that release, not this unpublished source branch:
 
 ```text
-/plugin marketplace add pmeglaw/ibm-design-language-plugin
+/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.47
 /plugin install ibm-design-language@jp-personal
 ```
 
-On Windows, enable long paths before cloning (`git config --global core.longpaths true`); some repository paths exceed the default limit. Claude Code installation is a separate destination with its own verification state; the Codex installation receipts above do not cover it.
+The `#ref` syntax is documented in [Claude Code's marketplace instructions](https://code.claude.com/docs/en/discover-plugins#add-a-marketplace). On Windows, enable long paths before cloning (`git config --global core.longpaths true`); some repository paths exceed the default limit. Claude Code installation is a separate destination with its own verification state; the Codex installation receipts above do not cover it.
 
 ## Quick start
 

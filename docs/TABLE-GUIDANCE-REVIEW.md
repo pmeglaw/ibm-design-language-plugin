@@ -41,10 +41,16 @@ warned, unversioned source drift, verifies the retained baseline identity and
 actual source/manifest difference, and reports `not release-ready`. The package
 integrity checker remains unchanged and continues to fail on that drift.
 
-Final follow-up validation: 49 repository tests passed (seven table-guidance
-tests and four additional release-documentation methods among them), offline
-release-documentation verification passed with the unpublished-source status,
-and `git diff --check` passed. The results below retain the initial patch's
+PR #98 review also corrected the Claude Code install command: it now pins
+`#v1.1.47` instead of following the default branch, matching the accompanying
+published-release instruction and Claude Code's documented `#ref` syntax.
+No Claude Code installation was performed.
+
+Final follow-up validation: 49 repository tests ran, with 47 passing and two
+skipped (seven table-guidance tests and four additional release-documentation
+methods among them). Live `python -B scripts/verify_release_docs.py --github`
+verification passed with the unpublished-source status, and `git diff --check`
+passed. The results below retain the initial patch's
 verification history; they are not new-head CI results.
 
 - Before edits, `python -B scripts/verify.py` passed for 178 source files and
