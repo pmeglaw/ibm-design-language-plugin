@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.48**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.48) · [Install](docs/INSTALLATION.md)
 
-The working package matches published **1.1.48**, released from commit `db13343f5cba000a8268ad65d10e0555baa2e5bf`. It separates table navigation from virtualization, preserves frequent action visibility, and adds scoped selection, focus and recovery acceptance guidance.
+The working source is **1.1.49, an unpublished combined candidate** that moves composition benchmark routing out of the `design-ui` entry point and gives each reference its own routing row. Published **1.1.48** remains the release to install; it was released from commit `db13343f5cba000a8268ad65d10e0555baa2e5bf` and separates table navigation from virtualization, preserves frequent action visibility, and adds scoped selection, focus and recovery acceptance guidance.
 
 All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. The existing private account plugin is installed/enabled at 1.1.48, with complete 179-file account/local parity and fresh discovery of all three skills in 1.861 seconds within the shared five-second deadline. See the [delivery receipt](docs/RELEASE-1.1.48-VERIFICATION-2026-11-03.md).
 
@@ -90,7 +90,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.48 package source; frozen archive in `releases/1.1.48/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.49 working source; candidate archive in `releases/1.1.49/`, published archive in `releases/1.1.48/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
