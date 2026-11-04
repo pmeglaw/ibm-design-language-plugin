@@ -6,17 +6,17 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.49`
-- Immutable tag: `v1.1.49`
-- `plugin.zip` SHA-256: `1cf3aca275ca928a4108bf1f9d88b1c14ed8b4dc8a17b4768a5a7951f4fcf703`
-- Manifest: `releases/1.1.49/files.json`
-- Release commit: `bd615db6a6ebc4650bd1103cf8fe60cbb742e270`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.49)
+- Version: `1.1.50`
+- Immutable tag: `v1.1.50`
+- `plugin.zip` SHA-256: `a0755cfba04a87fe67d1612801185b58f7a5a58d485f13602b8a3a62bc4f76cb`
+- Manifest: `releases/1.1.50/files.json`
+- Release commit: `0f18e810572b3a16579c9c17ccc483792a067ced`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.50)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.49^{commit}'`.
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.50^{commit}'`.
 Pin installation to that immutable commit. Publication, downloaded assets and the
 existing private account installation are verified separately in the
-[delivery receipt](RELEASE-1.1.49-VERIFICATION-2026-11-03.md).
+[delivery receipt](RELEASE-1.1.50-VERIFICATION-2026-11-04.md).
 
 ## Restore and verify
 
@@ -24,12 +24,20 @@ existing private account installation are verified separately in the
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.49/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.50/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The published package is **1.1.49**. All four downloaded assets and 178 package
+The published package is **1.1.50**. All four downloaded assets and 178 package
+files match the frozen release. Complete 179-file account/local parity,
+installed/enabled state and all three enabled skills passed in 1.608 seconds
+within the shared five-second deadline. See the [delivery receipt](RELEASE-1.1.50-VERIFICATION-2026-11-04.md)
+and [installation receipt](INSTALLATION-1.1.50-VERIFICATION-2026-11-04.md).
+Automatic selection and existing desktop-conversation refresh remain unverified.
+
+The following 1.1.49 observations describe its earlier verification.
+The then-published package was **1.1.49**. All four downloaded assets and 178 package
 files match the frozen release. Complete 179-file account/local parity,
 installed/enabled state and all three enabled skills passed in 2.203 seconds
 within the shared five-second deadline. See the [delivery receipt](RELEASE-1.1.49-VERIFICATION-2026-11-03.md)
@@ -254,6 +262,8 @@ enable feature/trust flags, change policy or relax the identity/version checks
 merely to obtain a pass. Those actions need their own task authority.
 
 ## Previous release rollback identity
+
+Version 1.1.49: commit `bd615db6a6ebc4650bd1103cf8fe60cbb742e270`, tag `v1.1.49`, ZIP SHA-256 `1cf3aca275ca928a4108bf1f9d88b1c14ed8b4dc8a17b4768a5a7951f4fcf703`. Frozen assets remain in `releases/1.1.49/`.
 
 Version 1.1.48: commit `db13343f5cba000a8268ad65d10e0555baa2e5bf`, tag `v1.1.48`, ZIP SHA-256 `761f2c1023b9ed37c1f2f07da7f25d6397daea865b993780c9ed5ecfa28aa9e2`. Frozen assets remain in `releases/1.1.48/`.
 
