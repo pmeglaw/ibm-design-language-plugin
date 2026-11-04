@@ -4,6 +4,18 @@ Use both gates for design and critique of header, table, search, and form compos
 
 Read the check names and conditions from the [packaged gate definitions](release-gate-definitions/README.md), available in an installed plugin without the repository or network access. For geometry, read the [release specification](release-gate-definitions/release-fixture/tests/release.spec.ts) and [geometry checks](release-gate-definitions/release-fixture/src/checks.ts); for keyboard, read the [behavior specification](release-gate-definitions/behavior-fixture/tests/behavior.spec.ts), [keyboard sequence](release-gate-definitions/behavior-fixture/src/sequence.ts) and its [DOM conditions](release-gate-definitions/behavior-fixture/src/dom.ts). These are unchanged copies of the canonical repository fixtures, checked for byte parity. Do not invent check names. They define fixture checks, not a self-contained application test runner; adapt their applicable criteria and selectors to the product and keep unrun checks untested.
 
+## Composition benchmarks
+
+For a product shell header, data table, search field or form, compare the rendered result with the matching benchmark below in both design and critique, then apply the geometry and keyboard checks in this file as acceptance criteria.
+
+For a product shell header, use the [Carbon header visual benchmark](ui-shell.md#what-good-looks-like-header-benchmark). The linked Carbon guidelines and React Storybook are the reference for its compact silhouette, identity/navigation hierarchy and contiguous utilities. Compare the actual rendered header with the relevant example; preserve approved brand authority and verify behavior separately. Read its dated current-header contract and [saved header images](../assets/ui-shell-header/2026-10-06/README.md) for current variants, state roles, geometry and accessibility obligations; retain the recorded Storybook version and evidence limits. For measured geometry, mouse hover/tooltips and hamburger/side-navigation states, use the [29 October observation record](ui-shell-observed-2026-10-29.md); preserve its version uncertainty, overlay exclusions and phone clipping limitations rather than copying demo defects.
+
+For a data table, use the [Carbon data table visual benchmark](composition.md#what-good-looks-like-data-table-benchmark). Compare the rendered table with the official Guidelines and React Basic example for column alignment, density, surfaces, separators and action placement. Read its sizing reconciliation before selecting toolbar sizes; use the relevant sibling stories for richer variants.
+
+For search, use the [Carbon Search visual benchmark](forms-and-upload.md#what-good-looks-like-search-benchmark). Compare the rendered field with the official Guidelines and React Search overview for field shape, icon/text alignment, clear-control space and placement. Read its version-qualified size mapping; distinguish the default, fluid and expandable treatments and verify application results separately.
+
+For a form, use the [Carbon Form visual benchmark](forms-and-upload.md#what-good-looks-like-form-benchmark). Compare labels, helper text, field alignment, grouping and actions with the Guidelines and Web Components Default example. Read the spacing/sizing reconciliation and preserve the consuming framework's API and submission contracts; a Web Components story does not establish React behavior.
+
 ## Geometry
 
 There are 29 checks. Corrected must pass all on White, Gray 100, and at 390px. Missed must fail all.

@@ -11,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = '1.1.48'
+CURRENT = '1.1.49'
 
 
 def require(condition, message):
@@ -23,11 +23,30 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def anchor_slugs(text):
+    """GitHub-style heading anchors for a Markdown document, including duplicates."""
+    slugs, seen = set(), {}
+    fence = False
+    for line in text.splitlines():
+        if line.lstrip().startswith('```'):
+            fence = not fence
+            continue
+        match = None if fence else re.match(r'^#{1,6}\s+(.*?)\s*#*\s*$', line)
+        if not match:
+            continue
+        title = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', match.group(1)).lower()
+        slug = re.sub(r'[^\w\- ]', '', re.sub(r'[`*]', '', title)).replace(' ', '-')
+        count = seen.get(slug, 0)
+        seen[slug] = count + 1
+        slugs.add(slug if count == 0 else f'{slug}-{count}')
+    return slugs
+
+
 def main():
     report = ROOT / '.verification'
     report.mkdir(exist_ok=True)
     manifests = {}
-    versions = ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', '1.1.19', '1.1.20', '1.1.21', '1.1.22', '1.1.23', '1.1.24', '1.1.25', '1.1.26', '1.1.27', '1.1.28', '1.1.29', '1.1.30', '1.1.31', '1.1.32', '1.1.33', '1.1.34', '1.1.35', '1.1.36', '1.1.37', '1.1.38', '1.1.39', '1.1.40', '1.1.41', '1.1.42', '1.1.43', '1.1.44', '1.1.45', '1.1.46', '1.1.47', CURRENT)
+    versions = ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', '1.1.19', '1.1.20', '1.1.21', '1.1.22', '1.1.23', '1.1.24', '1.1.25', '1.1.26', '1.1.27', '1.1.28', '1.1.29', '1.1.30', '1.1.31', '1.1.32', '1.1.33', '1.1.34', '1.1.35', '1.1.36', '1.1.37', '1.1.38', '1.1.39', '1.1.40', '1.1.41', '1.1.42', '1.1.43', '1.1.44', '1.1.45', '1.1.46', '1.1.47', '1.1.48', CURRENT)
     unlisted = sorted({p.name for p in (ROOT / 'releases').iterdir() if p.is_dir()} - set(versions))
     require(not unlisted, f'Frozen releases not verified: {", ".join(unlisted)}')
     for version in versions:
@@ -72,15 +91,20 @@ def main():
             and entry['version'] == manifest['version']
             and entry['description'] == manifest['description'],
             'Claude Code marketplace entry differs from plugin.json')
-    links = 0
+    links = anchors = 0
     for p in plugin.rglob('*.md'):
         for target in re.findall(r'\]\(([^)]+)\)', p.read_text(encoding='utf-8')):
-            if '://' in target or target.startswith('#'):
+            if '://' in target:
                 continue
-            target = target.split('#')[0]
-            if target:
-                require((p.parent / target).resolve().exists(), f'Broken link: {p}: {target}')
+            path, _, anchor = target.partition('#')
+            resolved = (p.parent / path).resolve() if path else p
+            if path:
+                require(resolved.exists(), f'Broken link: {p}: {target}')
                 links += 1
+            if anchor and resolved.suffix == '.md':
+                require(anchor in anchor_slugs(resolved.read_text(encoding='utf-8')),
+                        f'Broken anchor: {p}: {target}')
+                anchors += 1
     for p in plugin.rglob('*.json'):
         json.loads(p.read_text(encoding='utf-8'))
     for p in plugin.rglob('*.py'):
@@ -110,7 +134,7 @@ def main():
     (report / 'synthetic-tests.txt').write_bytes(tests.stdout + tests.stderr)
     require(tests.returncode == 0, 'Synthetic tests failed; see .verification/synthetic-tests.txt')
     result = {'status': 'pass', 'version': CURRENT, 'plugin_files': len(actual),
-              'verified_releases': list(manifests), 'local_links': links,
+              'verified_releases': list(manifests), 'local_links': links, 'local_anchors': anchors,
               'synthetic_tests': 'pass', 'model_calls': 0, 'installation_changes': 0}
     (report / 'validation.json').write_text(json.dumps(result, indent=2) + '\n')
     print(json.dumps(result, indent=2))
