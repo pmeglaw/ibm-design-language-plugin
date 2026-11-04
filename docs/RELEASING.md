@@ -61,6 +61,35 @@ record before reporting the documentation current. This can be a documentation-o
 follow-up under the applicable authorization; it requires no package version bump,
 retagging or rewriting of the published archive.
 
+### Required publication closeout
+
+Publication and companion-document updates are separate operations. Keep current
+published-version claims on the existing release until the new release exists;
+preparation and exact-commit package CI do not establish publication. Complete
+these steps in order before reporting delivery complete:
+
+1. Publish the reviewed immutable tag only after its required package and browser
+   CI gates pass. Record the release URL and full release commit.
+2. Reconcile README, installation, recovery and history on the default branch
+   with the actual published release, tag commit and checksum. Run the offline
+   documentation check and its regression tests before publishing this follow-up.
+3. Confirm a successful `Verify release documentation` push run on the exact
+   companion-document commit on the default branch, including the `--github`
+   step. Record that commit and run URL separately from the immutable release
+   commit and its package CI.
+4. If the publication-triggered run failed before the documentation update,
+   rerun its failed job after reconciliation and confirm success. This event
+   checks current default-branch docs, so record the actual checked-out commit
+   from the job log; the run's release SHA alone does not identify those docs.
+   A manual workflow dispatch on the default branch is also a fresh live check.
+
+A tag-push rerun checks the same immutable tagged files, so it cannot pick up a
+later documentation fix. Preserve that historical failure and link the successful
+default-branch verification instead. Do not move tags, weaken the live check,
+delete failure records or treat an offline pass as live publication verification.
+If the final live check fails, delivery remains incomplete: investigate its
+reported mismatch or API failure before closing the task.
+
 ## Automated documentation checks
 
 Run `python -B scripts/verify_release_docs.py` to compare the current release
