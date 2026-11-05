@@ -2,13 +2,13 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.50**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.50) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.51**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.51) · [Install](docs/INSTALLATION.md)
 
-The working source is **1.1.51, an unpublished combined candidate**. It packages the narrow scoped-primary rubric correction with its coordinated evaluation documentation and regression exception. Published **1.1.50** was released from commit `0f18e810572b3a16579c9c17ccc483792a067ced`. The candidate has not been merged, released or installed.
+The working package matches published **1.1.51**, released from commit `f286c87a18ca8d49ae0abeb28129d3b352ca4c50`. It packages the narrow scoped-primary rubric correction with its coordinated evaluation documentation and regression exception.
 
-For the published 1.1.50 release, all four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. The existing private account plugin is installed/enabled at 1.1.50, with complete 179-file account/local parity and fresh discovery of all three skills in 1.608 seconds within the shared five-second deadline. See the [delivery receipt](docs/RELEASE-1.1.50-VERIFICATION-2026-11-04.md).
+All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. See the [publication receipt](docs/RELEASE-1.1.51-PUBLICATION-2026-11-05.md). The frozen candidate notes retain their preparation-time wording; they do not describe current publication status. Installation was explicitly excluded from this delivery, so 1.1.51 destination parity, enabled state and fresh discovery are unverified. The [1.1.50 installation receipt](docs/INSTALLATION-1.1.50-VERIFICATION-2026-11-04.md) remains historical evidence, not a current installation check.
 
-No dependencies, product code, runtime assets or fixture assertions change. Earlier frozen releases and evidence remain preserved. The earlier [research-step routing evaluation](docs/ROUTING-EVALUATION-1.1.50-2026-11-04.md) is separate evidence; no new evaluation ran during delivery, and generated-product improvement or AT certification is not claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
+No dependencies, product code, runtime assets or browser fixture assertions change. Earlier frozen releases and evidence remain preserved. The earlier [research-step routing evaluation](docs/ROUTING-EVALUATION-1.1.50-2026-11-04.md) is separate evidence; no new model evaluation ran during delivery, and generated-product improvement or AT certification is not claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
 
 ## Install
 
@@ -19,11 +19,11 @@ Install the plugin using [first-time installation](docs/INSTALLATION.md), then o
 The published package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. The command below pins the immutable published release tag verified in [Installation](docs/INSTALLATION.md). The catalog loads `plugins/ibm-design-language/` from that release, not a newer unpublished source branch:
 
 ```text
-/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.50
+/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.51
 /plugin install ibm-design-language@jp-personal
 ```
 
-The `#ref` syntax is documented in [Claude Code's marketplace instructions](https://code.claude.com/docs/en/discover-plugins#add-a-marketplace). On Windows, enable long paths before cloning (`git config --global core.longpaths true`); some repository paths exceed the default limit. Claude Code installation is a separate destination with its own verification state; the Codex installation receipts above do not cover it.
+The `#ref` syntax is documented in [Claude Code's marketplace instructions](https://code.claude.com/docs/en/discover-plugins#add-a-marketplace). On Windows, enable long paths before cloning (`git config --global core.longpaths true`); some repository paths exceed the default limit. Claude Code installation is a separate destination with its own verification state; historical Codex installation receipts do not cover it.
 
 ## Quick start
 
@@ -90,7 +90,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.51 working source; candidate archive in `releases/1.1.51/`. Published 1.1.50 remains in `releases/1.1.50/`.
+- `plugins/ibm-design-language/`: the published 1.1.51 package source; frozen archive in `releases/1.1.51/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
