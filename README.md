@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.50**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.50) · [Install](docs/INSTALLATION.md)
 
-The working source contains **unpublished changes based on 1.1.50**: a narrow correction to the scoped-primary evaluation rubric. Version metadata remains **1.1.50**; this source does not match the frozen release and is not release-ready. Do not install this branch as verified 1.1.50. Published **1.1.50** was released from commit `0f18e810572b3a16579c9c17ccc483792a067ced`.
+The working source is **1.1.51, an unpublished combined candidate**. It packages the narrow scoped-primary rubric correction with its coordinated evaluation documentation and regression exception. Published **1.1.50** was released from commit `0f18e810572b3a16579c9c17ccc483792a067ced`. The candidate has not been merged, released or installed.
 
 For the published 1.1.50 release, all four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. The existing private account plugin is installed/enabled at 1.1.50, with complete 179-file account/local parity and fresh discovery of all three skills in 1.608 seconds within the shared five-second deadline. See the [delivery receipt](docs/RELEASE-1.1.50-VERIFICATION-2026-11-04.md).
 
@@ -90,7 +90,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: unpublished source changes based on 1.1.50; published archive in `releases/1.1.50/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.51 working source; candidate archive in `releases/1.1.51/`. Published 1.1.50 remains in `releases/1.1.50/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
