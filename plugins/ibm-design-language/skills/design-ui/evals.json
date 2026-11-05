@@ -16,7 +16,7 @@
         },
         {
           "id": "case-01-a03",
-          "criterion": "Exactly one primary button on the page (the header's 'New key'); a create dialog's own Create button is the only other primary allowed, and only inside that dialog"
+          "criterion": "Exactly one page-level primary button (the header's 'New key'); the active creation task may have its own appropriately scoped primary in a justified modal, nonmodal panel, or focused task. Do not add competing page-level primaries or a primary to every repeated section."
         },
         {
           "id": "case-01-a04",
@@ -711,7 +711,8 @@
       ]
     }
   ],
-  "summary": "21 evals, 121 assertions. Version 1.1.7 revises cases 2, 4 and 7 for component-specific styling, evidence-based contrast and scoped modal guidance. Scores against older criteria are not directly comparable.",
+  "summary": "21 evals, 121 assertions. Version 1.1.7 revises cases 2, 4 and 7 for component-specific styling, evidence-based contrast and scoped modal guidance. Revision scoped-primary-2026-11-05 revises only case-01-a03 to allow the active creation task's appropriately scoped primary in a justified modal, nonmodal panel, or focused task. Compare packets only with matching suite hashes; older scores remain attached to their original criteria.",
+  "rubric_revision": "scoped-primary-2026-11-05",
   "schema_version": 2,
   "description": "Evidence-graded regression cases; model execution and review are separate. No current skill performance score is implied."
 }

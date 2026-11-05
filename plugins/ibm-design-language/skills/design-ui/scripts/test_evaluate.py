@@ -383,16 +383,32 @@ class HarnessTests(unittest.TestCase):
             with self.assertRaises(ev.EvaluationError):
                 ev.prepare(self.skill, self.root / "invalid", self.suite_path, "fixture-model", "high", [1], [], **kwargs)
 
-    def test_rerun_criteria_are_unchanged(self):
+    def test_rerun_contract_allows_only_scoped_primary_revision(self):
         script_root = Path(__file__).resolve().parent
         frozen = ev.read_json(script_root / "fixtures/evaluation-contracts.json")
         shipped = ev.read_json(script_root.parent / "evals.json")
         self.assertEqual([c["id"] for c in shipped["evals"]], list(range(1, 22)))
         self.assertEqual([c["id"] for c in frozen["cases"]], [1, 5, 10])
+        self.assertEqual(shipped.get("rubric_revision"), "scoped-primary-2026-11-05")
+        self.assertIn("case-01-a03", shipped["summary"])
+        self.assertIn(shipped["rubric_revision"], shipped["summary"])
         for case in frozen["cases"]:
             revised = next(c for c in shipped["evals"] if c["id"] == case["id"])
+            expected = copy.deepcopy(case)
+            if case["id"] == 1:
+                assertion = next(a for a in expected["assertions"] if a["id"] == "case-01-a03")
+                self.assertEqual(assertion["criterion"],
+                    "Exactly one primary button on the page (the header's 'New key'); "
+                    "a create dialog's own Create button is the only other primary allowed, "
+                    "and only inside that dialog")
+                assertion["criterion"] = (
+                    "Exactly one page-level primary button (the header's 'New key'); "
+                    "the active creation task may have its own appropriately scoped primary "
+                    "in a justified modal, nonmodal panel, or focused task. Do not add "
+                    "competing page-level primaries or a primary to every repeated section."
+                )
             for key in ("assertions", "expected_output", "visual_dimensions"):
-                self.assertEqual(case[key], revised[key])
+                self.assertEqual(expected[key], revised[key])
 
     def test_matching_prepared_timeout_reaches_cli(self):
         target = self.root / "matching-timeout"

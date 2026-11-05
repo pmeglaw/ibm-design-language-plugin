@@ -81,9 +81,15 @@ Selected real comparisons are complete and recorded in [evaluation history](eval
 
 Custom suites must include `visual_dimensions` on every case: use `[]` for cases without visual scoring. An omitted field is rejected during preparation before any model execution.
 
-The bundled suite retains 21 cases and 121 assertions. Only the prompts for cases 1, 5 and 10 incorporate the previously reviewed clarifications; their assertion IDs, criteria, expected outputs and visual dimensions are preserved. External transfer and composition cases remain separate frozen packs, not silently merged into this regression suite. Previously run cases must not be described as unseen.
+The bundled suite retains 21 cases and 121 assertions. The prompts for cases 1, 5 and 10 incorporate the previously reviewed clarifications. Revision `scoped-primary-2026-11-05` changes only criterion `case-01-a03`: keep exactly one page-level New key primary, while allowing the active creation task its own appropriately scoped primary in a justified modal, nonmodal panel, or focused task. Competing page-level primaries and one primary per repeated section remain disallowed. All assertion IDs, other criteria, expected outputs and visual dimensions are preserved. External transfer and composition cases remain separate frozen packs, not silently merged into this regression suite. Previously run cases must not be described as unseen.
 
 The separate composition-transfer-v1.2 comparison evaluated frozen 1.1.4 and 1.1.5-rc.1: five valid outputs passed, one baseline execution failed, and the two scorable pairs were visual ties. Host configuration changed during run 2. Improvement remains unproven; see the history for counts and limits. No model run evaluates rc.2 itself. Local synthetic tests validate evaluator mechanics, not skill quality. Broader independent practical evaluation, installed Carbon React integration and assistive-technology checks remain open. Instructional casebook examples are teaching material, not held-out evaluation cases.
+
+## Scoped-primary rubric revision
+
+`scoped-primary-2026-11-05` aligns case 1 with the existing [design guidance](../SKILL.md). It is a rubric identity, not a package version or a new model result. Preserve `scripts/fixtures/evaluation-contracts.json`, frozen releases, prior packets and historical scores unchanged. The regression test permits only the exact documented criterion replacement for `case-01-a03` against that archived contract.
+
+Compare packets only with matching suite hashes. For a new baseline/candidate comparison, prepare fresh packets with the same revised `--suite` file and matching model/settings, and verify their recorded `suite_sha256` values match. Do not reinterpret an older score under this revision or compare aggregates across changed suite hashes. No model evaluation was run for this correction, and no generated-product improvement is claimed.
 
 ## Local checks without model use
 
