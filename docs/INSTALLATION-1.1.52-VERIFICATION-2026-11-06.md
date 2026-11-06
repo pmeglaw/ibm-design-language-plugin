@@ -75,6 +75,22 @@ plugin's catalog settings compare equal to the pre-update values apart from
 version metadata. Private recovery archives and raw verification records remain
 outside the public documentation.
 
+## Desktop chat follow-up - 6 November 2026
+
+PASS: a later read-only check of the existing desktop chat's injected skill
+catalog confirmed all three qualified skills listed above were available from
+the retained `ibm-design-language@created-by-me-remote` plugin at **1.1.52**.
+Their catalog paths resolve under
+`created-by-me-remote/ibm-design-language/1.1.52/skills/`; no skills from the
+`ibm-design-language@jp-personal` duplicate appear in that chat's catalog.
+
+With the checkout at `b47416f5cedeef699fd20e7eb0a6f3374c80eff1`, a separate
+read-only hash check confirmed that all three referenced `SKILL.md` files match
+`releases/1.1.52/files.json`. The installed manifest also reports 1.1.52.
+This establishes discovery and availability in this existing desktop chat.
+No reinstall, cache edit or settings change was performed. Automatic skill
+selection was not exercised and remains unverified.
+
 ## Preserved failures and limits
 
 The CLI account selector could not resolve the plugin by package name. An initial
@@ -84,8 +100,10 @@ name-resolution attempts are preserved in the private evidence. The personal
 sharing reader returned HTTP 400, so a complete audience read was unavailable;
 private USER metadata was confirmed before and after, and no sharing mutation ran.
 
-Fresh native discovery does not establish refresh of an existing desktop chat,
-automatic skill selection, other-host installation or generated-product quality.
+The original fresh native-session checks alone did not establish refresh of an
+existing desktop chat. The follow-up above separately confirms availability in
+the inspected chat. Automatic skill selection, refresh of other desktop chats,
+other-host installation and generated-product quality remain unverified.
 No new model evaluation, dependency installation or public release change ran.
 The original publication receipt retains its publication-only scope, and earlier
 installation receipts remain unchanged historical evidence.
