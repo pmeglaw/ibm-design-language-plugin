@@ -4,11 +4,13 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.51**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.51) · [Install](docs/INSTALLATION.md)
 
-The working package matches published **1.1.51**, released from commit `f286c87a18ca8d49ae0abeb28129d3b352ca4c50`. It packages the narrow scoped-primary rubric correction with its coordinated evaluation documentation and regression exception.
+The working source contains **unpublished changes based on 1.1.51**: evaluator hashing rejects special files, with bounded POSIX FIFO regressions. Version metadata remains **1.1.51**; this source does not match the frozen release and is not release-ready. Do not install this branch as verified 1.1.51.
+
+Published **1.1.51** was released from commit `f286c87a18ca8d49ae0abeb28129d3b352ca4c50`. It packages the narrow scoped-primary rubric correction with its coordinated evaluation documentation and regression exception.
 
 All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. See the [publication receipt](docs/RELEASE-1.1.51-PUBLICATION-2026-11-05.md). The frozen candidate notes retain their preparation-time wording; they do not describe current publication status. The existing private account plugin is installed/enabled at 1.1.51, with complete 179-file installed-cache parity and fresh discovery of all three skills in 1.202 seconds within the shared five-second deadline; the account archive was not re-downloaded. See the [installation receipt](docs/INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md).
 
-No dependencies, product code, runtime assets or browser fixture assertions change. Earlier frozen releases and evidence remain preserved. The earlier [research-step routing evaluation](docs/ROUTING-EVALUATION-1.1.50-2026-11-04.md) is separate evidence; no new model evaluation ran during delivery, and generated-product improvement or AT certification is not claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
+The unpublished hashing fix changes only the evaluator helper and its regression tests. Dependencies, product code, browser fixture assertions, frozen releases and historical evidence remain unchanged. The earlier [research-step routing evaluation](docs/ROUTING-EVALUATION-1.1.50-2026-11-04.md) is separate evidence; no new model evaluation ran for this fix, and generated-product improvement or AT certification is not claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
 
 ## Install
 
@@ -90,7 +92,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.51 package source; frozen archive in `releases/1.1.51/`.
+- `plugins/ibm-design-language/`: unpublished source changes based on 1.1.51; frozen published archive in `releases/1.1.51/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
