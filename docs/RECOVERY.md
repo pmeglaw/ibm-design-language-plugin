@@ -1,8 +1,9 @@
 # Recovery
 
 For a fresh Codex setup, start with [First-time installation](INSTALLATION.md).
-This guide also covers the owner-managed `jp-personal` installation, drift checks,
-and rollback; preserve existing marketplace entries and unrelated configuration.
+This guide also covers the retained "Created by you" account plugin, Git
+marketplace installations, drift checks and rollback. Preserve the intended
+installation's identity and unrelated configuration.
 
 ## Release identity
 
@@ -16,13 +17,18 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.52^{commit}'`.
 Pin installation to that immutable commit. Publication and downloaded assets are
 verified in the [publication receipt](RELEASE-1.1.52-PUBLICATION-2026-11-06.md).
-Installation was excluded from this publication. The existing account installation
-was last verified at 1.1.51 in its
-[installation receipt](INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md); it was not
-inspected or updated here. Publication alone does not establish destination
-synchronization, and 1.1.52 destination verification remains pending.
+Installation was excluded from publication and completed later under separate
+authorization. The retained account plugin is verified at 1.1.52, including
+account/installed-file parity and fresh discovery; the duplicate marketplace
+installation was then removed. See the
+[installation receipt](INSTALLATION-1.1.52-VERIFICATION-2026-11-06.md).
+Publication alone does not establish destination synchronization.
 
 ## Restore and verify
+
+These steps cover a Git marketplace destination. For the retained "Created by
+you" account plugin, use [Uploaded account installations](#uploaded-account-installations)
+instead; do not recreate the removed `jp-personal` duplicate.
 
 1. Obtain the reviewed release, check the downloaded ZIP against the checksum above, and verify its files against the manifest.
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
@@ -35,9 +41,30 @@ synchronization, and 1.1.52 destination verification remains pending.
 
 The published package is **1.1.52**. All four downloaded assets and 178 package
 files match the frozen release; see the [publication receipt](RELEASE-1.1.52-PUBLICATION-2026-11-06.md).
-No account plugin, marketplace pin or installed cache was changed during this
-publication. Version 1.1.52 destination parity, enabled state and fresh discovery
-remain unverified; installation requires separate authorization for this task.
+The later authorized installation updated the existing "Created by you" account
+plugin `ibm-design-language@created-by-me-remote` to **1.1.52**, preserving its
+backend identity, private USER scope, presentation and settings. Complete
+179-file downloaded-account/installed parity passed, including the exact host
+wrapper. Fresh catalog reads confirmed installed/enabled 1.1.52; all three enabled
+skills passed discovery in 0.922 seconds before duplicate removal and 0.986 seconds
+afterward, each within one shared five-second deadline. See the
+[installation receipt](INSTALLATION-1.1.52-VERIFICATION-2026-11-06.md).
+
+Only after the initial parity and discovery checks passed was the separate
+`ibm-design-language@jp-personal` copy under "JP Personal Plugins" uninstalled.
+Its cache and configuration entry
+were removed, and fresh discovery no longer returned its skills. Its repository
+catalog entry can remain available with installed/enabled both false. Recovery
+copies were preserved privately; repository source and unrelated settings were
+unchanged. This was an explicitly authorized removal, not automatic cleanup.
+
+For future account updates, resolve this existing plugin's backend ID from the
+host catalog and use the supported account update/install flow with that identity.
+Verify the downloaded account archive and installed directory against the selected
+release, then follow [bounded discovery readiness](#bounded-discovery-readiness)
+with pluginId `ibm-design-language@created-by-me-remote` and the expected version.
+Do not substitute the similarly named Git marketplace copy. Existing desktop-chat
+refresh, automatic selection and other hosts remain unverified.
 
 The following 1.1.51 observations describe its earlier verification.
 The then-published package was **1.1.51**. All four downloaded assets and 178 package
