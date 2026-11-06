@@ -7,7 +7,9 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
+import textwrap
 import unittest
 from unittest.mock import patch
 import evaluate as ev
@@ -68,6 +70,80 @@ class HarnessTests(unittest.TestCase):
             # Remove only this test's known extended-path file and directory.
             extended_file.unlink()
             extended_dir.rmdir()
+
+    def test_file_hash_preserves_binary_bytes(self):
+        source = self.root / "binary.dat"
+        payload = b"\x00\r\n\x1a\xff"
+        source.write_bytes(payload)
+        self.assertEqual(ev.file_hash(source), hashlib.sha256(payload).hexdigest())
+
+    @unittest.skipUnless(os.name == "posix", "POSIX device-file regression")
+    def test_file_hash_rejects_device(self):
+        with self.assertRaisesRegex(ev.EvaluationError, "not a regular file"):
+            ev.file_hash(Path(os.devnull))
+
+    @unittest.skipUnless(os.name == "posix" and hasattr(os, "mkfifo"), "POSIX FIFO regression")
+    def test_fifo_hashing_fails_within_external_deadline(self):
+        # Bound the whole worker: a regression must fail, never hang the test suite.
+        worker = textwrap.dedent("""
+            import os
+            from pathlib import Path
+            import sys
+            from unittest.mock import patch
+            import evaluate as ev
+            from test_evaluate import HarnessTests
+
+            fixture = HarnessTests()
+            fixture.setUp()
+            try:
+                if sys.argv[1] == "generated":
+                    assert fixture.run_fixture([1])[0]["status"] == "awaiting_review"
+                    def generated(command, **kwargs):
+                        result = fixture.fake_cli(command, **kwargs)
+                        if command[-1] != "--version":
+                            workspace = Path(command[command.index("--cd") + 1])
+                            os.mkfifo(workspace / "undeclared.fifo")
+                        return result
+                    with patch.object(ev.subprocess, "run", side_effect=generated):
+                        result = ev.run_cases(fixture.results, "synthetic-codex", 30, [2])[0]
+                    assert result["status"] == "execution_failed", result
+                    assert "not a regular file" in result["error"], result
+                    case_root = fixture.results / "case-02"
+                    saved = ev.read_json(case_root / "execution.json")
+                    assert saved["status"] == "execution_failed" and saved["finished_at"]
+                    assert not (case_root / "review.template.json").exists()
+                else:
+                    target = fixture.root / "replaced.dat"
+                    target.write_bytes(b"ordinary file before open")
+                    real_open = os.open
+                    def replaced(path, flags, *args, **kwargs):
+                        target.unlink()
+                        os.mkfifo(target)
+                        fd = real_open(path, flags, *args, **kwargs)
+                        # Restore the pathname so only descriptor validation detects the FIFO.
+                        target.unlink()
+                        target.write_bytes(b"ordinary file after open")
+                        return fd
+                    with patch.object(ev.os, "open", side_effect=replaced):
+                        try:
+                            ev.file_hash(target)
+                        except ev.EvaluationError as exc:
+                            assert "not a regular file" in str(exc), exc
+                        else:
+                            raise AssertionError("Replaced FIFO was accepted")
+            finally:
+                fixture.tearDown()
+        """)
+        for scenario in ("generated", "replaced"):
+            with self.subTest(scenario=scenario):
+                try:
+                    result = subprocess.run(
+                        [sys.executable, "-B", "-c", worker, scenario],
+                        cwd=Path(__file__).resolve().parent,
+                        capture_output=True, text=True, timeout=10, check=False)
+                except subprocess.TimeoutExpired:
+                    self.fail(f"{scenario}: FIFO hashing exceeded the 10-second outer deadline")
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def fake_cli(self, command, **kwargs):
         if command[-1] == "--version":
