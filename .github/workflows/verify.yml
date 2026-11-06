@@ -17,6 +17,23 @@ jobs:
       - run: python -B -m unittest discover -s tests -p test_install_parity.py
       - run: python -B -m unittest discover -s tests -p test_contrast.py
 
+  evaluator-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Run synthetic evaluator tests
+        run: python -B -X utf8 plugins/ibm-design-language/skills/design-ui/scripts/test_evaluate.py
+        env:
+          IBM_EVAL_TEST_TMP: ${{ runner.temp }}/ibm-evaluator-tests
+
   casebook:
     runs-on: ubuntu-latest
     steps:

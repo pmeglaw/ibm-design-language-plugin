@@ -9,6 +9,7 @@ import os
 import platform
 import re
 import shutil
+import stat
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -60,7 +61,16 @@ def filesystem_path(path: Path) -> Path:
 
 
 def file_hash(path: Path) -> str:
-    return hashlib.sha256(filesystem_path(path).read_bytes()).hexdigest()
+    source = filesystem_path(path)
+    if not stat.S_ISREG(source.stat().st_mode):
+        raise EvaluationError(f"Hash input is not a regular file: {path}")
+    # A generated file can become a FIFO after stat(). Open without blocking,
+    # then validate and read the same descriptor rather than checking the path again.
+    flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NONBLOCK", 0)
+    with os.fdopen(os.open(source, flags), "rb") as stream:
+        if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
+            raise EvaluationError(f"Hash input is not a regular file: {path}")
+        return hashlib.sha256(stream.read()).hexdigest()
 
 
 def read_json(path: Path) -> Any:
