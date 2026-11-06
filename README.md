@@ -2,15 +2,13 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.51**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.51) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.52**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.52) · [Install](docs/INSTALLATION.md)
 
-The working source is **1.1.52, an unpublished release candidate**: evaluator hashing rejects special files, with bounded POSIX FIFO regressions. Its archive and manifest are prepared in `releases/1.1.52/` for local review. This candidate is not merged, published or installed; published 1.1.51 remains the recovery and installation target.
+The working package matches published **1.1.52**, released from commit `ea8b1534b37757359037263bd8fb9bea3b366d88`. Evaluator hashing rejects special files before reading them and verifies the opened descriptor, with bounded POSIX FIFO and replacement-race regressions. Repository CI runs evaluator tests independently on Linux and Windows while preserving release-integrity checks.
 
-Published **1.1.51** was released from commit `f286c87a18ca8d49ae0abeb28129d3b352ca4c50`. It packages the narrow scoped-primary rubric correction with its coordinated evaluation documentation and regression exception.
+All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. See the [publication receipt](docs/RELEASE-1.1.52-PUBLICATION-2026-11-06.md). Frozen candidate notes retain their preparation-time wording; this later publication does not rewrite them. Installation was excluded from this publication. The existing account installation was last verified at 1.1.51 in its [installation receipt](docs/INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md); it was not inspected or updated here, and 1.1.52 destination verification remains pending.
 
-All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. See the [publication receipt](docs/RELEASE-1.1.51-PUBLICATION-2026-11-05.md). The frozen candidate notes retain their preparation-time wording; they do not describe current publication status. The existing private account plugin is installed/enabled at 1.1.51, with complete 179-file installed-cache parity and fresh discovery of all three skills in 1.202 seconds within the shared five-second deadline; the account archive was not re-downloaded. See the [installation receipt](docs/INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md).
-
-The functional change is limited to the evaluator helper and its regression tests. The candidate also updates release metadata and notes; repository CI runs evaluator tests independently on Linux and Windows. Dependencies, product code, browser fixture assertions, earlier frozen releases and historical evidence remain unchanged. The earlier [research-step routing evaluation](docs/ROUTING-EVALUATION-1.1.50-2026-11-04.md) is separate evidence; no new model evaluation ran for this fix, and generated-product improvement or AT certification is not claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
+The functional change is limited to the evaluator helper and its regression tests; release metadata and notes identify the new package. Dependencies, product code, browser fixture assertions, earlier frozen releases and historical evidence remain unchanged. The helper does not impose a universal deadline on growing regular files or cover every filesystem race. The earlier [research-step routing evaluation](docs/ROUTING-EVALUATION-1.1.50-2026-11-04.md) is separate evidence; no new model evaluation ran for this fix, and generated-product improvement or AT certification is not claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
 
 ## Install
 
@@ -21,7 +19,7 @@ Install the plugin using [first-time installation](docs/INSTALLATION.md), then o
 The published package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. The command below pins the immutable published release tag verified in [Installation](docs/INSTALLATION.md). The catalog loads `plugins/ibm-design-language/` from that release, not a newer unpublished source branch:
 
 ```text
-/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.51
+/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.52
 /plugin install ibm-design-language@jp-personal
 ```
 
@@ -92,7 +90,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.52 working source, with candidate archive in `releases/1.1.52/`; frozen published archive in `releases/1.1.51/`.
+- `plugins/ibm-design-language/`: the published 1.1.52 package source, with its frozen archive in `releases/1.1.52/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.

@@ -2,13 +2,13 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
-The published recovery target is **1.1.51**. All four downloaded assets match
-the frozen 178-file release; see the [publication receipt](RELEASE-1.1.51-PUBLICATION-2026-11-05.md).
-The existing private account installation is verified at 1.1.51: 179-file
-installed-cache parity, installed/enabled catalog state, and all three skills
-discovered in 1.202 seconds within the shared five-second deadline; see the
-[installation receipt](INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md). The
-account archive was not re-downloaded for that check.
+The published recovery target is **1.1.52**. All four downloaded assets match
+the frozen 178-file release; see the [publication receipt](RELEASE-1.1.52-PUBLICATION-2026-11-06.md).
+Installation was excluded from this publication. The existing private account
+installation was last verified at 1.1.51 in its
+[installation receipt](INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md); it was not
+inspected or updated here. Version 1.1.52 destination parity, enabled state and
+fresh discovery remain unverified.
 Existing account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations); do not create a duplicate
 Git marketplace installation. New destinations require their own verification.
@@ -21,7 +21,7 @@ The dated 1.1.44 [publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [in
 
 ## Select the published release
 
-1. Obtain the [published 1.1.51 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.51). Resolve the full commit behind `v1.1.51` in a repository checkout with `git rev-parse 'v1.1.51^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
+1. Obtain the [published 1.1.52 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.52). Resolve the full commit behind `v1.1.52` in a repository checkout with `git rev-parse 'v1.1.52^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
 2. Verify the downloaded ZIP against the checksum and file manifest in [Recovery](RECOVERY.md#release-identity). From the matching checkout, run `python -B scripts/verify.py`.
 3. Run `codex plugin marketplace list --json` first. This repository declares its marketplace name as `jp-personal`; that name is a catalog identifier, not a requirement to adopt the owner's personal configuration. If the name is already in use for another source, stop and resolve the collision without replacing unrelated entries.
 
@@ -35,7 +35,7 @@ codex plugin add ibm-design-language@jp-personal --json
 codex plugin list --marketplace jp-personal --json
 ```
 
-Confirm version `1.1.51`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
+Confirm version `1.1.52`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
 
 ```sh
 python -B scripts/verify-install.py INSTALL_DIRECTORY
