@@ -4,10 +4,11 @@ Use this path to install the published package in Codex. For an existing owner-m
 
 The published recovery target is **1.1.51**. All four downloaded assets match
 the frozen 178-file release; see the [publication receipt](RELEASE-1.1.51-PUBLICATION-2026-11-05.md).
-Installation was explicitly excluded from this delivery. No 1.1.51 destination
-parity, enabled-state or fresh-discovery result is claimed. The earlier
-[1.1.50 installation receipt](INSTALLATION-1.1.50-VERIFICATION-2026-11-04.md)
-remains historical evidence and was not rechecked during publication.
+The existing private account installation is verified at 1.1.51: 179-file
+installed-cache parity, installed/enabled catalog state, and all three skills
+discovered in 1.202 seconds within the shared five-second deadline; see the
+[installation receipt](INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md). The
+account archive was not re-downloaded for that check.
 Existing account plugins use their supported update flow in
 [Recovery](RECOVERY.md#uploaded-account-installations); do not create a duplicate
 Git marketplace installation. New destinations require their own verification.

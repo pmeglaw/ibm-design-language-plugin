@@ -16,8 +16,9 @@ and rollback; preserve existing marketplace entries and unrelated configuration.
 Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.51^{commit}'`.
 Pin installation to that immutable commit. Publication and downloaded assets are
 verified in the [publication receipt](RELEASE-1.1.51-PUBLICATION-2026-11-05.md).
-Installation was explicitly excluded from this delivery and remains unverified
-for 1.1.51; publication does not establish destination synchronization.
+The existing account installation was verified at 1.1.51 on 2026-11-06; see the
+[installation receipt](INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md).
+Publication alone does not establish destination synchronization.
 
 ## Restore and verify
 
@@ -32,9 +33,14 @@ for 1.1.51; publication does not establish destination synchronization.
 
 The published package is **1.1.51**. All four downloaded assets and 178 package
 files match the frozen release; see the [publication receipt](RELEASE-1.1.51-PUBLICATION-2026-11-05.md).
-Installation was explicitly excluded from this delivery. No account or local
-plugin was installed, updated or checked for 1.1.51. Destination parity,
-enabled state, fresh discovery and local/published synchronization are unverified.
+Installation was excluded from the publication delivery. The existing account
+plugin was subsequently updated to 1.1.51 through its supported host flow and
+verified live on 2026-11-06: 179-file installed-cache parity, installed/enabled
+catalog state with the same identity, and all three enabled skills discovered in
+1.202 seconds within the shared five-second deadline. The account archive was not
+re-downloaded for that check. See the
+[installation receipt](INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md).
+Automatic selection and existing desktop-conversation refresh remain unverified.
 
 The following 1.1.50 observations describe its earlier verification.
 The then-published package was **1.1.50**. All four downloaded assets and 178 package
