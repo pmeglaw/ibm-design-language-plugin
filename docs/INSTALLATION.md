@@ -4,14 +4,20 @@ Use this path to install the published package in Codex. For an existing owner-m
 
 The published recovery target is **1.1.52**. All four downloaded assets match
 the frozen 178-file release; see the [publication receipt](RELEASE-1.1.52-PUBLICATION-2026-11-06.md).
-Installation was excluded from this publication. The existing private account
-installation was last verified at 1.1.51 in its
-[installation receipt](INSTALLATION-1.1.51-VERIFICATION-2026-11-06.md); it was not
-inspected or updated here. Version 1.1.52 destination parity, enabled state and
-fresh discovery remain unverified.
-Existing account plugins use their supported update flow in
-[Recovery](RECOVERY.md#uploaded-account-installations); do not create a duplicate
-Git marketplace installation. New destinations require their own verification.
+Installation was completed later under separate authorization. The retained
+"Created by you" account plugin is verified at **1.1.52**: complete 179-file
+account/installed parity, installed/enabled state and all three skills discovered
+in 0.986 seconds within the shared five-second deadline. Its identity, private
+USER scope and settings were preserved. The duplicate "JP Personal Plugins"
+installation was removed only after verification; see the
+[installation receipt](INSTALLATION-1.1.52-VERIFICATION-2026-11-06.md).
+
+For the existing "Created by you" plugin, use its supported account update flow
+in [Recovery](RECOVERY.md#uploaded-account-installations). The Git marketplace
+commands below are for a fresh destination; do not use them to add a second copy
+alongside that account plugin. A repository catalog card can remain available
+after uninstalling its copy; that does not mean it is installed or enabled.
+New destinations require their own verification.
 
 Published 1.1.36 has verified downloaded assets; see the [publication receipt](RELEASE-1.1.36-PUBLICATION-2026-10-21.md). The existing owner installation was subsequently updated to verified 1.1.36 through its separately authorized supported account flow. Complete 172-file account/installed parity and fresh discovery of all three enabled skills passed at 1.578 seconds within the shared five-second deadline; identity, sharing and earlier evidence were preserved. Existing desktop-session refresh and automatic selection remain unverified. Future updates
 to an existing account plugin use its supported flow under applicable authority;
