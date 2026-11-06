@@ -89,7 +89,41 @@ read-only hash check confirmed that all three referenced `SKILL.md` files match
 `releases/1.1.52/files.json`. The installed manifest also reports 1.1.52.
 This establishes discovery and availability in this existing desktop chat.
 No reinstall, cache edit or settings change was performed. Automatic skill
-selection was not exercised and remains unverified.
+selection was not exercised by that discovery check; the separate tests below
+address it within their stated scope.
+
+## Desktop automatic-selection tests - 6 November 2026
+
+PASS: three separately authorized fresh desktop chats each received one relevant
+read-only request, without naming or explicitly invoking a skill. The checkout
+was on `main` at `59083dddd1f977584c09aa23086dd4eb93c92db3`. The requests asked for
+Carbon guidance or critiques of hypothetical workflows, not changes to a product
+or inspection of real product data. This section records the completed tests;
+preparing this documentation update did not rerun them.
+
+| Request | Automatically selected skill | Observed result |
+| --- | --- | --- |
+| Carbon spacing and IBM Plex typography for a compact settings form | `ibm-design-language:design-ui` | PASS: selected and successfully loaded |
+| Information architecture and responsive flow of a fictional expense application | `ibm-design-language:review-product-experience` | PASS: selected and successfully loaded |
+| Hypothetical Bench seat-map search, inspector and publish-review flow | `ibm-design-language:seat-planner-ui-ux` | PASS: selected and successfully loaded |
+
+Each inspected desktop trace shows a completed `Get-Content` command with exit
+code 0 for the expected entrypoint under
+`created-by-me-remote/ibm-design-language/1.1.52/skills/<skill>/SKILL.md`.
+This verifies selection and successful loading from the retained plugin, beyond
+catalog availability or an assistant's statement that it used a skill.
+
+Before/after checks found identical configuration-file and complete 179-file
+installed-plugin hashes, with the same `main` commit and clean working tree.
+The tests did not change settings, plugin files or repository content, and did
+not install or publish anything. Raw chat traces remain outside this public
+receipt.
+
+The scope is **one request per skill in three fresh desktop chats**. These are
+three successful observations, not repeated trials or a guarantee for other
+wording, existing chats, future requests or other hosts. No unrelated negative
+control was run in the desktop chats. Generated-product quality and production
+integration were not evaluated.
 
 ## Preserved failures and limits
 
@@ -100,10 +134,18 @@ name-resolution attempts are preserved in the private evidence. The personal
 sharing reader returned HTTP 400, so a complete audience read was unavailable;
 private USER metadata was confirmed before and after, and no sharing mutation ran.
 
+Earlier standalone CLI selection probes were inconclusive: the Carbon and
+product-flow probes encountered `registered Core launch requires an installed app`
+during file reads, and the Bench probe showed no skill read. An unrelated checksum
+control showed no IBM skill invocation. These CLI observations remain separate
+from the three successful desktop tests and are not counted as desktop evidence.
+
 The original fresh native-session checks alone did not establish refresh of an
-existing desktop chat. The follow-up above separately confirms availability in
-the inspected chat. Automatic skill selection, refresh of other desktop chats,
-other-host installation and generated-product quality remain unverified.
-No new model evaluation, dependency installation or public release change ran.
+existing desktop chat. The discovery follow-up separately confirms availability
+in the inspected chat; the later desktop tests confirm automatic selection and
+loading only for the three requests above. Automatic selection outside those
+requests, refresh of other existing desktop chats, other-host installation and
+generated-product quality remain unverified. No dependency installation or
+public release change ran.
 The original publication receipt retains its publication-only scope, and earlier
 installation receipts remain unchanged historical evidence.
