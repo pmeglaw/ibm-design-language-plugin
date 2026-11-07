@@ -125,6 +125,42 @@ wording, existing chats, future requests or other hosts. No unrelated negative
 control was run in the desktop chats. Generated-product quality and production
 integration were not evaluated.
 
+## Sidebar configuration follow-up - 6 November 2026
+
+A later read-only investigation, with the checkout on `main` at
+`6f1192e84d5e95b1d8ec72d674de9877ee238f0e`, found one addition to the global
+Codex `config.toml`: `code-review-sidebar-layout = "detailed"` under `[desktop]`.
+The file's modification time was **6 November 2026 at 16:13:35 Pacific**
+(`2026-11-07T00:13:35.9495282Z`). Removing only that line in memory reproduced
+the recorded pre-change file SHA-256 exactly. No other configuration bytes
+changed, including plugin settings. The earlier unchanged-configuration results
+above retain their original check-time scope; this was a later observation.
+
+Inspection of the installed Codex desktop version **26.1103.4239.0** identified
+this as a Code Review sidebar display preference. Its default is already
+`detailed`, so the added line explicitly records the existing default without
+changing the effective layout. The "Detailed" action in "Sidebar display
+options" is a code path that saves this value. The logs did not identify the
+initiating action or actor: **attribution remains unverified**. That possible
+save path is not proof of what caused this write.
+
+PASS: read-only checks during the investigation confirmed the retained
+`ibm-design-language@created-by-me-remote` manifest still reports **1.1.52**,
+and the complete 179-file installed-cache hash map is identical to the preceding
+verified baseline. All three retained skills remained available in the desktop
+chat's injected catalog, and their entrypoint files remained readable. The
+`ibm-design-language@jp-personal` duplicate's cache and configuration entry
+remained absent. The sidebar preference does not change plugin configuration,
+identity or files. No corrective plugin or settings change was needed.
+
+This section records the completed investigation; preparing this receipt update
+did not repeat the account download, native discovery session or automatic-selection
+tests. The three successful desktop tests retain their **one-request-per-skill**
+scope, and broader automatic selection remains unverified. Neither the
+investigation nor this documentation update changed settings, installed anything
+or published a release. Raw configuration and logs remain outside this public
+receipt.
+
 ## Preserved failures and limits
 
 The CLI account selector could not resolve the plugin by package name. An initial
