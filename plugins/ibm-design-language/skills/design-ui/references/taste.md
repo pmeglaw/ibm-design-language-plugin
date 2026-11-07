@@ -2,6 +2,19 @@
 
 These are craft heuristics, not additional Carbon specifications. Correct component selection does not guarantee a usable or polished screen.
 
+## Quick craft pass
+
+Use this scan order to locate useful corrections. The rubric, applicable benchmarks and review workflow below retain their required checks. Address serious interaction or accessibility problems whenever encountered.
+
+1. **Task and register.** Identify the work and next step. Judge each region against its productive or expressive purpose and the approved product brand.
+2. **Hierarchy and action scope.** Make important content legible first. Relate actions to the content they control; reduce competing emphasis while keeping useful secondary controls available.
+3. **Density and alignment.** Trace title, toolbar, content and help edges. Use [spacing](spacing.md) and supported component sizes; preserve readable long content, usable targets and room for decisions and errors.
+4. **Type and detail.** Use coherent [named type styles](typography.md) and realistic labels, units and values. Check numeric alignment, wrapping, truncation and icon/text balance.
+5. **Color and surfaces.** Preserve approved semantic brand and status roles. Check actual contrast, non-color cues, layers and state treatments; resolve values through the applicable [theme tokens](tokens.md#theme-tokens).
+6. **States and continuity.** Inspect relevant open, overflow, loading, empty and failure states. Verify [keyboard, focus and recovery](accessibility.md), immediate feedback and [reduced-motion behavior](motion.md); mark unavailable checks untested.
+7. **What to remove or retain.** Name decoration, repeated copy or enclosure to remove or retain, and explain why. Preserve useful information, frequent actions, recognizable identity, meaningful boundaries and recovery cues.
+8. **Evidence and priority.** Connect each material observation to task impact and a concrete correction. Distinguish screenshot, runtime, source and hypothesis; state verification limits and complete applicable [cross-view comparisons](#cross-view-consistency).
+
 ## Establish the register
 
 Productive tools favor predictable controls, scanning, and efficient density. Expressive pages can use fluid type, imagery, and more dramatic composition. Apply the approved product brand when one is in scope. Judge against the task rather than forcing every surface into an admin-console aesthetic.
