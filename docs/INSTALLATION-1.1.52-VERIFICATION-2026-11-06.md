@@ -161,6 +161,54 @@ investigation nor this documentation update changed settings, installed anything
 or published a release. Raw configuration and logs remain outside this public
 receipt.
 
+## Final synchronization check - 6 November 2026
+
+PASS: after [PR #114](https://github.com/pmeglaw/ibm-design-language-plugin/pull/114)
+merged, a final read-only check confirmed local and remote `main` at
+`60b7e182466bdb80ff850ded1df5216fda33bd5c`, with a clean working tree. The
+sidebar-setting receipt matched the committed copy on remote `main`. All
+**15 checks across five workflow runs** passed on that exact merge commit,
+including [plugin verification and both evaluator platforms](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/42320751747),
+[live release-documentation validation](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/42320751441),
+[table guidance](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/42320751529),
+[seat evaluation adapters](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/42320751487)
+and [security analysis](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/42320750663).
+These are results for that merged commit, not CI for this receipt addition.
+
+PASS: 1.1.52 remained the latest stable published release, with its tag resolving
+to `ea8b1534b37757359037263bd8fb9bea3b366d88`. All four public assets and the
+current retained account archive were freshly downloaded into memory. The public
+assets matched the frozen release bytes, including the ZIP checksum recorded
+above; all 178 ZIP/source files matched `files.json`. The source package and
+frozen releases were unchanged from the release commit.
+
+PASS: all **179 files** in the downloaded account archive matched the installed
+cache. `python -B scripts/verify-install.py INSTALL_DIRECTORY` independently
+reported zero missing, extra or changed files and the exact validated host
+wrapper. The retained `ibm-design-language@created-by-me-remote` account remained
+private USER-scoped, installed and enabled, with both remote and local version
+1.1.52. Its identity and catalog settings remained preserved.
+
+PASS: fresh native discovery returned all three enabled qualified skills listed
+above in **1.357 seconds**, on the first `skills/list` attempt. One shared
+monotonic five-second deadline covered initialization, the `plugin/list` catalog
+refresh and skill discovery. Every skill belonged to the retained plugin and
+resolved under its 1.1.52 destination. The existing desktop chat's injected
+catalog also contained all three skills.
+
+The `ibm-design-language@jp-personal` duplicate remained uninstalled and disabled
+in the native catalog, with no cache, configuration entry or discovered skills.
+The global configuration and installed-plugin hashes were unchanged. The
+sidebar setting still matched the earlier observation, and its initiating action
+and actor remain **unverified**.
+
+This section records that completed check; preparing this documentation patch
+does not repeat the downloads or discovery session. Automatic selection was not
+retested: the earlier three successful desktop tests retain their
+**one-request-per-skill** scope. Neither the check nor this receipt update changed
+settings, published a release or installed anything. Raw account data and logs
+remain outside this public receipt.
+
 ## Preserved failures and limits
 
 The CLI account selector could not resolve the plugin by package name. An initial
