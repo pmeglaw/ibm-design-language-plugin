@@ -209,6 +209,56 @@ retested: the earlier three successful desktop tests retain their
 settings, published a release or installed anything. Raw account data and logs
 remain outside this public receipt.
 
+## Conversation-mode follow-up - 6 November 2026
+
+A separate read-only investigation, with the checkout at
+`f233fcd32474b283cb384454a2a0e5ef9b5e5a01`, identified a later change to
+`conversationDetailMode` under `[desktop]` in the global Codex configuration:
+`STEPS_COMMANDS` became `STEPS_PROSE`. The file's modification time was
+**6 November 2026 at 17:16:52 Pacific** (`2026-11-07T01:16:52Z`). Restoring the
+previous value in memory reproduced the preceding verified file SHA-256 exactly;
+all other configuration bytes were unchanged, including plugin settings and the
+sidebar layout. The earlier 1.357-second check and its preservation statements
+retain their original check-time scope.
+
+Code inspection of Codex desktop **26.1103.4239.0** maps this setting from
+coding/command detail to everyday/prose mode. That mode can hide technical tool
+output and instruct the assistant to use less technical language and omit implicit
+skill-use announcements. The mode selector is a code path that saves this value,
+but the available logs did not establish the initiating action or actor.
+**Attribution remains unverified.**
+
+PASS: the retained `ibm-design-language@created-by-me-remote` plugin remained
+installed and enabled, with remote and local version **1.1.52**. All
+**179 installed files** matched the previously verified hash map. Fresh native
+discovery returned all three enabled qualified skills listed above in
+**0.845 seconds**, on the first `skills/list` attempt, within one shared
+monotonic five-second deadline covering initialization, catalog refresh and
+discovery. Each skill belonged to the retained plugin at its 1.1.52 destination.
+
+The `ibm-design-language@jp-personal` duplicate remained uninstalled and disabled,
+with no cache, configuration entry or discovered skills. The global configuration
+was unchanged during the discovery check, and the working tree remained clean
+at the commit recorded above.
+
+During receipt preparation, a later read-only check found `STEPS_COMMANDS`
+restored, with a configuration modification time of **6 November 2026 at
+17:24:47 Pacific** (`2026-11-07T01:24:47Z`). The complete configuration hash again
+matched the earlier commands-mode snapshot, and all 179 plugin files remained
+unchanged. The initiating action and actor for this reversion are also
+**unverified**; this documentation update did not change the setting.
+
+The 0.845-second result records installation integrity and skill availability
+for the preceding `STEPS_PROSE` configuration. **Automatic selection under
+`STEPS_PROSE` remains unverified**;
+the earlier three successful desktop tests retain their **one-request-per-skill**
+scope and do not establish selection under that mode. No automatic-selection
+tests, account downloads or public release-asset downloads were repeated during
+this investigation. Preparing this receipt update does not rerun discovery.
+Neither the investigation nor this update changed settings, pushed commits,
+published a release or installed anything. Raw configuration and logs remain
+outside this public receipt.
+
 ## Preserved failures and limits
 
 The CLI account selector could not resolve the plugin by package name. An initial
