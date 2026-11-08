@@ -2,15 +2,13 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.52**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.52) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.53**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.53) · [Install](docs/INSTALLATION.md)
 
-The working source is **1.1.53, an unpublished release candidate**: a concise opening craft checklist in `taste.md`, with direct failure/retry recovery guidance. Its new archive and manifest are in `releases/1.1.53/`. Publication and installation remain unverified until their delivery checks complete; published 1.1.52 remains the recovery target.
+The working package matches published **1.1.53**, released from commit `73891e8088c21049c27631b943f31b52e6d27eb1`. The taste reference now opens with eight ordered craft prompts and direct links to existing guidance, including failure/retry recovery. Pre-existing taste sections, skill routing, component benchmarks and contextual brand/density judgments remain intact.
 
-Published **1.1.52** was released from commit `ea8b1534b37757359037263bd8fb9bea3b366d88`. Evaluator hashing rejects special files before reading them and verifies the opened descriptor, with bounded POSIX FIFO and replacement-race regressions. Repository CI runs evaluator tests independently on Linux and Windows while preserving release-integrity checks.
+All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. See the [publication receipt](docs/RELEASE-1.1.53-PUBLICATION-2026-11-08.md). Frozen notes retain their preparation-time wording; publication does not rewrite them. The retained "Created by you" account plugin is verified at 1.1.53: complete 179-file account/installed parity, installed/enabled state and all three enabled skills discovered in 1.099 seconds. Its identity, private USER scope, presentation and settings were preserved. See the [installation receipt](docs/INSTALLATION-1.1.53-VERIFICATION-2026-11-08.md).
 
-All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. See the [publication receipt](docs/RELEASE-1.1.52-PUBLICATION-2026-11-06.md). Frozen candidate notes retain their preparation-time wording; this later publication does not rewrite them. Installation was excluded from publication and completed later under separate authorization. The retained "Created by you" account plugin is verified at 1.1.52: complete 179-file account/installed parity and all three enabled skills discovered in 0.986 seconds. The duplicate "JP Personal Plugins" installation was removed after verification; the retained identity and settings were preserved. See the [installation receipt](docs/INSTALLATION-1.1.52-VERIFICATION-2026-11-06.md).
-
-In published 1.1.52, the functional change is limited to the evaluator helper and its regression tests; release metadata and notes identify that package. Dependencies, product code, browser fixture assertions, earlier frozen releases and historical evidence remain unchanged. The helper does not impose a universal deadline on growing regular files or cover every filesystem race. The earlier [research-step routing evaluation](docs/ROUTING-EVALUATION-1.1.50-2026-11-04.md) is separate evidence; no new model evaluation ran for this fix, and generated-product improvement or AT certification is not claimed. Existing desktop-conversation refresh and automatic selection remain unverified.
+Dependencies, product code, fixture assertions, earlier frozen releases and historical evidence remain unchanged. Faster retrieval is an editorial objective, not a measured improvement. No model evaluation, generated-product improvement or assistive-technology certification is claimed. Existing desktop-conversation refresh and automatic selection at 1.1.53 remain unverified.
 
 ## Install
 
@@ -21,7 +19,7 @@ Install the plugin using [first-time installation](docs/INSTALLATION.md), then o
 The published package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. The command below pins the immutable published release tag verified in [Installation](docs/INSTALLATION.md). The catalog loads `plugins/ibm-design-language/` from that release, not a newer unpublished source branch:
 
 ```text
-/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.52
+/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.53
 /plugin install ibm-design-language@jp-personal
 ```
 
@@ -92,7 +90,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.53 working source, with its candidate archive in `releases/1.1.53/`; the published package's frozen archive remains in `releases/1.1.52/`.
+- `plugins/ibm-design-language/`: the published 1.1.53 package source, with its frozen archive in `releases/1.1.53/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
