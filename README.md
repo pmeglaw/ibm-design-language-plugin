@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.52**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.52) · [Install](docs/INSTALLATION.md)
 
-The working source contains **unpublished changes based on 1.1.52**: a concise opening craft checklist in `taste.md`. Version metadata remains **1.1.52**; this source does not match the frozen release and is not release-ready. Do not install this branch as verified 1.1.52.
+The working source is **1.1.53, an unpublished release candidate**: a concise opening craft checklist in `taste.md`, with direct failure/retry recovery guidance. Its new archive and manifest are in `releases/1.1.53/`. Publication and installation remain unverified until their delivery checks complete; published 1.1.52 remains the recovery target.
 
 Published **1.1.52** was released from commit `ea8b1534b37757359037263bd8fb9bea3b366d88`. Evaluator hashing rejects special files before reading them and verifies the opened descriptor, with bounded POSIX FIFO and replacement-race regressions. Repository CI runs evaluator tests independently on Linux and Windows while preserving release-integrity checks.
 
@@ -92,7 +92,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: unpublished source changes based on 1.1.52; the published package's frozen archive remains in `releases/1.1.52/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.53 working source, with its candidate archive in `releases/1.1.53/`; the published package's frozen archive remains in `releases/1.1.52/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
