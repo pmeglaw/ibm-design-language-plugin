@@ -263,7 +263,8 @@
       "id": "ibm-layout",
       "url": "https://www.ibm.com/design/language/layout/overview/",
       "sections": [
-        "Overview and techniques prose: hierarchy, geometry, rhythm, negative space and asymmetry",
+        "Overview and techniques prose: structural and editorial rhythm, negative space, typographic hierarchy, compositional flow and balanced asymmetry",
+        "Techniques: inspected paired illustrations for breathing room, hierarchy, flow and asymmetry; local application to productive screens and reflow",
         "Local expressive/hybrid composition recipe and selected Gallery studies"
       ],
       "local_refs": [
@@ -274,10 +275,10 @@
       ],
       "coverage": "partial",
       "review_status": "content-reviewed-with-limits",
-      "reviewed_at": "2026-10-24",
+      "reviewed_at": "2026-11-13",
       "authority": "official-documentation",
-      "version_scope": "Live public design prose reviewed 2026-10-24; not installed-package API evidence",
-      "limits": "Public prose and three separately recorded Gallery source images; no complete layout example audit, live composition, new DOM measurements, theme matrix, keyboard, AT or model pass. New correction pairs are local craft heuristics.",
+      "version_scope": "Layout tips prose and four teaching pairs reviewed 2026-11-13; overview and separate Gallery evidence retain their 2026-10-24 scope.",
+      "limits": "Selected illustrations, not a complete example audit, measured eye tracking, product render, keyboard, AT or model evaluation. Product applications and reflow checks are local craft guidance, not IBM component specifications.",
       "reviewed_urls": [
         "https://www.ibm.com/design/language/layout/overview/",
         "https://www.ibm.com/design/language/layout/tips-and-techniques/"
