@@ -1,3 +1,9 @@
+# 1.1.55 Review layout changes at breakpoints
+
+The shared layout guide now checks how much of the primary task stays visible across a responsive transition. Designers compare neighboring widths with the same content, height, state and scroll position, then judge whether newly visible context earns the space it takes. The check applies in both design and critique.
+
+This is a local review technique. The archive and manifest identify the prepared candidate. Publication and installation have separate verification records.
+
 # 1.1.54 Layout techniques in product UI
 
 The design and critique workflows now use IBM’s layout techniques when arranging a screen: choose a repeatable structure, vary it when the content changes role, group related decisions with space, and lead from focal content to an answer or action. The shared guide distinguishes balanced asymmetry from layouts that need equal measures for comparison. It includes a review-queue example and checks for content growth, stacking and meaningful order.
