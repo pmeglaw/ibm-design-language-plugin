@@ -35,7 +35,7 @@ Identify the visual register: productive interfaces use efficient, predictable l
 ## Implementation and verification
 
 1. Use the installed component system first. The bundled CSS is an optional standalone prototype fallback, limited to White and Gray 100. Read [asset scope](references/asset-scope.md) before using it; it is not a JavaScript component library or a four-theme implementation.
-2. Compose with the 2x Grid, named type styles, spacing tokens, semantic colors, and the applicable component's anatomy. Use component-specific corner, size, and focus treatments rather than global styling absolutes. Trace authored color rules to semantic roles, including interaction states; see the [worked example](references/semantic-token-example.md).
+2. For page layout, [compose the reading path](references/composition-craft.md#compose-the-reading-path) before placing controls: decide which relationships repeat and what deserves emphasis as the screen reflows. Compose with the 2x Grid, named type styles, spacing tokens, semantic colors, and the applicable component's anatomy. Use component-specific corner, size, and focus treatments rather than global styling absolutes. Trace authored color rules to semantic roles, including interaction states; see the [worked example](references/semantic-token-example.md).
 3. Use at most one page-level primary action when the task warrants it; a monitoring or read-only view may need none. Do not invent a primary to satisfy a count; a focused modal, panel, or task may have its own primary while active. Repeated sections do not each need a primary button. See [component selection](references/components-preview.md).
 4. Design the relevant no-data, no-results, loading, failure, partial/overflow, submitting, and success states. For a table's no-data state, replace the empty table including headers/footer; preserve useful surrounding actions. Keep search/filter context in a no-results state. See [patterns](references/patterns.md).
 5. Follow [accessibility](references/accessibility.md) for names, control states, keyboard/focus, and evidence. Disabled is not hidden. A search field still needs an accessible name when its visible label is omitted.
@@ -58,7 +58,7 @@ Read only the rows that apply. Each reference states its own sources, versions a
 | [Release gates](references/release-gates.md) | Header/table/search/form benchmarks, geometry and keyboard acceptance checks, evidence limits |
 | [Artifact intake](references/artifact-intake.md) | Selective reuse of supplied research, prototypes and mockups |
 | **Layout and foundations** | |
-| [Composition craft](references/composition-craft.md) | Desktop hierarchy, reading edges, spacing, density and state growth |
+| [Composition craft](references/composition-craft.md) | Reading path, structural and editorial rhythm, desktop geometry and state growth |
 | [2x Grid](references/2x-grid.md) | Grid geometry, breakpoints, grid behaviors and implementation |
 | [Spacing](references/spacing.md) | Fixed token values, responsive composition, Stack/gap, component spacing |
 | [Typography](references/typography.md), [typeface](references/typeface.md), [coverage](references/typeface-coverage.md) | Productive/expressive type, type tokens, IBM Plex families, multilingual text, fonts |

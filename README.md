@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.53**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.53) · [Install](docs/INSTALLATION.md)
 
-The working package matches published **1.1.53**, released from commit `73891e8088c21049c27631b943f31b52e6d27eb1`. The taste reference now opens with eight ordered craft prompts and direct links to existing guidance, including failure/retry recovery. Pre-existing taste sections, skill routing, component benchmarks and contextual brand/density judgments remain intact.
+The working source is **1.1.54, an unpublished release candidate**. It applies IBM layout techniques to product design and critique. Published **1.1.53** was released from commit `73891e8088c21049c27631b943f31b52e6d27eb1` and remains the installation target until the new release is verified.
 
 All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. See the [publication receipt](docs/RELEASE-1.1.53-PUBLICATION-2026-11-08.md). Frozen notes retain their preparation-time wording; publication does not rewrite them. The retained "Created by you" account plugin is verified at 1.1.53: complete 179-file account/installed parity, installed/enabled state and all three enabled skills discovered in 1.099 seconds. Its identity, private USER scope, presentation and settings were preserved. See the [installation receipt](docs/INSTALLATION-1.1.53-VERIFICATION-2026-11-08.md).
 
@@ -90,7 +90,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.53 package source, with its frozen archive in `releases/1.1.53/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.54 working source, with its candidate archive in `releases/1.1.54/`; published 1.1.53 remains in `releases/1.1.53/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.

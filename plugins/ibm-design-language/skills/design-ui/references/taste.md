@@ -7,7 +7,7 @@ These are craft heuristics, not additional Carbon specifications. Correct compon
 Use this scan order to locate useful corrections. The rubric, applicable benchmarks and review workflow below retain their required checks. Address serious interaction or accessibility problems whenever encountered.
 
 1. **Task and register.** Identify the work and next step. Judge each region against its productive or expressive purpose and the approved product brand.
-2. **Hierarchy and action scope.** Make important content legible first. Relate actions to the content they control; reduce competing emphasis while keeping useful secondary controls available.
+2. **Hierarchy and action scope.** Trace the [reading path](composition-craft.md#compose-the-reading-path) from the focal content through its context to the answer or action. Relate actions to the content they control; reduce competing emphasis while keeping useful secondary controls available.
 3. **Density and alignment.** Trace title, toolbar, content and help edges. Use [spacing](spacing.md) and supported component sizes; preserve readable long content, usable targets and room for decisions and errors.
 4. **Type and detail.** Use coherent [named type styles](typography.md) and realistic labels, units and values. Check numeric alignment, wrapping, truncation and icon/text balance.
 5. **Color and surfaces.** Preserve approved semantic brand and status roles. Check actual contrast, non-color cues, layers and state treatments; resolve values through the applicable [theme tokens](tokens.md#theme-tokens).

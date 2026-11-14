@@ -2,6 +2,21 @@
 
 Use after selecting a page structure and component variants. All recipes, correction pairs and diagnostic measurements below are **local craft heuristics**, not additional Carbon specifications. They extend the existing header/table/search/form benchmarks without upgrading their evidence.
 
+## Compose the reading path
+
+Use [IBM’s layout techniques](https://www.ibm.com/design/language/layout/tips-and-techniques/) when arranging a screen or a sequence of sections. IBM distinguishes the rhythm **within** a unit from the rhythm **between** units. The following questions translate that distinction into product decisions:
+
+| Decision | How to apply it |
+|---|---|
+| What should repeat, and where does the task change? | Align peers on the [2x Grid](2x-grid.md) and use the [sizing and spacing scales](spacing.md) for a repeatable vertical rhythm. Give equivalent content the same structure across sections or views. Vary a span, scale or section pattern when the content changes role; leave comparable rows and options predictable. |
+| Which elements belong together? | Keep a label, value and help close enough to read as a unit. Let a larger interval separate the next decision. Before adding a border or card, see whether proximity already conveys the grouping. Put space at the boundary that needs it; blanket padding can push a useful control away from its data. |
+| Where should the eye enter, then go? | Name the first thing the person needs to notice, the context needed to understand it, and the action or information they came for. Use named type styles, position and shared edges to make that sequence and its parent–child relationships visible. A read-only view can end at an answer. |
+| Would unequal visual weight help? | Give a main object more room and use a smaller supporting region or open space to balance it on the grid. Keep equal measures when people must compare peers. An offset that interrupts scanning, detaches an action or scrambles reading order has no job here. |
+
+For example, on a review queue, an exception summary may deserve a wider area than its supporting counts. Keep the records beneath it on consistent columns so people can compare them. If the summary cannot change what someone does next, the table may deserve the first look instead.
+
+Check the intended path against the actual wide and narrow render when available: trace it with realistic content, then with a long heading or an expanded detail. When columns stack, does the explanation still precede the decision and stay with its action? In a working UI, check semantic and keyboard order separately. Record the observed break and correction, or why the existing rhythm works. A static frame supports a layout observation; actual eye movement or task success requires user evidence.
+
 ## Evidence baseline
 
 Carbon [Header](https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines), [Data table](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines), [Search](https://www.carbondesignsystem.com/building-blocks/core/components/search/guidelines) and [Form](https://www.carbondesignsystem.com/building-blocks/core/components/form/guidelines) prose was rechecked 2026-10-24 for scope, anatomy and placement. No new Storybook render, DOM measurement, theme matrix, keyboard or AT run accompanies this reference.
@@ -53,4 +68,4 @@ These are corrections to relationships, not instructions to restyle built-in con
 
 For each material issue, provide the observed condition, its task cost, one concrete correction and the evidence needed to judge it. Distinguish source contracts, screenshot observations, measured geometry, local preferences and untested behavior. Compare a correction under matching content/state before recommending it; static teaching examples are not proof of usability or implementation quality.
 
-This amendment focuses on desktop composition. It adds no narrow/320px or RTL work and does not change existing regression gates or historical benchmark claims. Product verification still follows the actual task's required environments.
+The desktop benchmarks add no narrow/320px or RTL evidence and do not change existing regression gates or historical benchmark claims. Product verification still follows the actual task's required environments.
