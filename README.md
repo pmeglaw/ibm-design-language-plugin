@@ -2,13 +2,11 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.53**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.53) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.54**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.54) · [Install](docs/INSTALLATION.md)
 
-The working source is **1.1.54, an unpublished release candidate**. It applies IBM layout techniques to product design and critique. Published **1.1.53** was released from commit `73891e8088c21049c27631b943f31b52e6d27eb1` and remains the installation target until the new release is verified.
+The working package matches published **1.1.54**, released from commit `d85cf0f355c6c57072048023b29166f5ef09bba2`. Design and critique share a guide to applying IBM layout techniques to product screens: establish a reading path, vary a repeated structure when its content changes role, and check what survives reflow.
 
-All four downloaded release assets match the 178-file frozen package. Required CI passed on the exact release commit. See the [publication receipt](docs/RELEASE-1.1.53-PUBLICATION-2026-11-08.md). Frozen notes retain their preparation-time wording; publication does not rewrite them. The retained "Created by you" account plugin is verified at 1.1.53: complete 179-file account/installed parity, installed/enabled state and all three enabled skills discovered in 1.099 seconds. Its identity, private USER scope, presentation and settings were preserved. See the [installation receipt](docs/INSTALLATION-1.1.53-VERIFICATION-2026-11-08.md).
-
-Dependencies, product code, fixture assertions, earlier frozen releases and historical evidence remain unchanged. Faster retrieval is an editorial objective, not a measured improvement. No model evaluation, generated-product improvement or assistive-technology certification is claimed. Existing desktop-conversation refresh and automatic selection at 1.1.53 remain unverified.
+All four downloaded release assets match the frozen package; see the [publication receipt](docs/RELEASE-1.1.54-PUBLICATION-2026-11-14.md). The retained private account plugin is installed and enabled, all 179 account and installed files match, and all three skills passed fresh discovery in 1.354 seconds; see the [installation receipt](docs/INSTALLATION-1.1.54-VERIFICATION-2026-11-14.md). These checks do not measure how well a model designs a new screen.
 
 ## Install
 
@@ -19,7 +17,7 @@ Install the plugin using [first-time installation](docs/INSTALLATION.md), then o
 The published package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. The command below pins the immutable published release tag verified in [Installation](docs/INSTALLATION.md). The catalog loads `plugins/ibm-design-language/` from that release, not a newer unpublished source branch:
 
 ```text
-/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.53
+/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.54
 /plugin install ibm-design-language@jp-personal
 ```
 
@@ -90,7 +88,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.54 working source, with its candidate archive in `releases/1.1.54/`; published 1.1.53 remains in `releases/1.1.53/`.
+- `plugins/ibm-design-language/`: the published 1.1.54 package source, with its frozen archive in `releases/1.1.54/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.

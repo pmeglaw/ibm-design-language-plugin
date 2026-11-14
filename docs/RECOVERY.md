@@ -7,20 +7,14 @@ installation's identity and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.53`
-- Immutable tag: `v1.1.53`
-- `plugin.zip` SHA-256: `0e8f75d0e455294117a0e57c7f9f69c927b906bd68037fe6353d5b0669fd8290`
-- Manifest: `releases/1.1.53/files.json`
-- Release commit: `73891e8088c21049c27631b943f31b52e6d27eb1`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.53)
+- Version: `1.1.54`
+- Immutable tag: `v1.1.54`
+- `plugin.zip` SHA-256: `eb66e21c17ba968517f435e9f36e629d3a9585081cffe649ab91846ad1271e74`
+- Manifest: `releases/1.1.54/files.json`
+- Release commit: `d85cf0f355c6c57072048023b29166f5ef09bba2`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.54)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.53^{commit}'`.
-Pin installation to that immutable commit. Publication and downloaded assets are
-verified in the [publication receipt](RELEASE-1.1.53-PUBLICATION-2026-11-08.md). The retained account
-plugin is separately verified at 1.1.53, including account/installed-file parity,
-installed/enabled state and bounded fresh discovery; see the
-[installation receipt](INSTALLATION-1.1.53-VERIFICATION-2026-11-08.md). Publication alone does not establish
-destination synchronization.
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.54^{commit}'`. For downloaded-asset verification see the [publication receipt](RELEASE-1.1.54-PUBLICATION-2026-11-14.md); for account and installed-file parity, enabled state and bounded discovery see the [installation receipt](INSTALLATION-1.1.54-VERIFICATION-2026-11-14.md).
 
 ## Restore and verify
 
@@ -32,12 +26,14 @@ instead; do not recreate the removed `jp-personal` duplicate.
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.53/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.54/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The published package is **1.1.53**. All four downloaded assets and 178 package
+The published package is **1.1.54**. See the [publication](RELEASE-1.1.54-PUBLICATION-2026-11-14.md) and [installation](INSTALLATION-1.1.54-VERIFICATION-2026-11-14.md) receipts for complete artifact, destination, and discovery checks.
+
+At its verification, the published package was **1.1.53**. All four downloaded assets and 178 package
 files match the frozen release; see the [publication receipt](RELEASE-1.1.53-PUBLICATION-2026-11-08.md).
 The existing private USER-scoped "Created by you" account plugin was updated
 through its supported guarded account flow, preserving identity, presentation,
