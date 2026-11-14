@@ -17,6 +17,8 @@ For example, on a review queue, an exception summary may deserve a wider area th
 
 Check the intended path against the actual wide and narrow render when available: trace it with realistic content, then with a long heading or an expanded detail. When columns stack, does the explanation still precede the decision and stay with its action? In a working UI, check semantic and keyboard order separately. Record the observed break and correction, or why the existing rhythm works. A static frame supports a layout observation; actual eye movement or task success requires user evidence.
 
+When a breakpoint changes the order, size or visibility of a region, render the nearest widths on either side that trigger the two layouts. Hold viewport height, content, state and scroll position constant. Compare where the first task-relevant item or action starts and which choices or details are visible without scrolling. If the wider layout shows less of the task, judge whether the added context earns that space or whether to keep the compact treatment longer.
+
 ## Evidence baseline
 
 Carbon [Header](https://www.carbondesignsystem.com/building-blocks/core/components/ui-shell-header/guidelines), [Data table](https://www.carbondesignsystem.com/building-blocks/core/components/data-table/guidelines), [Search](https://www.carbondesignsystem.com/building-blocks/core/components/search/guidelines) and [Form](https://www.carbondesignsystem.com/building-blocks/core/components/form/guidelines) prose was rechecked 2026-10-24 for scope, anatomy and placement. No new Storybook render, DOM measurement, theme matrix, keyboard or AT run accompanies this reference.

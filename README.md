@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.54**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.54) · [Install](docs/INSTALLATION.md)
 
-The working package matches published **1.1.54**, released from commit `d85cf0f355c6c57072048023b29166f5ef09bba2`. Design and critique share a guide to applying IBM layout techniques to product screens: establish a reading path, vary a repeated structure when its content changes role, and check what survives reflow.
+The working source is **1.1.55, an unpublished release candidate**. It adds a breakpoint comparison to the layout guide. Published **1.1.54** was released from commit `d85cf0f355c6c57072048023b29166f5ef09bba2`.
 
 All four downloaded release assets match the frozen package; see the [publication receipt](docs/RELEASE-1.1.54-PUBLICATION-2026-11-14.md). The retained private account plugin is installed and enabled, all 179 account and installed files match, and all three skills passed fresh discovery in 1.354 seconds; see the [installation receipt](docs/INSTALLATION-1.1.54-VERIFICATION-2026-11-14.md). These checks do not measure how well a model designs a new screen.
 
@@ -88,7 +88,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.54 package source, with its frozen archive in `releases/1.1.54/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.55 working source, with its candidate archive in `releases/1.1.55/` and published archive in `releases/1.1.54/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
