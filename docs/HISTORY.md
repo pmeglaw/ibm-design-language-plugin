@@ -1,6 +1,6 @@
 # Release history and evidence
 
-This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.54; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
+This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.55; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
 
 This package preserves verified work so restoration does not require repeating model evaluations. The 1.1.6 guidance passed 9/9 on one known screenshot regression. This author-graded case does not establish general improvement or repeatability; host skill-description truncation warnings are disclosed in the evidence. Earlier composition comparisons had two tied pairs, one incomplete pair and host configuration drift. Synthetic tests check evaluator mechanics, not design taste.
 
@@ -24,7 +24,9 @@ unchanged as history.
 
 ## Release validation
 
-See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.54). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.55). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+
+Version 1.1.55 adds a check for task visibility across responsive breakpoints. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.55) is from `b283b8a3f37bd55a9979eda8f9471566d5382dd8`. See the [publication](RELEASE-1.1.55-PUBLICATION-2026-11-14.md) and [installation](INSTALLATION-1.1.55-VERIFICATION-2026-11-14.md) receipts for the asset and destination checks.
 
 Version 1.1.54 brings IBM layout techniques into product design and critique. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.54) is from `d85cf0f355c6c57072048023b29166f5ef09bba2`. Its four assets and the installed 179-file plugin were verified independently; see the [publication](RELEASE-1.1.54-PUBLICATION-2026-11-14.md) and [installation](INSTALLATION-1.1.54-VERIFICATION-2026-11-14.md) receipts. No model evaluation or product usability result accompanies this release.
 
