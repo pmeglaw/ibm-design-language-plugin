@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.55**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.55) · [Install](docs/INSTALLATION.md)
 
-The working package matches published **1.1.55**, released from commit `b283b8a3f37bd55a9979eda8f9471566d5382dd8`. The layout guide now compares the visible task on either side of a responsive breakpoint.
+The working source is **1.1.56, an unpublished release candidate**. It adds a focused typography and color reference. Published **1.1.55** was released from commit `b283b8a3f37bd55a9979eda8f9471566d5382dd8`.
 
 All four downloaded assets match the frozen release. The private account plugin is installed and enabled, all 179 files match, and Codex discovered its three skills in 1.23 seconds. See the [publication](docs/RELEASE-1.1.55-PUBLICATION-2026-11-14.md) and [installation](docs/INSTALLATION-1.1.55-VERIFICATION-2026-11-14.md) receipts.
 
@@ -53,6 +53,7 @@ Replace bracketed placeholders. For fuller implementation, screenshot, cross-vie
 | Skill | Use it for |
 |---|---|
 | `ibm-design-language:design-ui` | Design, implementation, or focused critique: layout, typography, component selection, semantic color, approved branding, accessibility, and interactions. |
+| [`ibm-design-language:typography-and-color`](plugins/ibm-design-language/skills/typography-and-color/SKILL.md) | Focused Carbon questions about type pairs, semantic colors, theme layers, interaction states and text contrast. |
 | `ibm-design-language:review-product-experience` | Information architecture, navigation, task-flow, cross-view, and responsive reviews. Implementation follows only when requested. |
 | `ibm-design-language:seat-planner-ui-ux` | Dedicated Bench/Seat Planner UI/UX run; defaults to read-only review and follows current project contracts. |
 
@@ -88,7 +89,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.55 package source, with its frozen archive in `releases/1.1.55/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.56 working source, with its candidate archive in `releases/1.1.56/` and published archive in `releases/1.1.55/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
