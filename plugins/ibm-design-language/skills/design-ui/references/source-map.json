@@ -165,6 +165,18 @@
       "limits": "API behavior must be checked against the target installed version."
     },
     {
+      "id": "ibm-design-language-color",
+      "url": "https://www.ibm.com/design/language/color/",
+      "sections": ["Core blues and grays", "Color families and two-color combinations", "Gradients", "Color in UI"],
+      "local_refs": ["references/tokens.md"],
+      "coverage": "partial",
+      "review_status": "content-reviewed-with-limits",
+      "reviewed_at": "2026-11-14",
+      "authority": "official-documentation",
+      "version_scope": "Public IBM Design Language Color page and its two-color chart.",
+      "limits": "Brand palette guidance. Rendered component states, product overrides and contrast require project evidence."
+    },
+    {
       "id": "ibm-logos",
       "url": "https://www.ibm.com/design/language/ibm-logos/8-bar/",
       "sections": [
