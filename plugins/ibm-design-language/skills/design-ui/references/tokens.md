@@ -48,7 +48,7 @@ Colors are organized into 4-color families, each containing core blue. Combine f
 - **Avoid mixing teal with red or magenta.**
 - Data visualization is the sanctioned exception.
 
-Gradients: two colors only, from an approved 2-color family, no more than two grades apart, values 30–60 for vibrancy, 45° angle. No radial gradients, no three-color blends.
+For IBM brand gradients, choose two stops from an approved pair and keep the grades within two steps. Grades 30–60 produce vibrant blends. Lighter or darker grades can give a subtler result or more contrast. Blue 60 → Cyan 50 is one valid example. IBM’s Color page specifies the stops and their grade distance. It gives no angle or radial restriction. Use a format-specific direction or shape when the relevant artwork brief calls for it. [IBM Color](https://www.ibm.com/design/language/color/)
 
 ## Contrast by counting steps
 

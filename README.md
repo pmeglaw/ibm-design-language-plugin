@@ -4,7 +4,7 @@ An independently maintained Codex plugin for designing, implementing, and review
 
 The current published package is **1.1.56**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.56) · [Install](docs/INSTALLATION.md)
 
-The working package matches published **1.1.56**, released from commit `ff05ea7b38ccc42306474a5f5ab30e85a57abf8d`. It adds a dedicated Carbon typography and color skill.
+The working source is **1.1.57, an unpublished release candidate**. It adds IBM Design Language typeface and brand-color guidance. Published **1.1.56** was released from commit `ff05ea7b38ccc42306474a5f5ab30e85a57abf8d`.
 
 All four downloaded assets match the frozen release. The private account plugin is installed and enabled, all 180 files match, and Codex discovered its four skills in 1.187 seconds. See the [publication](docs/RELEASE-1.1.56-PUBLICATION-2026-11-15.md) and [installation](docs/INSTALLATION-1.1.56-VERIFICATION-2026-11-15.md) receipts.
 
@@ -89,7 +89,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the published 1.1.56 package source, with its frozen archive in `releases/1.1.56/`.
+- `plugins/ibm-design-language/`: the unpublished 1.1.57 working source, with its candidate archive in `releases/1.1.57/` and published archive in `releases/1.1.56/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.

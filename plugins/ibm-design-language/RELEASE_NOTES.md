@@ -1,3 +1,7 @@
+# 1.1.57 IBM typeface and brand color
+
+The typography and color skill now links directly to IBM Design Language’s Typeface and Color pages. It covers Plex family and script selection, font features, equation typesetting, and how to choose a two-color gradient for artwork. The token reference corrects its attribution of gradient angle and shape. Product controls continue to use their approved action and state roles.
+
 # 1.1.56 Carbon typography and color
 
 The new `ibm-design-language:typography-and-color` skill brings type and color decisions together for designers and implementers. It pairs compact or reading text with the corresponding heading, shows how the four Carbon themes layer surfaces, and distinguishes link, state and status colors. It links to Carbon’s two foundation overviews and the plugin’s detailed token and implementation references.
