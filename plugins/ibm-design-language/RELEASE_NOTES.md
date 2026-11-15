@@ -1,3 +1,7 @@
+# 1.1.56 Carbon typography and color
+
+The new `ibm-design-language:typography-and-color` skill brings type and color decisions together for designers and implementers. It pairs compact or reading text with the corresponding heading, shows how the four Carbon themes layer surfaces, and distinguishes link, state and status colors. It links to Carbon’s two foundation overviews and the plugin’s detailed token and implementation references.
+
 # 1.1.55 Review layout changes at breakpoints
 
 The shared layout guide now checks how much of the primary task stays visible across a responsive transition. Designers compare neighboring widths with the same content, height, state and scroll position, then judge whether newly visible context earns the space it takes. The check applies in both design and critique.

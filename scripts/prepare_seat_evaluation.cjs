@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const SKILLS = ['design-ui', 'review-product-experience', 'seat-planner-ui-ux'];
+const SKILLS = ['design-ui', 'review-product-experience', 'seat-planner-ui-ux', 'typography-and-color'];
 const SCENARIOS = 'plugins/ibm-design-language/skills/seat-planner-ui-ux/evaluation-cases.json';
 const CASE_IDS = ['explicit-review', 'bounded-implementation', 'map-drift', 'unavailable-browser',
   'version-authority', 'production-qa', 'generic-carbon', 'other-product', 'repository-status',
