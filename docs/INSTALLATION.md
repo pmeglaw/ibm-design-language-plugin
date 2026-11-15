@@ -2,7 +2,7 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
-The published recovery target is **1.1.55**. All four downloaded assets match the verified release. The retained account plugin is installed and enabled with complete 179-file parity and fresh discovery of all three skills. See the [publication](RELEASE-1.1.55-PUBLICATION-2026-11-14.md) and [installation](INSTALLATION-1.1.55-VERIFICATION-2026-11-14.md) receipts.
+The published recovery target is **1.1.56**. All four downloaded assets match the verified release. The retained account plugin is installed and enabled with complete 180-file parity and fresh discovery of all four skills. See the [publication](RELEASE-1.1.56-PUBLICATION-2026-11-15.md) and [installation](INSTALLATION-1.1.56-VERIFICATION-2026-11-15.md) receipts.
 
 For the existing "Created by you" plugin, use its supported account update flow
 in [Recovery](RECOVERY.md#uploaded-account-installations). The Git marketplace
@@ -19,7 +19,7 @@ The dated 1.1.44 [publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [in
 
 ## Select the published release
 
-1. Obtain the [published 1.1.55 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.55). Resolve the full commit behind `v1.1.55` in a repository checkout with `git rev-parse 'v1.1.55^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
+1. Obtain the [published 1.1.56 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.56). Resolve the full commit behind `v1.1.56` in a repository checkout with `git rev-parse 'v1.1.56^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
 2. Verify the downloaded ZIP against the checksum and file manifest in [Recovery](RECOVERY.md#release-identity). From the matching checkout, run `python -B scripts/verify.py`.
 3. Run `codex plugin marketplace list --json` first. This repository declares its marketplace name as `jp-personal`; that name is a catalog identifier, not a requirement to adopt the owner's personal configuration. If the name is already in use for another source, stop and resolve the collision without replacing unrelated entries.
 
@@ -33,12 +33,12 @@ codex plugin add ibm-design-language@jp-personal --json
 codex plugin list --marketplace jp-personal --json
 ```
 
-Confirm version `1.1.55`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
+Confirm version `1.1.56`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
 
 ```sh
 python -B scripts/verify-install.py INSTALL_DIRECTORY
 ```
 
-Replace `INSTALL_DIRECTORY` with that directory, quoting paths containing spaces. Verify fresh skill discovery using the app-server procedure in [Recovery](RECOVERY.md#restore-and-verify). Expect all three: `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux`. A listed installation alone does not prove that a session loaded the intended skill.
+Replace `INSTALL_DIRECTORY` with that directory, quoting paths containing spaces. Verify fresh skill discovery using the app-server procedure in [Recovery](RECOVERY.md#restore-and-verify). Expect all four: `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, `ibm-design-language:seat-planner-ui-ux`, and `ibm-design-language:typography-and-color`. A listed installation alone does not prove that a session loaded the intended skill.
 
 Open the intended project and use the [quick-start prompts](../README.md#quick-start). Installing this guidance does not install application dependencies or authorize product edits, Git publication, or production changes. The owner's synchronization directive in release maintenance applies to maintenance of this plugin, not to every product using it.

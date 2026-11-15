@@ -7,14 +7,14 @@ installation's identity and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.55`
-- Immutable tag: `v1.1.55`
-- `plugin.zip` SHA-256: `9765700b37e1c914a747cb323a202291d9be9b33317d872a7295444dde9edf07`
-- Manifest: `releases/1.1.55/files.json`
-- Release commit: `b283b8a3f37bd55a9979eda8f9471566d5382dd8`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.55)
+- Version: `1.1.56`
+- Immutable tag: `v1.1.56`
+- `plugin.zip` SHA-256: `51ebf8c9caac78a35f620315d66975976a92ae54e8e49ee76480b69f5aaf3369`
+- Manifest: `releases/1.1.56/files.json`
+- Release commit: `ff05ea7b38ccc42306474a5f5ab30e85a57abf8d`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.56)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.55^{commit}'`. For downloaded-asset verification see the [publication receipt](RELEASE-1.1.55-PUBLICATION-2026-11-14.md); for account and installed-file parity, enabled state and bounded discovery see the [installation receipt](INSTALLATION-1.1.55-VERIFICATION-2026-11-14.md).
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.56^{commit}'`. For downloaded-asset verification see the [publication receipt](RELEASE-1.1.56-PUBLICATION-2026-11-15.md); for account and installed-file parity, enabled state and bounded discovery see the [installation receipt](INSTALLATION-1.1.56-VERIFICATION-2026-11-15.md).
 
 ## Restore and verify
 
@@ -26,12 +26,14 @@ instead; do not recreate the removed `jp-personal` duplicate.
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.55/files.json`.
-6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, and `ibm-design-language:seat-planner-ui-ux` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.56/files.json`.
+6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, `ibm-design-language:seat-planner-ui-ux`, and `ibm-design-language:typography-and-color` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The published package is **1.1.55**. See the [publication](RELEASE-1.1.55-PUBLICATION-2026-11-14.md) and [installation](INSTALLATION-1.1.55-VERIFICATION-2026-11-14.md) receipts.
+The published package is **1.1.56**. See the [publication](RELEASE-1.1.56-PUBLICATION-2026-11-15.md) and [installation](INSTALLATION-1.1.56-VERIFICATION-2026-11-15.md) receipts.
+
+At its verification, the published package was **1.1.55**. See the [publication](RELEASE-1.1.55-PUBLICATION-2026-11-14.md) and [installation](INSTALLATION-1.1.55-VERIFICATION-2026-11-14.md) receipts.
 
 At its verification, the published package was **1.1.54**. See the [publication](RELEASE-1.1.54-PUBLICATION-2026-11-14.md) and [installation](INSTALLATION-1.1.54-VERIFICATION-2026-11-14.md) receipts for complete artifact, destination, and discovery checks.
 
@@ -295,7 +297,7 @@ preserves both the failed immediate probes and the later readiness observations.
 3. Call `skills/list` with the intended `cwds` and `forceReload: true`.
    Compare the complete plugin-qualified names returned by the API, such as
    `ibm-design-language:design-ui`, rather than bare frontmatter names.
-   Require the exact three skill names listed above, enabled, belonging to the
+   Require all four skill names listed above, enabled, belonging to the
    intended plugin, with paths under that destination's expected version.
    Do not add `perCwdExtraUserRoots` or copy files to manufacture discovery.
 4. If the result is incomplete, retry the same read at 200 ms intervals within
