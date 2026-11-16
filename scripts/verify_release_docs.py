@@ -56,7 +56,7 @@ def github_json(path):
     return result
 
 
-def verify(root, online=False):
+def verify(root, online=False, snapshot_tag=None):
     root = Path(root)
 
     def read(path):
@@ -169,11 +169,18 @@ def verify(root, online=False):
     require(one(entries[0], r'`([0-9a-f]{40})`', 'docs/HISTORY.md current commit') == commit,
             'docs/HISTORY.md: current entry commit mismatch')
 
-    if online:
-        release = github_json('releases/latest')
-        require(release.get('tag_name') == tag, 'GitHub latest release differs from documented version')
+    if snapshot_tag is not None:
+        require(snapshot_tag == f'v{source}', 'Pushed tag differs from package source version')
+
+    publication = 'unverified (offline)'
+    if online or snapshot_tag is not None:
+        endpoint = 'releases/latest' if snapshot_tag is None else f'releases/tags/{tag}'
+        release = github_json(endpoint)
+        mismatch = ('GitHub latest release differs from documented version' if snapshot_tag is None
+                    else 'GitHub release lookup returned a different tag than the snapshot documents')
+        require(release.get('tag_name') == tag, mismatch)
         require(release.get('draft') is False and release.get('prerelease') is False,
-                'GitHub latest release must be a published stable release')
+                'GitHub release must be a published stable release')
         require(release.get('html_url') == expected_url, 'GitHub release URL mismatch')
         obj = github_json(f'git/ref/tags/{tag}')['object']
         for _ in range(5):
@@ -184,20 +191,24 @@ def verify(root, online=False):
             obj = github_json(f'git/tags/{obj["sha"]}')['object']
         require(obj['type'] == 'commit' and obj['sha'] == commit,
                 'GitHub release tag commit differs from docs/RECOVERY.md')
+        publication = 'verified (GitHub release and tag)'
 
     return {'status': 'pass', 'published_version': version, 'source_version': source,
             'source_status': source_status,
             'release_commit': commit,
-            'publication': 'verified (GitHub release and tag)' if online else 'unverified (offline)',
+            'publication': publication,
             'downloaded_release_assets': 'unverified', 'installation': 'unverified'}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--github', action='store_true', help='Require live release/tag verification; API errors fail')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--github', action='store_true', help='Verify the latest stable GitHub release and tag')
+    mode.add_argument('--github-at-tag', metavar='TAG',
+                      help='Verify the source version and the release documented in this tag snapshot on GitHub')
     args = parser.parse_args()
     try:
-        print(json.dumps(verify(ROOT, online=args.github), indent=2))
+        print(json.dumps(verify(ROOT, online=args.github, snapshot_tag=args.github_at_tag), indent=2))
         return 0
     except (OSError, ValueError, KeyError, TypeError, SyntaxError) as error:
         print(f'Release documentation verification failed: {error}', file=sys.stderr)

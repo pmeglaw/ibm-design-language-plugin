@@ -244,13 +244,30 @@ Version 1.2.3 is the [published release]({URL}), from `{SHA}`.
         with self.assertRaisesRegex(ValueError, 'retain the published version'):
             self.module.verify(self.root)
 
-    def test_newer_explicit_candidate_is_allowed(self):
+    def prepare_newer_candidate(self):
         self.write('plugins/ibm-design-language/plugin.json', '{"version":"1.2.4"}')
         self.write('scripts/verify.py', "CURRENT = '1.2.4'\n")
         self.replace('docs/RELEASING.md', '(currently 1.2.3)', '(currently 1.2.4)')
         self.replace('README.md', f'The working package matches published **1.2.3**, released from commit `{SHA}`.', 'The working source is **1.2.4, an unpublished combined candidate**.')
         self.replace('README.md', 'the published 1.2.3 package source', 'the unpublished 1.2.4 working source')
+
+    def test_newer_explicit_candidate_is_allowed(self):
+        self.prepare_newer_candidate()
         self.assertEqual(self.module.verify(self.root)['source_version'], '1.2.4')
+
+    def test_tag_push_verifies_the_release_documented_in_the_snapshot(self):
+        self.prepare_newer_candidate()
+        replies = [{'tag_name': 'v1.2.3', 'draft': False, 'prerelease': False, 'html_url': URL},
+                   {'object': {'type': 'commit', 'sha': SHA}}]
+        with patch.object(self.module, 'github_json', side_effect=replies) as github:
+            result = self.module.verify(self.root, snapshot_tag='v1.2.4')
+        self.assertEqual(result['status'], 'pass')
+        self.assertEqual([call.args[0] for call in github.call_args_list],
+                         ['releases/tags/v1.2.3', 'git/ref/tags/v1.2.3'])
+
+    def test_tag_push_rejects_mismatched_package_version(self):
+        with self.assertRaisesRegex(ValueError, 'tag.*source version'):
+            self.module.verify(self.root, snapshot_tag='v1.2.4')
 
     def test_historical_notes_and_rollback_versions_are_ignored(self):
         self.write('releases/1.2.3/NOTES.md', '# 1.2.3 unpublished preparation notes\n')

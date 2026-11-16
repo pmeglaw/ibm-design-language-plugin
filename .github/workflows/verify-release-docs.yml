@@ -15,11 +15,18 @@ jobs:
         with:
           # Publication can leave preparation wording in the immutable tag.
           # Check current companion docs on the default branch for this event.
-          ref: ${{ github.event_name == 'release' && github.event.repository.default_branch || github.ref }}
+          ref: ${{ github.event_name == 'release' && github.event.repository.default_branch || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14'
       - run: python -B -m unittest discover -s tests -p test_release_docs.py
-      - run: python -B scripts/verify_release_docs.py --github
+      - name: Verify documented release against GitHub
+        shell: bash
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == push && "$GITHUB_REF" =~ ^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            python -B scripts/verify_release_docs.py --github-at-tag "$GITHUB_REF_NAME"
+          else
+            python -B scripts/verify_release_docs.py --github
+          fi
         env:
           GITHUB_TOKEN: ${{ github.token }}
