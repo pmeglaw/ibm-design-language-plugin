@@ -48,7 +48,9 @@ Colors are organized into 4-color families, each containing core blue. Combine f
 - **Avoid mixing teal with red or magenta.**
 - Data visualization is the sanctioned exception.
 
-For IBM brand gradients, choose two stops from an approved pair and keep the grades within two steps. Grades 30–60 produce vibrant blends. Lighter or darker grades can give a subtler result or more contrast. Blue 60 → Cyan 50 is one valid example. IBM’s Color page specifies the stops and their grade distance. It gives no angle or radial restriction. Use a format-specific direction or shape when the relevant artwork brief calls for it. [IBM Color](https://www.ibm.com/design/language/color/)
+For IBM brand gradients, choose two stops from an approved pair and keep the grades within two steps. Grades 30–60 produce vibrant blends. Lighter or darker grades can give a subtler result or more contrast. Blue 60 → Cyan 50 is one valid example. [IBM Color](https://www.ibm.com/design/language/color/)
+
+Geometry depends on the asset. IBM specifies a linear gradient at 45° for pictograms and rules out radial fills. For line-style illustration, IBM recommends following the stroke path. [IBM pictogram design](https://www.ibm.com/design/language/iconography/pictograms/design/#gradients) · [IBM line-style design](https://www.ibm.com/design/language/illustration/line-style/design/#gradients)
 
 ## Contrast by counting steps
 

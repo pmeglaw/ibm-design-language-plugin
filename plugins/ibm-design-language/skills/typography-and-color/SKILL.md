@@ -24,7 +24,9 @@ A simple fraction can use the face’s OpenType fractions feature where availabl
 
 ## IBM brand artwork
 
-Build an IBM composition around blue and neutrals. For additional hues, choose a subset of one of IBM’s four illustrated color groups. For a gradient, choose two colors from an approved pair, at most two palette steps apart. Grades 30–60 give a vivid result. Blue 60 → Cyan 50 works for a research article illustration. The Color page specifies pairings and grade distance and leaves the angle open. The article’s primary button still uses its product’s approved action and state tokens. [IBM Color](https://www.ibm.com/design/language/color/) · [Palette and gradient details](../design-ui/references/tokens.md#color-family-rules)
+Build an IBM composition around blue and neutrals. For additional hues, choose a subset of one of IBM’s four illustrated color groups. For a gradient, choose two colors from an approved pair, at most two palette steps apart. Grades 30–60 give a vivid result. Blue 60 → Cyan 50 is one such pair. A product’s primary button still uses its approved action and state tokens. [IBM Color](https://www.ibm.com/design/language/color/) · [Palette and gradient details](../design-ui/references/tokens.md#color-family-rules)
+
+The asset determines the gradient geometry. An IBM pictogram uses a **45° linear gradient**. For an expressive pictogram, preserve the gradient in its approved master. In a line-style illustration, IBM recommends running the gradient along the stroke, including around a curve. [IBM pictogram design](https://www.ibm.com/design/language/iconography/pictograms/design/#gradients) · [IBM line-style design](https://www.ibm.com/design/language/illustration/line-style/design/#gradients)
 
 ## Color by surface and state
 
