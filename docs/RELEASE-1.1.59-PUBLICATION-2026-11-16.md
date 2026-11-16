@@ -1,0 +1,9 @@
+# 1.1.59 publication verification
+
+[PR #129](https://github.com/pmeglaw/ibm-design-language-plugin/pull/129) added two checks to the design handoff. The stable [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.59) and immutable tag `v1.1.59` identify commit `d65f8ec01abba64aae448e4009917c188a298b2b`. Its tree matches the reviewed candidate `d83d7acd57eef48ec36e99a2064d4b9466d8bb90`. The [package and browser jobs](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/43979914982) passed on that commit. The [version tag’s documentation check](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/43980320351) also passed.
+
+The [publication-event verification](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/43980326464) initially saw the previous version on the default branch and reported a latest-release mismatch. Its rerun checks the updated default-branch documentation.
+
+All four downloaded assets match the frozen candidate. ZIP integrity and all 179 packaged file hashes passed. Archive SHA-256 is `1432e7ed6361d27c4223813d9b984e8a5a1d92f451d9b06d719e523d32fbfb17`.
+
+An independent designer used the candidate guidance to test a synthetic queue in Chromium. The original prototype falsely acknowledged delivery when browser storage was denied at startup. Its heading grew from 32/34.56 px to 54/58.32 px (size/line height). On a corrected copy the same browser test observed an explicit failure, editable inputs and zero deliveries. With storage available the edited record survived reload and appeared once in the receiving queue. The corrected heading measured 32/40 px at both 390 and 1440 px. The evaluator independently reproduced both matrices, including late write failure and retry. Coverage was limited to the local prototype. See the [installation receipt](INSTALLATION-1.1.59-VERIFICATION-2026-11-16.md).
