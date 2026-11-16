@@ -1,3 +1,7 @@
+# 1.1.59 Design handoff verification
+
+The design handoff now exercises a storage-dependent send with browser storage denied before startup, checks the receipt against both views after reload, and repeats with storage available. For a productive heading, it records the computed size at phone and desktop widths against the intended fixed style.
+
 # 1.1.58 Pictogram and illustration gradients
 
 The typography and color skill and its shared palette reference now point to IBM’s asset-specific gradient specifications. Pictograms use a linear gradient at 45°. In a line-style illustration, IBM recommends applying the blend along the stroke. Color pairing and palette grades still follow the IBM Color page.
