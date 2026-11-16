@@ -65,6 +65,22 @@ This changes emitted URLs; it does not copy fonts or create a server route. Deli
 
 A Sass probe with React 1.117.0's installed dependencies emitted 90 configured URLs, no unresolved `~@ibm/plex` paths, and each referenced asset existed in the installed Plex package. No served/loaded font pass is implied. In the actual application, verify font response MIME/content and loaded faces for the used weights/scripts; a computed family stack can still render a fallback. Keep remote font acquisition out of reproducible builds when the project requires local assets.
 
+## Design handoff checks
+
+**Storage-dependent send.** In a fresh test context, deny access to the browser store used by the draft **before the first navigation**. For a `localStorage` prototype, install this Playwright hook before opening the page. It remains active after reload.
+
+```js
+await context.addInitScript(() => {
+  Object.defineProperty(window, 'localStorage', {
+    get() { throw new DOMException('Storage unavailable', 'SecurityError') },
+  })
+})
+```
+
+Edit a synthetic draft with distinctive text, send it through the normal UI and record the receipt. Reload in the same context. Look up the same record by identity in both the sender’s list and the receiving queue. An unqualified “sent” passes only if the sender shows the sent state and the destination contains the edited record exactly once after reload. A failed send should explain the failure and keep the edit available for retry before reload. An intentionally session-only simulation must disclose that lifetime at the action and in its feedback. If a server can complete the send without browser storage, verify the durable result normally. Repeat with storage available as the positive control. Record receipt, both post-reload states and verdict. A write failure after a successful startup exercises a separate path.
+
+**Fixed product heading.** On the same screen, identify a productive heading and its intended [fixed type style](typography.md#productive-and-expressive-sets). At the supported phone and desktop widths, keep the content, state, root font size and browser zoom constant. After fonts load, use `getComputedStyle(heading)` to read `fontSize` and `lineHeight` from the rendered heading at each width. Record both viewports, both pairs of values and the intended fixed style. Pass when both pairs match that style. Normal wrapping and user text resizing are expected. Evaluate intentionally fluid editorial headlines against their own expressive style. Mark either handoff check untested if its rendered evidence is unavailable.
+
 ## Verify outcomes, not component presence
 
 For each visible action, record its intended state or navigation outcome and exercise it. A breadcrumb with a nonempty fragment is still broken if the destination does not exist. Supply real fixture ancestor views or existing meaningful sections; do not invent fragment targets solely to satisfy a selector. Removal must visibly remove or mark the target removed according to the task's recovery contract. Resetting submission feedback does not implement Remove. Preserve actual native link/button behavior and required confirmation/undo.
