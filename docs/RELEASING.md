@@ -83,10 +83,9 @@ these steps in order before reporting delivery complete:
    from the job log; the run's release SHA alone does not identify those docs.
    A manual workflow dispatch on the default branch is also a fresh live check.
 
-A tag-push rerun checks the same immutable tagged files, so it cannot pick up a
-later documentation fix. Preserve that historical failure and link the successful
-default-branch verification instead. Do not move tags, weaken the live check,
-delete failure records or treat an offline pass as live publication verification.
+Older tag-push workflows compared their frozen documents with the latest release.
+Rerunning them uses the same workflow and snapshot. Preserve those historical
+results and link the successful default-branch verification.
 If the final live check fails, delivery remains incomplete: investigate its
 reported mismatch or API failure before closing the task.
 
@@ -110,7 +109,12 @@ downloaded release assets, installed-copy parity or generated-product quality.
 Continue running the package verifier and applicable browser/installation gates.
 
 The `Verify release documentation` workflow runs on push, pull request, release
-publication and manual dispatch. On publication it checks the default branch's
+publication and manual dispatch. A version-tag push uses `--github-at-tag TAG`
+to check that the tag matches the package version and that GitHub's stable release
+and tag commit match the publication documented in that snapshot. For a prepared
+candidate, those documents identify the preceding published version. Branch and
+pull request checks continue to compare against the latest stable release.
+On publication it checks the default branch's
 current companion documentation, not frozen preparation wording at the tag. A
 publication-triggered failure reports drift after publication; correct current
 companion docs in a follow-up and confirm the new push run. The workflow does not
