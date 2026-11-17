@@ -1,6 +1,6 @@
 # Release history and evidence
 
-This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.60; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
+This history preserves the published summaries and their evidence limits. The current published plugin package is 1.1.61; repository-only test gates do not change frozen earlier packages or their historical evaluation results. See the [README](../README.md) for usage and [release maintenance](RELEASING.md) for current publication requirements.
 
 This package preserves verified work so restoration does not require repeating model evaluations. The 1.1.6 guidance passed 9/9 on one known screenshot regression. This author-graded case does not establish general improvement or repeatability; host skill-description truncation warnings are disclosed in the evidence. Earlier composition comparisons had two tied pairs, one incomplete pair and host configuration drift. Synthetic tests check evaluator mechanics, not design taste.
 
@@ -24,7 +24,9 @@ unchanged as history.
 
 ## Release validation
 
-See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.60). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+See the [1.1.12 candidate evidence](../evidence/1.1.12-candidate/REPORT.md) and [reproducible shell fixture](../tests/nextjs-shell/README.md). The evidence report records the state before publication; current publication identity belongs to the [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.61). Follow [recovery](../docs/RECOVERY.md) for checksum and destination-installation checks.
+
+Version 1.1.61 adds a worked pointer target size example and a four-assertion guidance case. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.61) is from `3a41edbd0421ddbee4bbad56a35e2fbc5da229af`. See the [publication](RELEASE-1.1.61-PUBLICATION-2026-11-17.md) and [installation](INSTALLATION-1.1.61-VERIFICATION-2026-11-17.md) receipts.
 
 Version 1.1.60 adds a phone-width check for the selected item and destination at the point where a failed send can be retried. The [published release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.60) is from `36b325ee7a56b90fb7cd06acd10ded79c20e9510`. See the [publication](RELEASE-1.1.60-PUBLICATION-2026-11-17.md) and [installation](INSTALLATION-1.1.60-VERIFICATION-2026-11-17.md) receipts.
 
