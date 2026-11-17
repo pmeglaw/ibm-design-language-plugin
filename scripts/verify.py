@@ -11,7 +11,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-CURRENT = '1.1.60'
+CURRENT = '1.1.61'
 
 
 def require(condition, message):
@@ -46,7 +46,7 @@ def main():
     report = ROOT / '.verification'
     report.mkdir(exist_ok=True)
     manifests = {}
-    versions = ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', '1.1.19', '1.1.20', '1.1.21', '1.1.22', '1.1.23', '1.1.24', '1.1.25', '1.1.26', '1.1.27', '1.1.28', '1.1.29', '1.1.30', '1.1.31', '1.1.32', '1.1.33', '1.1.34', '1.1.35', '1.1.36', '1.1.37', '1.1.38', '1.1.39', '1.1.40', '1.1.41', '1.1.42', '1.1.43', '1.1.44', '1.1.45', '1.1.46', '1.1.47', '1.1.48', '1.1.49', '1.1.50', '1.1.51', '1.1.52', '1.1.53', '1.1.54', '1.1.55', '1.1.56', '1.1.57', '1.1.58', '1.1.59', CURRENT)
+    versions = ('1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.1.8', '1.1.9', '1.1.10', '1.1.11', '1.1.12', '1.1.13', '1.1.14', '1.1.15', '1.1.16', '1.1.17', '1.1.18', '1.1.19', '1.1.20', '1.1.21', '1.1.22', '1.1.23', '1.1.24', '1.1.25', '1.1.26', '1.1.27', '1.1.28', '1.1.29', '1.1.30', '1.1.31', '1.1.32', '1.1.33', '1.1.34', '1.1.35', '1.1.36', '1.1.37', '1.1.38', '1.1.39', '1.1.40', '1.1.41', '1.1.42', '1.1.43', '1.1.44', '1.1.45', '1.1.46', '1.1.47', '1.1.48', '1.1.49', '1.1.50', '1.1.51', '1.1.52', '1.1.53', '1.1.54', '1.1.55', '1.1.56', '1.1.57', '1.1.58', '1.1.59', '1.1.60', CURRENT)
     unlisted = sorted({p.name for p in (ROOT / 'releases').iterdir() if p.is_dir()} - set(versions))
     require(not unlisted, f'Frozen releases not verified: {", ".join(unlisted)}')
     for version in versions:
@@ -127,6 +127,11 @@ def main():
     require([c['id'] for c in shell_suite['evals']] == [25, 26, 27, 28]
             and sum(len(c['assertions']) for c in shell_suite['evals']) == 19,
             'Pattern/shell guidance suite changed unexpectedly')
+    target_suite = json.loads((skill / 'evals-target-size.json').read_text(encoding='utf-8'))
+    evaluator.validate_suite(target_suite)
+    require([case['id'] for case in target_suite['evals']] == [29]
+            and len(target_suite['evals'][0]['assertions']) == 4,
+            'Pointer target size guidance suite changed unexpectedly')
     env = dict(os.environ, IBM_EVAL_TEST_TMP=str(report / 'synthetic-temp'))
     tests = subprocess.run([sys.executable, '-B', '-X', 'utf8',
                             str(plugin / 'skills/design-ui/scripts/test_evaluate.py')],

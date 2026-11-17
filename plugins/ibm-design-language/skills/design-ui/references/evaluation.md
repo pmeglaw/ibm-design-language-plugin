@@ -114,6 +114,10 @@ authority. Preserve the older suites. This pack's presence does not mean it has
 passed a full model evaluation. Keep text guidance evaluation separate from
 compilation, browser interaction, visual inspection and assistive-technology tests.
 
+## Pointer target size
+
+Use `--suite` with [evals-target-size.json](../evals-target-size.json) and `--ids 29` to evaluate pointer target size and spacing. The four assertions cover the clickable area, circle placement, and two different gaps between undersized targets.
+
 ## Contribution-readiness evaluation boundary
 
 When evaluating a reusable component contribution, require evidence for design, code, documentation and kit readiness separately. A candidate should distinguish preview from stable, configurable strings and typed APIs, controlled state and actual product behavior, documented state/variant coverage, migration and consumer compatibility. For application work, retain the repository's approved runner and gates; recognizing upstream Jest/Percy/Storybook requirements does not justify replacing the project stack.

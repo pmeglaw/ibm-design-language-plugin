@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "skill_name": "design-ui",
+  "description": "Pointer target size and spacing for standalone controls.",
+  "evals": [
+    {
+      "id": 29,
+      "kind": "guidance",
+      "visual_dimensions": [],
+      "prompt": "Review these ordinary icon buttons against WCAG 2.2 AA pointer target size. A 16 × 16 search icon is centered in a fully clickable 48 × 48 button. Elsewhere two 12 × 12 clickable buttons sit on the same horizontal centerline with 8 px between their edges. A separate pair of the same size has a 14 px edge gap. All measurements are CSS pixels. Each pair is far from other controls and only the spacing exception is relevant. Which pass, and what is the smallest gap change needed if button sizes stay fixed?",
+      "expected_output": "Assess the clickable boxes, show the circle geometry for both pairs, and give a correction specific to the failing pair.",
+      "assertions": [
+        {
+          "id": "case-29-a01",
+          "criterion": "Identifies the 48 × 48 clickable area as meeting the 24 × 24 CSS pixel minimum despite the 16 × 16 glyph."
+        },
+        {
+          "id": "case-29-a02",
+          "criterion": "Centers a 24 CSS pixel diameter circle on each undersized target’s bounding box and checks for overlap with another target or another undersized target’s circle."
+        },
+        {
+          "id": "case-29-a03",
+          "criterion": "Calculates 20 px center separation at the 8 px gap, recognizes circle overlap, and raises that pair’s edge gap by 4 px to 12 px, where the circles just touch."
+        },
+        {
+          "id": "case-29-a04",
+          "criterion": "Calculates 26 px center separation at the 14 px gap and identifies that pair as meeting the spacing exception."
+        }
+      ]
+    }
+  ]
+}
