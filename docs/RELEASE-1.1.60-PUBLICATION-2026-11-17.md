@@ -1,0 +1,7 @@
+# 1.1.60 publication verification
+
+[PR #132](https://github.com/pmeglaw/ibm-design-language-plugin/pull/132) adds a phone-width retry check to the design handoff. The stable [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.60) and tag `v1.1.60` identify commit `36b325ee7a56b90fb7cd06acd10ded79c20e9510`. Its tree matches the refreshed PR head `af941e861c8534b4148cae37f457ba6535aa2832`. All 15 post-merge checks passed, including the [package and browser jobs](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/44033592873). The [tag-push documentation check](https://github.com/pmeglaw/ibm-design-language-plugin/actions/runs/44034511486) passed on its first attempt.
+
+All four downloaded assets match the files at that commit. ZIP integrity and all 179 packaged file hashes passed. The archive SHA-256 is `1e0aec2de66a913ef38729f5a178706ffe0f3b8ebddf0f67547121edc42e245e`.
+
+In a blind trial, a failed send left the selected item above the phone viewport. A second designer used the candidate guidance to identify and correct that defect. An independent replay at 320 × 640 showed the item, destination, error and Retry together. After retry and reload, the destination contained exactly one record with the selected item and edited contents. These checks used a synthetic local prototype. See the [installation receipt](INSTALLATION-1.1.60-VERIFICATION-2026-11-17.md).
