@@ -1,3 +1,7 @@
+# 1.1.61 Pointer target size and spacing
+
+The accessibility guide shows how to measure an icon button’s clickable area and apply the WCAG 2.2 spacing exception to neighboring controls. A guidance evaluation case asks reviewers to assess a padded icon button and two pairs of tightly spaced buttons.
+
 # 1.1.60 Retry context on narrow screens
 
 For an action that sends a selected item to a destination, the design handoff now checks whether the user can see both names with the failure and Retry at 320 CSS pixels wide. The check uses a non-default selection and a distinctive edit, captures the view before any further interaction, and verifies that Retry uses the same item, destination and edit.

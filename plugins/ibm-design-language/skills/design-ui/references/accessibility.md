@@ -21,6 +21,12 @@ A search field needs an accessible name even when its visual design omits the la
 
 Use native buttons and links. Follow the actual widget's activation and keyboard contract; do not globally replace click with mousedown or add arrow navigation to ordinary lists. Test modal focus containment and return; nonmodal panels have a different contract. CSS transforms alone do not make a closed panel inaccessible.
 
+## Pointer target size
+
+Measure the area that accepts the pointer action in CSS pixels, including clickable padding. A 16 × 16 icon centered in a fully clickable 48 × 48 button meets the WCAG 2.2 AA minimum of 24 × 24 CSS pixels. For the spacing exception, center a 24 CSS pixel diameter circle on the bounding box of each undersized target. Each circle must clear every other target and every other undersized target’s circle. Touching edges are allowed.
+
+For example, two 12 × 12 buttons on the same horizontal centerline with an 8 px gap have centers 20 px apart. Their circles overlap by 4 px. Increasing the gap to 12 px brings the centers 24 px apart and qualifies for the spacing exception if all other neighbors also clear the circles. Larger clickable areas can be easier to use. [WCAG 2.2 target size and exceptions](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
+
 ## Contrast and readability
 
 For normal text, require at least 4.5:1; large text uses 3:1 (24 CSS px regular or approximately 18.67 CSS px bold). Inactive controls have an exception, which means contrast is not required under that criterion, not that every disabled control necessarily fails. Keep values that users need to read legible. [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
