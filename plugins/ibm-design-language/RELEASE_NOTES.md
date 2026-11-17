@@ -1,3 +1,7 @@
+# 1.1.60 Retry context on narrow screens
+
+For an action that sends a selected item to a destination, the design handoff now checks whether the user can see both names with the failure and Retry at 320 CSS pixels wide. The check uses a non-default selection and a distinctive edit, captures the view before any further interaction, and verifies that Retry uses the same item, destination and edit.
+
 # 1.1.59 Design handoff verification
 
 The design handoff now exercises a storage-dependent send with browser storage denied before startup, checks the receipt against both views after reload, and repeats with storage available. For a productive heading, it records the computed size at phone and desktop widths against the intended fixed style.
