@@ -2,11 +2,11 @@
 
 An independently maintained Codex plugin for designing, implementing, and reviewing interfaces with IBM Design Language and Carbon. It provides reusable workflows, source-linked references, visual benchmarks, examples, and checking tools. It is not an official IBM product.
 
-The current published package is **1.1.60**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.60) · [Install](docs/INSTALLATION.md)
+The current published package is **1.1.61**. [Source](https://github.com/pmeglaw/ibm-design-language-plugin) · [Release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.61) · [Install](docs/INSTALLATION.md)
 
-The working source is **1.1.61, an unpublished release candidate**. It adds pointer target size guidance and an evaluation case. Published **1.1.60** was released from commit `36b325ee7a56b90fb7cd06acd10ded79c20e9510`.
+The working package matches published **1.1.61**, released from commit `3a41edbd0421ddbee4bbad56a35e2fbc5da229af`. Its accessibility guide and evaluation case cover pointer target size and spacing.
 
-All four downloaded assets match the frozen release. The private account plugin is installed and enabled, all 180 files match, and Codex discovered its four skills in 0.734 seconds. See the [publication](docs/RELEASE-1.1.60-PUBLICATION-2026-11-17.md) and [installation](docs/INSTALLATION-1.1.60-VERIFICATION-2026-11-17.md) receipts.
+All four downloaded assets match the frozen release. The private account plugin is installed and enabled, all 181 files match, and Codex discovered its four skills in 1.28 seconds. See the [publication](docs/RELEASE-1.1.61-PUBLICATION-2026-11-17.md) and [installation](docs/INSTALLATION-1.1.61-VERIFICATION-2026-11-17.md) receipts.
 
 ## Install
 
@@ -17,7 +17,7 @@ Install the plugin using [first-time installation](docs/INSTALLATION.md), then o
 The published package installs in Claude Code through the repository's `.claude-plugin/marketplace.json` catalog. The command below pins the immutable published release tag verified in [Installation](docs/INSTALLATION.md). The catalog loads `plugins/ibm-design-language/` from that release, not a newer unpublished source branch:
 
 ```text
-/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.60
+/plugin marketplace add pmeglaw/ibm-design-language-plugin#v1.1.61
 /plugin install ibm-design-language@jp-personal
 ```
 
@@ -89,7 +89,7 @@ Preserve exact bytes through `.gitattributes`; do not normalize frozen plugin or
 
 ## Repository contents
 
-- `plugins/ibm-design-language/`: the unpublished 1.1.61 working source, with its candidate archive in `releases/1.1.61/` and published archive in `releases/1.1.60/`.
+- `plugins/ibm-design-language/`: the published 1.1.61 package source, with its frozen archive in `releases/1.1.61/`.
 - `.agents/plugins/marketplace.json`: repository marketplace catalog named `jp-personal`; paths resolve from the repository root.
 - `.claude-plugin/marketplace.json`: Claude Code catalog for the same package, also named `jp-personal`.
 - `docs/`: companion installation, recovery, maintenance, history, and prompt documentation, outside the plugin release ZIP.
