@@ -2,7 +2,7 @@
 
 Use this path to install the published package in Codex. For an existing owner-managed installation, drift, restoration, or rollback, use [Recovery](RECOVERY.md). Host support and autocomplete can vary; the CLI commands below are the repository's documented installation route.
 
-The published recovery target is **1.1.58**. All four downloaded assets match the verified release. The retained account plugin is installed and enabled with complete 180-file parity and fresh discovery of all four skills. See the [publication](RELEASE-1.1.58-PUBLICATION-2026-11-16.md) and [installation](INSTALLATION-1.1.58-VERIFICATION-2026-11-16.md) receipts.
+The published recovery target is **1.1.59**. All four downloaded assets match the verified release. The retained account plugin is installed and enabled with complete 180-file parity and fresh discovery of all four skills. See the [publication](RELEASE-1.1.59-PUBLICATION-2026-11-16.md) and [installation](INSTALLATION-1.1.59-VERIFICATION-2026-11-16.md) receipts.
 
 For the existing "Created by you" plugin, use its supported account update flow
 in [Recovery](RECOVERY.md#uploaded-account-installations). The Git marketplace
@@ -19,7 +19,7 @@ The dated 1.1.44 [publication](RELEASE-1.1.44-PUBLICATION-2026-10-29.md) and [in
 
 ## Select the published release
 
-1. Obtain the [published 1.1.58 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.58). Resolve the full commit behind `v1.1.58` in a repository checkout with `git rev-parse 'v1.1.58^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
+1. Obtain the [published 1.1.59 release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.59). Resolve the full commit behind `v1.1.59` in a repository checkout with `git rev-parse 'v1.1.59^{commit}'` after fetching that tag. Use the immutable commit rather than `main`.
 2. Verify the downloaded ZIP against the checksum and file manifest in [Recovery](RECOVERY.md#release-identity). From the matching checkout, run `python -B scripts/verify.py`.
 3. Run `codex plugin marketplace list --json` first. This repository declares its marketplace name as `jp-personal`; that name is a catalog identifier, not a requirement to adopt the owner's personal configuration. If the name is already in use for another source, stop and resolve the collision without replacing unrelated entries.
 
@@ -33,7 +33,7 @@ codex plugin add ibm-design-language@jp-personal --json
 codex plugin list --marketplace jp-personal --json
 ```
 
-Confirm version `1.1.58`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
+Confirm version `1.1.59`, enabled state, and the returned installation directory for this fresh installation. From the matching checkout, run:
 
 ```sh
 python -B scripts/verify-install.py INSTALL_DIRECTORY

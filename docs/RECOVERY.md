@@ -7,14 +7,14 @@ installation's identity and unrelated configuration.
 
 ## Release identity
 
-- Version: `1.1.58`
-- Immutable tag: `v1.1.58`
-- `plugin.zip` SHA-256: `632d1bb5cab0c231e1bf24e3cd60eef17595feeada415c729ad7f7e560a4a273`
-- Manifest: `releases/1.1.58/files.json`
-- Release commit: `d98ecf18db093ef44cf8706250fc191bc06d3bd0`; confirm the immutable tag with the command below.
-- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.58)
+- Version: `1.1.59`
+- Immutable tag: `v1.1.59`
+- `plugin.zip` SHA-256: `1432e7ed6361d27c4223813d9b984e8a5a1d92f451d9b06d719e523d32fbfb17`
+- Manifest: `releases/1.1.59/files.json`
+- Release commit: `d65f8ec01abba64aae448e4009917c188a298b2b`; confirm the immutable tag with the command below.
+- Publication: [GitHub release](https://github.com/pmeglaw/ibm-design-language-plugin/releases/tag/v1.1.59)
 
-Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.58^{commit}'`. For downloaded-asset verification see the [publication receipt](RELEASE-1.1.58-PUBLICATION-2026-11-16.md); for account and installed-file parity, enabled state and bounded discovery see the [installation receipt](INSTALLATION-1.1.58-VERIFICATION-2026-11-16.md).
+Fetch the published tag and confirm the release commit with `git rev-parse 'v1.1.59^{commit}'`. For downloaded-asset verification see the [publication receipt](RELEASE-1.1.59-PUBLICATION-2026-11-16.md); for account and installed-file parity, enabled state and bounded discovery see the [installation receipt](INSTALLATION-1.1.59-VERIFICATION-2026-11-16.md).
 
 ## Restore and verify
 
@@ -26,12 +26,14 @@ instead; do not recreate the removed `jp-personal` duplicate.
 2. Run `python -B scripts/verify.py` from the matching repository checkout. All checks must pass.
 3. Inspect `codex plugin marketplace list --json`. Preserve the existing `jp-personal` identity and unrelated entries. The owner directed local/published synchronization on 2026-09-25; follow the scoped authorization and completion checks in [Maintaining releases](RELEASING.md).
 4. For an existing personal `git-subdir` entry, preserve the repository URL and `./plugins/ibm-design-language` path and advance only its immutable SHA to the reviewed release commit. On a fresh setup, use `codex plugin marketplace add https://github.com/pmeglaw/ibm-design-language-plugin.git --ref RELEASE_COMMIT --json`, substituting that full commit.
-5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.58/files.json`.
+5. Run `codex plugin add ibm-design-language@jp-personal --json`. Confirm version and enabled state with `codex plugin list --marketplace jp-personal --json`. Compare the returned installation directory to `releases/1.1.59/files.json`.
 6. Verify fresh discovery with app-server `skills/list`, using `forceReload: true` and the intended workspace. Expect enabled `ibm-design-language:design-ui`, `ibm-design-language:review-product-experience`, `ibm-design-language:seat-planner-ui-ux`, and `ibm-design-language:typography-and-color` entries with pluginId `ibm-design-language@jp-personal` and the installed version's path. Follow [bounded discovery readiness](#bounded-discovery-readiness) before declaring discovery complete or unavailable. Preserve obsolete standalone copies and deliberately vendored project skills; do not remove them as an automatic cleanup. Use the refreshed skill on the next turn.
 
 ## Uploaded account installations
 
-The published package is **1.1.58**. See the [publication](RELEASE-1.1.58-PUBLICATION-2026-11-16.md) and [installation](INSTALLATION-1.1.58-VERIFICATION-2026-11-16.md) receipts.
+The published package is **1.1.59**. See the [publication](RELEASE-1.1.59-PUBLICATION-2026-11-16.md) and [installation](INSTALLATION-1.1.59-VERIFICATION-2026-11-16.md) receipts.
+
+At its verification, the published package was **1.1.58**. See the [publication](RELEASE-1.1.58-PUBLICATION-2026-11-16.md) and [installation](INSTALLATION-1.1.58-VERIFICATION-2026-11-16.md) receipts.
 
 At its verification, the published package was **1.1.57**. See the [publication](RELEASE-1.1.57-PUBLICATION-2026-11-15.md) and [installation](INSTALLATION-1.1.57-VERIFICATION-2026-11-15.md) receipts.
 
